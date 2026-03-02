@@ -270,7 +270,7 @@ export default function ServicesPage() {
                 <div className="icon-wrap mb-6">
                   {service.icon}
                 </div>
-                <h3 className="font-bold text-dark text-lg mb-5">{service.title} — What's Included</h3>
+                <h3 className="font-bold text-dark text-lg mb-5">{service.title} — What&apos;s Included</h3>
                 <ul className="space-y-3">
                   {service.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
@@ -302,7 +302,7 @@ export default function ServicesPage() {
         <div className="container-tight relative z-10 text-center">
           <p className="section-label text-cyan-400">Ready to Get Started?</p>
           <h2 className="section-title-white mb-6">
-            Let's Build Something Great Together
+            Let&apos;s Build Something Great Together
           </h2>
           <p className="section-subtitle-white mx-auto text-center mb-10">
             Tell us about your project and receive a no-obligation quote within 24 hours. We serve small businesses nationwide with affordable, professional web design services.

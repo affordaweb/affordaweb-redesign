@@ -46,7 +46,7 @@ const services = [
       </svg>
     ),
     title: 'Website Redesign',
-    desc: 'Transform your outdated site into a modern, high-performance presence that matches your brand's ambitions.',
+    desc: "Transform your outdated site into a modern, high-performance presence that matches your brand's ambitions.",
     href: '/services#redesign',
   },
   {
@@ -540,7 +540,7 @@ export default function HomePage() {
                           w-[700px] h-[400px] bg-primary-500/20 rounded-full blur-[150px]" />
         </div>
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-cyan-400">Less Talk. Let's Build.</p>
+          <p className="section-label text-cyan-400">Less Talk. Let&apos;s Build.</p>
           <h2 className="section-title-white mb-6">
             Ready for a Website That Works for Your Business?
           </h2>

@@ -216,7 +216,7 @@ export default function BlogPage() {
           <p className="section-subtitle-white mx-auto text-center mb-8">
             Join small business owners who get our best web design and SEO tips every month. No spam — just useful content.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={e => e.preventDefault()}>
+          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="https://formspree.io/f/your-form-id" method="POST">
             <input
               type="email"
               placeholder="Your email address"

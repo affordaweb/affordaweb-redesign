@@ -32,7 +32,7 @@ export default function ContactPage() {
         <div className="container-tight relative z-10 text-center">
           <p className="section-label text-cyan-400">Get in Touch</p>
           <h1 className="section-title-white mb-6">
-            Let's Build Your Website
+            Let&apos;s Build Your Website
           </h1>
           <p className="section-subtitle-white mx-auto text-center">
             Tell us about your project and receive a free, no-obligation quote within 24 hours. There is no commitment required to request a quote.
@@ -50,7 +50,7 @@ export default function ContactPage() {
               <div>
                 <p className="section-label">Contact Info</p>
                 <h2 id="contact-heading" className="text-2xl font-bold text-dark mb-4">
-                  We'd Love to Hear From You
+                  We&apos;d Love to Hear From You
                 </h2>
                 <p className="text-gray-500 text-sm leading-relaxed">
                   Your inquiry will never go unanswered. We respond to every message within 24 hours — often much sooner. No automated responses, no runaround.
