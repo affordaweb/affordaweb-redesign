@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-jakarta',
+  weight: ['300', '400', '500', '600', '700', '800'],
   preload: true,
 })
 
@@ -73,8 +74,9 @@ export const metadata: Metadata = {
     canonical: 'https://affordawebsolutions.com',
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/logo.webp',
+    apple: '/logo.webp',
+    shortcut: '/logo.webp',
   },
 }
 
@@ -84,9 +86,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={plusJakartaSans.variable}>
       <head>
-        {/* Org schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -100,7 +101,7 @@ export default function RootLayout({
                   url: 'https://affordawebsolutions.com',
                   logo: {
                     '@type': 'ImageObject',
-                    url: 'https://affordawebsolutions.com/logo.png',
+                    url: 'https://affordawebsolutions.com/logo.webp',
                     width: 874,
                     height: 245,
                   },
@@ -135,11 +136,6 @@ export default function RootLayout({
                   name: 'AffordaWeb Solutions',
                   publisher: {
                     '@id': 'https://affordawebsolutions.com/#organization',
-                  },
-                  potentialAction: {
-                    '@type': 'SearchAction',
-                    target: 'https://affordawebsolutions.com/?s={search_term_string}',
-                    'query-input': 'required name=search_term_string',
                   },
                 },
               ],

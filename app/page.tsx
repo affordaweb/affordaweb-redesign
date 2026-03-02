@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'AffordaWeb Solutions | Affordable Website Design Starting at $69/mo',
@@ -184,6 +185,18 @@ export default function HomePage() {
         className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden"
         aria-label="Hero section"
       >
+        {/* Background photo */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&auto=format&fit=crop&q=60"
+            alt=""
+            fill
+            priority
+            className="object-cover opacity-10"
+            aria-hidden="true"
+          />
+        </div>
+
         {/* Background glows */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-[120px] animate-pulse-glow" />

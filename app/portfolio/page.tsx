@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Website Design Portfolio | AffordaWeb Solutions',
@@ -13,14 +14,14 @@ export const metadata: Metadata = {
   },
 }
 
-// Example portfolio items (replace with real screenshots/data)
 const portfolioItems = [
   {
     id: 1,
     title: 'Local Plumbing Company',
     category: 'Service Business',
     plan: 'Standard',
-    color: 'from-blue-500 to-cyan-500',
+    image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Plumber working on pipes — local service business website',
     tags: ['Website Design', 'SEO', 'Contact Forms'],
     result: '3x more leads in 60 days',
   },
@@ -29,7 +30,8 @@ const portfolioItems = [
     title: 'Freelance Photographer',
     category: 'Portfolio',
     plan: 'Basic',
-    color: 'from-pink-500 to-rose-500',
+    image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Photographer portfolio website design',
     tags: ['Portfolio Design', 'Gallery', 'Booking Form'],
     result: 'Fully booked within a month',
   },
@@ -38,7 +40,8 @@ const portfolioItems = [
     title: 'Online Boutique Store',
     category: 'E-Commerce',
     plan: 'Premium',
-    color: 'from-primary-500 to-purple-600',
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Fashion boutique e-commerce website',
     tags: ['E-Commerce', 'Payments', 'SEO'],
     result: '40+ orders in first week',
   },
@@ -47,7 +50,8 @@ const portfolioItems = [
     title: 'Dental Practice',
     category: 'Healthcare',
     plan: 'Standard',
-    color: 'from-teal-500 to-green-500',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Dental clinic website with appointment booking',
     tags: ['Appointment Booking', 'SEO', 'Mobile Design'],
     result: 'Page 1 for local searches',
   },
@@ -56,7 +60,8 @@ const portfolioItems = [
     title: 'Real Estate Agent',
     category: 'Real Estate',
     plan: 'Standard',
-    color: 'from-amber-500 to-orange-500',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Real estate agent website with property listings',
     tags: ['Listings', 'Lead Capture', 'SEO'],
     result: '200% increase in inquiries',
   },
@@ -65,7 +70,8 @@ const portfolioItems = [
     title: 'Fitness Coach',
     category: 'Health & Wellness',
     plan: 'Basic',
-    color: 'from-violet-500 to-primary-500',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Fitness coach personal brand website',
     tags: ['Personal Brand', 'Programs', 'Contact'],
     result: 'Sold out first online program',
   },
@@ -115,19 +121,16 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolioItems.map((item) => (
               <article key={item.id} className="card overflow-hidden group">
-                {/* Placeholder image area */}
-                <div className={`bg-gradient-to-br ${item.color} rounded-2xl mb-6 relative overflow-hidden`}
-                     style={{ aspectRatio: '16/10' }}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white/80">
-                      <svg className="w-12 h-12 mx-auto mb-2 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
-                          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      <p className="text-sm font-medium">{item.title}</p>
-                    </div>
-                  </div>
-                  {/* Plan badge */}
+                {/* Portfolio image */}
+                <div className="rounded-2xl mb-6 relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                  <Image
+                    src={item.image}
+                    alt={item.imageAlt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent" />
                   <div className="absolute top-3 right-3">
                     <span className="badge bg-white/20 text-white text-xs backdrop-blur-sm">
                       {item.plan} Plan

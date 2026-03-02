@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Web Design Blog | Tips & Guides for Small Businesses | AffordaWeb Solutions',
@@ -22,7 +23,8 @@ const posts = [
     category: 'Business Growth',
     date: 'January 15, 2025',
     readTime: '5 min read',
-    color: 'from-primary-500 to-cyan-500',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80',
+    imageAlt: 'Laptop showing business analytics — why small businesses need a website',
     featured: true,
   },
   {
@@ -33,7 +35,8 @@ const posts = [
     category: 'Web Design',
     date: 'January 28, 2025',
     readTime: '7 min read',
-    color: 'from-pink-500 to-primary-500',
+    image: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Laptop on clean desk — professional web design vs DIY website builders',
     featured: false,
   },
   {
@@ -44,7 +47,8 @@ const posts = [
     category: 'SEO',
     date: 'February 5, 2025',
     readTime: '8 min read',
-    color: 'from-cyan-500 to-teal-500',
+    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'SEO analytics dashboard — tips for ranking on Google',
     featured: false,
   },
   {
@@ -55,7 +59,8 @@ const posts = [
     category: 'Pricing',
     date: 'February 12, 2025',
     readTime: '6 min read',
-    color: 'from-violet-500 to-primary-500',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Data and pricing charts — website design subscription model explained',
     featured: false,
   },
   {
@@ -66,7 +71,8 @@ const posts = [
     category: 'Performance',
     date: 'February 20, 2025',
     readTime: '6 min read',
-    color: 'from-amber-500 to-orange-500',
+    image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=600',
+    imageAlt: 'Developer optimizing website speed on laptop',
     featured: false,
   },
   {
@@ -77,7 +83,8 @@ const posts = [
     category: 'SEO',
     date: 'March 1, 2025',
     readTime: '10 min read',
-    color: 'from-green-500 to-teal-500',
+    image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Local business map and search results — local SEO guide',
     featured: false,
   },
 ]
@@ -128,14 +135,15 @@ export default function BlogPage() {
           {featured && (
             <article className="card mb-8 overflow-hidden group">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-                <div className={`lg:col-span-2 bg-gradient-to-br ${featured.color} rounded-2xl relative overflow-hidden`}
-                     style={{ aspectRatio: '16/9' }}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg className="w-16 h-16 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
-                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                    </svg>
-                  </div>
+                <div className="lg:col-span-2 rounded-2xl relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                  <Image
+                    src={featured.image}
+                    alt={featured.imageAlt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/30 to-transparent" />
                   <div className="absolute top-4 left-4">
                     <span className="badge bg-white/20 text-white backdrop-blur-sm text-xs">Featured</span>
                   </div>
@@ -169,15 +177,16 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((post) => (
               <article key={post.slug} className="card group flex flex-col">
-                {/* Image placeholder */}
-                <div className={`bg-gradient-to-br ${post.color} rounded-2xl mb-5 relative overflow-hidden`}
-                     style={{ aspectRatio: '16/9' }}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg className="w-10 h-10 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
-                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                    </svg>
-                  </div>
+                {/* Blog image */}
+                <div className="rounded-2xl mb-5 relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                  <Image
+                    src={post.image}
+                    alt={post.imageAlt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/20 to-transparent" />
                 </div>
 
                 <div className="flex items-center gap-2 mb-3">

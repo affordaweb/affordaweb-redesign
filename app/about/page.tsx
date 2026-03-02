@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About AffordaWeb Solutions | Our Story & Mission',
@@ -129,21 +130,19 @@ export default function AboutPage() {
 
             {/* Visual card */}
             <div className="relative">
-              <div className="bg-gradient-hero rounded-3xl p-10 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary-500/10 rounded-3xl" />
-                <div className="relative z-10">
-                  <blockquote className="text-white text-xl font-semibold leading-relaxed italic mb-6">
+              <div className="rounded-3xl overflow-hidden relative" style={{ aspectRatio: '4/3' }}>
+                <Image
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80"
+                  alt="Small business team collaborating on website design"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/20 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <blockquote className="text-white text-base font-semibold leading-relaxed italic">
                     &ldquo;Every business deserves a professional website, no matter its size or budget.&rdquo;
                   </blockquote>
-                  <div className="flex items-center justify-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-cta flex items-center justify-center text-dark font-bold text-lg">
-                      A
-                    </div>
-                    <div className="text-left">
-                      <p className="text-white font-semibold">AffordaWeb Solutions</p>
-                      <p className="text-white/50 text-sm">Our Founding Principle</p>
-                    </div>
-                  </div>
+                  <p className="text-white/60 text-sm mt-2">— AffordaWeb Solutions</p>
                 </div>
               </div>
               {/* Floating stats */}

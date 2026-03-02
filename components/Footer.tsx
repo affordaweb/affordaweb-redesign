@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const services = [
   { label: 'Website Design',    href: '/services#design' },
@@ -51,10 +52,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-xl font-bold text-white">
-                Afforda<span className="text-cyan-500">Web</span>
-                <span className="text-white/50 font-normal"> Solutions</span>
-              </span>
+              <Image
+                src="/logo.webp"
+                alt="AffordaWeb Solutions"
+                width={180}
+                height={50}
+                className="h-10 w-auto object-contain"
+              />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
               Professional website design and hosting for small businesses — affordable, fast, and fully managed.

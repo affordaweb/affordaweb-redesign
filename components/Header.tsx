@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '/',          label: 'Home' },
@@ -14,8 +15,8 @@ const navLinks = [
 ]
 
 export default function Header() {
-  const [menuOpen,   setMenuOpen]   = useState(false)
-  const [scrolled,   setScrolled]   = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -23,7 +24,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -39,32 +39,27 @@ export default function Header() {
         }`}
       >
         <div className="container-tight">
-          <div className="flex items-center justify-between h-18 py-4">
+          <div className="flex items-center justify-between py-3">
             {/* Logo */}
-            <Link
-              href="/"
-              className="flex items-center gap-2 group"
-              aria-label="AffordaWeb Solutions — Home"
-            >
-              <span className="text-xl font-bold text-white">
-                Afforda<span className="text-cyan-500">Web</span>
-                <span className="text-white/70 font-normal"> Solutions</span>
-              </span>
+            <Link href="/" aria-label="AffordaWeb Solutions — Home" className="flex items-center">
+              <Image
+                src="/logo.webp"
+                alt="AffordaWeb Solutions"
+                width={200}
+                height={56}
+                priority
+                className="h-11 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop nav */}
-            <nav
-              className="hidden lg:flex items-center gap-1"
-              role="navigation"
-              aria-label="Main navigation"
-            >
+            <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
               {navLinks.map(({ href, label }) => (
                 <Link
                   key={href}
                   href={href}
-                  className="px-4 py-2 text-sm font-medium text-white/80 rounded-full
-                             hover:text-white hover:bg-white/10
-                             transition-all duration-200"
+                  className="px-4 py-2 text-sm font-semibold text-white/80 rounded-full
+                             hover:text-white hover:bg-white/10 transition-all duration-200"
                 >
                   {label}
                 </Link>
@@ -81,7 +76,7 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Mobile menu toggle */}
+            {/* Mobile toggle */}
             <button
               className="lg:hidden w-10 h-10 flex flex-col items-center justify-center
                          gap-[5px] rounded-xl hover:bg-white/10 transition-colors"
@@ -90,21 +85,9 @@ export default function Header() {
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
             >
-              <span
-                className={`block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ${
-                  menuOpen ? 'rotate-45 translate-y-[7px]' : ''
-                }`}
-              />
-              <span
-                className={`block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ${
-                  menuOpen ? 'opacity-0' : ''
-                }`}
-              />
-              <span
-                className={`block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ${
-                  menuOpen ? '-rotate-45 -translate-y-[7px]' : ''
-                }`}
-              />
+              <span className={`block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
             </button>
           </div>
         </div>
@@ -120,29 +103,12 @@ export default function Header() {
           menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
-        {/* Backdrop */}
-        <div
-          className="absolute inset-0 bg-dark/90 backdrop-blur-md"
-          onClick={() => setMenuOpen(false)}
-        />
-
-        {/* Panel */}
-        <div
-          className={`absolute top-0 right-0 h-full w-80 max-w-[85vw]
-                      bg-dark-100 border-l border-white/10
-                      flex flex-col
-                      transition-transform duration-300 ${
-                        menuOpen ? 'translate-x-0' : 'translate-x-full'
-                      }`}
-        >
-          {/* Close */}
-          <div className="flex items-center justify-between p-6 border-b border-white/10">
-            <span className="text-lg font-bold text-white">
-              Afforda<span className="text-cyan-500">Web</span>
-            </span>
+        <div className="absolute inset-0 bg-dark/90 backdrop-blur-md" onClick={() => setMenuOpen(false)} />
+        <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-dark-100 border-l border-white/10 flex flex-col transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="flex items-center justify-between p-5 border-b border-white/10">
+            <Image src="/logo.webp" alt="AffordaWeb Solutions" width={160} height={45} className="h-10 w-auto object-contain" />
             <button
-              className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10
-                         hover:bg-white/20 transition-colors text-white"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
             >
@@ -152,7 +118,6 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Links */}
           <nav className="flex-1 overflow-y-auto p-6" aria-label="Mobile navigation">
             <ul className="space-y-1">
               {navLinks.map(({ href, label }) => (
@@ -160,10 +125,7 @@ export default function Header() {
                   <Link
                     href={href}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl
-                               text-white/80 font-medium
-                               hover:text-white hover:bg-white/10
-                               transition-all duration-200"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-white/80 font-semibold hover:text-white hover:bg-white/10 transition-all duration-200"
                   >
                     {label}
                   </Link>
@@ -172,18 +134,11 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Mobile CTA */}
           <div className="p-6 border-t border-white/10 space-y-3">
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="btn-primary w-full justify-center"
-            >
+            <Link href="/contact" onClick={() => setMenuOpen(false)} className="btn-primary w-full justify-center">
               Get a Free Quote
             </Link>
-            <p className="text-center text-xs text-white/40">
-              No commitment · Respond within 24 hrs
-            </p>
+            <p className="text-center text-xs text-white/40">No commitment · Respond within 24 hrs</p>
           </div>
         </div>
       </div>
