@@ -10,8 +10,6 @@ export const metadata: Metadata = {
   keywords: 'affordable website design, website design services, cheap web design, budget web design, website design near me, small business website design',
 }
 
-// ─── Shared icon components ───────────────────────────────────────────────────
-
 function IconArrow() {
   return (
     <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,8 +25,6 @@ function IconCheck({ className = 'w-4 h-4' }: { className?: string }) {
     </svg>
   )
 }
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
 
 const services = [
   {
@@ -161,8 +157,6 @@ const stats = [
   { value: '$69',   label: 'Starting Monthly' },
 ]
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
-
 export default function HomePage() {
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -184,10 +178,10 @@ export default function HomePage() {
       {/* ── HERO ────────────────────────────────────────────────────── */}
       <section
         className="relative min-h-screen flex items-center overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #0D0D1F 0%, #150E35 50%, #0D0D1F 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #020C07 0%, #021A0F 50%, #020C07 100%)' }}
         aria-label="Hero section"
       >
-        {/* Background image — very subtle */}
+        {/* Background image */}
         <div className="absolute inset-0 pointer-events-none">
           <Image
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&auto=format&fit=crop&q=60"
@@ -195,12 +189,12 @@ export default function HomePage() {
             fill
             priority
             className="object-cover"
-            style={{ opacity: 0.06 }}
+            style={{ opacity: 0.05 }}
             aria-hidden="true"
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(13,13,31,0.6) 0%, transparent 40%, rgba(13,13,31,0.8) 100%)' }}
+            style={{ background: 'linear-gradient(to bottom, rgba(2,12,7,0.5) 0%, transparent 40%, rgba(2,12,7,0.8) 100%)' }}
           />
         </div>
 
@@ -208,7 +202,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)',
             backgroundSize: '80px 80px',
           }}
         />
@@ -216,19 +210,18 @@ export default function HomePage() {
         {/* Gradient orbs */}
         <div
           className="absolute pointer-events-none animate-pulse-glow"
-          style={{ top: '15%', left: '5%', width: '600px', height: '600px', background: 'rgba(86,54,209,0.18)', borderRadius: '50%', filter: 'blur(120px)' }}
+          style={{ top: '15%', left: '5%', width: '600px', height: '600px', background: 'rgba(5,150,105,0.18)', borderRadius: '50%', filter: 'blur(130px)' }}
         />
         <div
           className="absolute pointer-events-none animate-pulse-glow"
-          style={{ bottom: '10%', right: '5%', width: '500px', height: '500px', background: 'rgba(86,54,209,0.12)', borderRadius: '50%', filter: 'blur(100px)', animationDelay: '2s' }}
+          style={{ bottom: '10%', right: '5%', width: '500px', height: '500px', background: 'rgba(5,150,105,0.12)', borderRadius: '50%', filter: 'blur(110px)', animationDelay: '2s' }}
         />
 
-        {/* Center radial glow behind text */}
+        {/* Center radial glow */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div style={{ width: '900px', height: '500px', background: 'rgba(86,54,209,0.09)', borderRadius: '50%', filter: 'blur(80px)' }} />
+          <div style={{ width: '900px', height: '500px', background: 'rgba(5,150,105,0.08)', borderRadius: '50%', filter: 'blur(80px)' }} />
         </div>
 
-        {/* Content */}
         <div className="container-tight relative z-10 pt-36 pb-28 text-center">
 
           {/* Eyebrow badge */}
@@ -249,7 +242,7 @@ export default function HomePage() {
             <span
               className="block sm:inline"
               style={{
-                background: 'linear-gradient(135deg, #A897EE 0%, #D3C9F6 50%, #ffffff 100%)',
+                background: 'linear-gradient(135deg, #6EE7B7 0%, #A7F3D0 55%, #ffffff 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -264,7 +257,7 @@ export default function HomePage() {
             className="mb-12 max-w-[520px] mx-auto leading-relaxed"
             style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.55)' }}
           >
-            Fully managed website design with hosting, SSL, and unlimited updates — all for one affordable monthly rate. No technical skills needed. No hidden fees. Just results.
+            Fully managed website design with hosting, SSL, and unlimited updates — all for one affordable monthly rate. No technical skills needed. No hidden fees.
           </p>
 
           {/* CTAs */}
@@ -304,7 +297,6 @@ export default function HomePage() {
           <dl className="grid grid-cols-2 lg:grid-cols-4">
             {stats.map(({ value, label }, index) => (
               <div key={label} className="relative text-center py-4 px-6 lg:px-10">
-                {/* Vertical separator (not on first column) */}
                 {index > 0 && (
                   <div className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-px bg-gray-200 hidden lg:block" />
                 )}
@@ -323,11 +315,10 @@ export default function HomePage() {
         aria-labelledby="services-heading"
         style={{ background: '#FAFAFA' }}
       >
-        {/* Subtle dot pattern */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.05) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(5,150,105,0.05) 1.5px, transparent 1.5px)',
             backgroundSize: '32px 32px',
           }}
         />
@@ -349,12 +340,12 @@ export default function HomePage() {
               <article
                 key={title}
                 className="group bg-white rounded-[20px] p-8 border border-gray-100/80 transition-all duration-300 hover:-translate-y-2
-                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(86,54,209,0.1)]
+                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(5,150,105,0.1)]
                            hover:border-primary-100"
               >
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-primary-600 transition-all duration-300 group-hover:scale-110"
-                  style={{ background: 'linear-gradient(135deg, #EDE9FB 0%, #D3C9F6 100%)' }}
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-primary-700 transition-all duration-300 group-hover:scale-110"
+                  style={{ background: 'linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%)' }}
                 >
                   {icon}
                 </div>
@@ -362,7 +353,7 @@ export default function HomePage() {
                 <p className="text-gray-500 text-sm leading-relaxed mb-5">{desc}</p>
                 <Link
                   href={href}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-500 group-hover:gap-3 transition-all duration-200"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 group-hover:gap-3 transition-all duration-200"
                 >
                   Learn more
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -386,13 +377,10 @@ export default function HomePage() {
       <section
         className="section-pad relative overflow-hidden"
         aria-labelledby="why-heading"
-        style={{ background: 'linear-gradient(135deg, #0D0D1F 0%, #150E35 50%, #0D0D1F 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #020C07 0%, #021A0F 50%, #020C07 100%)' }}
       >
-        {/* Glow orbs */}
-        <div className="absolute pointer-events-none" style={{ top: '-10%', left: '-5%', width: '600px', height: '600px', background: 'rgba(86,54,209,0.14)', borderRadius: '50%', filter: 'blur(130px)' }} />
-        <div className="absolute pointer-events-none" style={{ bottom: '-10%', right: '-5%', width: '500px', height: '500px', background: 'rgba(86,54,209,0.09)', borderRadius: '50%', filter: 'blur(110px)' }} />
-
-        {/* Dot pattern */}
+        <div className="absolute pointer-events-none" style={{ top: '-10%', left: '-5%', width: '600px', height: '600px', background: 'rgba(5,150,105,0.14)', borderRadius: '50%', filter: 'blur(130px)' }} />
+        <div className="absolute pointer-events-none" style={{ bottom: '-10%', right: '-5%', width: '500px', height: '500px', background: 'rgba(5,150,105,0.09)', borderRadius: '50%', filter: 'blur(110px)' }} />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -418,7 +406,7 @@ export default function HomePage() {
               <div key={title} className="card-glass group">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 shrink-0"
-                  style={{ background: 'rgba(86,54,209,0.25)' }}
+                  style={{ background: 'rgba(5,150,105,0.25)' }}
                 >
                   <IconCheck className="w-5 h-5 text-primary-300" />
                 </div>
@@ -474,39 +462,38 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Standard — featured (dark gradient card) */}
+            {/* Standard — dark emerald featured card */}
             <div
               className="relative rounded-[20px] p-8 flex flex-col md:-my-5"
               style={{
-                background: 'linear-gradient(135deg, #3B22A8 0%, #5636D1 50%, #6A4FDB 100%)',
-                boxShadow: '0 32px 80px rgba(86,54,209,0.35), inset 0 1px 0 rgba(255,255,255,0.1)',
+                background: 'linear-gradient(135deg, #065F46 0%, #059669 50%, #10B981 100%)',
+                boxShadow: '0 32px 80px rgba(5,150,105,0.35), inset 0 1px 0 rgba(255,255,255,0.12)',
               }}
             >
-              {/* Most Popular badge */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
                 <span
                   className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-bold tracking-wide uppercase"
-                  style={{ background: '#ffffff', color: '#4428B8', boxShadow: '0 4px 20px rgba(86,54,209,0.3)' }}
+                  style={{ background: '#ffffff', color: '#059669', boxShadow: '0 4px 20px rgba(5,150,105,0.3)' }}
                 >
                   ✦ Most Popular
                 </span>
               </div>
 
               <div className="mb-7 mt-4">
-                <p className="text-xs font-bold tracking-[0.15em] uppercase mb-3" style={{ color: 'rgba(211,201,246,0.8)' }}>Standard</p>
+                <p className="text-xs font-bold tracking-[0.15em] uppercase mb-3" style={{ color: 'rgba(167,243,208,0.85)' }}>Standard</p>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-5xl font-bold text-white">$99</span>
-                  <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>/month</span>
+                  <span className="text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>/month</span>
                 </div>
                 <p className="text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>Best for growing businesses</p>
               </div>
 
               <ul className="space-y-3.5 mb-9 flex-grow">
                 {['Up to 10 pages', 'Everything in Basic', 'Unlimited updates', 'SEO optimization', 'Google Analytics', 'Contact forms', 'Priority support'].map(f => (
-                  <li key={f} className="flex items-center gap-3 text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                  <li key={f} className="flex items-center gap-3 text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>
                     <span
                       className="w-5 h-5 rounded-full flex items-center justify-center shrink-0"
-                      style={{ background: 'rgba(255,255,255,0.15)' }}
+                      style={{ background: 'rgba(255,255,255,0.18)' }}
                     >
                       <IconCheck className="w-3 h-3 text-white" />
                     </span>
@@ -518,7 +505,7 @@ export default function HomePage() {
               <Link
                 href="/contact"
                 className="w-full justify-center py-3.5 rounded-full font-semibold text-[15px] inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5"
-                style={{ background: '#ffffff', color: '#4428B8', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }}
+                style={{ background: '#ffffff', color: '#059669', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }}
               >
                 Get Started
               </Link>
@@ -555,7 +542,7 @@ export default function HomePage() {
 
           <p className="text-center text-sm text-gray-400 mt-10">
             All plans include a 15-day satisfaction period · No long-term contracts ·{' '}
-            <Link href="/pricing" className="text-primary-500 font-semibold hover:text-primary-600 transition-colors">
+            <Link href="/pricing" className="text-primary-600 font-semibold hover:text-primary-700 transition-colors">
               Compare all plan features →
             </Link>
           </p>
@@ -585,24 +572,20 @@ export default function HomePage() {
               <div
                 key={step}
                 className="relative bg-white rounded-[20px] p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-1
-                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_48px_rgba(86,54,209,0.09)]"
+                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_48px_rgba(5,150,105,0.09)]"
               >
-                {/* Large background step number */}
                 <div
                   className="absolute top-6 right-6 font-black leading-none select-none pointer-events-none"
-                  style={{ fontSize: '5rem', color: 'rgba(86,54,209,0.05)' }}
+                  style={{ fontSize: '5rem', color: 'rgba(5,150,105,0.06)' }}
                 >
                   {step}
                 </div>
-
-                {/* Step indicator circle */}
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-base mb-6 relative z-10"
-                  style={{ background: 'linear-gradient(135deg, #4428B8, #6A4FDB)' }}
+                  style={{ background: 'linear-gradient(135deg, #047857, #10B981)' }}
                 >
                   {step}
                 </div>
-
                 <h3 className="text-[1.05rem] font-bold text-dark mb-3 relative z-10">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed relative z-10">{desc}</p>
               </div>
@@ -639,17 +622,14 @@ export default function HomePage() {
                 className="group bg-white border border-gray-100 rounded-[16px] overflow-hidden transition-colors duration-200 hover:border-primary-100"
                 style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}
               >
-                <summary
-                  className="flex items-center justify-between gap-4 cursor-pointer select-none p-7 text-dark font-semibold text-[0.95rem] list-none [&::-webkit-details-marker]:hidden"
-                >
+                <summary className="flex items-center justify-between gap-4 cursor-pointer select-none p-7 text-dark font-semibold text-[0.95rem] list-none [&::-webkit-details-marker]:hidden">
                   <span>{q}</span>
-                  {/* Animated chevron circle */}
                   <span
                     className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 group-open:bg-primary-500"
-                    style={{ background: 'rgba(86,54,209,0.08)' }}
+                    style={{ background: 'rgba(5,150,105,0.08)' }}
                   >
                     <svg
-                      className="w-4 h-4 text-primary-500 group-open:text-white transition-transform duration-300 group-open:rotate-180"
+                      className="w-4 h-4 text-primary-600 group-open:text-white transition-transform duration-300 group-open:rotate-180"
                       fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
@@ -666,7 +646,7 @@ export default function HomePage() {
 
           <p className="text-center text-sm text-gray-400 mt-10">
             Still have questions?{' '}
-            <Link href="/contact" className="text-primary-500 font-semibold hover:text-primary-600 transition-colors">
+            <Link href="/contact" className="text-primary-600 font-semibold hover:text-primary-700 transition-colors">
               Contact us →
             </Link>
           </p>
@@ -677,14 +657,11 @@ export default function HomePage() {
       <section
         className="relative overflow-hidden py-28 lg:py-36"
         aria-label="Call to action"
-        style={{ background: 'linear-gradient(135deg, #0D0D1F 0%, #150E35 50%, #0D0D1F 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #020C07 0%, #021A0F 50%, #020C07 100%)' }}
       >
-        {/* Center glow */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div style={{ width: '800px', height: '600px', background: 'rgba(86,54,209,0.16)', borderRadius: '50%', filter: 'blur(100px)' }} />
+          <div style={{ width: '800px', height: '600px', background: 'rgba(5,150,105,0.15)', borderRadius: '50%', filter: 'blur(100px)' }} />
         </div>
-
-        {/* Grid overlay */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
