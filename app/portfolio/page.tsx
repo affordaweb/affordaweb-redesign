@@ -17,6 +17,39 @@ export const metadata: Metadata = {
 const portfolioItems = [
   {
     id: 1,
+    title: 'Web VA Experts Hub',
+    category: 'Professional Services',
+    plan: 'Standard',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Virtual assistant services website — Web VA Experts Hub',
+    tags: ['Website Design', 'SEO', 'Lead Generation'],
+    result: 'Professional online presence launched',
+    url: 'https://webvaexperts.com',
+  },
+  {
+    id: 2,
+    title: 'Empower Queer Hub',
+    category: 'Community & Advocacy',
+    plan: 'Standard',
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'LGBTQ+ community hub and advocacy website',
+    tags: ['Website Design', 'Community', 'Mobile-First'],
+    result: 'Inclusive community platform built',
+    url: 'https://empowerqueerhub.com',
+  },
+  {
+    id: 3,
+    title: 'Argentum Private Wealth',
+    category: 'Finance',
+    plan: 'Premium',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=80',
+    imageAlt: 'Private wealth management firm website',
+    tags: ['Premium Design', 'SEO', 'Lead Capture'],
+    result: 'High-trust brand presence online',
+    url: 'https://argentumprivatewealth.com',
+  },
+  {
+    id: 4,
     title: 'Local Plumbing Company',
     category: 'Service Business',
     plan: 'Standard',
@@ -26,7 +59,7 @@ const portfolioItems = [
     result: '3x more leads in 60 days',
   },
   {
-    id: 2,
+    id: 5,
     title: 'Freelance Photographer',
     category: 'Portfolio',
     plan: 'Basic',
@@ -36,7 +69,7 @@ const portfolioItems = [
     result: 'Fully booked within a month',
   },
   {
-    id: 3,
+    id: 6,
     title: 'Online Boutique Store',
     category: 'E-Commerce',
     plan: 'Premium',
@@ -46,7 +79,7 @@ const portfolioItems = [
     result: '40+ orders in first week',
   },
   {
-    id: 4,
+    id: 7,
     title: 'Dental Practice',
     category: 'Healthcare',
     plan: 'Standard',
@@ -56,7 +89,7 @@ const portfolioItems = [
     result: 'Page 1 for local searches',
   },
   {
-    id: 5,
+    id: 8,
     title: 'Real Estate Agent',
     category: 'Real Estate',
     plan: 'Standard',
@@ -66,7 +99,7 @@ const portfolioItems = [
     result: '200% increase in inquiries',
   },
   {
-    id: 6,
+    id: 9,
     title: 'Fitness Coach',
     category: 'Health & Wellness',
     plan: 'Basic',
@@ -77,7 +110,7 @@ const portfolioItems = [
   },
 ]
 
-const categories = ['All', 'Service Business', 'Portfolio', 'E-Commerce', 'Healthcare', 'Real Estate', 'Health & Wellness']
+const categories = ['All', 'Professional Services', 'Community & Advocacy', 'Finance', 'Service Business', 'Portfolio', 'E-Commerce', 'Healthcare', 'Real Estate', 'Health & Wellness']
 
 export default function PortfolioPage() {
   return (
@@ -87,7 +120,7 @@ export default function PortfolioPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                         w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-cyan-400">Our Work</p>
+          <p className="section-label text-primary-400">Our Work</p>
           <h1 className="section-title-white mb-6">
             Websites That Drive Real Results
           </h1>
@@ -140,7 +173,7 @@ export default function PortfolioPage() {
 
                 <div className="flex items-start justify-between gap-2 mb-2">
                   <div>
-                    <p className="text-xs font-semibold text-cyan-500 uppercase tracking-widest mb-1">
+                    <p className="text-xs font-semibold text-primary-500 uppercase tracking-widest mb-1">
                       {item.category}
                     </p>
                     <h3 className="font-bold text-dark text-lg">{item.title}</h3>
@@ -157,10 +190,20 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Result */}
-                <div className="pt-4 border-t border-gray-100">
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-3">
                   <p className="text-sm font-semibold text-primary-500">
                     Result: <span className="gradient-text">{item.result}</span>
                   </p>
+                  {'url' in item && item.url && (
+                    <a
+                      href={(item as { url: string }).url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-white bg-primary-500 hover:bg-primary-600 transition-colors px-3 py-1.5 rounded-full shrink-0"
+                    >
+                      Live Site →
+                    </a>
+                  )}
                 </div>
               </article>
             ))}

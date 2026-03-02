@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 function Check({ dim = false }: { dim?: boolean }) {
   return (
     <svg
-      className={`w-5 h-5 shrink-0 ${dim ? 'text-gray-300' : 'text-cyan-500'}`}
+      className={`w-5 h-5 shrink-0 ${dim ? 'text-gray-300' : 'text-primary-500'}`}
       fill="none" viewBox="0 0 24 24" stroke="currentColor"
     >
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
@@ -158,7 +158,7 @@ export default function PricingPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                         w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
         <div className="container-tight relative z-10">
-          <p className="section-label text-cyan-400">Transparent Pricing</p>
+          <p className="section-label text-primary-400">Transparent Pricing</p>
           <h1 className="section-title-white mb-6">
             One Monthly Rate.<br className="hidden sm:block" /> Everything Included.
           </h1>
@@ -185,7 +185,7 @@ export default function PricingPage() {
               >
                 {plan.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="badge bg-cyan-500 text-dark px-4 py-1.5 text-xs font-bold tracking-wide uppercase shadow-btn">
+                    <span className="badge bg-primary-500 text-dark px-4 py-1.5 text-xs font-bold tracking-wide uppercase shadow-btn">
                       Most Popular
                     </span>
                   </div>
@@ -302,7 +302,7 @@ export default function PricingPage() {
           </div>
           <div className="space-y-4">
             {faqs.map(({ q, a }) => (
-              <details key={q} className="group card border border-gray-100 p-0 overflow-hidden hover:border-cyan-200 transition-colors">
+              <details key={q} className="group card border border-gray-100 p-0 overflow-hidden hover:border-primary-200 transition-colors">
                 <summary className="flex items-center justify-between gap-4 cursor-pointer select-none p-6 text-dark font-semibold text-base list-none [&::-webkit-details-marker]:hidden">
                   <span>{q}</span>
                   <svg className="w-5 h-5 text-primary-500 shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">

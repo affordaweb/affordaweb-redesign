@@ -30,7 +30,7 @@ export default function ContactPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                         w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-cyan-400">Get in Touch</p>
+          <p className="section-label text-primary-400">Get in Touch</p>
           <h1 className="section-title-white mb-6">
             Let&apos;s Build Your Website
           </h1>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                 <h3 className="font-bold text-dark mb-1">Email Us</h3>
                 <a
                   href="mailto:hello@affordawebsolutions.com"
-                  className="text-cyan-500 hover:text-primary-500 transition-colors font-medium text-sm"
+                  className="text-primary-500 hover:text-primary-500 transition-colors font-medium text-sm"
                 >
                   hello@affordawebsolutions.com
                 </a>
@@ -76,7 +76,7 @@ export default function ContactPage() {
               </div>
 
               {/* Response promise */}
-              <div className="card bg-gradient-to-br from-primary-50 to-cyan-50 border-primary-100">
+              <div className="card bg-gradient-to-br from-primary-50 to-primary-100/40 border-primary-100">
                 <svg className="w-10 h-10 text-primary-500 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -95,7 +95,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 gap-2">
                   {reasons.map(({ title, desc }) => (
                     <div key={title} className="flex items-start gap-3 p-3 rounded-xl hover:bg-white transition-colors">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-2 shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 shrink-0" />
                       <div>
                         <p className="text-sm font-semibold text-dark">{title}</p>
                         <p className="text-xs text-gray-500">{desc}</p>
@@ -114,13 +114,20 @@ export default function ContactPage() {
                   Fill out the form below and we will get back to you with a personalized quote.
                 </p>
 
-                {/* Static form — action can be pointed to Formspree/Netlify Forms */}
                 <form
-                  action="https://formspree.io/f/your-form-id"
+                  action="https://api.web3forms.com/submit"
                   method="POST"
                   className="space-y-5"
                   aria-label="Contact form"
                 >
+                  {/* Web3Forms hidden fields */}
+                  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+                  <input type="hidden" name="subject" value="New Quote Request — AffordaWeb Solutions" />
+                  <input type="hidden" name="from_name" value="AffordaWeb Solutions Website" />
+                  <input type="hidden" name="to" value="hello@affordawebsolutions.com" />
+                  <input type="hidden" name="cc" value="va.saifcastle@gmail.com" />
+                  <input type="hidden" name="redirect" value="https://affordawebsolutions.com/contact?success=true" />
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold text-dark mb-2">
@@ -134,7 +141,7 @@ export default function ContactPage() {
                         placeholder="John Smith"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200
                                    text-dark text-sm placeholder:text-gray-300
-                                   focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500
+                                   focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500
                                    transition-all"
                       />
                     </div>
@@ -150,7 +157,7 @@ export default function ContactPage() {
                         placeholder="john@example.com"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200
                                    text-dark text-sm placeholder:text-gray-300
-                                   focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500
+                                   focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500
                                    transition-all"
                       />
                     </div>
@@ -167,7 +174,7 @@ export default function ContactPage() {
                       placeholder="https://example.com"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200
                                  text-dark text-sm placeholder:text-gray-300
-                                 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500
+                                 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500
                                  transition-all"
                     />
                   </div>
@@ -182,7 +189,7 @@ export default function ContactPage() {
                       required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200
                                  text-dark text-sm bg-white
-                                 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500
+                                 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500
                                  transition-all"
                     >
                       <option value="">Select a service…</option>
@@ -205,7 +212,7 @@ export default function ContactPage() {
                       required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200
                                  text-dark text-sm bg-white
-                                 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500
+                                 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500
                                  transition-all"
                     >
                       <option value="">Select budget range…</option>
@@ -228,7 +235,7 @@ export default function ContactPage() {
                       placeholder="Tell us about your business, what you're looking for, and any goals you have for your website…"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200
                                  text-dark text-sm placeholder:text-gray-300 resize-none
-                                 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500
+                                 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500
                                  transition-all"
                     />
                   </div>
@@ -245,7 +252,7 @@ export default function ContactPage() {
 
                   <p className="text-center text-xs text-gray-400 pt-2">
                     By submitting this form you agree to our{' '}
-                    <Link href="/privacy" className="text-cyan-500 hover:underline">Privacy Policy</Link>.
+                    <Link href="/privacy" className="text-primary-500 hover:underline">Privacy Policy</Link>.
                     We never share your information.
                   </p>
                 </form>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 function IconCheck() {
   return (
-    <svg className="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
     </svg>
   )
@@ -221,7 +221,7 @@ export default function ServicesPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                         w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
         <div className="container-tight relative z-10">
-          <p className="section-label text-cyan-400">What We Offer</p>
+          <p className="section-label text-primary-400">What We Offer</p>
           <h1 className="section-title-white mb-6">
             Affordable Web Design Services<br className="hidden sm:block" /> for Small Businesses
           </h1>
@@ -282,7 +282,7 @@ export default function ServicesPage() {
                 <div className="mt-6 pt-6 border-t border-gray-100">
                   <Link
                     href="/pricing"
-                    className="text-sm font-semibold text-primary-500 hover:text-cyan-500 transition-colors"
+                    className="text-sm font-semibold text-primary-500 hover:text-primary-500 transition-colors"
                   >
                     View pricing for this service →
                   </Link>
@@ -297,10 +297,10 @@ export default function ServicesPage() {
       <section className="section-pad bg-gradient-hero relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                          w-[600px] h-[400px] bg-cyan-500/15 rounded-full blur-[150px]" />
+                          w-[600px] h-[400px] bg-primary-500/15 rounded-full blur-[150px]" />
         </div>
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-cyan-400">Ready to Get Started?</p>
+          <p className="section-label text-primary-400">Ready to Get Started?</p>
           <h2 className="section-title-white mb-6">
             Let&apos;s Build Something Great Together
           </h2>

@@ -94,7 +94,7 @@ export default function AboutPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                         w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-cyan-400">Our Story</p>
+          <p className="section-label text-primary-400">Our Story</p>
           <h1 className="section-title-white mb-6">
             Professional Websites for Every Budget
           </h1>
@@ -211,9 +211,9 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="section-pad bg-gradient-hero relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-[600px] h-[400px] bg-cyan-500/15 rounded-full blur-[150px] pointer-events-none" />
+                        w-[600px] h-[400px] bg-primary-500/15 rounded-full blur-[150px] pointer-events-none" />
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-cyan-400">Let&apos;s Work Together</p>
+          <p className="section-label text-primary-400">Let&apos;s Work Together</p>
           <h2 className="section-title-white mb-6">
             Your Website Journey Starts Here
           </h2>

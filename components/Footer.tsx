@@ -65,7 +65,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:hello@affordawebsolutions.com"
-              className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300
+              className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300
                          text-sm font-medium transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,7 +86,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-white/50 text-sm hover:text-cyan-400 transition-colors"
+                    className="text-white/50 text-sm hover:text-primary-400 transition-colors"
                   >
                     {label}
                   </Link>
@@ -105,7 +105,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-white/50 text-sm hover:text-cyan-400 transition-colors"
+                    className="text-white/50 text-sm hover:text-primary-400 transition-colors"
                   >
                     {label}
                   </Link>
@@ -128,7 +128,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-white/50 text-sm hover:text-cyan-400 transition-colors"
+                    className="text-white/50 text-sm hover:text-primary-400 transition-colors"
                   >
                     {label}
                   </Link>
@@ -138,7 +138,7 @@ export default function Footer() {
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-1.5 text-sm font-semibold
-                             text-cyan-500 hover:text-cyan-400 transition-colors"
+                             text-primary-500 hover:text-primary-400 transition-colors"
                 >
                   Get a Free Quote →
                 </Link>

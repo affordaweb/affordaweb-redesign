@@ -3,16 +3,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'AffordaWeb Solutions | Affordable Website Design Starting at $69/mo',
+  title: 'AffordaWeb Solutions | Affordable Website Design Services from $69/mo',
   description:
-    'Get a professional, custom website with hosting, SSL, and unlimited updates — all for one low monthly rate. Affordable website design built for small businesses.',
+    'AffordaWeb Solutions offers affordable website design services for small businesses starting at $69/month. Cheap web design with hosting, SSL, and unlimited updates included. Get a free quote today.',
   alternates: { canonical: 'https://affordawebsolutions.com' },
+  keywords: 'affordable website design, website design services, cheap web design, budget web design, website design near me, small business website design',
 }
 
 // ─── Icons ──────────────────────────────────────────────────────────────────
 function IconCheck() {
   return (
-    <svg className="w-5 h-5 text-cyan-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg className="w-5 h-5 text-primary-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
     </svg>
   )
@@ -200,8 +201,8 @@ export default function HomePage() {
         {/* Background glows */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-[120px] animate-pulse-glow" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/15 rounded-full blur-[100px] animate-pulse-glow [animation-delay:1.5s]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/5 rounded-full blur-[150px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-500/15 rounded-full blur-[100px] animate-pulse-glow [animation-delay:1.5s]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-500/5 rounded-full blur-[150px]" />
         </div>
 
         {/* Grid overlay */}
@@ -217,15 +218,15 @@ export default function HomePage() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full
                           bg-white/5 border border-white/10 text-white/80 text-sm font-medium mb-8">
-            <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
             Professional Websites for Small Businesses
           </div>
 
           {/* H1 */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white
                          leading-[1.05] tracking-tight mb-6 text-balance">
-            Your Business Deserves{' '}
-            <span className="gradient-text">a Better Website</span>
+            Less Talk.{' '}
+            <span className="gradient-text">Let&apos;s Build.</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -253,7 +254,7 @@ export default function HomePage() {
               'Cancel anytime',
             ].map((item) => (
               <span key={item} className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                     clipRule="evenodd" />
@@ -309,7 +310,7 @@ export default function HomePage() {
                 <Link
                   href={href}
                   className="inline-flex items-center gap-1.5 text-sm font-semibold
-                             text-primary-500 hover:text-cyan-500 transition-colors group-hover:gap-2.5"
+                             text-primary-500 hover:text-primary-500 transition-colors group-hover:gap-2.5"
                 >
                   Learn more
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -333,7 +334,7 @@ export default function HomePage() {
       <section className="section-pad bg-dark relative overflow-hidden" aria-labelledby="why-heading">
         {/* Glow */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/8 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-500/8 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container-tight relative z-10">
           <div className="text-center mb-16">
@@ -350,7 +351,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {reasons.map(({ title, desc }) => (
               <div key={title} className="card-glass group">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-primary-500/20
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400/20 to-primary-500/20
                                 flex items-center justify-center mb-4">
                   <IconCheck />
                 </div>
@@ -400,7 +401,7 @@ export default function HomePage() {
             {/* Standard — highlighted */}
             <div id="standard" className="card pricing-popular flex flex-col bg-gradient-to-b from-primary-50 to-white">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span className="badge bg-cyan-500 text-dark px-4 py-1.5 text-xs font-bold tracking-wide uppercase shadow-btn">
+                <span className="badge bg-primary-500 text-white px-4 py-1.5 text-xs font-bold tracking-wide uppercase shadow-btn">
                   Most Popular
                 </span>
               </div>
@@ -445,7 +446,7 @@ export default function HomePage() {
 
           <p className="text-center text-sm text-gray-400 mt-8">
             All plans include a 15-day satisfaction period. · No long-term contracts. ·{' '}
-            <Link href="/pricing" className="text-cyan-500 hover:text-primary-500 font-semibold transition-colors">
+            <Link href="/pricing" className="text-primary-500 hover:text-primary-500 font-semibold transition-colors">
               Compare all plan features →
             </Link>
           </p>
@@ -468,7 +469,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             {/* Connector line (desktop) */}
-            <div className="hidden md:block absolute top-10 left-[calc(16.6%+1.5rem)] right-[calc(16.6%+1.5rem)] h-px bg-gradient-to-r from-primary-500/30 via-cyan-500/50 to-primary-500/30" />
+            <div className="hidden md:block absolute top-10 left-[calc(16.6%+1.5rem)] right-[calc(16.6%+1.5rem)] h-px bg-gradient-to-r from-primary-500/30 via-primary-400/50 to-primary-500/30" />
 
             {steps.map(({ step, title, desc }) => (
               <div key={step} className="relative flex flex-col items-center text-center">
@@ -510,7 +511,7 @@ export default function HomePage() {
               <details
                 key={q}
                 className="group card border border-gray-100 p-0 overflow-hidden
-                           hover:border-cyan-200 transition-colors"
+                           hover:border-primary-200 transition-colors"
               >
                 <summary
                   className="flex items-center justify-between gap-4 cursor-pointer
@@ -536,7 +537,7 @@ export default function HomePage() {
 
           <p className="text-center text-sm text-gray-400 mt-8">
             Still have questions?{' '}
-            <Link href="/contact" className="text-cyan-500 font-semibold hover:text-primary-500 transition-colors">
+            <Link href="/contact" className="text-primary-500 font-semibold hover:text-primary-500 transition-colors">
               Contact us →
             </Link>
           </p>
@@ -553,7 +554,7 @@ export default function HomePage() {
                           w-[700px] h-[400px] bg-primary-500/20 rounded-full blur-[150px]" />
         </div>
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-cyan-400">Less Talk. Let&apos;s Build.</p>
+          <p className="section-label text-primary-400">Less Talk. Let&apos;s Build.</p>
           <h2 className="section-title-white mb-6">
             Ready for a Website That Works for Your Business?
           </h2>

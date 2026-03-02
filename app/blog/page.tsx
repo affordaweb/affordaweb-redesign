@@ -102,7 +102,7 @@ export default function BlogPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                         w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-cyan-400">Resources & Tips</p>
+          <p className="section-label text-primary-400">Resources & Tips</p>
           <h1 className="section-title-white mb-6">
             Web Design & SEO Insights for Small Businesses
           </h1>
@@ -161,7 +161,7 @@ export default function BlogPage() {
                   <p className="text-gray-500 text-sm leading-relaxed mb-5">{featured.excerpt}</p>
                   <Link
                     href={`/blog/${featured.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-500 hover:text-primary-500 transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary-500 hover:text-primary-500 transition-colors"
                   >
                     Read Article
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -203,7 +203,7 @@ export default function BlogPage() {
                   <span className="text-xs text-gray-400">{post.date}</span>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="text-xs font-semibold text-cyan-500 hover:text-primary-500 transition-colors"
+                    className="text-xs font-semibold text-primary-500 hover:text-primary-500 transition-colors"
                   >
                     Read more →
                   </Link>
@@ -230,7 +230,7 @@ export default function BlogPage() {
               type="email"
               placeholder="Your email address"
               className="flex-1 px-4 py-3 rounded-full text-dark text-sm
-                         focus:outline-none focus:ring-2 focus:ring-cyan-500/50 border-2 border-white/10 bg-white/10 text-white placeholder:text-white/40"
+                         focus:outline-none focus:ring-2 focus:ring-primary-500/50 border-2 border-white/10 bg-white/10 text-white placeholder:text-white/40"
             />
             <button type="submit" className="btn-primary px-6 py-3 shrink-0">
               Subscribe
