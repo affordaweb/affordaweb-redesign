@@ -26,20 +26,20 @@ export default function Footer() {
   return (
     <footer className="bg-dark border-t border-white/5" aria-label="Site footer">
       {/* Pre-footer CTA */}
-      <div className="bg-gradient-cta">
+      <div className="bg-primary-50 border-t border-primary-100">
         <div className="container-tight py-16 text-center">
-          <p className="section-label text-dark/60">Ready to Grow Online?</p>
+          <p className="section-label">Ready to Grow Online?</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-dark mb-4">
             Get Your Professional Website Today
           </h2>
-          <p className="text-dark/70 text-lg mb-8 max-w-xl mx-auto">
-            Starting at just <strong>$69/month</strong>. Hosting, SSL, maintenance, and unlimited updates — all included.
+          <p className="text-gray-500 text-lg mb-8 max-w-xl mx-auto">
+            Starting at just <strong className="text-primary-700">$69/month</strong>. Hosting, SSL, maintenance, and unlimited updates — all included.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-secondary border-dark text-dark hover:bg-dark hover:text-white">
+            <Link href="/contact" className="btn-primary">
               Get a Free Quote
             </Link>
-            <Link href="/pricing" className="btn-outline-white border-dark/40 text-dark hover:bg-dark hover:text-white">
+            <Link href="/pricing" className="btn-secondary">
               View Pricing
             </Link>
           </div>

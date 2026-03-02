@@ -42,7 +42,7 @@ const config: Config = {
         display: ['var(--font-inter)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-hero':    'linear-gradient(135deg, #F0F7FF 0%, #FFFFFF 60%, #EBF5FF 100%)',
+        'gradient-hero':    'linear-gradient(135deg, #091829 0%, #0F2040 50%, #091829 100%)',
         'gradient-primary': 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)',
         'gradient-cta':     'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #4D9BE5 100%)',
         'gradient-card':    'linear-gradient(145deg, rgba(40,120,196,0.06) 0%, rgba(40,120,196,0.02) 100%)',
