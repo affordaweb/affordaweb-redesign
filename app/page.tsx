@@ -10,24 +10,26 @@ export const metadata: Metadata = {
   keywords: 'affordable website design, website design services, cheap web design, budget web design, website design near me, small business website design',
 }
 
-// ─── Icons ──────────────────────────────────────────────────────────────────
-function IconCheck() {
-  return (
-    <svg className="w-5 h-5 text-primary-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-    </svg>
-  )
-}
+// ─── Shared icon components ───────────────────────────────────────────────────
 
 function IconArrow() {
   return (
-    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
     </svg>
   )
 }
 
-// ─── Service cards data ──────────────────────────────────────────────────────
+function IconCheck({ className = 'w-4 h-4' }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+    </svg>
+  )
+}
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
 const services = [
   {
     icon: (
@@ -98,7 +100,6 @@ const services = [
   },
 ]
 
-// ─── Process steps ───────────────────────────────────────────────────────────
 const steps = [
   {
     step: '01',
@@ -117,7 +118,6 @@ const steps = [
   },
 ]
 
-// ─── FAQ ─────────────────────────────────────────────────────────────────────
 const faqs = [
   {
     q: 'What is included in the monthly fee?',
@@ -145,23 +145,23 @@ const faqs = [
   },
 ]
 
-// ─── Why choose us ───────────────────────────────────────────────────────────
 const reasons = [
-  { title: 'All-Inclusive Plans',  desc: 'Hosting, SSL, maintenance, and updates — one monthly price, zero surprises.' },
-  { title: 'SEO-First Approach',   desc: 'Every site is built to rank. We follow Google best practices from day one.' },
-  { title: 'Fast Delivery',        desc: 'From kickoff to live website in 10–15 business days — not months.' },
-  { title: 'Mobile-First Design',  desc: 'Over 60% of traffic is mobile. Your site is built for every screen size.' },
-  { title: 'Dedicated Support',    desc: 'Real humans respond to your emails within 24 hours, every time.' },
+  { title: 'All-Inclusive Plans',    desc: 'Hosting, SSL, maintenance, and updates — one monthly price, zero surprises.' },
+  { title: 'SEO-First Approach',     desc: 'Every site is built to rank. We follow Google best practices from day one.' },
+  { title: 'Fast Delivery',          desc: 'From kickoff to live website in 10–15 business days — not months.' },
+  { title: 'Mobile-First Design',    desc: 'Over 60% of traffic is mobile. Your site is built for every screen size.' },
+  { title: 'Dedicated Support',      desc: 'Real humans respond to your emails within 24 hours, every time.' },
   { title: 'No Long-Term Contracts', desc: 'Month-to-month plans. No lock-in. Stay because you love the results.' },
 ]
 
-// ─── Trusted by stats ────────────────────────────────────────────────────────
 const stats = [
-  { value: '100+', label: 'Websites Launched' },
+  { value: '100+',  label: 'Websites Launched' },
   { value: '10–15', label: 'Day Delivery' },
   { value: '99.9%', label: 'Uptime Guaranteed' },
   { value: '$69',   label: 'Starting Monthly' },
 ]
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
   const faqSchema = {
@@ -181,83 +181,109 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      {/* ── HERO ────────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden"
+        className="relative min-h-screen flex items-center overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #0D0D1F 0%, #150E35 50%, #0D0D1F 100%)' }}
         aria-label="Hero section"
       >
-        {/* Background photo */}
+        {/* Background image — very subtle */}
         <div className="absolute inset-0 pointer-events-none">
           <Image
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&auto=format&fit=crop&q=60"
             alt=""
             fill
             priority
-            className="object-cover opacity-10"
+            className="object-cover"
+            style={{ opacity: 0.06 }}
             aria-hidden="true"
           />
-        </div>
-
-        {/* Background glows */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-[120px] animate-pulse-glow" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-500/15 rounded-full blur-[100px] animate-pulse-glow [animation-delay:1.5s]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-500/5 rounded-full blur-[150px]" />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, rgba(13,13,31,0.6) 0%, transparent 40%, rgba(13,13,31,0.8) 100%)' }}
+          />
         </div>
 
         {/* Grid overlay */}
         <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+            backgroundSize: '80px 80px',
           }}
         />
 
-        <div className="container-tight relative z-10 pt-28 pb-20 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full
-                          bg-white/5 border border-white/10 text-white/80 text-sm font-medium mb-8">
-            <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
-            Professional Websites for Small Businesses
+        {/* Gradient orbs */}
+        <div
+          className="absolute pointer-events-none animate-pulse-glow"
+          style={{ top: '15%', left: '5%', width: '600px', height: '600px', background: 'rgba(86,54,209,0.18)', borderRadius: '50%', filter: 'blur(120px)' }}
+        />
+        <div
+          className="absolute pointer-events-none animate-pulse-glow"
+          style={{ bottom: '10%', right: '5%', width: '500px', height: '500px', background: 'rgba(86,54,209,0.12)', borderRadius: '50%', filter: 'blur(100px)', animationDelay: '2s' }}
+        />
+
+        {/* Center radial glow behind text */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div style={{ width: '900px', height: '500px', background: 'rgba(86,54,209,0.09)', borderRadius: '50%', filter: 'blur(80px)' }} />
+        </div>
+
+        {/* Content */}
+        <div className="container-tight relative z-10 pt-36 pb-28 text-center">
+
+          {/* Eyebrow badge */}
+          <div
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-10"
+            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)' }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse" />
+            <span className="text-white/75 text-sm font-medium">Professional Website Design for Small Businesses</span>
           </div>
 
           {/* H1 */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white
-                         leading-[1.05] tracking-tight mb-6 text-balance">
+          <h1
+            className="font-bold text-white tracking-tight mb-8 text-balance"
+            style={{ fontSize: 'clamp(2.75rem, 7vw, 5.5rem)', lineHeight: 1.0 }}
+          >
             Less Talk.{' '}
-            <span className="gradient-text">Let&apos;s Build.</span>
+            <span
+              className="block sm:inline"
+              style={{
+                background: 'linear-gradient(135deg, #A897EE 0%, #D3C9F6 50%, #ffffff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Let&apos;s Build.
+            </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Fully managed website design with hosting, SSL, and unlimited updates — all for one affordable monthly rate.
-            No technical skills needed. No hidden fees. Just results.
+          {/* Subheadline */}
+          <p
+            className="mb-12 max-w-[520px] mx-auto leading-relaxed"
+            style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.55)' }}
+          >
+            Fully managed website design with hosting, SSL, and unlimited updates — all for one affordable monthly rate. No technical skills needed. No hidden fees. Just results.
           </p>
 
-          {/* CTA row */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14">
-            <Link href="/contact" className="btn-primary text-base px-8 py-4">
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <Link href="/contact" className="btn-primary px-9 py-4 text-[15px]">
               Get My Free Quote
               <IconArrow />
             </Link>
-            <Link href="/pricing" className="btn-outline-white text-base px-8 py-4">
-              View Plans & Pricing
+            <Link href="/pricing" className="btn-outline-white px-9 py-4 text-[15px]">
+              View Plans &amp; Pricing
             </Link>
           </div>
 
           {/* Trust row */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-white/50 text-sm">
-            {[
-              'No long-term contracts',
-              'Setup in 10–15 days',
-              'Hosting included',
-              'Cancel anytime',
-            ].map((item) => (
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm" style={{ color: 'rgba(255,255,255,0.35)' }}>
+            {['No long-term contracts', 'Setup in 10–15 days', 'Hosting included', 'Cancel anytime'].map(item => (
               <span key={item} className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd" />
+                <svg className="w-4 h-4 text-primary-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 {item}
               </span>
@@ -265,28 +291,48 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+        {/* Bottom fade to white */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+          style={{ background: 'linear-gradient(to top, #ffffff 0%, transparent 100%)' }}
+        />
       </section>
 
-      {/* ── Stats bar ────────────────────────────────────────────────── */}
-      <section className="bg-white py-12 border-b border-gray-100" aria-label="Key stats">
+      {/* ── STATS BAR ───────────────────────────────────────────────── */}
+      <section className="bg-white py-14 border-b border-gray-100" aria-label="Key stats">
         <div className="container-tight">
-          <dl className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map(({ value, label }) => (
-              <div key={label} className="text-center">
-                <dt className="text-3xl sm:text-4xl font-bold gradient-text mb-1">{value}</dt>
-                <dd className="text-sm text-gray-500 font-medium">{label}</dd>
+          <dl className="grid grid-cols-2 lg:grid-cols-4">
+            {stats.map(({ value, label }, index) => (
+              <div key={label} className="relative text-center py-4 px-6 lg:px-10">
+                {/* Vertical separator (not on first column) */}
+                {index > 0 && (
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-px bg-gray-200 hidden lg:block" />
+                )}
+                <dt className="text-4xl sm:text-5xl font-bold gradient-text mb-2 tabular-nums">{value}</dt>
+                <dd className="text-sm text-gray-400 font-medium tracking-wide">{label}</dd>
               </div>
             ))}
           </dl>
         </div>
       </section>
 
-      {/* ── Services overview ─────────────────────────────────────────── */}
-      <section className="section-pad bg-surface" id="services" aria-labelledby="services-heading">
-        <div className="container-tight">
-          {/* Heading */}
+      {/* ── SERVICES ────────────────────────────────────────────────── */}
+      <section
+        className="section-pad relative overflow-hidden"
+        id="services"
+        aria-labelledby="services-heading"
+        style={{ background: '#FAFAFA' }}
+      >
+        {/* Subtle dot pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.05) 1.5px, transparent 1.5px)',
+            backgroundSize: '32px 32px',
+          }}
+        />
+
+        <div className="container-tight relative">
           <div className="text-center mb-16">
             <p className="section-label">What We Do</p>
             <h2 id="services-heading" className="section-title">
@@ -298,22 +344,28 @@ export default function HomePage() {
             <div className="divider-glow" />
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map(({ icon, title, desc, href }) => (
-              <article key={title} className="card group">
-                <div className="icon-wrap group-hover:scale-110 transition-transform duration-300">
+              <article
+                key={title}
+                className="group bg-white rounded-[20px] p-8 border border-gray-100/80 transition-all duration-300 hover:-translate-y-2
+                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(86,54,209,0.1)]
+                           hover:border-primary-100"
+              >
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-primary-600 transition-all duration-300 group-hover:scale-110"
+                  style={{ background: 'linear-gradient(135deg, #EDE9FB 0%, #D3C9F6 100%)' }}
+                >
                   {icon}
                 </div>
-                <h3 className="text-lg font-bold text-dark mb-2">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
+                <h3 className="text-[1.05rem] font-bold text-dark mb-2.5">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-5">{desc}</p>
                 <Link
                   href={href}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold
-                             text-primary-500 hover:text-primary-500 transition-colors group-hover:gap-2.5"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-500 group-hover:gap-3 transition-all duration-200"
                 >
                   Learn more
-                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
@@ -321,7 +373,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-14">
             <Link href="/services" className="btn-primary">
               Explore All Services
               <IconArrow />
@@ -330,11 +382,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Why choose us ─────────────────────────────────────────────── */}
-      <section className="section-pad bg-dark relative overflow-hidden" aria-labelledby="why-heading">
-        {/* Glow */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-500/8 rounded-full blur-[120px] pointer-events-none" />
+      {/* ── WHY CHOOSE US ───────────────────────────────────────────── */}
+      <section
+        className="section-pad relative overflow-hidden"
+        aria-labelledby="why-heading"
+        style={{ background: 'linear-gradient(135deg, #0D0D1F 0%, #150E35 50%, #0D0D1F 100%)' }}
+      >
+        {/* Glow orbs */}
+        <div className="absolute pointer-events-none" style={{ top: '-10%', left: '-5%', width: '600px', height: '600px', background: 'rgba(86,54,209,0.14)', borderRadius: '50%', filter: 'blur(130px)' }} />
+        <div className="absolute pointer-events-none" style={{ bottom: '-10%', right: '-5%', width: '500px', height: '500px', background: 'rgba(86,54,209,0.09)', borderRadius: '50%', filter: 'blur(110px)' }} />
+
+        {/* Dot pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+          }}
+        />
 
         <div className="container-tight relative z-10">
           <div className="text-center mb-16">
@@ -348,22 +413,24 @@ export default function HomePage() {
             <div className="divider-glow" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {reasons.map(({ title, desc }) => (
               <div key={title} className="card-glass group">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400/20 to-primary-500/20
-                                flex items-center justify-center mb-4">
-                  <IconCheck />
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 shrink-0"
+                  style={{ background: 'rgba(86,54,209,0.25)' }}
+                >
+                  <IconCheck className="w-5 h-5 text-primary-300" />
                 </div>
-                <h3 className="text-white font-bold mb-2">{title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
+                <h3 className="text-white font-bold text-[1rem] mb-2">{title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Pricing preview ───────────────────────────────────────────── */}
+      {/* ── PRICING PREVIEW ─────────────────────────────────────────── */}
       <section className="section-pad bg-white" id="pricing" aria-labelledby="pricing-heading">
         <div className="container-tight">
           <div className="text-center mb-16">
@@ -377,84 +444,130 @@ export default function HomePage() {
             <div className="divider-glow" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-center">
+
             {/* Basic */}
-            <div id="basic" className="card border-gray-100 flex flex-col">
-              <div className="mb-6">
-                <p className="text-sm font-bold text-gray-400 tracking-widest uppercase mb-2">Basic</p>
-                <div className="flex items-baseline gap-1 mb-1">
-                  <span className="text-4xl font-bold text-dark">$69</span>
+            <div
+              className="bg-white rounded-[20px] p-8 border border-gray-100 flex flex-col"
+              style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.05)' }}
+            >
+              <div className="mb-7">
+                <p className="text-xs font-bold text-gray-400 tracking-[0.15em] uppercase mb-3">Basic</p>
+                <div className="flex items-baseline gap-1 mb-2">
+                  <span className="text-5xl font-bold text-dark">$69</span>
                   <span className="text-gray-400 text-sm">/month</span>
                 </div>
                 <p className="text-sm text-gray-500">Perfect for getting online fast</p>
               </div>
-              <ul className="space-y-3 mb-8 flex-grow">
-                {['1–5 page website','Mobile-responsive design','Hosting & SSL included','1 business email','1 update per month','Basic maintenance'].map(f => (
-                  <li key={f} className="flex items-center gap-2.5 text-sm text-gray-600">
-                    <IconCheck />{f}
+              <ul className="space-y-3.5 mb-9 flex-grow">
+                {['1–5 page website', 'Mobile-responsive design', 'Hosting & SSL included', '1 business email', '1 update per month', 'Basic maintenance'].map(f => (
+                  <li key={f} className="flex items-center gap-3 text-sm text-gray-600">
+                    <span className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                      <IconCheck className="w-3 h-3 text-gray-500" />
+                    </span>
+                    {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="btn-secondary w-full justify-center">Get Started</Link>
+              <Link href="/contact" className="btn-secondary w-full justify-center py-3.5 text-[15px]">
+                Get Started
+              </Link>
             </div>
 
-            {/* Standard — highlighted */}
-            <div id="standard" className="card pricing-popular flex flex-col bg-gradient-to-b from-primary-50 to-white">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                <span className="badge bg-primary-500 text-white px-4 py-1.5 text-xs font-bold tracking-wide uppercase shadow-btn">
-                  Most Popular
+            {/* Standard — featured (dark gradient card) */}
+            <div
+              className="relative rounded-[20px] p-8 flex flex-col md:-my-5"
+              style={{
+                background: 'linear-gradient(135deg, #3B22A8 0%, #5636D1 50%, #6A4FDB 100%)',
+                boxShadow: '0 32px 80px rgba(86,54,209,0.35), inset 0 1px 0 rgba(255,255,255,0.1)',
+              }}
+            >
+              {/* Most Popular badge */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                <span
+                  className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-bold tracking-wide uppercase"
+                  style={{ background: '#ffffff', color: '#4428B8', boxShadow: '0 4px 20px rgba(86,54,209,0.3)' }}
+                >
+                  ✦ Most Popular
                 </span>
               </div>
-              <div className="mb-6 mt-2">
-                <p className="text-sm font-bold text-primary-500 tracking-widest uppercase mb-2">Standard</p>
-                <div className="flex items-baseline gap-1 mb-1">
-                  <span className="text-4xl font-bold gradient-text">$99</span>
-                  <span className="text-gray-400 text-sm">/month</span>
+
+              <div className="mb-7 mt-4">
+                <p className="text-xs font-bold tracking-[0.15em] uppercase mb-3" style={{ color: 'rgba(211,201,246,0.8)' }}>Standard</p>
+                <div className="flex items-baseline gap-1 mb-2">
+                  <span className="text-5xl font-bold text-white">$99</span>
+                  <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>/month</span>
                 </div>
-                <p className="text-sm text-gray-500">Best for growing businesses</p>
+                <p className="text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>Best for growing businesses</p>
               </div>
-              <ul className="space-y-3 mb-8 flex-grow">
-                {['Up to 10 pages','Everything in Basic','Unlimited updates','SEO optimization','Google Analytics','Contact forms','Priority support'].map(f => (
-                  <li key={f} className="flex items-center gap-2.5 text-sm text-gray-700">
-                    <IconCheck />{f}
+
+              <ul className="space-y-3.5 mb-9 flex-grow">
+                {['Up to 10 pages', 'Everything in Basic', 'Unlimited updates', 'SEO optimization', 'Google Analytics', 'Contact forms', 'Priority support'].map(f => (
+                  <li key={f} className="flex items-center gap-3 text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                    <span
+                      className="w-5 h-5 rounded-full flex items-center justify-center shrink-0"
+                      style={{ background: 'rgba(255,255,255,0.15)' }}
+                    >
+                      <IconCheck className="w-3 h-3 text-white" />
+                    </span>
+                    {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="btn-primary w-full justify-center">Get Started</Link>
+
+              <Link
+                href="/contact"
+                className="w-full justify-center py-3.5 rounded-full font-semibold text-[15px] inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5"
+                style={{ background: '#ffffff', color: '#4428B8', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }}
+              >
+                Get Started
+              </Link>
             </div>
 
             {/* Premium */}
-            <div id="premium" className="card border-gray-100 flex flex-col">
-              <div className="mb-6">
-                <p className="text-sm font-bold text-gray-400 tracking-widest uppercase mb-2">Premium</p>
-                <div className="flex items-baseline gap-1 mb-1">
-                  <span className="text-4xl font-bold text-dark">$149</span>
+            <div
+              className="bg-white rounded-[20px] p-8 border border-gray-100 flex flex-col"
+              style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.05)' }}
+            >
+              <div className="mb-7">
+                <p className="text-xs font-bold text-gray-400 tracking-[0.15em] uppercase mb-3">Premium</p>
+                <div className="flex items-baseline gap-1 mb-2">
+                  <span className="text-5xl font-bold text-dark">$149</span>
                   <span className="text-gray-400 text-sm">/month</span>
                 </div>
                 <p className="text-sm text-gray-500">For e-commerce &amp; full-scale brands</p>
               </div>
-              <ul className="space-y-3 mb-8 flex-grow">
-                {['Everything in Standard','E-commerce (30 products)','Speed optimization','Advanced SEO','24/7 support','Monthly reports'].map(f => (
-                  <li key={f} className="flex items-center gap-2.5 text-sm text-gray-600">
-                    <IconCheck />{f}
+              <ul className="space-y-3.5 mb-9 flex-grow">
+                {['Everything in Standard', 'E-commerce (30 products)', 'Speed optimization', 'Advanced SEO', '24/7 support', 'Monthly reports'].map(f => (
+                  <li key={f} className="flex items-center gap-3 text-sm text-gray-600">
+                    <span className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                      <IconCheck className="w-3 h-3 text-gray-500" />
+                    </span>
+                    {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="btn-secondary w-full justify-center">Get Started</Link>
+              <Link href="/contact" className="btn-secondary w-full justify-center py-3.5 text-[15px]">
+                Get Started
+              </Link>
             </div>
           </div>
 
-          <p className="text-center text-sm text-gray-400 mt-8">
-            All plans include a 15-day satisfaction period. · No long-term contracts. ·{' '}
-            <Link href="/pricing" className="text-primary-500 hover:text-primary-500 font-semibold transition-colors">
+          <p className="text-center text-sm text-gray-400 mt-10">
+            All plans include a 15-day satisfaction period · No long-term contracts ·{' '}
+            <Link href="/pricing" className="text-primary-500 font-semibold hover:text-primary-600 transition-colors">
               Compare all plan features →
             </Link>
           </p>
         </div>
       </section>
 
-      {/* ── Process ───────────────────────────────────────────────────── */}
-      <section className="section-pad bg-surface" aria-labelledby="process-heading">
+      {/* ── PROCESS ─────────────────────────────────────────────────── */}
+      <section
+        className="section-pad relative overflow-hidden"
+        aria-labelledby="process-heading"
+        style={{ background: '#FAFAFA' }}
+      >
         <div className="container-tight">
           <div className="text-center mb-16">
             <p className="section-label">How It Works</p>
@@ -467,18 +580,31 @@ export default function HomePage() {
             <div className="divider-glow" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            {/* Connector line (desktop) */}
-            <div className="hidden md:block absolute top-10 left-[calc(16.6%+1.5rem)] right-[calc(16.6%+1.5rem)] h-px bg-gradient-to-r from-primary-500/30 via-primary-400/50 to-primary-500/30" />
-
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map(({ step, title, desc }) => (
-              <div key={step} className="relative flex flex-col items-center text-center">
-                <div className="w-20 h-20 rounded-full bg-gradient-cta text-dark font-bold text-xl
-                                flex items-center justify-center mb-6 shadow-cta relative z-10">
+              <div
+                key={step}
+                className="relative bg-white rounded-[20px] p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-1
+                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_48px_rgba(86,54,209,0.09)]"
+              >
+                {/* Large background step number */}
+                <div
+                  className="absolute top-6 right-6 font-black leading-none select-none pointer-events-none"
+                  style={{ fontSize: '5rem', color: 'rgba(86,54,209,0.05)' }}
+                >
                   {step}
                 </div>
-                <h3 className="text-xl font-bold text-dark mb-3">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+
+                {/* Step indicator circle */}
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-base mb-6 relative z-10"
+                  style={{ background: 'linear-gradient(135deg, #4428B8, #6A4FDB)' }}
+                >
+                  {step}
+                </div>
+
+                <h3 className="text-[1.05rem] font-bold text-dark mb-3 relative z-10">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed relative z-10">{desc}</p>
               </div>
             ))}
           </div>
@@ -492,9 +618,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FAQ ───────────────────────────────────────────────────────── */}
+      {/* ── FAQ ─────────────────────────────────────────────────────── */}
       <section className="section-pad bg-white" id="faq" aria-labelledby="faq-heading">
-        <div className="container-tight max-w-4xl">
+        <div className="container-tight max-w-3xl">
           <div className="text-center mb-16">
             <p className="section-label">FAQ</p>
             <h2 id="faq-heading" className="section-title">
@@ -506,67 +632,84 @@ export default function HomePage() {
             <div className="divider-glow" />
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqs.map(({ q, a }) => (
               <details
                 key={q}
-                className="group card border border-gray-100 p-0 overflow-hidden
-                           hover:border-primary-200 transition-colors"
+                className="group bg-white border border-gray-100 rounded-[16px] overflow-hidden transition-colors duration-200 hover:border-primary-100"
+                style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}
               >
                 <summary
-                  className="flex items-center justify-between gap-4 cursor-pointer
-                             select-none p-6 text-dark font-semibold text-base
-                             list-none [&::-webkit-details-marker]:hidden"
+                  className="flex items-center justify-between gap-4 cursor-pointer select-none p-7 text-dark font-semibold text-[0.95rem] list-none [&::-webkit-details-marker]:hidden"
                 >
                   <span>{q}</span>
-                  <svg
-                    className="w-5 h-5 text-primary-500 shrink-0 transition-transform duration-300
-                               group-open:rotate-180"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  {/* Animated chevron circle */}
+                  <span
+                    className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 group-open:bg-primary-500"
+                    style={{ background: 'rgba(86,54,209,0.08)' }}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                    <svg
+                      className="w-4 h-4 text-primary-500 group-open:text-white transition-transform duration-300 group-open:rotate-180"
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
                 </summary>
-                <div className="px-6 pb-6">
-                  <div className="w-full h-px bg-gray-100 mb-4" />
+                <div className="px-7 pb-7">
+                  <div className="h-px bg-gray-100 mb-5" />
                   <p className="text-gray-500 leading-relaxed text-sm">{a}</p>
                 </div>
               </details>
             ))}
           </div>
 
-          <p className="text-center text-sm text-gray-400 mt-8">
+          <p className="text-center text-sm text-gray-400 mt-10">
             Still have questions?{' '}
-            <Link href="/contact" className="text-primary-500 font-semibold hover:text-primary-500 transition-colors">
+            <Link href="/contact" className="text-primary-500 font-semibold hover:text-primary-600 transition-colors">
               Contact us →
             </Link>
           </p>
         </div>
       </section>
 
-      {/* ── Final CTA ─────────────────────────────────────────────────── */}
+      {/* ── FINAL CTA ───────────────────────────────────────────────── */}
       <section
-        className="section-pad bg-gradient-hero relative overflow-hidden"
+        className="relative overflow-hidden py-28 lg:py-36"
         aria-label="Call to action"
+        style={{ background: 'linear-gradient(135deg, #0D0D1F 0%, #150E35 50%, #0D0D1F 100%)' }}
       >
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                          w-[700px] h-[400px] bg-primary-500/20 rounded-full blur-[150px]" />
+        {/* Center glow */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div style={{ width: '800px', height: '600px', background: 'rgba(86,54,209,0.16)', borderRadius: '50%', filter: 'blur(100px)' }} />
         </div>
-        <div className="container-tight relative z-10 text-center">
+
+        {/* Grid overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+            backgroundSize: '80px 80px',
+          }}
+        />
+
+        <div className="container-tight relative z-10 text-center max-w-4xl mx-auto">
           <p className="section-label text-primary-400">Less Talk. Let&apos;s Build.</p>
-          <h2 className="section-title-white mb-6">
+          <h2
+            className="font-bold text-white tracking-tight mb-6 text-balance"
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.75rem)', lineHeight: 1.1 }}
+          >
             Ready for a Website That Works for Your Business?
           </h2>
-          <p className="section-subtitle-white mx-auto text-center mb-10">
+          <p className="mb-12 max-w-xl mx-auto leading-relaxed" style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)' }}>
             Join hundreds of small businesses that trust AffordaWeb Solutions for professional, affordable website design. Get started today — no commitment required.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary text-base px-8 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/contact" className="btn-primary text-[15px] px-10 py-4">
               Get My Free Quote
               <IconArrow />
             </Link>
-            <Link href="/pricing" className="btn-outline-white text-base px-8 py-4">
+            <Link href="/pricing" className="btn-outline-white text-[15px] px-10 py-4">
               View Pricing Plans
             </Link>
           </div>

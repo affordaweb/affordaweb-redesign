@@ -32,11 +32,12 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-dark/95 backdrop-blur-md shadow-glow border-b border-white/5'
+            ? 'backdrop-blur-xl border-b border-white/[0.06]'
             : 'bg-transparent'
         }`}
+        style={scrolled ? { background: 'rgba(15,15,26,0.82)', boxShadow: '0 1px 24px rgba(0,0,0,0.25)' } : {}}
       >
         <div className="container-tight">
           <div className="flex items-center justify-between py-3">

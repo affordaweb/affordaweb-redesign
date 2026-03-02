@@ -47,7 +47,7 @@ export default function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="container-tight py-16">
+      <div className="container-tight py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-5 text-sm tracking-widest uppercase">
+            <h3 className="text-white/80 font-bold mb-5 text-xs tracking-[0.18em] uppercase">
               Services
             </h3>
             <ul className="space-y-3">
@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-white font-semibold mb-5 text-sm tracking-widest uppercase">
+            <h3 className="text-white/80 font-bold mb-5 text-xs tracking-[0.18em] uppercase">
               Company
             </h3>
             <ul className="space-y-3">
@@ -116,7 +116,7 @@ export default function Footer() {
 
           {/* Plans */}
           <div>
-            <h3 className="text-white font-semibold mb-5 text-sm tracking-widest uppercase">
+            <h3 className="text-white/80 font-bold mb-5 text-xs tracking-[0.18em] uppercase">
               Pricing Plans
             </h3>
             <ul className="space-y-3">
@@ -150,7 +150,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5">
-        <div className="container-tight py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="container-tight py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
             © {new Date().getFullYear()} AffordaWeb Solutions. All rights reserved.
           </p>
