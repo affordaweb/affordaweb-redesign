@@ -1,0 +1,235 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Web Design Blog | Tips & Guides for Small Businesses | AffordaWeb Solutions',
+  description:
+    'Expert web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
+  alternates: { canonical: 'https://affordawebsolutions.com/blog' },
+  openGraph: {
+    title: 'Web Design Blog | AffordaWeb Solutions',
+    description: 'Expert tips on web design, SEO, and growing your small business online.',
+    url: 'https://affordawebsolutions.com/blog',
+  },
+}
+
+const posts = [
+  {
+    slug: 'why-small-businesses-need-professional-website',
+    title: 'Why Every Small Business Needs a Professional Website in 2025',
+    excerpt:
+      'Still on the fence about investing in a professional website? Discover the real cost of not having one — and how an affordable website can transform your business.',
+    category: 'Business Growth',
+    date: 'January 15, 2025',
+    readTime: '5 min read',
+    color: 'from-primary-500 to-cyan-500',
+    featured: true,
+  },
+  {
+    slug: 'affordable-website-design-vs-diy-website-builder',
+    title: 'Affordable Website Design vs. DIY Website Builders: Which Is Right for You?',
+    excerpt:
+      'Wix, Squarespace, and WordPress.com all promise an easy website. But how do they compare to professionally designed sites? We break down the real differences.',
+    category: 'Web Design',
+    date: 'January 28, 2025',
+    readTime: '7 min read',
+    color: 'from-pink-500 to-primary-500',
+    featured: false,
+  },
+  {
+    slug: 'seo-tips-small-business-website',
+    title: '10 SEO Tips to Help Your Small Business Website Rank Higher on Google',
+    excerpt:
+      'Search engine optimization does not have to be complicated. These 10 actionable SEO tips will help your small business website rank higher and attract more customers.',
+    category: 'SEO',
+    date: 'February 5, 2025',
+    readTime: '8 min read',
+    color: 'from-cyan-500 to-teal-500',
+    featured: false,
+  },
+  {
+    slug: 'website-design-subscription-model-explained',
+    title: 'What Is a Website Design Subscription? Everything You Need to Know',
+    excerpt:
+      'Monthly website design subscriptions are changing how small businesses get online. Learn what they include, how pricing works, and whether it is right for you.',
+    category: 'Pricing',
+    date: 'February 12, 2025',
+    readTime: '6 min read',
+    color: 'from-violet-500 to-primary-500',
+    featured: false,
+  },
+  {
+    slug: 'website-speed-matters-small-business',
+    title: 'Why Website Speed Matters More Than You Think (And How to Fix It)',
+    excerpt:
+      'A slow website costs you customers. Research shows 53% of mobile users abandon sites that take more than 3 seconds to load. Here is how to speed yours up.',
+    category: 'Performance',
+    date: 'February 20, 2025',
+    readTime: '6 min read',
+    color: 'from-amber-500 to-orange-500',
+    featured: false,
+  },
+  {
+    slug: 'local-seo-guide-small-businesses',
+    title: 'The Complete Local SEO Guide for Small Business Owners',
+    excerpt:
+      'Want to appear at the top of Google searches in your area? This local SEO guide covers everything from Google Business Profile to local citations and reviews.',
+    category: 'SEO',
+    date: 'March 1, 2025',
+    readTime: '10 min read',
+    color: 'from-green-500 to-teal-500',
+    featured: false,
+  },
+]
+
+const categories = ['All', 'Web Design', 'SEO', 'Business Growth', 'Pricing', 'Performance']
+
+export default function BlogPage() {
+  const featured = posts.find(p => p.featured)
+  const rest = posts.filter(p => !p.featured)
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="bg-gradient-hero pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                        w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
+        <div className="container-tight relative z-10 text-center">
+          <p className="section-label text-cyan-400">Resources & Tips</p>
+          <h1 className="section-title-white mb-6">
+            Web Design & SEO Insights for Small Businesses
+          </h1>
+          <p className="section-subtitle-white mx-auto text-center">
+            Practical advice on website design, SEO, and digital marketing — written for small business owners who want to grow online without the jargon.
+          </p>
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface" aria-labelledby="blog-heading">
+        <div className="container-tight">
+          <div className="sr-only" id="blog-heading">Blog Posts</div>
+
+          {/* Category filter */}
+          <div className="flex flex-wrap gap-2 justify-center mb-12">
+            {categories.map(cat => (
+              <span key={cat}
+                className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all ${
+                  cat === 'All'
+                    ? 'bg-primary-500 text-white'
+                    : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300 hover:text-primary-500'
+                }`}
+              >
+                {cat}
+              </span>
+            ))}
+          </div>
+
+          {/* Featured post */}
+          {featured && (
+            <article className="card mb-8 overflow-hidden group">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                <div className={`lg:col-span-2 bg-gradient-to-br ${featured.color} rounded-2xl relative overflow-hidden`}
+                     style={{ aspectRatio: '16/9' }}>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg className="w-16 h-16 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
+                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                    </svg>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <span className="badge bg-white/20 text-white backdrop-blur-sm text-xs">Featured</span>
+                  </div>
+                </div>
+                <div className="lg:col-span-3">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="badge bg-primary-50 text-primary-600 text-xs">{featured.category}</span>
+                    <span className="text-gray-400 text-xs">{featured.date}</span>
+                    <span className="text-gray-400 text-xs">·</span>
+                    <span className="text-gray-400 text-xs">{featured.readTime}</span>
+                  </div>
+                  <h2 className="text-2xl font-bold text-dark mb-3 group-hover:text-primary-500 transition-colors">
+                    <Link href={`/blog/${featured.slug}`}>{featured.title}</Link>
+                  </h2>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-5">{featured.excerpt}</p>
+                  <Link
+                    href={`/blog/${featured.slug}`}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-500 hover:text-primary-500 transition-colors"
+                  >
+                    Read Article
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </article>
+          )}
+
+          {/* Post grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {rest.map((post) => (
+              <article key={post.slug} className="card group flex flex-col">
+                {/* Image placeholder */}
+                <div className={`bg-gradient-to-br ${post.color} rounded-2xl mb-5 relative overflow-hidden`}
+                     style={{ aspectRatio: '16/9' }}>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg className="w-10 h-10 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
+                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="badge bg-primary-50 text-primary-600 text-xs">{post.category}</span>
+                  <span className="text-gray-400 text-xs">{post.readTime}</span>
+                </div>
+
+                <h3 className="font-bold text-dark text-base mb-2 flex-grow group-hover:text-primary-500 transition-colors">
+                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
+
+                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                  <span className="text-xs text-gray-400">{post.date}</span>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="text-xs font-semibold text-cyan-500 hover:text-primary-500 transition-colors"
+                  >
+                    Read more →
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter CTA */}
+      <section className="section-pad bg-dark relative overflow-hidden">
+        <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-primary-500/10 rounded-full blur-[150px] pointer-events-none" />
+        <div className="container-tight relative z-10 max-w-2xl text-center">
+          <p className="section-label">Stay Updated</p>
+          <h2 className="section-title-white mb-4">
+            Get Web Design Tips in Your Inbox
+          </h2>
+          <p className="section-subtitle-white mx-auto text-center mb-8">
+            Join small business owners who get our best web design and SEO tips every month. No spam — just useful content.
+          </p>
+          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={e => e.preventDefault()}>
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="flex-1 px-4 py-3 rounded-full text-dark text-sm
+                         focus:outline-none focus:ring-2 focus:ring-cyan-500/50 border-2 border-white/10 bg-white/10 text-white placeholder:text-white/40"
+            />
+            <button type="submit" className="btn-primary px-6 py-3 shrink-0">
+              Subscribe
+            </button>
+          </form>
+          <p className="text-white/30 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+        </div>
+      </section>
+    </>
+  )
+}
