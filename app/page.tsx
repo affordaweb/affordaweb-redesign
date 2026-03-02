@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'AffordaWeb Solutions | Affordable Website Design Services from $69/mo',
@@ -178,31 +177,14 @@ export default function HomePage() {
       {/* ── HERO ────────────────────────────────────────────────────── */}
       <section
         className="relative min-h-screen flex items-center overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #020C07 0%, #021A0F 50%, #020C07 100%)' }}
+        style={{ background: 'linear-gradient(150deg, #F0F7FF 0%, #FFFFFF 55%, #EBF5FF 100%)' }}
         aria-label="Hero section"
       >
-        {/* Background image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <Image
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&auto=format&fit=crop&q=60"
-            alt=""
-            fill
-            priority
-            className="object-cover"
-            style={{ opacity: 0.05 }}
-            aria-hidden="true"
-          />
-          <div
-            className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(2,12,7,0.5) 0%, transparent 40%, rgba(2,12,7,0.8) 100%)' }}
-          />
-        </div>
-
-        {/* Grid overlay */}
+        {/* Subtle grid overlay */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(40,120,196,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(40,120,196,0.04) 1px, transparent 1px)',
             backgroundSize: '80px 80px',
           }}
         />
@@ -210,39 +192,34 @@ export default function HomePage() {
         {/* Gradient orbs */}
         <div
           className="absolute pointer-events-none animate-pulse-glow"
-          style={{ top: '15%', left: '5%', width: '600px', height: '600px', background: 'rgba(5,150,105,0.18)', borderRadius: '50%', filter: 'blur(130px)' }}
+          style={{ top: '10%', right: '8%', width: '600px', height: '600px', background: 'rgba(40,120,196,0.09)', borderRadius: '50%', filter: 'blur(120px)' }}
         />
         <div
           className="absolute pointer-events-none animate-pulse-glow"
-          style={{ bottom: '10%', right: '5%', width: '500px', height: '500px', background: 'rgba(5,150,105,0.12)', borderRadius: '50%', filter: 'blur(110px)', animationDelay: '2s' }}
+          style={{ bottom: '5%', left: '5%', width: '480px', height: '480px', background: 'rgba(40,120,196,0.06)', borderRadius: '50%', filter: 'blur(100px)', animationDelay: '2s' }}
         />
 
-        {/* Center radial glow */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div style={{ width: '900px', height: '500px', background: 'rgba(5,150,105,0.08)', borderRadius: '50%', filter: 'blur(80px)' }} />
-        </div>
-
-        <div className="container-tight relative z-10 pt-36 pb-28 text-center">
+        <div className="container-tight relative z-10 pt-40 pb-28 text-center">
 
           {/* Eyebrow badge */}
           <div
             className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-10"
-            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)' }}
+            style={{ background: 'rgba(40,120,196,0.07)', border: '1px solid rgba(40,120,196,0.18)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse" />
-            <span className="text-white/75 text-sm font-medium">Professional Website Design for Small Businesses</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
+            <span className="text-primary-700 text-sm font-medium">Professional Website Design for Small Businesses</span>
           </div>
 
           {/* H1 */}
           <h1
-            className="font-bold text-white tracking-tight mb-8 text-balance"
-            style={{ fontSize: 'clamp(2.75rem, 7vw, 5.5rem)', lineHeight: 1.0 }}
+            className="font-bold text-dark tracking-tight mb-8 text-balance"
+            style={{ fontSize: 'clamp(2.75rem, 7vw, 5.5rem)', lineHeight: 1.05 }}
           >
             Less Talk.{' '}
             <span
               className="block sm:inline"
               style={{
-                background: 'linear-gradient(135deg, #6EE7B7 0%, #A7F3D0 55%, #ffffff 100%)',
+                background: 'linear-gradient(135deg, #2878C4 0%, #4D9BE5 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -254,8 +231,8 @@ export default function HomePage() {
 
           {/* Subheadline */}
           <p
-            className="mb-12 max-w-[520px] mx-auto leading-relaxed"
-            style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.55)' }}
+            className="mb-12 max-w-[540px] mx-auto leading-relaxed"
+            style={{ fontSize: '1.2rem', color: '#595959' }}
           >
             Fully managed website design with hosting, SSL, and unlimited updates — all for one affordable monthly rate. No technical skills needed. No hidden fees.
           </p>
@@ -266,16 +243,19 @@ export default function HomePage() {
               Get My Free Quote
               <IconArrow />
             </Link>
-            <Link href="/pricing" className="btn-outline-white px-9 py-4 text-[15px]">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full font-semibold text-[15px] border-2 border-primary-600 text-primary-700 transition-all duration-300 hover:bg-primary-600 hover:text-white"
+            >
               View Plans &amp; Pricing
             </Link>
           </div>
 
           {/* Trust row */}
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm" style={{ color: 'rgba(255,255,255,0.35)' }}>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm" style={{ color: '#595959' }}>
             {['No long-term contracts', 'Setup in 10–15 days', 'Hosting included', 'Cancel anytime'].map(item => (
               <span key={item} className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-primary-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-primary-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 {item}
@@ -286,7 +266,7 @@ export default function HomePage() {
 
         {/* Bottom fade to white */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
+          className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
           style={{ background: 'linear-gradient(to top, #ffffff 0%, transparent 100%)' }}
         />
       </section>
@@ -313,12 +293,12 @@ export default function HomePage() {
         className="section-pad relative overflow-hidden"
         id="services"
         aria-labelledby="services-heading"
-        style={{ background: '#FAFAFA' }}
+        style={{ background: '#F7FAFE' }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(5,150,105,0.05) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.05) 1.5px, transparent 1.5px)',
             backgroundSize: '32px 32px',
           }}
         />
@@ -340,12 +320,12 @@ export default function HomePage() {
               <article
                 key={title}
                 className="group bg-white rounded-[20px] p-8 border border-gray-100/80 transition-all duration-300 hover:-translate-y-2
-                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(5,150,105,0.1)]
+                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(40,120,196,0.1)]
                            hover:border-primary-100"
               >
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-primary-700 transition-all duration-300 group-hover:scale-110"
-                  style={{ background: 'linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%)' }}
+                  style={{ background: 'linear-gradient(135deg, #D6EBFF 0%, #ADCFF5 100%)' }}
                 >
                   {icon}
                 </div>
@@ -377,10 +357,10 @@ export default function HomePage() {
       <section
         className="section-pad relative overflow-hidden"
         aria-labelledby="why-heading"
-        style={{ background: 'linear-gradient(135deg, #020C07 0%, #021A0F 50%, #020C07 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #091829 0%, #0F2040 50%, #091829 100%)' }}
       >
-        <div className="absolute pointer-events-none" style={{ top: '-10%', left: '-5%', width: '600px', height: '600px', background: 'rgba(5,150,105,0.14)', borderRadius: '50%', filter: 'blur(130px)' }} />
-        <div className="absolute pointer-events-none" style={{ bottom: '-10%', right: '-5%', width: '500px', height: '500px', background: 'rgba(5,150,105,0.09)', borderRadius: '50%', filter: 'blur(110px)' }} />
+        <div className="absolute pointer-events-none" style={{ top: '-10%', left: '-5%', width: '600px', height: '600px', background: 'rgba(40,120,196,0.18)', borderRadius: '50%', filter: 'blur(130px)' }} />
+        <div className="absolute pointer-events-none" style={{ bottom: '-10%', right: '-5%', width: '500px', height: '500px', background: 'rgba(40,120,196,0.12)', borderRadius: '50%', filter: 'blur(110px)' }} />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -406,12 +386,12 @@ export default function HomePage() {
               <div key={title} className="card-glass group">
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 shrink-0"
-                  style={{ background: 'rgba(5,150,105,0.25)' }}
+                  style={{ background: 'rgba(40,120,196,0.28)' }}
                 >
                   <IconCheck className="w-5 h-5 text-primary-300" />
                 </div>
                 <h3 className="text-white font-bold text-[1rem] mb-2">{title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>{desc}</p>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -462,25 +442,25 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Standard — dark emerald featured card */}
+            {/* Standard — deep blue featured card */}
             <div
               className="relative rounded-[20px] p-8 flex flex-col md:-my-5"
               style={{
-                background: 'linear-gradient(135deg, #065F46 0%, #059669 50%, #10B981 100%)',
-                boxShadow: '0 32px 80px rgba(5,150,105,0.35), inset 0 1px 0 rgba(255,255,255,0.12)',
+                background: 'linear-gradient(135deg, #134878 0%, #1E66A8 50%, #2878C4 100%)',
+                boxShadow: '0 32px 80px rgba(40,120,196,0.4), inset 0 1px 0 rgba(255,255,255,0.12)',
               }}
             >
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
                 <span
                   className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs font-bold tracking-wide uppercase"
-                  style={{ background: '#ffffff', color: '#059669', boxShadow: '0 4px 20px rgba(5,150,105,0.3)' }}
+                  style={{ background: '#ffffff', color: '#2878C4', boxShadow: '0 4px 20px rgba(40,120,196,0.3)' }}
                 >
                   ✦ Most Popular
                 </span>
               </div>
 
               <div className="mb-7 mt-4">
-                <p className="text-xs font-bold tracking-[0.15em] uppercase mb-3" style={{ color: 'rgba(167,243,208,0.85)' }}>Standard</p>
+                <p className="text-xs font-bold tracking-[0.15em] uppercase mb-3" style={{ color: 'rgba(173,207,245,0.9)' }}>Standard</p>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-5xl font-bold text-white">$99</span>
                   <span className="text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>/month</span>
@@ -490,10 +470,10 @@ export default function HomePage() {
 
               <ul className="space-y-3.5 mb-9 flex-grow">
                 {['Up to 10 pages', 'Everything in Basic', 'Unlimited updates', 'SEO optimization', 'Google Analytics', 'Contact forms', 'Priority support'].map(f => (
-                  <li key={f} className="flex items-center gap-3 text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  <li key={f} className="flex items-center gap-3 text-sm" style={{ color: 'rgba(255,255,255,0.88)' }}>
                     <span
                       className="w-5 h-5 rounded-full flex items-center justify-center shrink-0"
-                      style={{ background: 'rgba(255,255,255,0.18)' }}
+                      style={{ background: 'rgba(255,255,255,0.2)' }}
                     >
                       <IconCheck className="w-3 h-3 text-white" />
                     </span>
@@ -505,7 +485,7 @@ export default function HomePage() {
               <Link
                 href="/contact"
                 className="w-full justify-center py-3.5 rounded-full font-semibold text-[15px] inline-flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5"
-                style={{ background: '#ffffff', color: '#059669', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }}
+                style={{ background: '#ffffff', color: '#2878C4', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }}
               >
                 Get Started
               </Link>
@@ -553,7 +533,7 @@ export default function HomePage() {
       <section
         className="section-pad relative overflow-hidden"
         aria-labelledby="process-heading"
-        style={{ background: '#FAFAFA' }}
+        style={{ background: '#F7FAFE' }}
       >
         <div className="container-tight">
           <div className="text-center mb-16">
@@ -572,17 +552,17 @@ export default function HomePage() {
               <div
                 key={step}
                 className="relative bg-white rounded-[20px] p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-1
-                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_48px_rgba(5,150,105,0.09)]"
+                           shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_48px_rgba(40,120,196,0.1)]"
               >
                 <div
                   className="absolute top-6 right-6 font-black leading-none select-none pointer-events-none"
-                  style={{ fontSize: '5rem', color: 'rgba(5,150,105,0.06)' }}
+                  style={{ fontSize: '5rem', color: 'rgba(40,120,196,0.06)' }}
                 >
                   {step}
                 </div>
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-base mb-6 relative z-10"
-                  style={{ background: 'linear-gradient(135deg, #047857, #10B981)' }}
+                  style={{ background: 'linear-gradient(135deg, #1E66A8, #4D9BE5)' }}
                 >
                   {step}
                 </div>
@@ -619,14 +599,14 @@ export default function HomePage() {
             {faqs.map(({ q, a }) => (
               <details
                 key={q}
-                className="group bg-white border border-gray-100 rounded-[16px] overflow-hidden transition-colors duration-200 hover:border-primary-100"
+                className="group bg-white border border-gray-100 rounded-[16px] overflow-hidden transition-colors duration-200 hover:border-primary-200"
                 style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}
               >
                 <summary className="flex items-center justify-between gap-4 cursor-pointer select-none p-7 text-dark font-semibold text-[0.95rem] list-none [&::-webkit-details-marker]:hidden">
                   <span>{q}</span>
                   <span
                     className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 group-open:bg-primary-500"
-                    style={{ background: 'rgba(5,150,105,0.08)' }}
+                    style={{ background: 'rgba(40,120,196,0.08)' }}
                   >
                     <svg
                       className="w-4 h-4 text-primary-600 group-open:text-white transition-transform duration-300 group-open:rotate-180"
@@ -657,10 +637,10 @@ export default function HomePage() {
       <section
         className="relative overflow-hidden py-28 lg:py-36"
         aria-label="Call to action"
-        style={{ background: 'linear-gradient(135deg, #020C07 0%, #021A0F 50%, #020C07 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #091829 0%, #0F2040 50%, #091829 100%)' }}
       >
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div style={{ width: '800px', height: '600px', background: 'rgba(5,150,105,0.15)', borderRadius: '50%', filter: 'blur(100px)' }} />
+          <div style={{ width: '800px', height: '600px', background: 'rgba(40,120,196,0.18)', borderRadius: '50%', filter: 'blur(100px)' }} />
         </div>
         <div
           className="absolute inset-0 pointer-events-none"
@@ -678,7 +658,7 @@ export default function HomePage() {
           >
             Ready for a Website That Works for Your Business?
           </h2>
-          <p className="mb-12 max-w-xl mx-auto leading-relaxed" style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)' }}>
+          <p className="mb-12 max-w-xl mx-auto leading-relaxed" style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.55)' }}>
             Join hundreds of small businesses that trust AffordaWeb Solutions for professional, affordable website design. Get started today — no commitment required.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

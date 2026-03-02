@@ -32,35 +32,33 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'backdrop-blur-xl border-b border-white/[0.06]'
-            : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+          scrolled ? 'shadow-sm border-b border-gray-200' : 'border-b border-gray-100'
         }`}
-        style={scrolled ? { background: 'rgba(15,15,26,0.82)', boxShadow: '0 1px 24px rgba(0,0,0,0.25)' } : {}}
       >
         <div className="container-tight">
-          <div className="flex items-center justify-between py-3">
-            {/* Logo */}
+          <div className="flex items-center justify-between py-3.5">
+
+            {/* Logo — slightly larger for prominence */}
             <Link href="/" aria-label="AffordaWeb Solutions — Home" className="flex items-center">
               <Image
                 src="/logo.webp"
                 alt="AffordaWeb Solutions"
-                width={200}
-                height={56}
+                width={220}
+                height={62}
                 priority
-                className="h-11 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
+            <nav className="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="Main navigation">
               {navLinks.map(({ href, label }) => (
                 <Link
                   key={href}
                   href={href}
-                  className="px-4 py-2 text-sm font-semibold text-white/80 rounded-full
-                             hover:text-white hover:bg-white/10 transition-all duration-200"
+                  className="px-4 py-2 text-sm font-semibold text-gray-700 rounded-full
+                             hover:text-primary-600 hover:bg-primary-50 transition-all duration-200"
                 >
                   {label}
                 </Link>
@@ -80,15 +78,15 @@ export default function Header() {
             {/* Mobile toggle */}
             <button
               className="lg:hidden w-10 h-10 flex flex-col items-center justify-center
-                         gap-[5px] rounded-xl hover:bg-white/10 transition-colors"
+                         gap-[5px] rounded-xl hover:bg-gray-100 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
             >
-              <span className={`block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-              <span className={`block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-              <span className={`block w-5 h-0.5 bg-white rounded-full transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
             </button>
           </div>
         </div>
@@ -104,12 +102,12 @@ export default function Header() {
           menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
-        <div className="absolute inset-0 bg-dark/90 backdrop-blur-md" onClick={() => setMenuOpen(false)} />
-        <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-dark-100 border-l border-white/10 flex flex-col transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="flex items-center justify-between p-5 border-b border-white/10">
-            <Image src="/logo.webp" alt="AffordaWeb Solutions" width={160} height={45} className="h-10 w-auto object-contain" />
+        <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
+        <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white border-l border-gray-200 flex flex-col transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="flex items-center justify-between p-5 border-b border-gray-100">
+            <Image src="/logo.webp" alt="AffordaWeb Solutions" width={180} height={50} className="h-11 w-auto object-contain" />
             <button
-              className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors text-gray-700"
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
             >
@@ -126,7 +124,7 @@ export default function Header() {
                   <Link
                     href={href}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-white/80 font-semibold hover:text-white hover:bg-white/10 transition-all duration-200"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 font-semibold hover:text-primary-600 hover:bg-primary-50 transition-all duration-200"
                   >
                     {label}
                   </Link>
@@ -135,11 +133,11 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="p-6 border-t border-white/10 space-y-3">
+          <div className="p-6 border-t border-gray-100 space-y-3">
             <Link href="/contact" onClick={() => setMenuOpen(false)} className="btn-primary w-full justify-center">
               Get a Free Quote
             </Link>
-            <p className="text-center text-xs text-white/40">No commitment · Respond within 24 hrs</p>
+            <p className="text-center text-xs text-gray-400">No commitment · Respond within 24 hrs</p>
           </div>
         </div>
       </div>

@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Outfit } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-outfit',
+  variable: '--font-inter',
   weight: ['300', '400', '500', '600', '700', '800'],
   preload: true,
 })
@@ -86,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={outfit.variable}>
+    <html lang="en" className={inter.variable}>
       <head>
         <script
           type="application/ld+json"

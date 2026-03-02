@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --primary: #059669;
-    --dark:    #020C07;
-    --surface: #F0FDF4;
+    --primary: #2878C4;
+    --dark:    #091829;
+    --surface: #F0F7FF;
   }
 
   html {
@@ -25,14 +25,14 @@
   img { max-width: 100%; height: auto; }
 
   :focus-visible {
-    outline: 2px solid #059669;
+    outline: 2px solid #2878C4;
     outline-offset: 3px;
     border-radius: 4px;
   }
 
   ::selection {
-    background: rgba(5, 150, 105, 0.15);
-    color: #059669;
+    background: rgba(40, 120, 196, 0.15);
+    color: #2878C4;
   }
 }
 
@@ -92,11 +92,11 @@
            active:scale-[0.97];
     font-size: 15px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.07);
   }
 
   .btn-outline-white:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.14);
     border-color: rgba(255, 255, 255, 0.4);
   }
 
@@ -111,8 +111,8 @@
   }
 
   .card:hover {
-    box-shadow: 0 20px 60px rgba(5, 150, 105, 0.1);
-    border-color: rgba(5, 150, 105, 0.12);
+    box-shadow: 0 20px 60px rgba(40, 120, 196, 0.1);
+    border-color: rgba(40, 120, 196, 0.12);
   }
 
   .card-dark {
@@ -130,8 +130,8 @@
   }
 
   .card-glass:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.16);
   }
 
   /* ── Section headings ─────────────────────── */
@@ -181,7 +181,7 @@
     @apply w-14 h-14 rounded-2xl flex items-center justify-center
            text-primary-700 mb-5
            transition-all duration-300;
-    background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+    background: linear-gradient(135deg, #D6EBFF 0%, #ADCFF5 100%);
   }
 
   /* ── Badge ────────────────────────────────── */
@@ -203,7 +203,7 @@
   .divider-glow {
     @apply w-12 rounded-full mx-auto mt-6 mb-2;
     height: 3px;
-    background: linear-gradient(90deg, #047857, #34D399);
+    background: linear-gradient(90deg, #1E66A8, #4D9BE5);
   }
 }
 
