@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 const navLinks = [
   { href: '/',          label: 'Home' },
@@ -17,6 +18,7 @@ const navLinks = [
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -33,7 +35,7 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
-          scrolled ? 'shadow-sm border-b border-gray-200' : 'border-b border-gray-100'
+          scrolled ? 'shadow-[0_2px_20px_rgba(0,0,0,0.08)] border-b border-gray-200' : 'border-b border-gray-100'
         }`}
       >
         <div className="container-tight">
@@ -53,16 +55,22 @@ export default function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="Main navigation">
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="px-4 py-2 text-sm font-semibold text-gray-700 rounded-full
-                             hover:text-primary-600 hover:bg-primary-50 transition-all duration-200"
-                >
-                  {label}
-                </Link>
-              ))}
+              {navLinks.map(({ href, label }) => {
+                const isActive = pathname === href
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={`relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200
+                               ${isActive
+                                 ? 'text-primary-600 bg-primary-50 after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-primary-500 after:rounded-full'
+                                 : 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
+                               }`}
+                  >
+                    {label}
+                  </Link>
+                )
+              })}
             </nav>
 
             {/* Desktop CTA */}

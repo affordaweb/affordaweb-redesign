@@ -26,8 +26,11 @@ export default function Footer() {
   return (
     <footer aria-label="Site footer">
       {/* Pre-footer CTA */}
-      <div className="bg-gradient-to-br from-primary-600 to-primary-800">
-        <div className="container-tight py-16 text-center">
+      <div className="bg-gradient-to-br from-primary-600 to-primary-800 relative overflow-hidden">
+        {/* Dot grid overlay */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px', opacity: 0.06 }} />
+        <div className="container-tight py-16 text-center relative z-10">
           <p className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-white/60 mb-4">
             Ready to Grow Online?
           </p>
@@ -75,7 +78,7 @@ export default function Footer() {
               </p>
               {/* Star rating */}
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-amber-400 text-base tracking-tight">★★★★★</span>
+                <span className="text-amber-400 text-lg tracking-tight">★★★★★</span>
                 <span className="text-gray-500 text-xs font-medium">Trusted by 50+ clients</span>
               </div>
               <a
@@ -168,7 +171,7 @@ export default function Footer() {
       <div className="bg-gray-50 border-t border-gray-200">
         <div className="container-tight py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-xs">
-            © {new Date().getFullYear()} AffordaWeb Solutions. All rights reserved.
+            © {new Date().getFullYear()} AffordaWeb Solutions. All rights reserved. · Built for Small Business
           </p>
           <div className="flex items-center gap-4">
             {legal.map(({ label, href }) => (

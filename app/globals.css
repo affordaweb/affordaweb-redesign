@@ -165,6 +165,29 @@
            bg-clip-text text-transparent;
   }
 
+  /* Gradient text — blue (richer, darker start) */
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-primary-700 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  /* Card with top accent line */
+  .card-accent {
+    @apply bg-white rounded-2xl border border-gray-100;
+    border-top: 3px solid #2878C4;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .card-accent:hover {
+    box-shadow: 0 12px 40px rgba(40,120,196,0.12);
+    transform: translateY(-3px);
+  }
+
+  /* Avatar circle */
+  .avatar-initial {
+    @apply w-10 h-10 rounded-full flex items-center justify-center
+           text-white text-sm font-bold shrink-0;
+  }
+
   /* ── Layout ───────────────────────────────── */
 
   .section-pad {

@@ -78,6 +78,35 @@ function IconCheck() {
   )
 }
 
+function IconWrench() {
+  return (
+    <svg width="28" height="28" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  )
+}
+
+function IconHome() {
+  return (
+    <svg width="28" height="28" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+        d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 22V12h6v10" />
+    </svg>
+  )
+}
+
+function IconMedical() {
+  return (
+    <svg width="28" height="28" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  )
+}
+
 // ── Data ─────────────────────────────────────────────────────────
 
 const services = [
@@ -95,19 +124,31 @@ const testimonials = [
     name: 'Marcus T.',
     role: 'Owner',
     business: 'Local Plumbing Company',
+    avatarColor: 'bg-blue-500',
+    initial: 'M',
   },
   {
     quote: '200% more inquiry form submissions in the first 90 days after launch. The site looks professional, loads fast, and the team was easy to work with from start to finish.',
     name: 'Sandra K.',
     role: 'Real Estate Agent',
     business: 'Independent Realtor',
+    avatarColor: 'bg-emerald-500',
+    initial: 'S',
   },
   {
     quote: 'My online coaching program sold out within days of my new site going live. AffordaWeb took my brand to the next level — worth every single penny.',
     name: 'Priya M.',
     role: 'Fitness Coach',
     business: 'Online Coaching Business',
+    avatarColor: 'bg-violet-500',
+    initial: 'P',
   },
+]
+
+const portfolioItems = [
+  { category: 'Service Business · Standard Plan', title: 'Local Plumbing Company',   desc: 'A local plumbing company needed more than a basic online presence. We delivered a fast, SEO-optimized site with clear service pages and a prominent call-to-action.', result: '3x more leads in 60 days',     bg: '#EBF5FF', PortfolioIcon: IconWrench  },
+  { category: 'Real Estate · Standard Plan',      title: 'Real Estate Agent',         desc: 'An independent realtor wanted to stand out in a competitive market. We built a clean, professional site with strong local SEO and an easy inquiry form.',             result: '200% increase in inquiries', bg: '#F0FDF4', PortfolioIcon: IconHome    },
+  { category: 'Healthcare · Standard Plan',       title: 'Dental Practice',            desc: 'A dental clinic needed to rank locally and make appointment booking easy. We delivered an optimized, trust-building site that moved them to page one.',              result: 'Page 1 for local searches',  bg: '#F0F8FF', PortfolioIcon: IconMedical },
 ]
 
 const faqs = [
@@ -171,18 +212,18 @@ export default function HomePage() {
 
             {/* Left: Text */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-2 mb-6">
+              <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-2 mb-6 shadow-sm">
                 <span className="text-amber-400 text-sm tracking-tight">★★★★★</span>
                 <span className="text-amber-700 text-xs font-semibold">Trusted by 50+ small businesses</span>
               </div>
 
-              <h1 id="hero-heading" className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-5"
+              <h1 id="hero-heading" className="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight mb-5"
                 style={{ letterSpacing: '-0.02em' }}>
                 Professional Websites for Small Businesses —{' '}
-                <span className="text-primary-600">Starting at $69/mo</span>
+                <span className="gradient-text-blue">Starting at $69/mo</span>
               </h1>
 
-              <p className="text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
+              <p className="text-xl text-gray-500 leading-relaxed mb-8 max-w-lg">
                 Fully managed website design with hosting, SSL, and unlimited updates. We build it, we maintain it — you focus on running your business.
               </p>
 
@@ -207,6 +248,10 @@ export default function HomePage() {
 
             {/* Right: Browser mockup */}
             <div className="relative hidden lg:block">
+              {/* Soft glow behind mockup */}
+              <div className="absolute inset-0 pointer-events-none -z-10"
+                style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(40,120,196,0.12), transparent)' }} />
+
               <div className="bg-white rounded-2xl border border-gray-200 shadow-[0_8px_40px_rgba(0,0,0,0.10)] overflow-hidden">
                 <div className="bg-gray-50 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
                   <div className="flex items-center gap-1.5">
@@ -243,7 +288,7 @@ export default function HomePage() {
                 <div className="text-2xl font-bold text-primary-600 leading-none">10–15</div>
                 <div className="text-xs text-gray-400 font-medium mt-0.5">Day setup</div>
               </div>
-              <div className="absolute -right-4 top-8 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 shadow-sm">
+              <div className="absolute -right-4 top-8 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 shadow-sm animate-float">
                 <div className="text-amber-400 text-xs tracking-tight">★★★★★</div>
                 <div className="text-amber-700 text-xs font-semibold mt-0.5">4.9 rating</div>
               </div>
@@ -253,7 +298,7 @@ export default function HomePage() {
       </section>
 
       {/* ── B. STATS BAR ───────────────────────────────────────── */}
-      <section className="bg-white border-y border-gray-100" aria-label="Key statistics">
+      <section className="border-y border-gray-100 bg-gradient-to-b from-[#F0F8FF] to-white" aria-label="Key statistics">
         <div className="container-tight py-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
             {[
@@ -263,7 +308,7 @@ export default function HomePage() {
               { number: '99.9%', label: 'Uptime Guarantee' },
             ].map(({ number, label }, i) => (
               <div key={label} className={`text-center py-6 ${i > 0 ? 'border-l border-gray-100' : ''}`}>
-                <div className="text-3xl font-bold text-primary-600 mb-1">{number}</div>
+                <div className="text-3xl font-extrabold gradient-text-blue mb-1">{number}</div>
                 <div className="text-sm text-gray-400 font-medium">{label}</div>
               </div>
             ))}
@@ -285,16 +330,14 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map(({ Icon, title, desc, href }) => (
-              <div key={title}
-                className="bg-white rounded-2xl p-7 border border-gray-100 transition-all duration-300 hover:-translate-y-1"
-                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
-                <div className="rounded-xl flex items-center justify-center text-primary-700 mb-5"
-                  style={{ width: '52px', height: '52px', minWidth: '52px', background: 'linear-gradient(135deg, #D6EBFF 0%, #ADCFF5 100%)' }}>
+              <div key={title} className="card-accent p-7 group">
+                <div className="rounded-xl flex items-center justify-center text-primary-700 mb-5 transition-transform duration-300 group-hover:scale-110"
+                  style={{ width: '56px', height: '56px', minWidth: '56px', background: 'linear-gradient(135deg, #D6EBFF 0%, #ADCFF5 100%)' }}>
                   <Icon />
                 </div>
                 <h3 className="font-bold text-gray-900 text-lg mb-2">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
-                <Link href={href} className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
+                <Link href={href} className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors inline-flex items-center gap-1.5 hover:gap-2.5 duration-200">
                   Learn more →
                 </Link>
               </div>
@@ -315,21 +358,26 @@ export default function HomePage() {
               A simple, proven process so you get a professional website fast — without sacrificing quality.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'Tell Us About Your Business', desc: 'Fill out our short form and share your goals, services, and any examples you love. No technical knowledge required.' },
-              { step: '2', title: 'We Build Your Site',          desc: 'Our team designs and develops your custom website, sending you a preview for review within 10–15 business days.' },
-              { step: '3', title: 'Launch & Ongoing Support',    desc: 'We go live, connect your domain, and stay on to handle updates, maintenance, and any changes you need.' },
-            ].map(({ step, title, desc }) => (
-              <div key={step} className="text-center">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6"
-                  style={{ background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)' }}>
-                  {step}
+          <div className="relative">
+            {/* Desktop connector line */}
+            <div className="hidden md:block absolute border-t-2 border-dashed border-primary-100"
+              style={{ top: '48px', left: '21%', right: '21%' }} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+              {[
+                { step: '1', title: 'Tell Us About Your Business', desc: 'Fill out our short form and share your goals, services, and any examples you love. No technical knowledge required.' },
+                { step: '2', title: 'We Build Your Site',          desc: 'Our team designs and develops your custom website, sending you a preview for review within 10–15 business days.' },
+                { step: '3', title: 'Launch & Ongoing Support',    desc: 'We go live, connect your domain, and stay on to handle updates, maintenance, and any changes you need.' },
+              ].map(({ step, title, desc }) => (
+                <div key={step} className="text-center">
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center text-white font-bold text-3xl mx-auto mb-6 ring-4 ring-primary-100"
+                    style={{ background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)' }}>
+                    {step}
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-lg mb-3">{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">{desc}</p>
                 </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-3">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">{desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
           <div className="text-center mt-12">
             <Link href="/contact" className="btn-primary">Start Your Project</Link>
@@ -351,17 +399,24 @@ export default function HomePage() {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map(({ quote, name, role, business }) => (
+            {testimonials.map(({ quote, name, role, business, avatarColor, initial }) => (
               <div key={name}
-                className="bg-white rounded-2xl p-7 border-l-4 border-primary-400 transition-all duration-300 hover:-translate-y-1"
+                className="bg-white rounded-2xl p-7 border-l-4 border-primary-400 relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
                 style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
-                <div className="text-amber-400 text-sm tracking-tight mb-4">★★★★★</div>
-                <blockquote className="text-gray-700 text-sm leading-relaxed mb-5 italic">
+                {/* Decorative quote mark */}
+                <div className="absolute top-2 right-4 text-8xl font-black text-primary-100 leading-none pointer-events-none select-none" aria-hidden="true">
+                  &ldquo;
+                </div>
+                <div className="text-amber-400 text-base tracking-widest mb-4">★★★★★</div>
+                <blockquote className="text-gray-700 text-sm leading-relaxed mb-5 italic relative z-10">
                   &ldquo;{quote}&rdquo;
                 </blockquote>
-                <div>
-                  <p className="font-bold text-gray-900 text-sm">{name}</p>
-                  <p className="text-gray-400 text-xs mt-0.5">{role} · {business}</p>
+                <div className="flex items-center gap-3">
+                  <div className={`avatar-initial ${avatarColor}`}>{initial}</div>
+                  <div>
+                    <p className="font-bold text-gray-900 text-sm">{name}</p>
+                    <p className="text-gray-400 text-xs mt-0.5">{role} · {business}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -384,10 +439,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
 
             {/* Basic */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 flex flex-col" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 border-t-4 border-t-gray-200 flex flex-col" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
               <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Basic</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-5xl font-bold text-gray-900">$69</span>
+                <span className="text-6xl font-bold text-gray-900">$69</span>
                 <span className="text-gray-400 text-sm">/mo</span>
               </div>
               <p className="text-sm text-gray-500 mb-6">Perfect for getting online fast</p>
@@ -406,20 +461,23 @@ export default function HomePage() {
             </div>
 
             {/* Standard — Featured */}
-            <div className="rounded-2xl p-8 flex flex-col relative md:-my-4"
+            <div className="rounded-2xl p-8 flex flex-col relative md:-my-4 overflow-hidden"
               style={{ background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)', boxShadow: '0 24px 60px rgba(40,120,196,0.35)' }}>
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <span className="bg-white text-primary-700 text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md">
+              {/* Dot grid overlay */}
+              <div className="absolute inset-0 pointer-events-none"
+                style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.12) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px', opacity: 0.08 }} />
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                <span className="bg-white text-primary-700 text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md hover:scale-105 transition-transform inline-block">
                   ✦ Most Popular
                 </span>
               </div>
-              <p className="text-xs font-bold tracking-widest uppercase text-white/70 mb-2 mt-2">Standard</p>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-5xl font-bold text-white">$99</span>
+              <p className="text-xs font-bold tracking-widest uppercase text-white/70 mb-2 mt-2 relative z-10">Standard</p>
+              <div className="flex items-baseline gap-1 mb-1 relative z-10">
+                <span className="text-6xl font-bold text-white">$99</span>
                 <span className="text-white/60 text-sm">/mo</span>
               </div>
-              <p className="text-sm text-white/70 mb-6">Best for growing businesses</p>
-              <ul className="space-y-3 mb-8 flex-grow">
+              <p className="text-sm text-white/70 mb-6 relative z-10">Best for growing businesses</p>
+              <ul className="space-y-3 mb-8 flex-grow relative z-10">
                 {['Up to 10 pages', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', 'Unlimited content updates', 'Full SEO optimization', 'Google Analytics setup', 'Booking / inquiry forms'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-white">
                     <span className="rounded-full flex items-center justify-center text-white shrink-0 mt-0.5"
@@ -431,17 +489,17 @@ export default function HomePage() {
                 ))}
               </ul>
               <Link href="/contact"
-                className="w-full justify-center inline-flex items-center rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5"
+                className="w-full justify-center inline-flex items-center rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 relative z-10"
                 style={{ background: '#ffffff', color: '#1E66A8', padding: '14px 32px', fontSize: '15px' }}>
                 Get Started — $99/mo
               </Link>
             </div>
 
             {/* Premium */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 flex flex-col" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 border-t-4 border-t-primary-300 flex flex-col" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
               <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Premium</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-5xl font-bold text-gray-900">$149</span>
+                <span className="text-6xl font-bold text-gray-900">$149</span>
                 <span className="text-gray-400 text-sm">/mo</span>
               </div>
               <p className="text-sm text-gray-500 mb-6">For e-commerce &amp; full-scale brands</p>
@@ -481,23 +539,21 @@ export default function HomePage() {
             </p>
           </div>
           <div className="space-y-6">
-            {[
-              { category: 'Service Business · Standard Plan', title: 'Local Plumbing Company',   desc: 'A local plumbing company needed more than a basic online presence. We delivered a fast, SEO-optimized site with clear service pages and a prominent call-to-action.', result: '3x more leads in 60 days',        bg: '#EBF5FF', icon: '🔧' },
-              { category: 'Real Estate · Standard Plan',      title: 'Real Estate Agent',         desc: 'An independent realtor wanted to stand out in a competitive market. We built a clean, professional site with strong local SEO and an easy inquiry form.',             result: '200% increase in inquiries',    bg: '#F0FDF4', icon: '🏡' },
-              { category: 'Healthcare · Standard Plan',       title: 'Dental Practice',            desc: 'A dental clinic needed to rank locally and make appointment booking easy. We delivered an optimized, trust-building site that moved them to page one.',              result: 'Page 1 for local searches',     bg: '#F0F8FF', icon: '🦷' },
-            ].map(({ category, title, desc, result, bg, icon }) => (
+            {portfolioItems.map(({ category, title, desc, result, bg, PortfolioIcon }) => (
               <div key={title}
-                className="bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col sm:flex-row"
+                className="bg-white rounded-2xl border border-gray-100 border-l-4 border-l-primary-400 overflow-hidden flex flex-col sm:flex-row"
                 style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
                 <div className="sm:w-40 lg:w-56 flex items-center justify-center shrink-0 p-8" style={{ background: bg }}>
-                  <span style={{ fontSize: '3rem' }}>{icon}</span>
+                  <div className="w-16 h-16 rounded-2xl bg-primary-600 flex items-center justify-center text-white">
+                    <PortfolioIcon />
+                  </div>
                 </div>
                 <div className="p-7 flex-1">
                   <p className="text-xs font-semibold text-primary-600 uppercase tracking-widest mb-2">{category}</p>
                   <h3 className="font-bold text-gray-900 text-xl mb-2">{title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
                   <div className="flex items-center gap-4 flex-wrap">
-                    <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 font-semibold text-sm px-3 py-1.5 rounded-full border border-green-100">
+                    <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 font-bold text-sm px-3 py-1.5 rounded-full border border-green-100 shadow-sm">
                       <svg width="14" height="14" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
@@ -526,7 +582,7 @@ export default function HomePage() {
           <div className="space-y-3">
             {faqs.map(({ q, a }) => (
               <details key={q}
-                className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 transition-colors"
+                className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 transition-colors group-open:bg-primary-50/30"
                 style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
                 <summary className="flex items-center justify-between gap-4 cursor-pointer select-none p-6
                                     text-gray-900 font-semibold text-base list-none [&::-webkit-details-marker]:hidden">
@@ -560,11 +616,14 @@ export default function HomePage() {
         aria-label="Call to action">
         <div className="absolute inset-0 pointer-events-none"
           style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
+        {/* Radial white glow behind headline */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 50%, rgba(255,255,255,0.08), transparent)' }} />
         <div className="container-tight relative z-10 text-center">
           <p className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-white/60 mb-4">
             Get Started Today
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5" style={{ letterSpacing: '-0.02em' }}>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5" style={{ letterSpacing: '-0.02em' }}>
             Ready to Grow Your Business Online?
           </h2>
           <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
@@ -582,7 +641,15 @@ export default function HomePage() {
             </Link>
             <Link href="/pricing" className="btn-outline-white px-9 py-4">View Pricing</Link>
           </div>
-          <p className="text-white/40 text-sm">No commitment required · We respond within 24 hours</p>
+          {/* Avatar stack + trust text */}
+          <div className="flex items-center justify-center gap-3">
+            <div className="flex -space-x-2">
+              <div className="w-8 h-8 rounded-full bg-blue-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">M</div>
+              <div className="w-8 h-8 rounded-full bg-emerald-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">S</div>
+              <div className="w-8 h-8 rounded-full bg-violet-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">P</div>
+            </div>
+            <p className="text-white/40 text-sm">No commitment required · We respond within 24 hours</p>
+          </div>
         </div>
       </section>
     </>
