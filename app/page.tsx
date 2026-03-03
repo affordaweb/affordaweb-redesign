@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
@@ -253,6 +254,7 @@ export default function HomePage() {
                 style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(40,120,196,0.12), transparent)' }} />
 
               <div className="bg-white rounded-2xl border border-gray-200 shadow-[0_8px_40px_rgba(0,0,0,0.10)] overflow-hidden">
+                {/* Browser chrome */}
                 <div className="bg-gray-50 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
                   <div className="flex items-center gap-1.5">
                     <div className="w-3 h-3 rounded-full bg-red-400" />
@@ -263,16 +265,40 @@ export default function HomePage() {
                     <span className="text-gray-400 text-xs">yourbusiness.com</span>
                   </div>
                 </div>
-                <div className="p-5 space-y-3" style={{ background: 'linear-gradient(180deg, #F0F8FF 0%, #ffffff 100%)' }}>
-                  <div className="h-5 bg-primary-100 rounded w-2/3" />
-                  <div className="h-3 bg-gray-100 rounded w-full" />
-                  <div className="h-3 bg-gray-100 rounded w-4/5" />
-                  <div className="h-8 bg-primary-500 rounded-full w-1/3 mt-2" />
-                  <div className="grid grid-cols-3 gap-2 mt-3">
+                {/* Website hero photo */}
+                <div className="relative" style={{ height: '200px' }}>
+                  <Image
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&auto=format&fit=crop&q=80"
+                    alt="Professional small business website"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                    sizes="500px"
+                  />
+                  {/* Simulated website nav overlay */}
+                  <div className="absolute top-0 left-0 right-0 px-4 py-2.5 flex items-center justify-between"
+                    style={{ background: 'rgba(15,30,55,0.55)', backdropFilter: 'blur(6px)' }}>
+                    <div className="h-2.5 bg-white/80 rounded w-20" />
+                    <div className="flex gap-3">
+                      {[1, 2, 3].map(n => <div key={n} className="h-1.5 bg-white/50 rounded w-10" />)}
+                    </div>
+                    <div className="h-6 bg-primary-400 rounded-full w-16" />
+                  </div>
+                  {/* Headline + CTA overlay at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 px-4 pb-3 pt-8"
+                    style={{ background: 'linear-gradient(to top, rgba(15,30,55,0.7) 0%, transparent 100%)' }}>
+                    <div className="h-3.5 bg-white/85 rounded w-3/5 mb-2" />
+                    <div className="h-2 bg-white/50 rounded w-4/5 mb-3" />
+                    <div className="h-7 bg-primary-500 rounded-full w-1/3" />
+                  </div>
+                </div>
+                {/* Service cards strip */}
+                <div className="p-4 bg-white">
+                  <div className="grid grid-cols-3 gap-2">
                     {[1, 2, 3].map(n => (
-                      <div key={n} className="bg-white border border-gray-100 rounded-xl p-3 shadow-sm">
-                        <div className="w-8 h-8 rounded-lg bg-primary-50 mb-2" />
-                        <div className="h-2.5 bg-gray-100 rounded w-full mb-1.5" />
+                      <div key={n} className="bg-gray-50 border border-gray-100 rounded-xl p-3">
+                        <div className="w-7 h-7 rounded-lg bg-primary-100 mb-2" />
+                        <div className="h-2.5 bg-gray-200 rounded w-full mb-1.5" />
                         <div className="h-2 bg-gray-100 rounded w-3/4" />
                       </div>
                     ))}
@@ -347,21 +373,21 @@ export default function HomePage() {
       </section>
 
       {/* ── D. HOW IT WORKS ────────────────────────────────────── */}
-      <section className="section-pad bg-white" aria-labelledby="process-heading">
+      <section className="section-pad" style={{ background: '#2D3142' }} aria-labelledby="process-heading">
         <div className="container-tight">
           <div className="text-center mb-14">
-            <p className="section-label">Our Process</p>
-            <h2 id="process-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" style={{ letterSpacing: '-0.01em' }}>
+            <p className="section-label" style={{ color: '#4D9BE5' }}>Our Process</p>
+            <h2 id="process-heading" className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.01em' }}>
               Up and Running in 10–15 Days
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.6)' }}>
               A simple, proven process so you get a professional website fast — without sacrificing quality.
             </p>
           </div>
           <div className="relative">
             {/* Desktop connector line */}
-            <div className="hidden md:block absolute border-t-2 border-dashed border-primary-100"
-              style={{ top: '48px', left: '21%', right: '21%' }} />
+            <div className="hidden md:block absolute border-t-2 border-dashed"
+              style={{ top: '48px', left: '21%', right: '21%', borderColor: 'rgba(255,255,255,0.15)' }} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
               {[
                 { step: '1', title: 'Tell Us About Your Business', desc: 'Fill out our short form and share your goals, services, and any examples you love. No technical knowledge required.' },
@@ -369,18 +395,57 @@ export default function HomePage() {
                 { step: '3', title: 'Launch & Ongoing Support',    desc: 'We go live, connect your domain, and stay on to handle updates, maintenance, and any changes you need.' },
               ].map(({ step, title, desc }) => (
                 <div key={step} className="text-center">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center text-white font-bold text-3xl mx-auto mb-6 ring-4 ring-primary-100"
-                    style={{ background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)' }}>
+                  <div className="w-24 h-24 rounded-full flex items-center justify-center text-white font-bold text-3xl mx-auto mb-6"
+                    style={{ background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)', boxShadow: '0 0 0 6px rgba(40,120,196,0.18)' }}>
                     {step}
                   </div>
-                  <h3 className="font-bold text-gray-900 text-lg mb-3">{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">{desc}</p>
+                  <h3 className="font-bold text-white text-lg mb-3">{title}</h3>
+                  <p className="text-sm leading-relaxed max-w-xs mx-auto" style={{ color: 'rgba(255,255,255,0.6)' }}>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
           <div className="text-center mt-12">
             <Link href="/contact" className="btn-primary">Start Your Project</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── D.5 TEAM PHOTO STRIP ───────────────────────────────── */}
+      <section className="relative overflow-hidden" style={{ height: '380px' }}>
+        <Image
+          src="https://images.pexels.com/photos/3184661/pexels-photo-3184661.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Small business team collaborating on web design"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Blue gradient overlay — left side darker for text legibility */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(100deg, rgba(26,92,153,0.92) 0%, rgba(40,120,196,0.78) 50%, rgba(40,120,196,0.40) 100%)' }} />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-tight text-white">
+            <div className="max-w-xl">
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: 'rgba(173,207,245,0.9)' }}>Our Commitment</p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+                A Dedicated Team,<br />Always in Your Corner
+              </h2>
+              <p className="text-lg mb-6 max-w-md" style={{ color: 'rgba(255,255,255,0.72)' }}>
+                From your first consultation to launch day and beyond — we are here to make your business shine online.
+              </p>
+              <div className="flex flex-wrap gap-8">
+                {[
+                  { n: '50+', l: 'Businesses Served' },
+                  { n: '10–15', l: 'Day Turnaround' },
+                  { n: '4.9★', l: 'Client Rating' },
+                ].map(({ n, l }) => (
+                  <div key={l}>
+                    <div className="text-2xl font-bold text-white">{n}</div>
+                    <div className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>{l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

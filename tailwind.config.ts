@@ -36,6 +36,12 @@ const config: Config = {
         'logo-gray': '#595959',
         // Very light blue surface
         surface: '#F0F7FF',
+        // Charcoal — dark gray for section contrast
+        charcoal: {
+          DEFAULT: '#2D3142',
+          light:   '#3D4255',
+          dark:    '#1E2230',
+        },
       },
       fontFamily: {
         sans:    ['var(--font-inter)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
