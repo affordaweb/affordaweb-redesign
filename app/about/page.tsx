@@ -90,15 +90,13 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-hero pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
-        <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-primary-400">Our Story</p>
-          <h1 className="section-title-white mb-6">
-            Professional Websites for Every Budget
+      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
+        <div className="container-tight relative z-10">
+          <p className="section-label">Our Story</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
+            Built for Small Businesses, By People Who Get It
           </h1>
-          <p className="section-subtitle-white mx-auto text-center">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             AffordaWeb Solutions was founded on a simple belief: every small business deserves a professional, high-performing website — regardless of budget. We make that possible.
           </p>
         </div>
@@ -160,22 +158,22 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section-pad bg-dark relative overflow-hidden" aria-labelledby="values-heading">
-        <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-primary-500/10 rounded-full blur-[150px] pointer-events-none" />
-        <div className="container-tight relative z-10">
+      <section className="section-pad relative overflow-hidden" style={{ background: '#F0F8FF' }} aria-labelledby="values-heading">
+        <div className="container-tight">
           <div className="text-center mb-16">
             <p className="section-label">Our Values</p>
-            <h2 id="values-heading" className="section-title-white">
+            <h2 id="values-heading" className="text-3xl sm:text-4xl font-bold text-gray-900" style={{ letterSpacing: '-0.01em' }}>
               What We Stand For
             </h2>
             <div className="divider-glow" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map(({ icon, title, desc }) => (
-              <div key={title} className="card-glass">
+              <div key={title} className="bg-white rounded-2xl p-7 border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
                 <div className="icon-wrap mb-5">{icon}</div>
-                <h3 className="text-white font-bold text-lg mb-2">{title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
+                <h3 className="text-gray-900 font-bold text-lg mb-2">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -183,7 +181,7 @@ export default function AboutPage() {
       </section>
 
       {/* Who we serve */}
-      <section className="section-pad bg-surface" aria-labelledby="audience-heading">
+      <section className="section-pad bg-white" aria-labelledby="audience-heading">
         <div className="container-tight">
           <div className="text-center mb-16">
             <p className="section-label">Who We Serve</p>
@@ -209,19 +207,25 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-pad bg-gradient-hero relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-[600px] h-[400px] bg-primary-500/15 rounded-full blur-[150px] pointer-events-none" />
+      <section className="section-pad relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}>
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-primary-400">Let&apos;s Work Together</p>
-          <h2 className="section-title-white mb-6">
+          <p className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-white/60 mb-4">
+            Let&apos;s Work Together
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
             Your Website Journey Starts Here
           </h2>
-          <p className="section-subtitle-white mx-auto text-center mb-10">
+          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
             Tell us about your business and we will build you a website that works. No technical knowledge required — we handle everything from design to launch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary">Get a Free Quote</Link>
+            <Link href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-semibold
+                         px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-50"
+              style={{ fontSize: '15px' }}>
+              Get a Free Quote
+            </Link>
             <Link href="/pricing" className="btn-outline-white">View Plans</Link>
           </div>
         </div>

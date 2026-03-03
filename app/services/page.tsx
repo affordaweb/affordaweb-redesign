@@ -217,23 +217,24 @@ export default function ServicesPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-hero pt-32 pb-20 text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
+      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
         <div className="container-tight relative z-10">
-          <p className="section-label text-primary-400">What We Offer</p>
-          <h1 className="section-title-white mb-6">
+          <p className="section-label">What We Offer</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
             Affordable Web Design Services<br className="hidden sm:block" /> for Small Businesses
           </h1>
-          <p className="section-subtitle-white mx-auto text-center mb-8">
-            From custom website design to SEO, hosting, and maintenance — we offer everything your business needs to succeed online, bundled into one simple monthly plan.
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
+            From custom website design to SEO, hosting, and maintenance — everything your business needs to succeed online, bundled into one simple monthly plan.
           </p>
-          <Link href="/contact" className="btn-primary">
-            Get a Free Quote
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="btn-primary">
+              Get a Free Quote
+              <svg width="16" height="16" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+            <Link href="/pricing" className="btn-secondary">View Pricing</Link>
+          </div>
         </div>
       </section>
 
@@ -294,21 +295,25 @@ export default function ServicesPage() {
       ))}
 
       {/* CTA */}
-      <section className="section-pad bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                          w-[600px] h-[400px] bg-primary-500/15 rounded-full blur-[150px]" />
-        </div>
+      <section className="section-pad relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}>
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-primary-400">Ready to Get Started?</p>
-          <h2 className="section-title-white mb-6">
+          <p className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-white/60 mb-4">
+            Ready to Get Started?
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
             Let&apos;s Build Something Great Together
           </h2>
-          <p className="section-subtitle-white mx-auto text-center mb-10">
-            Tell us about your project and receive a no-obligation quote within 24 hours. We serve small businesses nationwide with affordable, professional web design services.
+          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
+            Tell us about your project and receive a no-obligation quote within 24 hours. We serve small businesses nationwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary">Get a Free Quote</Link>
+            <Link href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-semibold
+                         px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-50"
+              style={{ fontSize: '15px' }}>
+              Get a Free Quote
+            </Link>
             <Link href="/pricing" className="btn-outline-white">View Pricing</Link>
           </div>
         </div>

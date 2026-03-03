@@ -26,34 +26,40 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-hero pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
-        <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-primary-400">Get in Touch</p>
-          <h1 className="section-title-white mb-6">
-            Let&apos;s Build Your Website
+      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
+        <div className="container-tight relative z-10">
+          <p className="section-label">Get in Touch</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
+            Let&apos;s Talk — We Respond Within 24 Hours
           </h1>
-          <p className="section-subtitle-white mx-auto text-center">
-            Tell us about your project and receive a free, no-obligation quote within 24 hours. There is no commitment required to request a quote.
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            Tell us about your project and receive a free, no-obligation quote. No commitment required — just ask.
           </p>
+          <div className="flex items-center justify-center gap-2 mt-6">
+            <span className="text-amber-400 text-lg tracking-tight">★★★★★</span>
+            <span className="text-gray-500 text-sm font-medium">Trusted by 50+ small businesses</span>
+          </div>
         </div>
       </section>
 
       {/* Contact section */}
-      <section className="section-pad bg-surface" aria-labelledby="contact-heading">
+      <section className="section-pad bg-white" aria-labelledby="contact-heading">
         <div className="container-tight">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
 
             {/* Left sidebar */}
             <div className="lg:col-span-2 space-y-8">
               <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-amber-400 text-base tracking-tight">★★★★★</span>
+                  <span className="text-gray-500 text-xs font-medium">Trusted by 50+ clients</span>
+                </div>
                 <p className="section-label">Contact Info</p>
-                <h2 id="contact-heading" className="text-2xl font-bold text-dark mb-4">
+                <h2 id="contact-heading" className="text-2xl font-bold text-gray-900 mb-4">
                   We&apos;d Love to Hear From You
                 </h2>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Your inquiry will never go unanswered. We respond to every message within 24 hours — often much sooner. No automated responses, no runaround.
+                  Your inquiry will never go unanswered. We respond to every message within 24 hours — often much sooner. Real humans, no bots.
                 </p>
               </div>
 
@@ -251,9 +257,8 @@ export default function ContactPage() {
                   </button>
 
                   <p className="text-center text-xs text-gray-400 pt-2">
-                    By submitting this form you agree to our{' '}
-                    <Link href="/privacy" className="text-primary-500 hover:underline">Privacy Policy</Link>.
-                    We never share your information.
+                    No spam. No commitment. By submitting you agree to our{' '}
+                    <Link href="/privacy" className="text-primary-600 hover:underline">Privacy Policy</Link>.
                   </p>
                 </form>
               </div>

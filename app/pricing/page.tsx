@@ -154,22 +154,24 @@ export default function PricingPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-hero pt-32 pb-20 text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
+      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
         <div className="container-tight relative z-10">
-          <p className="section-label text-primary-400">Transparent Pricing</p>
-          <h1 className="section-title-white mb-6">
+          <p className="section-label">Transparent Pricing</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
             One Monthly Rate.<br className="hidden sm:block" /> Everything Included.
           </h1>
-          <p className="section-subtitle-white mx-auto text-center">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             No setup fees. No hidden costs. No long-term contracts. Just professional website design with hosting, SSL, and maintenance bundled into one affordable monthly plan.
           </p>
+          <div className="flex items-center justify-center gap-2 mt-6">
+            <span className="text-amber-400 text-lg tracking-tight">★★★★★</span>
+            <span className="text-gray-500 text-sm font-medium">Trusted by 50+ small businesses · Starting at $69/mo</span>
+          </div>
         </div>
       </section>
 
       {/* Pricing cards */}
-      <section className="section-pad bg-surface" aria-labelledby="plans-heading">
+      <section className="section-pad bg-white" aria-labelledby="plans-heading">
         <div className="container-tight">
           <div className="sr-only" id="plans-heading">Pricing Plans</div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -293,7 +295,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-pad bg-surface" id="pricing-faq" aria-labelledby="pfaq-heading">
+      <section className="section-pad" id="pricing-faq" aria-labelledby="pfaq-heading" style={{ background: '#F0F8FF' }}>
         <div className="container-tight max-w-3xl">
           <div className="text-center mb-12">
             <p className="section-label">Questions</p>
@@ -320,15 +322,18 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-pad bg-gradient-hero relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
+      <section className="section-pad relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}>
         <div className="container-tight relative z-10 text-center">
-          <h2 className="section-title-white mb-4">Not Sure Which Plan Is Right for You?</h2>
-          <p className="section-subtitle-white mx-auto text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            Not Sure Which Plan Is Right for You?
+          </h2>
+          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-8">
             Contact us for a free consultation. We will recommend the best plan based on your goals, timeline, and budget.
           </p>
-          <Link href="/contact" className="btn-primary">
+          <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-semibold
+                     px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-50"
+            style={{ fontSize: '15px' }}>
             Get a Free Recommendation
           </Link>
         </div>

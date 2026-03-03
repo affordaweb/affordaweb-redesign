@@ -116,22 +116,29 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-hero pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
-        <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-primary-400">Our Work</p>
-          <h1 className="section-title-white mb-6">
-            Websites That Drive Real Results
+      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
+        <div className="container-tight relative z-10">
+          <p className="section-label">Our Work</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
+            Real Results for Real Businesses
           </h1>
-          <p className="section-subtitle-white mx-auto text-center">
-            Every website we build is designed with one goal: to help your business grow. Browse our recent projects and see what is possible with AffordaWeb Solutions.
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            Every website we build is designed with one goal: to help your business grow. Browse our recent projects and see what is possible.
           </p>
+          {/* Results summary */}
+          <div className="flex flex-wrap items-center justify-center gap-8 mt-10">
+            {[{ n: '50+', l: 'Sites Built' }, { n: '4.9★', l: 'Avg Rating' }, { n: '10–15', l: 'Day Delivery' }].map(({ n, l }) => (
+              <div key={l} className="text-center">
+                <div className="text-2xl font-bold text-primary-600">{n}</div>
+                <div className="text-xs text-gray-400 font-medium mt-0.5">{l}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Portfolio grid */}
-      <section className="section-pad bg-surface" aria-labelledby="portfolio-heading">
+      <section className="section-pad bg-white" aria-labelledby="portfolio-heading">
         <div className="container-tight">
           <div className="sr-only" id="portfolio-heading">Portfolio Projects</div>
 
@@ -223,19 +230,23 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Process reminder */}
-      <section className="section-pad bg-dark relative overflow-hidden">
-        <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-primary-500/10 rounded-full blur-[150px] pointer-events-none" />
+      {/* CTA */}
+      <section className="section-pad relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}>
         <div className="container-tight relative z-10 text-center">
-          <p className="section-label">Our Process</p>
-          <h2 className="section-title-white mb-4">
-            From Brief to Launch in 10–15 Days
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            Want Results Like These for Your Business?
           </h2>
-          <p className="section-subtitle-white mx-auto text-center mb-10">
-            We have built a streamlined process so you get a professional website fast — without sacrificing quality or attention to detail.
+          <p className="text-white/70 text-lg max-w-xl mx-auto mb-10">
+            We have built a streamlined process so you get a professional website fast — without sacrificing quality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary">Get a Free Quote</Link>
+            <Link href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-semibold
+                         px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-50"
+              style={{ fontSize: '15px' }}>
+              Get a Free Quote
+            </Link>
             <Link href="/pricing" className="btn-outline-white">View Pricing</Link>
           </div>
         </div>

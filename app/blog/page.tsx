@@ -98,21 +98,19 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-hero pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        w-[600px] h-[400px] bg-primary-500/20 rounded-full blur-[150px] pointer-events-none" />
-        <div className="container-tight relative z-10 text-center">
-          <p className="section-label text-primary-400">Resources & Tips</p>
-          <h1 className="section-title-white mb-6">
-            Web Design & SEO Insights for Small Businesses
+      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
+        <div className="container-tight relative z-10">
+          <p className="section-label">Resources &amp; Tips</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
+            Web Design &amp; SEO Insights for Small Businesses
           </h1>
-          <p className="section-subtitle-white mx-auto text-center">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             Practical advice on website design, SEO, and digital marketing — written for small business owners who want to grow online without the jargon.
           </p>
         </div>
       </section>
 
-      <section className="section-pad bg-surface" aria-labelledby="blog-heading">
+      <section className="section-pad bg-white" aria-labelledby="blog-heading">
         <div className="container-tight">
           <div className="sr-only" id="blog-heading">Blog Posts</div>
 
@@ -215,28 +213,31 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="section-pad bg-dark relative overflow-hidden">
-        <div className="absolute top-0 left-1/3 w-[400px] h-[400px] bg-primary-500/10 rounded-full blur-[150px] pointer-events-none" />
+      <section className="section-pad relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}>
         <div className="container-tight relative z-10 max-w-2xl text-center">
-          <p className="section-label">Stay Updated</p>
-          <h2 className="section-title-white mb-4">
+          <p className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-white/60 mb-4">Stay Updated</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
             Get Web Design Tips in Your Inbox
           </h2>
-          <p className="section-subtitle-white mx-auto text-center mb-8">
+          <p className="text-white/70 text-lg mb-8">
             Join small business owners who get our best web design and SEO tips every month. No spam — just useful content.
           </p>
           <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="https://formspree.io/f/your-form-id" method="POST">
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-1 px-4 py-3 rounded-full text-dark text-sm
-                         focus:outline-none focus:ring-2 focus:ring-primary-500/50 border-2 border-white/10 bg-white/10 text-white placeholder:text-white/40"
+              className="flex-1 px-4 py-3 rounded-full text-sm bg-white/15 text-white placeholder:text-white/50
+                         focus:outline-none focus:ring-2 focus:ring-white/30 border border-white/20"
             />
-            <button type="submit" className="btn-primary px-6 py-3 shrink-0">
+            <button type="submit"
+              className="inline-flex items-center justify-center bg-white text-primary-700 font-semibold
+                         px-6 py-3 rounded-full transition-all hover:-translate-y-0.5 shrink-0"
+              style={{ fontSize: '15px' }}>
               Subscribe
             </button>
           </form>
-          <p className="text-white/30 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+          <p className="text-white/40 text-xs mt-4">No spam. Unsubscribe anytime.</p>
         </div>
       </section>
     </>
