@@ -198,11 +198,7 @@ const serviceSchema = {
       '@type': 'Service',
       name: s.title,
       description: s.description.split('\n')[0],
-      provider: {
-        '@type': 'Organization',
-        name: 'AffordaWeb Solutions',
-        url: 'https://affordawebsolutions.com',
-      },
+      provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://affordawebsolutions.com' },
       url: `https://affordawebsolutions.com/services#${s.id}`,
     },
   })),
@@ -216,46 +212,64 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      {/* Hero */}
-      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
+      {/* Hero — Dark navy */}
+      <section
+        className="relative overflow-hidden pt-[104px] pb-20 text-center"
+        style={{ background: '#091829' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
+            backgroundSize: '32px 32px',
+            opacity: 0.35,
+          }}
+        />
         <div className="container-tight relative z-10">
-          <p className="section-label">What We Offer</p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
+          <p className="section-label-white">What We Offer</p>
+          <h1
+            className="text-4xl sm:text-5xl font-bold text-white mb-6"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Affordable Web Design Services<br className="hidden sm:block" /> for Small Businesses
           </h1>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
+          <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
             From custom website design to SEO, hosting, and maintenance — everything your business needs to succeed online, bundled into one simple monthly plan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contact" className="btn-white">
               Get a Free Quote
-              <svg width="16" height="16" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-            <Link href="/pricing" className="btn-secondary">View Pricing</Link>
+            <Link href="/pricing" className="btn-outline-white">View Pricing</Link>
           </div>
         </div>
       </section>
 
-      {/* Services detail */}
+      {/* Services detail — alternating white / light */}
       {services.map((service, i) => (
         <section
           key={service.id}
           id={service.id}
-          className={`section-pad ${i % 2 === 0 ? 'bg-white' : 'bg-surface'}`}
+          className="section-pad"
+          style={{ background: i % 2 === 0 ? '#ffffff' : '#F7FBFF' }}
           aria-labelledby={`${service.id}-heading`}
         >
           <div className="container-tight">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
-              i % 2 !== 0 ? 'lg:grid-flow-dense' : ''
-            }`}>
+            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${i % 2 !== 0 ? 'lg:grid-flow-dense' : ''}`}>
+
               {/* Content */}
               <div className={i % 2 !== 0 ? 'lg:col-start-2' : ''}>
                 <span className="badge bg-primary-50 text-primary-600 mb-4 text-xs">
                   {service.tag}
                 </span>
-                <h2 id={`${service.id}-heading`} className="text-3xl sm:text-4xl font-bold text-dark mb-4">
+                <h2
+                  id={`${service.id}-heading`}
+                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-5"
+                  style={{ letterSpacing: '-0.01em' }}
+                >
                   {service.headline}
                 </h2>
                 {service.description.split('\n\n').map((para, j) => (
@@ -266,12 +280,12 @@ export default function ServicesPage() {
                 </Link>
               </div>
 
-              {/* Features */}
+              {/* Features card */}
               <div className={`card ${i % 2 !== 0 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                 <div className="icon-wrap mb-6">
                   {service.icon}
                 </div>
-                <h3 className="font-bold text-dark text-lg mb-5">{service.title} — What&apos;s Included</h3>
+                <h3 className="font-bold text-gray-900 text-lg mb-5">{service.title} — What&apos;s Included</h3>
                 <ul className="space-y-3">
                   {service.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
@@ -281,10 +295,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
                 <div className="mt-6 pt-6 border-t border-gray-100">
-                  <Link
-                    href="/pricing"
-                    className="text-sm font-semibold text-primary-500 hover:text-primary-500 transition-colors"
-                  >
+                  <Link href="/pricing" className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
                     View pricing for this service →
                   </Link>
                 </div>
@@ -294,27 +305,33 @@ export default function ServicesPage() {
         </section>
       ))}
 
-      {/* CTA */}
-      <section className="section-pad relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}>
+      {/* CTA — Dark navy */}
+      <section
+        className="section-pad relative overflow-hidden"
+        style={{ background: '#091829' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
+            backgroundSize: '28px 28px',
+            opacity: 0.3,
+          }}
+        />
         <div className="container-tight relative z-10 text-center">
-          <p className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-white/60 mb-4">
-            Ready to Get Started?
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
+          <p className="section-label-white">Ready to Get Started?</p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-white mb-6"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Let&apos;s Build Something Great Together
           </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
+          <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Tell us about your project and receive a no-obligation quote within 24 hours. We serve small businesses nationwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-semibold
-                         px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-50"
-              style={{ fontSize: '15px' }}>
-              Get a Free Quote
-            </Link>
-            <Link href="/pricing" className="btn-outline-white">View Pricing</Link>
+            <Link href="/contact" className="btn-white px-9 py-4">Get a Free Quote</Link>
+            <Link href="/pricing" className="btn-outline-white px-9 py-4">View Pricing</Link>
           </div>
         </div>
       </section>

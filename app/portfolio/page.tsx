@@ -115,43 +115,58 @@ const categories = ['All', 'Professional Services', 'Community & Advocacy', 'Fin
 export default function PortfolioPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
+      {/* Hero — Dark navy */}
+      <section
+        className="relative overflow-hidden pt-[104px] pb-20 text-center"
+        style={{ background: '#091829' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
+            backgroundSize: '32px 32px',
+            opacity: 0.35,
+          }}
+        />
         <div className="container-tight relative z-10">
-          <p className="section-label">Our Work</p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
+          <p className="section-label-white">Our Work</p>
+          <h1
+            className="text-4xl sm:text-5xl font-bold text-white mb-6"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Real Results for Real Businesses
           </h1>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Every website we build is designed with one goal: to help your business grow. Browse our recent projects and see what is possible.
           </p>
           {/* Results summary */}
-          <div className="flex flex-wrap items-center justify-center gap-8 mt-10">
+          <div className="flex flex-wrap items-center justify-center gap-10 mt-10">
             {[{ n: '50+', l: 'Sites Built' }, { n: '4.9★', l: 'Avg Rating' }, { n: '10–15', l: 'Day Delivery' }].map(({ n, l }) => (
               <div key={l} className="text-center">
-                <div className="text-2xl font-bold text-primary-600">{n}</div>
-                <div className="text-xs text-gray-400 font-medium mt-0.5">{l}</div>
+                <div className="text-2xl font-bold text-white">{n}</div>
+                <div className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>{l}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Portfolio grid */}
+      {/* Portfolio grid — White */}
       <section className="section-pad bg-white" aria-labelledby="portfolio-heading">
         <div className="container-tight">
           <div className="sr-only" id="portfolio-heading">Portfolio Projects</div>
 
-          {/* Categories (static display — JS filter would require client component) */}
+          {/* Category filter */}
           <div className="flex flex-wrap gap-2 justify-center mb-12">
             {categories.map((cat) => (
               <span
                 key={cat}
                 className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all ${
                   cat === 'All'
-                    ? 'bg-primary-500 text-white shadow-glow'
-                    : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300 hover:text-primary-500'
+                    ? 'text-white shadow-glow'
+                    : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300 hover:text-primary-600'
                 }`}
+                style={cat === 'All' ? { background: '#2878C4' } : {}}
               >
                 {cat}
               </span>
@@ -160,9 +175,9 @@ export default function PortfolioPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolioItems.map((item) => (
-              <article key={item.id} className="card overflow-hidden group">
+              <article key={item.id} className="card overflow-hidden group p-0">
                 {/* Portfolio image */}
-                <div className="rounded-2xl mb-6 relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
@@ -170,56 +185,60 @@ export default function PortfolioPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent" />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(9,24,41,0.45), transparent)' }} />
                   <div className="absolute top-3 right-3">
-                    <span className="badge bg-white/20 text-white text-xs backdrop-blur-sm">
+                    <span
+                      className="text-white text-xs font-semibold px-3 py-1.5 rounded-full"
+                      style={{ background: 'rgba(9,24,41,0.6)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)' }}
+                    >
                       {item.plan} Plan
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <div>
-                    <p className="text-xs font-semibold text-primary-500 uppercase tracking-widest mb-1">
-                      {item.category}
-                    </p>
-                    <h3 className="font-bold text-dark text-lg">{item.title}</h3>
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {item.tags.map(tag => (
-                    <span key={tag} className="badge bg-surface text-gray-500 text-xs">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Result */}
-                <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-3">
-                  <p className="text-sm font-semibold text-primary-500">
-                    Result: <span className="gradient-text">{item.result}</span>
+                <div className="p-6">
+                  <p className="text-xs font-semibold text-primary-600 uppercase tracking-widest mb-1">
+                    {item.category}
                   </p>
-                  {'url' in item && item.url && (
-                    <a
-                      href={(item as { url: string }).url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-semibold text-white bg-primary-500 hover:bg-primary-600 transition-colors px-3 py-1.5 rounded-full shrink-0"
-                    >
-                      Live Site →
-                    </a>
-                  )}
+                  <h3 className="font-bold text-gray-900 text-lg mb-3">{item.title}</h3>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {item.tags.map(tag => (
+                      <span
+                        key={tag}
+                        className="text-xs font-medium text-gray-500 px-2.5 py-1 rounded-full"
+                        style={{ background: '#F7FBFF', border: '1px solid #E2EDF8' }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Result */}
+                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-3">
+                    <p className="text-sm font-semibold text-green-700">
+                      ↑ {item.result}
+                    </p>
+                    {'url' in item && item.url && (
+                      <a
+                        href={(item as { url: string }).url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-semibold text-white px-3 py-1.5 rounded-full shrink-0 transition-colors hover:opacity-90"
+                        style={{ background: '#2878C4' }}
+                      >
+                        Live Site →
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             ))}
           </div>
 
           <div className="text-center mt-14">
-            <p className="text-gray-400 text-sm mb-6">
-              Want results like these for your business?
-            </p>
+            <p className="text-gray-400 text-sm mb-6">Want results like these for your business?</p>
             <Link href="/contact" className="btn-primary">
               Start Your Project
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -230,24 +249,32 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-pad relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}>
+      {/* CTA — Dark navy */}
+      <section
+        className="section-pad relative overflow-hidden"
+        style={{ background: '#091829' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
+            backgroundSize: '28px 28px',
+            opacity: 0.3,
+          }}
+        />
         <div className="container-tight relative z-10 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Want Results Like These for Your Business?
           </h2>
-          <p className="text-white/70 text-lg max-w-xl mx-auto mb-10">
+          <p className="text-lg max-w-xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
             We have built a streamlined process so you get a professional website fast — without sacrificing quality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-semibold
-                         px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-50"
-              style={{ fontSize: '15px' }}>
-              Get a Free Quote
-            </Link>
-            <Link href="/pricing" className="btn-outline-white">View Pricing</Link>
+            <Link href="/contact" className="btn-white px-9 py-4">Get a Free Quote</Link>
+            <Link href="/pricing" className="btn-outline-white px-9 py-4">View Pricing</Link>
           </div>
         </div>
       </section>

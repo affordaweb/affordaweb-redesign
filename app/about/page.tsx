@@ -18,8 +18,7 @@ const values = [
   {
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
     title: 'Results-Driven',
@@ -78,25 +77,39 @@ const values = [
 ]
 
 const targetAudiences = [
-  { label: 'Startups', desc: 'Get online fast with a professional site that impresses investors and customers alike.' },
-  { label: 'Freelancers', desc: 'Showcase your portfolio and attract better clients with a site that reflects your expertise.' },
+  { label: 'Startups',          desc: 'Get online fast with a professional site that impresses investors and customers alike.' },
+  { label: 'Freelancers',       desc: 'Showcase your portfolio and attract better clients with a site that reflects your expertise.' },
   { label: 'Service Providers', desc: 'Plumbers, cleaners, consultants — if you serve customers, you need a website that brings them in.' },
-  { label: 'Local Businesses', desc: 'Rank in local search results and become the go-to business in your area.' },
-  { label: 'Growing Brands', desc: 'Level up your online presence as your business scales.' },
+  { label: 'Local Businesses',  desc: 'Rank in local search results and become the go-to business in your area.' },
+  { label: 'Growing Brands',    desc: 'Level up your online presence as your business scales.' },
   { label: 'E-Commerce Sellers', desc: 'Open your online store and start selling with a site built for conversions.' },
 ]
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
+      {/* Hero — Dark navy */}
+      <section
+        className="relative overflow-hidden pt-[104px] pb-20 text-center"
+        style={{ background: '#091829' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
+            backgroundSize: '32px 32px',
+            opacity: 0.35,
+          }}
+        />
         <div className="container-tight relative z-10">
-          <p className="section-label">Our Story</p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
+          <p className="section-label-white">Our Story</p>
+          <h1
+            className="text-4xl sm:text-5xl font-bold text-white mb-6"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Built for Small Businesses, By People Who Get It
           </h1>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
             AffordaWeb Solutions was founded on a simple belief: every small business deserves a professional, high-performing website — regardless of budget. We make that possible.
           </p>
         </div>
@@ -135,20 +148,20 @@ export default function AboutPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-dark/20 to-transparent" />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(9,24,41,0.75) 0%, rgba(9,24,41,0.2) 50%, transparent 100%)' }} />
                 <div className="absolute bottom-6 left-6 right-6">
                   <blockquote className="text-white text-base font-semibold leading-relaxed italic">
                     &ldquo;Every business deserves a professional website, no matter its size or budget.&rdquo;
                   </blockquote>
-                  <p className="text-white/60 text-sm mt-2">— AffordaWeb Solutions</p>
+                  <p className="mt-2 text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>— AffordaWeb Solutions</p>
                 </div>
               </div>
               {/* Floating stats */}
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-5 shadow-card-hover">
+              <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl p-5 shadow-card-hover">
                 <div className="text-2xl font-bold gradient-text">100+</div>
                 <div className="text-xs text-gray-500 font-medium">Sites Launched</div>
               </div>
-              <div className="absolute -top-6 -left-6 bg-white rounded-2xl p-5 shadow-card-hover">
+              <div className="absolute -top-5 -left-5 bg-white rounded-2xl p-5 shadow-card-hover">
                 <div className="text-2xl font-bold gradient-text">$69</div>
                 <div className="text-xs text-gray-500 font-medium">Starting Monthly</div>
               </div>
@@ -158,9 +171,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section-pad relative overflow-hidden" style={{ background: '#F0F8FF' }} aria-labelledby="values-heading">
+      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="values-heading">
         <div className="container-tight">
-          <div className="text-center mb-16">
+          <div className="text-center mb-14">
             <p className="section-label">Our Values</p>
             <h2 id="values-heading" className="text-3xl sm:text-4xl font-bold text-gray-900" style={{ letterSpacing: '-0.01em' }}>
               What We Stand For
@@ -169,8 +182,11 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map(({ icon, title, desc }) => (
-              <div key={title} className="bg-white rounded-2xl p-7 border border-gray-100 transition-all duration-300 hover:-translate-y-1"
-                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
+              <div
+                key={title}
+                className="bg-white rounded-2xl p-7 border border-gray-100 transition-all duration-300 hover:-translate-y-1"
+                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)' }}
+              >
                 <div className="icon-wrap mb-5">{icon}</div>
                 <h3 className="text-gray-900 font-bold text-lg mb-2">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
@@ -183,7 +199,7 @@ export default function AboutPage() {
       {/* Who we serve */}
       <section className="section-pad bg-white" aria-labelledby="audience-heading">
         <div className="container-tight">
-          <div className="text-center mb-16">
+          <div className="text-center mb-14">
             <p className="section-label">Who We Serve</p>
             <h2 id="audience-heading" className="section-title">
               We Help All Types of Small Businesses
@@ -196,7 +212,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {targetAudiences.map(({ label, desc }) => (
               <div key={label} className="card group">
-                <h3 className="text-lg font-bold text-dark mb-2 group-hover:text-primary-500 transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
                   {label}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
@@ -206,27 +222,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-pad relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}>
+      {/* CTA — Dark navy */}
+      <section
+        className="section-pad relative overflow-hidden"
+        style={{ background: '#091829' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
+            backgroundSize: '28px 28px',
+            opacity: 0.3,
+          }}
+        />
         <div className="container-tight relative z-10 text-center">
-          <p className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-white/60 mb-4">
-            Let&apos;s Work Together
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
+          <p className="section-label-white">Let&apos;s Work Together</p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-white mb-6"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Your Website Journey Starts Here
           </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
+          <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Tell us about your business and we will build you a website that works. No technical knowledge required — we handle everything from design to launch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-semibold
-                         px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-50"
-              style={{ fontSize: '15px' }}>
-              Get a Free Quote
-            </Link>
-            <Link href="/pricing" className="btn-outline-white">View Plans</Link>
+            <Link href="/contact" className="btn-white px-9 py-4">Get a Free Quote</Link>
+            <Link href="/pricing" className="btn-outline-white px-9 py-4">View Plans</Link>
           </div>
         </div>
       </section>

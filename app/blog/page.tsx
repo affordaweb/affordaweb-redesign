@@ -97,19 +97,34 @@ export default function BlogPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-20 text-center relative overflow-hidden" style={{ background: '#F0F8FF' }}>
+      {/* Hero — Dark navy */}
+      <section
+        className="relative overflow-hidden pt-[104px] pb-20 text-center"
+        style={{ background: '#091829' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
+            backgroundSize: '32px 32px',
+            opacity: 0.35,
+          }}
+        />
         <div className="container-tight relative z-10">
-          <p className="section-label">Resources &amp; Tips</p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
+          <p className="section-label-white">Resources &amp; Tips</p>
+          <h1
+            className="text-4xl sm:text-5xl font-bold text-white mb-6"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Web Design &amp; SEO Insights for Small Businesses
           </h1>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Practical advice on website design, SEO, and digital marketing — written for small business owners who want to grow online without the jargon.
           </p>
         </div>
       </section>
 
+      {/* Blog content — White */}
       <section className="section-pad bg-white" aria-labelledby="blog-heading">
         <div className="container-tight">
           <div className="sr-only" id="blog-heading">Blog Posts</div>
@@ -117,12 +132,14 @@ export default function BlogPage() {
           {/* Category filter */}
           <div className="flex flex-wrap gap-2 justify-center mb-12">
             {categories.map(cat => (
-              <span key={cat}
+              <span
+                key={cat}
                 className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all ${
                   cat === 'All'
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300 hover:text-primary-500'
+                    ? 'text-white'
+                    : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300 hover:text-primary-600'
                 }`}
+                style={cat === 'All' ? { background: '#2878C4' } : {}}
               >
                 {cat}
               </span>
@@ -131,9 +148,12 @@ export default function BlogPage() {
 
           {/* Featured post */}
           {featured && (
-            <article className="card mb-8 overflow-hidden group">
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-                <div className="lg:col-span-2 rounded-2xl relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+            <article className="card mb-10 overflow-hidden group p-0">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 items-stretch">
+                <div
+                  className="lg:col-span-2 relative overflow-hidden"
+                  style={{ aspectRatio: '16/9', minHeight: '240px' }}
+                >
                   <Image
                     src={featured.image}
                     alt={featured.imageAlt}
@@ -141,25 +161,36 @@ export default function BlogPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark/30 to-transparent" />
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: 'linear-gradient(to right, rgba(9,24,41,0.3), transparent)' }}
+                  />
                   <div className="absolute top-4 left-4">
-                    <span className="badge bg-white/20 text-white backdrop-blur-sm text-xs">Featured</span>
+                    <span
+                      className="text-white text-xs font-semibold px-3 py-1.5 rounded-full"
+                      style={{ background: '#2878C4' }}
+                    >
+                      Featured
+                    </span>
                   </div>
                 </div>
-                <div className="lg:col-span-3">
-                  <div className="flex items-center gap-3 mb-3">
+                <div className="lg:col-span-3 p-8 flex flex-col justify-center">
+                  <div className="flex items-center gap-3 mb-4">
                     <span className="badge bg-primary-50 text-primary-600 text-xs">{featured.category}</span>
                     <span className="text-gray-400 text-xs">{featured.date}</span>
-                    <span className="text-gray-400 text-xs">·</span>
+                    <span className="text-gray-300 text-xs">·</span>
                     <span className="text-gray-400 text-xs">{featured.readTime}</span>
                   </div>
-                  <h2 className="text-2xl font-bold text-dark mb-3 group-hover:text-primary-500 transition-colors">
+                  <h2
+                    className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors"
+                    style={{ letterSpacing: '-0.01em' }}
+                  >
                     <Link href={`/blog/${featured.slug}`}>{featured.title}</Link>
                   </h2>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-5">{featured.excerpt}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6">{featured.excerpt}</p>
                   <Link
                     href={`/blog/${featured.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary-500 hover:text-primary-500 transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
                   >
                     Read Article
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -174,9 +205,9 @@ export default function BlogPage() {
           {/* Post grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((post) => (
-              <article key={post.slug} className="card group flex flex-col">
+              <article key={post.slug} className="card group flex flex-col p-0 overflow-hidden">
                 {/* Blog image */}
-                <div className="rounded-2xl mb-5 relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
                   <Image
                     src={post.image}
                     alt={post.imageAlt}
@@ -184,27 +215,35 @@ export default function BlogPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark/20 to-transparent" />
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: 'linear-gradient(to top, rgba(9,24,41,0.25), transparent)' }}
+                  />
                 </div>
 
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="badge bg-primary-50 text-primary-600 text-xs">{post.category}</span>
-                  <span className="text-gray-400 text-xs">{post.readTime}</span>
-                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="badge bg-primary-50 text-primary-600 text-xs">{post.category}</span>
+                    <span className="text-gray-400 text-xs">{post.readTime}</span>
+                  </div>
 
-                <h3 className="font-bold text-dark text-base mb-2 flex-grow group-hover:text-primary-500 transition-colors">
-                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
-
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                  <span className="text-xs text-gray-400">{post.date}</span>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="text-xs font-semibold text-primary-500 hover:text-primary-500 transition-colors"
+                  <h3
+                    className="font-bold text-gray-900 text-base mb-2 flex-grow group-hover:text-primary-600 transition-colors"
+                    style={{ letterSpacing: '-0.01em' }}
                   >
-                    Read more →
-                  </Link>
+                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
+
+                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                    <span className="text-xs text-gray-400">{post.date}</span>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="text-xs font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                    >
+                      Read more →
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}
@@ -212,32 +251,49 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="section-pad relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}>
+      {/* Newsletter CTA — Dark navy */}
+      <section
+        className="section-pad relative overflow-hidden"
+        style={{ background: '#091829' }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
+            backgroundSize: '28px 28px',
+            opacity: 0.3,
+          }}
+        />
         <div className="container-tight relative z-10 max-w-2xl text-center">
-          <p className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-white/60 mb-4">Stay Updated</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+          <p className="section-label-white">Stay Updated</p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Get Web Design Tips in Your Inbox
           </h2>
-          <p className="text-white/70 text-lg mb-8">
+          <p className="text-lg mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Join small business owners who get our best web design and SEO tips every month. No spam — just useful content.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="https://formspree.io/f/your-form-id" method="POST">
+          <form
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            action="https://formspree.io/f/your-form-id"
+            method="POST"
+          >
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-1 px-4 py-3 rounded-full text-sm bg-white/15 text-white placeholder:text-white/50
-                         focus:outline-none focus:ring-2 focus:ring-white/30 border border-white/20"
+              className="flex-1 px-4 py-3 rounded-full text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary-400/50"
+              style={{ background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.15)' }}
             />
-            <button type="submit"
-              className="inline-flex items-center justify-center bg-white text-primary-700 font-semibold
-                         px-6 py-3 rounded-full transition-all hover:-translate-y-0.5 shrink-0"
-              style={{ fontSize: '15px' }}>
+            <button
+              type="submit"
+              className="btn-white px-6 py-3 shrink-0"
+            >
               Subscribe
             </button>
           </form>
-          <p className="text-white/40 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+          <p className="text-xs mt-4" style={{ color: 'rgba(255,255,255,0.3)' }}>No spam. Unsubscribe anytime.</p>
         </div>
       </section>
     </>

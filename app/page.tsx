@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 }
 
-// ── Icon components — all with explicit width/height ──────────────
+// ── Icon components ───────────────────────────────────────────────
 
 function IconDesign() {
   return (
@@ -79,6 +79,14 @@ function IconCheck() {
   )
 }
 
+function IconTrend() {
+  return (
+    <svg width="14" height="14" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+    </svg>
+  )
+}
+
 function IconWrench() {
   return (
     <svg width="28" height="28" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -108,7 +116,7 @@ function IconMedical() {
   )
 }
 
-// ── Data ─────────────────────────────────────────────────────────
+// ── Data ──────────────────────────────────────────────────────────
 
 const services = [
   { Icon: IconDesign,   title: 'Website Design',      desc: 'Custom, mobile-first websites built to convert visitors into customers.', href: '/services#design' },
@@ -121,7 +129,7 @@ const services = [
 
 const testimonials = [
   {
-    quote: 'AffordaWeb built our plumbing site in under 2 weeks. We went from almost no online presence to 3x more calls within 60 days. Best investment we\'ve made for the business.',
+    quote: 'AffordaWeb built our plumbing site in under 2 weeks. We went from almost no online presence to 3x more calls within 60 days. Best investment we\'ve made.',
     name: 'Marcus T.',
     role: 'Owner',
     business: 'Local Plumbing Company',
@@ -129,7 +137,7 @@ const testimonials = [
     initial: 'M',
   },
   {
-    quote: '200% more inquiry form submissions in the first 90 days after launch. The site looks professional, loads fast, and the team was easy to work with from start to finish.',
+    quote: '200% more inquiry form submissions in the first 90 days after launch. The site looks professional, loads fast, and the team was easy to work with start to finish.',
     name: 'Sandra K.',
     role: 'Real Estate Agent',
     business: 'Independent Realtor',
@@ -147,9 +155,9 @@ const testimonials = [
 ]
 
 const portfolioItems = [
-  { category: 'Service Business · Standard Plan', title: 'Local Plumbing Company',   desc: 'A local plumbing company needed more than a basic online presence. We delivered a fast, SEO-optimized site with clear service pages and a prominent call-to-action.', result: '3x more leads in 60 days',     bg: '#EBF5FF', PortfolioIcon: IconWrench  },
-  { category: 'Real Estate · Standard Plan',      title: 'Real Estate Agent',         desc: 'An independent realtor wanted to stand out in a competitive market. We built a clean, professional site with strong local SEO and an easy inquiry form.',             result: '200% increase in inquiries', bg: '#F0FDF4', PortfolioIcon: IconHome    },
-  { category: 'Healthcare · Standard Plan',       title: 'Dental Practice',            desc: 'A dental clinic needed to rank locally and make appointment booking easy. We delivered an optimized, trust-building site that moved them to page one.',              result: 'Page 1 for local searches',  bg: '#F0F8FF', PortfolioIcon: IconMedical },
+  { category: 'Service Business · Standard Plan', title: 'Local Plumbing Company',   desc: 'A local plumbing company needed more than a basic online presence. We delivered a fast, SEO-optimized site with clear service pages and a prominent call-to-action.', result: '3x more leads in 60 days',     PortfolioIcon: IconWrench  },
+  { category: 'Real Estate · Standard Plan',      title: 'Real Estate Agent',         desc: 'An independent realtor wanted to stand out in a competitive market. We built a clean, professional site with strong local SEO and an easy inquiry form.',             result: '200% increase in inquiries', PortfolioIcon: IconHome    },
+  { category: 'Healthcare · Standard Plan',       title: 'Dental Practice',            desc: 'A dental clinic needed to rank locally and make appointment booking easy. We delivered an optimized, trust-building site that moved them to page one.',              result: 'Page 1 for local searches',  PortfolioIcon: IconMedical },
 ]
 
 const faqs = [
@@ -190,7 +198,7 @@ const schemaData = {
   areaServed: 'United States',
 }
 
-// ── Page ─────────────────────────────────────────────────────────
+// ── Page ──────────────────────────────────────────────────────────
 
 export default function HomePage() {
   return (
@@ -200,48 +208,67 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* ── A. HERO ────────────────────────────────────────────── */}
-      <section className="bg-white pt-28 pb-16 relative overflow-hidden" aria-labelledby="hero-heading">
-        {/* Dot grid */}
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.10) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, transparent 40%, white 100%)' }} />
+      {/* ── A. HERO ── Dark navy, premium ──────────────────────────── */}
+      <section
+        className="relative overflow-hidden pt-[104px] pb-20"
+        style={{ background: '#091829' }}
+        aria-labelledby="hero-heading"
+      >
+        {/* Dot pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.2) 1.5px, transparent 1.5px)',
+            backgroundSize: '32px 32px',
+            opacity: 0.35,
+          }}
+        />
+        {/* Left glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 70% 80% at 25% 50%, rgba(40,120,196,0.12), transparent)' }}
+        />
 
         <div className="container-tight relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
             {/* Left: Text */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-2 mb-6 shadow-sm">
+              <div
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-7"
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+              >
                 <span className="text-amber-400 text-sm tracking-tight">★★★★★</span>
-                <span className="text-amber-700 text-xs font-semibold">Trusted by 50+ small businesses</span>
+                <span className="text-white/60 text-xs font-medium">Trusted by 50+ small businesses</span>
               </div>
 
-              <h1 id="hero-heading" className="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight mb-5"
-                style={{ letterSpacing: '-0.02em' }}>
+              <h1
+                id="hero-heading"
+                className="text-5xl sm:text-6xl font-bold text-white leading-[1.08] mb-6"
+                style={{ letterSpacing: '-0.025em' }}
+              >
                 Professional Websites for Small Businesses —{' '}
-                <span className="gradient-text-blue">Starting at $69/mo</span>
+                <span className="gradient-text">Starting at $69/mo</span>
               </h1>
 
-              <p className="text-xl text-gray-500 leading-relaxed mb-8 max-w-lg">
+              <p className="text-xl leading-relaxed mb-9 max-w-lg" style={{ color: 'rgba(255,255,255,0.58)' }}>
                 Fully managed website design with hosting, SSL, and unlimited updates. We build it, we maintain it — you focus on running your business.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 mb-9">
                 <Link href="/contact" className="btn-primary">
                   Get a Free Quote
-                  <svg width="16" height="16" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
-                <Link href="/pricing" className="btn-secondary">View Pricing</Link>
+                <Link href="/pricing" className="btn-outline-white">View Pricing</Link>
               </div>
 
-              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-gray-400">
+              <div className="flex flex-wrap gap-5 text-sm" style={{ color: 'rgba(255,255,255,0.38)' }}>
                 {['No contracts', 'Hosting included', 'Setup in 10-15 days', 'Cancel anytime'].map(t => (
                   <span key={t} className="flex items-center gap-1.5">
-                    <span className="text-primary-500">✓</span>{t}
+                    <span style={{ color: '#4D9BE5' }}>✓</span>{t}
                   </span>
                 ))}
               </div>
@@ -249,24 +276,39 @@ export default function HomePage() {
 
             {/* Right: Browser mockup */}
             <div className="relative hidden lg:block">
-              {/* Soft glow behind mockup */}
-              <div className="absolute inset-0 pointer-events-none -z-10"
-                style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(40,120,196,0.12), transparent)' }} />
+              <div
+                className="absolute -inset-8 pointer-events-none"
+                style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(40,120,196,0.18), transparent 70%)' }}
+              />
 
-              <div className="bg-white rounded-2xl border border-gray-200 shadow-[0_8px_40px_rgba(0,0,0,0.10)] overflow-hidden">
+              <div
+                className="relative rounded-2xl overflow-hidden"
+                style={{
+                  background: '#0F1E35',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  boxShadow: '0 24px 80px rgba(0,0,0,0.5)',
+                }}
+              >
                 {/* Browser chrome */}
-                <div className="bg-gray-50 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+                <div
+                  className="flex items-center gap-2 px-4 py-3"
+                  style={{ background: '#152641', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                >
                   <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-red-400" />
-                    <div className="w-3 h-3 rounded-full bg-amber-400" />
-                    <div className="w-3 h-3 rounded-full bg-green-400" />
+                    <div className="w-3 h-3 rounded-full" style={{ background: 'rgba(248,113,113,0.7)' }} />
+                    <div className="w-3 h-3 rounded-full" style={{ background: 'rgba(251,191,36,0.7)' }} />
+                    <div className="w-3 h-3 rounded-full" style={{ background: 'rgba(74,222,128,0.7)' }} />
                   </div>
-                  <div className="flex-1 bg-white border border-gray-200 rounded-full px-3 py-1 mx-4">
-                    <span className="text-gray-400 text-xs">yourbusiness.com</span>
+                  <div
+                    className="flex-1 rounded-full px-3 py-1 mx-4"
+                    style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  >
+                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>yourbusiness.com</span>
                   </div>
                 </div>
-                {/* Website hero photo */}
-                <div className="relative" style={{ height: '200px' }}>
+
+                {/* Website hero image */}
+                <div className="relative" style={{ height: '220px' }}>
                   <Image
                     src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&auto=format&fit=crop&q=80"
                     alt="Professional small business website"
@@ -275,46 +317,66 @@ export default function HomePage() {
                     priority
                     sizes="500px"
                   />
-                  {/* Simulated website nav overlay */}
-                  <div className="absolute top-0 left-0 right-0 px-4 py-2.5 flex items-center justify-between"
-                    style={{ background: 'rgba(15,30,55,0.55)', backdropFilter: 'blur(6px)' }}>
-                    <div className="h-2.5 bg-white/80 rounded w-20" />
+                  {/* Simulated nav overlay */}
+                  <div
+                    className="absolute top-0 left-0 right-0 px-4 py-3 flex items-center justify-between"
+                    style={{ background: 'rgba(9,24,41,0.72)', backdropFilter: 'blur(8px)' }}
+                  >
+                    <div className="h-2.5 bg-white/70 rounded w-20" />
                     <div className="flex gap-3">
-                      {[1, 2, 3].map(n => <div key={n} className="h-1.5 bg-white/50 rounded w-10" />)}
+                      {[1,2,3].map(n => <div key={n} className="h-1.5 bg-white/35 rounded w-10" />)}
                     </div>
-                    <div className="h-6 bg-primary-400 rounded-full w-16" />
+                    <div className="h-6 rounded-full w-16" style={{ background: '#2878C4' }} />
                   </div>
-                  {/* Headline + CTA overlay at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 px-4 pb-3 pt-8"
-                    style={{ background: 'linear-gradient(to top, rgba(15,30,55,0.7) 0%, transparent 100%)' }}>
-                    <div className="h-3.5 bg-white/85 rounded w-3/5 mb-2" />
-                    <div className="h-2 bg-white/50 rounded w-4/5 mb-3" />
-                    <div className="h-7 bg-primary-500 rounded-full w-1/3" />
+                  {/* Bottom overlay */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-12"
+                    style={{ background: 'linear-gradient(to top, rgba(9,24,41,0.88), transparent)' }}
+                  >
+                    <div className="h-4 bg-white/80 rounded w-3/5 mb-2" />
+                    <div className="h-2 bg-white/40 rounded w-4/5 mb-3" />
+                    <div className="h-7 rounded-full w-1/3" style={{ background: '#2878C4' }} />
                   </div>
                 </div>
+
                 {/* Service cards strip */}
-                <div className="p-4 bg-white">
+                <div className="p-4" style={{ background: '#0F1E35' }}>
                   <div className="grid grid-cols-3 gap-2">
-                    {[1, 2, 3].map(n => (
-                      <div key={n} className="bg-gray-50 border border-gray-100 rounded-xl p-3">
-                        <div className="w-7 h-7 rounded-lg bg-primary-100 mb-2" />
-                        <div className="h-2.5 bg-gray-200 rounded w-full mb-1.5" />
-                        <div className="h-2 bg-gray-100 rounded w-3/4" />
+                    {[1,2,3].map(n => (
+                      <div
+                        key={n}
+                        className="rounded-xl p-3"
+                        style={{ background: '#152641', border: '1px solid rgba(255,255,255,0.06)' }}
+                      >
+                        <div
+                          className="w-7 h-7 rounded-lg mb-2"
+                          style={{ background: 'rgba(40,120,196,0.25)', border: '1px solid rgba(40,120,196,0.3)' }}
+                        />
+                        <div className="h-2 rounded w-full mb-1.5" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                        <div className="h-1.5 rounded w-3/4" style={{ background: 'rgba(255,255,255,0.08)' }} />
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
+
               {/* Floating chips */}
-              <div className="absolute -left-8 top-16 bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
-                <div className="text-2xl font-bold text-primary-600 leading-none">3x</div>
+              <div className="absolute -left-10 top-16 bg-white rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                <div className="text-2xl font-bold leading-none" style={{ color: '#2878C4' }}>3x</div>
                 <div className="text-xs text-gray-400 font-medium mt-0.5">More leads</div>
               </div>
-              <div className="absolute -right-6 bottom-16 bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
-                <div className="text-2xl font-bold text-primary-600 leading-none">10–15</div>
+              <div className="absolute -right-8 bottom-16 bg-white rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
+                <div className="text-2xl font-bold leading-none" style={{ color: '#2878C4' }}>10–15</div>
                 <div className="text-xs text-gray-400 font-medium mt-0.5">Day setup</div>
               </div>
-              <div className="absolute -right-4 top-8 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 shadow-sm animate-float">
+              <div
+                className="absolute -right-6 top-8 rounded-xl px-3 py-2 animate-float"
+                style={{
+                  background: '#FFFBEB',
+                  border: '1px solid rgba(251,191,36,0.3)',
+                  boxShadow: '0 4px 16px rgba(251,191,36,0.12)',
+                }}
+              >
                 <div className="text-amber-400 text-xs tracking-tight">★★★★★</div>
                 <div className="text-amber-700 text-xs font-semibold mt-0.5">4.9 rating</div>
               </div>
@@ -323,10 +385,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── B. STATS BAR ───────────────────────────────────────── */}
-      <section className="border-y border-gray-100 bg-gradient-to-b from-[#F0F8FF] to-white" aria-label="Key statistics">
+      {/* ── B. STATS BAR ─── White ─────────────────────────────────── */}
+      <section className="border-b border-gray-100 bg-white" aria-label="Key statistics">
         <div className="container-tight py-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
+          <div className="grid grid-cols-2 lg:grid-cols-4">
             {[
               { number: '50+',   label: 'Clients Served' },
               { number: '10–15', label: 'Day Setup' },
@@ -342,12 +404,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── C. SERVICES ────────────────────────────────────────── */}
-      <section className="section-pad" style={{ background: '#F0F8FF' }} aria-labelledby="services-heading">
+      {/* ── C. SERVICES ─── White ──────────────────────────────────── */}
+      <section className="section-pad bg-white" aria-labelledby="services-heading">
         <div className="container-tight">
           <div className="text-center mb-14">
             <p className="section-label">What We Offer</p>
-            <h2 id="services-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" style={{ letterSpacing: '-0.01em' }}>
+            <h2
+              id="services-heading"
+              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+              style={{ letterSpacing: '-0.01em' }}
+            >
               Everything You Need in One Monthly Plan
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
@@ -357,123 +423,118 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map(({ Icon, title, desc, href }) => (
               <div key={title} className="card-accent p-7 group">
-                <div className="rounded-xl flex items-center justify-center text-primary-700 mb-5 transition-transform duration-300 group-hover:scale-110"
-                  style={{ width: '56px', height: '56px', minWidth: '56px', background: 'linear-gradient(135deg, #D6EBFF 0%, #ADCFF5 100%)' }}>
+                <div
+                  className="rounded-xl flex items-center justify-center text-primary-700 mb-5 transition-transform duration-300 group-hover:scale-110"
+                  style={{ width: '56px', height: '56px', minWidth: '56px', background: 'linear-gradient(135deg, #D6EBFF 0%, #ADCFF5 100%)' }}
+                >
                   <Icon />
                 </div>
                 <h3 className="font-bold text-gray-900 text-lg mb-2">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
-                <Link href={href} className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors inline-flex items-center gap-1.5 hover:gap-2.5 duration-200">
+                <Link
+                  href={href}
+                  className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-all duration-200 inline-flex items-center gap-1.5 hover:gap-2.5"
+                >
                   Learn more →
                 </Link>
               </div>
             ))}
           </div>
+          <div className="text-center mt-12">
+            <Link href="/services" className="btn-secondary">
+              View All Services
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ── D. HOW IT WORKS ────────────────────────────────────── */}
-      <section className="section-pad" style={{ background: '#2D3142' }} aria-labelledby="process-heading">
+      {/* ── D. HOW IT WORKS ─── Light blue ─────────────────────────── */}
+      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="process-heading">
         <div className="container-tight">
           <div className="text-center mb-14">
-            <p className="section-label" style={{ color: '#4D9BE5' }}>Our Process</p>
-            <h2 id="process-heading" className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.01em' }}>
+            <p className="section-label">Our Process</p>
+            <h2
+              id="process-heading"
+              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+              style={{ letterSpacing: '-0.01em' }}
+            >
               Up and Running in 10–15 Days
             </h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               A simple, proven process so you get a professional website fast — without sacrificing quality.
             </p>
           </div>
+
           <div className="relative">
-            {/* Desktop connector line */}
-            <div className="hidden md:block absolute border-t-2 border-dashed"
-              style={{ top: '48px', left: '21%', right: '21%', borderColor: 'rgba(255,255,255,0.15)' }} />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+            {/* Connector line — desktop only */}
+            <div
+              className="hidden md:block absolute border-t-2 border-dashed border-gray-200"
+              style={{ top: '44px', left: '21%', right: '21%' }}
+            />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
               {[
                 { step: '1', title: 'Tell Us About Your Business', desc: 'Fill out our short form and share your goals, services, and any examples you love. No technical knowledge required.' },
                 { step: '2', title: 'We Build Your Site',          desc: 'Our team designs and develops your custom website, sending you a preview for review within 10–15 business days.' },
                 { step: '3', title: 'Launch & Ongoing Support',    desc: 'We go live, connect your domain, and stay on to handle updates, maintenance, and any changes you need.' },
               ].map(({ step, title, desc }) => (
                 <div key={step} className="text-center">
-                  <div className="w-24 h-24 rounded-full flex items-center justify-center text-white font-bold text-3xl mx-auto mb-6"
-                    style={{ background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)', boxShadow: '0 0 0 6px rgba(40,120,196,0.18)' }}>
+                  <div
+                    className="w-[88px] h-[88px] rounded-full flex items-center justify-center text-white font-bold text-3xl mx-auto mb-6"
+                    style={{
+                      background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)',
+                      boxShadow: '0 0 0 8px rgba(40,120,196,0.12)',
+                    }}
+                  >
                     {step}
                   </div>
-                  <h3 className="font-bold text-white text-lg mb-3">{title}</h3>
-                  <p className="text-sm leading-relaxed max-w-xs mx-auto" style={{ color: 'rgba(255,255,255,0.6)' }}>{desc}</p>
+                  <h3 className="font-bold text-gray-900 text-lg mb-3">{title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed max-w-xs mx-auto">{desc}</p>
                 </div>
               ))}
             </div>
           </div>
+
           <div className="text-center mt-12">
             <Link href="/contact" className="btn-primary">Start Your Project</Link>
           </div>
         </div>
       </section>
 
-      {/* ── D.5 TEAM PHOTO STRIP ───────────────────────────────── */}
-      <section className="relative overflow-hidden" style={{ height: '380px' }}>
-        <Image
-          src="https://images.pexels.com/photos/3184661/pexels-photo-3184661.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt="Small business team collaborating on web design"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        {/* Blue gradient overlay — left side darker for text legibility */}
-        <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(100deg, rgba(26,92,153,0.92) 0%, rgba(40,120,196,0.78) 50%, rgba(40,120,196,0.40) 100%)' }} />
-        <div className="absolute inset-0 flex items-center">
-          <div className="container-tight text-white">
-            <div className="max-w-xl">
-              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: 'rgba(173,207,245,0.9)' }}>Our Commitment</p>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight" style={{ letterSpacing: '-0.02em' }}>
-                A Dedicated Team,<br />Always in Your Corner
-              </h2>
-              <p className="text-lg mb-6 max-w-md" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                From your first consultation to launch day and beyond — we are here to make your business shine online.
-              </p>
-              <div className="flex flex-wrap gap-8">
-                {[
-                  { n: '50+', l: 'Businesses Served' },
-                  { n: '10–15', l: 'Day Turnaround' },
-                  { n: '4.9★', l: 'Client Rating' },
-                ].map(({ n, l }) => (
-                  <div key={l}>
-                    <div className="text-2xl font-bold text-white">{n}</div>
-                    <div className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>{l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── E. TESTIMONIALS ────────────────────────────────────── */}
-      <section className="section-pad" style={{ background: '#F0F8FF' }} aria-labelledby="testimonials-heading">
+      {/* ── E. TESTIMONIALS ─── White ──────────────────────────────── */}
+      <section className="section-pad bg-white" aria-labelledby="testimonials-heading">
         <div className="container-tight">
           <div className="text-center mb-14">
             <p className="section-label">Client Stories</p>
-            <h2 id="testimonials-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3" style={{ letterSpacing: '-0.01em' }}>
+            <h2
+              id="testimonials-heading"
+              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3"
+              style={{ letterSpacing: '-0.01em' }}
+            >
               What Our Clients Say
             </h2>
             <div className="flex items-center justify-center gap-2 mt-3">
               <span className="text-amber-400 text-xl tracking-tight">★★★★★</span>
-              <span className="text-gray-500 text-sm font-medium">4.9 out of 5 · 50+ happy clients</span>
+              <span className="text-gray-400 text-sm font-medium">4.9 out of 5 · 50+ happy clients</span>
             </div>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map(({ quote, name, role, business, avatarColor, initial }) => (
-              <div key={name}
-                className="bg-white rounded-2xl p-7 border-l-4 border-primary-400 relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
+              <div
+                key={name}
+                className="bg-white rounded-2xl p-7 border border-gray-100 relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.06)', borderTop: '3px solid #2878C4' }}
+              >
                 {/* Decorative quote mark */}
-                <div className="absolute top-2 right-4 text-8xl font-black text-primary-100 leading-none pointer-events-none select-none" aria-hidden="true">
+                <div
+                  className="absolute top-3 right-4 text-8xl font-black leading-none pointer-events-none select-none"
+                  style={{ color: '#EBF5FF' }}
+                  aria-hidden="true"
+                >
                   &ldquo;
                 </div>
                 <div className="text-amber-400 text-base tracking-widest mb-4">★★★★★</div>
-                <blockquote className="text-gray-700 text-sm leading-relaxed mb-5 italic relative z-10">
+                <blockquote className="text-gray-600 text-sm leading-relaxed mb-5 italic relative z-10">
                   &ldquo;{quote}&rdquo;
                 </blockquote>
                 <div className="flex items-center gap-3">
@@ -489,33 +550,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── F. PRICING PREVIEW ─────────────────────────────────── */}
-      <section className="section-pad bg-white" aria-labelledby="pricing-heading">
+      {/* ── F. PRICING PREVIEW ─── Light ───────────────────────────── */}
+      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="pricing-heading">
         <div className="container-tight">
           <div className="text-center mb-14">
             <p className="section-label">Simple Pricing</p>
-            <h2 id="pricing-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" style={{ letterSpacing: '-0.01em' }}>
+            <h2
+              id="pricing-heading"
+              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+              style={{ letterSpacing: '-0.01em' }}
+            >
               Transparent Pricing. No Surprises.
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               All plans include hosting, SSL, maintenance, and a professionally designed website.
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
 
             {/* Basic */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 border-t-4 border-t-gray-200 flex flex-col" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
-              <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Basic</p>
+            <div
+              className="bg-white rounded-2xl p-8 border border-gray-100 flex flex-col"
+              style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderTop: '3px solid #CBD5E1' }}
+            >
+              <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Basic</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-6xl font-bold text-gray-900">$69</span>
+                <span className="text-5xl font-bold text-gray-900">$69</span>
                 <span className="text-gray-400 text-sm">/mo</span>
               </div>
               <p className="text-sm text-gray-500 mb-6">Perfect for getting online fast</p>
               <ul className="space-y-3 mb-8 flex-grow">
                 {['1–5 page website', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', '1 content update/month', 'Basic security maintenance'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
-                    <span className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5"
-                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#EBF5FF' }}>
+                    <span
+                      className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5"
+                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#EBF5FF' }}
+                    >
                       <IconCheck />
                     </span>
                     {f}
@@ -526,53 +597,72 @@ export default function HomePage() {
             </div>
 
             {/* Standard — Featured */}
-            <div className="rounded-2xl p-8 flex flex-col relative md:-my-4 overflow-hidden"
-              style={{ background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)', boxShadow: '0 24px 60px rgba(40,120,196,0.35)' }}>
-              {/* Dot grid overlay */}
-              <div className="absolute inset-0 pointer-events-none"
-                style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.12) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px', opacity: 0.08 }} />
+            <div
+              className="rounded-2xl p-8 flex flex-col relative md:-my-4 overflow-hidden"
+              style={{
+                background: 'linear-gradient(145deg, #1E66A8 0%, #2878C4 100%)',
+                boxShadow: '0 24px 60px rgba(40,120,196,0.35)',
+              }}
+            >
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1.5px, transparent 1.5px)',
+                  backgroundSize: '24px 24px',
+                  opacity: 0.06,
+                }}
+              />
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                <span className="bg-white text-primary-700 text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md hover:scale-105 transition-transform inline-block">
+                <span className="bg-white text-primary-700 text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md inline-block">
                   ✦ Most Popular
                 </span>
               </div>
-              <p className="text-xs font-bold tracking-widest uppercase text-white/70 mb-2 mt-2 relative z-10">Standard</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-white/60 mb-3 mt-2 relative z-10">Standard</p>
               <div className="flex items-baseline gap-1 mb-1 relative z-10">
-                <span className="text-6xl font-bold text-white">$99</span>
-                <span className="text-white/60 text-sm">/mo</span>
+                <span className="text-5xl font-bold text-white">$99</span>
+                <span className="text-white/50 text-sm">/mo</span>
               </div>
-              <p className="text-sm text-white/70 mb-6 relative z-10">Best for growing businesses</p>
+              <p className="text-sm text-white/65 mb-6 relative z-10">Best for growing businesses</p>
               <ul className="space-y-3 mb-8 flex-grow relative z-10">
                 {['Up to 10 pages', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', 'Unlimited content updates', 'Full SEO optimization', 'Google Analytics setup', 'Booking / inquiry forms'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-white">
-                    <span className="rounded-full flex items-center justify-center text-white shrink-0 mt-0.5"
-                      style={{ width: '18px', height: '18px', minWidth: '18px', background: 'rgba(255,255,255,0.2)' }}>
+                    <span
+                      className="rounded-full flex items-center justify-center text-white shrink-0 mt-0.5"
+                      style={{ width: '18px', height: '18px', minWidth: '18px', background: 'rgba(255,255,255,0.2)' }}
+                    >
                       <IconCheck />
                     </span>
                     {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/contact"
+              <Link
+                href="/contact"
                 className="w-full justify-center inline-flex items-center rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 relative z-10"
-                style={{ background: '#ffffff', color: '#1E66A8', padding: '14px 32px', fontSize: '15px' }}>
+                style={{ background: '#ffffff', color: '#1E66A8', padding: '14px 32px', fontSize: '15px' }}
+              >
                 Get Started — $99/mo
               </Link>
             </div>
 
             {/* Premium */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 border-t-4 border-t-primary-300 flex flex-col" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
-              <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Premium</p>
+            <div
+              className="bg-white rounded-2xl p-8 border border-gray-100 flex flex-col"
+              style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderTop: '3px solid #2878C4' }}
+            >
+              <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Premium</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-6xl font-bold text-gray-900">$149</span>
+                <span className="text-5xl font-bold text-gray-900">$149</span>
                 <span className="text-gray-400 text-sm">/mo</span>
               </div>
               <p className="text-sm text-gray-500 mb-6">For e-commerce &amp; full-scale brands</p>
               <ul className="space-y-3 mb-8 flex-grow">
                 {['Unlimited pages', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', 'Unlimited content updates', 'Full SEO optimization', 'E-commerce (up to 30 products)', '24/7 priority support'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
-                    <span className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5"
-                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#EBF5FF' }}>
+                    <span
+                      className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5"
+                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#EBF5FF' }}
+                    >
                       <IconCheck />
                     </span>
                     {f}
@@ -588,28 +678,47 @@ export default function HomePage() {
               <span key={t}>{t}</span>
             ))}
           </div>
+
+          <div className="text-center mt-8">
+            <Link href="/pricing" className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
+              View full pricing details →
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ── G. PORTFOLIO HIGHLIGHTS ────────────────────────────── */}
-      <section className="section-pad" style={{ background: '#F0F8FF' }} aria-labelledby="results-heading">
+      {/* ── G. PORTFOLIO HIGHLIGHTS ─── White ──────────────────────── */}
+      <section className="section-pad bg-white" aria-labelledby="results-heading">
         <div className="container-tight">
           <div className="text-center mb-14">
             <p className="section-label">Real Results</p>
-            <h2 id="results-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" style={{ letterSpacing: '-0.01em' }}>
+            <h2
+              id="results-heading"
+              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+              style={{ letterSpacing: '-0.01em' }}
+            >
               Websites That Drive Real Business
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               We do not just build websites — we build tools that grow your business.
             </p>
           </div>
-          <div className="space-y-6">
-            {portfolioItems.map(({ category, title, desc, result, bg, PortfolioIcon }) => (
-              <div key={title}
-                className="bg-white rounded-2xl border border-gray-100 border-l-4 border-l-primary-400 overflow-hidden flex flex-col sm:flex-row"
-                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
-                <div className="sm:w-40 lg:w-56 flex items-center justify-center shrink-0 p-8" style={{ background: bg }}>
-                  <div className="w-16 h-16 rounded-2xl bg-primary-600 flex items-center justify-center text-white">
+
+          <div className="space-y-5">
+            {portfolioItems.map(({ category, title, desc, result, PortfolioIcon }) => (
+              <div
+                key={title}
+                className="bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col sm:flex-row transition-all duration-300 hover:-translate-y-0.5"
+                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderLeft: '4px solid #2878C4' }}
+              >
+                <div
+                  className="sm:w-36 lg:w-48 flex items-center justify-center shrink-0 p-8"
+                  style={{ background: '#F7FBFF' }}
+                >
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-white"
+                    style={{ background: '#2878C4' }}
+                  >
                     <PortfolioIcon />
                   </div>
                 </div>
@@ -618,10 +727,8 @@ export default function HomePage() {
                   <h3 className="font-bold text-gray-900 text-xl mb-2">{title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
                   <div className="flex items-center gap-4 flex-wrap">
-                    <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 font-bold text-sm px-3 py-1.5 rounded-full border border-green-100 shadow-sm">
-                      <svg width="14" height="14" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
+                    <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 font-bold text-sm px-3 py-1.5 rounded-full border border-green-100">
+                      <IconTrend />
                       {result}
                     </span>
                     <Link href="/portfolio" className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
@@ -635,8 +742,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── H. FAQ ─────────────────────────────────────────────── */}
-      <section className="section-pad bg-white" aria-labelledby="faq-heading">
+      {/* ── H. FAQ ─── Light ───────────────────────────────────────── */}
+      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="faq-heading">
         <div className="container-tight max-w-3xl">
           <div className="text-center mb-12">
             <p className="section-label">Common Questions</p>
@@ -644,19 +751,24 @@ export default function HomePage() {
               Frequently Asked Questions
             </h2>
           </div>
+
           <div className="space-y-3">
             {faqs.map(({ q, a }) => (
-              <details key={q}
-                className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 transition-colors group-open:bg-primary-50/30"
-                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
-                <summary className="flex items-center justify-between gap-4 cursor-pointer select-none p-6
-                                    text-gray-900 font-semibold text-base list-none [&::-webkit-details-marker]:hidden">
+              <details
+                key={q}
+                className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 transition-colors"
+                style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.04)' }}
+              >
+                <summary className="flex items-center justify-between gap-4 cursor-pointer select-none p-6 text-gray-900 font-semibold text-base list-none [&::-webkit-details-marker]:hidden">
                   <span>{q}</span>
-                  <span className="rounded-full flex items-center justify-center shrink-0 transition-all duration-300
-                                   group-open:bg-primary-500 group-open:text-white text-primary-500"
-                    style={{ width: '32px', height: '32px', minWidth: '32px', background: '#EBF5FF' }}>
-                    <svg width="14" height="14" className="w-3.5 h-3.5 transition-transform duration-300 group-open:rotate-180"
-                      fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span
+                    className="rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-open:bg-primary-500 group-open:text-white text-primary-500"
+                    style={{ width: '32px', height: '32px', minWidth: '32px', background: '#EBF5FF' }}
+                  >
+                    <svg
+                      className="w-3.5 h-3.5 transition-transform duration-300 group-open:rotate-180"
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
@@ -668,6 +780,7 @@ export default function HomePage() {
               </details>
             ))}
           </div>
+
           <div className="text-center mt-10">
             <p className="text-gray-400 text-sm mb-4">Still have questions?</p>
             <Link href="/contact" className="btn-primary">Ask Us Anything</Link>
@@ -675,45 +788,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── I. FINAL CTA ───────────────────────────────────────── */}
-      <section className="section-pad relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}
-        aria-label="Call to action">
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
-        {/* Radial white glow behind headline */}
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 50% 40% at 50% 50%, rgba(255,255,255,0.08), transparent)' }} />
+      {/* ── I. FINAL CTA ─── Dark navy ─────────────────────────────── */}
+      <section
+        className="section-pad relative overflow-hidden"
+        style={{ background: '#091829' }}
+        aria-label="Call to action"
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.2) 1.5px, transparent 1.5px)',
+            backgroundSize: '28px 28px',
+            opacity: 0.3,
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(40,120,196,0.12), transparent)' }}
+        />
+
         <div className="container-tight relative z-10 text-center">
-          <p className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-white/60 mb-4">
-            Get Started Today
-          </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5" style={{ letterSpacing: '-0.02em' }}>
+          <p className="section-label-white">Get Started Today</p>
+          <h2
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5"
+            style={{ letterSpacing: '-0.025em' }}
+          >
             Ready to Grow Your Business Online?
           </h2>
-          <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Get a free, no-obligation quote within 24 hours. No commitment required — just tell us about your business.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Link href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-semibold
-                         px-9 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-50 active:scale-[0.97]"
-              style={{ fontSize: '15px' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Link href="/contact" className="btn-white px-9 py-4">
               Get a Free Quote
-              <svg width="16" height="16" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
             <Link href="/pricing" className="btn-outline-white px-9 py-4">View Pricing</Link>
           </div>
-          {/* Avatar stack + trust text */}
+
+          {/* Avatar stack + trust line */}
           <div className="flex items-center justify-center gap-3">
             <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-blue-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">M</div>
-              <div className="w-8 h-8 rounded-full bg-emerald-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">S</div>
-              <div className="w-8 h-8 rounded-full bg-violet-400 border-2 border-white flex items-center justify-center text-white text-xs font-bold">P</div>
+              <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-white/20 flex items-center justify-center text-white text-xs font-bold">M</div>
+              <div className="w-8 h-8 rounded-full bg-emerald-500 border-2 border-white/20 flex items-center justify-center text-white text-xs font-bold">S</div>
+              <div className="w-8 h-8 rounded-full bg-violet-500 border-2 border-white/20 flex items-center justify-center text-white text-xs font-bold">P</div>
             </div>
-            <p className="text-white/40 text-sm">No commitment required · We respond within 24 hours</p>
+            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.35)' }}>
+              No commitment required · We respond within 24 hours
+            </p>
           </div>
         </div>
       </section>
