@@ -211,7 +211,7 @@ export default function HomePage() {
 
       {/* ── A. HERO ── Dark navy, premium ──────────────────────────── */}
       <section
-        className="relative overflow-hidden pt-[100px] pb-20"
+        className="relative overflow-hidden pt-[75px] pb-16"
         style={{ background: '#091829' }}
         aria-labelledby="hero-heading"
       >
