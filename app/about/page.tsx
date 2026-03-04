@@ -91,7 +91,7 @@ export default function AboutPage() {
     <>
       {/* Hero — Dark navy */}
       <section
-        className="relative overflow-hidden py-[75px] pt-[139px] text-center"
+        className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#091829' }}
       >
         <InnerHeroBg />
@@ -103,9 +103,26 @@ export default function AboutPage() {
           >
             Built for Small Businesses, By People Who Get It
           </h1>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
+          <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
             AffordaWeb Solutions was founded on a simple belief: every small business deserves a professional, high-performing website — regardless of budget. We make that possible.
           </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { stat: '50+', label: 'Businesses Served' },
+              { stat: '4.9★', label: 'Average Rating' },
+              { stat: '10–15', label: 'Day Delivery' },
+              { stat: '$69/mo', label: 'Starting Price' },
+            ].map(({ stat, label }) => (
+              <div
+                key={label}
+                className="flex items-center gap-2.5 rounded-full px-5 py-2.5"
+                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)' }}
+              >
+                <span className="font-bold text-white text-sm">{stat}</span>
+                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>{label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

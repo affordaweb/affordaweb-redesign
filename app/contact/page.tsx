@@ -28,7 +28,7 @@ export default function ContactPage() {
     <>
       {/* Hero — Dark navy */}
       <section
-        className="relative overflow-hidden py-[75px] pt-[139px] text-center"
+        className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#091829' }}
       >
         <InnerHeroBg />
@@ -43,11 +43,23 @@ export default function ContactPage() {
           <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Tell us about your project and receive a free, no-obligation quote. No commitment required — just ask.
           </p>
-          <div className="flex items-center justify-center gap-2 mt-6">
+          <div className="flex items-center justify-center gap-2 mt-6 mb-10">
             <span className="text-amber-400 text-lg tracking-tight">★★★★★</span>
             <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
               Trusted by 50+ small businesses
             </span>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['24-Hour Response', 'Free Quote', 'No Commitment', 'Real Humans', 'No Spam'].map(label => (
+              <div
+                key={label}
+                className="flex items-center gap-2 rounded-full px-4 py-2.5"
+                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.14)' }}
+              >
+                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#4D9BE5' }} />
+                <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -215,7 +215,7 @@ export default function ServicesPage() {
 
       {/* Hero — Dark navy */}
       <section
-        className="relative overflow-hidden py-[75px] pt-[139px] text-center"
+        className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#091829' }}
       >
         <InnerHeroBg />
@@ -230,6 +230,18 @@ export default function ServicesPage() {
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
             From custom website design to SEO, hosting, and maintenance — everything your business needs to succeed online, bundled into one simple monthly plan.
           </p>
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {['Website Design', 'SEO Optimization', 'Hosting & SSL', 'E-Commerce', 'Maintenance', 'Redesign'].map(label => (
+              <div
+                key={label}
+                className="flex items-center gap-2 rounded-full px-4 py-2"
+                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.14)' }}
+              >
+                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#4D9BE5' }} />
+                <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>{label}</span>
+              </div>
+            ))}
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-white">
               Get a Free Quote

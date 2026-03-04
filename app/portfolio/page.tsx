@@ -118,7 +118,7 @@ export default function PortfolioPage() {
     <>
       {/* Hero — Dark navy */}
       <section
-        className="relative overflow-hidden py-[75px] pt-[139px] text-center"
+        className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#091829' }}
       >
         <InnerHeroBg />

@@ -153,7 +153,7 @@ export default function PricingPage() {
 
       {/* Hero — Dark navy */}
       <section
-        className="relative overflow-hidden py-[75px] pt-[139px] text-center"
+        className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#091829' }}
       >
         <InnerHeroBg />
@@ -168,11 +168,27 @@ export default function PricingPage() {
           <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
             No setup fees. No hidden costs. No long-term contracts. Just professional website design with hosting, SSL, and maintenance bundled into one affordable monthly plan.
           </p>
-          <div className="flex items-center justify-center gap-2 mt-6">
+          <div className="flex items-center justify-center gap-2 mt-6 mb-10">
             <span className="text-amber-400 text-lg tracking-tight">★★★★★</span>
             <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
               Trusted by 50+ small businesses · Starting at $69/mo
             </span>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {[
+              { tier: 'Basic', price: '$69/mo', border: 'rgba(148,163,184,0.35)' },
+              { tier: 'Standard', price: '$99/mo', border: 'rgba(40,120,196,0.5)' },
+              { tier: 'Premium', price: '$149/mo', border: 'rgba(40,120,196,0.35)' },
+            ].map(({ tier, price, border }) => (
+              <div
+                key={tier}
+                className="rounded-2xl px-7 py-4 text-center"
+                style={{ background: 'rgba(255,255,255,0.07)', border: `1.5px solid ${border}` }}
+              >
+                <div className="text-2xl font-bold text-white">{price}</div>
+                <div className="text-xs mt-1 font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>{tier} Plan</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -100,7 +100,7 @@ export default function BlogPage() {
     <>
       {/* Hero — Dark navy */}
       <section
-        className="relative overflow-hidden py-[75px] pt-[139px] text-center"
+        className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#091829' }}
       >
         <InnerHeroBg />
@@ -112,9 +112,21 @@ export default function BlogPage() {
           >
             Web Design &amp; SEO Insights for Small Businesses
           </h1>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
+          <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Practical advice on website design, SEO, and digital marketing — written for small business owners who want to grow online without the jargon.
           </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['Web Design', 'SEO Tips', 'Business Growth', 'Pricing', 'Performance', 'Local SEO'].map(cat => (
+              <div
+                key={cat}
+                className="flex items-center gap-2 rounded-full px-4 py-2"
+                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.14)' }}
+              >
+                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#4D9BE5' }} />
+                <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>{cat}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

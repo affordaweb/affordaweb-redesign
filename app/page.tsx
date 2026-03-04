@@ -211,7 +211,7 @@ export default function HomePage() {
 
       {/* ── A. HERO ── Dark navy, premium ──────────────────────────── */}
       <section
-        className="relative overflow-hidden py-[75px] pt-[139px]"
+        className="relative overflow-hidden pt-[200px] pb-[100px]"
         style={{ background: '#091829' }}
         aria-labelledby="hero-heading"
       >
@@ -373,27 +373,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── B. STATS BAR ─── White ─────────────────────────────────── */}
-      <section className="border-b border-gray-100 bg-white" aria-label="Key statistics">
-        <div className="container-tight py-10">
+      {/* ── B. STATS BAR ─── Gradient ──────────────────────────────── */}
+      <section
+        className="border-b border-blue-100 relative"
+        style={{ background: 'linear-gradient(135deg, #EBF5FF 0%, #F4F9FF 50%, #EBF5FF 100%)' }}
+        aria-label="Key statistics"
+      >
+        <div className="container-tight py-2">
           <div className="grid grid-cols-2 lg:grid-cols-4">
-            {[
-              { number: '50+',   label: 'Clients Served' },
-              { number: '10–15', label: 'Day Setup' },
-              { number: '4.9★', label: 'Avg Rating' },
-              { number: '99.9%', label: 'Uptime Guarantee' },
-            ].map(({ number, label }, i) => (
-              <div key={label} className={`text-center py-6 ${i > 0 ? 'border-l border-gray-100' : ''}`}>
-                <div className="text-3xl font-extrabold gradient-text-blue mb-1">{number}</div>
-                <div className="text-sm text-gray-400 font-medium">{label}</div>
+            {([
+              { number: '50+',   label: 'Clients Served',  iconPath: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z' },
+              { number: '10–15', label: 'Day Setup',        iconPath: 'M13 10V3L4 14h7v7l9-11h-7z' },
+              { number: '4.9★',  label: 'Avg Rating',       iconPath: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z' },
+              { number: '99.9%', label: 'Uptime Guarantee', iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+            ] as { number: string; label: string; iconPath: string }[]).map(({ number, label, iconPath }, i) => (
+              <div key={label} className={`text-center py-8 ${i > 0 ? 'border-l border-blue-100' : ''}`}>
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-primary-600 mx-auto mb-3"
+                  style={{ background: 'rgba(40,120,196,0.12)' }}
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={iconPath} />
+                  </svg>
+                </div>
+                <div className="text-4xl font-extrabold gradient-text-blue mb-1">{number}</div>
+                <div className="text-sm text-gray-500 font-medium">{label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── C. SERVICES ─── White ──────────────────────────────────── */}
-      <section className="section-pad bg-white" aria-labelledby="services-heading">
+      {/* ── C. SERVICES ─── Light blue ─────────────────────────────── */}
+      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="services-heading">
         <div className="container-tight">
           <div className="text-center mb-14">
             <p className="section-label">What We Offer</p>
@@ -488,21 +500,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── E. TESTIMONIALS ─── White ──────────────────────────────── */}
-      <section className="section-pad bg-white" aria-labelledby="testimonials-heading">
-        <div className="container-tight">
+      {/* ── E. TESTIMONIALS ─── Dark navy ────────────────────────────── */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#091829' }} aria-labelledby="testimonials-heading">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px', opacity: 0.25 }} />
+        <div className="container-tight relative z-10">
           <div className="text-center mb-14">
-            <p className="section-label">Client Stories</p>
+            <p className="section-label-white">Client Stories</p>
             <h2
               id="testimonials-heading"
-              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3"
+              className="text-3xl sm:text-4xl font-bold text-white mb-3"
               style={{ letterSpacing: '-0.01em' }}
             >
               What Our Clients Say
             </h2>
             <div className="flex items-center justify-center gap-2 mt-3">
               <span className="text-amber-400 text-xl tracking-tight">★★★★★</span>
-              <span className="text-gray-400 text-sm font-medium">4.9 out of 5 · 50+ happy clients</span>
+              <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.4)' }}>4.9 out of 5 · 50+ happy clients</span>
             </div>
           </div>
 
@@ -510,26 +523,25 @@ export default function HomePage() {
             {testimonials.map(({ quote, name, role, business, avatarColor, initial }) => (
               <div
                 key={name}
-                className="bg-white rounded-2xl p-7 border border-gray-100 relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.06)', borderTop: '3px solid #2878C4' }}
+                className="rounded-2xl p-7 relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(12px)' }}
               >
-                {/* Decorative quote mark */}
                 <div
                   className="absolute top-3 right-4 text-8xl font-black leading-none pointer-events-none select-none"
-                  style={{ color: '#EBF5FF' }}
+                  style={{ color: 'rgba(255,255,255,0.05)' }}
                   aria-hidden="true"
                 >
                   &ldquo;
                 </div>
                 <div className="text-amber-400 text-base tracking-widest mb-4">★★★★★</div>
-                <blockquote className="text-gray-600 text-sm leading-relaxed mb-5 italic relative z-10">
+                <blockquote className="text-sm leading-relaxed mb-5 italic relative z-10" style={{ color: 'rgba(255,255,255,0.72)' }}>
                   &ldquo;{quote}&rdquo;
                 </blockquote>
                 <div className="flex items-center gap-3">
                   <div className={`avatar-initial ${avatarColor}`}>{initial}</div>
                   <div>
-                    <p className="font-bold text-gray-900 text-sm">{name}</p>
-                    <p className="text-gray-400 text-xs mt-0.5">{role} · {business}</p>
+                    <p className="font-bold text-white text-sm">{name}</p>
+                    <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>{role} · {business}</p>
                   </div>
                 </div>
               </div>
@@ -675,9 +687,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── G. PORTFOLIO HIGHLIGHTS ─── White ──────────────────────── */}
-      <section className="section-pad bg-white" aria-labelledby="results-heading">
-        <div className="container-tight">
+      {/* ── G. PORTFOLIO HIGHLIGHTS ─── White + pattern ─────────────── */}
+      <section className="section-pad bg-white relative overflow-hidden" aria-labelledby="results-heading">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.07) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
+        <div className="container-tight relative z-10">
           <div className="text-center mb-14">
             <p className="section-label">Real Results</p>
             <h2
