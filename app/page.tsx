@@ -232,8 +232,8 @@ export default function HomePage() {
 
               <h1
                 id="hero-heading"
-                className="text-5xl sm:text-6xl font-bold text-white leading-[1.08] mb-6"
-                style={{ letterSpacing: '-0.025em' }}
+                className="font-bold text-white leading-[1.12] mb-6"
+                style={{ letterSpacing: '-0.025em', fontSize: '45px' }}
               >
                 Professional Websites for Small Businesses —{' '}
                 <span className="gradient-text">Starting at $69/mo</span>
