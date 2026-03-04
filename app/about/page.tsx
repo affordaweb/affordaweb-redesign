@@ -91,7 +91,7 @@ export default function AboutPage() {
     <>
       {/* Hero — Dark navy */}
       <section
-        className="relative overflow-hidden pt-[75px] pb-14 text-center"
+        className="relative overflow-hidden pt-[75px] pb-[75px] text-center"
         style={{ background: '#091829' }}
       >
         <InnerHeroBg />
