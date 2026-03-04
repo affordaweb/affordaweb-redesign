@@ -41,7 +41,7 @@ export default function Header() {
         }`}
       >
         <div className="container-tight">
-          <div className="flex items-center justify-between h-[68px]">
+          <div className="flex items-center justify-between h-[64px]">
 
             {/* Logo */}
             <Link href="/" aria-label="AffordaWeb Solutions — Home" className="flex items-center shrink-0">

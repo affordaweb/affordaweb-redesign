@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import HeroBackground from '@/components/HeroBackground'
 
 export const metadata: Metadata = {
   title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
@@ -210,24 +211,11 @@ export default function HomePage() {
 
       {/* ── A. HERO ── Dark navy, premium ──────────────────────────── */}
       <section
-        className="relative overflow-hidden pt-[104px] pb-20"
+        className="relative overflow-hidden pt-[100px] pb-20"
         style={{ background: '#091829' }}
         aria-labelledby="hero-heading"
       >
-        {/* Dot pattern */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.2) 1.5px, transparent 1.5px)',
-            backgroundSize: '32px 32px',
-            opacity: 0.35,
-          }}
-        />
-        {/* Left glow */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 70% 80% at 25% 50%, rgba(40,120,196,0.12), transparent)' }}
-        />
+        <HeroBackground />
 
         <div className="container-tight relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">

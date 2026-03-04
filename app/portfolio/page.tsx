@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
   title: 'Website Design Portfolio | AffordaWeb Solutions',
@@ -117,17 +118,10 @@ export default function PortfolioPage() {
     <>
       {/* Hero — Dark navy */}
       <section
-        className="relative overflow-hidden pt-[104px] pb-20 text-center"
+        className="relative overflow-hidden pt-[100px] pb-20 text-center"
         style={{ background: '#091829' }}
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
-            backgroundSize: '32px 32px',
-            opacity: 0.35,
-          }}
-        />
+        <InnerHeroBg />
         <div className="container-tight relative z-10">
           <p className="section-label-white">Our Work</p>
           <h1

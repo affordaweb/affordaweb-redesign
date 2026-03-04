@@ -45,7 +45,7 @@ const config: Config = {
       },
       fontFamily: {
         sans:    ['var(--font-inter)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['var(--font-inter)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-poppins)', 'Poppins', 'var(--font-inter)', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-hero':    'linear-gradient(135deg, #091829 0%, #0F2040 50%, #091829 100%)',
