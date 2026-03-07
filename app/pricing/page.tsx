@@ -31,68 +31,72 @@ const plans = [
     id: 'basic',
     name: 'Basic',
     price: 69,
-    tagline: 'Perfect for getting online fast',
+    tagline: 'Small service providers, freelancers, and local businesses starting online.',
     popular: false,
     features: [
-      { text: '1–5 page website', included: true },
-      { text: 'Custom mobile-responsive design', included: true },
-      { text: 'Web hosting included', included: true },
-      { text: 'SSL certificate (HTTPS)', included: true },
-      { text: '1 business email account', included: true },
-      { text: '1 content update per month', included: true },
-      { text: 'Basic security maintenance', included: true },
-      { text: 'Contact form', included: true },
+      { text: '1–5 pages', included: true },
+      { text: 'Mobile-responsive design', included: true },
+      { text: 'Web hosting', included: true },
+      { text: 'SSL certificate', included: true },
+      { text: '1 business email (1 GB)', included: true },
+      { text: 'Basic maintenance & plugin updates', included: true },
+      { text: '1 monthly content update', included: true },
       { text: 'SEO optimization', included: false },
-      { text: 'Unlimited updates', included: false },
-      { text: 'Google Analytics setup', included: false },
-      { text: 'E-commerce store', included: false },
-      { text: 'Speed optimization', included: false },
-      { text: 'Priority support', included: false },
+      { text: 'Unlimited content updates', included: false },
+      { text: 'Google Analytics integration', included: false },
+      { text: 'Contact form integration', included: false },
+      { text: 'Advanced SEO setup', included: false },
+      { text: 'E-commerce (up to 30 products)', included: false },
+      { text: 'Speed optimization & caching', included: false },
+      { text: 'Security monitoring', included: false },
+      { text: '24/7 priority support', included: false },
     ],
   },
   {
     id: 'standard',
     name: 'Standard',
     price: 99,
-    tagline: 'Best for growing businesses',
+    tagline: 'Businesses looking to grow visibility without hiring a full web team.',
     popular: true,
     features: [
       { text: 'Up to 10 pages', included: true },
-      { text: 'Custom mobile-responsive design', included: true },
-      { text: 'Web hosting included', included: true },
-      { text: 'SSL certificate (HTTPS)', included: true },
-      { text: '1 business email account', included: true },
+      { text: 'Mobile-responsive design', included: true },
+      { text: 'Web hosting', included: true },
+      { text: 'SSL certificate', included: true },
+      { text: '1 business email (1 GB)', included: true },
+      { text: 'Basic maintenance & plugin updates', included: true },
       { text: 'Unlimited content updates', included: true },
-      { text: 'Advanced security maintenance', included: true },
-      { text: 'Contact forms (unlimited)', included: true },
-      { text: 'Full SEO optimization', included: true },
-      { text: 'Google Analytics setup', included: true },
-      { text: 'Booking / inquiry forms', included: true },
-      { text: 'E-commerce store', included: false },
-      { text: 'Speed optimization', included: false },
-      { text: 'Priority support', included: false },
+      { text: 'SEO optimization', included: true },
+      { text: 'Google Analytics integration', included: true },
+      { text: 'Contact form integration', included: true },
+      { text: 'Advanced SEO setup', included: false },
+      { text: 'E-commerce (up to 30 products)', included: false },
+      { text: 'Speed optimization & caching', included: false },
+      { text: 'Security monitoring', included: false },
+      { text: '24/7 priority support', included: false },
     ],
   },
   {
     id: 'premium',
     name: 'Premium',
     price: 149,
-    tagline: 'For e-commerce & full-scale brands',
+    tagline: 'Established brands, online stores, and agencies seeking top-tier support.',
     popular: false,
     features: [
-      { text: 'Unlimited pages', included: true },
-      { text: 'Custom mobile-responsive design', included: true },
-      { text: 'Web hosting included', included: true },
-      { text: 'SSL certificate (HTTPS)', included: true },
-      { text: '1 business email account', included: true },
+      { text: 'Up to 10 pages', included: true },
+      { text: 'Mobile-responsive design', included: true },
+      { text: 'Web hosting', included: true },
+      { text: 'SSL certificate', included: true },
+      { text: '1 business email (1 GB)', included: true },
+      { text: 'Basic maintenance & plugin updates', included: true },
       { text: 'Unlimited content updates', included: true },
-      { text: 'Advanced security maintenance', included: true },
-      { text: 'Contact forms (unlimited)', included: true },
-      { text: 'Full SEO optimization', included: true },
-      { text: 'Google Analytics setup', included: true },
-      { text: 'Booking / inquiry forms', included: true },
+      { text: 'SEO optimization', included: true },
+      { text: 'Google Analytics integration', included: true },
+      { text: 'Contact form integration', included: true },
+      { text: 'Advanced SEO setup', included: true },
       { text: 'E-commerce (up to 30 products)', included: true },
-      { text: 'Speed optimization', included: true },
+      { text: 'Speed optimization & caching', included: true },
+      { text: 'Security monitoring', included: true },
       { text: '24/7 priority support', included: true },
     ],
   },
@@ -105,23 +109,31 @@ const faqs = [
   },
   {
     q: 'What happens if I need more than 10 pages on the Standard plan?',
-    a: 'If your project requires more pages than your current plan allows, you can easily upgrade to the Premium plan. Contact us and we will handle the migration seamlessly.',
+    a: 'If your project grows beyond what Standard covers, you can upgrade to the Premium plan. Contact us and we will take care of the transition.',
   },
   {
     q: 'Can I cancel my plan at any time?',
-    a: 'Yes. All our plans are month-to-month with no long-term contracts. You can cancel at any time with 30 days notice. We will export your content so you are never left stranded.',
+    a: 'Yes. All our plans are month-to-month with no long-term contracts. You can cancel at any time.',
   },
   {
     q: 'Is the domain name included in the price?',
-    a: 'Domain registration is not included in the monthly plan price, but we can help you register your domain and connect it to your new website. Domain registration typically costs $10–$15/year.',
+    a: 'Domain registration is not included in the monthly plan price, but we can help you register your domain and connect it to your new website.',
   },
   {
     q: 'How do unlimited updates work on Standard and Premium plans?',
-    a: 'Simply email us your requested changes — new text, photos, pages, or any other updates — and we will implement them within 24–48 business hours. There is no limit to how many update requests you can submit per month.',
+    a: 'Send us your changes via the contact form or by email, and we will implement them within 24 hours. Text, photos, new pages — there is no limit to how many requests you can submit each month.',
   },
   {
     q: 'Can I upgrade from Basic to Standard or Premium later?',
-    a: 'Absolutely. You can upgrade your plan at any time. We will build out the additional pages and features on your upgraded plan without any additional setup fees.',
+    a: 'Yes. You can upgrade at any time. We will build out the additional pages and features on your new plan without any additional setup fees.',
+  },
+  {
+    q: 'Do you offer e-commerce websites?',
+    a: 'Yes. The Premium plan includes e-commerce functionality for up to 30 products. Reach out to discuss your store requirements before choosing a plan.',
+  },
+  {
+    q: 'How do I get started?',
+    a: 'Reach out via hello@affordawebsolutions.com or fill out the contact form. We will follow up to learn about your goals and recommend the right plan.',
   },
 ]
 
@@ -166,12 +178,11 @@ export default function PricingPage() {
             One Monthly Rate.<br className="hidden sm:block" /> Everything Included.
           </h1>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            No setup fees. No hidden costs. No long-term contracts. Just professional website design with hosting, SSL, and maintenance bundled into one affordable monthly plan.
+            No setup fees. No hidden costs. No long-term contracts. Professional website design with hosting, SSL, and maintenance bundled into one affordable monthly plan.
           </p>
           <div className="flex items-center justify-center gap-2 mt-6 mb-10">
-            <span className="text-amber-400 text-lg tracking-tight">★★★★★</span>
             <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              Trusted by 50+ small businesses · Starting at $69/mo
+              No contracts · No setup fees · Starting at $69/mo
             </span>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
@@ -392,7 +403,7 @@ export default function PricingPage() {
             Not Sure Which Plan Is Right for You?
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Contact us for a free consultation. We will recommend the best plan based on your goals, timeline, and budget.
+            Contact us for a free consultation. We will recommend the right plan based on your goals and budget.
           </p>
           <Link href="/contact" className="btn-white px-9 py-4">
             Get a Free Recommendation
