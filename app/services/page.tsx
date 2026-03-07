@@ -28,20 +28,18 @@ const services = [
     tag: 'Core Service',
     title: 'Website Design',
     headline: 'Custom Website Design for Small Businesses',
-    description: `Your website is your most powerful sales tool — it works for you 24 hours a day, 7 days a week. At AffordaWeb Solutions, we design custom, mobile-first websites specifically built to convert visitors into customers.
+    description: `Most web agencies charge thousands upfront before they know anything about your business. We built this differently. For $69 a month, you get a custom site that is responsive on every device, with clean SEO structure built in from the start.
 
-Every website we build is unique to your brand. We do not use cheap templates or drag-and-drop builders. Our designs are hand-crafted with clean code, fast load times, and SEO best practices built in from day one.
+You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert.
 
-Whether you are a freelancer, a local service provider, a startup, or an established small business, we create a website that reflects your professionalism and speaks directly to your target audience.`,
+Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.`,
     features: [
-      'Custom design tailored to your brand',
-      'Mobile-first, fully responsive layout',
-      'Fast load times optimized for PageSpeed 90+',
-      'On-page SEO built into every page',
-      'Contact forms and lead capture',
-      'Google Analytics integration',
-      'SSL certificate and security setup',
-      'Delivered in 10–15 business days',
+      'Fully responsive design for all devices',
+      'Custom layout, color palette, and branding',
+      'SEO-optimized structure and clean code',
+      'Fast loading speed and smooth navigation',
+      'Built to convert visitors into customers',
+      'SSL certificate included on every plan',
     ],
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -55,20 +53,16 @@ Whether you are a freelancer, a local service provider, a startup, or an establi
     tag: 'Popular',
     title: 'Website Redesign',
     headline: 'Transform Your Outdated Website',
-    description: `Is your current website looking dated, loading slowly, or failing to convert visitors? A website redesign from AffordaWeb Solutions can completely transform your online presence — without starting from scratch and losing your existing content or rankings.
+    description: `An outdated site costs you business. Not dramatically, just quietly. Visitors land, see something that looks like it was built years ago, and leave. A redesign fixes that without losing the content and rankings you have already built.
 
-We audit your current website, identify what is working and what is not, and redesign it with a modern look and improved user experience. The result is a faster, more attractive website that better represents your brand and ranks higher in search engines.
+We give your site a complete visual and functional makeover. Modern, mobile-friendly layout. Improved performance. Sharper conversion focus. Your existing content stays put.
 
-Our redesign service is ideal for businesses that have outgrown their current site or whose website no longer reflects the quality of their products or services.`,
+Right move if your site works but no longer represents what you actually offer.`,
     features: [
-      'Full visual and layout redesign',
-      'Content migration from your existing site',
-      'Mobile and speed optimization',
-      'Improved SEO structure',
-      'Modern UI with professional aesthetics',
-      'Improved conversion rate design',
-      'New contact forms and CTAs',
-      'Google Search Console reconnection',
+      'Complete visual and functional makeover',
+      'Preserves existing content and SEO',
+      'Modern, mobile-friendly layouts',
+      'Improved performance and conversion focus',
     ],
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,20 +76,17 @@ Our redesign service is ideal for businesses that have outgrown their current si
     tag: 'Grow Traffic',
     title: 'SEO Optimization',
     headline: 'Rank Higher. Get Found. Grow Faster.',
-    description: `Search engine optimization is how customers find your business when they search on Google. Without proper SEO, even the most beautiful website will not be seen by potential customers.
+    description: `Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper meta setup, and the structural decisions that search engines pay attention to.
 
-AffordaWeb Solutions includes foundational SEO on every Standard and Premium website we build. For businesses that want to go further, our dedicated SEO optimization service provides a comprehensive strategy to improve your search rankings and drive more qualified traffic to your website.
+Standard and Premium plans include SEO as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.
 
-We focus on the SEO tactics that actually move the needle: keyword research, on-page optimization, technical SEO fixes, local SEO for brick-and-mortar businesses, and content strategy recommendations.`,
+If your site has been live for years but traffic has barely moved, this is the thing you have not tried yet.`,
     features: [
-      'Keyword research and targeting',
-      'On-page SEO optimization',
-      'Meta title and description writing',
-      'Schema markup implementation',
-      'Page speed optimization',
-      'Image alt text and compression',
-      'Internal linking strategy',
-      'Google Search Console setup',
+      'Higher rankings on major search engines',
+      'Proven keyword and content strategies',
+      'Long-term organic growth focus',
+      'Clean site structure and meta optimization',
+      'Google Analytics integration',
     ],
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -109,20 +100,17 @@ We focus on the SEO tactics that actually move the needle: keyword research, on-
     tag: 'Stay Current',
     title: 'Website Maintenance',
     headline: 'We Handle Everything. You Run Your Business.',
-    description: `Websites require ongoing attention to stay secure, fast, and current. Outdated plugins, broken links, and security vulnerabilities can harm your search rankings and drive customers away — but most business owners do not have time to deal with technical website management.
+    description: `Plugins go out of date. Security vulnerabilities do not announce themselves. Most business owners learn something broke because a customer mentioned it.
 
-AffordaWeb Solutions provides ongoing website maintenance as part of every plan, so you never have to worry about your website falling behind. We handle software updates, security monitoring, backups, and content changes on your behalf.
+Every AffordaWeb plan includes maintenance. Regular plugin and security updates, backups, and performance monitoring. Standard and Premium clients get unlimited content updates, typically turned around within 24 hours.
 
-With our Standard and Premium plans, you get unlimited content updates — simply send us your changes via email and we will implement them, typically within 24–48 hours.`,
+You run your business. We keep the site running.`,
     features: [
-      'Regular software and plugin updates',
-      'Security monitoring and malware removal',
-      'Daily automated backups',
-      'Performance monitoring',
-      'Uptime monitoring (99.9% guarantee)',
-      'Content updates on request',
-      'Broken link checking and repair',
-      '24/7 support (Premium plan)',
+      'Regular plugin and security updates',
+      'Backups and performance monitoring',
+      'Ongoing uptime and technical checks',
+      'Unlimited content updates (Standard and Premium)',
+      'Response within 24 hours',
     ],
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -137,52 +125,21 @@ With our Standard and Premium plans, you get unlimited content updates — simpl
     tag: 'Included',
     title: 'Shared Web Hosting',
     headline: 'Reliable Hosting Included with Every Plan',
-    description: `We believe hosting should not be an extra cost you have to worry about. That is why every AffordaWeb Solutions plan includes managed web hosting, eliminating the hassle of dealing with separate hosting providers, control panels, and renewal fees.
+    description: `Hosting should not be one more vendor to manage. Every AffordaWeb plan bundles it in. High-performance, reliable hosting with an SSL certificate included on every account.
 
-Our shared hosting is reliable, fast, and secure. Each account includes an SSL certificate for HTTPS security, 1GB of business email storage, and enough resources to handle the traffic needs of most small and medium business websites.
+You also get 1GB of professional email connected to your domain. One provider, one monthly bill, one contact for anything technical.
 
-By bundling hosting with your website design plan, you get a single point of contact for all your web needs — and a single monthly bill with no surprises.`,
+Bundled because separating it out just adds friction.`,
     features: [
-      'Managed shared hosting included',
-      'Free SSL certificate (HTTPS)',
-      '1GB business email (1 user)',
-      '99.9% uptime SLA',
-      'Daily backups',
-      'Spam-protected email',
-      'cPanel access available',
-      'Easy plan upgrades',
+      'High-performance, reliable hosting',
+      'SSL certificate included',
+      '24/7 monitoring and guaranteed uptime',
+      '1GB free professional email (1 user)',
     ],
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
           d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-      </svg>
-    ),
-  },
-  {
-    id: 'ecommerce',
-    tag: 'Premium',
-    title: 'E-Commerce Design',
-    headline: 'Sell Online with a Store That Converts',
-    description: `Ready to sell your products or services online? Our Premium plan includes a fully functional e-commerce website with up to 30 products, secure payment processing integration, and a shopping experience designed to maximize sales.
-
-We set up your online store with product pages, a shopping cart, checkout flow, and payment gateway integration. Your store will be mobile-friendly, fast-loading, and optimized for search engines so customers can find your products on Google.
-
-Whether you are selling physical products, digital downloads, or services, we build a store that makes buying easy for your customers and managing inventory easy for you.`,
-    features: [
-      'Up to 30 product listings',
-      'Payment gateway integration (Stripe/PayPal)',
-      'Shopping cart and checkout',
-      'Product categories and filtering',
-      'Order management system',
-      'Mobile-optimized store',
-      'Product SEO optimization',
-      'SSL for secure transactions',
-    ],
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
   },
@@ -228,7 +185,7 @@ export default function ServicesPage() {
             Affordable Web Design Services<br className="hidden sm:block" /> for Small Businesses
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            From custom website design to SEO, hosting, and maintenance — everything your business needs to succeed online, bundled into one simple monthly plan.
+            From custom website design to SEO, hosting, and maintenance. Everything your business needs online, bundled into one simple monthly plan.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {['Website Design', 'SEO Optimization', 'Hosting & SSL', 'E-Commerce', 'Maintenance', 'Redesign'].map(label => (
