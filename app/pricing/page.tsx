@@ -166,7 +166,7 @@ export default function PricingPage() {
       {/* Hero — Dark navy */}
       <section
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
-        style={{ background: '#091829' }}
+        style={{ background: '#0F0F1A' }}
       >
         <InnerHeroBg />
         <div className="container-tight relative z-10">
@@ -313,7 +313,7 @@ export default function PricingPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm bg-white rounded-2xl overflow-hidden" style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.06)' }}>
               <thead>
-                <tr style={{ background: '#091829' }}>
+                <tr style={{ background: '#0F0F1A' }}>
                   <th className="text-left py-4 px-6 font-semibold text-white/70 w-1/2">Feature</th>
                   {plans.map(p => (
                     <th key={p.id} className="text-center py-4 px-3 font-bold text-white">
@@ -385,7 +385,7 @@ export default function PricingPage() {
       {/* CTA — Dark navy */}
       <section
         className="section-pad relative overflow-hidden"
-        style={{ background: '#091829' }}
+        style={{ background: '#0F0F1A' }}
       >
         <div
           className="absolute inset-0 pointer-events-none"

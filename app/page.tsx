@@ -156,7 +156,7 @@ export default function HomePage() {
       {/* ── A. HERO ── Dark navy, premium ──────────────────────────── */}
       <section
         className="relative overflow-hidden pt-[75px] pb-[75px]"
-        style={{ background: '#091829' }}
+        style={{ background: '#0F0F1A' }}
         aria-labelledby="hero-heading"
       >
         <HeroBackground />
@@ -200,7 +200,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-5 text-sm" style={{ color: 'rgba(255,255,255,0.38)' }}>
                 {['No contracts', 'Hosting included', 'SSL included', 'Cancel anytime'].map(t => (
                   <span key={t} className="flex items-center gap-1.5">
-                    <span style={{ color: '#4D9BE5' }}>✓</span>{t}
+                    <span style={{ color: '#06B6D4' }}>✓</span>{t}
                   </span>
                 ))}
               </div>
@@ -210,13 +210,13 @@ export default function HomePage() {
             <div className="relative hidden lg:block">
               <div
                 className="absolute -inset-8 pointer-events-none"
-                style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(40,120,196,0.18), transparent 70%)' }}
+                style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(86,54,209,0.18), transparent 70%)' }}
               />
 
               <div
                 className="relative rounded-2xl overflow-hidden"
                 style={{
-                  background: '#0F1E35',
+                  background: '#16142A',
                   border: '1px solid rgba(255,255,255,0.08)',
                   boxShadow: '0 24px 80px rgba(0,0,0,0.5)',
                 }}
@@ -224,7 +224,7 @@ export default function HomePage() {
                 {/* Browser chrome */}
                 <div
                   className="flex items-center gap-2 px-4 py-3"
-                  style={{ background: '#152641', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                  style={{ background: '#1C1830', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
                 >
                   <div className="flex items-center gap-1.5">
                     <div className="w-3 h-3 rounded-full" style={{ background: 'rgba(248,113,113,0.7)' }} />
@@ -258,31 +258,31 @@ export default function HomePage() {
                     <div className="flex gap-3">
                       {[1,2,3].map(n => <div key={n} className="h-1.5 bg-white/35 rounded w-10" />)}
                     </div>
-                    <div className="h-6 rounded-full w-16" style={{ background: '#2878C4' }} />
+                    <div className="h-6 rounded-full w-16" style={{ background: '#5636D1' }} />
                   </div>
                   {/* Bottom overlay */}
                   <div
                     className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-12"
-                    style={{ background: 'linear-gradient(to top, rgba(9,24,41,0.88), transparent)' }}
+                    style={{ background: 'linear-gradient(to top, rgba(15,15,26,0.88), transparent)' }}
                   >
                     <div className="h-4 bg-white/80 rounded w-3/5 mb-2" />
                     <div className="h-2 bg-white/40 rounded w-4/5 mb-3" />
-                    <div className="h-7 rounded-full w-1/3" style={{ background: '#2878C4' }} />
+                    <div className="h-7 rounded-full w-1/3" style={{ background: '#5636D1' }} />
                   </div>
                 </div>
 
                 {/* Service cards strip */}
-                <div className="p-4" style={{ background: '#0F1E35' }}>
+                <div className="p-4" style={{ background: '#16142A' }}>
                   <div className="grid grid-cols-3 gap-2">
                     {[1,2,3].map(n => (
                       <div
                         key={n}
                         className="rounded-xl p-3"
-                        style={{ background: '#152641', border: '1px solid rgba(255,255,255,0.06)' }}
+                        style={{ background: '#1C1830', border: '1px solid rgba(255,255,255,0.06)' }}
                       >
                         <div
                           className="w-7 h-7 rounded-lg mb-2"
-                          style={{ background: 'rgba(40,120,196,0.25)', border: '1px solid rgba(40,120,196,0.3)' }}
+                          style={{ background: 'rgba(86,54,209,0.25)', border: '1px solid rgba(86,54,209,0.3)' }}
                         />
                         <div className="h-2 rounded w-full mb-1.5" style={{ background: 'rgba(255,255,255,0.15)' }} />
                         <div className="h-1.5 rounded w-3/4" style={{ background: 'rgba(255,255,255,0.08)' }} />
@@ -294,11 +294,11 @@ export default function HomePage() {
 
               {/* Floating chips */}
               <div className="absolute -left-10 top-16 bg-white rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                <div className="text-2xl font-bold leading-none" style={{ color: '#2878C4' }}>$69</div>
+                <div className="text-2xl font-bold leading-none" style={{ color: '#5636D1' }}>$69</div>
                 <div className="text-xs text-gray-400 font-medium mt-0.5">Per month</div>
               </div>
               <div className="absolute -right-8 bottom-16 bg-white rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                <div className="text-2xl font-bold leading-none" style={{ color: '#2878C4' }}>$0</div>
+                <div className="text-2xl font-bold leading-none" style={{ color: '#5636D1' }}>$0</div>
                 <div className="text-xs text-gray-400 font-medium mt-0.5">Setup fees</div>
               </div>
               <div
@@ -412,7 +412,7 @@ export default function HomePage() {
       </section>
 
       {/* ── E. WHO WE HELP ─── Dark navy ───────────────────────────── */}
-      <section className="section-pad relative overflow-hidden" style={{ background: '#091829' }} aria-labelledby="clients-heading">
+      <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }} aria-labelledby="clients-heading">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px', opacity: 0.25 }} />
         <div className="container-tight relative z-10">
           <div className="text-center mb-14">
@@ -688,7 +688,7 @@ export default function HomePage() {
       {/* ── I. FINAL CTA ─── Dark navy ─────────────────────────────── */}
       <section
         className="section-pad relative overflow-hidden"
-        style={{ background: '#091829' }}
+        style={{ background: '#0F0F1A' }}
         aria-label="Call to action"
       >
         <div

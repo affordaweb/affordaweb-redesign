@@ -29,7 +29,7 @@ export default function ContactPage() {
       {/* Hero — Dark navy */}
       <section
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
-        style={{ background: '#091829' }}
+        style={{ background: '#0F0F1A' }}
       >
         <InnerHeroBg />
         <div className="container-tight relative z-10">

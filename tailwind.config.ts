@@ -7,6 +7,19 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.25rem',
+        sm: '1.5rem',
+        lg: '2rem',
+        xl: '1.5rem',
+      },
+      screens: {
+        xl: '1280px',
+        '2xl': '1280px',
+      },
+    },
     extend: {
       colors: {
         // Logo Blue — extracted from AffordaWeb logo (#2878C4)
