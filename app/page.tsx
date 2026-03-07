@@ -6,7 +6,7 @@ import HeroBackground from '@/components/HeroBackground'
 export const metadata: Metadata = {
   title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
   description:
-    'Professional website design starting at $69/month. Hosting, SSL, SEO, and unlimited updates included. Setup in 10-15 days. No contracts. Trusted by 50+ small businesses.',
+    'Professional website design starting at $69/month. Hosting, SSL, SEO, and unlimited updates included. No setup fees. No contracts. Design, hosting, and support in one plan.',
   alternates: { canonical: 'https://affordawebsolutions.com' },
   openGraph: {
     title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
@@ -80,43 +80,6 @@ function IconCheck() {
   )
 }
 
-function IconTrend() {
-  return (
-    <svg width="14" height="14" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-    </svg>
-  )
-}
-
-function IconWrench() {
-  return (
-    <svg width="28" height="28" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
-  )
-}
-
-function IconHome() {
-  return (
-    <svg width="28" height="28" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-        d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 22V12h6v10" />
-    </svg>
-  )
-}
-
-function IconMedical() {
-  return (
-    <svg width="28" height="28" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  )
-}
-
 // ── Data ──────────────────────────────────────────────────────────
 
 const services = [
@@ -128,37 +91,18 @@ const services = [
   { Icon: IconEcom,     title: 'E-Commerce Design',   desc: 'Launch your online store with up to 30 products and payment processing.', href: '/services#ecommerce' },
 ]
 
-const testimonials = [
-  {
-    quote: 'AffordaWeb built our plumbing site in under 2 weeks. We went from almost no online presence to 3x more calls within 60 days. Best investment we\'ve made.',
-    name: 'Marcus T.',
-    role: 'Owner',
-    business: 'Local Plumbing Company',
-    avatarColor: 'bg-blue-500',
-    initial: 'M',
-  },
-  {
-    quote: '200% more inquiry form submissions in the first 90 days after launch. The site looks professional, loads fast, and the team was easy to work with start to finish.',
-    name: 'Sandra K.',
-    role: 'Real Estate Agent',
-    business: 'Independent Realtor',
-    avatarColor: 'bg-emerald-500',
-    initial: 'S',
-  },
-  {
-    quote: 'My online coaching program sold out within days of my new site going live. AffordaWeb took my brand to the next level — worth every single penny.',
-    name: 'Priya M.',
-    role: 'Fitness Coach',
-    business: 'Online Coaching Business',
-    avatarColor: 'bg-violet-500',
-    initial: 'P',
-  },
+const whoWeHelp = [
+  { title: 'Freelancers',        desc: 'You do the work. Your site should sell it. A professional online presence starting at $69/month keeps you from losing clients to someone with a better-looking site.',                     Icon: IconDesign  },
+  { title: 'Startups',           desc: 'First impressions matter and you only get one. Launch with a site that looks credible from day one, without a five-figure agency bill.',                                                    Icon: IconRedesign },
+  { title: 'Small Businesses',   desc: 'Local service providers need leads, not just traffic. We build sites structured to show up on Google and convert the people who find them.',                                                Icon: IconSeo     },
+  { title: 'Established Brands', desc: 'You have outgrown your current site. We redesign with care and keep your existing content and search rankings intact throughout.',                                                          Icon: IconMaint   },
+  { title: 'Online Stores',      desc: 'The Premium plan includes e-commerce for up to 30 products with payment processing and a mobile-optimized checkout. Built to sell.',                                                       Icon: IconEcom    },
 ]
 
 const portfolioItems = [
-  { category: 'Service Business · Standard Plan', title: 'Local Plumbing Company',   desc: 'A local plumbing company needed more than a basic online presence. We delivered a fast, SEO-optimized site with clear service pages and a prominent call-to-action.', result: '3x more leads in 60 days',     PortfolioIcon: IconWrench  },
-  { category: 'Real Estate · Standard Plan',      title: 'Real Estate Agent',         desc: 'An independent realtor wanted to stand out in a competitive market. We built a clean, professional site with strong local SEO and an easy inquiry form.',             result: '200% increase in inquiries', PortfolioIcon: IconHome    },
-  { category: 'Healthcare · Standard Plan',       title: 'Dental Practice',            desc: 'A dental clinic needed to rank locally and make appointment booking easy. We delivered an optimized, trust-building site that moved them to page one.',              result: 'Page 1 for local searches',  PortfolioIcon: IconMedical },
+  { category: 'Website Design',   title: 'Web VA Experts Hub',       desc: 'A virtual assistant network needed a clean, modern online presence that matched its professionalism. We delivered focused service pages with a clear call to action.',    PortfolioIcon: IconDesign  },
+  { category: 'Web Development',  title: 'Empower Queer Hub',        desc: 'A community resource site serving multiple roles at once. We built a flexible, mobile-first site with a structure that holds up under real traffic and real use.',         PortfolioIcon: IconRedesign },
+  { category: 'Web Design',       title: 'Argentum Private Wealth',  desc: 'A financial advisory firm required a site built to the standard of its clients. We delivered a high-value, tailor-made presence that conveys trust on first load.',        PortfolioIcon: IconSeo    },
 ]
 
 const faqs = [
@@ -211,7 +155,7 @@ export default function HomePage() {
 
       {/* ── A. HERO ── Dark navy, premium ──────────────────────────── */}
       <section
-        className="relative overflow-hidden pt-[200px] pb-[100px]"
+        className="relative overflow-hidden pt-[75px] pb-[75px]"
         style={{ background: '#091829' }}
         aria-labelledby="hero-heading"
       >
@@ -226,8 +170,8 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-7"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
               >
-                <span className="text-amber-400 text-sm tracking-tight">★★★★★</span>
-                <span className="text-white/60 text-xs font-medium">Trusted by 50+ small businesses</span>
+                <span className="text-cyan-400 text-xs font-semibold tracking-wide uppercase">All-in-One</span>
+                <span className="text-white/60 text-xs font-medium">Design, hosting, and support in one plan</span>
               </div>
 
               <h1
@@ -235,12 +179,12 @@ export default function HomePage() {
                 className="font-bold text-white leading-[1.12] mb-6"
                 style={{ letterSpacing: '-0.025em', fontSize: '45px' }}
               >
-                Professional Websites for Small Businesses —{' '}
+                Less Talk. Let&apos;s Build.{' '}
                 <span className="gradient-text">Starting at $69/mo</span>
               </h1>
 
               <p className="text-xl leading-relaxed mb-9 max-w-lg" style={{ color: 'rgba(255,255,255,0.58)' }}>
-                Fully managed website design with hosting, SSL, and unlimited updates. We build it, we maintain it — you focus on running your business.
+                You get design, hosting, SSL, and unlimited content updates in one flat monthly price. No setup fees. No contracts. Just a website that works.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-9">
@@ -254,7 +198,7 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-wrap gap-5 text-sm" style={{ color: 'rgba(255,255,255,0.38)' }}>
-                {['No contracts', 'Hosting included', 'Setup in 10-15 days', 'Cancel anytime'].map(t => (
+                {['No contracts', 'Hosting included', 'SSL included', 'Cancel anytime'].map(t => (
                   <span key={t} className="flex items-center gap-1.5">
                     <span style={{ color: '#4D9BE5' }}>✓</span>{t}
                   </span>
@@ -350,23 +294,23 @@ export default function HomePage() {
 
               {/* Floating chips */}
               <div className="absolute -left-10 top-16 bg-white rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                <div className="text-2xl font-bold leading-none" style={{ color: '#2878C4' }}>3x</div>
-                <div className="text-xs text-gray-400 font-medium mt-0.5">More leads</div>
+                <div className="text-2xl font-bold leading-none" style={{ color: '#2878C4' }}>$69</div>
+                <div className="text-xs text-gray-400 font-medium mt-0.5">Per month</div>
               </div>
               <div className="absolute -right-8 bottom-16 bg-white rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                <div className="text-2xl font-bold leading-none" style={{ color: '#2878C4' }}>10–15</div>
-                <div className="text-xs text-gray-400 font-medium mt-0.5">Day setup</div>
+                <div className="text-2xl font-bold leading-none" style={{ color: '#2878C4' }}>$0</div>
+                <div className="text-xs text-gray-400 font-medium mt-0.5">Setup fees</div>
               </div>
               <div
                 className="absolute -right-6 top-8 rounded-xl px-3 py-2 animate-float"
                 style={{
-                  background: '#FFFBEB',
-                  border: '1px solid rgba(251,191,36,0.3)',
-                  boxShadow: '0 4px 16px rgba(251,191,36,0.12)',
+                  background: '#F0FDF4',
+                  border: '1px solid rgba(74,222,128,0.3)',
+                  boxShadow: '0 4px 16px rgba(74,222,128,0.12)',
                 }}
               >
-                <div className="text-amber-400 text-xs tracking-tight">★★★★★</div>
-                <div className="text-amber-700 text-xs font-semibold mt-0.5">4.9 rating</div>
+                <div className="text-green-600 text-xs font-bold">SSL</div>
+                <div className="text-green-700 text-xs font-semibold mt-0.5">Included free</div>
               </div>
             </div>
           </div>
@@ -382,10 +326,10 @@ export default function HomePage() {
         <div className="container-tight py-2">
           <div className="grid grid-cols-2 lg:grid-cols-4">
             {([
-              { number: '50+',   label: 'Clients Served',  iconPath: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z' },
-              { number: '10–15', label: 'Day Setup',        iconPath: 'M13 10V3L4 14h7v7l9-11h-7z' },
-              { number: '4.9★',  label: 'Avg Rating',       iconPath: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z' },
-              { number: '99.9%', label: 'Uptime Guarantee', iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+              { number: '$69/mo', label: 'Starting Price',    iconPath: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 6v1m0 4v1m-4-8H6m12 0h-2m2 8H6m0 0a9 9 0 110-18 9 9 0 010 18z' },
+              { number: '24 hrs', label: 'Response Time',     iconPath: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { number: '$0',     label: 'Setup Fees',        iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { number: '99.9%', label: 'Uptime Guarantee',  iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
             ] as { number: string; label: string; iconPath: string }[]).map(({ number, label, iconPath }, i) => (
               <div key={label} className={`text-center py-8 ${i > 0 ? 'border-l border-blue-100' : ''}`}>
                 <div
@@ -404,53 +348,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── C. SERVICES ─── Light blue ─────────────────────────────── */}
-      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="services-heading">
-        <div className="container-tight">
-          <div className="text-center mb-14">
-            <p className="section-label">What We Offer</p>
-            <h2
-              id="services-heading"
-              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
-              style={{ letterSpacing: '-0.01em' }}
-            >
-              Everything You Need in One Monthly Plan
-            </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Design, hosting, maintenance, and SEO — all bundled together so you never deal with multiple vendors or surprise bills.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map(({ Icon, title, desc, href }) => (
-              <div key={title} className="card-accent p-7 group">
-                <div
-                  className="rounded-xl flex items-center justify-center text-primary-700 mb-5 transition-transform duration-300 group-hover:scale-110"
-                  style={{ width: '56px', height: '56px', minWidth: '56px', background: 'linear-gradient(135deg, #D6EBFF 0%, #ADCFF5 100%)' }}
-                >
-                  <Icon />
-                </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
-                <Link
-                  href={href}
-                  className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-all duration-200 inline-flex items-center gap-1.5 hover:gap-2.5"
-                >
-                  Learn more →
-                </Link>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link href="/services" className="btn-secondary">
-              View All Services
-            </Link>
-          </div>
-        </div>
-      </section>
 
-      {/* ── D. HOW IT WORKS ─── Light blue ─────────────────────────── */}
-      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="process-heading">
-        <div className="container-tight">
+      {/* ── D. HOW IT WORKS ─── Gradient blue ──────────────────────── */}
+      <section
+        className="section-pad relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #EBF5FF 0%, #F4F9FF 50%, #EBF5FF 100%)' }}
+        aria-labelledby="process-heading"
+      >
+        {/* Top accent line */}
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(40,120,196,0.25) 50%, transparent)' }} />
+        {/* Radial glow top-left */}
+        <div className="absolute -top-24 -left-24 w-[500px] h-[500px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(40,120,196,0.08), transparent 65%)' }} />
+        {/* Radial glow bottom-right */}
+        <div className="absolute -bottom-24 -right-24 w-[400px] h-[400px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(40,120,196,0.06), transparent 65%)' }} />
+        <div className="container-tight relative z-10">
           <div className="text-center mb-14">
             <p className="section-label">Our Process</p>
             <h2
@@ -458,10 +369,10 @@ export default function HomePage() {
               className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
               style={{ letterSpacing: '-0.01em' }}
             >
-              Up and Running in 10–15 Days
+              Three Steps. One Monthly Price.
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              A simple, proven process so you get a professional website fast — without sacrificing quality.
+              Tell us what you need, we build and launch it, then we stay on to keep it running. That is the whole plan.
             </p>
           </div>
 
@@ -473,9 +384,9 @@ export default function HomePage() {
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
               {[
-                { step: '1', title: 'Tell Us About Your Business', desc: 'Fill out our short form and share your goals, services, and any examples you love. No technical knowledge required.' },
-                { step: '2', title: 'We Build Your Site',          desc: 'Our team designs and develops your custom website, sending you a preview for review within 10–15 business days.' },
-                { step: '3', title: 'Launch & Ongoing Support',    desc: 'We go live, connect your domain, and stay on to handle updates, maintenance, and any changes you need.' },
+                { step: '1', title: 'Share Your Goals',   desc: 'Tell us your goals, preferred style, and the features you need. No technical knowledge required — we guide you through it.' },
+                { step: '2', title: 'Website Creation',   desc: 'We design and launch a professional, SEO-friendly website built for your business and optimized for search from day one.' },
+                { step: '3', title: 'Ongoing Support',    desc: 'We provide hosting, maintenance, updates, and a free business email account. You never deal with technical issues on your own.' },
               ].map(({ step, title, desc }) => (
                 <div key={step} className="text-center">
                   <div
@@ -500,50 +411,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── E. TESTIMONIALS ─── Dark navy ────────────────────────────── */}
-      <section className="section-pad relative overflow-hidden" style={{ background: '#091829' }} aria-labelledby="testimonials-heading">
+      {/* ── E. WHO WE HELP ─── Dark navy ───────────────────────────── */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#091829' }} aria-labelledby="clients-heading">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px', opacity: 0.25 }} />
         <div className="container-tight relative z-10">
           <div className="text-center mb-14">
-            <p className="section-label-white">Client Stories</p>
+            <p className="section-label-white">Who We Serve</p>
             <h2
-              id="testimonials-heading"
-              className="text-3xl sm:text-4xl font-bold text-white mb-3"
+              id="clients-heading"
+              className="text-3xl sm:text-4xl font-bold text-white mb-4"
               style={{ letterSpacing: '-0.01em' }}
             >
-              What Our Clients Say
+              Built for Businesses That Can&apos;t Afford to Wait
             </h2>
-            <div className="flex items-center justify-center gap-2 mt-3">
-              <span className="text-amber-400 text-xl tracking-tight">★★★★★</span>
-              <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.4)' }}>4.9 out of 5 · 50+ happy clients</span>
-            </div>
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
+              Professional websites shouldn&apos;t cost a fortune. Quality and affordability are not mutually exclusive.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map(({ quote, name, role, business, avatarColor, initial }) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {whoWeHelp.map(({ title, desc, Icon }) => (
               <div
-                key={name}
-                className="rounded-2xl p-7 relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(12px)' }}
+                key={title}
+                className="rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1"
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
               >
-                <div
-                  className="absolute top-3 right-4 text-8xl font-black leading-none pointer-events-none select-none"
-                  style={{ color: 'rgba(255,255,255,0.05)' }}
-                  aria-hidden="true"
-                >
-                  &ldquo;
+                <div className="icon-wrap mb-5" style={{ background: 'rgba(255,255,255,0.08)', color: '#06B6D4' }}>
+                  <Icon />
                 </div>
-                <div className="text-amber-400 text-base tracking-widest mb-4">★★★★★</div>
-                <blockquote className="text-sm leading-relaxed mb-5 italic relative z-10" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                  &ldquo;{quote}&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-3">
-                  <div className={`avatar-initial ${avatarColor}`}>{initial}</div>
-                  <div>
-                    <p className="font-bold text-white text-sm">{name}</p>
-                    <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>{role} · {business}</p>
-                  </div>
-                </div>
+                <h3 className="font-bold text-white text-lg mb-2">{title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -567,7 +464,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
 
             {/* Basic */}
             <div
@@ -688,25 +585,26 @@ export default function HomePage() {
       </section>
 
       {/* ── G. PORTFOLIO HIGHLIGHTS ─── White + pattern ─────────────── */}
-      <section className="section-pad bg-white relative overflow-hidden" aria-labelledby="results-heading">
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.07) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
+      <section className="section-pad bg-white relative overflow-hidden" aria-labelledby="portfolio-heading">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.065) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(40,120,196,0.18) 50%, transparent)' }} />
         <div className="container-tight relative z-10">
           <div className="text-center mb-14">
-            <p className="section-label">Real Results</p>
+            <p className="section-label">Our Work</p>
             <h2
-              id="results-heading"
+              id="portfolio-heading"
               className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
               style={{ letterSpacing: '-0.01em' }}
             >
-              Websites That Drive Real Business
+              A Few Sites We Built
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              We do not just build websites — we build tools that grow your business.
+              Different industries, same standard. Every project ships with clean code, mobile-responsive design, and SEO built in.
             </p>
           </div>
 
           <div className="space-y-5">
-            {portfolioItems.map(({ category, title, desc, result, PortfolioIcon }) => (
+            {portfolioItems.map(({ category, title, desc, PortfolioIcon }) => (
               <div
                 key={title}
                 className="bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col sm:flex-row transition-all duration-300 hover:-translate-y-0.5"
@@ -727,15 +625,9 @@ export default function HomePage() {
                   <p className="text-xs font-semibold text-primary-600 uppercase tracking-widest mb-2">{category}</p>
                   <h3 className="font-bold text-gray-900 text-xl mb-2">{title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
-                  <div className="flex items-center gap-4 flex-wrap">
-                    <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 font-bold text-sm px-3 py-1.5 rounded-full border border-green-100">
-                      <IconTrend />
-                      {result}
-                    </span>
-                    <Link href="/portfolio" className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
-                      View all projects →
-                    </Link>
-                  </div>
+                  <Link href="/portfolio" className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
+                    View all projects →
+                  </Link>
                 </div>
               </div>
             ))}
@@ -743,9 +635,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── H. FAQ ─── Light ───────────────────────────────────────── */}
-      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="faq-heading">
-        <div className="container-tight max-w-3xl">
+      {/* ── H. FAQ ─── Light + texture ─────────────────────────────── */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#F7FBFF' }} aria-labelledby="faq-heading">
+        {/* Subtle dot pattern */}
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.05) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
+        {/* Center glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(40,120,196,0.05), transparent)' }} />
+        <div className="container-tight max-w-4xl relative z-10">
           <div className="text-center mb-12">
             <p className="section-label">Common Questions</p>
             <h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold text-gray-900" style={{ letterSpacing: '-0.01em' }}>
@@ -829,17 +725,10 @@ export default function HomePage() {
             <Link href="/pricing" className="btn-outline-white px-9 py-4">View Pricing</Link>
           </div>
 
-          {/* Avatar stack + trust line */}
-          <div className="flex items-center justify-center gap-3">
-            <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-white/20 flex items-center justify-center text-white text-xs font-bold">M</div>
-              <div className="w-8 h-8 rounded-full bg-emerald-500 border-2 border-white/20 flex items-center justify-center text-white text-xs font-bold">S</div>
-              <div className="w-8 h-8 rounded-full bg-violet-500 border-2 border-white/20 flex items-center justify-center text-white text-xs font-bold">P</div>
-            </div>
-            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.35)' }}>
-              No commitment required · We respond within 24 hours
-            </p>
-          </div>
+          {/* Trust line */}
+          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.35)' }}>
+            No commitment required. We respond within 24 hours.
+          </p>
         </div>
       </section>
     </>
