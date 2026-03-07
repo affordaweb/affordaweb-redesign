@@ -136,14 +136,25 @@ export default function AboutPage() {
                 Built for Small Businesses That Deserve More
               </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
-                AffordaWeb Solutions started because we kept seeing the same problem: small business owners were either paying thousands of dollars for a website they did not fully understand, settling for a cheap DIY site that did not represent their business well, or simply going without a website altogether.
+                AffordaWeb Solutions was built on one simple belief. Professional, high-quality websites should not cost a fortune. Starting at $69 a month, we deliver design, hosting, SEO setup, and ongoing maintenance without asking small businesses to choose between quality and budget.
               </p>
-              <p className="text-gray-500 leading-relaxed mb-4">
-                We built a better solution. Our model combines professional website design, reliable hosting, ongoing maintenance, and SEO optimization into a single, affordable monthly plan. One price. No surprises. Everything managed for you.
+              <p className="text-gray-500 leading-relaxed mb-6">
+                One plan. One price. No hidden fees, no contracts, no separate providers to manage. You tell us what you need and we take it from there.
               </p>
-              <p className="text-gray-500 leading-relaxed mb-8">
-                Our mission is simple: make it possible for any business — regardless of size or budget — to have a professional, fast, and effective website that drives real results.
-              </p>
+              <div className="space-y-4 mb-8">
+                <div className="border-l-2 pl-4" style={{ borderColor: '#2878C4' }}>
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary-600 mb-1">Mission</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">Every business deserves a professional website, no matter its size or budget. We simplify web design through affordable, effective, and visually appealing solutions.</p>
+                </div>
+                <div className="border-l-2 pl-4" style={{ borderColor: '#2878C4' }}>
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary-600 mb-1">Vision</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">To be the trusted partner for companies that seek more than just a website. They seek sustainable growth.</p>
+                </div>
+                <div className="border-l-2 pl-4" style={{ borderColor: '#2878C4' }}>
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary-600 mb-1">Commitment</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">Every project is built with precision, purpose, and care, focused entirely on helping clients achieve real results.</p>
+                </div>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/services" className="btn-primary">Explore Our Services</Link>
                 <Link href="/contact" className="btn-secondary">Get in Touch</Link>
@@ -207,8 +218,54 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Founder */}
+      <section className="section-pad bg-white" aria-labelledby="founder-heading">
+        <div className="container-tight">
+          <div className="text-center mb-14">
+            <p className="section-label">The Person Behind It</p>
+            <h2
+              id="founder-heading"
+              className="text-3xl sm:text-4xl font-bold text-gray-900"
+              style={{ letterSpacing: '-0.01em' }}
+            >
+              Meet Jonathan Macatangay
+            </h2>
+            <div className="divider-glow" />
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            <div
+              className="bg-white rounded-2xl p-10 border border-gray-100"
+              style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}
+            >
+              <div className="flex flex-col sm:flex-row gap-8 items-start">
+                <div
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shrink-0"
+                  style={{ background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)' }}
+                >
+                  J
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">Jonathan Macatangay</h3>
+                  <p className="text-sm font-semibold text-primary-600 mb-5">Website Designer · Founder, AffordaWeb Solutions</p>
+                  <p className="text-gray-500 leading-relaxed mb-4">
+                    Jonathan started AffordaWeb Solutions with a specific problem in mind. Small business owners were being priced out of professional web design, stuck choosing between a $5,000 agency quote and a template they hated. There had to be a better way.
+                  </p>
+                  <p className="text-gray-500 leading-relaxed mb-4">
+                    The answer was an all-in-one model. Design, hosting, maintenance, and SEO wrapped into one monthly plan starting at $69. No contracts, no hidden fees, no technical headaches. Clients tell us what they need and Jonathan builds it.
+                  </p>
+                  <p className="text-gray-500 leading-relaxed">
+                    That focus on doing the work rather than talking about it is baked into the brand. Less Talk. Let&apos;s Build.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Who we serve */}
-      <section className="section-pad bg-white" aria-labelledby="audience-heading">
+      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="audience-heading">
         <div className="container-tight">
           <div className="text-center mb-14">
             <p className="section-label">Who We Serve</p>
