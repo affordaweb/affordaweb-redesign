@@ -1,26 +1,28 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+const quickLinks = [
+  { label: 'Home',              href: '/' },
+  { label: 'About Us',         href: '/about' },
+  { label: 'Portfolio',        href: '/portfolio' },
+  { label: 'Contact Us',       href: '/contact' },
+  { label: 'Web Design Quote', href: '/contact' },
+]
+
 const services = [
-  { label: 'Website Design',     href: '/services#design' },
-  { label: 'Website Redesign',   href: '/services#redesign' },
-  { label: 'SEO Optimization',   href: '/services#seo' },
-  { label: 'Website Maintenance', href: '/services#maintenance' },
-  { label: 'Shared Hosting',     href: '/services#hosting' },
+  { label: 'Website Design Services',   href: '/services' },
+  { label: 'Website Redesign Services', href: '/services' },
+  { label: 'Website Maintenance',       href: '/services' },
+  { label: 'SEO Optimization',         href: '/services' },
+  { label: 'Shared Hosting Services',  href: '/services' },
 ]
 
-const company = [
-  { label: 'Home',      href: '/' },
-  { label: 'About',     href: '/about' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Blog',      href: '/blog' },
-  { label: 'Contact',   href: '/contact' },
-]
-
-const plans = [
-  { label: 'Basic — $69/mo',    href: '/pricing#basic' },
-  { label: 'Standard — $99/mo', href: '/pricing#standard' },
-  { label: 'Premium — $149/mo', href: '/pricing#premium' },
+const spotlight = [
+  { label: "Website Design Essentials That Don't Inflate Your Budget", href: '/blog' },
+  { label: 'Practical Website Design Ideas That Reduce Long-Term Costs', href: '/blog' },
+  { label: 'Modern Website Design Features That Stay Affordable',       href: '/blog' },
+  { label: 'Affordable Website Design Services',                        href: '/blog' },
+  { label: 'Affordable Website Design',                                 href: '/blog' },
 ]
 
 const legal = [
@@ -32,10 +34,10 @@ export default function Footer() {
   return (
     <footer aria-label="Site footer">
 
-      {/* Pre-footer CTA — blue gradient */}
+      {/* Pre-footer CTA — brand purple gradient */}
       <div
         className="relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1A5C99 0%, #2878C4 60%, #1E66A8 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #3D22B0 0%, #5636D1 60%, #7B55F0 100%)' }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
@@ -64,8 +66,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Main footer — dark navy */}
-      <div style={{ background: '#091829' }} className="border-t border-white/5">
+      {/* Main footer — dark background */}
+      <div style={{ background: '#0F0F1A' }} className="border-t border-white/5">
         <div className="container-tight py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
@@ -89,7 +91,8 @@ export default function Footer() {
               </div>
               <a
                 href="mailto:hello@affordawebsolutions.com"
-                className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
+                style={{ color: '#06B6D4' }}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
@@ -99,12 +102,26 @@ export default function Footer() {
               </a>
             </div>
 
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-white/30 font-semibold mb-5 text-xs tracking-[0.15em] uppercase">Quick Links</h3>
+              <ul className="space-y-3">
+                {quickLinks.map(({ label, href }) => (
+                  <li key={label}>
+                    <Link href={href} className="text-white/50 text-sm hover:text-white transition-colors duration-200">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* Services */}
             <div>
               <h3 className="text-white/30 font-semibold mb-5 text-xs tracking-[0.15em] uppercase">Services</h3>
               <ul className="space-y-3">
                 {services.map(({ label, href }) => (
-                  <li key={href}>
+                  <li key={label}>
                     <Link href={href} className="text-white/50 text-sm hover:text-white transition-colors duration-200">
                       {label}
                     </Link>
@@ -113,13 +130,13 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Company */}
+            {/* Spotlight / Blog */}
             <div>
-              <h3 className="text-white/30 font-semibold mb-5 text-xs tracking-[0.15em] uppercase">Company</h3>
+              <h3 className="text-white/30 font-semibold mb-5 text-xs tracking-[0.15em] uppercase">Spotlight</h3>
               <ul className="space-y-3">
-                {company.map(({ label, href }) => (
-                  <li key={href}>
-                    <Link href={href} className="text-white/50 text-sm hover:text-white transition-colors duration-200">
+                {spotlight.map(({ label, href }) => (
+                  <li key={label}>
+                    <Link href={href} className="text-white/50 text-sm hover:text-white transition-colors duration-200 leading-snug block">
                       {label}
                     </Link>
                   </li>
@@ -127,36 +144,15 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Plans */}
-            <div>
-              <h3 className="text-white/30 font-semibold mb-5 text-xs tracking-[0.15em] uppercase">Pricing Plans</h3>
-              <ul className="space-y-3">
-                {plans.map(({ label, href }) => (
-                  <li key={href}>
-                    <Link href={href} className="text-white/50 text-sm hover:text-white transition-colors duration-200">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-                <li className="pt-2">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
-                  >
-                    Get a Free Quote →
-                  </Link>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div style={{ background: '#050F1C' }} className="border-t border-white/5">
+      <div style={{ background: '#07070F' }} className="border-t border-white/5">
         <div className="container-tight py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/25 text-xs">
-            © {new Date().getFullYear()} AffordaWeb Solutions. All rights reserved. · Built for Small Business
+            © {new Date().getFullYear()} AffordaWeb Solutions. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
             {legal.map(({ label, href }) => (
