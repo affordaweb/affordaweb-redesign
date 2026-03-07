@@ -20,98 +20,38 @@ const portfolioItems = [
     id: 1,
     title: 'Web VA Experts Hub',
     category: 'Professional Services',
-    plan: 'Standard',
+    type: 'Website Design',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80',
     imageAlt: 'Virtual assistant services website — Web VA Experts Hub',
     tags: ['Website Design', 'SEO', 'Lead Generation'],
-    result: 'Professional online presence launched',
+    description: 'A virtual assistant services firm needed a homepage that communicated expertise without looking like everyone else\'s VA site. The result is clean, modern, and built to convert.',
     url: 'https://webvaexperts.com',
   },
   {
     id: 2,
     title: 'Empower Queer Hub',
     category: 'Community & Advocacy',
-    plan: 'Standard',
+    type: 'Web Development',
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&auto=format&fit=crop&q=80',
-    imageAlt: 'LGBTQ+ community hub and advocacy website',
-    tags: ['Website Design', 'Community', 'Mobile-First'],
-    result: 'Inclusive community platform built',
+    imageAlt: 'LGBTQ+ community hub and advocacy website — Empower Queer Hub',
+    tags: ['Web Development', 'Community', 'Mobile-First'],
+    description: 'Multi-role community platform built to serve advocacy, resources, and connection. One site, several audiences — all of it navigable.',
     url: 'https://empowerqueerhub.com',
   },
   {
     id: 3,
     title: 'Argentum Private Wealth',
     category: 'Finance',
-    plan: 'Premium',
+    type: 'Web Design',
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&auto=format&fit=crop&q=80',
-    imageAlt: 'Private wealth management firm website',
+    imageAlt: 'Private wealth advisory firm website — Argentum Private Wealth',
     tags: ['Premium Design', 'SEO', 'Lead Capture'],
-    result: 'High-trust brand presence online',
+    description: 'A wealth advisory firm required a site that signaled trust before anyone read a word. High-value design, purpose-built for a financial audience.',
     url: 'https://argentumprivatewealth.com',
-  },
-  {
-    id: 4,
-    title: 'Local Plumbing Company',
-    category: 'Service Business',
-    plan: 'Standard',
-    image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&auto=format&fit=crop&q=80',
-    imageAlt: 'Plumber working on pipes — local service business website',
-    tags: ['Website Design', 'SEO', 'Contact Forms'],
-    result: '3x more leads in 60 days',
-  },
-  {
-    id: 5,
-    title: 'Freelance Photographer',
-    category: 'Portfolio',
-    plan: 'Basic',
-    image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&auto=format&fit=crop&q=80',
-    imageAlt: 'Photographer portfolio website design',
-    tags: ['Portfolio Design', 'Gallery', 'Booking Form'],
-    result: 'Fully booked within a month',
-  },
-  {
-    id: 6,
-    title: 'Online Boutique Store',
-    category: 'E-Commerce',
-    plan: 'Premium',
-    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=80',
-    imageAlt: 'Fashion boutique e-commerce website',
-    tags: ['E-Commerce', 'Payments', 'SEO'],
-    result: '40+ orders in first week',
-  },
-  {
-    id: 7,
-    title: 'Dental Practice',
-    category: 'Healthcare',
-    plan: 'Standard',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&auto=format&fit=crop&q=80',
-    imageAlt: 'Dental clinic website with appointment booking',
-    tags: ['Appointment Booking', 'SEO', 'Mobile Design'],
-    result: 'Page 1 for local searches',
-  },
-  {
-    id: 8,
-    title: 'Real Estate Agent',
-    category: 'Real Estate',
-    plan: 'Standard',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&auto=format&fit=crop&q=80',
-    imageAlt: 'Real estate agent website with property listings',
-    tags: ['Listings', 'Lead Capture', 'SEO'],
-    result: '200% increase in inquiries',
-  },
-  {
-    id: 9,
-    title: 'Fitness Coach',
-    category: 'Health & Wellness',
-    plan: 'Basic',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&auto=format&fit=crop&q=80',
-    imageAlt: 'Fitness coach personal brand website',
-    tags: ['Personal Brand', 'Programs', 'Contact'],
-    result: 'Sold out first online program',
   },
 ]
 
-const categories = ['All', 'Professional Services', 'Community & Advocacy', 'Finance', 'Service Business', 'Portfolio', 'E-Commerce', 'Healthcare', 'Real Estate', 'Health & Wellness']
+const categories = ['All', 'Professional Services', 'Community & Advocacy', 'Finance']
 
 export default function PortfolioPage() {
   return (
@@ -128,20 +68,11 @@ export default function PortfolioPage() {
             className="text-4xl sm:text-5xl font-bold text-white mb-6"
             style={{ letterSpacing: '-0.025em' }}
           >
-            Real Results for Real Businesses
+            Work That Speaks For Itself
           </h1>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Every website we build is designed with one goal: to help your business grow. Browse our recent projects and see what is possible.
+            Three projects. Different industries, different goals. Each one built from scratch with a clear brief and a focus on real-world results.
           </p>
-          {/* Results summary */}
-          <div className="flex flex-wrap items-center justify-center gap-10 mt-10">
-            {[{ n: '50+', l: 'Sites Built' }, { n: '4.9★', l: 'Avg Rating' }, { n: '10–15', l: 'Day Delivery' }].map(({ n, l }) => (
-              <div key={l} className="text-center">
-                <div className="text-2xl font-bold text-white">{n}</div>
-                <div className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>{l}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -185,7 +116,7 @@ export default function PortfolioPage() {
                       className="text-white text-xs font-semibold px-3 py-1.5 rounded-full"
                       style={{ background: 'rgba(9,24,41,0.6)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)' }}
                     >
-                      {item.plan} Plan
+                      {item.type}
                     </span>
                   </div>
                 </div>
@@ -194,7 +125,9 @@ export default function PortfolioPage() {
                   <p className="text-xs font-semibold text-primary-600 uppercase tracking-widest mb-1">
                     {item.category}
                   </p>
-                  <h3 className="font-bold text-gray-900 text-lg mb-3">{item.title}</h3>
+                  <h3 className="font-bold text-gray-900 text-lg mb-2">{item.title}</h3>
+
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">{item.description}</p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -209,22 +142,16 @@ export default function PortfolioPage() {
                     ))}
                   </div>
 
-                  {/* Result */}
-                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-3">
-                    <p className="text-sm font-semibold text-green-700">
-                      ↑ {item.result}
-                    </p>
-                    {'url' in item && item.url && (
-                      <a
-                        href={(item as { url: string }).url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs font-semibold text-white px-3 py-1.5 rounded-full shrink-0 transition-colors hover:opacity-90"
-                        style={{ background: '#2878C4' }}
-                      >
-                        Live Site →
-                      </a>
-                    )}
+                  <div className="pt-4 border-t border-gray-100 flex items-center justify-end">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-white px-3 py-1.5 rounded-full shrink-0 transition-colors hover:opacity-90"
+                      style={{ background: '#2878C4' }}
+                    >
+                      Live Site →
+                    </a>
                   </div>
                 </div>
               </article>
@@ -261,10 +188,10 @@ export default function PortfolioPage() {
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ letterSpacing: '-0.025em' }}
           >
-            Want Results Like These for Your Business?
+            Ready to Build Yours?
           </h2>
           <p className="text-lg max-w-xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            We have built a streamlined process so you get a professional website fast — without sacrificing quality.
+            Share your goals and we will get to work. Plans start at $69/month with no setup fees and no contracts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-white px-9 py-4">Get a Free Quote</Link>
