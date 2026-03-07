@@ -392,8 +392,8 @@ export default function HomePage() {
                   <div
                     className="w-[88px] h-[88px] rounded-full flex items-center justify-center text-white font-bold text-3xl mx-auto mb-6"
                     style={{
-                      background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)',
-                      boxShadow: '0 0 0 8px rgba(40,120,196,0.12)',
+                      background: 'linear-gradient(135deg, #5636D1 0%, #7B55F0 100%)',
+                      boxShadow: '0 0 0 8px rgba(86,54,209,0.15)',
                     }}
                   >
                     {step}
@@ -497,8 +497,8 @@ export default function HomePage() {
             <div
               className="rounded-2xl p-8 flex flex-col relative md:-my-4 overflow-hidden"
               style={{
-                background: 'linear-gradient(145deg, #1E66A8 0%, #2878C4 100%)',
-                boxShadow: '0 24px 60px rgba(40,120,196,0.35)',
+                background: 'linear-gradient(145deg, #5636D1 0%, #7B55F0 100%)',
+                boxShadow: '0 24px 60px rgba(86,54,209,0.4)',
               }}
             >
               <div
@@ -510,7 +510,7 @@ export default function HomePage() {
                 }}
               />
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                <span className="bg-white text-primary-700 text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md inline-block">
+                <span className="text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md inline-block" style={{ background: '#fff', color: '#5636D1' }}>
                   ✦ Most Popular
                 </span>
               </div>
@@ -536,7 +536,7 @@ export default function HomePage() {
               <Link
                 href="/contact"
                 className="w-full justify-center inline-flex items-center rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 relative z-10"
-                style={{ background: '#ffffff', color: '#1E66A8', padding: '14px 32px', fontSize: '15px' }}
+                style={{ background: '#ffffff', color: '#5636D1', padding: '14px 32px', fontSize: '15px' }}
               >
                 Get Started — $99/mo
               </Link>
@@ -545,7 +545,7 @@ export default function HomePage() {
             {/* Premium */}
             <div
               className="bg-white rounded-2xl p-8 border border-gray-100 flex flex-col"
-              style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderTop: '3px solid #2878C4' }}
+              style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderTop: '3px solid #5636D1' }}
             >
               <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Premium</p>
               <div className="flex items-baseline gap-1 mb-1">
