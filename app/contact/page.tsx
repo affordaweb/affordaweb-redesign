@@ -56,7 +56,7 @@ export default function ContactPage() {
                 className="flex items-center gap-2 rounded-full px-4 py-2.5"
                 style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.14)' }}
               >
-                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#4D9BE5' }} />
+                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#5636D1' }} />
                 <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>{label}</span>
               </div>
             ))}
@@ -103,9 +103,9 @@ export default function ContactPage() {
               <div
                 className="rounded-2xl p-7 border"
                 style={{
-                  background: 'linear-gradient(145deg, #EBF5FF, #F7FBFF)',
-                  borderColor: '#D6EBFF',
-                  boxShadow: '0 2px 12px rgba(40,120,196,0.08)',
+                  background: 'linear-gradient(145deg, #F0EDFD, #F7F5FF)',
+                  borderColor: '#DDD6FA',
+                  boxShadow: '0 2px 12px rgba(86,54,209,0.08)',
                 }}
               >
                 <svg className="w-10 h-10 text-primary-500 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">

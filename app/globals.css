@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --primary: #2878C4;
+    --primary: #5636D1;
     --dark:    #0F0F1A;
-    --surface: #F7FBFF;
+    --surface: #F8F7FF;
   }
 
   html {
@@ -29,14 +29,14 @@
   }
 
   :focus-visible {
-    outline: 2px solid #2878C4;
+    outline: 2px solid #5636D1;
     outline-offset: 3px;
     border-radius: 4px;
   }
 
   ::selection {
-    background: rgba(40, 120, 196, 0.15);
-    color: #2878C4;
+    background: rgba(86, 54, 209, 0.15);
+    color: #5636D1;
   }
 }
 
@@ -145,8 +145,8 @@
   }
 
   .card:hover {
-    box-shadow: 0 8px 40px rgba(40, 120, 196, 0.10);
-    border-color: rgba(40, 120, 196, 0.10);
+    box-shadow: 0 8px 40px rgba(86, 54, 209, 0.10);
+    border-color: rgba(86, 54, 209, 0.10);
     transform: translateY(-2px);
   }
 
@@ -172,12 +172,12 @@
   /* Card with top accent line */
   .card-accent {
     @apply bg-white rounded-2xl border border-gray-100 transition-all duration-300;
-    border-top: 3px solid #2878C4;
+    border-top: 3px solid #5636D1;
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05);
   }
 
   .card-accent:hover {
-    box-shadow: 0 8px 40px rgba(40, 120, 196, 0.12);
+    box-shadow: 0 8px 40px rgba(86, 54, 209, 0.12);
     transform: translateY(-2px);
   }
 
@@ -194,7 +194,7 @@
     width: 20px;
     height: 2px;
     border-radius: 9999px;
-    background: linear-gradient(90deg, #1E66A8, #4D9BE5);
+    background: linear-gradient(90deg, #3D22B0, #7B55F0);
     flex-shrink: 0;
   }
 
@@ -256,7 +256,7 @@
     @apply w-14 h-14 rounded-2xl flex items-center justify-center
            text-primary-700 mb-5
            transition-all duration-300;
-    background: linear-gradient(135deg, #D6EBFF 0%, #ADCFF5 100%);
+    background: linear-gradient(135deg, #DDD6FA 0%, #BEB0F5 100%);
   }
 
   /* ── Badge ────────────────────────────────── */
@@ -278,7 +278,7 @@
   .divider-glow {
     @apply w-12 rounded-full mx-auto mt-6 mb-2;
     height: 3px;
-    background: linear-gradient(90deg, #1E66A8, #4D9BE5);
+    background: linear-gradient(90deg, #3D22B0, #7B55F0);
   }
 }
 

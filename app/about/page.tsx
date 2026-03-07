@@ -142,15 +142,15 @@ export default function AboutPage() {
                 One plan. One price. No hidden fees, no contracts, no separate providers to manage. You tell us what you need and we take it from there.
               </p>
               <div className="space-y-4 mb-8">
-                <div className="border-l-2 pl-4" style={{ borderColor: '#2878C4' }}>
+                <div className="border-l-2 pl-4" style={{ borderColor: '#5636D1' }}>
                   <p className="text-xs font-bold uppercase tracking-widest text-primary-600 mb-1">Mission</p>
                   <p className="text-gray-600 text-sm leading-relaxed">Every business deserves a professional website, no matter its size or budget. We simplify web design through affordable, effective, and visually appealing solutions.</p>
                 </div>
-                <div className="border-l-2 pl-4" style={{ borderColor: '#2878C4' }}>
+                <div className="border-l-2 pl-4" style={{ borderColor: '#5636D1' }}>
                   <p className="text-xs font-bold uppercase tracking-widest text-primary-600 mb-1">Vision</p>
                   <p className="text-gray-600 text-sm leading-relaxed">To be the trusted partner for companies that seek more than just a website. They seek sustainable growth.</p>
                 </div>
-                <div className="border-l-2 pl-4" style={{ borderColor: '#2878C4' }}>
+                <div className="border-l-2 pl-4" style={{ borderColor: '#5636D1' }}>
                   <p className="text-xs font-bold uppercase tracking-widest text-primary-600 mb-1">Commitment</p>
                   <p className="text-gray-600 text-sm leading-relaxed">Every project is built with precision, purpose, and care, focused entirely on helping clients achieve real results.</p>
                 </div>
@@ -241,7 +241,7 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row gap-8 items-start">
                 <div
                   className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shrink-0"
-                  style={{ background: 'linear-gradient(135deg, #1E66A8 0%, #2878C4 100%)' }}
+                  style={{ background: 'linear-gradient(135deg, #3D22B0 0%, #5636D1 100%)' }}
                 >
                   J
                 </div>
@@ -298,7 +298,7 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.18) 1.5px, transparent 1.5px)',
             backgroundSize: '28px 28px',
             opacity: 0.3,
           }}

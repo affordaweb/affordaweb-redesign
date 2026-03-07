@@ -320,7 +320,7 @@ export default function HomePage() {
       {/* ── B. STATS BAR ─── Gradient ──────────────────────────────── */}
       <section
         className="border-b border-blue-100 relative"
-        style={{ background: 'linear-gradient(135deg, #EBF5FF 0%, #F4F9FF 50%, #EBF5FF 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #F0EDFD 0%, #F7F5FF 50%, #F0EDFD 100%)' }}
         aria-label="Key statistics"
       >
         <div className="container-tight py-2">
@@ -334,7 +334,7 @@ export default function HomePage() {
               <div key={label} className={`text-center py-8 ${i > 0 ? 'border-l border-blue-100' : ''}`}>
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-primary-600 mx-auto mb-3"
-                  style={{ background: 'rgba(40,120,196,0.12)' }}
+                  style={{ background: 'rgba(86,54,209,0.12)' }}
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={iconPath} />
@@ -352,15 +352,15 @@ export default function HomePage() {
       {/* ── D. HOW IT WORKS ─── Gradient blue ──────────────────────── */}
       <section
         className="section-pad relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #EBF5FF 0%, #F4F9FF 50%, #EBF5FF 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #F0EDFD 0%, #F7F5FF 50%, #F0EDFD 100%)' }}
         aria-labelledby="process-heading"
       >
         {/* Top accent line */}
-        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(40,120,196,0.25) 50%, transparent)' }} />
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.25) 50%, transparent)' }} />
         {/* Radial glow top-left */}
-        <div className="absolute -top-24 -left-24 w-[500px] h-[500px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(40,120,196,0.08), transparent 65%)' }} />
+        <div className="absolute -top-24 -left-24 w-[500px] h-[500px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(86,54,209,0.08), transparent 65%)' }} />
         {/* Radial glow bottom-right */}
-        <div className="absolute -bottom-24 -right-24 w-[400px] h-[400px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(40,120,196,0.06), transparent 65%)' }} />
+        <div className="absolute -bottom-24 -right-24 w-[400px] h-[400px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(86,54,209,0.06), transparent 65%)' }} />
         <div className="container-tight relative z-10">
           <div className="text-center mb-14">
             <p className="section-label">Our Process</p>
@@ -413,7 +413,7 @@ export default function HomePage() {
 
       {/* ── E. WHO WE HELP ─── Dark navy ───────────────────────────── */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }} aria-labelledby="clients-heading">
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.18) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px', opacity: 0.25 }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.18) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px', opacity: 0.25 }} />
         <div className="container-tight relative z-10">
           <div className="text-center mb-14">
             <p className="section-label-white">Who We Serve</p>
@@ -482,7 +482,7 @@ export default function HomePage() {
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
                     <span
                       className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5"
-                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#EBF5FF' }}
+                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#F0EDFD' }}
                     >
                       <IconCheck />
                     </span>
@@ -558,7 +558,7 @@ export default function HomePage() {
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
                     <span
                       className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5"
-                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#EBF5FF' }}
+                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#F0EDFD' }}
                     >
                       <IconCheck />
                     </span>
@@ -586,8 +586,8 @@ export default function HomePage() {
 
       {/* ── G. PORTFOLIO HIGHLIGHTS ─── White + pattern ─────────────── */}
       <section className="section-pad bg-white relative overflow-hidden" aria-labelledby="portfolio-heading">
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.065) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
-        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(40,120,196,0.18) 50%, transparent)' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.065) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.18) 50%, transparent)' }} />
         <div className="container-tight relative z-10">
           <div className="text-center mb-14">
             <p className="section-label">Our Work</p>
@@ -608,7 +608,7 @@ export default function HomePage() {
               <div
                 key={title}
                 className="bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col sm:flex-row transition-all duration-300 hover:-translate-y-0.5"
-                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderLeft: '4px solid #2878C4' }}
+                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderLeft: '4px solid #5636D1' }}
               >
                 <div
                   className="sm:w-36 lg:w-48 flex items-center justify-center shrink-0 p-8"
@@ -616,7 +616,7 @@ export default function HomePage() {
                 >
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center text-white"
-                    style={{ background: '#2878C4' }}
+                    style={{ background: '#5636D1' }}
                   >
                     <PortfolioIcon />
                   </div>
@@ -638,9 +638,9 @@ export default function HomePage() {
       {/* ── H. FAQ ─── Light + texture ─────────────────────────────── */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#F7FBFF' }} aria-labelledby="faq-heading">
         {/* Subtle dot pattern */}
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.05) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.05) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
         {/* Center glow */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(40,120,196,0.05), transparent)' }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(86,54,209,0.05), transparent)' }} />
         <div className="container-tight max-w-4xl relative z-10">
           <div className="text-center mb-12">
             <p className="section-label">Common Questions</p>
@@ -660,7 +660,7 @@ export default function HomePage() {
                   <span>{q}</span>
                   <span
                     className="rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-open:bg-primary-500 group-open:text-white text-primary-500"
-                    style={{ width: '32px', height: '32px', minWidth: '32px', background: '#EBF5FF' }}
+                    style={{ width: '32px', height: '32px', minWidth: '32px', background: '#F0EDFD' }}
                   >
                     <svg
                       className="w-3.5 h-3.5 transition-transform duration-300 group-open:rotate-180"
@@ -694,14 +694,14 @@ export default function HomePage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(40,120,196,0.2) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.2) 1.5px, transparent 1.5px)',
             backgroundSize: '28px 28px',
             opacity: 0.3,
           }}
         />
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(40,120,196,0.12), transparent)' }}
+          style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(86,54,209,0.12), transparent)' }}
         />
 
         <div className="container-tight relative z-10 text-center">
