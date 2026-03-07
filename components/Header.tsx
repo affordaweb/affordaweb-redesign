@@ -80,8 +80,8 @@ export default function Header() {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link href="/contact" className="btn-primary text-sm px-5 py-2.5">
-                Get a Free Quote
+              <Link href="/contact" className="btn-cyan text-sm px-5 py-2.5">
+                Get a Quote
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -151,8 +151,8 @@ export default function Header() {
           </nav>
 
           <div className="p-5 border-t border-gray-100 space-y-3">
-            <Link href="/contact" onClick={() => setMenuOpen(false)} className="btn-primary w-full justify-center">
-              Get a Free Quote
+            <Link href="/contact" onClick={() => setMenuOpen(false)} className="btn-cyan w-full justify-center">
+              Get a Quote
             </Link>
             <p className="text-center text-xs text-gray-400">No commitment · Respond within 24 hrs</p>
           </div>
