@@ -332,30 +332,51 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── B. STATS BAR ──────────────────────────────────────────── */}
-      <section className="relative bg-white" aria-label="Key statistics">
-        {/* Top accent line */}
-        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.3) 40%, rgba(6,182,212,0.3) 60%, transparent)' }} />
-        {/* Bottom accent line */}
-        <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.3) 40%, rgba(6,182,212,0.3) 60%, transparent)' }} />
+      {/* ── B. STATS MARQUEE ──────────────────────────────────────── */}
+      <section className="relative bg-white overflow-hidden py-7 group" aria-label="Key statistics">
+        {/* Top / bottom accent lines */}
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 40%, rgba(6,182,212,0.2) 60%, transparent)' }} />
+        <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 40%, rgba(6,182,212,0.2) 60%, transparent)' }} />
+        {/* Left / right fade masks */}
+        <div className="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, white, transparent)' }} />
+        <div className="absolute inset-y-0 right-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, white, transparent)' }} />
 
-        <div className="container-tight">
-          <div className="grid grid-cols-2 lg:grid-cols-4">
-            {([
-              { number: '$69/mo', label: 'Starting Price',   sublabel: 'No hidden fees' },
-              { number: '24 hrs', label: 'Response Time',    sublabel: 'Mon to Fri' },
-              { number: '$0',     label: 'Setup Fees',       sublabel: 'Get started free' },
-              { number: '99.9%', label: 'Uptime Guarantee', sublabel: 'Always online' },
-            ]).map(({ number, label, sublabel }, i) => (
-              <div key={label} className={`group text-center py-12 px-6 ${i > 0 ? 'border-l border-gray-100' : ''}`}>
-                {/* Thin accent dot */}
-                <div className="w-1.5 h-1.5 rounded-full mx-auto mb-5 transition-all duration-300 group-hover:scale-125" style={{ background: 'linear-gradient(135deg, #5636D1, #06B6D4)' }} />
-                <div className="text-4xl lg:text-5xl font-light tracking-tight text-gray-900 leading-none mb-3">{number}</div>
-                <div className="uppercase tracking-widest text-[11px] font-semibold text-gray-400 mb-1">{label}</div>
-                <div className="text-xs text-gray-300 tracking-wide">{sublabel}</div>
+        {/* Scrolling track — duplicated for seamless loop */}
+        <div
+          className="flex animate-marquee group-hover:[animation-play-state:paused]"
+          style={{ width: 'max-content', willChange: 'transform' }}
+        >
+          {[0, 1].map((pass) =>
+            ([
+              { number: '$69/mo', label: 'Starting Price',   sublabel: 'No hidden fees',    bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#7C3AED', iconPath: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 6v1m0 4v1m-4-8H6m12 0h-2m2 8H6m0 0a9 9 0 110-18 9 9 0 010 18z' },
+              { number: '24 hrs', label: 'Response Time',    sublabel: 'Mon to Fri',         bg: '#ECFEFF', border: '#67E8F9', iconBg: '#0EA5E9', iconPath: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { number: '$0',     label: 'Setup Fees',       sublabel: 'Get started free',   bg: '#ECFDF5', border: '#6EE7B7', iconBg: '#059669', iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { number: '99.9%', label: 'Uptime Guarantee', sublabel: 'Always online',       bg: '#FFF1F2', border: '#FDA4AF', iconBg: '#E11D48', iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+              { number: '100+',  label: 'Sites Launched',   sublabel: 'Happy clients',       bg: '#FFFBEB', border: '#FCD34D', iconBg: '#D97706', iconPath: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' },
+              { number: '5 yrs', label: 'In Business',      sublabel: 'Est. 2019',           bg: '#FAF5FF', border: '#D8B4FE', iconBg: '#9333EA', iconPath: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
+            ] as { number: string; label: string; sublabel: string; bg: string; border: string; iconBg: string; iconPath: string }[]).map((item, i) => (
+              <div key={`${pass}-${i}`} className="px-3 shrink-0">
+                <div
+                  className="flex items-center gap-4 px-5 py-3.5 rounded-2xl border cursor-default select-none transition-all duration-300 hover:scale-[1.04] hover:shadow-lg"
+                  style={{ background: item.bg, borderColor: item.border, minWidth: '210px' }}
+                >
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: item.iconBg }}
+                  >
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.iconPath} />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-xl font-semibold text-gray-800 leading-none">{item.number}</div>
+                    <div className="text-sm font-medium text-gray-600 mt-0.5">{item.label}</div>
+                    <div className="text-xs text-gray-400 mt-0.5">{item.sublabel}</div>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
+            ))
+          )}
         </div>
       </section>
 
