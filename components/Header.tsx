@@ -41,7 +41,7 @@ export default function Header() {
         }`}
       >
         <div className="container-tight">
-          <div className="flex items-center justify-between h-[64px]">
+          <div className="flex items-center justify-between h-[76px]">
 
             {/* Logo */}
             <Link href="/" aria-label="AffordaWeb Solutions — Home" className="flex items-center shrink-0">
@@ -63,7 +63,7 @@ export default function Header() {
                   <Link
                     key={href}
                     href={href}
-                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    className={`relative px-5 py-2.5 text-base font-medium rounded-lg transition-all duration-200 ${
                       isActive
                         ? 'text-primary-600 font-semibold'
                         : 'text-gray-600 hover:text-gray-900'
@@ -80,7 +80,7 @@ export default function Header() {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link href="/contact" className="btn-cyan text-sm px-5 py-2.5">
+              <Link href="/contact" className="btn-cyan text-base px-6 py-3">
                 Get a Quote
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
