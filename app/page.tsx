@@ -332,31 +332,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── B. STATS BAR ─── Gradient ──────────────────────────────── */}
-      <section
-        className="border-b border-blue-100 relative"
-        style={{ background: 'linear-gradient(135deg, #F0EDFD 0%, #F7F5FF 50%, #F0EDFD 100%)' }}
-        aria-label="Key statistics"
-      >
-        <div className="container-tight py-2">
-          <div className="grid grid-cols-2 lg:grid-cols-4">
+      {/* ── B. STATS BAR ──────────────────────────────────────────── */}
+      <section className="relative bg-white" aria-label="Key statistics">
+        {/* Top accent line */}
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #5636D1 35%, #06B6D4 65%, transparent)' }} />
+        {/* Bottom accent line */}
+        <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #5636D1 35%, #06B6D4 65%, transparent)' }} />
+
+        <div className="container-tight">
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-100">
             {([
-              { number: '$69/mo', label: 'Starting Price',    iconPath: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 6v1m0 4v1m-4-8H6m12 0h-2m2 8H6m0 0a9 9 0 110-18 9 9 0 010 18z' },
-              { number: '24 hrs', label: 'Response Time',     iconPath: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
-              { number: '$0',     label: 'Setup Fees',        iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
-              { number: '99.9%', label: 'Uptime Guarantee',  iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
-            ] as { number: string; label: string; iconPath: string }[]).map(({ number, label, iconPath }, i) => (
-              <div key={label} className={`text-center py-8 ${i > 0 ? 'border-l border-blue-100' : ''}`}>
+              { number: '$69/mo', label: 'Starting Price',   sublabel: 'No hidden fees', iconPath: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 6v1m0 4v1m-4-8H6m12 0h-2m2 8H6m0 0a9 9 0 110-18 9 9 0 010 18z' },
+              { number: '24 hrs', label: 'Response Time',    sublabel: 'Mon to Fri', iconPath: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { number: '$0',     label: 'Setup Fees',       sublabel: 'Get started free', iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { number: '99.9%', label: 'Uptime Guarantee', sublabel: 'Always online', iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+            ] as { number: string; label: string; sublabel: string; iconPath: string }[]).map(({ number, label, sublabel, iconPath }) => (
+              <div key={label} className="group text-center py-10 px-4 hover:bg-primary-50/40 transition-colors duration-200">
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-primary-600 mx-auto mb-3"
-                  style={{ background: 'rgba(86,54,209,0.12)' }}
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: 'linear-gradient(135deg, #06B6D4 0%, #0891B2 100%)', boxShadow: '0 4px 16px rgba(6,182,212,0.28)' }}
                 >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={iconPath} />
+                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={iconPath} />
                   </svg>
                 </div>
-                <div className="text-4xl font-extrabold gradient-text-blue mb-1">{number}</div>
-                <div className="text-sm text-gray-500 font-medium">{label}</div>
+                <div className="text-4xl lg:text-5xl font-extrabold gradient-text-blue leading-none mb-1.5">{number}</div>
+                <div className="text-sm font-semibold text-gray-800 mb-0.5">{label}</div>
+                <div className="text-xs text-gray-400">{sublabel}</div>
               </div>
             ))}
           </div>
