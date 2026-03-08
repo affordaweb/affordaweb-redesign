@@ -333,13 +333,15 @@ export default function HomePage() {
       </section>
 
       {/* ── B. STATS MARQUEE ──────────────────────────────────────── */}
-      <section className="relative bg-white overflow-hidden py-7 group" aria-label="Key statistics">
+      <section className="relative overflow-hidden py-7 group bg-white" aria-label="Key statistics">
+        {/* Same radial glow as Three Steps section */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(86,54,209,0.06) 0%, transparent 70%)' }} />
         {/* Top / bottom accent lines */}
         <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 40%, rgba(6,182,212,0.2) 60%, transparent)' }} />
         <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 40%, rgba(6,182,212,0.2) 60%, transparent)' }} />
-        {/* Left / right fade masks */}
-        <div className="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, white, transparent)' }} />
-        <div className="absolute inset-y-0 right-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, white, transparent)' }} />
+        {/* Left / right fade masks — match bg-white */}
+        <div className="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #ffffff, transparent)' }} />
+        <div className="absolute inset-y-0 right-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #ffffff, transparent)' }} />
 
         {/* Scrolling track — duplicated for seamless loop */}
         <div
