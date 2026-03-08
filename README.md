@@ -2,6 +2,9 @@
 
 Modern Next.js 14 redesign of affordawebsolutions.com
 
+**Dev URL:** https://darkorchid-otter-258693.hostingersite.com
+**Production:** https://affordawebsolutions.com
+
 ## Tech Stack
 - **Framework:** Next.js 14 (App Router, Static Export)
 - **Styling:** Tailwind CSS v3
