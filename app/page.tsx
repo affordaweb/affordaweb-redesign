@@ -92,11 +92,11 @@ const services = [
 ]
 
 const whoWeHelp = [
-  { title: 'Freelancers',        desc: 'You do the work. Your site should sell it. A professional online presence starting at $69/month keeps you from losing clients to someone with a better-looking site.',                     Icon: IconDesign  },
-  { title: 'Startups',           desc: 'First impressions matter and you only get one. Launch with a site that looks credible from day one, without a five-figure agency bill.',                                                    Icon: IconRedesign },
-  { title: 'Small Businesses',   desc: 'Local service providers need leads, not just traffic. We build sites structured to show up on Google and convert the people who find them.',                                                Icon: IconSeo     },
-  { title: 'Established Brands', desc: 'You have outgrown your current site. We redesign with care and keep your existing content and search rankings intact throughout.',                                                          Icon: IconMaint   },
-  { title: 'Online Stores',      desc: 'The Premium plan includes e-commerce for up to 30 products with payment processing and a mobile-optimized checkout. Built to sell.',                                                       Icon: IconEcom    },
+  { title: 'Freelancers',        tag: 'Solo professionals',     color: '#7C3AED', pastelBg: 'rgba(124,58,237,0.14)',   desc: 'You do the work. Your site should sell it. A professional online presence starting at $69/month keeps you from losing clients to someone with a better-looking site.',                     Icon: IconDesign  },
+  { title: 'Startups',           tag: 'Early-stage ventures',   color: '#06B6D4', pastelBg: 'rgba(6,182,212,0.14)',    desc: 'First impressions matter and you only get one. Launch with a site that looks credible from day one, without a five-figure agency bill.',                                                    Icon: IconRedesign },
+  { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Local service providers need leads, not just traffic. We build sites structured to show up on Google and convert the people who find them.',                                                Icon: IconSeo     },
+  { title: 'Established Brands', tag: 'Growing companies',      color: '#F59E0B', pastelBg: 'rgba(245,158,11,0.14)',  desc: 'You have outgrown your current site. We redesign with care and keep your existing content and search rankings intact throughout.',                                                          Icon: IconMaint   },
+  { title: 'Online Stores',      tag: 'E-commerce businesses',  color: '#F43F5E', pastelBg: 'rgba(244,63,94,0.14)',   desc: 'The Premium plan includes e-commerce for up to 30 products with payment processing and a mobile-optimized checkout. Built to sell.',                                                       Icon: IconEcom    },
 ]
 
 const portfolioItems = [
@@ -334,8 +334,8 @@ export default function HomePage() {
 
       {/* ── B. STATS MARQUEE ──────────────────────────────────────── */}
       <section className="relative overflow-hidden py-7 group bg-white" aria-label="Key statistics">
-        {/* Same radial glow as Three Steps section */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(86,54,209,0.06) 0%, transparent 70%)' }} />
+        {/* Exact same bg as Three Steps section below */}
+        <div className="absolute inset-x-0 top-0 h-[500px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% -10%, rgba(86,54,209,0.06) 0%, transparent 70%)' }} />
         {/* Top / bottom accent lines */}
         <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 40%, rgba(6,182,212,0.2) 60%, transparent)' }} />
         <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 40%, rgba(6,182,212,0.2) 60%, transparent)' }} />
@@ -505,7 +505,13 @@ export default function HomePage() {
 
       {/* ── E. WHO WE HELP ─── Dark navy ───────────────────────────── */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }} aria-labelledby="clients-heading">
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.18) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px', opacity: 0.25 }} />
+        {/* Dot grid */}
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.18) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px', opacity: 0.2 }} />
+        {/* Glow top-left */}
+        <div className="absolute -top-32 -left-16 w-[700px] h-[700px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(86,54,209,0.1), transparent 60%)' }} />
+        {/* Glow bottom-right */}
+        <div className="absolute -bottom-32 -right-16 w-[500px] h-[500px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.07), transparent 60%)' }} />
+
         <div className="container-tight relative z-10">
           <div className="text-center mb-14">
             <p className="section-label-white">Who We Serve</p>
@@ -516,25 +522,70 @@ export default function HomePage() {
             >
               Built for Businesses That Can&apos;t Afford to Wait
             </h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)' }}>
               Professional websites shouldn&apos;t cost a fortune. Quality and affordability are not mutually exclusive.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {whoWeHelp.map(({ title, desc, Icon }) => (
+            {whoWeHelp.map(({ title, tag, desc, color, pastelBg, Icon }) => (
               <div
                 key={title}
-                className="rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
+                className="group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
               >
-                <div className="icon-wrap mb-5" style={{ background: 'rgba(255,255,255,0.08)', color: '#06B6D4' }}>
-                  <Icon />
+                {/* Colored top accent line */}
+                <div
+                  className="absolute inset-x-0 top-0 h-0.5 rounded-t-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: color }}
+                />
+
+                {/* Icon + tag row */}
+                <div className="flex items-start justify-between mb-5">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                    style={{ background: pastelBg, color }}
+                  >
+                    <Icon />
+                  </div>
+                  <span
+                    className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.4)' }}
+                  >
+                    {tag}
+                  </span>
                 </div>
-                <h3 className="font-bold text-white text-lg mb-2">{title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{desc}</p>
+
+                <h3 className="font-bold text-white text-lg mb-3">{title}</h3>
+                <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>{desc}</p>
+
+                {/* Learn more footer */}
+                <div
+                  className="flex items-center gap-1.5 text-xs font-semibold transition-all duration-300 group-hover:gap-2.5"
+                  style={{ color }}
+                >
+                  Learn how we help
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+
+                {/* Hover inset border glow */}
+                <div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{ boxShadow: `inset 0 0 0 1px ${color}35` }}
+                />
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-14">
+            <Link href="/contact" className="btn-cyan">
+              Start Your Project
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
