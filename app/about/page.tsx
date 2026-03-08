@@ -95,10 +95,25 @@ const breadcrumbSchema = {
   ],
 }
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Jonathan Macatangay',
+  jobTitle: 'Website Designer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'AffordaWeb Solutions',
+    url: 'https://affordawebsolutions.com',
+  },
+  url: 'https://affordawebsolutions.com/about',
+  email: 'hello@affordawebsolutions.com',
+}
+
 export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       {/* Hero — Dark navy */}
       <section
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
