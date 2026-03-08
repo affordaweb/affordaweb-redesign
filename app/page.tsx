@@ -381,64 +381,122 @@ export default function HomePage() {
       </section>
 
 
-      {/* ── D. HOW IT WORKS ─── Gradient blue ──────────────────────── */}
-      <section
-        className="section-pad relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #F0EDFD 0%, #F7F5FF 50%, #F0EDFD 100%)' }}
-        aria-labelledby="process-heading"
-      >
-        {/* Top accent line */}
-        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.25) 50%, transparent)' }} />
-        {/* Radial glow top-left */}
-        <div className="absolute -top-24 -left-24 w-[500px] h-[500px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(86,54,209,0.08), transparent 65%)' }} />
-        {/* Radial glow bottom-right */}
-        <div className="absolute -bottom-24 -right-24 w-[400px] h-[400px] pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(86,54,209,0.06), transparent 65%)' }} />
+      {/* ── D. HOW IT WORKS ──────────────────────────────────────── */}
+      <section className="section-pad relative overflow-hidden bg-white" aria-labelledby="process-heading">
+        {/* Soft radial top glow */}
+        <div className="absolute inset-x-0 top-0 h-[500px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% -10%, rgba(86,54,209,0.06) 0%, transparent 70%)' }} />
+
         <div className="container-tight relative z-10">
-          <div className="text-center mb-14">
+          {/* Header */}
+          <div className="text-center mb-16">
             <p className="section-label">Our Process</p>
             <h2
               id="process-heading"
               className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
-              style={{ letterSpacing: '-0.01em' }}
+              style={{ letterSpacing: '-0.02em' }}
             >
               Three Steps. One Monthly Price.
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
               Tell us what you need, we build and launch it, then we stay on to keep it running. That is the whole plan.
             </p>
           </div>
 
+          {/* Steps grid */}
           <div className="relative">
-            {/* Connector line — desktop only */}
+            {/* Connector line — desktop */}
             <div
-              className="hidden md:block absolute border-t-2 border-dashed border-gray-200"
-              style={{ top: '44px', left: '21%', right: '21%' }}
+              className="hidden md:block absolute h-px"
+              style={{
+                top: '52px',
+                left: 'calc(16.66% + 28px)',
+                right: 'calc(16.66% + 28px)',
+                background: 'linear-gradient(90deg, #5636D1, #06B6D4, #10B981)',
+              }}
             />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
-              {[
-                { step: '1', title: 'Share Your Goals',   desc: 'Tell us your goals, preferred style, and the features you need. No technical knowledge required — we guide you through it.' },
-                { step: '2', title: 'Website Creation',   desc: 'We design and launch a professional, SEO-friendly website built for your business and optimized for search from day one.' },
-                { step: '3', title: 'Ongoing Support',    desc: 'We provide hosting, maintenance, updates, and a free business email account. You never deal with technical issues on your own.' },
-              ].map(({ step, title, desc }) => (
-                <div key={step} className="text-center">
+            {/* Connector dots */}
+            <div className="hidden md:block absolute w-2 h-2 rounded-full bg-primary-500" style={{ top: '47px', left: 'calc(50% - 4px)' }} />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+              {([
+                {
+                  step: '01', title: 'Share Your Goals',
+                  desc: 'Tell us your goals, preferred style, and the features you need. No technical knowledge required.',
+                  perks: ['Free consultation call', 'Style questionnaire', 'Goal planning session'],
+                  iconPath: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
+                  color: '#5636D1', pastelBg: 'rgba(86,54,209,0.07)', ringColor: 'rgba(86,54,209,0.15)',
+                },
+                {
+                  step: '02', title: 'Website Creation',
+                  desc: 'We design and launch a professional, SEO-friendly website built for your business from day one.',
+                  perks: ['Custom professional design', 'SEO-ready from launch', 'Mobile-first build'],
+                  iconPath: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+                  color: '#0EA5E9', pastelBg: 'rgba(14,165,233,0.07)', ringColor: 'rgba(14,165,233,0.15)',
+                },
+                {
+                  step: '03', title: 'Ongoing Support',
+                  desc: 'We provide hosting, maintenance, updates, and a free business email. You focus on your business.',
+                  perks: ['Hosting included', 'Monthly updates', 'Free business email'],
+                  iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+                  color: '#10B981', pastelBg: 'rgba(16,185,129,0.07)', ringColor: 'rgba(16,185,129,0.15)',
+                },
+              ] as { step: string; title: string; desc: string; perks: string[]; iconPath: string; color: string; pastelBg: string; ringColor: string }[]).map(({ step, title, desc, perks, iconPath, color, pastelBg, ringColor }) => (
+                <div
+                  key={step}
+                  className="group bg-white rounded-3xl border border-gray-100 p-8 hover:-translate-y-1.5 hover:shadow-card-hover transition-all duration-300 shadow-card"
+                >
+                  {/* Step circle */}
                   <div
-                    className="w-[88px] h-[88px] rounded-full flex items-center justify-center text-white font-bold text-3xl mx-auto mb-6"
+                    className="w-[60px] h-[60px] rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-6"
                     style={{
-                      background: 'linear-gradient(135deg, #5636D1 0%, #7B55F0 100%)',
-                      boxShadow: '0 0 0 8px rgba(86,54,209,0.15)',
+                      background: `linear-gradient(135deg, ${color}, ${color}cc)`,
+                      boxShadow: `0 0 0 8px ${ringColor}`,
                     }}
                   >
                     {step}
                   </div>
-                  <h3 className="font-bold text-gray-900 text-lg mb-3">{title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed max-w-xs mx-auto">{desc}</p>
+
+                  {/* Icon */}
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-transform duration-300 group-hover:scale-110"
+                    style={{ background: pastelBg }}
+                  >
+                    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d={iconPath} />
+                    </svg>
+                  </div>
+
+                  {/* Text */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed text-center mb-6">{desc}</p>
+
+                  {/* Divider */}
+                  <div className="h-px mb-5 mx-4" style={{ background: `linear-gradient(90deg, transparent, ${color}30, transparent)` }} />
+
+                  {/* Perks */}
+                  <ul className="space-y-2.5">
+                    {perks.map(perk => (
+                      <li key={perk} className="flex items-center gap-3 text-sm text-gray-600">
+                        <span className="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style={{ background: pastelBg }}>
+                          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color }}>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        {perk}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="text-center mt-12">
-            <Link href="/contact" className="btn-primary">Start Your Project</Link>
+          <div className="text-center mt-14">
+            <Link href="/contact" className="btn-cyan">Start Your Project
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
