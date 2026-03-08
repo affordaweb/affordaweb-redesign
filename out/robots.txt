@@ -1,7 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-
-Host: https://affordawebsolutions.com
-Sitemap: https://affordawebsolutions.com/sitemap.xml
