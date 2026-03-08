@@ -521,8 +521,39 @@ export default async function BlogPostPage({
     .filter(([s]) => s !== slug)
     .slice(0, 3)
 
+  const blogPostingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.image,
+    datePublished: new Date(post.date).toISOString().split('T')[0],
+    author: {
+      '@type': 'Organization',
+      name: 'AffordaWeb Solutions',
+      url: 'https://affordawebsolutions.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'AffordaWeb Solutions',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://affordawebsolutions.com/logo.webp',
+      },
+    },
+    url: `https://affordawebsolutions.com/blog/${slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://affordawebsolutions.com/blog/${slug}`,
+    },
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
       {/* Hero */}
       <section className="bg-gradient-hero pt-32 pb-16 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
