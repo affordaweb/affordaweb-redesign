@@ -531,7 +531,7 @@ export default function HomePage() {
             {whoWeHelp.map(({ title, tag, desc, color, pastelBg, Icon }) => (
               <div
                 key={title}
-                className="group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
+                className="group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col"
                 style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
               >
                 {/* Colored top accent line */}
@@ -557,7 +557,7 @@ export default function HomePage() {
                 </div>
 
                 <h3 className="font-bold text-white text-lg mb-3">{title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>{desc}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ color: 'rgba(255,255,255,0.5)' }}>{desc}</p>
 
                 {/* Learn more footer */}
                 <div
@@ -577,6 +577,43 @@ export default function HomePage() {
                 />
               </div>
             ))}
+
+            {/* 6th card — CTA */}
+            <div
+              className="group relative rounded-2xl p-7 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300"
+              style={{ background: 'linear-gradient(135deg, #3D22B0 0%, #5636D1 50%, #0EA5E9 100%)' }}
+            >
+              {/* Subtle dot pattern overlay */}
+              <div className="absolute inset-0 pointer-events-none opacity-10" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '18px 18px' }} />
+              {/* Glow */}
+              <div className="absolute -bottom-8 -right-8 w-40 h-40 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%)' }} />
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full mb-4 inline-block" style={{ background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)' }}>
+                  Get started today
+                </span>
+                <h3 className="font-bold text-white text-xl mb-3 mt-2">Ready to Get Started?</h3>
+                <p className="text-sm leading-relaxed mb-7" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                  No contracts, no setup fees, no technical headaches. A professional website from $69/month, live within days.
+                </p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="relative z-10 inline-flex items-center justify-center gap-2 bg-white font-bold text-sm px-5 py-3 rounded-xl hover:bg-gray-50 transition-colors"
+                style={{ color: '#5636D1' }}
+              >
+                Get a Free Quote
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
           <div className="text-center mt-14">
