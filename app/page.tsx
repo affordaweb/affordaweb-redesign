@@ -255,30 +255,19 @@ export default function HomePage() {
                 </div>
 
                 {/* Website hero image */}
-                <div className="relative" style={{ height: '220px' }}>
+                <div className="relative flex items-center justify-center" style={{ height: '260px', background: '#f8f8fc' }}>
                   <Image
-                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&auto=format&fit=crop&q=80"
-                    alt="Professional small business website"
+                    src="/hero-mockup.png"
+                    alt="Professional website designs on a monitor"
                     fill
-                    className="object-cover object-center"
+                    className="object-contain object-center p-3"
                     priority
                     sizes="500px"
                   />
-                  {/* Simulated nav overlay */}
-                  <div
-                    className="absolute top-0 left-0 right-0 px-4 py-3 flex items-center justify-between"
-                    style={{ background: 'rgba(9,24,41,0.72)', backdropFilter: 'blur(8px)' }}
-                  >
-                    <div className="h-2.5 bg-white/70 rounded w-20" />
-                    <div className="flex gap-3">
-                      {[1,2,3].map(n => <div key={n} className="h-1.5 bg-white/35 rounded w-10" />)}
-                    </div>
-                    <div className="h-6 rounded-full w-16" style={{ background: '#5636D1' }} />
-                  </div>
-                  {/* Bottom overlay */}
+                  {/* Bottom overlay — subtle fade into browser bottom */}
                   <div
                     className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-12"
-                    style={{ background: 'linear-gradient(to top, rgba(15,15,26,0.88), transparent)' }}
+                    style={{ background: 'linear-gradient(to top, rgba(22,20,42,0.5), transparent)' }}
                   >
                     <div className="h-4 bg-white/80 rounded w-3/5 mb-2" />
                     <div className="h-2 bg-white/40 rounded w-4/5 mb-3" />
