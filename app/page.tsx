@@ -134,13 +134,28 @@ const faqs = [
 
 const schemaData = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'AffordaWeb Solutions',
-  description: 'Affordable website design, hosting, SEO, and maintenance for small businesses.',
-  url: 'https://affordawebsolutions.com',
-  email: 'hello@affordawebsolutions.com',
-  priceRange: '$69-$149/month',
-  areaServed: 'United States',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      name: 'AffordaWeb Solutions',
+      description: 'Affordable website design, hosting, SEO, and maintenance for small businesses.',
+      url: 'https://affordawebsolutions.com',
+      email: 'hello@affordawebsolutions.com',
+      priceRange: '$69-$149/month',
+      areaServed: 'United States',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: a,
+        },
+      })),
+    },
+  ],
 }
 
 // ── Page ──────────────────────────────────────────────────────────
