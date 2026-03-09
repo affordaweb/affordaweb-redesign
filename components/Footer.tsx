@@ -37,25 +37,49 @@ export default function Footer() {
       {/* Pre-footer CTA — brand purple gradient */}
       <div
         className="relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #3D22B0 0%, #5636D1 60%, #7B55F0 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #3D22B0 0%, #5636D1 55%, #7B55F0 100%)' }}
       >
+        {/* Dot pattern */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.12) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1.5px, transparent 1.5px)',
             backgroundSize: '28px 28px',
-            opacity: 0.07,
+            opacity: 0.08,
           }}
         />
-        <div className="container-tight py-16 text-center relative z-10">
-          <p className="section-label-white">Ready to Grow Online?</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
-            Get Your Professional Website Today
+        {/* Cyan glow from bottom */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 110%, rgba(6,182,212,0.18), transparent)' }}
+        />
+
+        <div className="container-tight py-20 text-center relative z-10">
+          <p className="section-label-white mb-4">Get Started Today</p>
+          <h2
+            className="text-4xl sm:text-5xl font-bold text-white mb-5"
+            style={{ letterSpacing: '-0.025em', lineHeight: 1.1 }}
+          >
+            Your Professional Website,<br className="hidden sm:block" /> Fully Managed from Day One
           </h2>
-          <p className="text-white/65 text-lg mb-8 max-w-xl mx-auto">
-            Starting at just <strong className="text-white">$69/month</strong> — hosting, SSL, maintenance, and unlimited updates included.
+          <p className="text-white/60 text-lg mb-8 max-w-lg mx-auto">
+            One flat monthly price covers everything. No surprises, no agency bills.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* Feature pills */}
+          <div className="flex flex-wrap justify-center gap-2.5 mb-10">
+            {['Custom Design', 'SSL Included', 'Unlimited Updates', 'Fast Hosting', 'SEO Built In', 'From $69/mo'].map((f) => (
+              <span
+                key={f}
+                className="text-xs font-semibold px-3.5 py-1.5 rounded-full"
+                style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.15)' }}
+              >
+                {f}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link href="/contact" className="btn-white">
               Get a Free Quote
             </Link>
@@ -63,6 +87,8 @@ export default function Footer() {
               View Pricing
             </Link>
           </div>
+
+          <p className="text-white/30 text-sm">No commitment required. We respond within 24 hours.</p>
         </div>
       </div>
 

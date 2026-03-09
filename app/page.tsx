@@ -895,52 +895,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── I. FINAL CTA ─── Dark navy ─────────────────────────────── */}
-      <section
-        className="section-pad relative overflow-hidden"
-        style={{ background: '#0F0F1A' }}
-        aria-label="Call to action"
-      >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.2) 1.5px, transparent 1.5px)',
-            backgroundSize: '28px 28px',
-            opacity: 0.3,
-          }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(86,54,209,0.12), transparent)' }}
-        />
-
-        <div className="container-tight relative z-10 text-center">
-          <p className="section-label-white">Get Started Today</p>
-          <h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5"
-            style={{ letterSpacing: '-0.025em' }}
-          >
-            Ready to Grow Your Business Online?
-          </h2>
-          <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Get a free, no-obligation quote within 24 hours. No commitment required — just tell us about your business.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link href="/contact" className="btn-white px-9 py-4">
-              Get a Free Quote
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-            <Link href="/pricing" className="btn-outline-white px-9 py-4">View Pricing</Link>
-          </div>
-
-          {/* Trust line */}
-          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.35)' }}>
-            No commitment required. We respond within 24 hours.
-          </p>
-        </div>
-      </section>
     </>
   )
 }
