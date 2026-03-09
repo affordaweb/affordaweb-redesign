@@ -2,7 +2,7 @@
 
 Modern Next.js 14 redesign of affordawebsolutions.com
 
-**Dev URL:** https://darkorchid-otter-258693.hostingersite.com
+**Dev URL:** https://purple-armadillo-280403.hostingersite.com
 **Production:** https://affordawebsolutions.com
 
 ## Tech Stack
