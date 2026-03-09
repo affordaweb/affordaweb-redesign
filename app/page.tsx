@@ -616,86 +616,89 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── F. PRICING PREVIEW ─── Light ───────────────────────────── */}
-      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="pricing-heading">
-        <div className="container-tight">
-          <div className="text-center mb-14">
+      {/* ── F. PRICING PREVIEW ──────────────────────────────────────── */}
+      <section className="section-pad relative overflow-hidden" aria-labelledby="pricing-heading">
+        {/* Background gradient */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #EEE9FB 100%)' }} />
+        {/* Radial top glow */}
+        <div className="absolute inset-x-0 top-0 h-[600px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(86,54,209,0.13) 0%, transparent 65%)' }} />
+        {/* Dot grid */}
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.07) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+
+        <div className="container-tight relative z-10">
+          <div className="text-center mb-16">
             <p className="section-label">Simple Pricing</p>
             <h2
               id="pricing-heading"
               className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
-              style={{ letterSpacing: '-0.01em' }}
+              style={{ letterSpacing: '-0.02em' }}
             >
               Transparent Pricing. No Surprises.
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
               All plans include hosting, SSL, maintenance, and a professionally designed website.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-end pb-8">
 
             {/* Basic */}
             <div
-              className="bg-white rounded-2xl p-8 border border-gray-100 flex flex-col"
-              style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderTop: '3px solid #CBD5E1' }}
+              className="group bg-white rounded-3xl p-8 flex flex-col border border-gray-100 hover:-translate-y-1 transition-all duration-300"
+              style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.06)', borderTop: '3px solid #94A3B8' }}
             >
-              <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Basic</p>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-5xl font-bold text-gray-900">$69</span>
-                <span className="text-gray-400 text-sm">/mo</span>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-gray-100 text-gray-500">Basic</span>
               </div>
-              <p className="text-sm text-gray-500 mb-6">Perfect for getting online fast</p>
+              <div className="mb-1">
+                <span className="text-6xl font-extrabold text-gray-900 tracking-tight">$69</span>
+                <span className="text-gray-400 text-base ml-1">/mo</span>
+              </div>
+              <p className="text-sm text-gray-400 mt-1 mb-7">Perfect for getting online fast</p>
               <ul className="space-y-3 mb-8 flex-grow">
                 {['1–5 page website', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', '1 content update/month', 'Basic security maintenance'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
-                    <span
-                      className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5"
-                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#F0EDFD' }}
-                    >
+                    <span className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5" style={{ width: '18px', height: '18px', minWidth: '18px', background: '#F0EDFD' }}>
                       <IconCheck />
                     </span>
                     {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="btn-secondary w-full justify-center">Get Started — $69/mo</Link>
+              <Link href="/contact" className="btn-secondary w-full justify-center">Get Started</Link>
             </div>
 
             {/* Standard — Featured */}
             <div
-              className="rounded-2xl p-8 flex flex-col relative md:-my-4 overflow-hidden"
+              className="relative rounded-3xl p-8 flex flex-col md:-my-8 overflow-hidden"
               style={{
-                background: 'linear-gradient(145deg, #5636D1 0%, #7B55F0 100%)',
-                boxShadow: '0 24px 60px rgba(86,54,209,0.4)',
+                background: 'linear-gradient(155deg, #2D18A0 0%, #5636D1 45%, #7B55F0 100%)',
+                boxShadow: '0 40px 100px rgba(86,54,209,0.55), 0 0 0 1px rgba(255,255,255,0.08)',
               }}
             >
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1.5px, transparent 1.5px)',
-                  backgroundSize: '24px 24px',
-                  opacity: 0.06,
-                }}
-              />
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                <span className="text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md inline-block" style={{ background: '#fff', color: '#5636D1' }}>
-                  ✦ Most Popular
+              {/* Glow blob top-right */}
+              <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(123,85,240,0.6), transparent 70%)' }} />
+              {/* Glow blob bottom-left */}
+              <div className="absolute -bottom-12 -left-12 w-40 h-40 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.25), transparent 70%)' }} />
+              {/* Dot pattern */}
+              <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 1px)', backgroundSize: '20px 20px', opacity: 0.12 }} />
+
+              <div className="relative z-10 flex items-center justify-between mb-6">
+                <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style={{ background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.85)' }}>Standard</span>
+                <span className="text-xs font-bold px-3 py-1.5 rounded-full inline-flex items-center gap-1" style={{ background: '#ffffff', color: '#5636D1' }}>
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                  Most Popular
                 </span>
               </div>
-              <p className="text-xs font-bold tracking-widest uppercase text-white/60 mb-3 mt-2 relative z-10">Standard</p>
-              <div className="flex items-baseline gap-1 mb-1 relative z-10">
-                <span className="text-5xl font-bold text-white">$99</span>
-                <span className="text-white/50 text-sm">/mo</span>
+              <div className="relative z-10 mb-1">
+                <span className="text-6xl font-extrabold text-white tracking-tight">$99</span>
+                <span className="text-white/50 text-base ml-1">/mo</span>
               </div>
-              <p className="text-sm text-white/65 mb-6 relative z-10">Best for growing businesses</p>
+              <p className="text-sm relative z-10 mt-1 mb-7" style={{ color: 'rgba(255,255,255,0.6)' }}>Best for growing businesses</p>
               <ul className="space-y-3 mb-8 flex-grow relative z-10">
                 {['Up to 10 pages', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', 'Unlimited content updates', 'Full SEO optimization', 'Google Analytics setup', 'Booking / inquiry forms'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-white">
-                    <span
-                      className="rounded-full flex items-center justify-center text-white shrink-0 mt-0.5"
-                      style={{ width: '18px', height: '18px', minWidth: '18px', background: 'rgba(255,255,255,0.2)' }}
-                    >
+                    <span className="rounded-full flex items-center justify-center text-white shrink-0 mt-0.5" style={{ width: '18px', height: '18px', minWidth: '18px', background: 'rgba(255,255,255,0.2)' }}>
                       <IconCheck />
                     </span>
                     {f}
@@ -704,50 +707,67 @@ export default function HomePage() {
               </ul>
               <Link
                 href="/contact"
-                className="w-full justify-center inline-flex items-center rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 relative z-10"
+                className="relative z-10 w-full inline-flex items-center justify-center gap-2 font-bold rounded-2xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
                 style={{ background: '#ffffff', color: '#5636D1', padding: '14px 32px', fontSize: '15px' }}
               >
-                Get Started — $99/mo
+                Get Started
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
             </div>
 
             {/* Premium */}
             <div
-              className="bg-white rounded-2xl p-8 border border-gray-100 flex flex-col"
-              style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderTop: '3px solid #5636D1' }}
+              className="group bg-white rounded-3xl p-8 flex flex-col border border-gray-100 hover:-translate-y-1 transition-all duration-300"
+              style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.06)', borderTop: '3px solid #06B6D4' }}
             >
-              <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Premium</p>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-5xl font-bold text-gray-900">$149</span>
-                <span className="text-gray-400 text-sm">/mo</span>
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style={{ background: 'rgba(6,182,212,0.08)', color: '#0EA5E9' }}>Premium</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" style={{ background: 'rgba(6,182,212,0.1)', color: '#0EA5E9' }}>E-Commerce</span>
               </div>
-              <p className="text-sm text-gray-500 mb-6">For e-commerce &amp; full-scale brands</p>
+              <div className="mb-1">
+                <span className="text-6xl font-extrabold text-gray-900 tracking-tight">$149</span>
+                <span className="text-gray-400 text-base ml-1">/mo</span>
+              </div>
+              <p className="text-sm text-gray-400 mt-1 mb-7">For e-commerce &amp; full-scale brands</p>
               <ul className="space-y-3 mb-8 flex-grow">
                 {['Unlimited pages', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', 'Unlimited content updates', 'Full SEO optimization', 'E-commerce (up to 30 products)', '24/7 priority support'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
-                    <span
-                      className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5"
-                      style={{ width: '18px', height: '18px', minWidth: '18px', background: '#F0EDFD' }}
-                    >
+                    <span className="rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ width: '18px', height: '18px', minWidth: '18px', background: 'rgba(6,182,212,0.1)', color: '#06B6D4' }}>
                       <IconCheck />
                     </span>
                     {f}
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="btn-secondary w-full justify-center">Get Started — $149/mo</Link>
+              <Link href="/contact" className="btn-secondary w-full justify-center">Get Started</Link>
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm text-gray-400">
-            {['✓ No setup fees', '✓ Cancel anytime', '✓ Month-to-month', '✓ Respond within 24 hrs'].map(t => (
-              <span key={t}>{t}</span>
+          {/* Trust strip */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-6">
+            {[
+              { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', text: 'No setup fees' },
+              { icon: 'M6 18L18 6M6 6l12 12', text: 'Cancel anytime' },
+              { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', text: 'Month-to-month' },
+              { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', text: 'Response within 24 hrs' },
+            ].map(({ icon, text }) => (
+              <div key={text} className="flex items-center gap-2 text-sm text-gray-400">
+                <svg className="w-4 h-4 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={icon} />
+                </svg>
+                {text}
+              </div>
             ))}
           </div>
 
-          <div className="text-center mt-8">
-            <Link href="/pricing" className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
-              View full pricing details →
+          <div className="text-center mt-7">
+            <Link href="/pricing" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
+              View full pricing details
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Link>
           </div>
         </div>
