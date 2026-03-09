@@ -100,9 +100,9 @@ const whoWeHelp = [
 ]
 
 const portfolioItems = [
-  { category: 'Website Design',   title: 'Web VA Experts Hub',       desc: 'A virtual assistant network needed a clean, modern online presence that matched its professionalism. We delivered focused service pages with a clear call to action.',    PortfolioIcon: IconDesign  },
-  { category: 'Web Development',  title: 'Empower Queer Hub',        desc: 'A community resource site serving multiple roles at once. We built a flexible, mobile-first site with a structure that holds up under real traffic and real use.',         PortfolioIcon: IconRedesign },
-  { category: 'Web Design',       title: 'Argentum Private Wealth',  desc: 'A financial advisory firm required a site built to the standard of its clients. We delivered a high-value, tailor-made presence that conveys trust on first load.',        PortfolioIcon: IconSeo    },
+  { category: 'Website Design',   title: 'Web VA Experts Hub',       desc: 'A virtual assistant network needed a clean, modern online presence that matched its professionalism. We delivered focused service pages with a clear call to action.',    PortfolioIcon: IconDesign,   color: '#5636D1', bg: 'linear-gradient(135deg, #EDE9FD 0%, #DDD6FE 100%)' },
+  { category: 'Web Development',  title: 'Empower Queer Hub',        desc: 'A community resource site serving multiple roles at once. We built a flexible, mobile-first site with a structure that holds up under real traffic and real use.',         PortfolioIcon: IconRedesign, color: '#E2498A', bg: 'linear-gradient(135deg, #FDE8F2 0%, #FBCFE8 100%)' },
+  { category: 'Web Design',       title: 'Argentum Private Wealth',  desc: 'A financial advisory firm required a site built to the standard of its clients. We delivered a high-value, tailor-made presence that conveys trust on first load.',        PortfolioIcon: IconSeo,      color: '#0891B2', bg: 'linear-gradient(135deg, #E0F7FA 0%, #BAE6FD 100%)' },
 ]
 
 const faqs = [
@@ -792,34 +792,55 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="space-y-5">
-            {portfolioItems.map(({ category, title, desc, PortfolioIcon }) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {portfolioItems.map(({ category, title, desc, PortfolioIcon, color, bg }) => (
               <div
                 key={title}
-                className="bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col sm:flex-row transition-all duration-300 hover:-translate-y-0.5"
-                style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.05)', borderLeft: '4px solid #5636D1' }}
+                className="bg-white rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 group"
+                style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid rgba(0,0,0,0.06)' }}
               >
-                <div
-                  className="sm:w-36 lg:w-48 flex items-center justify-center shrink-0 p-8"
-                  style={{ background: '#F7FBFF' }}
-                >
+                {/* Card header — browser chrome + icon */}
+                <div className="relative" style={{ background: bg, padding: '20px 20px 0' }}>
+                  {/* Browser dots */}
+                  <div className="flex items-center gap-1.5 mb-4">
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(0,0,0,0.12)' }} />
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(0,0,0,0.12)' }} />
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(0,0,0,0.12)' }} />
+                    <div className="ml-2 flex-1 h-4 rounded-full" style={{ background: 'rgba(255,255,255,0.55)' }} />
+                  </div>
+                  {/* Icon centered in a "screen" area */}
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-white"
-                    style={{ background: '#5636D1' }}
+                    className="mx-auto rounded-xl flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-105"
+                    style={{ width: 64, height: 64, background: color, boxShadow: `0 8px 24px ${color}40` }}
                   >
                     <PortfolioIcon />
                   </div>
+                  {/* Bottom curve that blends into card body */}
+                  <div className="h-5 mt-4 -mb-px" style={{ background: 'white', borderRadius: '12px 12px 0 0' }} />
                 </div>
-                <div className="p-7 flex-1">
-                  <p className="text-xs font-semibold text-primary-600 uppercase tracking-widest mb-2">{category}</p>
-                  <h3 className="font-bold text-gray-900 text-xl mb-2">{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
-                  <Link href="/portfolio" className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
-                    View all projects →
-                  </Link>
+
+                {/* Card body */}
+                <div className="px-6 pb-6 flex-1 flex flex-col">
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color }}>{category}</p>
+                  <h3 className="font-bold text-gray-900 text-lg leading-snug mb-2">{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{desc}</p>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Single CTA */}
+          <div className="text-center mt-10">
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-2 font-semibold text-sm px-6 py-3 rounded-full border-2 transition-all duration-200 hover:-translate-y-0.5"
+              style={{ borderColor: '#5636D1', color: '#5636D1' }}
+            >
+              View all our work
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
