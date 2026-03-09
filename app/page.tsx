@@ -6,12 +6,13 @@ import HeroBackground from '@/components/HeroBackground'
 export const metadata: Metadata = {
   title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
   description:
-    'Professional website design starting at $69/month. Hosting, SSL, SEO, and unlimited updates included. No setup fees. No contracts. Design, hosting, and support in one plan.',
+    'Affordable website design for small businesses starting at $69/month. Custom design, managed hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
   alternates: { canonical: 'https://affordawebsolutions.com' },
   openGraph: {
     title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
-    description: 'Professional website design starting at $69/month. Hosting, SSL, SEO included.',
+    description: 'Affordable website design for small businesses starting at $69/month. Hosting, SSL, SEO, and unlimited updates included.',
     url: 'https://affordawebsolutions.com',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
   },
 }
 
@@ -83,20 +84,20 @@ function IconCheck() {
 // ── Data ──────────────────────────────────────────────────────────
 
 const services = [
-  { Icon: IconDesign,   title: 'Website Design',      desc: 'Custom, mobile-first websites built to convert visitors into customers.', href: '/services#design' },
-  { Icon: IconRedesign, title: 'Website Redesign',    desc: 'Transform your outdated site into a modern, high-performing experience.', href: '/services#redesign' },
-  { Icon: IconSeo,      title: 'SEO Optimization',    desc: 'Rank higher on Google and get found by the customers who matter.', href: '/services#seo' },
-  { Icon: IconMaint,    title: 'Website Maintenance', desc: 'We handle updates, backups, and security — so you can focus on business.', href: '/services#maintenance' },
-  { Icon: IconHosting,  title: 'Shared Hosting',      desc: 'Fast, reliable managed hosting with SSL included in every plan.', href: '/services#hosting' },
-  { Icon: IconEcom,     title: 'E-Commerce Design',   desc: 'Launch your online store with up to 30 products and payment processing.', href: '/services#ecommerce' },
+  { Icon: IconDesign,   title: 'Website Design',      desc: 'Custom, mobile-first small business website design built to convert visitors into paying customers.', href: '/services#design' },
+  { Icon: IconRedesign, title: 'Website Redesign',    desc: 'Transform your outdated site into a fast, modern, high-performing website without losing your rankings.', href: '/services#redesign' },
+  { Icon: IconSeo,      title: 'SEO Optimization',    desc: 'Local SEO built into every site so your small business ranks on Google and gets found by nearby customers.', href: '/services#seo' },
+  { Icon: IconMaint,    title: 'Website Maintenance', desc: 'Managed website maintenance — updates, backups, and security monitoring — so you can focus on running your business.', href: '/services#maintenance' },
+  { Icon: IconHosting,  title: 'Shared Hosting',      desc: 'Fast, reliable managed web hosting with a free SSL certificate included in every website design plan.', href: '/services#hosting' },
+  { Icon: IconEcom,     title: 'E-Commerce Design',   desc: 'Launch your online store with up to 30 products, secure payment processing, and a mobile-optimized checkout.', href: '/services#ecommerce' },
 ]
 
 const whoWeHelp = [
-  { title: 'Freelancers',        tag: 'Solo professionals',     color: '#7C3AED', pastelBg: 'rgba(124,58,237,0.14)',   desc: 'You do the work. Your site should sell it. A professional online presence starting at $69/month keeps you from losing clients to someone with a better-looking site.',                     Icon: IconDesign  },
-  { title: 'Startups',           tag: 'Early-stage ventures',   color: '#06B6D4', pastelBg: 'rgba(6,182,212,0.14)',    desc: 'First impressions matter and you only get one. Launch with a site that looks credible from day one, without a five-figure agency bill.',                                                    Icon: IconRedesign },
-  { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Local service providers need leads, not just traffic. We build sites structured to show up on Google and convert the people who find them.',                                                Icon: IconSeo     },
-  { title: 'Established Brands', tag: 'Growing companies',      color: '#F59E0B', pastelBg: 'rgba(245,158,11,0.14)',  desc: 'You have outgrown your current site. We redesign with care and keep your existing content and search rankings intact throughout.',                                                          Icon: IconMaint   },
-  { title: 'Online Stores',      tag: 'E-commerce businesses',  color: '#F43F5E', pastelBg: 'rgba(244,63,94,0.14)',   desc: 'The Premium plan includes e-commerce for up to 30 products with payment processing and a mobile-optimized checkout. Built to sell.',                                                       Icon: IconEcom    },
+  { title: 'Freelancers',        tag: 'Solo professionals',     color: '#7C3AED', pastelBg: 'rgba(124,58,237,0.14)',   desc: 'A professional freelancer website starting at $69/month keeps you from losing clients to someone with a better-looking site. Your skills deserve a site that sells them.',              Icon: IconDesign  },
+  { title: 'Startups',           tag: 'Early-stage ventures',   color: '#06B6D4', pastelBg: 'rgba(6,182,212,0.14)',    desc: 'Launch with a credible startup website from day one — without the five-figure agency bill. First impressions define early traction, and yours only happens once.',                        Icon: IconRedesign },
+  { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Local small business website design built to rank on Google and generate leads — not just traffic. Every site includes local SEO so customers in your area can actually find you.',     Icon: IconSeo     },
+  { title: 'Established Brands', tag: 'Growing companies',      color: '#F59E0B', pastelBg: 'rgba(245,158,11,0.14)',  desc: 'You have outgrown your current site. Our website redesign service preserves your search rankings and existing content while delivering a modern, high-converting experience.',           Icon: IconMaint   },
+  { title: 'Online Stores',      tag: 'E-commerce businesses',  color: '#F43F5E', pastelBg: 'rgba(244,63,94,0.14)',   desc: 'Affordable e-commerce website design with up to 30 products, secure payment processing, and a mobile-optimized checkout. Built for small online stores that need to sell from day one.',  Icon: IconEcom    },
 ]
 
 const portfolioItems = [
@@ -107,28 +108,28 @@ const portfolioItems = [
 
 const faqs = [
   {
-    q: 'What is included in the monthly price?',
-    a: 'Every plan includes professional website design, managed web hosting, an SSL certificate, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates and full SEO optimization.',
+    q: 'What does your affordable website design package include?',
+    a: 'Every plan includes a professionally designed small business website, managed web hosting, a free SSL certificate, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates and full on-page SEO optimization — everything in one flat monthly price.',
   },
   {
-    q: 'Are there any setup fees or hidden costs?',
-    a: 'No setup fees and no hidden costs. You pay one flat monthly rate and everything listed in your plan is included. The price you see is the price you pay.',
+    q: 'Are there any setup fees or hidden costs with your website design plans?',
+    a: 'No setup fees and no hidden costs. You pay one flat monthly rate and everything listed in your plan is included. The price you see is the price you pay — no surprise invoices.',
   },
   {
-    q: 'How long does it take to build my website?',
-    a: 'Most websites are designed and launched within 10–15 business days after we receive your content and feedback. E-commerce projects may take a few days longer depending on complexity.',
+    q: 'How long does it take to design and launch a small business website?',
+    a: 'Most small business websites are designed and launched within 10 to 15 business days after we receive your content and feedback. E-commerce website projects may take a few days longer depending on the number of products and complexity.',
   },
   {
-    q: 'Can I cancel my plan at any time?',
-    a: 'Yes. All our plans are month-to-month with no long-term contracts. You can cancel at any time with 30 days notice. We will export your content so you are never left stranded.',
+    q: 'Can I cancel my website design plan at any time?',
+    a: 'Yes. All our website design plans are month-to-month with no long-term contracts. You can cancel at any time with 30 days notice. We will export your content and files so you are never left stranded.',
   },
   {
-    q: 'Do I need to provide the content for my website?',
-    a: 'We guide you through what we need — business details, services, photos, and goals. We can also help write or improve your content. Many clients send us basic information and we take it from there.',
+    q: 'Do I need to write my own website content?',
+    a: 'No. We guide you through what we need — your business details, services, photos, and goals. We can also help write or refine your copy. Many clients provide basic information and we handle the rest, including structuring content for SEO.',
   },
   {
-    q: 'Is the domain name included in the price?',
-    a: 'Domain registration is not included in the monthly plan but we help you register and connect it to your new website. Domain registration typically costs $10–15/year.',
+    q: 'Does website design with hosting mean I do not need a separate web host?',
+    a: 'Correct. Every plan includes fully managed web hosting — you do not need to buy or manage a separate hosting account. Your website design, hosting, SSL certificate, and maintenance are all bundled into one monthly price.',
   },
 ]
 
@@ -136,13 +137,29 @@ const schemaData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'LocalBusiness',
+      '@type': ['LocalBusiness', 'ProfessionalService'],
+      '@id': 'https://affordawebsolutions.com/#business',
       name: 'AffordaWeb Solutions',
-      description: 'Affordable website design, hosting, SEO, and maintenance for small businesses.',
+      description: 'Affordable website design for small businesses — custom design, managed hosting, SSL, SEO, and unlimited updates in one monthly plan starting at $69/month.',
       url: 'https://affordawebsolutions.com',
       email: 'hello@affordawebsolutions.com',
-      priceRange: '$69-$149/month',
+      priceRange: '$69–$149/month',
       areaServed: 'United States',
+      openingHours: 'Mo-Fr 09:00-17:00',
+      currenciesAccepted: 'USD',
+      paymentAccepted: 'Credit Card',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Website Design Services',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Small Business Website Design', description: 'Custom, mobile-first website design for small businesses starting at $69/month.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Redesign', description: 'Modernize your existing website without losing search rankings.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO Optimization', description: 'Local SEO built into every website to help small businesses rank on Google.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Managed Web Hosting', description: 'Fast, reliable managed hosting with SSL included in every plan.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Maintenance', description: 'Ongoing website updates, security monitoring, and backups.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'E-Commerce Website Design', description: 'Online store design with up to 30 products and secure payment processing.' } },
+        ],
+      },
     },
     {
       '@type': 'FAQPage',
@@ -154,6 +171,18 @@ const schemaData = {
           text: a,
         },
       })),
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://affordawebsolutions.com/#webpage',
+      url: 'https://affordawebsolutions.com',
+      name: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
+      description: 'Affordable website design for small businesses starting at $69/month. Custom design, managed hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
+      isPartOf: { '@id': 'https://affordawebsolutions.com/#business' },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' }],
+      },
     },
   ],
 }
@@ -194,12 +223,12 @@ export default function HomePage() {
                 className="font-bold text-white leading-[1.12] mb-6"
                 style={{ letterSpacing: '-0.025em', fontSize: '45px' }}
               >
-                Less Talk. Let&apos;s Build.{' '}
+                Affordable Website Design for Small Businesses.{' '}
                 <span className="gradient-text">Starting at $69/mo</span>
               </h1>
 
               <p className="text-xl leading-relaxed mb-9 max-w-lg" style={{ color: 'rgba(255,255,255,0.58)' }}>
-                You get design, hosting, SSL, and unlimited content updates in one flat monthly price. No setup fees. No contracts. Just a website that works.
+                Professional small business website design with hosting, SSL, and unlimited content updates in one flat monthly price. No setup fees. No contracts. Just a website that works.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-9">
@@ -386,10 +415,10 @@ export default function HomePage() {
               className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
               style={{ letterSpacing: '-0.02em' }}
             >
-              Three Steps. One Monthly Price.
+              How Our Website Design Process Works
             </h2>
             <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
-              Tell us what you need, we build and launch it, then we stay on to keep it running. That is the whole plan.
+              Tell us your goals, we design and launch your site, then we manage everything ongoing — all in one flat monthly price.
             </p>
           </div>
 
@@ -509,10 +538,10 @@ export default function HomePage() {
               className="text-3xl sm:text-4xl font-bold text-white mb-4"
               style={{ letterSpacing: '-0.01em' }}
             >
-              Built for Businesses That Can&apos;t Afford to Wait
+              Affordable Website Design for Every Type of Business
             </h2>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)' }}>
-              Professional websites shouldn&apos;t cost a fortune. Quality and affordability are not mutually exclusive.
+              Professional website design should not cost a fortune. We serve freelancers, startups, local businesses, and online stores — all at one flat monthly price.
             </p>
           </div>
 
@@ -633,10 +662,10 @@ export default function HomePage() {
               className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
               style={{ letterSpacing: '-0.02em' }}
             >
-              Transparent Pricing. No Surprises.
+              Website Design Pricing With No Surprises
             </h2>
             <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
-              All plans include hosting, SSL, maintenance, and a professionally designed website.
+              Every website design plan includes managed hosting, SSL, ongoing maintenance, and a professionally designed website — all in one flat monthly rate.
             </p>
           </div>
 
@@ -785,10 +814,10 @@ export default function HomePage() {
               className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
               style={{ letterSpacing: '-0.01em' }}
             >
-              A Few Sites We Built
+              Small Business Website Design Portfolio
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Different industries, same standard. Every project ships with clean code, mobile-responsive design, and SEO built in.
+              Different industries, same standard. Every website we design ships with clean code, mobile-responsive layouts, and on-page SEO built in from day one.
             </p>
           </div>
 
@@ -855,7 +884,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <p className="section-label">Common Questions</p>
             <h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold text-gray-900" style={{ letterSpacing: '-0.01em' }}>
-              Frequently Asked Questions
+              Frequently Asked Questions About Our Website Design Services
             </h2>
           </div>
 
