@@ -101,7 +101,7 @@ export default function PortfolioPage() {
                     ? 'text-white shadow-glow'
                     : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300 hover:text-primary-600'
                 }`}
-                style={cat === 'All' ? { background: '#5636D1' } : {}}
+                style={cat === 'All' ? { background: '#2577C9' } : {}}
               >
                 {cat}
               </span>
@@ -158,7 +158,7 @@ export default function PortfolioPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-semibold text-white px-3 py-1.5 rounded-full shrink-0 transition-colors hover:opacity-90"
-                      style={{ background: '#5636D1' }}
+                      style={{ background: '#2577C9' }}
                     >
                       Live Site →
                     </a>
@@ -188,7 +188,7 @@ export default function PortfolioPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.18) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(37,119,201,0.18) 1.5px, transparent 1.5px)',
             backgroundSize: '28px 28px',
             opacity: 0.3,
           }}

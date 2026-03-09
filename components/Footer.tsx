@@ -37,7 +37,7 @@ export default function Footer() {
       {/* Pre-footer CTA — brand purple gradient */}
       <div
         className="relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #3D22B0 0%, #5636D1 55%, #7B55F0 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #1A5FAD 0%, #2577C9 55%, #4298DC 100%)' }}
       >
         {/* Dot pattern */}
         <div

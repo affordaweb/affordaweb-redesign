@@ -204,7 +204,7 @@ export default function ServicesPage() {
                 className="flex items-center gap-2 rounded-full px-4 py-2"
                 style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.14)' }}
               >
-                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#5636D1' }} />
+                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#2577C9' }} />
                 <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>{label}</span>
               </div>
             ))}
@@ -286,7 +286,7 @@ export default function ServicesPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.18) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(37,119,201,0.18) 1.5px, transparent 1.5px)',
             backgroundSize: '28px 28px',
             opacity: 0.3,
           }}

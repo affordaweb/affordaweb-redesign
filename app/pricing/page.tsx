@@ -206,8 +206,8 @@ export default function PricingPage() {
           <div className="flex flex-wrap justify-center gap-4">
             {[
               { tier: 'Basic', price: '$69/mo', border: 'rgba(148,163,184,0.35)' },
-              { tier: 'Standard', price: '$99/mo', border: 'rgba(86,54,209,0.6)' },
-              { tier: 'Premium', price: '$149/mo', border: 'rgba(86,54,209,0.3)' },
+              { tier: 'Standard', price: '$99/mo', border: 'rgba(37,119,201,0.6)' },
+              { tier: 'Premium', price: '$149/mo', border: 'rgba(37,119,201,0.3)' },
             ].map(({ tier, price, border }) => (
               <div
                 key={tier}
@@ -239,8 +239,8 @@ export default function PricingPage() {
                 style={
                   plan.popular
                     ? {
-                        background: 'linear-gradient(145deg, #5636D1 0%, #7B55F0 100%)',
-                        boxShadow: '0 24px 60px rgba(86,54,209,0.4)',
+                        background: 'linear-gradient(145deg, #2577C9 0%, #4298DC 100%)',
+                        boxShadow: '0 24px 60px rgba(37,119,201,0.4)',
                         border: 'none',
                         marginTop: '-16px',
                         marginBottom: '-16px',
@@ -250,7 +250,7 @@ export default function PricingPage() {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md inline-block" style={{ background: '#fff', color: '#5636D1' }}>
+                    <span className="text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md inline-block" style={{ background: '#fff', color: '#2577C9' }}>
                       ✦ Most Popular
                     </span>
                   </div>
@@ -299,7 +299,7 @@ export default function PricingPage() {
                     : 'btn-secondary w-full justify-center'}
                   style={plan.popular ? {
                     background: '#ffffff',
-                    color: '#5636D1',
+                    color: '#2577C9',
                     padding: '14px 32px',
                     fontSize: '15px',
                   } : undefined}
@@ -408,7 +408,7 @@ export default function PricingPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.25) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(37,119,201,0.25) 1.5px, transparent 1.5px)',
             backgroundSize: '28px 28px',
             opacity: 0.3,
           }}

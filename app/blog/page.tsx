@@ -132,7 +132,7 @@ export default function BlogPage() {
                 className="flex items-center gap-2 rounded-full px-4 py-2"
                 style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.14)' }}
               >
-                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#5636D1' }} />
+                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#2577C9' }} />
                 <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>{cat}</span>
               </div>
             ))}
@@ -155,7 +155,7 @@ export default function BlogPage() {
                     ? 'text-white'
                     : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300 hover:text-primary-600'
                 }`}
-                style={cat === 'All' ? { background: '#5636D1' } : {}}
+                style={cat === 'All' ? { background: '#2577C9' } : {}}
               >
                 {cat}
               </span>
@@ -184,7 +184,7 @@ export default function BlogPage() {
                   <div className="absolute top-4 left-4">
                     <span
                       className="text-white text-xs font-semibold px-3 py-1.5 rounded-full"
-                      style={{ background: '#5636D1' }}
+                      style={{ background: '#2577C9' }}
                     >
                       Featured
                     </span>
@@ -275,7 +275,7 @@ export default function BlogPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.18) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(37,119,201,0.18) 1.5px, transparent 1.5px)',
             backgroundSize: '28px 28px',
             opacity: 0.3,
           }}
