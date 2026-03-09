@@ -283,25 +283,21 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Website hero image */}
-                <div className="relative flex items-center justify-center" style={{ height: '260px', background: '#f8f8fc' }}>
+                {/* Hero photo */}
+                <div className="relative overflow-hidden" style={{ height: '260px' }}>
                   <Image
-                    src="/hero-mockup.png"
-                    alt="Professional website designs on a monitor"
+                    src="/hero-photo.jpg"
+                    alt="Small business website design on a laptop"
                     fill
-                    className="object-contain object-center p-3"
+                    className="object-cover object-center"
                     priority
                     sizes="500px"
                   />
-                  {/* Bottom overlay — subtle fade into browser bottom */}
+                  {/* Subtle bottom fade into the dark strip below */}
                   <div
-                    className="absolute bottom-0 left-0 right-0 px-4 pb-4 pt-12"
-                    style={{ background: 'linear-gradient(to top, rgba(22,20,42,0.5), transparent)' }}
-                  >
-                    <div className="h-4 bg-white/80 rounded w-3/5 mb-2" />
-                    <div className="h-2 bg-white/40 rounded w-4/5 mb-3" />
-                    <div className="h-7 rounded-full w-1/3" style={{ background: '#5636D1' }} />
-                  </div>
+                    className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+                    style={{ background: 'linear-gradient(to top, #16142A, transparent)' }}
+                  />
                 </div>
 
                 {/* Service cards strip */}
