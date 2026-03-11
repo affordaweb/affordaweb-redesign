@@ -41,7 +41,7 @@ export default function ContactPage() {
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#0F0F1A' }}
       >
-        <InnerHeroBg />
+        <InnerHeroBg page="contact" />
         <div className="container-tight relative z-10">
           <p className="section-label-white">Get in Touch</p>
           <h1

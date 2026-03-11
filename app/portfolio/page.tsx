@@ -71,7 +71,7 @@ export default function PortfolioPage() {
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#0F0F1A' }}
       >
-        <InnerHeroBg />
+        <InnerHeroBg page="portfolio" />
         <div className="container-tight relative z-10">
           <p className="section-label-white">Our Work</p>
           <h1

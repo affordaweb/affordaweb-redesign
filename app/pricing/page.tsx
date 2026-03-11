@@ -186,7 +186,7 @@ export default function PricingPage() {
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#0F0F1A' }}
       >
-        <InnerHeroBg />
+        <InnerHeroBg page="pricing" />
         <div className="container-tight relative z-10">
           <p className="section-label-white">Transparent Pricing</p>
           <h1

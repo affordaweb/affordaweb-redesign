@@ -90,7 +90,7 @@ export default function Header() {
 
             {/* Mobile toggle */}
             <button
-              className="lg:hidden w-10 h-10 flex flex-col items-center justify-center
+              className="lg:hidden w-11 h-11 flex flex-col items-center justify-center
                          gap-[5px] rounded-xl hover:bg-gray-50 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -111,7 +111,7 @@ export default function Header() {
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-40 lg:hidden overflow-hidden transition-all duration-300 ${
           menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
@@ -137,7 +137,7 @@ export default function Header() {
                   <Link
                     href={href}
                     onClick={() => setMenuOpen(false)}
-                    className={`flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                    className={`flex items-center px-4 py-3.5 rounded-xl text-sm font-medium transition-all min-h-[44px] ${
                       pathname === href
                         ? 'text-primary-600 bg-primary-50 font-semibold'
                         : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'

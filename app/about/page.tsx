@@ -119,7 +119,7 @@ export default function AboutPage() {
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#0F0F1A' }}
       >
-        <InnerHeroBg />
+        <InnerHeroBg page="about" />
         <div className="container-tight relative z-10">
           <p className="section-label-white">Our Story</p>
           <h1

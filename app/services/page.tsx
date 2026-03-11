@@ -185,7 +185,7 @@ export default function ServicesPage() {
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#0F0F1A' }}
       >
-        <InnerHeroBg />
+        <InnerHeroBg page="services" />
         <div className="container-tight relative z-10">
           <p className="section-label-white">What We Offer</p>
           <h1
