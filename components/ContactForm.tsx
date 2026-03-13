@@ -27,16 +27,10 @@ export default function ContactForm() {
       const form = e.currentTarget
       const formData = new FormData(form)
 
-      // Build JSON payload from form data
-      const jsonBody: Record<string, string> = {}
-      formData.forEach((value, key) => {
-        jsonBody[key] = value as string
-      })
-
-      // Get reCAPTCHA token (non-blocking — submit even if it fails)
+      // reCAPTCHA V3 client-side gate — block bots before submitting
       try {
         if (window.grecaptcha) {
-          const token = await new Promise<string>((resolve, reject) => {
+          await new Promise<string>((resolve, reject) => {
             window.grecaptcha.ready(() => {
               window.grecaptcha
                 .execute(RECAPTCHA_SITE_KEY, { action: 'contact' })
@@ -44,11 +38,16 @@ export default function ContactForm() {
                 .catch(reject)
             })
           })
-          jsonBody['g-recaptcha-response'] = token
         }
       } catch {
         // reCAPTCHA failed — continue with submission anyway
       }
+
+      // Build JSON payload (without reCAPTCHA token — Web3Forms free plan)
+      const jsonBody: Record<string, string> = {}
+      formData.forEach((value, key) => {
+        jsonBody[key] = value as string
+      })
 
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',

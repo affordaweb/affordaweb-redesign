@@ -24,10 +24,10 @@ export default function NewsletterForm() {
       const form = e.currentTarget
       const formData = new FormData(form)
 
-      // Get reCAPTCHA token (non-blocking — submit even if it fails)
+      // reCAPTCHA V3 client-side gate — block bots before submitting
       try {
         if (window.grecaptcha) {
-          const token = await new Promise<string>((resolve, reject) => {
+          await new Promise<string>((resolve, reject) => {
             window.grecaptcha.ready(() => {
               window.grecaptcha
                 .execute(RECAPTCHA_SITE_KEY, { action: 'newsletter' })
@@ -35,7 +35,6 @@ export default function NewsletterForm() {
                 .catch(reject)
             })
           })
-          formData.append('g-recaptcha-response', token)
         }
       } catch {
         // reCAPTCHA failed — continue with submission anyway
