@@ -1,15 +1,16 @@
 # AffordaWeb Solutions — Website Redesign
 
-Modern Next.js 14 redesign of affordawebsolutions.com
+Modern Next.js 15 redesign of affordawebsolutions.com
 
-**Dev URL:** https://purple-armadillo-280403.hostingersite.com
+**Dev URL:** https://affordaweb-redesign-98r2cuai3.vercel.app
 **Production:** https://affordawebsolutions.com
 
 ## Tech Stack
-- **Framework:** Next.js 14 (App Router, Static Export)
+- **Framework:** Next.js 15 (App Router, Static Export)
 - **Styling:** Tailwind CSS v3
 - **Language:** TypeScript
 - **Font:** Inter (Google Fonts, variable)
+- **Hosting:** Vercel
 
 ## Color System
 | Role | Hex | Usage |
@@ -41,44 +42,17 @@ npm run dev       # Development server at http://localhost:3000
 npm run build     # Production static build → /out directory
 ```
 
-## Deploying to Hostinger
+## Deploying to Vercel
 
-1. Run `npm run build` — generates static files in `/out`
-2. Log into Hostinger File Manager or use FTP
-3. Upload the entire `/out` directory contents to `public_html`
-4. Ensure `.htaccess` redirects are set for clean URLs
-
-### Sample `.htaccess` for Hostinger
-```apache
-Options -MultiViews
-RewriteEngine On
-
-# Remove trailing slash (optional)
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)/$ /$1 [R=301,L]
-
-# Serve .html files without extension
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [L]
-
-# 404 fallback
-ErrorDocument 404 /404.html
-```
+The repo is connected to Vercel via GitHub integration. Every push to `main` triggers an automatic deployment.
 
 ## Contact Form Setup
 
-The contact form in `/app/contact/page.tsx` uses Formspree by default.
+The contact form in `components/ContactForm.tsx` uses **Web3Forms** for email delivery with honeypot spam protection.
 
-1. Create a free account at https://formspree.io
-2. Create a new form and copy your form ID
-3. Replace `your-form-id` in the form `action` attribute:
-   ```
-   action="https://formspree.io/f/YOUR_FORM_ID"
-   ```
-
-Alternatively, use Netlify Forms (if hosting on Netlify) or EmailJS for client-side sending.
+- **Access Key:** configured in the component
+- **Emails to:** hello@affordawebsolutions.com
+- **CC:** va.saifcastle@gmail.com
 
 ## SEO Configuration
 
