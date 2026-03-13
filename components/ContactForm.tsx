@@ -22,25 +22,34 @@ export default function ContactForm() {
     setStatus('submitting')
 
     try {
-      const token = await new Promise<string>((resolve, reject) => {
-        window.grecaptcha.ready(() => {
-          window.grecaptcha
-            .execute(RECAPTCHA_SITE_KEY, { action: 'contact' })
-            .then(resolve)
-            .catch(reject)
-        })
-      })
-
       const form = e.currentTarget
       const formData = new FormData(form)
-      formData.append('g-recaptcha-response', token)
+
+      // Get reCAPTCHA token (non-blocking — submit even if it fails)
+      try {
+        if (window.grecaptcha) {
+          const token = await new Promise<string>((resolve, reject) => {
+            window.grecaptcha.ready(() => {
+              window.grecaptcha
+                .execute(RECAPTCHA_SITE_KEY, { action: 'contact' })
+                .then(resolve)
+                .catch(reject)
+            })
+          })
+          formData.append('g-recaptcha-response', token)
+        }
+      } catch {
+        // reCAPTCHA failed — continue with submission anyway
+      }
 
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
       })
 
-      if (res.ok) {
+      const data = await res.json()
+
+      if (data.success) {
         setStatus('success')
         form.reset()
       } else {
