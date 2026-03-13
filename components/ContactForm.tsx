@@ -16,14 +16,22 @@ declare global {
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('submitting')
+    setErrorMsg('')
 
     try {
       const form = e.currentTarget
       const formData = new FormData(form)
+
+      // Build JSON payload from form data
+      const jsonBody: Record<string, string> = {}
+      formData.forEach((value, key) => {
+        jsonBody[key] = value as string
+      })
 
       // Get reCAPTCHA token (non-blocking — submit even if it fails)
       try {
@@ -36,7 +44,7 @@ export default function ContactForm() {
                 .catch(reject)
             })
           })
-          formData.append('g-recaptcha-response', token)
+          jsonBody['g-recaptcha-response'] = token
         }
       } catch {
         // reCAPTCHA failed — continue with submission anyway
@@ -44,7 +52,8 @@ export default function ContactForm() {
 
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(jsonBody),
       })
 
       const data = await res.json()
@@ -53,9 +62,11 @@ export default function ContactForm() {
         setStatus('success')
         form.reset()
       } else {
+        setErrorMsg(data.message || 'Submission failed.')
         setStatus('error')
       }
-    } catch {
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : 'Network error.')
       setStatus('error')
     }
   }
@@ -180,7 +191,7 @@ export default function ContactForm() {
       </button>
 
       {status === 'error' && (
-        <p className="text-center text-sm text-red-500">Something went wrong. Please try again.</p>
+        <p className="text-center text-sm text-red-500">{errorMsg || 'Something went wrong. Please try again.'}</p>
       )}
 
       <p className="text-center text-xs text-gray-400 pt-2">
