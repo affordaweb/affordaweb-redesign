@@ -2,17 +2,6 @@
 
 import { useState, FormEvent } from 'react'
 
-const RECAPTCHA_SITE_KEY = '6LexrXUrAAAAANyuRrheQxVF9DLnRBUygw5P_Lod'
-
-declare global {
-  interface Window {
-    grecaptcha: {
-      ready: (cb: () => void) => void
-      execute: (siteKey: string, options: { action: string }) => Promise<string>
-    }
-  }
-}
-
 export default function NewsletterForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
@@ -23,22 +12,6 @@ export default function NewsletterForm() {
     try {
       const form = e.currentTarget
       const formData = new FormData(form)
-
-      // reCAPTCHA V3 client-side gate — block bots before submitting
-      try {
-        if (window.grecaptcha) {
-          await new Promise<string>((resolve, reject) => {
-            window.grecaptcha.ready(() => {
-              window.grecaptcha
-                .execute(RECAPTCHA_SITE_KEY, { action: 'newsletter' })
-                .then(resolve)
-                .catch(reject)
-            })
-          })
-        }
-      } catch {
-        // reCAPTCHA failed — continue with submission anyway
-      }
 
       const res = await fetch('https://formspree.io/f/your-form-id', {
         method: 'POST',
@@ -71,6 +44,8 @@ export default function NewsletterForm() {
         onSubmit={handleSubmit}
         className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
       >
+        {/* Honeypot */}
+        <input type="text" name="_gotcha" className="hidden" style={{ display: 'none' }} />
         <input
           type="email"
           name="email"
@@ -93,9 +68,6 @@ export default function NewsletterForm() {
       )}
 
       <p className="text-xs mt-4" style={{ color: 'rgba(255,255,255,0.3)' }}>
-        This site is protected by reCAPTCHA and the Google{' '}
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: 'rgba(255,255,255,0.45)' }}>Privacy Policy</a> and{' '}
-        <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: 'rgba(255,255,255,0.45)' }}>Terms of Service</a> apply.
         No spam. Unsubscribe anytime.
       </p>
     </>

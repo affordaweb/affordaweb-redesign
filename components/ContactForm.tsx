@@ -3,17 +3,6 @@
 import { useState, FormEvent } from 'react'
 import Link from 'next/link'
 
-const RECAPTCHA_SITE_KEY = '6LexrXUrAAAAANyuRrheQxVF9DLnRBUygw5P_Lod'
-
-declare global {
-  interface Window {
-    grecaptcha: {
-      ready: (cb: () => void) => void
-      execute: (siteKey: string, options: { action: string }) => Promise<string>
-    }
-  }
-}
-
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
@@ -27,23 +16,6 @@ export default function ContactForm() {
       const form = e.currentTarget
       const formData = new FormData(form)
 
-      // reCAPTCHA V3 client-side gate — block bots before submitting
-      try {
-        if (window.grecaptcha) {
-          await new Promise<string>((resolve, reject) => {
-            window.grecaptcha.ready(() => {
-              window.grecaptcha
-                .execute(RECAPTCHA_SITE_KEY, { action: 'contact' })
-                .then(resolve)
-                .catch(reject)
-            })
-          })
-        }
-      } catch {
-        // reCAPTCHA failed — continue with submission anyway
-      }
-
-      // Build JSON payload (without reCAPTCHA token — Web3Forms free plan)
       const jsonBody: Record<string, string> = {}
       formData.forEach((value, key) => {
         jsonBody[key] = value as string
@@ -95,6 +67,7 @@ export default function ContactForm() {
       <input type="hidden" name="from_name" value="AffordaWeb Solutions Website" />
       <input type="hidden" name="to" value="hello@affordawebsolutions.com" />
       <input type="hidden" name="cc" value="va.saifcastle@gmail.com" />
+      {/* Honeypot — hidden from users, bots will fill it and get blocked */}
       <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -194,10 +167,7 @@ export default function ContactForm() {
       )}
 
       <p className="text-center text-xs text-gray-400 pt-2">
-        This site is protected by reCAPTCHA and the Google{' '}
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Privacy Policy</a> and{' '}
-        <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Terms of Service</a> apply.
-        By submitting you agree to our{' '}
+        No spam. No commitment. By submitting you agree to our{' '}
         <Link href="/privacy" className="text-primary-600 hover:underline">Privacy Policy</Link>.
       </p>
     </form>

@@ -118,10 +118,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gtag('config', 'G-VJ2TSW7W93');
           `}
         </Script>
-        <Script
-          src="https://www.google.com/recaptcha/api.js?render=6LexrXUrAAAAANyuRrheQxVF9DLnRBUygw5P_Lod"
-          strategy="afterInteractive"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
