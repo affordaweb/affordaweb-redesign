@@ -346,7 +346,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── B. STATS MARQUEE ──────────────────────────────────────── */}
+      {/* ── B. TRUST BAR ─────────────────────────────────────────── */}
+      <section className="bg-white border-y border-gray-100 py-5" aria-label="Why choose AffordaWeb">
+        <div className="container-tight">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-3">
+            {([
+              { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 6v1m0 4v1m-4-8H6m12 0h-2m2 8H6', text: 'No Setup Fees' },
+              { icon: 'M6 18L18 6M6 6l12 12', text: 'No Contracts' },
+              { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', text: '99.9% Uptime' },
+              { icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z', text: 'SSL Included' },
+              { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', text: '24hr Support' },
+              { icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', text: 'Free Business Email' },
+            ] as { icon: string; text: string }[]).map(({ icon, text }) => (
+              <div key={text} className="flex items-center gap-2 text-sm font-medium text-gray-600">
+                <svg className="w-4 h-4 shrink-0" style={{ color: '#06B6D4' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={icon} />
+                </svg>
+                {text}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── C. STATS MARQUEE ──────────────────────────────────────── */}
       <section className="relative overflow-hidden py-7 group bg-white" aria-label="Key statistics">
         {/* Exact same bg as Three Steps section below */}
         <div className="absolute inset-x-0 top-0 h-[500px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% -10%, rgba(86,54,209,0.06) 0%, transparent 70%)' }} />
@@ -397,7 +420,51 @@ export default function HomePage() {
       </section>
 
 
-      {/* ── D. HOW IT WORKS ──────────────────────────────────────── */}
+      {/* ── D. SERVICES ─── Light ────────────────────────────────── */}
+      <section className="section-pad bg-white relative overflow-hidden" aria-labelledby="services-heading">
+        <div className="absolute inset-x-0 top-0 h-[400px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% -10%, rgba(86,54,209,0.05) 0%, transparent 70%)' }} />
+        <div className="container-tight relative z-10">
+          <div className="text-center mb-14">
+            <p className="section-label">What We Do</p>
+            <h2
+              id="services-heading"
+              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+              style={{ letterSpacing: '-0.02em' }}
+            >
+              Web Design &amp; Development Services
+            </h2>
+            <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
+              From custom website design to ongoing maintenance, we handle everything so you can focus on running your business.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map(({ Icon, title, desc, href }) => (
+              <Link
+                key={title}
+                href={href}
+                className="group card p-7 flex flex-col hover:border-primary-100"
+              >
+                <div className="icon-wrap group-hover:scale-110 transition-all duration-300">
+                  <Icon />
+                </div>
+                <h3 className="font-bold text-gray-900 text-lg mb-2">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed flex-grow">{desc}</p>
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-primary-600 mt-5 group-hover:gap-2.5 transition-all duration-300">
+                  Learn more
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link href="/services" className="btn-secondary">View All Services</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── E. HOW IT WORKS ──────────────────────────────────────── */}
       <section className="section-pad relative overflow-hidden bg-white" aria-labelledby="process-heading">
         {/* Soft radial top glow */}
         <div className="absolute inset-x-0 top-0 h-[500px] pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% -10%, rgba(86,54,209,0.06) 0%, transparent 70%)' }} />
@@ -641,7 +708,91 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── F. PRICING PREVIEW ──────────────────────────────────────── */}
+      {/* ── G. ABOUT ─── Light surface ───────────────────────────── */}
+      <section className="section-pad relative overflow-hidden bg-white" aria-labelledby="about-heading">
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.05) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
+        <div className="container-tight relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left: Graphic placeholder */}
+            <div className="relative">
+              <div className="card p-10">
+                <div className="flex flex-col items-center gap-8">
+                  {/* Donut */}
+                  <div className="relative w-32 h-32">
+                    <svg viewBox="0 0 36 36" className="w-32 h-32 -rotate-90">
+                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="#EDE9FD" strokeWidth="3" />
+                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="#5636D1" strokeWidth="3" strokeDasharray="72 28" strokeLinecap="round" />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-2xl font-bold text-primary-700">72%</div>
+                    </div>
+                  </div>
+                  {/* Bar chart */}
+                  <div className="flex items-end gap-3 h-24 w-full px-4">
+                    {[40, 65, 85, 55, 95].map((h, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 rounded-t"
+                        style={{ height: `${h}%`, background: 'linear-gradient(to top, #5636D1, #8B76E5)' }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {/* Badge */}
+              <div
+                className="absolute -bottom-5 -right-4 rounded-2xl px-5 py-4 text-center shadow-lg"
+                style={{ background: '#5636D1' }}
+              >
+                <div className="text-3xl font-extrabold leading-none" style={{ color: '#06B6D4' }}>15+</div>
+                <div className="text-xs mt-1 text-white/70">Years of Experience</div>
+              </div>
+            </div>
+
+            {/* Right: Content */}
+            <div>
+              <p className="section-label">About AffordaWeb</p>
+              <h2
+                id="about-heading"
+                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-5"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                Every Business Deserves a <span className="gradient-text">Professional Website</span>
+              </h2>
+              <p className="text-gray-500 text-lg leading-relaxed mb-8">
+                Founded by Jonathan Macatangay, AffordaWeb Solutions was built on one belief: small businesses should not be priced out of professional web design. We bundle design, hosting, maintenance, and SEO into one simple monthly plan starting at $69.
+              </p>
+              <ul className="space-y-4 mb-8">
+                {([
+                  { title: 'Results-Driven', desc: 'Every design decision is backed by strategy and aligned with your business goals.' },
+                  { title: 'Transparent and Honest', desc: 'One flat monthly price. No surprise invoices, no hidden fees, no upsells.' },
+                  { title: 'Client-First Approach', desc: 'We guide you through the entire process so you never feel lost or overwhelmed.' },
+                  { title: 'Truly Affordable', desc: 'Professional websites that compete with agency work at a fraction of the cost.' },
+                ] as { title: string; desc: string }[]).map(({ title, desc }) => (
+                  <li key={title} className="flex items-start gap-4">
+                    <div
+                      className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                      style={{ background: 'rgba(86,54,209,0.1)' }}
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: '#5636D1' }}>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-gray-900 text-sm">{title}</span>
+                      <span className="text-gray-500 text-sm"> &mdash; {desc}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/about" className="btn-primary">Learn More About Us</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── H. PRICING PREVIEW ──────────────────────────────────────── */}
       <section className="section-pad relative overflow-hidden" aria-labelledby="pricing-heading">
         {/* Background gradient */}
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #EEE9FB 100%)' }} />
@@ -870,7 +1021,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── H. FAQ ─── Light + texture ─────────────────────────────── */}
+      {/* ── J. TESTIMONIALS ────────────────────────────────────────── */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#F7F5FE' }} aria-labelledby="testimonials-heading">
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 50%, transparent)' }} />
+        <div className="container-tight">
+          <div className="text-center mb-12">
+            <p className="section-label">Client Reviews</p>
+            <h2
+              id="testimonials-heading"
+              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3"
+              style={{ letterSpacing: '-0.01em' }}
+            >
+              What Our Clients Say
+            </h2>
+            <p className="text-gray-400 text-lg">50+ small businesses served with a 4.9-star average rating.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {([
+              { name: 'Sarah M.', role: 'Freelance Consultant', quote: 'AffordaWeb delivered a professional website in under two weeks. The flat monthly pricing with no hidden fees was exactly what my small business needed to get online without breaking the bank.' },
+              { name: 'James R.', role: 'Small Business Owner', quote: 'Jonathan and the team understood our vision right away. Our new site looks incredible, ranks on Google locally, and we have gotten more leads in the first month than the entire previous year.' },
+              { name: 'Emily C.', role: 'Online Store Owner', quote: 'I was quoted $8,000 by another agency. AffordaWeb gave me a better-looking site for $99/month with ongoing support included. I wish I had found them sooner.' },
+            ] as { name: string; role: string; quote: string }[]).map(({ name, role, quote }) => (
+              <div key={name} className="card p-8 flex flex-col gap-5">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed italic flex-grow">&ldquo;{quote}&rdquo;</p>
+                <div className="flex items-center gap-3">
+                  <div className="avatar-initial" style={{ background: '#5636D1' }}>{name[0]}</div>
+                  <div>
+                    <div className="font-semibold text-gray-900 text-sm">{name}</div>
+                    <div className="text-xs text-gray-400">{role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── K. FAQ ─── Light + texture ─────────────────────────────── */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#F7FBFF' }} aria-labelledby="faq-heading">
         {/* Subtle dot pattern */}
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.05) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
