@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
   title: 'Web Design Blog | Tips & Guides for Small Businesses | AffordaWeb Solutions',
@@ -291,25 +292,7 @@ export default function BlogPage() {
           <p className="text-lg mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Join small business owners who get our best web design and SEO tips every month. No spam — just useful content.
           </p>
-          <form
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-            action="https://formspree.io/f/your-form-id"
-            method="POST"
-          >
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 px-4 py-3 rounded-full text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary-400/50"
-              style={{ background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.15)' }}
-            />
-            <button
-              type="submit"
-              className="btn-white px-6 py-3 shrink-0"
-            >
-              Subscribe
-            </button>
-          </form>
-          <p className="text-xs mt-4" style={{ color: 'rgba(255,255,255,0.3)' }}>No spam. Unsubscribe anytime.</p>
+          <NewsletterForm />
         </div>
       </section>
     </>
