@@ -37,21 +37,26 @@ export default function Footer() {
       {/* Pre-footer CTA — brand purple gradient */}
       <div
         className="relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #1A5FAD 0%, #2577C9 55%, #4298DC 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #2D18A0 0%, #5636D1 50%, #7B55F0 100%)' }}
       >
         {/* Dot pattern */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1.5px, transparent 1.5px)',
+            backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.25) 1.5px, transparent 1.5px)',
             backgroundSize: '28px 28px',
-            opacity: 0.08,
+            opacity: 0.12,
           }}
         />
-        {/* Cyan glow from bottom */}
+        {/* Pink glow top-right */}
         <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 70% 80% at 50% 110%, rgba(6,182,212,0.18), transparent)' }}
+          className="absolute -top-20 -right-20 w-96 h-96 rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(226,73,138,0.25), transparent 70%)' }}
+        />
+        {/* Cyan glow bottom-left */}
+        <div
+          className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.2), transparent 70%)' }}
         />
 
         <div className="container-tight py-20 text-center relative z-10">
@@ -71,7 +76,7 @@ export default function Footer() {
             {['Custom Design', 'SSL Included', 'Unlimited Updates', 'Fast Hosting', 'SEO Built In', 'From $69/mo'].map((f) => (
               <span
                 key={f}
-                className="text-xs font-semibold px-3.5 py-1.5 rounded-full"
+                className="text-xs font-semibold px-2.5 sm:px-3.5 py-1.5 rounded-full"
                 style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.15)' }}
               >
                 {f}

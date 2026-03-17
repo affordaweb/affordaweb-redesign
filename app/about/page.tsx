@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     title: 'About AffordaWeb Solutions | Our Story & Mission',
     description: 'Professional website design made affordable for small businesses.',
     url: 'https://affordawebsolutions.com/about',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'About AffordaWeb Solutions' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About AffordaWeb Solutions | Our Story & Mission',
+    description: 'Professional website design made affordable for small businesses.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 

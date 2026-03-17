@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     title: 'Website Design Pricing | Plans Starting at $69/mo',
     description: 'Hosting, SSL, and maintenance included. No setup fees. Cancel anytime.',
     url: 'https://affordawebsolutions.com/pricing',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Pricing Plans' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Website Design Pricing | Plans Starting at $69/mo',
+    description: 'Hosting, SSL, and maintenance included. No setup fees. Cancel anytime.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -225,7 +232,7 @@ export default function PricingPage() {
       {/* Pricing cards — White */}
       <section className="section-pad bg-white" aria-labelledby="plans-heading">
         <div className="container-tight">
-          <div className="sr-only" id="plans-heading">Pricing Plans</div>
+          <h2 className="sr-only" id="plans-heading">Pricing Plans</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {plans.map((plan) => (
               <div

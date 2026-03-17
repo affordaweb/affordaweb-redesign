@@ -286,7 +286,7 @@ export default function HomePage() {
                 {/* Hero photo */}
                 <div className="relative overflow-hidden" style={{ height: '260px' }}>
                   <Image
-                    src="/hero-photo.jpg"
+                    src="/hero-photo.webp"
                     alt="Small business website design on a laptop"
                     fill
                     className="object-cover object-center"
@@ -377,8 +377,8 @@ export default function HomePage() {
         <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 40%, rgba(6,182,212,0.2) 60%, transparent)' }} />
         <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 40%, rgba(6,182,212,0.2) 60%, transparent)' }} />
         {/* Left / right fade masks — match bg-white */}
-        <div className="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #ffffff, transparent)' }} />
-        <div className="absolute inset-y-0 right-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #ffffff, transparent)' }} />
+        <div className="absolute inset-y-0 left-0 w-16 sm:w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #ffffff, transparent)' }} />
+        <div className="absolute inset-y-0 right-0 w-16 sm:w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #ffffff, transparent)' }} />
 
         {/* Scrolling track — duplicated for seamless loop */}
         <div
@@ -397,7 +397,7 @@ export default function HomePage() {
               <div key={`${pass}-${i}`} className="px-3 shrink-0">
                 <div
                   className="flex items-center gap-4 px-5 py-3.5 rounded-2xl border cursor-default select-none transition-all duration-300 hover:scale-[1.04] hover:shadow-lg"
-                  style={{ background: item.bg, borderColor: item.border, minWidth: '210px' }}
+                  style={{ background: item.bg, borderColor: item.border, minWidth: 'clamp(170px, 45vw, 210px)' }}
                 >
                   <div
                     className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
@@ -526,7 +526,7 @@ export default function HomePage() {
               ] as { step: string; title: string; desc: string; perks: string[]; iconPath: string; color: string; pastelBg: string; ringColor: string }[]).map(({ step, title, desc, perks, iconPath, color, pastelBg, ringColor }) => (
                 <div
                   key={step}
-                  className="group bg-white rounded-3xl border border-gray-100 p-8 hover:-translate-y-1.5 hover:shadow-card-hover transition-all duration-300 shadow-card"
+                  className="group bg-white rounded-3xl border border-gray-100 p-5 sm:p-8 hover:-translate-y-1.5 hover:shadow-card-hover transition-all duration-300 shadow-card"
                 >
                   {/* Step circle */}
                   <div
@@ -820,7 +820,7 @@ export default function HomePage() {
 
             {/* Basic */}
             <div
-              className="group bg-white rounded-3xl p-8 flex flex-col border border-gray-100 hover:-translate-y-1 transition-all duration-300"
+              className="group bg-white rounded-3xl p-5 sm:p-8 flex flex-col border border-gray-100 hover:-translate-y-1 transition-all duration-300"
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.06)', borderTop: '3px solid #94A3B8' }}
             >
               <div className="flex items-center justify-between mb-6">
@@ -846,7 +846,7 @@ export default function HomePage() {
 
             {/* Standard — Featured */}
             <div
-              className="relative rounded-3xl p-8 flex flex-col md:-my-8 overflow-hidden"
+              className="relative rounded-3xl p-5 sm:p-8 flex flex-col md:-my-8 overflow-hidden"
               style={{
                 background: 'linear-gradient(155deg, #2D18A0 0%, #5636D1 45%, #7B55F0 100%)',
                 boxShadow: '0 40px 100px rgba(86,54,209,0.55), 0 0 0 1px rgba(255,255,255,0.08)',
@@ -895,7 +895,7 @@ export default function HomePage() {
 
             {/* Premium */}
             <div
-              className="group bg-white rounded-3xl p-8 flex flex-col border border-gray-100 hover:-translate-y-1 transition-all duration-300"
+              className="group bg-white rounded-3xl p-5 sm:p-8 flex flex-col border border-gray-100 hover:-translate-y-1 transition-all duration-300"
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.06)', borderTop: '3px solid #06B6D4' }}
             >
               <div className="flex items-center justify-between mb-6">
@@ -1066,49 +1066,66 @@ export default function HomePage() {
 
       {/* ── K. FAQ ─── Light + texture ─────────────────────────────── */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#F7FBFF' }} aria-labelledby="faq-heading">
-        {/* Subtle dot pattern */}
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.05) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
-        {/* Center glow */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(86,54,209,0.05), transparent)' }} />
+        {/* Dot grid */}
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.07) 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
+        {/* Top purple glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 70% 45% at 50% 0%, rgba(86,54,209,0.08), transparent)' }} />
+        {/* Bottom pink glow */}
+        <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none" style={{ background: 'radial-gradient(ellipse 60% 100% at 50% 100%, rgba(226,73,138,0.05), transparent)' }} />
+
         <div className="container-tight max-w-4xl relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-14">
             <p className="section-label">Common Questions</p>
-            <h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold text-gray-900" style={{ letterSpacing: '-0.01em' }}>
+            <h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4" style={{ letterSpacing: '-0.01em' }}>
               Frequently Asked Questions About Our Website Design Services
             </h2>
+            <p className="text-gray-400 text-base max-w-xl mx-auto leading-relaxed">
+              Everything you need to know about our affordable website design plans, hosting, and support.
+            </p>
           </div>
 
           <div className="space-y-3">
-            {faqs.map(({ q, a }) => (
+            {faqs.map(({ q, a }, i) => (
               <details
                 key={q}
-                className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:border-primary-200 transition-colors"
-                style={{ boxShadow: '0 1px 8px rgba(0,0,0,0.04)' }}
+                open={i === 0}
+                className="group bg-white border rounded-2xl overflow-hidden transition-all duration-200"
+                style={{
+                  borderColor: 'rgba(86,54,209,0.12)',
+                  boxShadow: '0 2px 12px rgba(86,54,209,0.06)',
+                }}
               >
-                <summary className="flex items-center justify-between gap-4 cursor-pointer select-none p-6 text-gray-900 font-semibold text-base list-none [&::-webkit-details-marker]:hidden">
-                  <span>{q}</span>
+                <summary
+                  className="flex items-center justify-between gap-4 cursor-pointer select-none px-6 py-5 list-none [&::-webkit-details-marker]:hidden"
+                  style={{ background: 'linear-gradient(90deg, rgba(86,54,209,0.03) 0%, transparent 100%)' }}
+                >
+                  <span className="text-gray-900 font-semibold text-base group-open:text-primary-600 transition-colors">{q}</span>
                   <span
-                    className="rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-open:bg-primary-500 group-open:text-white text-primary-500"
-                    style={{ width: '32px', height: '32px', minWidth: '32px', background: '#F0EDFD' }}
+                    className="rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
+                    style={{
+                      width: '32px', height: '32px', minWidth: '32px',
+                      background: 'linear-gradient(135deg, #5636D1, #7B55F0)',
+                      boxShadow: '0 2px 8px rgba(86,54,209,0.3)',
+                    }}
                   >
                     <svg
-                      className="w-3.5 h-3.5 transition-transform duration-300 group-open:rotate-180"
+                      className="w-3.5 h-3.5 text-white transition-transform duration-300 group-open:rotate-180"
                       fill="none" viewBox="0 0 24 24" stroke="currentColor"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
                 </summary>
-                <div className="px-6 pb-6">
-                  <div className="w-full h-px bg-gray-100 mb-4" />
+                <div className="px-6 pb-6 pt-1">
+                  <div className="w-full h-px mb-4" style={{ background: 'rgba(86,54,209,0.08)' }} />
                   <p className="text-gray-500 text-sm leading-relaxed">{a}</p>
                 </div>
               </details>
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <p className="text-gray-400 text-sm mb-4">Still have questions?</p>
+          <div className="text-center mt-12">
+            <p className="text-gray-400 text-sm mb-4">Still have questions? We respond within 24 hours.</p>
             <Link href="/contact" className="btn-primary">Ask Us Anything</Link>
           </div>
         </div>

@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     title: 'Web Design Blog | AffordaWeb Solutions',
     description: 'Expert tips on web design, SEO, and growing your small business online.',
     url: 'https://affordawebsolutions.com/blog',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Blog' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Web Design Blog | AffordaWeb Solutions',
+    description: 'Expert tips on web design, SEO, and growing your small business online.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -144,7 +151,7 @@ export default function BlogPage() {
       {/* Blog content — White */}
       <section className="section-pad bg-white" aria-labelledby="blog-heading">
         <div className="container-tight">
-          <div className="sr-only" id="blog-heading">Blog Posts</div>
+          <h2 className="sr-only" id="blog-heading">Blog Posts</h2>
 
           {/* Category filter */}
           <div className="flex flex-wrap gap-2 justify-center mb-12">

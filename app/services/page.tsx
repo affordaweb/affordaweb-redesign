@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     title: 'Web Design & SEO Services | AffordaWeb Solutions',
     description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
     url: 'https://affordawebsolutions.com/services',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Web Design Services' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Web Design & SEO Services | AffordaWeb Solutions',
+    description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 

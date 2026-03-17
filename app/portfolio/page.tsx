@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     title: 'Website Design Portfolio | AffordaWeb Solutions',
     description: 'See our work — affordable, professional website designs for small businesses.',
     url: 'https://affordawebsolutions.com/portfolio',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Portfolio' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Website Design Portfolio | AffordaWeb Solutions',
+    description: 'See our work — affordable, professional website designs for small businesses.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -89,7 +96,7 @@ export default function PortfolioPage() {
       {/* Portfolio grid — White */}
       <section className="section-pad bg-white" aria-labelledby="portfolio-heading">
         <div className="container-tight">
-          <div className="sr-only" id="portfolio-heading">Portfolio Projects</div>
+          <h2 className="sr-only" id="portfolio-heading">Portfolio Projects</h2>
 
           {/* Category filter */}
           <div className="flex flex-wrap gap-2 justify-center mb-12">

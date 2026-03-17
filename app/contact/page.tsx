@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     title: 'Contact AffordaWeb Solutions | Get a Free Website Quote',
     description: 'Request a free quote for affordable website design. We respond within 24 hours.',
     url: 'https://affordawebsolutions.com/contact',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Contact AffordaWeb Solutions' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact AffordaWeb Solutions | Get a Free Website Quote',
+    description: 'Request a free quote for affordable website design. We respond within 24 hours.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 
