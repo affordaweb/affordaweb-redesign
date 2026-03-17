@@ -1,20 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { kv } from '@vercel/kv'
+import { kvSet, kvGet, kvIncr } from '@/lib/kv-store'
 import { analyzeSeo, normalizeUrl, extractDomain } from '@/lib/seo-analyzer'
-import { sendAdminNotification } from '@/lib/email'
+import { sendSeoAdminNotification } from '@/lib/email'
 import type { SeoReport } from '@/types/seo-report'
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://affordawebsolutions.com'
 
 // ── Rate limiting (3 per IP per day) ─────────────────────────────────────────
 
 async function checkRateLimit(ip: string): Promise<boolean> {
   const today = new Date().toISOString().slice(0, 10)
-  const key = `rate:${ip}:${today}`
+  const key = `seo_rate:${ip}:${today}`
   try {
-    const count = await kv.incr(key)
-    if (count === 1) await kv.expire(key, 86400)
+    const count = await kvIncr(key, 86400)
     return count <= 3
   } catch {
-    return true // fail open if KV is unavailable
+    return true // fail open
   }
 }
 
@@ -25,7 +26,6 @@ export async function POST(req: NextRequest) {
     const body = await req.json()
     const { url, name, email, businessType, primaryGoal } = body
 
-    // Validate required fields
     if (!url || !name || !email) {
       return NextResponse.json(
         { error: 'Website URL, name, and email are required.' },
@@ -33,7 +33,6 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // Basic URL validation
     let normalizedUrl: string
     try {
       normalizedUrl = normalizeUrl(url)
@@ -84,17 +83,18 @@ export async function POST(req: NextRequest) {
       createdAt: new Date().toISOString(),
     }
 
-    // Store in Vercel KV
-    await kv.set(`seo_report:${reportId}`, JSON.stringify(report), { ex: 60 * 60 * 24 * 90 }) // 90 days TTL
+    // Store in KV (90-day TTL)
+    await kvSet(`seo_report:${reportId}`, report, 60 * 60 * 24 * 90)
 
     // Send admin notification (non-blocking)
-    sendAdminNotification(report).catch((e) =>
-      console.error('Admin email failed:', e)
+    const confirmUrl = `${BASE_URL}/api/confirm-seo-payment?report_id=${reportId}`
+    sendSeoAdminNotification(report, confirmUrl).catch((e) =>
+      console.error('[create-seo-report] admin email failed:', e)
     )
 
     return NextResponse.json({ reportId })
   } catch (err) {
-    console.error('create-seo-report error:', err)
+    console.error('[create-seo-report] error:', err)
     return NextResponse.json({ error: 'Internal server error.' }, { status: 500 })
   }
 }

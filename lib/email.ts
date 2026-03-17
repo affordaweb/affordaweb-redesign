@@ -320,3 +320,105 @@ export async function sendAdminBriefEmail(report: ReportData, brief: BriefData):
 
   return sendEmail(ADMIN_EMAIL, `Project Brief — ${report.name} | ${report.website}`, html)
 }
+
+// ── SEO Audit emails ──────────────────────────────────────────────────────────
+
+import type { SeoReport } from '@/types/seo-report'
+
+function seoGradeColor(grade: string) {
+  if (grade === 'A') return '#16a34a'
+  if (grade === 'B') return '#2563eb'
+  if (grade === 'C') return '#d97706'
+  if (grade === 'D') return '#ea580c'
+  return '#dc2626'
+}
+
+export async function sendSeoAdminNotification(report: SeoReport, confirmUrl: string): Promise<boolean> {
+  const gc = seoGradeColor(report.grade)
+  const issuesList = report.topIssues.map((i) => `<li style="padding:4px 0;color:#374151;">${i}</li>`).join('')
+
+  const html = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="max-width:600px;margin:32px auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+    <div style="background:linear-gradient(135deg,#3d24a0,#5636D1);padding:32px 40px;text-align:center;">
+      <p style="margin:0 0 6px;color:rgba(255,255,255,0.7);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">AffordaWeb Solutions</p>
+      <h1 style="margin:0;color:#fff;font-size:22px;font-weight:800;">New SEO Audit Request</h1>
+    </div>
+    <div style="padding:40px;">
+      <div style="text-align:center;margin-bottom:28px;">
+        <div style="font-size:52px;font-weight:900;color:${gc};line-height:1;">${report.seoScore}</div>
+        <div style="color:#6b7280;font-size:14px;">SEO Score · Grade <strong style="color:${gc};">${report.grade}</strong> · ${report.domain}</div>
+      </div>
+      <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
+        <tr><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-weight:700;color:#374151;font-size:13px;">Name</td><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;color:#111827;font-size:13px;">${report.name}</td></tr>
+        <tr><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-weight:700;color:#374151;font-size:13px;">Email</td><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-size:13px;"><a href="mailto:${report.email}" style="color:#5636D1;">${report.email}</a></td></tr>
+        <tr><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-weight:700;color:#374151;font-size:13px;">Website</td><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-size:13px;"><a href="${report.website}" style="color:#5636D1;">${report.website}</a></td></tr>
+        <tr><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-weight:700;color:#374151;font-size:13px;">Business</td><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;color:#111827;font-size:13px;">${report.businessType}</td></tr>
+        <tr><td style="padding:8px 12px;background:#f9fafb;font-weight:700;color:#374151;font-size:13px;">Goal</td><td style="padding:8px 12px;background:#f9fafb;color:#111827;font-size:13px;">${report.primaryGoal}</td></tr>
+      </table>
+      <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:18px;margin-bottom:28px;">
+        <h3 style="margin:0 0 10px;color:#dc2626;font-size:14px;font-weight:700;">Top Issues</h3>
+        <ul style="margin:0;padding:0 0 0 18px;">${issuesList}</ul>
+      </div>
+      <div style="text-align:center;">
+        <a href="${confirmUrl}" style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#3d24a0,#5636D1);color:#fff;font-weight:800;font-size:15px;text-decoration:none;border-radius:50px;">
+          ✓ Confirm Payment &amp; Send Report
+        </a>
+        <p style="margin-top:10px;font-size:11px;color:#9ca3af;">Or copy: ${confirmUrl}</p>
+      </div>
+    </div>
+  </div>
+</body></html>`
+
+  return sendEmail(ADMIN_EMAIL, `[SEO Audit] ${report.domain} — Score ${report.seoScore}/100`, html)
+}
+
+export async function sendSeoUserReport(report: SeoReport, reportUrl: string): Promise<boolean> {
+  const gc = seoGradeColor(report.grade)
+
+  const categoriesHtml = report.categories.map((cat) => {
+    const pct = Math.round((cat.score / cat.maxScore) * 100)
+    const barColor = pct >= 80 ? '#16a34a' : pct >= 60 ? '#2563eb' : pct >= 40 ? '#d97706' : '#dc2626'
+    return `<div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="font-size:13px;font-weight:700;color:#111827;">${cat.name}</span><span style="font-size:13px;font-weight:700;color:${barColor};">${cat.score}/${cat.maxScore}</span></div><div style="height:6px;background:#e5e7eb;border-radius:99px;"><div style="height:6px;width:${pct}%;background:${barColor};border-radius:99px;"></div></div></div>`
+  }).join('')
+
+  const recsHtml = report.recommendations.slice(0, 6).map((r) => {
+    const pc = r.priority === 'critical' ? '#dc2626' : r.priority === 'high' ? '#ea580c' : r.priority === 'medium' ? '#d97706' : '#16a34a'
+    return `<div style="border-left:3px solid ${pc};padding:10px 14px;background:#f9fafb;border-radius:0 8px 8px 0;margin-bottom:10px;"><div style="font-weight:700;color:#111827;font-size:13px;margin-bottom:3px;">${r.title} <span style="font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;background:${pc}15;color:${pc};text-transform:uppercase;">${r.priority}</span></div><div style="font-size:12px;color:#6b7280;line-height:1.5;">${r.description}</div></div>`
+  }).join('')
+
+  const html = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="max-width:640px;margin:32px auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+    <div style="background:linear-gradient(135deg,#3d24a0,#5636D1);padding:40px;text-align:center;">
+      <p style="margin:0 0 6px;color:rgba(255,255,255,0.7);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">AffordaWeb Solutions</p>
+      <h1 style="margin:0;color:#fff;font-size:26px;font-weight:900;">Your Full SEO Report</h1>
+      <p style="margin:6px 0 0;color:rgba(255,255,255,0.8);font-size:14px;">${report.domain}</p>
+    </div>
+    <div style="padding:40px;">
+      <div style="text-align:center;background:#f9fafb;border-radius:16px;padding:28px;margin-bottom:32px;border:1px solid #e5e7eb;">
+        <div style="font-size:60px;font-weight:900;color:${gc};line-height:1;">${report.seoScore}</div>
+        <div style="color:#6b7280;font-size:14px;margin-bottom:8px;">out of 100</div>
+        <div style="display:inline-block;padding:4px 16px;border-radius:99px;background:${gc}15;color:${gc};font-weight:800;font-size:16px;">Grade: ${report.grade}</div>
+        <p style="margin:12px 0 0;color:#6b7280;font-size:13px;">Hi ${report.name}, here is your complete SEO analysis for <strong>${report.domain}</strong>.</p>
+      </div>
+      <h2 style="font-size:16px;font-weight:800;color:#111827;margin:0 0 14px;">Category Scores</h2>
+      ${categoriesHtml}
+      <h2 style="font-size:16px;font-weight:800;color:#111827;margin:24px 0 14px;">Recommendations</h2>
+      ${recsHtml}
+      <div style="text-align:center;margin-top:28px;padding:28px;background:linear-gradient(135deg,#f3f0fd,#eff6ff);border-radius:16px;">
+        <h3 style="margin:0 0 8px;color:#111827;font-size:16px;font-weight:800;">View Your Interactive Report</h3>
+        <p style="margin:0 0 16px;color:#6b7280;font-size:13px;">See all checks, detailed breakdowns, and your full action plan online.</p>
+        <a href="${reportUrl}" style="display:inline-block;padding:12px 32px;background:linear-gradient(135deg,#3d24a0,#5636D1);color:#fff;font-weight:800;font-size:14px;text-decoration:none;border-radius:50px;">View Full Report →</a>
+      </div>
+    </div>
+    <div style="background:#f9fafb;border-top:1px solid #e5e7eb;padding:20px 40px;text-align:center;">
+      <p style="margin:0;font-size:12px;color:#9ca3af;">AffordaWeb Solutions · hello@affordawebsolutions.com · Website Design from $69/month</p>
+    </div>
+  </div>
+</body></html>`
+
+  return sendEmail(report.email, `Your Full SEO Report for ${report.domain} — Score: ${report.seoScore}/100`, html)
+}

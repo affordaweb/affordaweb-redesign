@@ -1,4 +1,4 @@
-import { kv } from "@vercel/kv"
+import { kvGet } from "@/lib/kv-store"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft, Calendar, Globe, AlertCircle } from "lucide-react"
@@ -26,9 +26,7 @@ export async function generateMetadata({
 
 async function getReport(id: string): Promise<SeoReport | null> {
   try {
-    const raw = await kv.get<string>(`seo_report:${id}`)
-    if (!raw) return null
-    return typeof raw === "string" ? JSON.parse(raw) : raw
+    return await kvGet<SeoReport>(`seo_report:${id}`)
   } catch {
     return null
   }
