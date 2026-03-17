@@ -342,10 +342,10 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
           <PastelCard bg="rgba(255,251,235,0.95)" border="rgba(253,230,138,0.6)">
             <CardLabel color="#d97706">07 · Quick Wins</CardLabel>
             <h3 className="text-base font-bold mb-1" style={{ color: '#78350f' }}>
-              Fix these this week — for free
+              Ready to upgrade your website to something amazing?
             </h3>
             <p className="text-xs mb-4" style={{ color: '#92400e' }}>
-              No developer needed. Each takes under 30 minutes.
+              Less talk, let&apos;s build.
             </p>
             <div className="space-y-2.5">
               {full_plan.quick_wins.map((win, i) => (

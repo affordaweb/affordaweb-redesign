@@ -13,6 +13,30 @@ export default function WebsiteMockup({ config, website }: Props) {
 
   return (
     <div>
+      {/* Keyframe animations */}
+      <style>{`
+        @keyframes mockup-float {
+          0%, 100% { transform: translateY(0px); }
+          50%       { transform: translateY(-9px); }
+        }
+        @keyframes mockup-glow {
+          0%, 100% { box-shadow: 0 4px 12px rgba(255,255,255,0.15); }
+          50%       { box-shadow: 0 4px 28px rgba(255,255,255,0.45), 0 0 40px rgba(255,255,255,0.12); }
+        }
+        @keyframes mockup-scale-pulse {
+          0%, 100% { transform: scale(1); }
+          50%       { transform: scale(1.045); }
+        }
+        @keyframes mockup-marquee {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes mockup-ping-dot {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50%       { opacity: 0.6; transform: scale(1.5); }
+        }
+      `}</style>
+
       {/* Section header */}
       <div style={{ marginBottom: 28, textAlign: 'center' }}>
         <span
@@ -113,16 +137,17 @@ export default function WebsiteMockup({ config, website }: Props) {
                   <span key={link}>{link}</span>
                 ))}
               </div>
+              {/* Animated nav CTA pill */}
               <div
                 style={{
                   background: palette.primary,
                   color: '#fff',
                   padding: '10px 22px',
-                  borderRadius: 9,
+                  borderRadius: 999,
                   fontSize: 13,
                   fontWeight: 700,
                   flexShrink: 0,
-                  boxShadow: `0 4px 12px ${palette.primary}55`,
+                  animation: 'mockup-glow 2.4s ease-in-out infinite',
                 }}
               >
                 {hero.cta_primary}
@@ -144,7 +169,7 @@ export default function WebsiteMockup({ config, website }: Props) {
               <div style={{ position: 'absolute', bottom: -60, left: -60, width: 220, height: 220, borderRadius: '50%', background: 'rgba(255,255,255,0.04)', pointerEvents: 'none' }} />
               <div style={{ position: 'absolute', top: '30%', right: '10%', width: 120, height: 120, borderRadius: '50%', background: 'rgba(255,255,255,0.03)', pointerEvents: 'none' }} />
 
-              {/* Badge */}
+              {/* Animated floating badge pill */}
               <div
                 style={{
                   display: 'inline-flex',
@@ -160,6 +185,7 @@ export default function WebsiteMockup({ config, website }: Props) {
                   marginBottom: 28,
                   border: '1px solid rgba(255,255,255,0.22)',
                   letterSpacing: '0.01em',
+                  animation: 'mockup-float 3s ease-in-out infinite',
                 }}
               >
                 {hero.badge}
@@ -193,16 +219,18 @@ export default function WebsiteMockup({ config, website }: Props) {
               </p>
 
               <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+                {/* Animated primary CTA pill */}
                 <div
                   style={{
                     background: '#fff',
                     color: palette.primary,
                     padding: '15px 36px',
-                    borderRadius: 12,
+                    borderRadius: 999,
                     fontSize: 15,
                     fontWeight: 800,
                     boxShadow: '0 8px 28px rgba(0,0,0,0.22)',
                     letterSpacing: '-0.01em',
+                    animation: 'mockup-scale-pulse 2.2s ease-in-out infinite',
                   }}
                 >
                   {hero.cta_primary}
@@ -212,7 +240,7 @@ export default function WebsiteMockup({ config, website }: Props) {
                     background: 'rgba(255,255,255,0.13)',
                     color: '#fff',
                     padding: '15px 36px',
-                    borderRadius: 12,
+                    borderRadius: 999,
                     fontSize: 15,
                     fontWeight: 600,
                     border: '2px solid rgba(255,255,255,0.28)',
@@ -223,24 +251,52 @@ export default function WebsiteMockup({ config, website }: Props) {
               </div>
             </div>
 
-            {/* ── Trust Strip ── */}
+            {/* ── Trust Strip — infinite marquee ── */}
             <div
               style={{
                 background: palette.bg,
-                padding: '20px 48px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: 48,
-                flexWrap: 'wrap',
+                padding: '20px 0',
+                overflow: 'hidden',
                 borderBottom: `1px solid ${palette.primary}1A`,
               }}
             >
-              {trust.map((item, i) => (
-                <div key={i} style={{ fontSize: 13, color: palette.muted, fontWeight: 600, whiteSpace: 'nowrap' }}>
-                  {item}
-                </div>
-              ))}
+              <div
+                style={{
+                  display: 'flex',
+                  gap: 64,
+                  width: 'max-content',
+                  animation: 'mockup-marquee 18s linear infinite',
+                }}
+              >
+                {[...trust, ...trust, ...trust, ...trust].map((item, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      fontSize: 13,
+                      color: palette.muted,
+                      fontWeight: 600,
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: 7,
+                        height: 7,
+                        borderRadius: '50%',
+                        background: palette.primary,
+                        display: 'inline-block',
+                        flexShrink: 0,
+                        animation: `mockup-ping-dot 1.8s ease-in-out infinite`,
+                        animationDelay: `${(i % 4) * 0.45}s`,
+                      }}
+                    />
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* ── Services ── */}
@@ -380,17 +436,19 @@ export default function WebsiteMockup({ config, website }: Props) {
               >
                 {cta.subtext}
               </p>
+              {/* Animated CTA pill button */}
               <div
                 style={{
                   display: 'inline-block',
                   background: '#fff',
                   color: palette.primary,
                   padding: '16px 44px',
-                  borderRadius: 12,
+                  borderRadius: 999,
                   fontSize: 15,
                   fontWeight: 800,
                   boxShadow: '0 8px 28px rgba(0,0,0,0.22)',
                   letterSpacing: '-0.01em',
+                  animation: 'mockup-scale-pulse 2s ease-in-out infinite',
                 }}
               >
                 {cta.button}
