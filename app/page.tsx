@@ -241,7 +241,7 @@ export default function HomePage() {
                 <Link href="/pricing" className="btn-outline-white">View Pricing</Link>
               </div>
 
-              <div className="flex flex-wrap gap-5 text-sm" style={{ color: 'rgba(255,255,255,0.38)' }}>
+              <div className="flex flex-wrap gap-5 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 {['No contracts', 'Hosting included', 'SSL included', 'Cancel anytime'].map(t => (
                   <span key={t} className="flex items-center gap-1.5">
                     <span style={{ color: '#06B6D4' }}>✓</span>{t}
@@ -279,7 +279,7 @@ export default function HomePage() {
                     className="flex-1 rounded-full px-3 py-1 mx-4"
                     style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
                   >
-                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>yourbusiness.com</span>
+                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.55)' }}>yourbusiness.com</span>
                   </div>
                 </div>
 
@@ -631,7 +631,7 @@ export default function HomePage() {
                   </div>
                   <span
                     className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
-                    style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.4)' }}
+                    style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.65)' }}
                   >
                     {tag}
                   </span>
