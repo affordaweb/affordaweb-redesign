@@ -52,12 +52,11 @@ export default function Footer() {
           <div className="max-w-3xl mx-auto text-center">
             <p className="section-label-white mb-5">Get Started Today</p>
             <h2
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
-              style={{ letterSpacing: '-0.03em', lineHeight: 1.05 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 whitespace-nowrap"
+              style={{ letterSpacing: '-0.03em', lineHeight: 1.1 }}
             >
-              <span className="text-white">Your Professional Website,</span>
-              <br />
-              <span className="gradient-text">Fully Managed from Day One</span>
+              <span className="text-white block">Your Professional Website,</span>
+              <span className="gradient-text block">Fully Managed from Day One</span>
             </h2>
             <p className="text-white/50 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
               One flat monthly price covers everything. No surprises, no agency bills, no contracts.
