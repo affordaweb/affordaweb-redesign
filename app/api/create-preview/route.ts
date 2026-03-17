@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { kvSet, kvGet, kvIncr } from '@/lib/kv-store'
 import { generatePreviewContent, ReportData } from '@/lib/report-content'
+import { sendAdminReportEmail } from '@/lib/email'
 
 export async function POST(req: NextRequest) {
   try {
@@ -25,8 +26,9 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    // Generate unique report ID
+    // Generate unique report ID and admin token
     const report_id = crypto.randomUUID().replace(/-/g, '').slice(0, 16)
+    const admin_token = crypto.randomUUID().replace(/-/g, '')
 
     // Generate preview content
     const preview = generatePreviewContent(website, business_type, goal)
@@ -41,10 +43,14 @@ export async function POST(req: NextRequest) {
       preview,
       payment_status: 'unpaid',
       created_at: new Date().toISOString(),
+      admin_token,
     }
 
     // Store report (TTL: 30 days)
     await kvSet(`report:${report_id}`, report, 60 * 60 * 24 * 30)
+
+    // Notify admin
+    await sendAdminReportEmail(report, admin_token)
 
     return NextResponse.json({ report_id })
   } catch (err) {

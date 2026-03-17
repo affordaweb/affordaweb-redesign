@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { kvGet } from '@/lib/kv-store'
 import { ReportData } from '@/lib/report-content'
-import UnlockSection from './UnlockSection'
 
 export const metadata: Metadata = {
   title: 'Your Website Redesign Report | AffordaWeb Solutions',
@@ -344,32 +343,29 @@ function LockedCard({ reportId }: { reportId: string }) {
             <span className="text-sm font-medium" style={{ color: '#9ca3af' }}>one-time</span>
           </div>
 
-          <a
-            href="https://paypal.me/affordaweb/69"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5"
-            style={{
-              background: 'linear-gradient(135deg, #5636D1 0%, #E2498A 100%)',
-              color: '#fff',
-              boxShadow: '0 8px 24px rgba(86,54,209,0.4)',
-            }}
+          <div
+            className="w-full max-w-xs rounded-2xl px-5 py-4 text-left"
+            style={{ background: 'rgba(255,255,255,0.9)', border: '1.5px solid rgba(86,54,209,0.15)', boxShadow: '0 4px 16px rgba(86,54,209,0.06)' }}
           >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M7.144 19.532l1.049-5.751c.11-.606.691-1.002 1.304-.99l6.799.006c2.877.013 4.949-1.786 5.542-4.682.04-.194.066-.392.066-.392.002 0 .027.13.027.392C21.931 11.1 20.1 13 17.499 13H13.5a.5.5 0 00-.491.408l-1.399 8.592H7.144z"/>
-              <path d="M20.25 8.524C19.566 11.926 17.2 13.5 13.99 13.5H10.5c-.6 0-1.05.45-1.05 1.05l-.6 3.6L7.5 22.5h3.9l.6-3.6h2.7c3.6 0 5.7-1.8 6.3-5.4.3-1.8 0-3.3-.75-4.476z"/>
-            </svg>
-            Pay $69 via PayPal
-          </a>
-          <p className="text-xs mt-3" style={{ color: '#9ca3af' }}>
-            Secure payment · One-time fee · Instant unlock
-          </p>
+            <p className="text-sm font-bold mb-1" style={{ color: '#0F0F1A' }}>How to unlock your report</p>
+            <p className="text-xs mb-3" style={{ color: '#6b7280', lineHeight: 1.6 }}>
+              Send <strong>$69</strong> to{' '}
+              <a href="mailto:hello@affordawebsolutions.com" style={{ color: '#5636D1', fontWeight: 600 }}>
+                hello@affordawebsolutions.com
+              </a>{' '}
+              via PayPal (Friends &amp; Family) or bank transfer. Include your report ID in the notes:
+            </p>
+            <p
+              className="text-xs font-mono px-3 py-2 rounded-lg mb-3 select-all"
+              style={{ background: 'rgba(86,54,209,0.07)', color: '#5636D1', wordBreak: 'break-all' }}
+            >
+              {reportId}
+            </p>
+            <p className="text-xs" style={{ color: '#9ca3af', lineHeight: 1.5 }}>
+              Once we confirm your payment, your full report will be emailed to you automatically. Usually within a few hours.
+            </p>
+          </div>
         </div>
-      </div>
-
-      {/* Unlock form */}
-      <div className="px-6 pb-6" style={{ background: 'rgba(245,243,255,0.95)' }}>
-        <UnlockSection reportId={reportId} />
       </div>
     </div>
   )

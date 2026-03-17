@@ -8,6 +8,7 @@ export interface ReportData {
   preview: PreviewContent
   payment_status: 'unpaid' | 'paid'
   created_at: string
+  admin_token?: string
 }
 
 export interface PreviewContent {
