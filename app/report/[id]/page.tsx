@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { kvGet } from '@/lib/kv-store'
 import { ReportData } from '@/lib/report-content'
+import WebsiteMockup from './WebsiteMockup'
 
 export const metadata: Metadata = {
   title: 'Your Website Redesign Report | AffordaWeb Solutions',
@@ -373,7 +374,7 @@ function LockedCard({ reportId }: { reportId: string }) {
 
 /* ── Unlocked Content ────────────────────────────────────── */
 function UnlockedContent({ report }: { report: ReportData }) {
-  const { preview, business_type, website } = report
+  const { preview, website, mockup } = report
   const { full_plan } = preview
 
   return (
@@ -391,6 +392,16 @@ function UnlockedContent({ report }: { report: ReportData }) {
           <p className="text-xs text-emerald-600">Complete redesign plan for {website}</p>
         </div>
       </div>
+
+      {/* Concept Design Mockup */}
+      {mockup && (
+        <div
+          className="rounded-3xl p-5 sm:p-7"
+          style={{ background: 'rgba(248,247,255,0.95)', border: '1.5px solid rgba(86,54,209,0.12)' }}
+        >
+          <WebsiteMockup config={mockup} website={website} />
+        </div>
+      )}
 
       {/* Card 4 — Full Homepage Wireframe */}
       <PastelCard bg="rgba(240,253,244,0.95)" border="rgba(134,239,172,0.5)">

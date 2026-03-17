@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { kvSet, kvGet, kvIncr } from '@/lib/kv-store'
-import { generatePreviewContent, ReportData } from '@/lib/report-content'
+import { generatePreviewContent, generateMockupConfig, ReportData } from '@/lib/report-content'
 import { sendAdminReportEmail } from '@/lib/email'
 
 export async function POST(req: NextRequest) {
@@ -30,8 +30,9 @@ export async function POST(req: NextRequest) {
     const report_id = crypto.randomUUID().replace(/-/g, '').slice(0, 16)
     const admin_token = crypto.randomUUID().replace(/-/g, '')
 
-    // Generate preview content
+    // Generate preview and mockup content
     const preview = generatePreviewContent(website, business_type, goal)
+    const mockup  = generateMockupConfig(business_type, goal)
 
     const report: ReportData = {
       report_id,
@@ -41,6 +42,7 @@ export async function POST(req: NextRequest) {
       business_type,
       goal,
       preview,
+      mockup,
       payment_status: 'unpaid',
       created_at: new Date().toISOString(),
       admin_token,
