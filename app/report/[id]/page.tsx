@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { kvGet } from '@/lib/kv-store'
 import { ReportData } from '@/lib/report-content'
 import WebsiteMockup from './WebsiteMockup'
+import GetStartedForm from './GetStartedForm'
 
 export const metadata: Metadata = {
   title: 'Your Website Redesign Report | AffordaWeb Solutions',
@@ -94,8 +95,8 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
 
   if (!report) notFound()
 
-  const { preview, payment_status, website, name, business_type, goal } = report
-  const isPaid = payment_status === 'paid'
+  const { preview, website, name, business_type, goal, mockup, email } = report
+  const { full_plan } = preview
 
   return (
     <div
@@ -124,13 +125,9 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
             </div>
             <span
               className="text-xs font-bold px-3 py-1.5 rounded-full shrink-0"
-              style={
-                isPaid
-                  ? { background: 'rgba(16,185,129,0.1)', color: '#059669', border: '1px solid rgba(16,185,129,0.25)' }
-                  : { background: 'rgba(245,158,11,0.1)', color: '#d97706', border: '1px solid rgba(245,158,11,0.25)' }
-              }
+              style={{ background: 'rgba(86,54,209,0.1)', color: '#5636D1', border: '1px solid rgba(86,54,209,0.2)' }}
             >
-              {isPaid ? '✅ Unlocked' : '🔒 Preview Mode'}
+              Free Report
             </span>
           </div>
         </div>
@@ -237,12 +234,131 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
             </p>
           </PastelCard>
 
-          {/* LOCKED / UNLOCKED SECTION */}
-          {isPaid ? (
-            <UnlockedContent report={report} />
-          ) : (
-            <LockedCard reportId={id} />
+          {/* Concept Design Mockup */}
+          {mockup && (
+            <div
+              className="rounded-3xl p-5 sm:p-7"
+              style={{ background: 'rgba(248,247,255,0.95)', border: '1.5px solid rgba(86,54,209,0.12)' }}
+            >
+              <WebsiteMockup config={mockup} website={website} />
+            </div>
           )}
+
+          {/* Card 4 — Full Homepage Wireframe */}
+          <PastelCard bg="rgba(240,253,244,0.95)" border="rgba(134,239,172,0.5)">
+            <CardLabel color="#16a34a">04 · Full Homepage Wireframe</CardLabel>
+            <h3 className="text-base font-bold mb-4" style={{ color: '#14532d' }}>
+              Section-by-section breakdown
+            </h3>
+            <div className="space-y-4">
+              {full_plan.wireframe_sections.map((section, i) => (
+                <div
+                  key={section.name}
+                  className="rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5"
+                  style={{ background: 'rgba(22,163,74,0.06)', border: '1px solid rgba(22,163,74,0.15)' }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span
+                      className="w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0"
+                      style={{ background: 'rgba(22,163,74,0.15)', color: '#16a34a' }}
+                    >
+                      {i + 1}
+                    </span>
+                    <p className="text-sm font-bold" style={{ color: '#14532d' }}>{section.name}</p>
+                  </div>
+                  <p className="text-xs mb-2.5 pl-7" style={{ color: '#166534' }}>{section.purpose}</p>
+                  <ul className="pl-7 space-y-1">
+                    {section.elements.map((el) => (
+                      <li key={el} className="text-xs flex items-start gap-1.5" style={{ color: '#374151' }}>
+                        <span className="mt-0.5 shrink-0" style={{ color: '#16a34a' }}>→</span>
+                        {el}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </PastelCard>
+
+          {/* Card 5 — Copy Suggestions */}
+          <PastelCard bg="rgba(255,241,242,0.95)" border="rgba(252,165,165,0.5)">
+            <CardLabel color="#e11d48">05 · Copywriting Suggestions</CardLabel>
+            <h3 className="text-base font-bold mb-4" style={{ color: '#881337' }}>
+              Words that actually convert
+            </h3>
+            <div className="space-y-4">
+              {full_plan.copy_suggestions.map((s) => (
+                <div
+                  key={s.section}
+                  className="rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5"
+                  style={{ background: 'rgba(225,29,72,0.04)', border: '1px solid rgba(225,29,72,0.12)' }}
+                >
+                  <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#e11d48' }}>
+                    {s.section}
+                  </p>
+                  <div className="flex gap-3 mb-2">
+                    <span className="text-xs shrink-0 font-bold mt-0.5" style={{ color: '#dc2626' }}>✗</span>
+                    <p className="text-xs leading-relaxed" style={{ color: '#6b7280' }}>{s.current_problem}</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-xs shrink-0 font-bold mt-0.5" style={{ color: '#16a34a' }}>✓</span>
+                    <p className="text-xs leading-relaxed font-medium" style={{ color: '#374151' }}>{s.suggested_approach}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </PastelCard>
+
+          {/* Card 6 — Conversion Strategy */}
+          <PastelCard bg="rgba(240,249,255,0.95)" border="rgba(125,211,252,0.5)">
+            <CardLabel color="#0284c7">06 · Conversion Strategy</CardLabel>
+            <h3 className="text-base font-bold mb-4" style={{ color: '#0c4a6e' }}>
+              How to turn visitors into customers
+            </h3>
+            <div className="space-y-3">
+              {full_plan.conversion_strategy.map((tip, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-3 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5"
+                  style={{ background: 'rgba(2,132,199,0.05)', border: '1px solid rgba(2,132,199,0.12)' }}
+                >
+                  <span
+                    className="shrink-0 w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold"
+                    style={{ background: 'rgba(2,132,199,0.12)', color: '#0284c7' }}
+                  >
+                    {i + 1}
+                  </span>
+                  <p className="text-xs leading-relaxed" style={{ color: '#374151' }}>{tip}</p>
+                </div>
+              ))}
+            </div>
+          </PastelCard>
+
+          {/* Card 7 — Quick Wins */}
+          <PastelCard bg="rgba(255,251,235,0.95)" border="rgba(253,230,138,0.6)">
+            <CardLabel color="#d97706">07 · Quick Wins</CardLabel>
+            <h3 className="text-base font-bold mb-1" style={{ color: '#78350f' }}>
+              Fix these this week — for free
+            </h3>
+            <p className="text-xs mb-4" style={{ color: '#92400e' }}>
+              No developer needed. Each takes under 30 minutes.
+            </p>
+            <div className="space-y-2.5">
+              {full_plan.quick_wins.map((win, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-3 rounded-xl p-3 transition-all duration-200 hover:-translate-y-0.5"
+                  style={{ background: 'rgba(217,119,6,0.05)', border: '1px solid rgba(217,119,6,0.15)' }}
+                >
+                  <span className="shrink-0 text-sm">⚡</span>
+                  <p className="text-xs leading-relaxed" style={{ color: '#374151' }}>{win}</p>
+                </div>
+              ))}
+            </div>
+          </PastelCard>
+
+          {/* Get Started Form */}
+          <GetStartedForm reportId={id} name={name} email={email} website={website} />
 
         </div>
 
@@ -261,283 +377,6 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
         </div>
 
       </div>
-    </div>
-  )
-}
-
-/* ── Locked Card ──────────────────────────────────────────── */
-function LockedCard({ reportId }: { reportId: string }) {
-  return (
-    <div
-      className="rounded-2xl overflow-hidden"
-      style={{
-        border: '1.5px solid rgba(86,54,209,0.25)',
-        boxShadow: '0 8px 40px rgba(86,54,209,0.12)',
-      }}
-    >
-      {/* Blurred preview */}
-      <div className="relative" style={{ background: 'rgba(245,243,255,0.95)' }}>
-        <div className="p-6 blur-[3px] pointer-events-none select-none opacity-60">
-          <div className="mb-4">
-            <div className="h-4 rounded-full w-32 mb-2" style={{ background: 'rgba(86,54,209,0.15)' }} />
-            <div className="h-6 rounded-full w-64 mb-1" style={{ background: 'rgba(86,54,209,0.1)' }} />
-            <div className="h-3 rounded-full w-48" style={{ background: 'rgba(86,54,209,0.08)' }} />
-          </div>
-          {[...Array(5)].map((_, i) => (
-            <div key={i} className="flex items-center gap-3 mb-3 rounded-xl p-3" style={{ background: 'rgba(86,54,209,0.06)' }}>
-              <div className="w-7 h-7 rounded-lg shrink-0" style={{ background: 'rgba(86,54,209,0.12)' }} />
-              <div className="flex-1">
-                <div className="h-3 rounded-full mb-1.5" style={{ background: 'rgba(86,54,209,0.12)', width: `${55 + i * 8}%` }} />
-                <div className="h-2.5 rounded-full" style={{ background: 'rgba(86,54,209,0.07)', width: `${40 + i * 5}%` }} />
-              </div>
-            </div>
-          ))}
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="mb-3 rounded-xl p-4" style={{ background: 'rgba(226,73,138,0.06)' }}>
-              <div className="h-3 rounded-full mb-2" style={{ background: 'rgba(226,73,138,0.15)', width: '45%' }} />
-              <div className="h-2.5 rounded-full mb-1" style={{ background: 'rgba(226,73,138,0.08)', width: '90%' }} />
-              <div className="h-2.5 rounded-full" style={{ background: 'rgba(226,73,138,0.08)', width: '75%' }} />
-            </div>
-          ))}
-        </div>
-
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, rgba(245,243,255,0) 0%, rgba(245,243,255,0.5) 30%, rgba(245,243,255,0.98) 65%, rgba(245,243,255,1) 100%)' }}
-        />
-
-        {/* Lock UI overlay */}
-        <div className="absolute inset-x-0 bottom-0 pb-8 px-6 flex flex-col items-center text-center">
-          <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
-            style={{ background: 'linear-gradient(135deg, #5636D1, #E2498A)', boxShadow: '0 8px 24px rgba(86,54,209,0.35)' }}
-          >
-            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-extrabold mb-1" style={{ color: '#0F0F1A', letterSpacing: '-0.02em' }}>
-            Unlock Full Website Redesign Plan
-          </h3>
-          <p className="text-sm mb-5 max-w-xs" style={{ color: '#6b7280' }}>
-            Get your complete homepage layout, conversion strategy, copywriting suggestions, and section-by-section breakdown.
-          </p>
-
-          {/* What's inside */}
-          <div className="grid grid-cols-2 gap-2 w-full max-w-xs mb-6 text-left">
-            {[
-              '✦ Complete homepage wireframe',
-              '✦ Copywriting suggestions',
-              '✦ Conversion strategy',
-              '✦ Section-by-section breakdown',
-              '✦ Quick wins list',
-              '✦ Priority fix roadmap',
-            ].map((item) => (
-              <p key={item} className="text-xs font-medium" style={{ color: '#374151' }}>{item}</p>
-            ))}
-          </div>
-
-          {/* Price */}
-          <div className="flex items-baseline gap-1.5 mb-5">
-            <span className="text-4xl font-extrabold" style={{ color: '#0F0F1A', letterSpacing: '-0.03em' }}>$69</span>
-            <span className="text-sm font-medium" style={{ color: '#9ca3af' }}>one-time</span>
-          </div>
-
-          <div
-            className="w-full max-w-xs rounded-2xl px-5 py-4 text-left"
-            style={{ background: 'rgba(255,255,255,0.9)', border: '1.5px solid rgba(86,54,209,0.15)', boxShadow: '0 4px 16px rgba(86,54,209,0.06)' }}
-          >
-            <p className="text-sm font-bold mb-1" style={{ color: '#0F0F1A' }}>How to unlock your report</p>
-            <p className="text-xs mb-3" style={{ color: '#6b7280', lineHeight: 1.6 }}>
-              Send <strong>$69</strong> to{' '}
-              <a href="mailto:hello@affordawebsolutions.com" style={{ color: '#5636D1', fontWeight: 600 }}>
-                hello@affordawebsolutions.com
-              </a>{' '}
-              via PayPal (Friends &amp; Family) or bank transfer. Include your report ID in the notes:
-            </p>
-            <p
-              className="text-xs font-mono px-3 py-2 rounded-lg mb-3 select-all"
-              style={{ background: 'rgba(86,54,209,0.07)', color: '#5636D1', wordBreak: 'break-all' }}
-            >
-              {reportId}
-            </p>
-            <p className="text-xs" style={{ color: '#9ca3af', lineHeight: 1.5 }}>
-              Once we confirm your payment, your full report will be emailed to you automatically. Usually within a few hours.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-/* ── Unlocked Content ────────────────────────────────────── */
-function UnlockedContent({ report }: { report: ReportData }) {
-  const { preview, website, mockup } = report
-  const { full_plan } = preview
-
-  return (
-    <div className="space-y-5">
-
-      {/* Unlocked header */}
-      <div
-        className="rounded-2xl p-5 flex items-center gap-4"
-        style={{ background: 'rgba(16,185,129,0.08)', border: '1.5px solid rgba(16,185,129,0.2)' }}
-      >
-        <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0"
-          style={{ background: 'rgba(16,185,129,0.12)' }}>🔓</div>
-        <div>
-          <p className="font-bold text-emerald-800 text-sm">Full Report Unlocked</p>
-          <p className="text-xs text-emerald-600">Complete redesign plan for {website}</p>
-        </div>
-      </div>
-
-      {/* Concept Design Mockup */}
-      {mockup && (
-        <div
-          className="rounded-3xl p-5 sm:p-7"
-          style={{ background: 'rgba(248,247,255,0.95)', border: '1.5px solid rgba(86,54,209,0.12)' }}
-        >
-          <WebsiteMockup config={mockup} website={website} />
-        </div>
-      )}
-
-      {/* Card 4 — Full Homepage Wireframe */}
-      <PastelCard bg="rgba(240,253,244,0.95)" border="rgba(134,239,172,0.5)">
-        <CardLabel color="#16a34a">04 · Full Homepage Wireframe</CardLabel>
-        <h3 className="text-base font-bold mb-4" style={{ color: '#14532d' }}>
-          Section-by-section breakdown
-        </h3>
-        <div className="space-y-4">
-          {full_plan.wireframe_sections.map((section, i) => (
-            <div
-              key={section.name}
-              className="rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: 'rgba(22,163,74,0.06)', border: '1px solid rgba(22,163,74,0.15)' }}
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <span
-                  className="w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0"
-                  style={{ background: 'rgba(22,163,74,0.15)', color: '#16a34a' }}
-                >
-                  {i + 1}
-                </span>
-                <p className="text-sm font-bold" style={{ color: '#14532d' }}>{section.name}</p>
-              </div>
-              <p className="text-xs mb-2.5 pl-7" style={{ color: '#166534' }}>{section.purpose}</p>
-              <ul className="pl-7 space-y-1">
-                {section.elements.map((el) => (
-                  <li key={el} className="text-xs flex items-start gap-1.5" style={{ color: '#374151' }}>
-                    <span className="mt-0.5 shrink-0" style={{ color: '#16a34a' }}>→</span>
-                    {el}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </PastelCard>
-
-      {/* Card 5 — Copy Suggestions */}
-      <PastelCard bg="rgba(255,241,242,0.95)" border="rgba(252,165,165,0.5)">
-        <CardLabel color="#e11d48">05 · Copywriting Suggestions</CardLabel>
-        <h3 className="text-base font-bold mb-4" style={{ color: '#881337' }}>
-          Words that actually convert
-        </h3>
-        <div className="space-y-4">
-          {full_plan.copy_suggestions.map((s) => (
-            <div
-              key={s.section}
-              className="rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: 'rgba(225,29,72,0.04)', border: '1px solid rgba(225,29,72,0.12)' }}
-            >
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#e11d48' }}>
-                {s.section}
-              </p>
-              <div className="flex gap-3 mb-2">
-                <span className="text-xs shrink-0 font-bold mt-0.5" style={{ color: '#dc2626' }}>✗</span>
-                <p className="text-xs leading-relaxed" style={{ color: '#6b7280' }}>{s.current_problem}</p>
-              </div>
-              <div className="flex gap-3">
-                <span className="text-xs shrink-0 font-bold mt-0.5" style={{ color: '#16a34a' }}>✓</span>
-                <p className="text-xs leading-relaxed font-medium" style={{ color: '#374151' }}>{s.suggested_approach}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </PastelCard>
-
-      {/* Card 6 — Conversion Strategy */}
-      <PastelCard bg="rgba(240,249,255,0.95)" border="rgba(125,211,252,0.5)">
-        <CardLabel color="#0284c7">06 · Conversion Strategy</CardLabel>
-        <h3 className="text-base font-bold mb-4" style={{ color: '#0c4a6e' }}>
-          How to turn visitors into customers
-        </h3>
-        <div className="space-y-3">
-          {full_plan.conversion_strategy.map((tip, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 rounded-xl p-3.5 transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: 'rgba(2,132,199,0.05)', border: '1px solid rgba(2,132,199,0.12)' }}
-            >
-              <span
-                className="shrink-0 w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold"
-                style={{ background: 'rgba(2,132,199,0.12)', color: '#0284c7' }}
-              >
-                {i + 1}
-              </span>
-              <p className="text-xs leading-relaxed" style={{ color: '#374151' }}>{tip}</p>
-            </div>
-          ))}
-        </div>
-      </PastelCard>
-
-      {/* Card 7 — Quick Wins */}
-      <PastelCard bg="rgba(255,251,235,0.95)" border="rgba(253,230,138,0.6)">
-        <CardLabel color="#d97706">07 · Quick Wins</CardLabel>
-        <h3 className="text-base font-bold mb-1" style={{ color: '#78350f' }}>
-          Fix these this week — for free
-        </h3>
-        <p className="text-xs mb-4" style={{ color: '#92400e' }}>
-          No developer needed. Each takes under 30 minutes.
-        </p>
-        <div className="space-y-2.5">
-          {full_plan.quick_wins.map((win, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 rounded-xl p-3 transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: 'rgba(217,119,6,0.05)', border: '1px solid rgba(217,119,6,0.15)' }}
-            >
-              <span className="shrink-0 text-sm">⚡</span>
-              <p className="text-xs leading-relaxed" style={{ color: '#374151' }}>{win}</p>
-            </div>
-          ))}
-        </div>
-      </PastelCard>
-
-      {/* CTA card */}
-      <div
-        className="rounded-2xl p-7 text-center"
-        style={{
-          background: 'linear-gradient(135deg, #3D22B0, #5636D1 50%, #E2498A)',
-          boxShadow: '0 12px 40px rgba(86,54,209,0.25)',
-        }}
-      >
-        <div className="text-2xl mb-3">🚀</div>
-        <h3 className="text-xl font-extrabold text-white mb-2">Ready to rebuild your website?</h3>
-        <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.7)' }}>
-          AffordaWeb Solutions handles everything — design, hosting, SEO, and maintenance — from $69/mo.
-        </p>
-        <a
-          href="/contact"
-          className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-bold text-sm transition-all duration-300 hover:-translate-y-0.5"
-          style={{ background: '#fff', color: '#5636D1', boxShadow: '0 4px 16px rgba(0,0,0,0.15)' }}
-        >
-          Get Started with AffordaWeb →
-        </a>
-      </div>
-
     </div>
   )
 }

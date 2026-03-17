@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { kvSet, kvGet, kvIncr } from '@/lib/kv-store'
 import { generatePreviewContent, generateMockupConfig, ReportData } from '@/lib/report-content'
-import { sendAdminReportEmail } from '@/lib/email'
+import { sendAdminReportEmail, sendUserConfirmationEmail } from '@/lib/email'
 
 export async function POST(req: NextRequest) {
   try {
@@ -51,8 +51,11 @@ export async function POST(req: NextRequest) {
     // Store report (TTL: 30 days)
     await kvSet(`report:${report_id}`, report, 60 * 60 * 24 * 30)
 
-    // Notify admin
-    await sendAdminReportEmail(report, admin_token)
+    // Notify admin and send user confirmation
+    await Promise.all([
+      sendAdminReportEmail(report, admin_token),
+      sendUserConfirmationEmail(report),
+    ])
 
     return NextResponse.json({ report_id })
   } catch (err) {
