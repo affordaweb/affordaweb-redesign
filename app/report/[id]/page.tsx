@@ -348,14 +348,12 @@ function LockedCard({ reportId }: { reportId: string }) {
             href="https://paypal.me/affordaweb/69"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-sm transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5"
             style={{
               background: 'linear-gradient(135deg, #5636D1 0%, #E2498A 100%)',
               color: '#fff',
               boxShadow: '0 8px 24px rgba(86,54,209,0.4)',
             }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'scale(1.02) translateY(-1px)' }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'none' }}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M7.144 19.532l1.049-5.751c.11-.606.691-1.002 1.304-.99l6.799.006c2.877.013 4.949-1.786 5.542-4.682.04-.194.066-.392.066-.392.002 0 .027.13.027.392C21.931 11.1 20.1 13 17.499 13H13.5a.5.5 0 00-.491.408l-1.399 8.592H7.144z"/>
