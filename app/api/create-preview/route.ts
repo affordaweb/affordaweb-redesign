@@ -12,14 +12,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'All fields are required.' }, { status: 400 })
     }
 
-    // Rate limit: 3 submissions per IP per day
+    // Rate limit: 10 submissions per IP per day
     const ip =
       req.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
       req.headers.get('x-real-ip') ??
       '127.0.0.1'
     const rateLimitKey = `ratelimit:${ip}`
     const count = await kvIncr(rateLimitKey, 86400) // 24hr TTL on first increment
-    if (count > 3) {
+    if (count > 10) {
       return NextResponse.json(
         { error: 'Daily limit reached. Try again tomorrow.' },
         { status: 429 },
