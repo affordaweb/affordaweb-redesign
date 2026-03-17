@@ -12,8 +12,9 @@ interface MemEntry { value: unknown; expires?: number }
 const mem = new Map<string, MemEntry>()
 
 async function upstash<T = unknown>(...args: (string | number)[]): Promise<T | null> {
-  const url   = process.env.UPSTASH_REDIS_REST_URL
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN
+  // Vercel Upstash marketplace uses KV_REST_API_URL / KV_REST_API_TOKEN
+  const url   = process.env.KV_REST_API_URL   ?? process.env.UPSTASH_REDIS_REST_URL
+  const token = process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN
   if (!url || !token) return null
   try {
     const res = await fetch(url, {
