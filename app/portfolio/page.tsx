@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     title: 'Website Design Portfolio | AffordaWeb Solutions',
     description: 'See our work — affordable, professional website designs for small businesses.',
     url: 'https://affordawebsolutions.com/portfolio',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Portfolio' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Website Design Portfolio | AffordaWeb Solutions',
+    description: 'See our work — affordable, professional website designs for small businesses.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -26,6 +33,10 @@ const portfolioItems = [
     tags: ['Website Design', 'SEO', 'Lead Generation'],
     description: 'A virtual assistant services firm needed a homepage that communicated expertise without looking like everyone else\'s VA site. The result is clean, modern, and built to convert.',
     url: 'https://webvaexperts.com',
+    accent: '#5636D1',
+    accentLight: 'rgba(86,54,209,0.10)',
+    accentBorder: 'rgba(86,54,209,0.22)',
+    accentGlow: 'rgba(86,54,209,0.12)',
   },
   {
     id: 2,
@@ -37,6 +48,10 @@ const portfolioItems = [
     tags: ['Web Development', 'Community', 'Mobile-First'],
     description: 'Multi-role community platform built to serve advocacy, resources, and connection. One site, several audiences — all of it navigable.',
     url: 'https://empowerqueerhub.com',
+    accent: '#E2498A',
+    accentLight: 'rgba(226,73,138,0.10)',
+    accentBorder: 'rgba(226,73,138,0.22)',
+    accentGlow: 'rgba(226,73,138,0.10)',
   },
   {
     id: 3,
@@ -48,6 +63,10 @@ const portfolioItems = [
     tags: ['Premium Design', 'SEO', 'Lead Capture'],
     description: 'A wealth advisory firm required a site that signaled trust before anyone read a word. High-value design, purpose-built for a financial audience.',
     url: 'https://argentumprivatewealth.com',
+    accent: '#06B6D4',
+    accentLight: 'rgba(6,182,212,0.10)',
+    accentBorder: 'rgba(6,182,212,0.22)',
+    accentGlow: 'rgba(6,182,212,0.10)',
   },
 ]
 
@@ -66,7 +85,7 @@ export default function PortfolioPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      {/* Hero — Dark navy */}
+      {/* Hero */}
       <section
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#0F0F1A' }}
@@ -86,81 +105,126 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Portfolio grid — White */}
-      <section className="section-pad bg-white" aria-labelledby="portfolio-heading">
-        <div className="container-tight">
-          <div className="sr-only" id="portfolio-heading">Portfolio Projects</div>
+      {/* Portfolio grid */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }} aria-labelledby="portfolio-heading">
+        {/* Top accent */}
+        <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #5636D1 40%, transparent)' }} />
+        {/* Ambient glow */}
+        <div className="absolute pointer-events-none" style={{ width: '700px', height: '700px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,54,209,0.08), transparent 65%)', top: '30%', right: '-250px' }} />
+        <div className="absolute pointer-events-none" style={{ width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(226,73,138,0.06), transparent 65%)', bottom: '10%', left: '-150px' }} />
+
+        <div className="container-tight relative z-10">
+          <h2 className="sr-only" id="portfolio-heading">Portfolio Projects</h2>
 
           {/* Category filter */}
-          <div className="flex flex-wrap gap-2 justify-center mb-12">
+          <div className="flex flex-wrap gap-2 justify-center mb-14">
             {categories.map((cat) => (
               <span
                 key={cat}
-                className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all ${
-                  cat === 'All'
-                    ? 'text-white shadow-glow'
-                    : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300 hover:text-primary-600'
-                }`}
-                style={cat === 'All' ? { background: '#2577C9' } : {}}
+                className="px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all"
+                style={cat === 'All'
+                  ? { background: 'linear-gradient(135deg, #5636D1, #5636D1cc)', color: '#fff', boxShadow: '0 4px 16px rgba(86,54,209,0.35)' }
+                  : { background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.55)', border: '1px solid rgba(255,255,255,0.1)' }
+                }
               >
                 {cat}
               </span>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {portfolioItems.map((item) => (
-              <article key={item.id} className="card overflow-hidden group p-0">
-                {/* Portfolio image */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {portfolioItems.map((item, idx) => (
+              <article
+                key={item.id}
+                className="group relative flex flex-col overflow-hidden rounded-3xl"
+                style={{
+                  background: '#0F0F1A',
+                  border: `1px solid ${item.accentBorder}`,
+                  boxShadow: `0 0 0 1px ${item.accentBorder}, 0 24px 80px rgba(0,0,0,0.20)`,
+                }}
+              >
+                {/* Top accent line */}
+                <div className="absolute inset-x-0 top-0 h-0.5 pointer-events-none rounded-t-3xl" style={{ background: `linear-gradient(90deg, transparent, ${item.accent}, transparent)` }} />
+                {/* Card glow */}
+                <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full pointer-events-none" style={{ background: `radial-gradient(circle, ${item.accent}25, transparent 65%)` }} />
+
+                {/* Image */}
                 <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    loading={idx === 0 ? 'eager' : 'lazy'}
                   />
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(9,24,41,0.45), transparent)' }} />
-                  <div className="absolute top-3 right-3">
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(15,15,26,0.85) 0%, rgba(15,15,26,0.2) 60%, transparent 100%)' }} />
+                  {/* Type badge */}
+                  <div className="absolute top-4 right-4">
                     <span
-                      className="text-white text-xs font-semibold px-3 py-1.5 rounded-full"
-                      style={{ background: 'rgba(9,24,41,0.6)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)' }}
+                      className="text-xs font-bold px-3 py-1.5 rounded-full"
+                      style={{ background: item.accentLight, color: item.accent, border: `1px solid ${item.accentBorder}`, backdropFilter: 'blur(8px)' }}
                     >
                       {item.type}
                     </span>
                   </div>
+                  {/* Index number */}
+                  <div className="absolute bottom-4 left-4">
+                    <span
+                      className="text-4xl font-extrabold select-none"
+                      style={{ color: `${item.accent}30`, letterSpacing: '-0.05em', lineHeight: 1 }}
+                    >
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="p-6">
-                  <p className="text-xs font-semibold text-primary-600 uppercase tracking-widest mb-1">
+                {/* Content */}
+                <div className="relative z-10 p-7 flex flex-col flex-grow">
+                  {/* Category badge */}
+                  <span
+                    className="inline-flex self-start text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4"
+                    style={{ background: item.accentLight, color: item.accent, border: `1px solid ${item.accentBorder}` }}
+                  >
                     {item.category}
-                  </p>
-                  <h3 className="font-bold text-gray-900 text-lg mb-2">{item.title}</h3>
+                  </span>
 
-                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">{item.description}</p>
+                  <h3 className="font-bold text-white text-xl mb-3" style={{ letterSpacing: '-0.01em' }}>
+                    {item.title}
+                  </h3>
+
+                  <p className="text-sm leading-relaxed mb-5 flex-grow" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                    {item.description}
+                  </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {item.tags.map(tag => (
                       <span
                         key={tag}
-                        className="text-xs font-medium text-gray-500 px-2.5 py-1 rounded-full"
-                        style={{ background: '#F7FBFF', border: '1px solid #E2EDF8' }}
+                        className="text-xs font-medium px-2.5 py-1 rounded-full"
+                        style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.08)' }}
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="pt-4 border-t border-gray-100 flex items-center justify-end">
+                  <div className="pt-5" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
                     <a
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-white px-3 py-1.5 rounded-full shrink-0 transition-colors hover:opacity-90"
-                      style={{ background: '#2577C9' }}
+                      className="inline-flex items-center gap-2 text-sm font-bold rounded-full px-5 py-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                      style={{
+                        background: `linear-gradient(135deg, ${item.accent}, ${item.accent}cc)`,
+                        color: '#fff',
+                        boxShadow: `0 4px 16px ${item.accentGlow}`,
+                      }}
                     >
-                      Live Site →
+                      View Live Site
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
                     </a>
                   </div>
                 </div>
@@ -168,9 +232,13 @@ export default function PortfolioPage() {
             ))}
           </div>
 
-          <div className="text-center mt-14">
-            <p className="text-gray-400 text-sm mb-6">Want results like these for your business?</p>
-            <Link href="/contact" className="btn-primary">
+          <div className="text-center mt-16">
+            <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.4)' }}>Want results like these for your business?</p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 font-bold rounded-full px-8 py-4 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg text-white"
+              style={{ background: 'linear-gradient(135deg, #5636D1, #5636D1cc)', boxShadow: '0 4px 20px rgba(86,54,209,0.35)' }}
+            >
               Start Your Project
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -180,7 +248,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* CTA — Dark navy */}
+      {/* CTA */}
       <section
         className="section-pad relative overflow-hidden"
         style={{ background: '#0F0F1A' }}

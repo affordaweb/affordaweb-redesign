@@ -98,7 +98,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <meta name="google-site-verification" content="DG-GODzNLnGKfj_js2yulxg6DkVsiHzD0ptOpg8fpsI" />
-        <Script id="gtm" strategy="beforeInteractive">
+        <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

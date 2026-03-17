@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     title: 'Website Design Pricing | Plans Starting at $69/mo',
     description: 'Hosting, SSL, and maintenance included. No setup fees. Cancel anytime.',
     url: 'https://affordawebsolutions.com/pricing',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Pricing Plans' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Website Design Pricing | Plans Starting at $69/mo',
+    description: 'Hosting, SSL, and maintenance included. No setup fees. Cancel anytime.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -174,6 +181,17 @@ const breadcrumbSchema = {
   ],
 }
 
+const faqAccentColors = [
+  { accent: '#5636D1', light: 'rgba(86,54,209,0.08)',  border: 'rgba(86,54,209,0.18)',  glow: 'rgba(86,54,209,0.10)'  },
+  { accent: '#E2498A', light: 'rgba(226,73,138,0.08)', border: 'rgba(226,73,138,0.18)', glow: 'rgba(226,73,138,0.08)' },
+  { accent: '#06B6D4', light: 'rgba(6,182,212,0.08)',  border: 'rgba(6,182,212,0.18)',  glow: 'rgba(6,182,212,0.08)'  },
+  { accent: '#F59E0B', light: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.18)', glow: 'rgba(245,158,11,0.08)' },
+  { accent: '#10B981', light: 'rgba(16,185,129,0.08)', border: 'rgba(16,185,129,0.18)', glow: 'rgba(16,185,129,0.08)' },
+  { accent: '#5636D1', light: 'rgba(86,54,209,0.08)',  border: 'rgba(86,54,209,0.18)',  glow: 'rgba(86,54,209,0.10)'  },
+  { accent: '#E2498A', light: 'rgba(226,73,138,0.08)', border: 'rgba(226,73,138,0.18)', glow: 'rgba(226,73,138,0.08)' },
+  { accent: '#06B6D4', light: 'rgba(6,182,212,0.08)',  border: 'rgba(6,182,212,0.18)',  glow: 'rgba(6,182,212,0.08)'  },
+]
+
 export default function PricingPage() {
   return (
     <>
@@ -181,7 +199,7 @@ export default function PricingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* Hero — Dark navy */}
+      {/* Hero */}
       <section
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#0F0F1A' }}
@@ -222,10 +240,10 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing cards — White */}
+      {/* Pricing cards */}
       <section className="section-pad bg-white" aria-labelledby="plans-heading">
         <div className="container-tight">
-          <div className="sr-only" id="plans-heading">Pricing Plans</div>
+          <h2 className="sr-only" id="plans-heading">Pricing Plans</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {plans.map((plan) => (
               <div
@@ -251,7 +269,7 @@ export default function PricingPage() {
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <span className="text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-md inline-block" style={{ background: '#fff', color: '#2577C9' }}>
-                      ✦ Most Popular
+                      Most Popular
                     </span>
                   </div>
                 )}
@@ -312,31 +330,65 @@ export default function PricingPage() {
 
           {/* Trust line */}
           <div className="flex flex-wrap justify-center gap-6 mt-12 text-sm text-gray-400">
-            {['✓ No setup fees', '✓ Cancel anytime', '✓ Month-to-month', '✓ Respond within 24 hrs'].map(t => (
-              <span key={t}>{t}</span>
+            {['No setup fees', 'Cancel anytime', 'Month-to-month', 'Respond within 24 hrs'].map(t => (
+              <span key={t} className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+                {t}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Feature comparison table — Light */}
-      <section className="section-pad" style={{ background: '#F7FBFF' }} aria-labelledby="compare-heading">
-        <div className="container-tight max-w-4xl">
+      {/* Feature comparison table */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }} aria-labelledby="compare-heading">
+        {/* Top accent line */}
+        <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #5636D1 40%, transparent)' }} />
+        {/* Ambient glow */}
+        <div className="absolute pointer-events-none" style={{ width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,54,209,0.12), transparent 65%)', top: '50%', left: '-200px', transform: 'translateY(-50%)' }} />
+        {/* Large decorative number */}
+        <div
+          className="absolute top-1/2 -translate-y-1/2 font-extrabold select-none pointer-events-none hidden lg:block"
+          style={{ fontSize: '260px', lineHeight: 1, color: 'rgba(86,54,209,0.06)', right: '-20px', letterSpacing: '-0.05em' }}
+        >
+          01
+        </div>
+
+        <div className="container-tight max-w-4xl relative z-10">
           <div className="text-center mb-12">
-            <p className="section-label">Compare Plans</p>
-            <h2 id="compare-heading" className="section-title">Full Feature Comparison</h2>
-            <div className="divider-glow" />
+            <span
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5"
+              style={{ background: 'rgba(86,54,209,0.12)', color: '#5636D1', border: '1px solid rgba(86,54,209,0.25)' }}
+            >
+              Compare Plans
+            </span>
+            <h2 id="compare-heading" className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+              Full Feature Comparison
+            </h2>
+            <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              See exactly what is included in every plan before you decide.
+            </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm bg-white rounded-2xl overflow-hidden" style={{ boxShadow: '0 2px 20px rgba(0,0,0,0.06)' }}>
+          <div className="overflow-x-auto rounded-3xl" style={{ border: '1px solid rgba(86,54,209,0.25)', boxShadow: '0 0 0 1px rgba(86,54,209,0.15), 0 24px 80px rgba(0,0,0,0.25)' }}>
+            <table className="w-full text-sm" style={{ background: '#0F0F1A' }}>
               <thead>
-                <tr style={{ background: '#0F0F1A' }}>
-                  <th className="text-left py-4 px-6 font-semibold text-white/70 w-1/2">Feature</th>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+                  <th className="text-left py-5 px-6 font-semibold w-1/2" style={{ color: 'rgba(255,255,255,0.45)' }}>Feature</th>
                   {plans.map(p => (
-                    <th key={p.id} className="text-center py-4 px-3 font-bold text-white">
-                      {p.name}
-                      <div className={`text-sm font-normal mt-0.5 ${p.popular ? 'text-purple-300' : 'text-white/40'}`}>
+                    <th key={p.id} className="text-center py-5 px-3 font-bold text-white">
+                      <span
+                        className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-1"
+                        style={p.popular
+                          ? { background: 'rgba(37,119,201,0.2)', color: '#4298DC', border: '1px solid rgba(37,119,201,0.3)' }
+                          : { color: 'rgba(255,255,255,0.55)' }
+                        }
+                      >
+                        {p.name}
+                      </span>
+                      <div className="text-xs font-normal mt-0.5" style={{ color: p.popular ? '#4298DC' : 'rgba(255,255,255,0.35)' }}>
                         ${p.price}/mo
                       </div>
                     </th>
@@ -347,15 +399,29 @@ export default function PricingPage() {
                 {plans[2].features.map(({ text }, rowIdx) => (
                   <tr
                     key={text}
-                    className="border-b border-gray-100 hover:bg-primary-50/30 transition-colors"
-                    style={rowIdx % 2 === 0 ? {} : { background: '#FAFBFF' }}
+                    style={{
+                      borderBottom: rowIdx < plans[2].features.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none',
+                      background: rowIdx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.015)',
+                    }}
                   >
-                    <td className="py-3 px-6 text-gray-600">{text}</td>
+                    <td className="py-3.5 px-6 text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>{text}</td>
                     {plans.map(plan => {
                       const f = plan.features.find(ft => ft.text === text)
                       return (
-                        <td key={plan.id} className="text-center py-3 px-3">
-                          <Check dim={!f?.included} />
+                        <td key={plan.id} className="text-center py-3.5 px-3">
+                          {f?.included ? (
+                            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full mx-auto" style={{ background: 'rgba(16,185,129,0.15)' }}>
+                              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: '#10B981' }}>
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                          ) : (
+                            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full mx-auto" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: 'rgba(255,255,255,0.2)' }}>
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </span>
+                          )}
                         </td>
                       )
                     })}
@@ -367,40 +433,91 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* FAQ — White */}
-      <section className="section-pad bg-white" id="pricing-faq" aria-labelledby="pfaq-heading">
-        <div className="container-tight max-w-3xl">
+      {/* FAQ */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#FAFBFF' }} id="pricing-faq" aria-labelledby="pfaq-heading">
+        {/* Top accent line */}
+        <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #E2498A 40%, transparent)' }} />
+        {/* Ambient glow */}
+        <div className="absolute pointer-events-none" style={{ width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(226,73,138,0.06), transparent 65%)', top: '50%', right: '-200px', transform: 'translateY(-50%)' }} />
+        {/* Large decorative number */}
+        <div
+          className="absolute top-1/2 -translate-y-1/2 font-extrabold select-none pointer-events-none hidden lg:block"
+          style={{ fontSize: '260px', lineHeight: 1, color: 'rgba(226,73,138,0.04)', left: '-20px', letterSpacing: '-0.05em' }}
+        >
+          02
+        </div>
+
+        <div className="container-tight max-w-3xl relative z-10">
           <div className="text-center mb-12">
-            <p className="section-label">Questions</p>
-            <h2 id="pfaq-heading" className="section-title">Pricing FAQ</h2>
-            <div className="divider-glow" />
+            <span
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5"
+              style={{ background: 'rgba(226,73,138,0.08)', color: '#E2498A', border: '1px solid rgba(226,73,138,0.2)' }}
+            >
+              Questions
+            </span>
+            <h2 id="pfaq-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
+              Pricing FAQ
+            </h2>
+            <p className="text-base max-w-xl mx-auto text-gray-500">
+              Everything you need to know before picking a plan.
+            </p>
           </div>
+
           <div className="space-y-3">
-            {faqs.map(({ q, a }) => (
-              <details
-                key={q}
-                className="group card border border-gray-100 p-0 overflow-hidden hover:border-primary-200 transition-colors"
-              >
-                <summary className="flex items-center justify-between gap-4 cursor-pointer select-none p-6 text-gray-900 font-semibold text-base list-none [&::-webkit-details-marker]:hidden">
-                  <span>{q}</span>
-                  <svg
-                    className="w-5 h-5 text-primary-500 shrink-0 transition-transform duration-300 group-open:rotate-180"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-6">
-                  <div className="w-full h-px bg-gray-100 mb-4" />
-                  <p className="text-gray-500 leading-relaxed text-sm">{a}</p>
-                </div>
-              </details>
-            ))}
+            {faqs.map(({ q, a }, idx) => {
+              const c = faqAccentColors[idx % faqAccentColors.length]
+              return (
+                <details
+                  key={q}
+                  className="group overflow-hidden rounded-2xl"
+                  style={{ background: '#0F0F1A', border: `1px solid ${c.border}` }}
+                >
+                  {/* Colored top accent line on each card */}
+                  <div className="absolute inset-x-0 top-0 h-px pointer-events-none rounded-t-2xl" style={{ background: `linear-gradient(90deg, transparent, ${c.accent} 50%, transparent)` }} />
+                  <summary className="relative flex items-center justify-between gap-4 cursor-pointer select-none p-6 font-semibold text-base list-none [&::-webkit-details-marker]:hidden" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                    <div className="flex items-center gap-3">
+                      <span
+                        className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
+                        style={{ background: c.light, color: c.accent, border: `1px solid ${c.border}` }}
+                      >
+                        {idx + 1}
+                      </span>
+                      <span>{q}</span>
+                    </div>
+                    <svg
+                      className="w-5 h-5 shrink-0 transition-transform duration-300 group-open:rotate-180"
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                      style={{ color: c.accent }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-6">
+                    <div className="w-full h-px mb-4" style={{ background: 'rgba(255,255,255,0.07)' }} />
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{a}</p>
+                  </div>
+                </details>
+              )
+            })}
+          </div>
+
+          <div className="mt-10 text-center">
+            <p className="text-sm mb-5" style={{ color: 'rgba(0,0,0,0.45)' }}>Still have questions?</p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 font-bold rounded-full px-7 py-3.5 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg text-white"
+              style={{ background: 'linear-gradient(135deg, #E2498A, #E2498Acc)', boxShadow: '0 4px 20px rgba(226,73,138,0.25)' }}
+            >
+              Ask Us Anything
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA — Dark navy */}
+      {/* CTA */}
       <section
         className="section-pad relative overflow-hidden"
         style={{ background: '#0F0F1A' }}

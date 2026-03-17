@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     title: 'Web Design & SEO Services | AffordaWeb Solutions',
     description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
     url: 'https://affordawebsolutions.com/services',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Web Design Services' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Web Design & SEO Services | AffordaWeb Solutions',
+    description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -21,6 +28,14 @@ function IconCheck() {
     </svg>
   )
 }
+
+const serviceColors = [
+  { accent: '#5636D1', light: 'rgba(86,54,209,0.08)', border: 'rgba(86,54,209,0.2)',  glow: 'rgba(86,54,209,0.12)'  },
+  { accent: '#E2498A', light: 'rgba(226,73,138,0.08)', border: 'rgba(226,73,138,0.2)', glow: 'rgba(226,73,138,0.10)' },
+  { accent: '#06B6D4', light: 'rgba(6,182,212,0.08)',  border: 'rgba(6,182,212,0.2)',  glow: 'rgba(6,182,212,0.10)'  },
+  { accent: '#F59E0B', light: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.2)', glow: 'rgba(245,158,11,0.10)' },
+  { accent: '#10B981', light: 'rgba(16,185,129,0.08)', border: 'rgba(16,185,129,0.2)', glow: 'rgba(16,185,129,0.10)' },
+]
 
 const services = [
   {
@@ -221,62 +236,101 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services detail — alternating white / light */}
-      {services.map((service, i) => (
-        <section
-          key={service.id}
-          id={service.id}
-          className="section-pad"
-          style={{ background: i % 2 === 0 ? '#ffffff' : '#F7FBFF' }}
-          aria-labelledby={`${service.id}-heading`}
-        >
-          <div className="container-tight">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${i % 2 !== 0 ? 'lg:grid-flow-dense' : ''}`}>
+      {/* Services detail */}
+      {services.map((service, i) => {
+        const c = serviceColors[i]
+        const flip = i % 2 !== 0
+        return (
+          <section
+            key={service.id}
+            id={service.id}
+            className="section-pad relative overflow-hidden"
+            style={{ background: i % 2 === 0 ? '#ffffff' : '#FAFBFF' }}
+            aria-labelledby={`${service.id}-heading`}
+          >
+            {/* Top accent line */}
+            <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: `linear-gradient(90deg, transparent, ${c.accent} 40%, transparent)` }} />
+            {/* Ambient glow */}
+            <div className="absolute pointer-events-none" style={{ width: '500px', height: '500px', borderRadius: '50%', background: `radial-gradient(circle, ${c.glow}, transparent 65%)`, top: '50%', [flip ? 'right' : 'left']: '-200px', transform: 'translateY(-50%)' }} />
+            {/* Large decorative number */}
+            <div
+              className="absolute top-1/2 -translate-y-1/2 font-extrabold select-none pointer-events-none hidden lg:block"
+              style={{ fontSize: '260px', lineHeight: 1, color: c.light, [flip ? 'right' : 'left']: '-20px', letterSpacing: '-0.05em' }}
+            >
+              {String(i + 1).padStart(2, '0')}
+            </div>
 
-              {/* Content */}
-              <div className={i % 2 !== 0 ? 'lg:col-start-2' : ''}>
-                <span className="badge bg-primary-50 text-primary-600 mb-4 text-xs">
-                  {service.tag}
-                </span>
-                <h2
-                  id={`${service.id}-heading`}
-                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-5"
-                  style={{ letterSpacing: '-0.01em' }}
-                >
-                  {service.headline}
-                </h2>
-                {service.description.split('\n\n').map((para, j) => (
-                  <p key={j} className="text-gray-500 leading-relaxed mb-4">{para.trim()}</p>
-                ))}
-                <Link href="/contact" className="btn-primary mt-4 inline-flex">
-                  Get Started
-                </Link>
-              </div>
+            <div className="container-tight relative z-10">
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center ${flip ? 'lg:grid-flow-dense' : ''}`}>
 
-              {/* Features card */}
-              <div className={`card ${i % 2 !== 0 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                <div className="icon-wrap mb-6">
-                  {service.icon}
-                </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-5">{service.title} — What&apos;s Included</h3>
-                <ul className="space-y-3">
-                  {service.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
-                      <IconCheck />
-                      <span>{f}</span>
-                    </li>
+                {/* Content */}
+                <div className={flip ? 'lg:col-start-2' : ''}>
+                  <span
+                    className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5"
+                    style={{ background: c.light, color: c.accent, border: `1px solid ${c.border}` }}
+                  >
+                    {service.tag}
+                  </span>
+                  <h2
+                    id={`${service.id}-heading`}
+                    className="text-3xl sm:text-4xl font-bold text-gray-900 mb-5"
+                    style={{ letterSpacing: '-0.02em', lineHeight: 1.15 }}
+                  >
+                    {service.headline}
+                  </h2>
+                  {service.description.split('\n\n').map((para, j) => (
+                    <p key={j} className="text-gray-500 leading-relaxed mb-4 text-[15px]">{para.trim()}</p>
                   ))}
-                </ul>
-                <div className="mt-6 pt-6 border-t border-gray-100">
-                  <Link href="/pricing" className="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors">
-                    View pricing for this service →
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-flex items-center gap-2 font-bold rounded-full px-7 py-3.5 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg text-white"
+                    style={{ background: `linear-gradient(135deg, ${c.accent}, ${c.accent}cc)`, boxShadow: `0 4px 20px ${c.glow}` }}
+                  >
+                    Get Started
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </Link>
+                </div>
+
+                {/* Features card */}
+                <div
+                  className={`relative rounded-3xl p-8 ${flip ? 'lg:col-start-1 lg:row-start-1' : ''}`}
+                  style={{ background: '#0F0F1A', border: `1px solid ${c.border}`, boxShadow: `0 0 0 1px ${c.border}, 0 24px 80px rgba(0,0,0,0.12)` }}
+                >
+                  {/* Card glow */}
+                  <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full pointer-events-none" style={{ background: `radial-gradient(circle, ${c.accent}30, transparent 65%)` }} />
+                  {/* Icon */}
+                  <div
+                    className="relative z-10 w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                    style={{ background: `linear-gradient(135deg, ${c.accent}25, ${c.accent}10)`, border: `1px solid ${c.border}`, color: c.accent }}
+                  >
+                    {service.icon}
+                  </div>
+                  <h3 className="relative z-10 font-bold text-white text-base mb-5">{service.title} — What&apos;s Included</h3>
+                  <ul className="relative z-10 space-y-3">
+                    {service.features.map((f) => (
+                      <li key={f} className="flex items-start gap-3 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                        <span className="shrink-0 mt-0.5 w-4 h-4 rounded-full flex items-center justify-center" style={{ background: `${c.accent}30`, color: c.accent }}>
+                          <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="relative z-10 mt-6 pt-6" style={{ borderTop: `1px solid rgba(255,255,255,0.07)` }}>
+                    <Link href="/pricing" className="text-sm font-semibold transition-colors hover:opacity-80" style={{ color: c.accent }}>
+                      View pricing for this service →
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        )
+      })}
 
       {/* CTA — Dark navy */}
       <section

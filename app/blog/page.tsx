@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     title: 'Web Design Blog | AffordaWeb Solutions',
     description: 'Expert tips on web design, SEO, and growing your small business online.',
     url: 'https://affordawebsolutions.com/blog',
+    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Blog' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Web Design Blog | AffordaWeb Solutions',
+    description: 'Expert tips on web design, SEO, and growing your small business online.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -28,6 +35,9 @@ const posts = [
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80',
     imageAlt: 'Laptop showing business analytics — why small businesses need a website',
     featured: true,
+    accent: '#5636D1',
+    accentLight: 'rgba(86,54,209,0.10)',
+    accentBorder: 'rgba(86,54,209,0.22)',
   },
   {
     slug: 'affordable-website-design-vs-diy-website-builder',
@@ -40,6 +50,9 @@ const posts = [
     image: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=600&auto=format&fit=crop&q=80',
     imageAlt: 'Laptop on clean desk — professional web design vs DIY website builders',
     featured: false,
+    accent: '#E2498A',
+    accentLight: 'rgba(226,73,138,0.10)',
+    accentBorder: 'rgba(226,73,138,0.22)',
   },
   {
     slug: 'seo-tips-small-business-website',
@@ -52,6 +65,9 @@ const posts = [
     image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&auto=format&fit=crop&q=80',
     imageAlt: 'SEO analytics dashboard — tips for ranking on Google',
     featured: false,
+    accent: '#06B6D4',
+    accentLight: 'rgba(6,182,212,0.10)',
+    accentBorder: 'rgba(6,182,212,0.22)',
   },
   {
     slug: 'website-design-subscription-model-explained',
@@ -64,6 +80,9 @@ const posts = [
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80',
     imageAlt: 'Data and pricing charts — website design subscription model explained',
     featured: false,
+    accent: '#F59E0B',
+    accentLight: 'rgba(245,158,11,0.10)',
+    accentBorder: 'rgba(245,158,11,0.22)',
   },
   {
     slug: 'website-speed-matters-small-business',
@@ -76,6 +95,9 @@ const posts = [
     image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=600',
     imageAlt: 'Developer optimizing website speed on laptop',
     featured: false,
+    accent: '#10B981',
+    accentLight: 'rgba(16,185,129,0.10)',
+    accentBorder: 'rgba(16,185,129,0.22)',
   },
   {
     slug: 'local-seo-guide-small-businesses',
@@ -88,6 +110,9 @@ const posts = [
     image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=600&auto=format&fit=crop&q=80',
     imageAlt: 'Local business map and search results — local SEO guide',
     featured: false,
+    accent: '#5636D1',
+    accentLight: 'rgba(86,54,209,0.10)',
+    accentBorder: 'rgba(86,54,209,0.22)',
   },
 ]
 
@@ -109,7 +134,8 @@ export default function BlogPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      {/* Hero — Dark navy */}
+
+      {/* Hero */}
       <section
         className="relative overflow-hidden pt-[200px] pb-[100px] text-center"
         style={{ background: '#0F0F1A' }}
@@ -133,7 +159,7 @@ export default function BlogPage() {
                 className="flex items-center gap-2 rounded-full px-4 py-2"
                 style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.14)' }}
               >
-                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#2577C9' }} />
+                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#5636D1' }} />
                 <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>{cat}</span>
               </div>
             ))}
@@ -141,22 +167,27 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Blog content — White */}
-      <section className="section-pad bg-white" aria-labelledby="blog-heading">
-        <div className="container-tight">
-          <div className="sr-only" id="blog-heading">Blog Posts</div>
+      {/* Blog content */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }} aria-labelledby="blog-heading">
+        {/* Top accent */}
+        <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #5636D1 40%, transparent)' }} />
+        {/* Ambient glows */}
+        <div className="absolute pointer-events-none" style={{ width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,54,209,0.08), transparent 65%)', top: '20%', right: '-200px' }} />
+        <div className="absolute pointer-events-none" style={{ width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(226,73,138,0.06), transparent 65%)', bottom: '20%', left: '-150px' }} />
+
+        <div className="container-tight relative z-10">
+          <h2 className="sr-only" id="blog-heading">Blog Posts</h2>
 
           {/* Category filter */}
-          <div className="flex flex-wrap gap-2 justify-center mb-12">
+          <div className="flex flex-wrap gap-2 justify-center mb-14">
             {categories.map(cat => (
               <span
                 key={cat}
-                className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all ${
-                  cat === 'All'
-                    ? 'text-white'
-                    : 'bg-white text-gray-500 border border-gray-200 hover:border-primary-300 hover:text-primary-600'
-                }`}
-                style={cat === 'All' ? { background: '#2577C9' } : {}}
+                className="px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-all"
+                style={cat === 'All'
+                  ? { background: 'linear-gradient(135deg, #5636D1, #5636D1cc)', color: '#fff', boxShadow: '0 4px 16px rgba(86,54,209,0.35)' }
+                  : { background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.55)', border: '1px solid rgba(255,255,255,0.1)' }
+                }
               >
                 {cat}
               </span>
@@ -165,11 +196,20 @@ export default function BlogPage() {
 
           {/* Featured post */}
           {featured && (
-            <article className="card mb-10 overflow-hidden group p-0">
+            <article
+              className="mb-12 overflow-hidden rounded-3xl group"
+              style={{
+                background: '#0F0F1A',
+                border: `1px solid ${featured.accentBorder}`,
+                boxShadow: `0 0 0 1px ${featured.accentBorder}, 0 24px 80px rgba(0,0,0,0.20)`,
+              }}
+            >
+              {/* Top accent line */}
+              <div className="absolute inset-x-0 top-0 h-0.5 pointer-events-none rounded-t-3xl" style={{ background: `linear-gradient(90deg, transparent, ${featured.accent}, transparent)` }} />
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 items-stretch">
                 <div
                   className="lg:col-span-2 relative overflow-hidden"
-                  style={{ aspectRatio: '16/9', minHeight: '240px' }}
+                  style={{ minHeight: '280px' }}
                 >
                   <Image
                     src={featured.image}
@@ -178,36 +218,49 @@ export default function BlogPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     priority
                   />
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: 'linear-gradient(to right, rgba(9,24,41,0.3), transparent)' }}
-                  />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(15,15,26,0.6), transparent)' }} />
                   <div className="absolute top-4 left-4">
                     <span
-                      className="text-white text-xs font-semibold px-3 py-1.5 rounded-full"
-                      style={{ background: '#2577C9' }}
+                      className="text-xs font-bold px-3 py-1.5 rounded-full"
+                      style={{ background: featured.accentLight, color: featured.accent, border: `1px solid ${featured.accentBorder}` }}
                     >
                       Featured
                     </span>
                   </div>
                 </div>
                 <div className="lg:col-span-3 p-8 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="badge bg-primary-50 text-primary-600 text-xs">{featured.category}</span>
-                    <span className="text-gray-400 text-xs">{featured.date}</span>
-                    <span className="text-gray-300 text-xs">·</span>
-                    <span className="text-gray-400 text-xs">{featured.readTime}</span>
+                  {/* Card glow */}
+                  <div className="absolute -top-10 -right-10 w-36 h-36 rounded-full pointer-events-none" style={{ background: `radial-gradient(circle, ${featured.accent}20, transparent 65%)` }} />
+                  <div className="relative z-10 flex items-center gap-3 mb-5">
+                    <span
+                      className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full"
+                      style={{ background: featured.accentLight, color: featured.accent, border: `1px solid ${featured.accentBorder}` }}
+                    >
+                      {featured.category}
+                    </span>
+                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>{featured.date}</span>
+                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>·</span>
+                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>{featured.readTime}</span>
                   </div>
                   <h2
-                    className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors"
-                    style={{ letterSpacing: '-0.01em' }}
+                    className="relative z-10 text-2xl font-bold text-white mb-4"
+                    style={{ letterSpacing: '-0.015em', lineHeight: 1.25 }}
                   >
-                    <Link href={`/blog/${featured.slug}`}>{featured.title}</Link>
+                    <Link href={`/blog/${featured.slug}`} className="hover:opacity-80 transition-opacity">
+                      {featured.title}
+                    </Link>
                   </h2>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">{featured.excerpt}</p>
+                  <p className="relative z-10 text-sm leading-relaxed mb-7" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    {featured.excerpt}
+                  </p>
                   <Link
                     href={`/blog/${featured.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                    className="relative z-10 inline-flex items-center gap-2 text-sm font-bold rounded-full px-6 py-3 self-start transition-all duration-300 hover:-translate-y-0.5"
+                    style={{
+                      background: `linear-gradient(135deg, ${featured.accent}, ${featured.accent}cc)`,
+                      color: '#fff',
+                      boxShadow: `0 4px 16px ${featured.accentLight}`,
+                    }}
                   >
                     Read Article
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -220,10 +273,23 @@ export default function BlogPage() {
           )}
 
           {/* Post grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rest.map((post) => (
-              <article key={post.slug} className="card group flex flex-col p-0 overflow-hidden">
-                {/* Blog image */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+            {rest.map((post, idx) => (
+              <article
+                key={post.slug}
+                className="group relative flex flex-col overflow-hidden rounded-3xl"
+                style={{
+                  background: '#0F0F1A',
+                  border: `1px solid ${post.accentBorder}`,
+                  boxShadow: `0 0 0 1px ${post.accentBorder}, 0 16px 48px rgba(0,0,0,0.15)`,
+                }}
+              >
+                {/* Top accent line */}
+                <div className="absolute inset-x-0 top-0 h-0.5 pointer-events-none" style={{ background: `linear-gradient(90deg, transparent, ${post.accent}, transparent)` }} />
+                {/* Card glow */}
+                <div className="absolute -top-8 -right-8 w-28 h-28 rounded-full pointer-events-none" style={{ background: `radial-gradient(circle, ${post.accent}20, transparent 65%)` }} />
+
+                {/* Image */}
                 <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
                   <Image
                     src={post.image}
@@ -232,33 +298,53 @@ export default function BlogPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: 'linear-gradient(to top, rgba(9,24,41,0.25), transparent)' }}
-                  />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(15,15,26,0.7) 0%, transparent 60%)' }} />
+                  {/* Index number on image */}
+                  <div className="absolute bottom-3 right-4">
+                    <span
+                      className="text-3xl font-extrabold select-none"
+                      style={{ color: `${post.accent}35`, letterSpacing: '-0.05em', lineHeight: 1 }}
+                    >
+                      {String(idx + 2).padStart(2, '0')}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="badge bg-primary-50 text-primary-600 text-xs">{post.category}</span>
-                    <span className="text-gray-400 text-xs">{post.readTime}</span>
+                <div className="relative z-10 p-6 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span
+                      className="text-xs font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                      style={{ background: post.accentLight, color: post.accent, border: `1px solid ${post.accentBorder}` }}
+                    >
+                      {post.category}
+                    </span>
+                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>{post.readTime}</span>
                   </div>
 
                   <h3
-                    className="font-bold text-gray-900 text-base mb-2 flex-grow group-hover:text-primary-600 transition-colors"
+                    className="font-bold text-white text-base mb-3 leading-snug flex-grow"
                     style={{ letterSpacing: '-0.01em' }}
                   >
-                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    <Link href={`/blog/${post.slug}`} className="hover:opacity-80 transition-opacity">
+                      {post.title}
+                    </Link>
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
 
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                    <span className="text-xs text-gray-400">{post.date}</span>
+                  <p className="text-sm leading-relaxed mb-5 line-clamp-2" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                    {post.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-between mt-auto pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>{post.date}</span>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="text-xs font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                      className="text-xs font-bold transition-opacity hover:opacity-70 flex items-center gap-1"
+                      style={{ color: post.accent }}
                     >
-                      Read more →
+                      Read more
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                      </svg>
                     </Link>
                   </div>
                 </div>
@@ -268,7 +354,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA — Dark navy */}
+      {/* Newsletter CTA */}
       <section
         className="section-pad relative overflow-hidden"
         style={{ background: '#0F0F1A' }}

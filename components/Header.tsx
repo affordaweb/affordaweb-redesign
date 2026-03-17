@@ -6,13 +6,14 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const navLinks = [
-  { href: '/',          label: 'Home' },
-  { href: '/services',  label: 'Services' },
-  { href: '/pricing',   label: 'Pricing' },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/blog',      label: 'Blog' },
-  { href: '/about',     label: 'About' },
-  { href: '/contact',   label: 'Contact' },
+  { href: '/',                 label: 'Home' },
+  { href: '/services',         label: 'Services' },
+  { href: '/pricing',          label: 'Pricing' },
+  { href: '/portfolio',        label: 'Portfolio' },
+  { href: '/blog',             label: 'Blog' },
+  { href: '/about',            label: 'About' },
+  { href: '/contact',          label: 'Contact' },
+  { href: '/recommendation',   label: 'Free Report' },
 ]
 
 export default function Header() {

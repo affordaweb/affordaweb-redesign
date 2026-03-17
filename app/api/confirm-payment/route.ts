@@ -1,105 +1,74 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { kv } from '@vercel/kv'
-import { sendUserReport } from '@/lib/email'
-import type { SeoReport } from '@/types/seo-report'
-
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://affordawebsolutions.com'
-
-// ── GET /api/confirm-payment?report_id=XYZ ────────────────────────────────────
-// Admin clicks this from the notification email to unlock the report and send it to the user.
+import { kvGet, kvSet } from '@/lib/kv-store'
+import type { ReportData } from '@/lib/report-content'
+import { sendUserUnlockedEmail } from '@/lib/email'
 
 export async function GET(req: NextRequest) {
-  const reportId = req.nextUrl.searchParams.get('report_id')
+  const { searchParams } = new URL(req.url)
+  const id    = searchParams.get('id')
+  const token = searchParams.get('token')
 
-  if (!reportId) {
-    return new Response('<h2>Missing report_id parameter.</h2>', {
-      status: 400,
-      headers: { 'Content-Type': 'text/html' },
-    })
+  if (!id || !token) {
+    return html(errorPage('Missing parameters.'))
   }
 
-  try {
-    const raw = await kv.get<string>(`seo_report:${reportId}`)
-    if (!raw) {
-      return new Response('<h2>Report not found or expired.</h2>', {
-        status: 404,
-        headers: { 'Content-Type': 'text/html' },
-      })
-    }
-
-    const report: SeoReport = typeof raw === 'string' ? JSON.parse(raw) : raw
-
-    if (report.paymentStatus === 'paid') {
-      return new Response(
-        confirmHtml(report.domain, report.email, reportId, 'already_paid'),
-        { status: 200, headers: { 'Content-Type': 'text/html' } }
-      )
-    }
-
-    // Update status to paid
-    report.paymentStatus = 'paid'
-    await kv.set(`seo_report:${reportId}`, JSON.stringify(report), { ex: 60 * 60 * 24 * 90 })
-
-    // Send full report to user
-    try {
-      await sendUserReport(report)
-    } catch (e) {
-      console.error('User report email failed:', e)
-    }
-
-    return new Response(confirmHtml(report.domain, report.email, reportId, 'success'), {
-      status: 200,
-      headers: { 'Content-Type': 'text/html' },
-    })
-  } catch (err) {
-    console.error('confirm-payment error:', err)
-    return new Response('<h2>Server error. Please try again.</h2>', {
-      status: 500,
-      headers: { 'Content-Type': 'text/html' },
-    })
+  const report = await kvGet<ReportData>(`report:${id}`)
+  if (!report) {
+    return html(errorPage('Report not found. It may have expired.'))
   }
+
+  if (report.admin_token !== token) {
+    return html(errorPage('Invalid confirmation token.'))
+  }
+
+  if (report.payment_status === 'paid') {
+    return html(successPage(report, true))
+  }
+
+  const updated: ReportData = { ...report, payment_status: 'paid' }
+  await kvSet(`report:${id}`, updated, 60 * 60 * 24 * 30)
+  await sendUserUnlockedEmail(updated)
+
+  return html(successPage(report, false))
 }
 
-function confirmHtml(
-  domain: string,
-  email: string,
-  reportId: string,
-  status: 'success' | 'already_paid'
-) {
-  const isSuccess = status === 'success'
-  const reportUrl = `${BASE_URL}/seo-report/${reportId}?unlocked=true`
+function html(content: string) {
+  return new NextResponse(content, { headers: { 'Content-Type': 'text/html; charset=utf-8' } })
+}
+
+function successPage(report: ReportData, alreadyPaid: boolean): string {
+  const message = alreadyPaid
+    ? 'This report was already marked as paid.'
+    : `Payment confirmed. The full report has been emailed to <strong>${report.email}</strong>.`
 
   return `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>${isSuccess ? 'Payment Confirmed' : 'Already Confirmed'} | AffordaWeb</title>
-  <style>
-    body { margin: 0; padding: 40px 20px; background: #f3f4f6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-    .card { background: #fff; max-width: 520px; width: 100%; border-radius: 20px; padding: 48px 40px; box-shadow: 0 8px 40px rgba(0,0,0,0.1); text-align: center; }
-    .icon { font-size: 64px; margin-bottom: 16px; }
-    h1 { margin: 0 0 8px; font-size: 26px; font-weight: 900; color: #111827; }
-    p { color: #6b7280; font-size: 15px; line-height: 1.6; margin: 0 0 24px; }
-    .highlight { color: #5636D1; font-weight: 700; }
-    a.btn { display: inline-block; padding: 12px 32px; background: linear-gradient(135deg, #3d24a0, #5636D1); color: #fff; font-weight: 700; font-size: 14px; text-decoration: none; border-radius: 50px; }
-    .meta { margin-top: 24px; font-size: 12px; color: #9ca3af; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="icon">${isSuccess ? '✅' : 'ℹ️'}</div>
-    <h1>${isSuccess ? 'Payment Confirmed!' : 'Already Confirmed'}</h1>
-    <p>
-      ${
-        isSuccess
-          ? `The full SEO report for <span class="highlight">${domain}</span> has been sent to <span class="highlight">${email}</span>.`
-          : `This report for <span class="highlight">${domain}</span> was already marked as paid. The report was previously sent to <span class="highlight">${email}</span>.`
-      }
-    </p>
-    <a href="${reportUrl}" class="btn">View Unlocked Report →</a>
-    <div class="meta">Report ID: ${reportId}</div>
+<html><head><meta charset="utf-8"><title>Payment Confirmed</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0;padding:40px 20px;background:#f8f7ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;}</style>
+</head><body>
+<div style="max-width:480px;background:#fff;border-radius:16px;padding:40px;text-align:center;box-shadow:0 4px 24px rgba(86,54,209,0.08);">
+  <div style="width:64px;height:64px;background:linear-gradient(135deg,#5636D1,#E2498A);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px;">&#10003;</div>
+  <h1 style="margin:0 0 10px;font-size:22px;font-weight:800;color:#0F0F1A;">Payment Confirmed</h1>
+  <p style="margin:0 0 24px;font-size:14px;color:#6b7280;line-height:1.6;">${message}</p>
+  <div style="background:#f8f7ff;border-radius:10px;padding:14px;text-align:left;font-size:13px;color:#374151;">
+    <p style="margin:0 0 4px;"><strong>Name:</strong> ${report.name}</p>
+    <p style="margin:0 0 4px;"><strong>Website:</strong> ${report.website}</p>
+    <p style="margin:0;"><strong>Email:</strong> ${report.email}</p>
   </div>
-</body>
-</html>`
+</div>
+</body></html>`
+}
+
+function errorPage(message: string): string {
+  return `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Error</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0;padding:40px 20px;background:#f8f7ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;}</style>
+</head><body>
+<div style="max-width:480px;background:#fff;border-radius:16px;padding:40px;text-align:center;box-shadow:0 4px 24px rgba(86,54,209,0.08);">
+  <div style="font-size:40px;margin-bottom:16px;">&#9888;</div>
+  <h1 style="margin:0 0 10px;font-size:20px;font-weight:800;color:#0F0F1A;">Something went wrong</h1>
+  <p style="margin:0;font-size:14px;color:#6b7280;">${message}</p>
+</div>
+</body></html>`
 }
