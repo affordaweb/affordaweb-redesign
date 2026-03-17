@@ -4,9 +4,9 @@ import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'About AffordaWeb Solutions | Our Story & Mission',
+  title: 'About AffordaWeb Solutions | Filipino Web Design Team',
   description:
-    'Learn about AffordaWeb Solutions — a team dedicated to making professional website design accessible and affordable for every small business, startup, and entrepreneur.',
+    'AffordaWeb Solutions is a team of talented Filipino web designers, developers, and SEO specialists delivering affordable, professional website design for small businesses worldwide.',
   alternates: { canonical: 'https://affordawebsolutions.com/about' },
   openGraph: {
     title: 'About AffordaWeb Solutions | Our Story & Mission',
@@ -120,25 +120,21 @@ const breadcrumbSchema = {
   ],
 }
 
-const personSchema = {
+const teamSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Jonathan Macatangay',
-  jobTitle: 'Website Designer',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'AffordaWeb Solutions',
-    url: 'https://affordawebsolutions.com',
-  },
-  url: 'https://affordawebsolutions.com/about',
+  '@type': 'Organization',
+  name: 'AffordaWeb Solutions',
+  url: 'https://affordawebsolutions.com',
+  description: 'A team of talented Filipino web designers, developers, and SEO specialists delivering affordable, professional website design for small businesses worldwide.',
   email: 'hello@affordawebsolutions.com',
+  knowsAbout: ['Web Design', 'Website Development', 'SEO Optimization', 'Website Maintenance', 'Web Hosting'],
 }
 
 export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(teamSchema) }} />
 
       {/* Hero */}
       <section
@@ -301,8 +297,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder */}
-      <section className="section-pad relative overflow-hidden" style={{ background: '#FAFBFF' }} aria-labelledby="founder-heading">
+      {/* Team */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#FAFBFF' }} aria-labelledby="team-heading">
         {/* Top accent line */}
         <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #E2498A 40%, transparent)' }} />
         {/* Ambient glow */}
@@ -321,20 +317,45 @@ export default function AboutPage() {
               className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5"
               style={{ background: 'rgba(226,73,138,0.08)', color: '#E2498A', border: '1px solid rgba(226,73,138,0.2)' }}
             >
-              The Person Behind It
+              Our Team
             </span>
             <h2
-              id="founder-heading"
+              id="team-heading"
               className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
               style={{ letterSpacing: '-0.02em' }}
             >
-              Meet Jonathan Macatangay
+              Talented Filipino Web Designers,<br className="hidden sm:block" /> Built Around Your Business
             </h2>
+            <p className="text-base max-w-2xl mx-auto text-gray-500">
+              A dedicated group of Filipino web design specialists working together to deliver world-class websites at a price small businesses can actually afford.
+            </p>
           </div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+            {/* Image */}
+            <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
+              <Image
+                src="https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Filipino web designers and developers collaborating on website design projects"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(9,24,41,0.7) 0%, rgba(9,24,41,0.1) 60%, transparent 100%)' }} />
+              {/* Overlay badge */}
+              <div className="absolute bottom-6 left-6 right-6">
+                <div
+                  className="inline-flex items-center gap-2 rounded-full px-4 py-2"
+                  style={{ background: 'rgba(226,73,138,0.85)', backdropFilter: 'blur(8px)' }}
+                >
+                  <span className="text-white text-xs font-bold tracking-wide">Talented Filipino Freelancers</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Content card */}
             <div
-              className="relative overflow-hidden rounded-3xl p-10"
+              className="relative overflow-hidden rounded-3xl p-8 lg:p-10"
               style={{
                 background: '#0F0F1A',
                 border: '1px solid rgba(226,73,138,0.22)',
@@ -346,38 +367,67 @@ export default function AboutPage() {
               {/* Card glow */}
               <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(226,73,138,0.15), transparent 65%)' }} />
 
-              <div className="relative z-10 flex flex-col sm:flex-row gap-8 items-start">
-                <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-bold text-3xl shrink-0"
-                  style={{ background: 'linear-gradient(135deg, #E2498A 0%, #E2498Acc 100%)', boxShadow: '0 8px 24px rgba(226,73,138,0.3)' }}
-                >
-                  J
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Jonathan Macatangay</h3>
-                  <p className="text-sm font-semibold mb-5" style={{ color: '#E2498A' }}>Website Designer · Founder, AffordaWeb Solutions</p>
-                  <p className="leading-relaxed mb-4 text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                    Jonathan started AffordaWeb Solutions with a specific problem in mind. Small business owners were being priced out of professional web design, stuck choosing between a $5,000 agency quote and a template they hated. There had to be a better way.
-                  </p>
-                  <p className="leading-relaxed mb-4 text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                    The answer was an all-in-one model. Design, hosting, maintenance, and SEO wrapped into one monthly plan starting at $69. No contracts, no hidden fees, no technical headaches. Clients tell us what they need and Jonathan builds it.
-                  </p>
-                  <p className="leading-relaxed text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                    That focus on doing the work rather than talking about it is baked into the brand. Less Talk. Let&apos;s Build.
-                  </p>
-                  <div className="mt-6 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 text-sm font-bold rounded-full px-6 py-3 transition-all duration-300 hover:-translate-y-0.5"
-                      style={{ background: 'linear-gradient(135deg, #E2498A, #E2498Acc)', color: '#fff', boxShadow: '0 4px 16px rgba(226,73,138,0.3)' }}
+              <div className="relative z-10">
+                <p className="leading-relaxed mb-4 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                  AffordaWeb Solutions is powered by a passionate group of talented Filipino freelancers — web designers, developers, SEO specialists, and digital strategists who share one goal: helping small businesses get online without breaking the bank.
+                </p>
+                <p className="leading-relaxed mb-4 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                  The Philippines is recognized globally for producing some of the most skilled and creative digital professionals in the world. Our team brings that expertise directly to your project — combining strong design instincts, clean technical execution, and a deep understanding of what makes a website actually work for a business.
+                </p>
+                <p className="leading-relaxed mb-7 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                  English-fluent, deadline-driven, and genuinely invested in your success — we work collaboratively across every project from first mockup to final launch and beyond.
+                </p>
+
+                {/* Skill tags */}
+                <div className="grid grid-cols-2 gap-3 mb-7">
+                  {[
+                    { label: 'Web Design', icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 010 2H5a1 1 0 01-1-1zm0 4a1 1 0 011-1h6a1 1 0 010 2H5a1 1 0 01-1-1zm8-4a1 1 0 011-1h2l2 2-2 2h-2a1 1 0 01-1-1v-2z', color: '#E2498A' },
+                    { label: 'SEO Strategy', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', color: '#5636D1' },
+                    { label: 'Web Hosting', icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01', color: '#06B6D4' },
+                    { label: 'Maintenance', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', color: '#10B981' },
+                  ].map(({ label, icon, color }) => (
+                    <div
+                      key={label}
+                      className="flex items-center gap-2.5 rounded-xl px-4 py-3"
+                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
                     >
-                      Work with Jonathan
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
-                  </div>
+                      <span className="shrink-0 w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: `${color}22` }}>
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color }}>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={icon} />
+                        </svg>
+                      </span>
+                      <span className="text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.75)' }}>{label}</span>
+                    </div>
+                  ))}
                 </div>
+
+                {/* Team traits */}
+                <div className="grid grid-cols-1 gap-3 mb-8 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+                  {[
+                    { stat: 'English-Fluent', desc: 'Clear communication, zero language barriers on every project.' },
+                    { stat: 'Remote-Ready', desc: 'Fully distributed team delivering consistent results across time zones.' },
+                    { stat: 'Detail-Obsessed', desc: 'Every pixel, every line of code crafted with precision and purpose.' },
+                  ].map(({ stat, desc }) => (
+                    <div key={stat} className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style={{ background: '#E2498A' }} />
+                      <div>
+                        <p className="text-sm font-bold text-white">{stat}</p>
+                        <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>{desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-sm font-bold rounded-full px-6 py-3 transition-all duration-300 hover:-translate-y-0.5"
+                  style={{ background: 'linear-gradient(135deg, #E2498A, #E2498Acc)', color: '#fff', boxShadow: '0 4px 16px rgba(226,73,138,0.3)' }}
+                >
+                  Work With Our Team
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>
