@@ -103,7 +103,7 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
       className="min-h-screen pb-24"
       style={{ background: 'linear-gradient(160deg, #f8f7ff 0%, #eef2ff 50%, #fdf4ff 100%)' }}
     >
-      <div className="container-tight pt-28">
+      <div className="max-w-2xl mx-auto px-4 pt-28">
 
         {/* Top breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-medium mb-8" style={{ color: '#9ca3af' }}>
@@ -132,10 +132,6 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
           </div>
         </div>
 
-        {/* 2-column layout */}
-        <div className="grid grid-cols-1 xl:grid-cols-[1fr_400px] gap-8 items-start">
-
-        {/* ── Left: Report cards ── */}
         <div className="space-y-5">
 
           {/* CARD 1 — Website Overview */}
@@ -361,16 +357,9 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
             </div>
           </PastelCard>
 
-        </div>
-        {/* ── End left column ── */}
-
-        {/* ── Right: Sticky Get Started Form ── */}
-        <div className="xl:sticky xl:top-28">
           <GetStartedForm reportId={id} name={name} email={email} website={website} />
-        </div>
 
         </div>
-        {/* ── End 2-col grid ── */}
 
         {/* Footer note */}
         <div className="mt-10 text-center">
