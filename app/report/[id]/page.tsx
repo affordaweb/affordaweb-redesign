@@ -102,7 +102,7 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
       className="min-h-screen pb-24"
       style={{ background: 'linear-gradient(160deg, #f8f7ff 0%, #eef2ff 50%, #fdf4ff 100%)' }}
     >
-      <div className="max-w-2xl mx-auto px-4 pt-10">
+      <div className="max-w-2xl mx-auto px-4 pt-28">
 
         {/* Top breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-medium mb-8" style={{ color: '#9ca3af' }}>

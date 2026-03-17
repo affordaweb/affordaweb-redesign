@@ -83,7 +83,7 @@ export default function RecommendationPage() {
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #f8f7ff 0%, #eef2ff 40%, #fdf4ff 100%)' }}>
 
       {/* Hero */}
-      <div className="pt-16 pb-10 text-center px-4">
+      <div className="pt-28 pb-10 text-center px-4">
         <span
           className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-full mb-6"
           style={{ background: 'rgba(86,54,209,0.1)', color: '#5636D1', border: '1px solid rgba(86,54,209,0.2)' }}
