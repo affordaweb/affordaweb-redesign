@@ -22,13 +22,6 @@ const services = [
   { label: 'Shared Hosting Services',  href: '/services' },
 ]
 
-const spotlight = [
-  { label: "Website Design Essentials That Don't Inflate Your Budget", href: '/blog' },
-  { label: 'Practical Website Design Ideas That Reduce Long-Term Costs', href: '/blog' },
-  { label: 'Modern Website Design Features That Stay Affordable',       href: '/blog' },
-  { label: 'Affordable Website Design Services',                        href: '/blog' },
-  { label: 'Affordable Website Design',                                 href: '/blog' },
-]
 
 const legal = [
   { label: 'Privacy Policy',   href: '/privacy' },
@@ -182,20 +175,6 @@ export default function Footer() {
                   100% free — no credit card, no signup required.
                 </p>
               </div>
-            </div>
-
-            {/* Spotlight / Blog */}
-            <div>
-              <h3 className="text-white/30 font-semibold mb-5 text-xs tracking-[0.15em] uppercase">Spotlight</h3>
-              <ul className="space-y-3">
-                {spotlight.map(({ label, href }) => (
-                  <li key={label}>
-                    <Link href={href} className="text-white/50 text-sm hover:text-white transition-colors duration-200 leading-snug block">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
             </div>
 
           </div>
