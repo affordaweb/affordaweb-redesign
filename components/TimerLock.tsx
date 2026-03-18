@@ -317,7 +317,7 @@ function SubscribeSuccess({ domain }: { domain: string }) {
           ))}
         </div>
         <a
-          href="/seo-audit/"
+          href="/seo-audit"
           className="mt-6 inline-flex items-center gap-2 text-sm text-primary-600 font-semibold hover:text-primary-700 transition-colors"
         >
           Run another analysis →

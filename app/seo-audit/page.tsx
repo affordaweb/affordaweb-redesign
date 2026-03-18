@@ -319,14 +319,14 @@ function ConversionStrip() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/pricing/"
+            href="/pricing"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-primary text-white font-bold text-base shadow-btn hover:shadow-glow transition-all hover:scale-[1.02]"
           >
             View Pricing
             <ArrowRight className="w-5 h-5" />
           </a>
           <a
-            href="/contact/"
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl border-2 border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
           >
             Talk to Us

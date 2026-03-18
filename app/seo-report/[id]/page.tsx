@@ -53,7 +53,7 @@ export default async function SeoReportPage({
 
         {/* Back link */}
         <Link
-          href="/seo-audit/"
+          href="/seo-audit"
           className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary-600 transition-colors mb-8 group"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
@@ -136,13 +136,13 @@ export default async function SeoReportPage({
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                href="/pricing/"
+                href="/pricing"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-primary text-white font-bold text-sm shadow-btn hover:shadow-glow transition-all hover:scale-[1.02]"
               >
                 View Pricing
               </Link>
               <Link
-                href="/contact/"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl border-2 border-white/30 text-white font-semibold text-sm hover:bg-white/10 transition-colors"
               >
                 Contact Us
