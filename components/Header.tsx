@@ -225,6 +225,35 @@ export default function Header() {
           </div>
 
           <nav className="flex-1 overflow-y-auto p-5" aria-label="Mobile navigation">
+            {/* Free Tools — shown first so they're always visible */}
+            <div className="mb-4 pb-4 border-b border-gray-100">
+              <p className="px-1 mb-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
+                Free Tools
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {freeTools.map(({ href, label, desc, emoji, bg }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`flex flex-col items-start gap-1 px-3 py-3 rounded-xl text-sm transition-all min-h-[44px] ${
+                      pathname === href
+                        ? 'bg-primary-50 text-primary-600'
+                        : 'bg-gray-50 hover:bg-primary-50 text-gray-700'
+                    }`}
+                  >
+                    <span className={`w-8 h-8 rounded-xl ${bg} flex items-center justify-center text-lg`}>
+                      {emoji}
+                    </span>
+                    <div>
+                      <div className="font-semibold text-xs leading-tight">{label}</div>
+                      <div className="text-[10px] text-gray-400 mt-0.5 leading-tight">{desc}</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <ul className="space-y-1">
               {navLinks.map(({ href, label }) => (
                 <li key={href}>
@@ -242,36 +271,6 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-
-            {/* Free Tools section in mobile */}
-            <div className="mt-5 pt-5 border-t border-gray-100">
-              <p className="px-4 mb-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
-                Free Tools
-              </p>
-              <ul className="space-y-1">
-                {freeTools.map(({ href, label, desc, emoji, bg }) => (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      onClick={() => setMenuOpen(false)}
-                      className={`flex items-center gap-3 px-3 py-3 rounded-xl text-sm transition-all min-h-[44px] ${
-                        pathname === href
-                          ? 'bg-primary-50 text-primary-600 font-semibold'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <span className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center shrink-0 text-lg`}>
-                        {emoji}
-                      </span>
-                      <div>
-                        <div className="font-semibold">{label}</div>
-                        <div className="text-xs text-gray-400 font-normal mt-0.5">{desc}</div>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </nav>
 
           <div className="p-5 border-t border-gray-100 space-y-3">
