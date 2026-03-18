@@ -4,7 +4,7 @@ import RecommendationClient from '@/components/RecommendationClient'
 export const metadata: Metadata = {
   title: 'Free Website Redesign Recommendation | AffordaWeb Solutions',
   description:
-    'Get a free, personalised website redesign recommendation in under 30 seconds. Tell us your business type and goals — we'll show you exactly what to fix.',
+    "Get a free, personalised website redesign recommendation in under 30 seconds. Tell us your business type and goals — we'll show you exactly what to fix.",
   alternates: { canonical: 'https://affordawebsolutions.com/recommendation' },
   openGraph: {
     title: 'Free Website Redesign Recommendation | AffordaWeb Solutions',
