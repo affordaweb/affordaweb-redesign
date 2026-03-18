@@ -119,6 +119,13 @@ export default function SeoForm() {
         return
       }
 
+      // GA4 conversion event
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        ;(window as any).gtag('event', 'seo_audit_submit', {
+          event_category: 'free_tools',
+          event_label: form.url,
+        })
+      }
       router.push(`/seo-report/${data.reportId}`)
     } catch {
       setError("Could not connect. Please check your connection and try again.")

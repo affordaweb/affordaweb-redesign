@@ -32,6 +32,13 @@ export default function ContactForm() {
       if (data.success) {
         setStatus('success')
         form.reset()
+        // GA4 conversion event
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          ;(window as any).gtag('event', 'generate_lead', {
+            event_category: 'contact',
+            event_label: 'quote_request',
+          })
+        }
       } else {
         setErrorMsg(data.message || 'Submission failed.')
         setStatus('error')

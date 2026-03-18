@@ -94,6 +94,13 @@ export default function RecommendationClient() {
       })
       const data = await res.json()
       if (!res.ok) { setError(data.error ?? 'Something went wrong. Please try again.'); setLoading(false); return }
+      // GA4 conversion event
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        ;(window as any).gtag('event', 'recommendation_submit', {
+          event_category: 'free_tools',
+          event_label: form.business_type,
+        })
+      }
       router.push(`/report/${data.report_id}`)
     } catch {
       setError('Network error. Please try again.')
