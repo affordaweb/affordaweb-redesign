@@ -324,7 +324,7 @@ export default function AboutPage() {
               className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
               style={{ letterSpacing: '-0.02em' }}
             >
-              Talented Filipino Web Designers,<br className="hidden sm:block" /> Built Around Your Business
+              Talented Filipino Web Designers, Built Around Your Business
             </h2>
             <p className="text-base max-w-2xl mx-auto text-gray-500">
               A dedicated group of Filipino web design specialists working together to deliver world-class websites at a price small businesses can actually afford.
