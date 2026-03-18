@@ -374,6 +374,91 @@ export async function sendSeoAdminNotification(report: SeoReport, confirmUrl: st
   return sendEmail(ADMIN_EMAIL, `[SEO Audit] ${report.domain} — Score ${report.seoScore}/100`, html)
 }
 
+export async function sendSeoSubscriptionEmail(data: {
+  name: string
+  email: string
+  website: string
+  message: string
+  reportId: string
+  report: SeoReport | null
+}): Promise<boolean> {
+  const { name, email, website, message, reportId, report } = data
+  const gc = report ? seoGradeColor(report.grade) : '#5636D1'
+
+  const reportSummaryHtml = report
+    ? `
+    <div style="background:#f3f0fd;border-radius:12px;padding:20px;margin-top:20px;border:1px solid rgba(86,54,209,0.15);">
+      <h3 style="margin:0 0 12px;font-size:14px;font-weight:800;color:#3d24a0;">Original SEO Report</h3>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+        <div style="font-size:40px;font-weight:900;color:${gc};line-height:1;">${report.seoScore}</div>
+        <div>
+          <div style="font-size:13px;color:#374151;">Grade: <strong style="color:${gc};">${report.grade}</strong></div>
+          <div style="font-size:13px;color:#374151;">Domain: <strong>${report.domain}</strong></div>
+        </div>
+      </div>
+      ${report.topIssues.length > 0 ? `
+      <div style="margin-top:10px;">
+        <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#dc2626;text-transform:uppercase;letter-spacing:0.05em;">Top Issues</p>
+        <ul style="margin:0;padding:0 0 0 16px;">
+          ${report.topIssues.map(i => `<li style="font-size:12px;color:#374151;padding:2px 0;">${i}</li>`).join('')}
+        </ul>
+      </div>` : ''}
+      ${report.recommendations.length > 0 ? `
+      <div style="margin-top:12px;">
+        <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#5636D1;text-transform:uppercase;letter-spacing:0.05em;">Recommendations (${report.recommendations.length} total)</p>
+        ${report.recommendations.slice(0, 5).map(r => {
+          const pc = r.priority === 'critical' ? '#dc2626' : r.priority === 'high' ? '#ea580c' : r.priority === 'medium' ? '#d97706' : '#16a34a'
+          return `<div style="border-left:3px solid ${pc};padding:8px 10px;background:#fff;border-radius:0 6px 6px 0;margin-bottom:6px;">
+            <div style="font-weight:700;color:#111827;font-size:12px;">${r.title} <span style="font-size:10px;background:${pc}20;color:${pc};padding:1px 5px;border-radius:4px;text-transform:uppercase;">${r.priority}</span></div>
+            <div style="font-size:11px;color:#6b7280;margin-top:2px;">${r.description}</div>
+          </div>`
+        }).join('')}
+      </div>` : ''}
+    </div>`
+    : ''
+
+  const html = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="max-width:600px;margin:32px auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+    <div style="background:linear-gradient(135deg,#3d24a0,#5636D1);padding:32px 40px;text-align:center;">
+      <p style="margin:0 0 6px;color:rgba(255,255,255,0.7);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">AffordaWeb Solutions</p>
+      <h1 style="margin:0;color:#fff;font-size:22px;font-weight:800;">New Subscription Request</h1>
+      <p style="margin:6px 0 0;color:rgba(255,255,255,0.75);font-size:14px;">A user wants help implementing their SEO improvements</p>
+    </div>
+    <div style="padding:32px 40px;">
+      <h2 style="margin:0 0 16px;font-size:15px;font-weight:800;color:#111827;">Subscriber Details</h2>
+      <table style="width:100%;border-collapse:collapse;margin-bottom:8px;">
+        <tr><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-weight:700;color:#374151;font-size:13px;width:100px;">Name</td><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;color:#111827;font-size:13px;">${name}</td></tr>
+        <tr><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-weight:700;color:#374151;font-size:13px;">Email</td><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-size:13px;"><a href="mailto:${email}" style="color:#5636D1;">${email}</a></td></tr>
+        <tr><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-weight:700;color:#374151;font-size:13px;">Website</td><td style="padding:8px 12px;background:#f9fafb;border-bottom:1px solid #e5e7eb;font-size:13px;"><a href="${website}" style="color:#5636D1;">${website}</a></td></tr>
+        ${reportId ? `<tr><td style="padding:8px 12px;background:#f9fafb;font-weight:700;color:#374151;font-size:13px;">Report ID</td><td style="padding:8px 12px;background:#f9fafb;font-size:12px;font-family:monospace;color:#5636D1;">${reportId}</td></tr>` : ''}
+      </table>
+      ${message ? `
+      <div style="margin-top:16px;padding:16px;background:#fffbeb;border-radius:10px;border:1px solid #fde68a;">
+        <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:0.05em;">Message</p>
+        <p style="margin:0;font-size:13px;color:#374151;line-height:1.6;">${message}</p>
+      </div>` : ''}
+      ${reportSummaryHtml}
+      <div style="margin-top:28px;text-align:center;padding:20px;background:linear-gradient(135deg,#f3f0fd,#eff6ff);border-radius:12px;">
+        <p style="margin:0 0 6px;font-size:14px;font-weight:800;color:#111827;">Next Step: Contact this user</p>
+        <p style="margin:0;font-size:13px;color:#6b7280;">Send a payment request and guide them through the SEO improvements.</p>
+        <a href="mailto:${email}?subject=Your SEO Improvements — Next Steps&body=Hi ${name},%0A%0AWe've reviewed your SEO report for ${website} and we're ready to help you implement these improvements.%0A%0AReport ID: ${reportId}" style="display:inline-block;margin-top:14px;padding:12px 28px;background:linear-gradient(135deg,#3d24a0,#5636D1);color:#fff;font-weight:700;font-size:13px;text-decoration:none;border-radius:50px;">Reply to ${name} →</a>
+      </div>
+    </div>
+    <div style="background:#f9fafb;border-top:1px solid #e5e7eb;padding:20px 40px;text-align:center;">
+      <p style="margin:0;font-size:12px;color:#9ca3af;">AffordaWeb Solutions · hello@affordawebsolutions.com</p>
+    </div>
+  </div>
+</body></html>`
+
+  return sendEmail(
+    ADMIN_EMAIL,
+    `[SEO Subscription] ${name} — ${website}${reportId ? ` (Report: ${reportId.slice(0, 8)}…)` : ''}`,
+    html
+  )
+}
+
 export async function sendSeoUserReport(report: SeoReport, reportUrl: string): Promise<boolean> {
   const gc = seoGradeColor(report.grade)
 

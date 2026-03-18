@@ -4,9 +4,7 @@ import Link from "next/link"
 import { ArrowLeft, Calendar, Globe, AlertCircle } from "lucide-react"
 import type { Metadata } from "next"
 import type { SeoReport } from "@/types/seo-report"
-import SeoScoreCard from "@/components/SeoScoreCard"
-import { SeoTopIssuesCard, SeoQuickWinsCard } from "@/components/SeoIssuesCard"
-import LockedCard from "@/components/LockedCard"
+import TimerLock from "@/components/TimerLock"
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 
@@ -101,56 +99,40 @@ export default async function SeoReportPage({
           </div>
         </div>
 
-        {/* Pending payment notice */}
+        {/* Pending payment notice (only shown when paid + unlocked flow) */}
         {report.paymentStatus === "pending" && !unlocked && (
           <div className="flex items-start gap-3 p-4 rounded-2xl bg-amber-50 border border-amber-100 mb-8 text-sm text-amber-800">
             <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-amber-500" />
             <div>
-              <strong>Preview Mode</strong> — Your free preview is shown below. Complete payment to receive the full detailed report at{" "}
-              <strong>{report.email}</strong>.
+              <strong>Preview Mode</strong> — Your free 2-minute preview is
+              shown below. After the timer expires you&apos;ll be prompted to
+              subscribe for personalized implementation help.
             </div>
           </div>
         )}
 
-        {/* ── Card 1: SEO Score ─────────────────────────────────────────────── */}
-        <section className="mb-6">
-          <SeoScoreCard report={report} />
-        </section>
-
-        {/* ── Cards 2 & 3: Issues + Quick Wins ─────────────────────────────── */}
-        <section className="grid sm:grid-cols-2 gap-6 mb-6">
-          <SeoTopIssuesCard report={report} />
-          <SeoQuickWinsCard report={report} />
-        </section>
-
-        {/* ── Locked / Unlocked Full Report ─────────────────────────────────── */}
-        <section>
-          <div className="flex items-center gap-2 mb-4">
-            <h2 className="text-lg font-black text-gray-900">Full SEO Analysis</h2>
-            {!unlocked && (
-              <span className="px-2.5 py-0.5 rounded-full bg-primary-100 text-primary-700 text-xs font-bold">
-                Premium
-              </span>
-            )}
-          </div>
-          <LockedCard report={report} unlocked={unlocked} />
-        </section>
+        {/* ── Timer-locked report (client component) ────────────────────── */}
+        <TimerLock report={report} unlocked={unlocked} />
 
         {/* Promo footer */}
         <div className="mt-10 rounded-3xl bg-gradient-hero text-white p-8 text-center relative overflow-hidden">
           <div
             className="absolute inset-0 opacity-20"
             style={{
-              backgroundImage: "radial-gradient(circle, rgba(86,54,209,0.3) 1.5px, transparent 1.5px)",
+              backgroundImage:
+                "radial-gradient(circle, rgba(86,54,209,0.3) 1.5px, transparent 1.5px)",
               backgroundSize: "24px 24px",
             }}
           />
           <div className="relative">
-            <h3 className="text-xl font-black mb-2">Want a Better-Ranking Website?</h3>
+            <h3 className="text-xl font-black mb-2">
+              Want a Better-Ranking Website?
+            </h3>
             <p className="text-white/70 text-sm mb-6 max-w-lg mx-auto">
-              AffordaWeb Solutions builds fast, professional websites starting at{" "}
-              <strong className="text-white">$69/month</strong> — with hosting, SSL, SEO,
-              and unlimited updates included.
+              AffordaWeb Solutions builds fast, professional websites starting
+              at{" "}
+              <strong className="text-white">$69/month</strong> — with
+              hosting, SSL, SEO, and unlimited updates included.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
