@@ -9,6 +9,11 @@ const quickLinks = [
   { label: 'Web Design Quote', href: '/contact' },
 ]
 
+const freeTools = [
+  { label: '🎨 Website Recommendation', href: '/recommendation' },
+  { label: '🔍 Free SEO Audit',         href: '/seo-audit' },
+]
+
 const services = [
   { label: 'Website Design Services',   href: '/services' },
   { label: 'Website Redesign Services', href: '/services' },
@@ -99,10 +104,10 @@ export default function Footer() {
       {/* Main footer — dark background */}
       <div style={{ background: '#0F0F1A' }} className="border-t border-white/5">
         <div className="container-tight py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
 
             {/* Brand */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-2">
               <Link href="/" className="inline-block mb-5">
                 <Image
                   src="/logo.webp"
@@ -158,6 +163,25 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Free Tools */}
+            <div>
+              <h3 className="text-white/30 font-semibold mb-5 text-xs tracking-[0.15em] uppercase">Free Tools</h3>
+              <ul className="space-y-3">
+                {freeTools.map(({ label, href }) => (
+                  <li key={label}>
+                    <Link href={href} className="text-white/50 text-sm hover:text-white transition-colors duration-200">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-5 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                <p className="text-xs text-white/40 leading-relaxed">
+                  100% free — no credit card, no signup required.
+                </p>
+              </div>
             </div>
 
             {/* Spotlight / Blog */}

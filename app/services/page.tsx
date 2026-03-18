@@ -232,6 +232,7 @@ export default function ServicesPage() {
               </svg>
             </Link>
             <Link href="/pricing" className="btn-outline-white">View Pricing</Link>
+            <Link href="/seo-audit" className="btn-outline-white">🔍 Free SEO Audit</Link>
           </div>
         </div>
       </section>
@@ -359,6 +360,15 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-white px-9 py-4">Get a Free Quote</Link>
             <Link href="/pricing" className="btn-outline-white px-9 py-4">View Pricing</Link>
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <span className="text-white/30 text-sm hidden sm:block">or try a free tool:</span>
+            <Link href="/recommendation" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-white/70 text-sm font-medium hover:bg-white/10 hover:text-white transition-all">
+              🎨 Free Website Recommendation
+            </Link>
+            <Link href="/seo-audit" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-white/70 text-sm font-medium hover:bg-white/10 hover:text-white transition-all">
+              🔍 Free SEO Audit
+            </Link>
           </div>
         </div>
       </section>

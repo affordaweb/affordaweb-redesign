@@ -1064,6 +1064,74 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Free Tools Banner ──────────────────────────────────────── */}
+      <section className="py-16 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #f3f0fd 0%, #eff6ff 50%, #fdf4ff 100%)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(86,54,209,0.07) 1.5px, transparent 1.5px)', backgroundSize: '28px 28px' }} />
+        <div className="container-tight relative z-10">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-primary-100 text-primary-600 text-xs font-bold uppercase tracking-widest shadow-xs mb-4">
+              Free Tools
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-3" style={{ letterSpacing: '-0.02em' }}>
+              Try Our Free Diagnostic Tools
+            </h2>
+            <p className="text-gray-500 text-base max-w-lg mx-auto leading-relaxed">
+              No signup. No credit card. Instant results. See exactly what&apos;s holding your website back.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Website Recommendation */}
+            <Link
+              href="/recommendation"
+              className="group relative bg-white rounded-3xl border border-violet-100 p-8 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.08), transparent 70%)' }} />
+              <div className="w-14 h-14 rounded-2xl bg-violet-100 flex items-center justify-center text-3xl mb-5">🎨</div>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-violet-100 text-violet-700 text-xs font-bold mb-3">
+                Free · Instant
+              </div>
+              <h3 className="text-lg font-black text-gray-900 mb-2 group-hover:text-violet-700 transition-colors">
+                Website Recommendation
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                Get a personalised website redesign plan based on your industry and goals — generated in under 30 seconds.
+              </p>
+              <span className="inline-flex items-center gap-2 text-sm font-bold text-violet-600 group-hover:gap-3 transition-all">
+                Get Free Report
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </Link>
+
+            {/* SEO Audit */}
+            <Link
+              href="/seo-audit"
+              className="group relative bg-white rounded-3xl border border-sky-100 p-8 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.08), transparent 70%)' }} />
+              <div className="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center text-3xl mb-5">🔍</div>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-700 text-xs font-bold mb-3">
+                Free · 20+ Checks
+              </div>
+              <h3 className="text-lg font-black text-gray-900 mb-2 group-hover:text-sky-700 transition-colors">
+                Free SEO Audit
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                Analyze 20+ SEO factors — meta tags, technical health, Open Graph, links, and more. Get your SEO score instantly.
+              </p>
+              <span className="inline-flex items-center gap-2 text-sm font-bold text-sky-600 group-hover:gap-3 transition-all">
+                Run SEO Audit
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── K. FAQ ─── Light + texture ─────────────────────────────── */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#F7FBFF' }} aria-labelledby="faq-heading">
         {/* Dot grid */}

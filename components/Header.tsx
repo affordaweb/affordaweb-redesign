@@ -1,25 +1,46 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const navLinks = [
-  { href: '/',                 label: 'Home' },
-  { href: '/services',         label: 'Services' },
-  { href: '/pricing',          label: 'Pricing' },
-  { href: '/portfolio',        label: 'Portfolio' },
-  { href: '/blog',             label: 'Blog' },
-  { href: '/about',            label: 'About' },
-  { href: '/contact',          label: 'Contact' },
-  { href: '/recommendation',   label: 'Free Report' },
+  { href: '/',          label: 'Home' },
+  { href: '/services',  label: 'Services' },
+  { href: '/pricing',   label: 'Pricing' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/blog',      label: 'Blog' },
+  { href: '/about',     label: 'About' },
+  { href: '/contact',   label: 'Contact' },
+]
+
+const freeTools = [
+  {
+    href: '/recommendation',
+    label: 'Website Recommendation',
+    desc: 'Free redesign plan in 30 seconds',
+    emoji: '🎨',
+    bg: 'bg-violet-100',
+  },
+  {
+    href: '/seo-audit',
+    label: 'SEO Audit',
+    desc: 'Instant analysis, 20+ checks',
+    emoji: '🔍',
+    bg: 'bg-sky-100',
+  },
 ]
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [toolsOpen, setToolsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+  const toolsRef = useRef<HTMLDivElement>(null)
+
+  const isToolsActive =
+    pathname.startsWith('/recommendation') || pathname.startsWith('/seo-audit')
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -31,6 +52,17 @@ export default function Header() {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
+        setToolsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
 
   return (
     <>
@@ -64,7 +96,7 @@ export default function Header() {
                   <Link
                     key={href}
                     href={href}
-                    className={`relative px-5 py-2.5 text-base font-medium rounded-lg transition-all duration-200 ${
+                    className={`relative px-4 py-2.5 text-base font-medium rounded-lg transition-all duration-200 ${
                       isActive
                         ? 'text-primary-600 font-semibold'
                         : 'text-gray-600 hover:text-gray-900'
@@ -77,6 +109,67 @@ export default function Header() {
                   </Link>
                 )
               })}
+
+              {/* Free Tools dropdown */}
+              <div ref={toolsRef} className="relative">
+                <button
+                  onClick={() => setToolsOpen((o) => !o)}
+                  className={`relative flex items-center gap-1.5 px-4 py-2.5 text-base font-medium rounded-lg transition-all duration-200 ${
+                    isToolsActive || toolsOpen
+                      ? 'text-primary-600 font-semibold'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                  aria-expanded={toolsOpen}
+                  aria-haspopup="true"
+                >
+                  <span className="flex items-center gap-1.5">
+                    Free Tools
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold tracking-wide">
+                      FREE
+                    </span>
+                  </span>
+                  <svg
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${toolsOpen ? 'rotate-180' : ''}`}
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                  {isToolsActive && (
+                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary-500 rounded-full" />
+                  )}
+                </button>
+
+                {/* Dropdown panel */}
+                {toolsOpen && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white rounded-2xl shadow-card-hover border border-gray-100 overflow-hidden z-[60]">
+                    <div className="p-2">
+                      {freeTools.map(({ href, label, desc, emoji, bg }) => (
+                        <Link
+                          key={href}
+                          href={href}
+                          onClick={() => setToolsOpen(false)}
+                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-primary-50 transition-colors group"
+                        >
+                          <div className={`w-10 h-10 rounded-xl ${bg} flex items-center justify-center shrink-0 text-xl`}>
+                            {emoji}
+                          </div>
+                          <div className="min-w-0">
+                            <div className="font-semibold text-sm text-gray-900 group-hover:text-primary-600 transition-colors">
+                              {label}
+                            </div>
+                            <div className="text-xs text-gray-400 mt-0.5">{desc}</div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="px-4 py-3 bg-primary-50/60 border-t border-primary-100/60">
+                      <p className="text-xs text-primary-600 font-medium text-center">
+                        100% free — no credit card required
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
             </nav>
 
             {/* Desktop CTA */}
@@ -149,6 +242,36 @@ export default function Header() {
                 </li>
               ))}
             </ul>
+
+            {/* Free Tools section in mobile */}
+            <div className="mt-5 pt-5 border-t border-gray-100">
+              <p className="px-4 mb-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
+                Free Tools
+              </p>
+              <ul className="space-y-1">
+                {freeTools.map(({ href, label, desc, emoji, bg }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`flex items-center gap-3 px-3 py-3 rounded-xl text-sm transition-all min-h-[44px] ${
+                        pathname === href
+                          ? 'bg-primary-50 text-primary-600 font-semibold'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      <span className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center shrink-0 text-lg`}>
+                        {emoji}
+                      </span>
+                      <div>
+                        <div className="font-semibold">{label}</div>
+                        <div className="text-xs text-gray-400 font-normal mt-0.5">{desc}</div>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </nav>
 
           <div className="p-5 border-t border-gray-100 space-y-3">
