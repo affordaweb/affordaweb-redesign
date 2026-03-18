@@ -16,20 +16,24 @@ export default function ContactForm() {
       const form = e.currentTarget
       const formData = new FormData(form)
 
-      const jsonBody: Record<string, string> = {}
-      formData.forEach((value, key) => {
-        jsonBody[key] = value as string
-      })
-
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('https://contact-form-lake-theta.vercel.app/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(jsonBody),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+          website: 'affordaweb',
+          _honeypot: formData.get('_honeypot') ?? '',
+          clientWebsite: formData.get('clientWebsite'),
+          service: formData.get('service'),
+          budget: formData.get('budget'),
+        }),
       })
 
       const data = await res.json()
 
-      if (data.success) {
+      if (data.ok) {
         setStatus('success')
         form.reset()
         // GA4 conversion event
@@ -40,7 +44,7 @@ export default function ContactForm() {
           })
         }
       } else {
-        setErrorMsg(data.message || 'Submission failed.')
+        setErrorMsg(data.error || 'Submission failed.')
         setStatus('error')
       }
     } catch (err) {
@@ -69,13 +73,8 @@ export default function ContactForm() {
       className="space-y-5"
       aria-label="Contact form"
     >
-      <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? 'a5dc7fd5-c34d-4694-8837-c7bf9bb63cac'} />
-      <input type="hidden" name="subject" value="New Quote Request — AffordaWeb Solutions" />
-      <input type="hidden" name="from_name" value="AffordaWeb Solutions Website" />
-      <input type="hidden" name="to" value="hello@affordawebsolutions.com" />
-      <input type="hidden" name="cc" value="va.saifcastle@gmail.com" />
       {/* Honeypot — hidden from users, bots will fill it and get blocked */}
-      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+      <input type="text" name="_honeypot" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
@@ -105,7 +104,7 @@ export default function ContactForm() {
           Current Website <span className="text-gray-400 font-normal">(optional)</span>
         </label>
         <input
-          type="url" id="website" name="website"
+          type="url" id="website" name="clientWebsite"
           placeholder="https://example.com"
           className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-900 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
         />
