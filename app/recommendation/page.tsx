@@ -150,21 +150,36 @@ export default function RecommendationPage() {
             </div>
 
             {/* Benefits */}
-            <div className="space-y-5">
-              {BENEFITS.map(({ icon, title, desc }) => (
-                <div key={title} className="flex items-start gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {BENEFITS.map(({ icon, title, desc }, i) => {
+                const colors = [
+                  { bg: 'rgba(86,54,209,0.07)',  border: 'rgba(86,54,209,0.16)',  iconBg: 'rgba(86,54,209,0.12)'  },
+                  { bg: 'rgba(226,73,138,0.07)', border: 'rgba(226,73,138,0.16)', iconBg: 'rgba(226,73,138,0.12)' },
+                  { bg: 'rgba(6,182,212,0.07)',  border: 'rgba(6,182,212,0.16)',  iconBg: 'rgba(6,182,212,0.12)'  },
+                  { bg: 'rgba(16,185,129,0.07)', border: 'rgba(16,185,129,0.16)', iconBg: 'rgba(16,185,129,0.12)' },
+                ]
+                const c = colors[i]
+                return (
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0"
-                    style={{ background: 'rgba(86,54,209,0.08)', border: '1px solid rgba(86,54,209,0.12)' }}
+                    key={title}
+                    className="rounded-2xl p-5 transition-all duration-200 hover:-translate-y-0.5"
+                    style={{
+                      background: c.bg,
+                      border: `1px solid ${c.border}`,
+                      boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
+                    }}
                   >
-                    {icon}
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center text-xl mb-3"
+                      style={{ background: c.iconBg }}
+                    >
+                      {icon}
+                    </div>
+                    <p className="text-sm font-bold mb-1" style={{ color: '#0F0F1A' }}>{title}</p>
+                    <p className="text-xs leading-relaxed" style={{ color: '#6b7280' }}>{desc}</p>
                   </div>
-                  <div>
-                    <p className="text-sm font-bold mb-0.5" style={{ color: '#0F0F1A' }}>{title}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: '#6b7280' }}>{desc}</p>
-                  </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 

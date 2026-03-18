@@ -207,30 +207,69 @@ const faqs = [
   },
 ]
 
+const faqColors = [
+  { accent: '#5636D1', light: 'rgba(86,54,209,0.08)',  border: 'rgba(86,54,209,0.18)'  },
+  { accent: '#E2498A', light: 'rgba(226,73,138,0.08)', border: 'rgba(226,73,138,0.18)' },
+  { accent: '#06B6D4', light: 'rgba(6,182,212,0.08)',  border: 'rgba(6,182,212,0.18)'  },
+  { accent: '#10B981', light: 'rgba(16,185,129,0.08)', border: 'rgba(16,185,129,0.18)' },
+  { accent: '#F59E0B', light: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.18)' },
+  { accent: '#5636D1', light: 'rgba(86,54,209,0.08)',  border: 'rgba(86,54,209,0.18)'  },
+]
+
 function FAQ() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 relative overflow-hidden" style={{ background: '#0F0F1A' }}>
+      {/* Top accent line */}
+      <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #5636D1 40%, transparent)' }} />
+      {/* Ambient glow */}
+      <div className="absolute pointer-events-none" style={{ width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,54,209,0.10), transparent 65%)', top: '50%', right: '-150px', transform: 'translateY(-50%)' }} />
+
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-black text-gray-900">Common Questions</h2>
-          <p className="text-gray-500 mt-3">Everything about the free SEO audit.</p>
+          <span
+            className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5"
+            style={{ background: 'rgba(86,54,209,0.12)', color: '#5636D1', border: '1px solid rgba(86,54,209,0.25)' }}
+          >
+            Questions
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-white">Common Questions</h2>
+          <p className="mt-3 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>Everything about the free SEO audit.</p>
         </div>
 
         <div className="space-y-3">
-          {faqs.map(({ q, a }) => (
-            <details
-              key={q}
-              className="group bg-white border border-gray-100 rounded-2xl shadow-xs overflow-hidden hover:shadow-card transition-shadow"
-            >
-              <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none select-none">
-                <span className="font-bold text-gray-900 pr-4 text-sm sm:text-base">{q}</span>
-                <ChevronDown className="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" />
-              </summary>
-              <div className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-4">
-                {a}
-              </div>
-            </details>
-          ))}
+          {faqs.map(({ q, a }, idx) => {
+            const c = faqColors[idx % faqColors.length]
+            return (
+              <details
+                key={q}
+                className="group overflow-hidden rounded-2xl"
+                style={{ background: '#0F0F1A', border: `1px solid ${c.border}` }}
+              >
+                <summary className="relative flex items-center justify-between gap-4 cursor-pointer select-none p-6 font-semibold text-base list-none [&::-webkit-details-marker]:hidden" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                  <div className="flex items-center gap-3">
+                    <span
+                      className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
+                      style={{ background: c.light, color: c.accent, border: `1px solid ${c.border}` }}
+                    >
+                      {idx + 1}
+                    </span>
+                    <span className="pr-2">{q}</span>
+                  </div>
+                  <svg
+                    className="w-5 h-5 shrink-0 transition-transform duration-300 group-open:rotate-180"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    style={{ color: c.accent }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-6">
+                  <div className="w-full h-px mb-4" style={{ background: 'rgba(255,255,255,0.07)' }} />
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{a}</p>
+                </div>
+              </details>
+            )
+          })}
         </div>
       </div>
     </section>

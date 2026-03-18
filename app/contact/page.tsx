@@ -229,34 +229,76 @@ export default function ContactPage() {
       </section>
 
       {/* Plans reminder */}
-      <section className="section-pad relative overflow-hidden" style={{ background: '#FAFBFF' }}>
+      <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }}>
         {/* Top accent line */}
         <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #06B6D4 40%, transparent)' }} />
-        <div className="container-tight text-center relative z-10">
-          <span
-            className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5"
-            style={{ background: 'rgba(6,182,212,0.08)', color: '#06B6D4', border: '1px solid rgba(6,182,212,0.2)' }}
-          >
-            Not Ready to Reach Out Yet?
-          </span>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4" style={{ letterSpacing: '-0.01em' }}>
-            Browse Our Plans and Pricing First
-          </h2>
-          <p className="text-gray-500 text-sm mb-8 max-w-lg mx-auto">
-            Explore all plan features and pricing before you commit to anything. No pressure — we are here when you are ready.
-          </p>
+        {/* Ambient glow */}
+        <div className="absolute pointer-events-none" style={{ width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(6,182,212,0.08), transparent 65%)', top: '50%', left: '-200px', transform: 'translateY(-50%)' }} />
+        <div className="container-tight relative z-10">
+          <div className="text-center mb-10">
+            <span
+              className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5"
+              style={{ background: 'rgba(6,182,212,0.10)', color: '#06B6D4', border: '1px solid rgba(6,182,212,0.22)' }}
+            >
+              Not Ready to Reach Out Yet?
+            </span>
+            <h2 className="text-2xl font-bold text-white mb-3" style={{ letterSpacing: '-0.01em' }}>
+              Browse Our Plans and Pricing First
+            </h2>
+            <p className="text-sm max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              Explore all plan features and pricing before you commit to anything. No pressure — we are here when you are ready.
+            </p>
+          </div>
+
+          {/* Plan preview tiles */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
+            {[
+              { name: 'Basic', price: '$69', desc: '1–5 pages, hosting, SSL', border: 'rgba(148,163,184,0.25)', badge: null },
+              { name: 'Standard', price: '$99', desc: 'Up to 10 pages + SEO', border: 'rgba(6,182,212,0.35)', badge: 'Most Popular' },
+              { name: 'Premium', price: '$149', desc: 'E-commerce + 24/7 support', border: 'rgba(86,54,209,0.3)', badge: null },
+            ].map(({ name, price, desc, border, badge }) => (
+              <Link
+                key={name}
+                href="/pricing"
+                className="relative rounded-2xl p-5 text-center transition-all duration-200 hover:-translate-y-1 group"
+                style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${border}`, boxShadow: '0 2px 16px rgba(0,0,0,0.15)' }}
+              >
+                {badge && (
+                  <span
+                    className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold tracking-wide uppercase px-3 py-1 rounded-full whitespace-nowrap"
+                    style={{ background: '#06B6D4', color: '#fff' }}
+                  >
+                    {badge}
+                  </span>
+                )}
+                <div className="text-2xl font-bold text-white mt-1">{price}<span className="text-sm font-normal" style={{ color: 'rgba(255,255,255,0.4)' }}>/mo</span></div>
+                <div className="text-xs font-bold tracking-widest uppercase mt-1 mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>{name}</div>
+                <div className="text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>{desc}</div>
+                <div className="mt-3 text-xs font-semibold transition-colors group-hover:text-white" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                  View details →
+                </div>
+              </Link>
+            ))}
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center gap-2 font-bold rounded-full px-8 py-4 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg text-white"
-              style={{ background: 'linear-gradient(135deg, #06B6D4, #06B6D4cc)', boxShadow: '0 4px 20px rgba(6,182,212,0.3)' }}
+              style={{ background: 'linear-gradient(135deg, #06B6D4, #0891b2)', boxShadow: '0 4px 20px rgba(6,182,212,0.3)' }}
             >
-              View Pricing Plans
+              View All Pricing Plans
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-            <Link href="/services" className="btn-secondary">Explore Services</Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center gap-2 font-bold rounded-full px-8 py-4 text-sm transition-all duration-300 hover:-translate-y-0.5 text-white"
+              style={{ border: '1.5px solid rgba(255,255,255,0.18)' }}
+            >
+              Explore Services
+            </Link>
           </div>
         </div>
       </section>

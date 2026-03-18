@@ -530,19 +530,66 @@ export default function PricingPage() {
             opacity: 0.3,
           }}
         />
+        {/* Glow blobs */}
+        <div className="absolute pointer-events-none" style={{ width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,54,209,0.14), transparent 65%)', top: '50%', left: '-150px', transform: 'translateY(-50%)' }} />
+        <div className="absolute pointer-events-none" style={{ width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(226,73,138,0.10), transparent 65%)', top: '50%', right: '-100px', transform: 'translateY(-50%)' }} />
+
         <div className="container-tight relative z-10 text-center">
+          <span
+            className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-6"
+            style={{ background: 'rgba(86,54,209,0.12)', color: '#5636D1', border: '1px solid rgba(86,54,209,0.25)' }}
+          >
+            Free Consultation
+          </span>
           <h2
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ letterSpacing: '-0.025em' }}
           >
             Not Sure Which Plan Is Right for You?
           </h2>
-          <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
+          <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Contact us for a free consultation. We will recommend the right plan based on your goals and budget.
           </p>
-          <Link href="/contact" className="btn-white px-9 py-4">
-            Get a Free Recommendation
-          </Link>
+
+          {/* Feature highlights */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {[
+              { icon: '💬', label: 'Real Humans' },
+              { icon: '⚡', label: '24-Hour Response' },
+              { icon: '🆓', label: 'No Commitment' },
+              { icon: '🎯', label: 'Tailored Advice' },
+              { icon: '🔒', label: 'No Spam Ever' },
+            ].map(({ icon, label }) => (
+              <div
+                key={label}
+                className="flex items-center gap-2 rounded-full px-4 py-2.5"
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}
+              >
+                <span className="text-base">{icon}</span>
+                <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.70)' }}>{label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 font-bold rounded-full px-9 py-4 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow text-white"
+              style={{ background: 'linear-gradient(135deg, #5636D1, #E2498A)', boxShadow: '0 4px 24px rgba(86,54,209,0.35)' }}
+            >
+              Get a Free Recommendation
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+            <Link
+              href="/recommendation"
+              className="inline-flex items-center justify-center gap-2 font-bold rounded-full px-9 py-4 text-sm transition-all duration-300 hover:-translate-y-0.5 text-white"
+              style={{ border: '1.5px solid rgba(255,255,255,0.18)' }}
+            >
+              Try Free Website Audit
+            </Link>
+          </div>
         </div>
       </section>
     </>
