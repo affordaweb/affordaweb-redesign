@@ -81,16 +81,16 @@ export async function analyzeSeo(websiteUrl: string) {
         : 'No meta description. Affects click-through rate from search results.',
     },
     {
-      label: 'Meta Description Length (120–160 chars)',
+      label: 'Meta Description Length (70–160 chars)',
       status:
-        metaDesc.length >= 120 && metaDesc.length <= 160
+        metaDesc.length >= 70 && metaDesc.length <= 160
           ? 'pass'
           : metaDesc.length > 0
           ? 'warning'
           : 'fail',
       detail:
         metaDesc.length > 0
-          ? `${metaDesc.length} characters. Optimal: 120–160.`
+          ? `${metaDesc.length} characters. Optimal: 70–160.`
           : 'No description to evaluate.',
     },
   ]
@@ -323,18 +323,18 @@ export async function analyzeSeo(websiteUrl: string) {
           : `${internalLinks.length} internal link${internalLinks.length > 1 ? 's' : ''} found.`,
     },
     {
-      label: 'External Links (≥1)',
-      status: externalLinks.length >= 1 ? 'pass' : 'warning',
+      label: 'External Links',
+      status: 'pass',
       detail:
         externalLinks.length === 0
-          ? 'No external links. Linking to authoritative sources adds credibility.'
+          ? 'No external links found. Consider linking to authoritative sources where relevant.'
           : `${externalLinks.length} external link${externalLinks.length > 1 ? 's' : ''} found.`,
     },
   ]
 
   const linkScore =
     (linkChecks[0].status === 'pass' ? 5 : linkChecks[0].status === 'warning' ? 2 : 0) +
-    (linkChecks[1].status === 'pass' ? 5 : 2)
+    5
 
   // ── Compile ───────────────────────────────────────────────────────────────
   const categories: SeoCategory[] = [
@@ -383,7 +383,7 @@ export async function analyzeSeo(websiteUrl: string) {
       priority: 'critical',
       title: 'Write a Meta Description',
       description:
-        'Add a compelling meta description (120–160 characters). This directly affects click-through rates from Google search results.',
+        'Add a compelling meta description (70–160 characters). This directly affects click-through rates from Google search results.',
     })
   if (h1s.length === 0)
     recommendations.push({
