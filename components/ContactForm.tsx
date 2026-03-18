@@ -62,7 +62,7 @@ export default function ContactForm() {
       className="space-y-5"
       aria-label="Contact form"
     >
-      <input type="hidden" name="access_key" value="60088a8c-e8de-4ab9-beb2-179f54e5b2ef" />
+      <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? '60088a8c-e8de-4ab9-beb2-179f54e5b2ef'} />
       <input type="hidden" name="subject" value="New Quote Request — AffordaWeb Solutions" />
       <input type="hidden" name="from_name" value="AffordaWeb Solutions Website" />
       <input type="hidden" name="to" value="hello@affordawebsolutions.com" />

@@ -1,11 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { kvGet, kvSet } from '@/lib/kv-store'
+import { kvGet, kvSet, kvIncr } from '@/lib/kv-store'
 import type { ReportData } from '@/lib/report-content'
 import type { BriefData } from '@/lib/brief'
 import { sendAdminBriefEmail } from '@/lib/email'
 
 export async function POST(req: NextRequest) {
   try {
+    // Rate limit: 5 submissions per IP per day
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+    const today = new Date().toISOString().slice(0, 10)
+    const rateKey = `rate:save-brief:${ip}:${today}`
+    const count = await kvIncr(rateKey, 60 * 60 * 24)
+    if (count > 5) {
+      return NextResponse.json({ error: 'Too many submissions. Please try again tomorrow.' }, { status: 429 })
+    }
+
     const body = await req.json()
     const { report_id, ...fields } = body
 

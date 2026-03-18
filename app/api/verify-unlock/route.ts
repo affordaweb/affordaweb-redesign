@@ -1,9 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { kvGet, kvSet } from '@/lib/kv-store'
+import { kvGet, kvSet, kvIncr } from '@/lib/kv-store'
 import { ReportData } from '@/lib/report-content'
 
 export async function POST(req: NextRequest) {
   try {
+    // Rate limit: 10 attempts per IP per hour
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
+    const hour = new Date().toISOString().slice(0, 13)
+    const rateKey = `rate:verify-unlock:${ip}:${hour}`
+    const count = await kvIncr(rateKey, 60 * 60)
+    if (count > 10) {
+      return NextResponse.json({ error: 'Too many attempts. Please try again later.' }, { status: 429 })
+    }
+
     const { report_id, email } = await req.json()
 
     if (!report_id || !email) {
