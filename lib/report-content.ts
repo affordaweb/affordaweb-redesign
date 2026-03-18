@@ -245,13 +245,19 @@ const QUICK_WINS = [
 ]
 
 function getScore(goal: string): number {
-  const base = 42 + Math.floor(Math.random() * 18)
-  return base
+  // Weighted distribution: most sites score 52–74 (realistic mid-range)
+  // with occasional higher scores — never perfect, always room to improve
+  const rand = Math.random()
+  if (rand < 0.15) return 44 + Math.floor(Math.random() * 8)   // 15% score 44–51 (D)
+  if (rand < 0.55) return 52 + Math.floor(Math.random() * 14)  // 40% score 52–65 (D+–C+)
+  if (rand < 0.85) return 66 + Math.floor(Math.random() * 12)  // 30% score 66–77 (C+–B)
+  return 78 + Math.floor(Math.random() * 8)                    // 15% score 78–85 (B–B+)
 }
 
 function getGrade(score: number): string {
   if (score >= 80) return 'B+'
-  if (score >= 65) return 'C+'
+  if (score >= 70) return 'B'
+  if (score >= 60) return 'C+'
   if (score >= 50) return 'D+'
   return 'D'
 }
@@ -272,7 +278,7 @@ export function generatePreviewContent(
   return {
     score,
     grade: getGrade(score),
-    overview_status: score >= 65 ? 'Needs Work' : 'Critical Issues Found',
+    overview_status: score >= 78 ? 'Good — Room to Improve' : score >= 65 ? 'Needs Work' : 'Critical Issues Found',
     suggested_structure: structure,
     issues,
     full_plan: {
