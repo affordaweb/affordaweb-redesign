@@ -419,7 +419,14 @@ export async function generateMetadata({
       title: post.title,
       description: post.excerpt,
       url: `https://affordawebsolutions.com/blog/${slug}`,
-      images: [{ url: post.image, alt: post.imageAlt }],
+      type: 'article',
+      images: [{ url: post.image, width: 1200, height: 630, alt: post.imageAlt }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
     },
   }
 }

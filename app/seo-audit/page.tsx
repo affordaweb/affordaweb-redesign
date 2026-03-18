@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import {
   Search,
   CheckCircle,
@@ -10,6 +11,26 @@ import {
   ChevronDown,
 } from "lucide-react"
 import SeoForm from "@/components/SeoForm"
+
+export const metadata: Metadata = {
+  title: "Free SEO Audit Tool | Check Your Website Score in 30 Seconds",
+  description:
+    "Get a free instant SEO audit for your website. We check 20+ factors — meta tags, headings, page speed, SSL, Open Graph, and more. No signup required.",
+  alternates: { canonical: "https://affordawebsolutions.com/seo-audit" },
+  openGraph: {
+    title: "Free SEO Audit Tool | Check Your Website Score in 30 Seconds",
+    description:
+      "Instant SEO analysis — 20+ checks across 5 categories. See your score, top issues, and quick wins for free.",
+    url: "https://affordawebsolutions.com/seo-audit",
+    images: [{ url: "https://affordawebsolutions.com/og-image.png", width: 1200, height: 630, alt: "Free SEO Audit Tool" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free SEO Audit Tool | Check Your Website Score in 30 Seconds",
+    description: "Instant SEO analysis — 20+ checks. Free, no signup required.",
+    images: ["https://affordawebsolutions.com/og-image.png"],
+  },
+}
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 
