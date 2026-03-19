@@ -27,7 +27,9 @@ const MADERA_COUNTY_BOUNDS = {
   maxLng: -118.97,
 }
 
-function isInMaderaCounty(geo: NextRequest['geo']): boolean {
+type GeoData = { city?: string; region?: string; latitude?: string; longitude?: string }
+
+function isInMaderaCounty(geo: GeoData | undefined): boolean {
   if (!geo) return false
 
   const region = geo.region ?? ''
@@ -51,7 +53,7 @@ function isInMaderaCounty(geo: NextRequest['geo']): boolean {
 }
 
 export function middleware(request: NextRequest) {
-  if (isInMaderaCounty(request.geo)) {
+  if (isInMaderaCounty((request as any).geo)) {
     return new NextResponse(
       `<!DOCTYPE html>
 <html lang="en">
