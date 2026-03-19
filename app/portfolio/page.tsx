@@ -4,19 +4,19 @@ import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Website Design Portfolio | AffordaWeb Solutions',
+  title: 'Website Design Portfolio | Small Business Websites We Built',
   description:
     'Browse our portfolio of affordable website design projects for small businesses — service companies, freelancers, e-commerce stores, and local businesses.',
   alternates: { canonical: 'https://affordawebsolutions.com/portfolio' },
   openGraph: {
-    title: 'Website Design Portfolio | AffordaWeb Solutions',
+    title: 'Website Design Portfolio | Small Business Websites We Built',
     description: 'See our work — affordable, professional website designs for small businesses.',
     url: 'https://affordawebsolutions.com/portfolio',
     images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Website Design Portfolio | AffordaWeb Solutions',
+    title: 'Website Design Portfolio | Small Business Websites We Built',
     description: 'See our work — affordable, professional website designs for small businesses.',
     images: ['https://affordawebsolutions.com/og-image.png'],
   },

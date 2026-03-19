@@ -4,19 +4,19 @@ import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'About AffordaWeb Solutions | Filipino Web Design Team',
+  title: 'About Us | Filipino Web Design Team for Small Businesses',
   description:
     'AffordaWeb Solutions is a team of talented Filipino web designers, developers, and SEO specialists delivering affordable, professional website design for small businesses worldwide.',
   alternates: { canonical: 'https://affordawebsolutions.com/about' },
   openGraph: {
-    title: 'About AffordaWeb Solutions | Our Story & Mission',
+    title: 'About Us | Filipino Web Design Team for Small Businesses',
     description: 'Professional website design made affordable for small businesses.',
     url: 'https://affordawebsolutions.com/about',
     images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'About AffordaWeb Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About AffordaWeb Solutions | Our Story & Mission',
+    title: 'About Us | Filipino Web Design Team for Small Businesses',
     description: 'Professional website design made affordable for small businesses.',
     images: ['https://affordawebsolutions.com/og-image.png'],
   },

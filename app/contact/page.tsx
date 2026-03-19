@@ -4,19 +4,19 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact AffordaWeb Solutions | Get a Free Website Quote',
+  title: 'Get a Free Website Quote | Contact Us',
   description:
     'Contact AffordaWeb Solutions for a free, no-obligation website design quote. We respond within 24 hours. Email us at hello@affordawebsolutions.com.',
   alternates: { canonical: 'https://affordawebsolutions.com/contact' },
   openGraph: {
-    title: 'Contact AffordaWeb Solutions | Get a Free Website Quote',
+    title: 'Get a Free Website Quote | Contact Us',
     description: 'Request a free quote for affordable website design. We respond within 24 hours.',
     url: 'https://affordawebsolutions.com/contact',
     images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Contact AffordaWeb Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact AffordaWeb Solutions | Get a Free Website Quote',
+    title: 'Get a Free Website Quote | Contact Us',
     description: 'Request a free quote for affordable website design. We respond within 24 hours.',
     images: ['https://affordawebsolutions.com/og-image.png'],
   },

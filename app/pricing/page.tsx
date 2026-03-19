@@ -3,7 +3,7 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Website Design Pricing | Plans Starting at $69/mo | AffordaWeb Solutions',
+  title: 'Website Design Pricing | Plans Starting at $69/mo',
   description:
     'Simple, transparent website design pricing. Basic $69/mo, Standard $99/mo, Premium $149/mo. Hosting, SSL, and maintenance included. No setup fees, cancel anytime.',
   alternates: { canonical: 'https://affordawebsolutions.com/pricing' },

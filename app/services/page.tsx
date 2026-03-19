@@ -3,19 +3,19 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Web Design & SEO Services | AffordaWeb Solutions',
+  title: 'Web Design & SEO Services for Small Businesses',
   description:
     'Explore our full range of affordable web design services: custom website design, redesigns, SEO optimization, maintenance, hosting, and e-commerce solutions for small businesses.',
   alternates: { canonical: 'https://affordawebsolutions.com/services' },
   openGraph: {
-    title: 'Web Design & SEO Services | AffordaWeb Solutions',
+    title: 'Web Design & SEO Services for Small Businesses',
     description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
     url: 'https://affordawebsolutions.com/services',
     images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Web Design Services' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Design & SEO Services | AffordaWeb Solutions',
+    title: 'Web Design & SEO Services for Small Businesses',
     description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
     images: ['https://affordawebsolutions.com/og-image.png'],
   },
