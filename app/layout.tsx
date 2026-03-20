@@ -101,9 +101,12 @@ export const metadata: Metadata = {
     canonical: 'https://affordawebsolutions.com',
   },
   icons: {
-    icon: '/logo.webp',
-    apple: '/logo.webp',
-    shortcut: '/logo.webp',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
   },
 }
 

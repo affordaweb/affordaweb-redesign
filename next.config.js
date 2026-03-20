@@ -56,6 +56,20 @@ const nextConfig = {
           { key: 'X-DNS-Prefetch-Control',  value: 'on' },
         ],
       },
+      // Immutable cache for hashed Next.js static assets
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      // Long cache for public images and fonts
+      {
+        source: '/(.*\\.(?:webp|png|jpg|jpeg|svg|ico|woff|woff2))',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=2592000, stale-while-revalidate=86400' },
+        ],
+      },
     ]
   },
 }
