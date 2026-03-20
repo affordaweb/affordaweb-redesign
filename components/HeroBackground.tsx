@@ -5,6 +5,9 @@ export default function HeroBackground() {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Skip parallax on mobile — too expensive on low-end GPUs
+    if (window.matchMedia('(max-width: 767px)').matches) return
+
     let ticking = false
     const handleScroll = () => {
       if (!ticking) {

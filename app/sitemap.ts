@@ -1,63 +1,60 @@
 import { MetadataRoute } from 'next'
 
-export const dynamic = 'force-static'
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://affordawebsolutions.com'
-  const now = new Date()
 
   return [
     {
       url: baseUrl,
-      lastModified: now,
+      lastModified: new Date('2025-03-18'),
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: now,
+      lastModified: new Date('2025-03-18'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified: now,
+      lastModified: new Date('2025-03-18'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: now,
+      lastModified: new Date('2025-03-18'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/portfolio`,
-      lastModified: now,
+      lastModified: new Date('2025-03-18'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: now,
+      lastModified: new Date('2025-03-18'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: now,
+      lastModified: new Date('2025-03-18'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/recommendation`,
-      lastModified: now,
+      lastModified: new Date('2025-03-18'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/seo-audit`,
-      lastModified: now,
+      lastModified: new Date('2025-03-18'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },

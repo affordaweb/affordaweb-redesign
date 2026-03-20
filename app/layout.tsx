@@ -9,7 +9,7 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700'],
   preload: true,
 })
 
@@ -17,7 +17,7 @@ const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-poppins',
-  weight: ['600', '700', '800'],
+  weight: ['700'],
   preload: true,
 })
 
@@ -40,6 +40,24 @@ export const metadata: Metadata = {
     'cheap website design',
     'professional website design',
     'web design for small businesses',
+    'affordable web design new jersey',
+    'affordable web design nj',
+    'website design new jersey',
+    'web design nj',
+    'affordable website nj',
+    'web hosting new jersey',
+    'web hosting nj',
+    'affordable web design new york',
+    'affordable web design nyc',
+    'website design new york',
+    'affordable web solutions',
+    'affordable web design services',
+    'budget website design',
+    'inexpensive web design',
+    'affordable seo new jersey',
+    'seo services new jersey',
+    'website redesign services',
+    'affordable web design philippines',
   ],
   authors: [{ name: 'AffordaWeb Solutions' }],
   creator: 'AffordaWeb Solutions',
@@ -108,19 +126,6 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NXB7GSP9');`}
-        </Script>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-VJ2TSW7W93" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('consent', 'default', {
-              analytics_storage: 'granted',
-              ad_storage: 'denied',
-            });
-            gtag('config', 'G-VJ2TSW7W93');
-          `}
         </Script>
         <script
           type="application/ld+json"

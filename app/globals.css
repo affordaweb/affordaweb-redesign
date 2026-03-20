@@ -379,3 +379,28 @@
   0%   { background-position: 0px 0px; }
   100% { background-position: 32px 32px; }
 }
+
+/* ── Mobile: disable expensive GPU animations ───────────────────── */
+@media (max-width: 767px) {
+  .hblob {
+    display: none;
+  }
+  .hero-gradient-shift {
+    animation: none;
+    background: #0F0F1A;
+  }
+  .hero-dots-move {
+    animation: none;
+  }
+}
+
+/* ── Reduced motion: respect user preference ────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hblob {
+    display: none;
+  }
+  .hero-gradient-shift,
+  .hero-dots-move {
+    animation: none;
+  }
+}

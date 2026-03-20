@@ -84,6 +84,7 @@ export default function Header() {
                 width={200}
                 height={56}
                 priority
+                sizes="200px"
                 className="h-11 w-auto object-contain"
               />
             </Link>
@@ -212,7 +213,7 @@ export default function Header() {
         <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
         <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white flex flex-col transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex items-center justify-between p-5 border-b border-gray-100">
-            <Image src="/logo.webp" alt="AffordaWeb Solutions" width={175} height={50} className="h-10 w-auto object-contain" />
+            <Image src="/logo.webp" alt="AffordaWeb Solutions" width={175} height={50} sizes="175px" className="h-10 w-auto object-contain" />
             <button
               className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
               onClick={() => setMenuOpen(false)}
