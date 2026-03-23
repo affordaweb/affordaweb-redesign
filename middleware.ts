@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-// Madera County, CA cities/communities as reported by IP geolocation
-const MADERA_COUNTY_CITIES = new Set([
+// Known Madera County cities (lowercase)
+const MADERA_COUNTY_CITIES = [
   'madera',
   'chowchilla',
   'madera acres',
@@ -17,69 +17,81 @@ const MADERA_COUNTY_CITIES = new Set([
   'berenda',
   'borden',
   'ripperdan',
-])
+]
 
-// Madera County approximate bounding box as a fallback
-const MADERA_COUNTY_BOUNDS = {
-  minLat: 36.73,
-  maxLat: 37.88,
-  minLng: -120.53,
-  maxLng: -118.97,
+// Normalize helper
+function normalize(value?: string) {
+  return (value || '').toLowerCase().trim()
 }
 
-type GeoData = { city?: string; region?: string; latitude?: string; longitude?: string }
-
-function isInMaderaCounty(geo: GeoData | undefined): boolean {
+function isInMaderaCounty(geo: any): boolean {
   if (!geo) return false
 
-  const region = geo.region ?? ''
-  if (region !== 'CA') return false
+  const region = normalize(geo.region)
+  const city = normalize(geo.city)
 
-  // Check by city name
-  const city = (geo.city ?? '').toLowerCase()
-  if (MADERA_COUNTY_CITIES.has(city)) return true
+  // Must be California
+  if (region !== 'ca') return false
 
-  // Check by coordinates (bounding box)
-  const lat = parseFloat(geo.latitude ?? '')
-  const lng = parseFloat(geo.longitude ?? '')
-  if (!isNaN(lat) && !isNaN(lng)) {
-    const { minLat, maxLat, minLng, maxLng } = MADERA_COUNTY_BOUNDS
-    if (lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng) {
-      return true
-    }
+  // Exact match
+  if (MADERA_COUNTY_CITIES.includes(city)) return true
+
+  // Fuzzy match (VERY important for real-world data)
+  for (const c of MADERA_COUNTY_CITIES) {
+    if (city.includes(c)) return true
   }
 
   return false
 }
 
 export function middleware(request: NextRequest) {
-  if (isInMaderaCounty((request as any).geo)) {
-    return new NextResponse(
-      `<!DOCTYPE html>
+  const geo = (request as any).geo
+
+  // 🔥 Safe guard: never break site if geo is missing
+  try {
+    if (isInMaderaCounty(geo)) {
+      return new NextResponse(
+        `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 Not Found</title>
   <style>
-    body { margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #fff; font-family: sans-serif; }
-    p { color: #111; font-size: 1.1rem; }
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #fff;
+      font-family: sans-serif;
+    }
+    p {
+      color: #111;
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
   <p>Site doesn't exist.</p>
 </body>
 </html>`,
-      {
-        status: 404,
-        headers: { 'Content-Type': 'text/html' },
-      }
-    )
+        {
+          status: 404,
+          headers: { 'Content-Type': 'text/html' },
+        }
+      )
+    }
+  } catch (err) {
+    // 🔥 Never break the site if something fails
+    return NextResponse.next()
   }
 
   return NextResponse.next()
 }
 
+// Apply to all pages except static assets
 export const config = {
   matcher: '/((?!_next/static|_next/image|favicon.ico).*)',
 }
