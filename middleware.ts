@@ -45,14 +45,6 @@ function isInMaderaCounty(geo: any): boolean {
 }
 
 export function middleware(request: NextRequest) {
-  // Enforce non-www canonical domain
-  const host = request.headers.get('host') || ''
-  if (host.startsWith('www.')) {
-    const url = request.nextUrl.clone()
-    url.host = host.slice(4)
-    return NextResponse.redirect(url, { status: 301 })
-  }
-
   const geo = (request as any).geo
 
   // 🔥 Safe guard: never break site if geo is missing
