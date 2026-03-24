@@ -46,10 +46,18 @@ function isInMaderaCounty(geo: any): boolean {
 
 export function middleware(request: NextRequest) {
   const geo = (request as any).geo
+  const path = request.nextUrl.pathname
 
   // 🔥 Safe guard: never break site if geo is missing
   try {
-    if (isInMaderaCounty(geo)) {
+    const city = normalize(geo?.city)
+    const region = normalize(geo?.region)
+    const blocked = isInMaderaCounty(geo)
+
+    console.log(`[middleware] path=${path} city="${city}" region="${region}" blocked=${blocked}`)
+
+    if (blocked) {
+      console.log(`[middleware] BLOCKED Madera County visitor: city="${city}" ip=${request.headers.get('x-forwarded-for') ?? 'unknown'}`)
       return new NextResponse(
         `<!DOCTYPE html>
 <html lang="en">
