@@ -183,7 +183,7 @@ export default function AboutPage() {
                 Built for Small Businesses That Deserve More
               </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
-                AffordaWeb Solutions was built on one simple belief. Professional, high-quality websites should not cost a fortune. Starting at $69 a month, we deliver design, hosting, SEO setup, and ongoing maintenance without asking small businesses to choose between quality and budget.
+                AffordaWeb Solutions was built on one simple belief. Professional, high-quality websites should not cost a fortune. Starting at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$69 a month</Link>, we deliver <Link href="/services" className="text-primary-600 font-medium hover:underline">design, hosting, SEO setup, and ongoing maintenance</Link> without asking small businesses to choose between quality and budget.
               </p>
               <p className="text-gray-500 leading-relaxed mb-6">
                 One plan. One price. No hidden fees, no contracts, no separate providers to manage. You tell us what you need and we take it from there.
@@ -327,7 +327,7 @@ export default function AboutPage() {
               Talented Filipino Web Designers, Built Around Your Business
             </h2>
             <p className="text-base max-w-2xl mx-auto text-gray-500">
-              A dedicated group of Filipino web design specialists working together to deliver world-class websites at a price small businesses can actually afford.
+              A dedicated group of Filipino web design specialists working together to deliver <Link href="/portfolio" className="text-primary-600 font-medium hover:underline">world-class websites</Link> at a price small businesses can actually afford.
             </p>
           </div>
 
@@ -372,7 +372,7 @@ export default function AboutPage() {
                   AffordaWeb Solutions is powered by a passionate group of talented Filipino freelancers — web designers, developers, SEO specialists, and digital strategists who share one goal: helping small businesses get online without breaking the bank.
                 </p>
                 <p className="leading-relaxed mb-4 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                  The Philippines is recognized globally for producing some of the most skilled and creative digital professionals in the world. Our team brings that expertise directly to your project — combining strong design instincts, clean technical execution, and a deep understanding of what makes a website actually work for a business.
+                  The Philippines is recognized globally for producing some of the most skilled and creative digital professionals in the world. Our team brings that expertise directly to your project — combining strong design instincts, clean technical execution, and a deep understanding of <Link href="/portfolio" className="font-medium hover:opacity-90" style={{ color: '#E2498A' }}>what makes a website actually work for a business</Link>.
                 </p>
                 <p className="leading-relaxed mb-7 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
                   English-fluent, deadline-driven, and genuinely invested in your success — we work collaboratively across every project from first mockup to final launch and beyond.
@@ -461,7 +461,7 @@ export default function AboutPage() {
               We Help All Types of Small Businesses
             </h2>
             <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              Whether you are just starting out or ready to take your online presence to the next level, our affordable website design services are built for you.
+              Whether you are just starting out or ready to take your online presence to the next level, our <Link href="/services" className="font-medium hover:opacity-80" style={{ color: '#06B6D4' }}>affordable website design services</Link> are built for you.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

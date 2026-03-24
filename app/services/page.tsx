@@ -48,6 +48,11 @@ const services = [
 You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert.
 
 Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.`,
+    paragraphs: [
+      <>Most web agencies charge thousands upfront before they know anything about your business. We built this differently. For <Link href="/pricing" className="font-medium text-primary-500 hover:underline">$69 a month</Link>, you get a custom site that is responsive on every device, with clean SEO structure built in from the start.</>,
+      <>You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert.</>,
+      <>Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.</>,
+    ],
     features: [
       'Fully responsive design for all devices',
       'Custom layout, color palette, and branding',
@@ -96,6 +101,11 @@ Right move if your site works but no longer represents what you actually offer.`
 Standard and Premium plans include SEO as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.
 
 If your site has been live for years but traffic has barely moved, this is the thing you have not tried yet.`,
+    paragraphs: [
+      <>Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper meta setup, and the structural decisions that search engines pay attention to.</>,
+      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Standard and Premium plans</Link> include SEO as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.</>,
+      <>If your site has been live for years but traffic has barely moved, start with our <Link href="/seo-audit" className="font-medium text-primary-500 hover:underline">free SEO audit tool</Link> — it shows you exactly where you stand.</>,
+    ],
     features: [
       'Higher rankings on major search engines',
       'Proven keyword and content strategies',
@@ -210,7 +220,7 @@ export default function ServicesPage() {
             Affordable Web Design Services<br className="hidden sm:block" /> for Small Businesses
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            From custom website design to SEO, hosting, and maintenance. Everything your business needs online, bundled into one simple monthly plan.
+            From <Link href="/portfolio" className="font-medium hover:opacity-90" style={{ color: 'rgba(255,255,255,0.85)' }}>custom website design</Link> to SEO, hosting, and maintenance. Everything your business needs online, bundled into one simple monthly plan.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {['Website Design', 'SEO Optimization', 'Hosting & SSL', 'E-Commerce', 'Maintenance', 'Redesign'].map(label => (
@@ -279,9 +289,14 @@ export default function ServicesPage() {
                   >
                     {service.headline}
                   </h2>
-                  {service.description.split('\n\n').map((para, j) => (
-                    <p key={j} className="text-gray-500 leading-relaxed mb-4 text-[15px]">{para.trim()}</p>
-                  ))}
+                  {service.paragraphs
+                    ? service.paragraphs.map((para, j) => (
+                        <p key={j} className="text-gray-500 leading-relaxed mb-4 text-[15px]">{para}</p>
+                      ))
+                    : service.description.split('\n\n').map((para, j) => (
+                        <p key={j} className="text-gray-500 leading-relaxed mb-4 text-[15px]">{para.trim()}</p>
+                      ))
+                  }
                   <Link
                     href="/contact"
                     className="mt-5 inline-flex items-center gap-2 font-bold rounded-full px-7 py-3.5 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg text-white"

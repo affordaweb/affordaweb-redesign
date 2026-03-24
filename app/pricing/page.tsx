@@ -117,6 +117,7 @@ const faqs = [
   {
     q: 'What happens if I need more than 10 pages on the Standard plan?',
     a: 'If your project grows beyond what Standard covers, you can upgrade to the Premium plan. Contact us and we will take care of the transition.',
+    display: <>If your project grows beyond what Standard covers, you can upgrade to the <Link href="/pricing#premium" className="font-medium" style={{ color: '#5636D1' }}>Premium plan</Link>. <Link href="/contact" className="font-medium" style={{ color: '#5636D1' }}>Contact us</Link> and we will take care of the transition.</>,
   },
   {
     q: 'Can I cancel my plan at any time?',
@@ -129,6 +130,7 @@ const faqs = [
   {
     q: 'How do unlimited updates work on Standard and Premium plans?',
     a: 'Send us your changes via the contact form or by email, and we will implement them within 24 hours. Text, photos, new pages — there is no limit to how many requests you can submit each month.',
+    display: <>Send us your changes via <Link href="/contact" className="font-medium" style={{ color: '#10B981' }}>the contact form</Link> or by email, and we will implement them within 24 hours. Text, photos, new pages — there is no limit to how many requests you can submit each month.</>,
   },
   {
     q: 'Can I upgrade from Basic to Standard or Premium later?',
@@ -141,6 +143,7 @@ const faqs = [
   {
     q: 'How do I get started?',
     a: 'Reach out via hello@affordawebsolutions.com or fill out the contact form. We will follow up to learn about your goals and recommend the right plan.',
+    display: <>Reach out via hello@affordawebsolutions.com or fill out <Link href="/contact" className="font-medium" style={{ color: '#06B6D4' }}>the contact form</Link>. We will follow up to learn about your goals and recommend the right <Link href="/services" className="font-medium" style={{ color: '#06B6D4' }}>plan</Link>.</>,
   },
 ]
 
@@ -214,7 +217,7 @@ export default function PricingPage() {
             One Monthly Rate.<br className="hidden sm:block" /> Everything Included.
           </h1>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            No setup fees. No hidden costs. No long-term contracts. Professional website design with hosting, SSL, and maintenance bundled into one affordable monthly plan.
+            No setup fees. No hidden costs. No long-term contracts. <Link href="/services" className="font-medium hover:opacity-90" style={{ color: 'rgba(255,255,255,0.85)' }}>Professional website design</Link> with hosting, SSL, and maintenance bundled into one affordable monthly plan.
           </p>
           <div className="flex items-center justify-center gap-2 mt-6 mb-10">
             <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
@@ -464,7 +467,7 @@ export default function PricingPage() {
           </div>
 
           <div className="space-y-3">
-            {faqs.map(({ q, a }, idx) => {
+            {faqs.map(({ q, a, display }, idx) => {
               const c = faqAccentColors[idx % faqAccentColors.length]
               return (
                 <details
@@ -494,7 +497,7 @@ export default function PricingPage() {
                   </summary>
                   <div className="px-6 pb-6">
                     <div className="w-full h-px mb-4" style={{ background: 'rgba(255,255,255,0.07)' }} />
-                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{a}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{display ?? a}</p>
                   </div>
                 </details>
               )

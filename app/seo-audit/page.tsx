@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import {
   Search,
   CheckCircle,
@@ -205,6 +206,7 @@ const faqs = [
   {
     q: "Is the SEO audit really free?",
     a: "Yes — the preview is completely free. You'll see your SEO score, top issues, and quick wins with no account or credit card required. The full detailed report (all checks, recommendations, and action plan) requires a one-time payment.",
+    display: <>Yes — the preview is completely free. You&apos;ll see your SEO score, top issues, and quick wins with no account or credit card required. The <Link href="/pricing" className="font-medium" style={{ color: '#5636D1' }}>full detailed report</Link> (all checks, recommendations, and action plan) requires a one-time payment.</>,
   },
   {
     q: "What does the free preview include?",
@@ -225,6 +227,7 @@ const faqs = [
   {
     q: "What do I do after getting my report?",
     a: "The report provides a prioritized action plan. You can implement fixes yourself or contact AffordaWeb Solutions — we offer professional website design and SEO services starting at $69/month.",
+    display: <>The report provides a prioritized action plan. You can implement fixes yourself or contact AffordaWeb Solutions — we offer <Link href="/services" className="font-medium" style={{ color: '#5636D1' }}>professional website design and SEO services</Link> starting at <Link href="/pricing" className="font-medium" style={{ color: '#10B981' }}>$69/month</Link>.</>,
   },
 ]
 
@@ -258,7 +261,7 @@ function FAQ() {
         </div>
 
         <div className="space-y-3">
-          {faqs.map(({ q, a }, idx) => {
+          {faqs.map(({ q, a, display }, idx) => {
             const c = faqColors[idx % faqColors.length]
             return (
               <details
@@ -286,7 +289,7 @@ function FAQ() {
                 </summary>
                 <div className="px-6 pb-6">
                   <div className="w-full h-px mb-4" style={{ background: 'rgba(255,255,255,0.07)' }} />
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{a}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{display ?? a}</p>
                 </div>
               </details>
             )
