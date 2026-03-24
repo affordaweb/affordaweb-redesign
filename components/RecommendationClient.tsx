@@ -111,8 +111,9 @@ export default function RecommendationClient() {
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #f8f7ff 0%, #eef2ff 40%, #fdf4ff 100%)' }}>
       <div className="container-tight pt-28 pb-24">
+        <div className="max-w-5xl mx-auto">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
           {/* ── Left: Pitch ── */}
           <div className="lg:sticky lg:top-28">
@@ -350,6 +351,7 @@ export default function RecommendationClient() {
             </div>
           </div>
 
+        </div>
         </div>
       </div>
     </div>
