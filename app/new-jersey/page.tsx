@@ -5,7 +5,7 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 export const metadata: Metadata = {
   title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
   description:
-    'Affordable website design for New Jersey small businesses. Serving Monmouth, Middlesex, Ocean, Morris & Bergen counties. Plans from $69/mo — hosting, SEO & SSL included.',
+    'Affordable website design for New Jersey small businesses. Custom design, hosting, SEO & SSL included from $69/mo. Serving Monmouth, Middlesex, Ocean, Morris & Bergen counties.',
   alternates: { canonical: 'https://affordawebsolutions.com/new-jersey' },
   openGraph: {
     title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',

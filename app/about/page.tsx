@@ -10,14 +10,14 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://affordawebsolutions.com/about' },
   openGraph: {
     title: 'About Us | Filipino Web Design Team for Small Businesses',
-    description: 'Professional website design made affordable for small businesses.',
+    description: 'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
     url: 'https://affordawebsolutions.com/about',
     images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'About AffordaWeb Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Us | Filipino Web Design Team for Small Businesses',
-    description: 'Professional website design made affordable for small businesses.',
+    description: 'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
     images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }

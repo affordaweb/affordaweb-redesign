@@ -2,11 +2,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const quickLinks = [
-  { label: 'Home',              href: '/' },
-  { label: 'About Us',         href: '/about' },
-  { label: 'Portfolio',        href: '/portfolio' },
-  { label: 'Contact Us',       href: '/contact' },
-  { label: 'Web Design Quote', href: '/contact' },
+  { label: 'Home',                       href: '/' },
+  { label: 'About Us',                   href: '/about' },
+  { label: 'Portfolio',                  href: '/portfolio' },
+  { label: 'Web Design in New Jersey',   href: '/new-jersey' },
+  { label: 'Contact Us',                 href: '/contact' },
 ]
 
 const freeTools = [
@@ -15,11 +15,11 @@ const freeTools = [
 ]
 
 const services = [
-  { label: 'Website Design Services',   href: '/services' },
-  { label: 'Website Redesign Services', href: '/services' },
-  { label: 'Website Maintenance',       href: '/services' },
-  { label: 'SEO Optimization',         href: '/services' },
-  { label: 'Shared Hosting Services',  href: '/services' },
+  { label: 'Website Design Services',   href: '/services#design' },
+  { label: 'Website Redesign Services', href: '/services#redesign' },
+  { label: 'Website Maintenance',       href: '/services#maintenance' },
+  { label: 'SEO Optimization',         href: '/services#seo' },
+  { label: 'Shared Hosting Services',  href: '/services#hosting' },
 ]
 
 

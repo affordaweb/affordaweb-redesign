@@ -14,6 +14,12 @@ export const metadata: Metadata = {
     url: 'https://affordawebsolutions.com',
     images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Affordable Website Design for Small Businesses | AffordaWeb',
+    description: 'Affordable website design starting at $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
+    images: ['https://affordawebsolutions.com/og-image.png'],
+  },
 }
 
 // ── Icon components ───────────────────────────────────────────────

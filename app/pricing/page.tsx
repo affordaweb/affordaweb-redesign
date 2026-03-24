@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://affordawebsolutions.com/pricing' },
   openGraph: {
     title: 'Website Design Pricing | Plans Starting at $69/mo',
-    description: 'Hosting, SSL, and maintenance included. No setup fees. Cancel anytime.',
+    description: 'Website design plans from $69/mo — custom design, hosting, SSL, SEO, maintenance, and unlimited updates all included. No setup fees, no contracts.',
     url: 'https://affordawebsolutions.com/pricing',
     images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Pricing Plans' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Website Design Pricing | Plans Starting at $69/mo',
-    description: 'Hosting, SSL, and maintenance included. No setup fees. Cancel anytime.',
+    description: 'Website design plans from $69/mo — custom design, hosting, SSL, SEO, maintenance, and unlimited updates all included. No setup fees, no contracts.',
     images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }

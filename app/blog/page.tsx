@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://affordawebsolutions.com/blog' },
   openGraph: {
     title: 'Web Design Blog | AffordaWeb Solutions',
-    description: 'Expert tips on web design, SEO, and growing your small business online.',
+    description: 'Practical web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
     url: 'https://affordawebsolutions.com/blog',
     images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Blog' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Web Design Blog | AffordaWeb Solutions',
-    description: 'Expert tips on web design, SEO, and growing your small business online.',
+    description: 'Practical web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
     images: ['https://affordawebsolutions.com/og-image.png'],
   },
 }
@@ -324,6 +324,7 @@ export default function BlogPage() {
                       href={`/blog/${post.slug}`}
                       className="text-xs font-bold transition-opacity hover:opacity-70 flex items-center gap-1"
                       style={{ color: post.accent }}
+                      aria-label={`Read more: ${post.title}`}
                     >
                       Read more
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
