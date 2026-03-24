@@ -169,8 +169,6 @@ export default function BlogPage() {
 
       {/* Blog content */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }} aria-labelledby="blog-heading">
-        {/* Top accent */}
-        <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #5636D1 40%, transparent)' }} />
         {/* Ambient glows */}
         <div className="absolute pointer-events-none" style={{ width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,54,209,0.08), transparent 65%)', top: '20%', right: '-200px' }} />
         <div className="absolute pointer-events-none" style={{ width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(226,73,138,0.06), transparent 65%)', bottom: '20%', left: '-150px' }} />
