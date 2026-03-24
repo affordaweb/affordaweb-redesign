@@ -15,7 +15,7 @@ const posts: Record<string, {
   content: string
 }> = {
   'why-small-businesses-need-professional-website': {
-    title: 'Why Every Small Business Needs a Professional Website in 2025',
+    title: 'Why Small Businesses Need a Professional Website in 2025',
     excerpt:
       'Still on the fence about investing in a professional website? Discover the real cost of not having one — and how an affordable website can transform your business.',
     category: 'Business Growth',
@@ -60,7 +60,7 @@ Ready to get started? [Get a free quote today](/contact) and have your website l
     `.trim(),
   },
   'affordable-website-design-vs-diy-website-builder': {
-    title: 'Affordable Website Design vs. DIY Website Builders: Which Is Right for You?',
+    title: 'Affordable Website Design vs. DIY Website Builders',
     excerpt:
       'Wix, Squarespace, and WordPress.com all promise an easy website. But how do they compare to professionally designed sites? We break down the real differences.',
     category: 'Web Design',
@@ -117,7 +117,7 @@ If you're a solo freelancer just testing the waters, a DIY builder might get you
     `.trim(),
   },
   'seo-tips-small-business-website': {
-    title: '10 SEO Tips to Help Your Small Business Website Rank Higher on Google',
+    title: '10 SEO Tips to Rank Your Small Business Website Higher',
     excerpt:
       'Search engine optimization does not have to be complicated. These 10 actionable SEO tips will help your small business website rank higher and attract more customers.',
     category: 'SEO',
@@ -180,7 +180,7 @@ At AffordaWeb Solutions, every website we build includes on-page SEO optimizatio
     `.trim(),
   },
   'website-design-subscription-model-explained': {
-    title: 'What Is a Website Design Subscription? Everything You Need to Know',
+    title: 'What Is a Website Design Subscription? A Complete Guide',
     excerpt:
       'Monthly website design subscriptions are changing how small businesses get online. Learn what they include, how pricing works, and whether it is right for you.',
     category: 'Pricing',
@@ -236,7 +236,7 @@ Getting a website subscription with AffordaWeb Solutions takes less than 24 hour
     `.trim(),
   },
   'website-speed-matters-small-business': {
-    title: 'Why Website Speed Matters More Than You Think (And How to Fix It)',
+    title: 'Why Website Speed Matters and How to Fix It',
     excerpt:
       'A slow website costs you customers. Research shows 53% of mobile users abandon sites that take more than 3 seconds to load. Here is how to speed yours up.',
     category: 'Performance',
@@ -412,7 +412,7 @@ export async function generateMetadata({
   if (!post) return { title: 'Post Not Found' }
 
   return {
-    title: `${post.title} | AffordaWeb Solutions Blog`,
+    title: `${post.title} | AffordaWeb`,
     description: post.excerpt,
     alternates: { canonical: `https://affordawebsolutions.com/blog/${slug}` },
     openGraph: {

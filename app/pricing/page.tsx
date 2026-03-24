@@ -5,7 +5,7 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 export const metadata: Metadata = {
   title: 'Website Design Pricing | Plans Starting at $69/mo',
   description:
-    'Simple, transparent website design pricing. Basic $69/mo, Standard $99/mo, Premium $149/mo. Hosting, SSL, and maintenance included. No setup fees, cancel anytime.',
+    'Website design pricing starting at $69/mo. All plans include hosting, SSL, and maintenance. No setup fees, no contracts, cancel anytime.',
   alternates: { canonical: 'https://affordawebsolutions.com/pricing' },
   openGraph: {
     title: 'Website Design Pricing | Plans Starting at $69/mo',

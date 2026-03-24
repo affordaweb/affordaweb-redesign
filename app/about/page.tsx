@@ -6,7 +6,7 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 export const metadata: Metadata = {
   title: 'About Us | Filipino Web Design Team for Small Businesses',
   description:
-    'AffordaWeb Solutions is a team of talented Filipino web designers, developers, and SEO specialists delivering affordable, professional website design for small businesses worldwide.',
+    'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
   alternates: { canonical: 'https://affordawebsolutions.com/about' },
   openGraph: {
     title: 'About Us | Filipino Web Design Team for Small Businesses',

@@ -6,57 +6,63 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date('2025-03-18'),
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: new Date('2025-03-18'),
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified: new Date('2025-03-18'),
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date('2025-03-18'),
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/portfolio`,
-      lastModified: new Date('2025-03-18'),
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date('2025-03-18'),
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date('2025-03-18'),
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/recommendation`,
-      lastModified: new Date('2025-03-18'),
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/seo-audit`,
-      lastModified: new Date('2025-03-18'),
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/new-jersey`,
+      lastModified: new Date('2026-03-23'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     // Blog posts
     {

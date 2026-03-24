@@ -4,13 +4,13 @@ import Image from 'next/image'
 import HeroBackground from '@/components/HeroBackground'
 
 export const metadata: Metadata = {
-  title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
+  title: 'Affordable Website Design for Small Businesses | AffordaWeb',
   description:
-    'Affordable website design for small businesses starting at $69/month. Custom design, managed hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
+    'Affordable website design starting at $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
   alternates: { canonical: 'https://affordawebsolutions.com' },
   openGraph: {
-    title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
-    description: 'Affordable website design for small businesses starting at $69/month. Hosting, SSL, SEO, and unlimited updates included.',
+    title: 'Affordable Website Design for Small Businesses | AffordaWeb',
+    description: 'Affordable website design starting at $69/month. Hosting, SSL, SEO, and unlimited updates included.',
     url: 'https://affordawebsolutions.com',
     images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
   },

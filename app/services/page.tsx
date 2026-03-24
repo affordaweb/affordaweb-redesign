@@ -5,7 +5,7 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 export const metadata: Metadata = {
   title: 'Web Design & SEO Services for Small Businesses',
   description:
-    'Explore our full range of affordable web design services: custom website design, redesigns, SEO optimization, maintenance, hosting, and e-commerce solutions for small businesses.',
+    'Affordable web design services for small businesses: custom design, SEO, hosting, maintenance, and e-commerce. Everything bundled from $69/month.',
   alternates: { canonical: 'https://affordawebsolutions.com/services' },
   openGraph: {
     title: 'Web Design & SEO Services for Small Businesses',
