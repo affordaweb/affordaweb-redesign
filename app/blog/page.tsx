@@ -152,32 +152,7 @@ export default function BlogPage() {
           <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Practical advice on website design, SEO, and digital marketing — written for small business owners who want to grow online without the jargon.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {['Web Design', 'SEO Tips', 'Business Growth', 'Pricing', 'Performance', 'Local SEO'].map(cat => (
-              <div
-                key={cat}
-                className="flex items-center gap-2 rounded-full px-4 py-2"
-                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.14)' }}
-              >
-                <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#5636D1' }} />
-                <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.75)' }}>{cat}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog content */}
-      <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }} aria-labelledby="blog-heading">
-        {/* Ambient glows */}
-        <div className="absolute pointer-events-none" style={{ width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,54,209,0.08), transparent 65%)', top: '20%', right: '-200px' }} />
-        <div className="absolute pointer-events-none" style={{ width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(226,73,138,0.06), transparent 65%)', bottom: '20%', left: '-150px' }} />
-
-        <div className="container-tight relative z-10">
-          <h2 className="sr-only" id="blog-heading">Blog Posts</h2>
-
-          {/* Category filter */}
-          <div className="flex flex-wrap gap-2 justify-center mb-14">
+          <div className="flex flex-wrap gap-2 justify-center">
             {categories.map(cat => (
               <span
                 key={cat}
@@ -191,6 +166,17 @@ export default function BlogPage() {
               </span>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Blog content */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }} aria-labelledby="blog-heading">
+        {/* Ambient glows */}
+        <div className="absolute pointer-events-none" style={{ width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,54,209,0.08), transparent 65%)', top: '20%', right: '-200px' }} />
+        <div className="absolute pointer-events-none" style={{ width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(226,73,138,0.06), transparent 65%)', bottom: '20%', left: '-150px' }} />
+
+        <div className="container-tight relative z-10">
+          <h2 className="sr-only" id="blog-heading">Blog Posts</h2>
 
           {/* Featured post */}
           {featured && (
