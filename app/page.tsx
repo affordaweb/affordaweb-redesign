@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     'Affordable website design starting at $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
   alternates: { canonical: 'https://www.affordawebsolutions.com' },
   openGraph: {
+    type: 'website',
     title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
     description: 'Affordable website design starting at $69/month. Hosting, SSL, SEO, and unlimited updates included.',
     url: 'https://www.affordawebsolutions.com',
@@ -90,20 +91,20 @@ function IconCheck() {
 // ── Data ──────────────────────────────────────────────────────────
 
 const services = [
-  { Icon: IconDesign,   title: 'Website Design',      desc: 'Custom, mobile-first small business website design built to convert visitors into paying customers.', href: '/services#design' },
-  { Icon: IconRedesign, title: 'Website Redesign',    desc: 'Transform your outdated site into a fast, modern, high-performing website without losing your rankings.', href: '/services#redesign' },
-  { Icon: IconSeo,      title: 'SEO Optimization',    desc: 'Local SEO built into every site so your small business ranks on Google and gets found by nearby customers.', href: '/services#seo' },
-  { Icon: IconMaint,    title: 'Website Maintenance', desc: 'Managed website maintenance — updates, backups, and security monitoring — so you can focus on running your business.', href: '/services#maintenance' },
-  { Icon: IconHosting,  title: 'Shared Hosting',      desc: 'Fast, reliable managed web hosting with a free SSL certificate included in every website design plan.', href: '/services#hosting' },
+  { Icon: IconDesign,   title: 'Website Design',      desc: 'Custom, mobile-first small business website design built to convert visitors into paying customers.', href: '/services/design' },
+  { Icon: IconRedesign, title: 'Website Redesign',    desc: 'Transform your outdated site into a fast, modern, high-performing website without losing your rankings.', href: '/services/redesign' },
+  { Icon: IconSeo,      title: 'SEO Optimization',    desc: 'Local SEO built into every site so your small business ranks on Google and gets found by nearby customers.', href: '/services/seo' },
+  { Icon: IconMaint,    title: 'Website Maintenance', desc: 'Managed website maintenance — updates, backups, and security monitoring — so you can focus on running your business.', href: '/services/maintenance' },
+  { Icon: IconHosting,  title: 'Shared Hosting',      desc: 'Fast, reliable managed web hosting with a free SSL certificate included in every website design plan.', href: '/services/hosting' },
   { Icon: IconEcom,     title: 'E-Commerce Design',   desc: 'Launch your online store with up to 30 products, secure payment processing, and a mobile-optimized checkout.', href: '/services#ecommerce' },
 ]
 
 const whoWeHelp = [
-  { title: 'Freelancers',        tag: 'Solo professionals',     color: '#7C3AED', pastelBg: 'rgba(124,58,237,0.14)',   desc: 'A professional freelancer website starting at $69/month keeps you from losing clients to someone with a better-looking site. Your skills deserve a site that sells them.',              Icon: IconDesign  },
-  { title: 'Startups',           tag: 'Early-stage ventures',   color: '#06B6D4', pastelBg: 'rgba(6,182,212,0.14)',    desc: 'Launch with a credible startup website from day one — without the five-figure agency bill. First impressions define early traction, and yours only happens once.',                        Icon: IconRedesign },
-  { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Local small business website design built to rank on Google and generate leads — not just traffic. Every site includes local SEO so customers in your area can actually find you.',     Icon: IconSeo     },
-  { title: 'Established Brands', tag: 'Growing companies',      color: '#F59E0B', pastelBg: 'rgba(245,158,11,0.14)',  desc: 'You have outgrown your current site. Our website redesign service preserves your search rankings and existing content while delivering a modern, high-converting experience.',           Icon: IconMaint   },
-  { title: 'Online Stores',      tag: 'E-commerce businesses',  color: '#F43F5E', pastelBg: 'rgba(244,63,94,0.14)',   desc: 'Affordable e-commerce website design with up to 30 products, secure payment processing, and a mobile-optimized checkout. Built for small online stores that need to sell from day one.',  Icon: IconEcom    },
+  { title: 'Freelancers',        tag: 'Solo professionals',     color: '#7C3AED', pastelBg: 'rgba(124,58,237,0.14)',   desc: 'A professional freelancer website starting at $69/month keeps you from losing clients to someone with a better-looking site. Your skills deserve a site that sells them.',              Icon: IconDesign,   href: '/services/design'    },
+  { title: 'Startups',           tag: 'Early-stage ventures',   color: '#06B6D4', pastelBg: 'rgba(6,182,212,0.14)',    desc: 'Launch with a credible startup website from day one — without the five-figure agency bill. First impressions define early traction, and yours only happens once.',                        Icon: IconRedesign, href: '/services/design'    },
+  { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Local small business website design built to rank on Google and generate leads — not just traffic. Every site includes local SEO so customers in your area can actually find you.',     Icon: IconSeo,      href: '/services/seo'       },
+  { title: 'Established Brands', tag: 'Growing companies',      color: '#F59E0B', pastelBg: 'rgba(245,158,11,0.14)',  desc: 'You have outgrown your current site. Our website redesign service preserves your search rankings and existing content while delivering a modern, high-converting experience.',           Icon: IconMaint,    href: '/services/redesign'  },
+  { title: 'Online Stores',      tag: 'E-commerce businesses',  color: '#F43F5E', pastelBg: 'rgba(244,63,94,0.14)',   desc: 'Affordable e-commerce website design with up to 30 products, secure payment processing, and a mobile-optimized checkout. Built for small online stores that need to sell from day one.',  Icon: IconEcom,     href: '/services#ecommerce' },
 ]
 
 const portfolioItems = [
@@ -615,9 +616,10 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {whoWeHelp.map(({ title, tag, desc, color, pastelBg, Icon }) => (
-              <div
+            {whoWeHelp.map(({ title, tag, desc, color, pastelBg, Icon, href }) => (
+              <Link
                 key={title}
+                href={href}
                 className="group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden flex flex-col"
                 style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
               >
@@ -662,7 +664,7 @@ export default function HomePage() {
                   className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={{ boxShadow: `inset 0 0 0 1px ${color}35` }}
                 />
-              </div>
+              </Link>
             ))}
 
             {/* 6th card — CTA */}

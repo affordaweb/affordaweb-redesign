@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/about' },
   openGraph: {
+    type: 'website',
     title: 'About Us | Filipino Web Design Team for Small Businesses',
     description: 'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
     url: 'https://www.affordawebsolutions.com/about',

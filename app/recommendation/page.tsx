@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     "Get a free, personalised website redesign recommendation in under 30 seconds. Tell us your business type and goals — we'll show you exactly what to fix.",
   alternates: { canonical: 'https://www.affordawebsolutions.com/recommendation' },
   openGraph: {
+    type: 'website',
     title: 'Free Website Redesign Recommendation | AffordaWeb Solutions',
     description:
       'Instant, personalised redesign plan based on your industry and goals. No signup, no credit card — 100% free.',

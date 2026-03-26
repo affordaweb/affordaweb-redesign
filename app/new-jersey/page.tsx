@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     'Affordable website design for New Jersey small businesses. Custom design, hosting, SEO & SSL included from $69/mo. Serving Monmouth, Middlesex, Ocean, Morris & Bergen counties.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/new-jersey' },
   openGraph: {
+    type: 'website',
     title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
     description:
       'Professional website design for NJ small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',

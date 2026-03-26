@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     'Browse our portfolio of affordable website design projects for small businesses — service companies, freelancers, e-commerce stores, and local businesses.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/portfolio' },
   openGraph: {
+    type: 'website',
     title: 'Website Design Portfolio | Small Business Websites We Built',
     description: 'See our work — affordable, professional website designs for small businesses.',
     url: 'https://www.affordawebsolutions.com/portfolio',

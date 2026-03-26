@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     'Contact AffordaWeb Solutions for a free, no-obligation website design quote. We respond within 24 hours. Email us at hello@affordawebsolutions.com.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/contact' },
   openGraph: {
+    type: 'website',
     title: 'Get a Free Website Quote | Contact Us',
     description: 'Request a free quote for affordable website design. We respond within 24 hours.',
     url: 'https://www.affordawebsolutions.com/contact',

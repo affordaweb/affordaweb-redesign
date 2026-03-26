@@ -21,6 +21,7 @@ export async function generateMetadata({
     description: s.metaDescription,
     alternates: { canonical: `https://www.affordawebsolutions.com/services/${s.id}` },
     openGraph: {
+      type: 'website',
       title: s.metaTitle,
       description: s.metaDescription,
       url: `https://www.affordawebsolutions.com/services/${s.id}`,

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     'Website design pricing starting at $69/mo. All plans include hosting, SSL, and maintenance. No setup fees, no contracts, cancel anytime.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/pricing' },
   openGraph: {
+    type: 'website',
     title: 'Website Design Pricing | Plans Starting at $69/mo',
     description: 'Website design plans from $69/mo — custom design, hosting, SSL, SEO, maintenance, and unlimited updates all included. No setup fees, no contracts.',
     url: 'https://www.affordawebsolutions.com/pricing',

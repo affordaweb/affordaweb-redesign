@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     'Expert web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/blog' },
   openGraph: {
+    type: 'website',
     title: 'Web Design Blog | AffordaWeb Solutions',
     description: 'Practical web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
     url: 'https://www.affordawebsolutions.com/blog',

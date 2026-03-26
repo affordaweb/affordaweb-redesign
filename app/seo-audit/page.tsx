@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "Get a free instant SEO audit for your website. We check 20+ factors — meta tags, headings, page speed, SSL, Open Graph, and more. No signup required.",
   alternates: { canonical: "https://www.affordawebsolutions.com/seo-audit" },
   openGraph: {
+    type: 'website',
     title: "Free SEO Audit Tool | Check Your Website Score in 30 Seconds",
     description:
       "Instant SEO analysis — 20+ checks across 5 categories. See your score, top issues, and quick wins for free.",

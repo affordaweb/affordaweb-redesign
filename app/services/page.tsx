@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     'Affordable web design services for small businesses: custom design, SEO, hosting, maintenance, and e-commerce. Everything bundled from $69/month.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/services' },
   openGraph: {
+    type: 'website',
     title: 'Web Design & SEO Services for Small Businesses',
     description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
     url: 'https://www.affordawebsolutions.com/services',
