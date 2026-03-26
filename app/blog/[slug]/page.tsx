@@ -50,11 +50,11 @@ Most of your local competitors already have websites. If yours is better — fas
 
 Many small business owners avoid getting a website because they assume it will be expensive or technically complicated. That's no longer the case.
 
-At AffordaWeb Solutions, our website design services start at just **$69/month** — which includes hosting, SSL security, maintenance, and ongoing support. There's no large upfront cost, no long-term contract, and no technical headaches.
+At AffordaWeb Solutions, our website design services start at just **$69/month** — which includes hosting, [SSL security](https://letsencrypt.org), maintenance, and ongoing support. There's no large upfront cost, no long-term contract, and no technical headaches.
 
 ## The Bottom Line
 
-A professional website is no longer a luxury for small businesses — it's a necessity. The cost of not having one (lost leads, lost credibility, lost sales) far outweighs the affordable monthly investment.
+A professional website is no longer a luxury for small businesses — it's a necessity. The cost of not having one (lost leads, lost credibility, lost sales) far outweighs the affordable monthly investment. For more on why online presence matters, [Moz's small business SEO guide](https://moz.com/blog) is a great starting point.
 
 Ready to get started? [Get a free quote today](/contact) and have your website live in 10–15 business days.
     `.trim(),
@@ -89,7 +89,7 @@ Templates are templates. Your Wix site will look like thousands of other Wix sit
 
 ### SEO Performance
 
-DIY builders often generate bloated code, slow load times, and limited control over technical SEO elements. Google cares about page speed, clean code, and proper structure — things a professional build handles by default.
+DIY builders often generate bloated code, slow load times, and limited control over [technical SEO elements](https://developers.google.com/search/docs). Google cares about page speed, clean code, and proper structure — things a professional build handles by default. [Backlinko's research](https://backlinko.com) consistently shows that page speed and Core Web Vitals directly impact rankings.
 
 ### Your Time Has Value
 
@@ -136,7 +136,7 @@ The good news: you don't need to be a technical expert. These 10 tips will make 
 
 Start with keywords your customers actually search for. Think about: affordable website design near me, [your service] in [your city], cheap web design services.
 
-Use free tools like Google Keyword Planner or Ubersuggest to find terms with real search volume.
+Use free tools like Google Keyword Planner or Ubersuggest to find terms with real search volume. [Moz's keyword research guide](https://moz.com/blog) is also an excellent free resource.
 
 ## 2. Optimize Your Title Tags
 
@@ -144,7 +144,7 @@ Every page should have a unique title tag (under 60 characters) that includes yo
 
 ## 3. Write Compelling Meta Descriptions
 
-Meta descriptions don't directly affect rankings, but they influence click-through rates. Write a 150–160 character summary that includes your keyword and a clear benefit.
+[Meta descriptions](https://developers.google.com/search/docs/appearance/snippet) don't directly affect rankings, but they influence click-through rates. Write a 150–160 character summary that includes your keyword and a clear benefit.
 
 ## 4. Use Proper Heading Structure
 
@@ -172,11 +172,11 @@ Links from other reputable websites signal trust to Google. Get listed in indust
 
 ## 10. Track and Improve
 
-Set up Google Analytics and Google Search Console. Monitor which pages rank, what keywords drive traffic, and where visitors drop off — then make improvements.
+Set up [Google Analytics](https://marketingplatform.google.com/about/analytics/) and [Google Search Console](https://search.google.com/search-console). Monitor which pages rank, what keywords drive traffic, and where visitors drop off — then make improvements. [Semrush's blog](https://semrush.com/blog) and [Neil Patel's SEO resources](https://neilpatel.com/blog) are also worth bookmarking for ongoing learning.
 
 ---
 
-At AffordaWeb Solutions, every website we build includes on-page SEO optimization as standard. [Learn more about our SEO services](/services#seo) or [get a free quote](/contact).
+At AffordaWeb Solutions, every website we build includes on-page SEO optimization as standard. [Learn more about our SEO services](/services/seo) or [get a free quote](/contact).
     `.trim(),
   },
   'website-design-subscription-model-explained': {
@@ -201,7 +201,7 @@ A good website design subscription — like those offered by AffordaWeb Solution
 
 - **Professional website design** — Custom-built, mobile-responsive website
 - **Web hosting** — Your site lives on our servers at no extra cost
-- **SSL certificate** — HTTPS security included
+- **[SSL certificate](https://letsencrypt.org)** — HTTPS security included
 - **Business email address** — A professional email like you@yourdomain.com
 - **Regular maintenance** — Updates, backups, and security monitoring
 - **Content updates** — Send us changes and we handle them for you
@@ -259,9 +259,9 @@ If your website is slow, you're losing potential customers before they even read
 
 Start with these free tools:
 
-- **Google PageSpeed Insights** — pagespeed.web.dev
-- **GTmetrix** — gtmetrix.com
-- **WebPageTest** — webpagetest.org
+- **[Google PageSpeed Insights](https://pagespeed.web.dev)** — pagespeed.web.dev
+- **[GTmetrix](https://gtmetrix.com)** — gtmetrix.com
+- **[WebPageTest](https://www.webpagetest.org)** — webpagetest.org
 
 Aim for a Google PageSpeed score of 90+ on mobile and desktop.
 
@@ -384,10 +384,12 @@ Blog posts targeting local keywords build authority and attract local searchers:
 
 ## Tracking Your Local SEO Progress
 
-- **Google Search Console** — See what keywords bring traffic
-- **Google Analytics** — Track local visitor behavior
-- **Whitespark Local Citation Finder** — Audit citations
-- **BrightLocal** — Comprehensive local SEO tracking
+- **[Google Search Console](https://search.google.com/search-console)** — See what keywords bring traffic
+- **[Google Analytics](https://marketingplatform.google.com/about/analytics/)** — Track local visitor behavior
+- **[Whitespark Local Citation Finder](https://whitespark.ca)** — Audit citations
+- **[BrightLocal](https://brightlocal.com)** — Comprehensive local SEO tracking
+
+For in-depth local SEO strategy, [Moz's local SEO learning center](https://moz.com/learn/seo/local) is the most comprehensive free resource available.
 
 ---
 
@@ -474,7 +476,14 @@ export default async function BlogPostPage({
         elements.push(
           <ul key={`ul-${i}`} className="list-disc list-inside space-y-2 my-4 text-gray-600">
             {listItems.map((item, idx) => (
-              <li key={idx} dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+              <li key={idx} dangerouslySetInnerHTML={{ __html: item
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) => {
+                  const ext = url.startsWith('http')
+                  const attrs = ext ? ' target="_blank" rel="noopener noreferrer"' : ''
+                  return `<a href="${url}" class="text-primary-500 hover:underline font-semibold"${attrs}>${text}</a>`
+                })
+              }} />
             ))}
           </ul>
         )
@@ -513,7 +522,11 @@ export default async function BlogPostPage({
         // Regular paragraph — handle inline bold and links
         const html = line
           .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary-500 hover:underline font-semibold">$1</a>')
+          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, url) => {
+            const ext = url.startsWith('http')
+            const attrs = ext ? ' target="_blank" rel="noopener noreferrer"' : ''
+            return `<a href="${url}" class="text-primary-500 hover:underline font-semibold"${attrs}>${text}</a>`
+          })
         elements.push(
           <p key={i} className="text-gray-600 leading-relaxed mb-4"
             dangerouslySetInnerHTML={{ __html: html }} />

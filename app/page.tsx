@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import HeroBackground from '@/components/HeroBackground'
@@ -113,10 +114,11 @@ const portfolioItems = [
   { category: 'Web Design',       title: 'Argentum Private Wealth',  desc: 'A financial advisory firm required a site built to the standard of its clients. We delivered a high-value, tailor-made presence that conveys trust on first load.',        PortfolioIcon: IconSeo,      color: '#0891B2', bg: 'linear-gradient(135deg, #E0F7FA 0%, #BAE6FD 100%)' },
 ]
 
-const faqs = [
+const faqs: { q: string; a: string; display?: React.ReactNode }[] = [
   {
     q: 'What does your affordable website design package include?',
     a: 'Every plan includes a professionally designed small business website, managed web hosting, a free SSL certificate, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates and full on-page SEO optimization — everything in one flat monthly price.',
+    display: <>Every plan includes a professionally designed small business website, managed web hosting, a free <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">SSL certificate</a>, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates and full on-page SEO optimization with <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">Google Analytics</a> setup — everything in one flat monthly price.</>,
   },
   {
     q: 'Are there any setup fees or hidden costs with your website design plans?',
@@ -137,6 +139,7 @@ const faqs = [
   {
     q: 'Does website design with hosting mean I do not need a separate web host?',
     a: 'Correct. Every plan includes fully managed web hosting — you do not need to buy or manage a separate hosting account. Your website design, hosting, SSL certificate, and maintenance are all bundled into one monthly price.',
+    display: <>Correct. Every plan includes fully managed web hosting — you do not need to buy or manage a separate hosting account. Your website design, hosting, <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">SSL certificate</a>, and maintenance are all bundled into one monthly price.</>,
   },
 ]
 
@@ -1161,7 +1164,7 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-3">
-            {faqs.map(({ q, a }, i) => (
+            {faqs.map(({ q, a, display }, i) => (
               <details
                 key={q}
                 open={i === 0}
@@ -1194,7 +1197,7 @@ export default function HomePage() {
                 </summary>
                 <div className="px-6 pb-6 pt-1">
                   <div className="w-full h-px mb-4" style={{ background: 'rgba(86,54,209,0.08)' }} />
-                  <p className="text-gray-500 text-sm leading-relaxed">{a}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed">{display ?? a}</p>
                 </div>
               </details>
             ))}

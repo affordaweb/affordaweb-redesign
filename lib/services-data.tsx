@@ -35,7 +35,7 @@ export const services: ServiceData[] = [
     ],
     paragraphs: [
       <>Most web agencies charge thousands upfront before they know anything about your business. We built this differently. For <Link href="/pricing" className="font-medium text-primary-500 hover:underline">$69 a month</Link>, you get a custom site that is responsive on every device, with clean SEO structure built in from the start.</>,
-      <>You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert.</>,
+      <>You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert. Every plan includes a free <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">SSL certificate</a>.</>,
       <>Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.</>,
     ],
     features: [
@@ -67,6 +67,11 @@ export const services: ServiceData[] = [
       'We give your site a complete visual and functional makeover. Modern, mobile-friendly layout. Improved performance. Sharper conversion focus. Your existing content stays put.',
       'Right move if your site works but no longer represents what you actually offer.',
     ],
+    paragraphs: [
+      <>An outdated site costs you business. Not dramatically, just quietly. Visitors land, see something that looks like it was built years ago, and leave. A redesign fixes that without losing the content and rankings you have already built.</>,
+      <><a href="https://developers.google.com/search/mobile-sites" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Mobile-first design</a> is now a ranking factor — Google penalizes sites that are not optimized for mobile. We give your site a complete visual and functional makeover. Modern, responsive layout. Improved performance. Sharper conversion focus. Your existing content stays put.</>,
+      <>Right move if your site works but no longer represents what you actually offer.</>,
+    ],
     features: [
       'Complete visual and functional makeover',
       'Preserves existing content and SEO',
@@ -95,8 +100,8 @@ export const services: ServiceData[] = [
       'If your site has been live for years but traffic has barely moved, this is the thing you have not tried yet.',
     ],
     paragraphs: [
-      <>Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper meta setup, and the structural decisions that search engines pay attention to.</>,
-      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Standard and Premium plans</Link> include SEO as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.</>,
+      <>Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">meta tag</a> setup, and the structural decisions that search engines pay attention to.</>,
+      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Standard and Premium plans</Link> include SEO as a standard feature, not an upsell. Proven keyword strategies, content structure, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Analytics</a> integration, and a long-term organic growth focus.</>,
       <>If your site has been live for years but traffic has barely moved, start with our <Link href="/seo-audit" className="font-medium text-primary-500 hover:underline">free SEO audit tool</Link> — it shows you exactly where you stand.</>,
     ],
     features: [
@@ -155,6 +160,11 @@ export const services: ServiceData[] = [
       'Hosting should not be one more vendor to manage. Every AffordaWeb plan bundles it in. High-performance, reliable hosting with an SSL certificate included on every account.',
       'You also get 1GB of professional email connected to your domain. One provider, one monthly bill, one contact for anything technical.',
       'Bundled because separating it out just adds friction.',
+    ],
+    paragraphs: [
+      <>Hosting should not be one more vendor to manage. Every AffordaWeb plan bundles it in. High-performance, reliable hosting with a free <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">SSL certificate</a> included on every account.</>,
+      <>You also get 1GB of professional email connected to your domain. One provider, one monthly bill, one contact for anything technical. We monitor performance with <a href="https://pagespeed.web.dev" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google PageSpeed Insights</a> to keep your site fast.</>,
+      <>Bundled because separating it out just adds friction.</>,
     ],
     features: [
       'High-performance, reliable hosting',

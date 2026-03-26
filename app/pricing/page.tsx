@@ -123,6 +123,7 @@ const faqs = [
   {
     q: 'Can I cancel my plan at any time?',
     a: 'Yes. All our plans are month-to-month with no long-term contracts. You can cancel at any time.',
+    display: <>Yes. All our plans are month-to-month with <a href="https://ftc.gov/business-guidance/small-businesses" target="_blank" rel="noopener noreferrer" className="font-medium" style={{ color: '#06B6D4' }}>no long-term contracts</a>. You can cancel at any time.</>,
   },
   {
     q: 'Is the domain name included in the price?',
@@ -347,6 +348,12 @@ export default function PricingPage() {
                 {t}
               </span>
             ))}
+            <span className="flex items-center gap-1.5">
+              <svg className="w-3.5 h-3.5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              <a href="https://clutch.co" target="_blank" rel="noopener noreferrer" className="hover:text-gray-600 transition-colors">Verified client reviews</a>
+            </span>
           </div>
         </div>
       </section>
