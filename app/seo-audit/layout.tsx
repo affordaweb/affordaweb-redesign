@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Free SEO Audit | AffordaWeb Solutions",
   description:
-    "Get a free SEO analysis of your website. We check 20+ factors including meta tags, content structure, technical SEO, Open Graph, and link profile. Instant preview, full report delivered to your inbox.",
+    "Get a free SEO analysis of your website. We check 20+ factors: meta tags, content structure, technical SEO, Open Graph, and link profile. No signup required.",
   alternates: { canonical: "https://www.affordawebsolutions.com/seo-audit" },
   openGraph: {
     title: "Free SEO Audit | AffordaWeb Solutions",

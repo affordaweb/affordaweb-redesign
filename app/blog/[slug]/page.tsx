@@ -17,7 +17,7 @@ const posts: Record<string, {
   'why-small-businesses-need-professional-website': {
     title: 'Why Small Businesses Need a Professional Website in 2025',
     excerpt:
-      'Still on the fence about investing in a professional website? Discover the real cost of not having one — and how an affordable website can transform your business.',
+      'Still on the fence about investing in a professional website? Discover the real cost of not having one and how an affordable website can transform your business.',
     category: 'Business Growth',
     date: 'January 15, 2025',
     readTime: '5 min read',
@@ -119,7 +119,7 @@ If you're a solo freelancer just testing the waters, a DIY builder might get you
   'seo-tips-small-business-website': {
     title: '10 SEO Tips to Rank Your Small Business Website Higher',
     excerpt:
-      'Search engine optimization does not have to be complicated. These 10 actionable SEO tips will help your small business website rank higher and attract more customers.',
+      'SEO does not have to be complicated. These 10 actionable tips will help your small business website rank higher on Google and attract more customers.',
     category: 'SEO',
     date: 'February 5, 2025',
     readTime: '8 min read',
