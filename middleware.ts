@@ -47,6 +47,12 @@ function isInMaderaCounty(geo: any): boolean {
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname
 
+  // Always let search engine crawlers through — never geo-block bots
+  const ua = request.headers.get('user-agent') ?? ''
+  if (/googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|ahrefsbot|semrushbot/i.test(ua)) {
+    return NextResponse.next()
+  }
+
   // 🔥 Safe guard: never break site if geo is missing
   try {
     // Prefer Cloudflare headers (when CF sits in front of Vercel)
@@ -67,6 +73,7 @@ export function middleware(request: NextRequest) {
 
     if (blocked) {
       console.log(`[middleware] BLOCKED Madera County visitor: city="${city}" ip=${request.headers.get('x-forwarded-for') ?? 'unknown'}`)
+      // Use 403 (not 404) so Google doesn't de-index the page
       return new NextResponse(
         `<!DOCTYPE html>
 <html lang="en">
@@ -95,8 +102,8 @@ export function middleware(request: NextRequest) {
 </body>
 </html>`,
         {
-          status: 404,
-          headers: { 'Content-Type': 'text/html' },
+          status: 403,
+          headers: { 'Content-Type': 'text/html', 'X-Robots-Tag': 'noindex' },
         }
       )
     }
