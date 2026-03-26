@@ -5,21 +5,21 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
-  title: 'Web Design Blog | Tips & Guides for Small Businesses',
+  title: 'Web Design Blog | Tips for Small Businesses',
   description:
     'Expert web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
-  alternates: { canonical: 'https://affordawebsolutions.com/blog' },
+  alternates: { canonical: 'https://www.affordawebsolutions.com/blog' },
   openGraph: {
     title: 'Web Design Blog | AffordaWeb Solutions',
     description: 'Practical web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
-    url: 'https://affordawebsolutions.com/blog',
-    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Blog' }],
+    url: 'https://www.affordawebsolutions.com/blog',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Blog' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Web Design Blog | AffordaWeb Solutions',
     description: 'Practical web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
-    images: ['https://affordawebsolutions.com/og-image.png'],
+    images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -122,8 +122,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' },
-    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://affordawebsolutions.com/blog' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.affordawebsolutions.com/blog' },
   ],
 }
 

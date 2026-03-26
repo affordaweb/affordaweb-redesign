@@ -4,21 +4,21 @@ import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'About Us | Filipino Web Design Team for Small Businesses',
+  title: 'About | Filipino Web Design Team',
   description:
     'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
-  alternates: { canonical: 'https://affordawebsolutions.com/about' },
+  alternates: { canonical: 'https://www.affordawebsolutions.com/about' },
   openGraph: {
     title: 'About Us | Filipino Web Design Team for Small Businesses',
     description: 'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
-    url: 'https://affordawebsolutions.com/about',
-    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'About AffordaWeb Solutions' }],
+    url: 'https://www.affordawebsolutions.com/about',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'About AffordaWeb Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Us | Filipino Web Design Team for Small Businesses',
     description: 'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
-    images: ['https://affordawebsolutions.com/og-image.png'],
+    images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -115,8 +115,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' },
-    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://affordawebsolutions.com/about' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.affordawebsolutions.com/about' },
   ],
 }
 
@@ -124,7 +124,7 @@ const teamSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'AffordaWeb Solutions',
-  url: 'https://affordawebsolutions.com',
+  url: 'https://www.affordawebsolutions.com',
   description: 'A team of talented Filipino web designers, developers, and SEO specialists delivering affordable, professional website design for small businesses worldwide.',
   email: 'hello@affordawebsolutions.com',
   knowsAbout: ['Web Design', 'Website Development', 'SEO Optimization', 'Website Maintenance', 'Web Hosting'],

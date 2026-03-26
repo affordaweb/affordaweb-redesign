@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Free SEO Audit | AffordaWeb Solutions",
   description:
     "Get a free SEO analysis of your website. We check 20+ factors including meta tags, content structure, technical SEO, Open Graph, and link profile. Instant preview, full report delivered to your inbox.",
-  alternates: { canonical: "https://affordawebsolutions.com/seo-audit/" },
+  alternates: { canonical: "https://www.affordawebsolutions.com/seo-audit" },
   openGraph: {
     title: "Free SEO Audit | AffordaWeb Solutions",
     description:
       "Run a free SEO audit on your website. See your SEO score, top issues, and quick wins instantly.",
-    url: "https://affordawebsolutions.com/seo-audit/",
+    url: "https://www.affordawebsolutions.com/seo-audit",
     type: "website",
   },
   twitter: {
@@ -25,19 +25,19 @@ const jsonLd = {
   name: "Free SEO Audit Tool",
   description:
     "A free SEO analysis tool that checks meta tags, content structure, technical SEO, Open Graph tags, and link profile.",
-  url: "https://affordawebsolutions.com/seo-audit/",
+  url: "https://www.affordawebsolutions.com/seo-audit",
   applicationCategory: "BusinessApplication",
-  operatingSystem: "Any",
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    description: "Free SEO audit preview",
+    availability: "https://schema.org/InStock",
+    url: "https://www.affordawebsolutions.com/seo-audit",
   },
   provider: {
-    "@type": "ProfessionalService",
+    "@type": "Organization",
     name: "AffordaWeb Solutions",
-    url: "https://affordawebsolutions.com/",
+    url: "https://www.affordawebsolutions.com/",
     email: "hello@affordawebsolutions.com",
   },
 }

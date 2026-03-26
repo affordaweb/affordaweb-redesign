@@ -4,7 +4,7 @@ import { analyzeSeo, normalizeUrl, extractDomain } from '@/lib/seo-analyzer'
 import { sendSeoAdminNotification } from '@/lib/email'
 import type { SeoReport } from '@/types/seo-report'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://affordawebsolutions.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://www.affordawebsolutions.com'
 
 // ── Rate limiting (3 per IP per day) ─────────────────────────────────────────
 

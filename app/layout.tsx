@@ -22,7 +22,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://affordawebsolutions.com'),
+  metadataBase: new URL('https://www.affordawebsolutions.com'),
   title: {
     default: 'AffordaWeb Solutions | Affordable Website Design & Hosting',
     template: '%s | AffordaWeb Solutions',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://affordawebsolutions.com',
+    url: 'https://www.affordawebsolutions.com',
     siteName: 'AffordaWeb Solutions',
     title: 'AffordaWeb Solutions | Affordable Website Design & Hosting',
     description:
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://affordawebsolutions.com',
+    canonical: 'https://www.affordawebsolutions.com',
   },
   icons: {
     icon: [
@@ -138,12 +138,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               '@graph': [
                 {
                   '@type': 'Organization',
-                  '@id': 'https://affordawebsolutions.com/#organization',
+                  '@id': 'https://www.affordawebsolutions.com/#organization',
                   name: 'AffordaWeb Solutions',
-                  url: 'https://affordawebsolutions.com',
+                  url: 'https://www.affordawebsolutions.com',
                   logo: {
                     '@type': 'ImageObject',
-                    url: 'https://affordawebsolutions.com/logo.webp',
+                    url: 'https://www.affordawebsolutions.com/logo.webp',
                     width: 874,
                     height: 245,
                   },
@@ -160,9 +160,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 },
                 {
                   '@type': 'LocalBusiness',
-                  '@id': 'https://affordawebsolutions.com/#business',
+                  '@id': 'https://www.affordawebsolutions.com/#business',
                   name: 'AffordaWeb Solutions',
-                  url: 'https://affordawebsolutions.com',
+                  url: 'https://www.affordawebsolutions.com',
                   description:
                     'Affordable website design services for small businesses with hosting, SSL, and maintenance included.',
                   priceRange: '$69 - $149/month',
@@ -173,11 +173,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 },
                 {
                   '@type': 'WebSite',
-                  '@id': 'https://affordawebsolutions.com/#website',
-                  url: 'https://affordawebsolutions.com',
+                  '@id': 'https://www.affordawebsolutions.com/#website',
+                  url: 'https://www.affordawebsolutions.com',
                   name: 'AffordaWeb Solutions',
                   publisher: {
-                    '@id': 'https://affordawebsolutions.com/#organization',
+                    '@id': 'https://www.affordawebsolutions.com/#organization',
                   },
                 },
               ],

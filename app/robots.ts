@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://affordawebsolutions.com/sitemap.xml',
-    host: 'https://affordawebsolutions.com',
+    sitemap: 'https://www.affordawebsolutions.com/sitemap.xml',
+    host: 'https://www.affordawebsolutions.com',
   }
 }

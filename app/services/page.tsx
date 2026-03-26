@@ -6,18 +6,18 @@ export const metadata: Metadata = {
   title: 'Web Design & SEO Services for Small Businesses',
   description:
     'Affordable web design services for small businesses: custom design, SEO, hosting, maintenance, and e-commerce. Everything bundled from $69/month.',
-  alternates: { canonical: 'https://affordawebsolutions.com/services' },
+  alternates: { canonical: 'https://www.affordawebsolutions.com/services' },
   openGraph: {
     title: 'Web Design & SEO Services for Small Businesses',
     description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
-    url: 'https://affordawebsolutions.com/services',
-    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Web Design Services' }],
+    url: 'https://www.affordawebsolutions.com/services',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Web Design Services' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Web Design & SEO Services for Small Businesses',
     description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
-    images: ['https://affordawebsolutions.com/og-image.png'],
+    images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -181,8 +181,8 @@ const serviceSchema = {
       '@type': 'Service',
       name: s.title,
       description: s.description.split('\n')[0],
-      provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://affordawebsolutions.com' },
-      url: `https://affordawebsolutions.com/services#${s.id}`,
+      provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://www.affordawebsolutions.com' },
+      url: `https://www.affordawebsolutions.com/services#${s.id}`,
     },
   })),
 }
@@ -191,8 +191,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://affordawebsolutions.com/services' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.affordawebsolutions.com/services' },
   ],
 }
 

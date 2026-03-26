@@ -4,21 +4,21 @@ import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Website Design Portfolio | Small Business Websites We Built',
+  title: 'Website Design Portfolio | Small Business Sites We Built',
   description:
     'Browse our portfolio of affordable website design projects for small businesses — service companies, freelancers, e-commerce stores, and local businesses.',
-  alternates: { canonical: 'https://affordawebsolutions.com/portfolio' },
+  alternates: { canonical: 'https://www.affordawebsolutions.com/portfolio' },
   openGraph: {
     title: 'Website Design Portfolio | Small Business Websites We Built',
     description: 'See our work — affordable, professional website designs for small businesses.',
-    url: 'https://affordawebsolutions.com/portfolio',
-    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Portfolio' }],
+    url: 'https://www.affordawebsolutions.com/portfolio',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Website Design Portfolio | Small Business Websites We Built',
     description: 'See our work — affordable, professional website designs for small businesses.',
-    images: ['https://affordawebsolutions.com/og-image.png'],
+    images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -32,7 +32,7 @@ const portfolioItems = [
     imageAlt: 'Virtual assistant services website — Web VA Experts Hub',
     tags: ['Website Design', 'SEO', 'Lead Generation'],
     description: 'A virtual assistant services firm needed a homepage that communicated expertise without looking like everyone else\'s VA site. The result is clean, modern, and built to convert.',
-    url: 'https://webvaexperts.com',
+    url: 'https://www.webvaexperts.com',
     accent: '#5636D1',
     accentLight: 'rgba(86,54,209,0.10)',
     accentBorder: 'rgba(86,54,209,0.22)',
@@ -47,7 +47,7 @@ const portfolioItems = [
     imageAlt: 'LGBTQ+ community hub and advocacy website — Empower Queer Hub',
     tags: ['Web Development', 'Community', 'Mobile-First'],
     description: 'Multi-role community platform built to serve advocacy, resources, and connection. One site, several audiences — all of it navigable.',
-    url: 'https://empowerqueerhub.com',
+    url: 'https://www.empowerqueerhub.com',
     accent: '#E2498A',
     accentLight: 'rgba(226,73,138,0.10)',
     accentBorder: 'rgba(226,73,138,0.22)',
@@ -76,8 +76,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' },
-    { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://affordawebsolutions.com/portfolio' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
+    { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://www.affordawebsolutions.com/portfolio' },
   ],
 }
 

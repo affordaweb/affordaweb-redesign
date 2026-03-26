@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   title: 'Get a Free Website Quote | Contact Us',
   description:
     'Contact AffordaWeb Solutions for a free, no-obligation website design quote. We respond within 24 hours. Email us at hello@affordawebsolutions.com.',
-  alternates: { canonical: 'https://affordawebsolutions.com/contact' },
+  alternates: { canonical: 'https://www.affordawebsolutions.com/contact' },
   openGraph: {
     title: 'Get a Free Website Quote | Contact Us',
     description: 'Request a free quote for affordable website design. We respond within 24 hours.',
-    url: 'https://affordawebsolutions.com/contact',
-    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Contact AffordaWeb Solutions' }],
+    url: 'https://www.affordawebsolutions.com/contact',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Contact AffordaWeb Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Get a Free Website Quote | Contact Us',
     description: 'Request a free quote for affordable website design. We respond within 24 hours.',
-    images: ['https://affordawebsolutions.com/og-image.png'],
+    images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -35,8 +35,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' },
-    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://affordawebsolutions.com/contact' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.affordawebsolutions.com/contact' },
   ],
 }
 

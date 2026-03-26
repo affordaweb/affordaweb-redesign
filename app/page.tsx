@@ -4,21 +4,21 @@ import Image from 'next/image'
 import HeroBackground from '@/components/HeroBackground'
 
 export const metadata: Metadata = {
-  title: 'Affordable Website Design for Small Businesses | AffordaWeb',
+  title: 'Affordable Website Design for Small Businesses',
   description:
     'Affordable website design starting at $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
-  alternates: { canonical: 'https://affordawebsolutions.com' },
+  alternates: { canonical: 'https://www.affordawebsolutions.com' },
   openGraph: {
-    title: 'Affordable Website Design for Small Businesses | AffordaWeb',
+    title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
     description: 'Affordable website design starting at $69/month. Hosting, SSL, SEO, and unlimited updates included.',
-    url: 'https://affordawebsolutions.com',
-    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
+    url: 'https://www.affordawebsolutions.com',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Website Design for Small Businesses | AffordaWeb',
+    title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
     description: 'Affordable website design starting at $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
-    images: ['https://affordawebsolutions.com/og-image.png'],
+    images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -144,10 +144,10 @@ const schemaData = {
   '@graph': [
     {
       '@type': ['LocalBusiness', 'ProfessionalService'],
-      '@id': 'https://affordawebsolutions.com/#business',
+      '@id': 'https://www.affordawebsolutions.com/#business',
       name: 'AffordaWeb Solutions',
       description: 'Affordable website design for small businesses — custom design, managed hosting, SSL, SEO, and unlimited updates in one monthly plan starting at $69/month.',
-      url: 'https://affordawebsolutions.com',
+      url: 'https://www.affordawebsolutions.com',
       email: 'hello@affordawebsolutions.com',
       priceRange: '$69–$149/month',
       areaServed: 'United States',
@@ -180,14 +180,14 @@ const schemaData = {
     },
     {
       '@type': 'WebPage',
-      '@id': 'https://affordawebsolutions.com/#webpage',
-      url: 'https://affordawebsolutions.com',
+      '@id': 'https://www.affordawebsolutions.com/#webpage',
+      url: 'https://www.affordawebsolutions.com',
       name: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
       description: 'Affordable website design for small businesses starting at $69/month. Custom design, managed hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
-      isPartOf: { '@id': 'https://affordawebsolutions.com/#business' },
+      isPartOf: { '@id': 'https://www.affordawebsolutions.com/#business' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
-        itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' }],
+        itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' }],
       },
     },
   ],

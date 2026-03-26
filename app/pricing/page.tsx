@@ -3,21 +3,21 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Website Design Pricing | Plans Starting at $69/mo',
+  title: 'Website Design Pricing | Starting at $69/mo',
   description:
     'Website design pricing starting at $69/mo. All plans include hosting, SSL, and maintenance. No setup fees, no contracts, cancel anytime.',
-  alternates: { canonical: 'https://affordawebsolutions.com/pricing' },
+  alternates: { canonical: 'https://www.affordawebsolutions.com/pricing' },
   openGraph: {
     title: 'Website Design Pricing | Plans Starting at $69/mo',
     description: 'Website design plans from $69/mo — custom design, hosting, SSL, SEO, maintenance, and unlimited updates all included. No setup fees, no contracts.',
-    url: 'https://affordawebsolutions.com/pricing',
-    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Pricing Plans' }],
+    url: 'https://www.affordawebsolutions.com/pricing',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Pricing Plans' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Website Design Pricing | Plans Starting at $69/mo',
     description: 'Website design plans from $69/mo — custom design, hosting, SSL, SEO, maintenance, and unlimited updates all included. No setup fees, no contracts.',
-    images: ['https://affordawebsolutions.com/og-image.png'],
+    images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -170,7 +170,7 @@ const pricingSchema = {
       price: p.price,
       priceCurrency: 'USD',
       description: p.tagline,
-      url: `https://affordawebsolutions.com/pricing#${p.id}`,
+      url: `https://www.affordawebsolutions.com/pricing#${p.id}`,
     },
   })),
 }
@@ -179,8 +179,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' },
-    { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://affordawebsolutions.com/pricing' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
+    { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://www.affordawebsolutions.com/pricing' },
   ],
 }
 

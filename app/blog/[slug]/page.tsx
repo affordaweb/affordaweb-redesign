@@ -412,13 +412,13 @@ export async function generateMetadata({
   if (!post) return { title: 'Post Not Found' }
 
   return {
-    title: `${post.title} | AffordaWeb`,
+    title: { absolute: `${post.title} | AffordaWeb Solutions` },
     description: post.excerpt,
-    alternates: { canonical: `https://affordawebsolutions.com/blog/${slug}` },
+    alternates: { canonical: `https://www.affordawebsolutions.com/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://affordawebsolutions.com/blog/${slug}`,
+      url: `https://www.affordawebsolutions.com/blog/${slug}`,
       type: 'article',
       images: [{ url: post.image, width: 1200, height: 630, alt: post.imageAlt }],
     },
@@ -526,15 +526,15 @@ export default async function BlogPostPage({
 
   const otherPosts = Object.entries(posts)
     .filter(([s]) => s !== slug)
-    .slice(0, 3)
+    .slice(-3)
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://affordawebsolutions.com/blog' },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `https://affordawebsolutions.com/blog/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.affordawebsolutions.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.affordawebsolutions.com/blog/${slug}` },
     ],
   }
 
@@ -548,20 +548,20 @@ export default async function BlogPostPage({
     author: {
       '@type': 'Organization',
       name: 'AffordaWeb Solutions',
-      url: 'https://affordawebsolutions.com',
+      url: 'https://www.affordawebsolutions.com',
     },
     publisher: {
       '@type': 'Organization',
       name: 'AffordaWeb Solutions',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://affordawebsolutions.com/logo.webp',
+        url: 'https://www.affordawebsolutions.com/logo.webp',
       },
     },
-    url: `https://affordawebsolutions.com/blog/${slug}`,
+    url: `https://www.affordawebsolutions.com/blog/${slug}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://affordawebsolutions.com/blog/${slug}`,
+      '@id': `https://www.affordawebsolutions.com/blog/${slug}`,
     },
   }
 

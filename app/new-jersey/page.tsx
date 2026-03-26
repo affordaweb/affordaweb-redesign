@@ -6,19 +6,19 @@ export const metadata: Metadata = {
   title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
   description:
     'Affordable website design for New Jersey small businesses. Custom design, hosting, SEO & SSL included from $69/mo. Serving Monmouth, Middlesex, Ocean, Morris & Bergen counties.',
-  alternates: { canonical: 'https://affordawebsolutions.com/new-jersey' },
+  alternates: { canonical: 'https://www.affordawebsolutions.com/new-jersey' },
   openGraph: {
     title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
     description:
       'Professional website design for NJ small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',
-    url: 'https://affordawebsolutions.com/new-jersey',
-    images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design New Jersey' }],
+    url: 'https://www.affordawebsolutions.com/new-jersey',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design New Jersey' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
     description: 'Website design for NJ small businesses starting at $69/month.',
-    images: ['https://affordawebsolutions.com/og-image.png'],
+    images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
@@ -89,8 +89,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' },
-    { '@type': 'ListItem', position: 2, name: 'New Jersey Web Design', item: 'https://affordawebsolutions.com/new-jersey' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
+    { '@type': 'ListItem', position: 2, name: 'New Jersey Web Design', item: 'https://www.affordawebsolutions.com/new-jersey' },
   ],
 }
 
@@ -98,7 +98,7 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'AffordaWeb Solutions',
-  url: 'https://affordawebsolutions.com',
+  url: 'https://www.affordawebsolutions.com',
   description: 'Affordable website design for New Jersey small businesses starting at $69/month.',
   areaServed: { '@type': 'State', name: 'New Jersey' },
   serviceType: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],

@@ -3,7 +3,7 @@ import { kvGet, kvSet } from '@/lib/kv-store'
 import { sendSeoUserReport } from '@/lib/email'
 import type { SeoReport } from '@/types/seo-report'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://affordawebsolutions.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://www.affordawebsolutions.com'
 
 // ── GET /api/confirm-seo-payment?report_id=XYZ ────────────────────────────────
 // Admin clicks this link in the notification email to unlock the report.

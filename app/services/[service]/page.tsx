@@ -19,18 +19,18 @@ export async function generateMetadata({
   return {
     title: s.metaTitle,
     description: s.metaDescription,
-    alternates: { canonical: `https://affordawebsolutions.com/services/${s.id}` },
+    alternates: { canonical: `https://www.affordawebsolutions.com/services/${s.id}` },
     openGraph: {
       title: s.metaTitle,
       description: s.metaDescription,
-      url: `https://affordawebsolutions.com/services/${s.id}`,
-      images: [{ url: 'https://affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: s.title }],
+      url: `https://www.affordawebsolutions.com/services/${s.id}`,
+      images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: s.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: s.metaTitle,
       description: s.metaDescription,
-      images: ['https://affordawebsolutions.com/og-image.png'],
+      images: ['https://www.affordawebsolutions.com/og-image.png'],
     },
   }
 }
@@ -51,9 +51,9 @@ export default async function ServicePage({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://affordawebsolutions.com' },
-      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://affordawebsolutions.com/services' },
-      { '@type': 'ListItem', position: 3, name: s.title, item: `https://affordawebsolutions.com/services/${s.id}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.affordawebsolutions.com/services' },
+      { '@type': 'ListItem', position: 3, name: s.title, item: `https://www.affordawebsolutions.com/services/${s.id}` },
     ],
   }
 
@@ -62,8 +62,8 @@ export default async function ServicePage({
     '@type': 'Service',
     name: s.title,
     description: s.description[0],
-    provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://affordawebsolutions.com' },
-    url: `https://affordawebsolutions.com/services/${s.id}`,
+    provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://www.affordawebsolutions.com' },
+    url: `https://www.affordawebsolutions.com/services/${s.id}`,
   }
 
   return (
