@@ -10,6 +10,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Old WordPress pages that Google has indexed as 404
+      { source: '/thank-you/', destination: '/contact', permanent: true },
+      { source: '/thank-you', destination: '/contact', permanent: true },
       // Old WordPress trailing-slash URLs → canonical Next.js paths
       { source: '/services/', destination: '/services', permanent: true },
       { source: '/portfolio/', destination: '/portfolio', permanent: true },
