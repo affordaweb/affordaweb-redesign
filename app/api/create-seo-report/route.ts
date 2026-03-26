@@ -86,11 +86,13 @@ export async function POST(req: NextRequest) {
     // Store in KV (90-day TTL)
     await kvSet(`seo_report:${reportId}`, report, 60 * 60 * 24 * 90)
 
-    // Send admin notification (non-blocking)
+    // Send admin notification
     const confirmUrl = `${BASE_URL}/api/confirm-seo-payment?report_id=${reportId}`
-    sendSeoAdminNotification(report, confirmUrl).catch((e) =>
+    try {
+      await sendSeoAdminNotification(report, confirmUrl)
+    } catch (e) {
       console.error('[create-seo-report] admin email failed:', e)
-    )
+    }
 
     return NextResponse.json({ reportId })
   } catch (err) {
