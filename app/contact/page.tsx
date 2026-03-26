@@ -24,12 +24,12 @@ export const metadata: Metadata = {
 }
 
 const reasons = [
-  { title: 'New Website Design',  desc: 'Ready to launch your first professional website',       accent: '#5636D1', accentLight: 'rgba(86,54,209,0.10)',  accentBorder: 'rgba(86,54,209,0.22)'  },
-  { title: 'Website Redesign',    desc: 'Time to modernize your existing site',                   accent: '#E2498A', accentLight: 'rgba(226,73,138,0.10)', accentBorder: 'rgba(226,73,138,0.22)' },
-  { title: 'SEO Help',            desc: 'Improve your Google rankings and visibility',            accent: '#06B6D4', accentLight: 'rgba(6,182,212,0.10)',  accentBorder: 'rgba(6,182,212,0.22)'  },
-  { title: 'Maintenance Plan',    desc: 'Ongoing care and updates for your website',              accent: '#F59E0B', accentLight: 'rgba(245,158,11,0.10)', accentBorder: 'rgba(245,158,11,0.22)' },
-  { title: 'E-Commerce Store',    desc: 'Start selling products or services online',              accent: '#10B981', accentLight: 'rgba(16,185,129,0.10)', accentBorder: 'rgba(16,185,129,0.22)' },
-  { title: 'General Questions',   desc: 'Not sure where to start? Just ask us',                  accent: '#5636D1', accentLight: 'rgba(86,54,209,0.10)',  accentBorder: 'rgba(86,54,209,0.22)'  },
+  { title: 'New Website Design',  desc: 'Ready to launch your first professional website',       href: '/services/design',      accent: '#5636D1', accentLight: 'rgba(86,54,209,0.10)',  accentBorder: 'rgba(86,54,209,0.22)'  },
+  { title: 'Website Redesign',    desc: 'Time to modernize your existing site',                   href: '/services/redesign',    accent: '#E2498A', accentLight: 'rgba(226,73,138,0.10)', accentBorder: 'rgba(226,73,138,0.22)' },
+  { title: 'SEO Help',            desc: 'Improve your Google rankings and visibility',            href: '/services/seo',         accent: '#06B6D4', accentLight: 'rgba(6,182,212,0.10)',  accentBorder: 'rgba(6,182,212,0.22)'  },
+  { title: 'Maintenance Plan',    desc: 'Ongoing care and updates for your website',              href: '/services/maintenance', accent: '#F59E0B', accentLight: 'rgba(245,158,11,0.10)', accentBorder: 'rgba(245,158,11,0.22)' },
+  { title: 'E-Commerce Store',    desc: 'Start selling products or services online',              href: '/services',             accent: '#10B981', accentLight: 'rgba(16,185,129,0.10)', accentBorder: 'rgba(16,185,129,0.22)' },
+  { title: 'General Questions',   desc: 'Not sure where to start? Just ask us',                  href: '/services',             accent: '#5636D1', accentLight: 'rgba(86,54,209,0.10)',  accentBorder: 'rgba(86,54,209,0.22)'  },
 ]
 
 const breadcrumbSchema = {
@@ -173,10 +173,11 @@ export default function ContactPage() {
                   Common Reasons to Contact Us
                 </h3>
                 <div className="grid grid-cols-1 gap-2">
-                  {reasons.map(({ title, desc, accent, accentLight, accentBorder }) => (
-                    <div
+                  {reasons.map(({ title, desc, href, accent, accentLight, accentBorder }) => (
+                    <Link
                       key={title}
-                      className="relative overflow-hidden flex items-start gap-3 px-4 py-3 rounded-xl transition-all duration-200"
+                      href={href}
+                      className="relative overflow-hidden flex items-start gap-3 px-4 py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
                       style={{ background: 'rgba(255,255,255,0.03)', border: `1px solid ${accentBorder}` }}
                     >
                       <div
@@ -193,7 +194,7 @@ export default function ContactPage() {
                       >
                         &rarr;
                       </span>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>

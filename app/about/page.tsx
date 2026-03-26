@@ -382,14 +382,15 @@ export default function AboutPage() {
                 {/* Skill tags */}
                 <div className="grid grid-cols-2 gap-3 mb-7">
                   {[
-                    { label: 'Web Design', icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 010 2H5a1 1 0 01-1-1zm0 4a1 1 0 011-1h6a1 1 0 010 2H5a1 1 0 01-1-1zm8-4a1 1 0 011-1h2l2 2-2 2h-2a1 1 0 01-1-1v-2z', color: '#E2498A' },
-                    { label: 'SEO Strategy', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', color: '#5636D1' },
-                    { label: 'Web Hosting', icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01', color: '#06B6D4' },
-                    { label: 'Maintenance', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', color: '#10B981' },
-                  ].map(({ label, icon, color }) => (
-                    <div
+                    { label: 'Web Design', href: '/services/design',      icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 010 2H5a1 1 0 01-1-1zm0 4a1 1 0 011-1h6a1 1 0 010 2H5a1 1 0 01-1-1zm8-4a1 1 0 011-1h2l2 2-2 2h-2a1 1 0 01-1-1v-2z', color: '#E2498A' },
+                    { label: 'SEO Strategy', href: '/services/seo',       icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', color: '#5636D1' },
+                    { label: 'Web Hosting', href: '/services/hosting',    icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01', color: '#06B6D4' },
+                    { label: 'Maintenance', href: '/services/maintenance', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', color: '#10B981' },
+                  ].map(({ label, href, icon, color }) => (
+                    <Link
                       key={label}
-                      className="flex items-center gap-2.5 rounded-xl px-4 py-3"
+                      href={href}
+                      className="flex items-center gap-2.5 rounded-xl px-4 py-3 transition-opacity hover:opacity-75"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
                     >
                       <span className="shrink-0 w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: `${color}22` }}>
@@ -398,7 +399,7 @@ export default function AboutPage() {
                         </svg>
                       </span>
                       <span className="text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.75)' }}>{label}</span>
-                    </div>
+                    </Link>
                   ))}
                 </div>
 

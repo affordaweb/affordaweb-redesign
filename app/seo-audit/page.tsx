@@ -322,19 +322,25 @@ function ConversionStrip() {
           SSL, SEO, and unlimited updates included.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
+          <Link
             href="/pricing"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gradient-primary text-white font-bold text-base shadow-btn hover:shadow-glow transition-all hover:scale-[1.02]"
           >
             View Pricing
             <ArrowRight className="w-5 h-5" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="/contact"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl border-2 border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
           >
             Talk to Us
-          </a>
+          </Link>
+          <Link
+            href="/recommendation"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl border-2 border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
+          >
+            Free Website Recommendation
+          </Link>
         </div>
       </div>
     </section>

@@ -142,6 +142,11 @@ const faqs = [
     a: 'Yes. The Premium plan includes e-commerce functionality for up to 30 products. Reach out to discuss your store requirements before choosing a plan.',
   },
   {
+    q: 'Which plan includes SEO optimization?',
+    a: 'Standard and Premium plans include full SEO optimization — keyword research, on-page SEO, schema markup, and Google Analytics integration. The Basic plan includes foundational SEO structure. View our SEO service page for details.',
+    display: <><Link href="/services/seo" className="font-medium" style={{ color: '#5636D1' }}>Standard and Premium plans</Link> include full SEO optimization — keyword research, on-page SEO, schema markup, and Google Analytics integration. The Basic plan includes foundational SEO structure.</>,
+  },
+  {
     q: 'How do I get started?',
     a: 'Reach out via hello@affordawebsolutions.com or fill out the contact form. We will follow up to learn about your goals and recommend the right plan.',
     display: <>Reach out via hello@affordawebsolutions.com or fill out <Link href="/contact" className="font-medium" style={{ color: '#06B6D4' }}>the contact form</Link>. We will follow up to learn about your goals and recommend the right <Link href="/services" className="font-medium" style={{ color: '#06B6D4' }}>plan</Link>.</>,

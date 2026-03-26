@@ -44,25 +44,25 @@ const services = [
   {
     title: 'Custom Website Design',
     desc: 'Mobile-first, SEO-ready websites built around your NJ business goals. Launched in 10–15 business days.',
-    href: '/services#design',
+    href: '/services/design',
     accent: '#5636D1',
   },
   {
     title: 'Local SEO Optimization',
     desc: 'Rank for "web design NJ" and location-specific searches. Built-in schema markup and Google-ready structure.',
-    href: '/services#seo',
+    href: '/services/seo',
     accent: '#E2498A',
   },
   {
     title: 'Website Hosting & SSL',
     desc: 'Managed NJ-friendly hosting with guaranteed uptime, free SSL, and 1GB professional email.',
-    href: '/services#hosting',
+    href: '/services/hosting',
     accent: '#06B6D4',
   },
   {
     title: 'Website Maintenance',
     desc: 'Monthly updates, security monitoring, and content changes — handled within 24 hours.',
-    href: '/services#maintenance',
+    href: '/services/maintenance',
     accent: '#10B981',
   },
 ]

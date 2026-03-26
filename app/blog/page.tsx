@@ -340,6 +340,35 @@ export default function BlogPage() {
         </div>
       </section>
 
+      {/* Free Tools Strip */}
+      <section className="py-14 bg-white border-y border-gray-100">
+        <div className="container-tight">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Free Tools for Small Businesses</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            <Link
+              href="/seo-audit"
+              className="group flex items-start gap-4 rounded-2xl p-5 border border-sky-100 bg-sky-50 hover:bg-sky-100 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-xl shrink-0">🔍</div>
+              <div>
+                <p className="font-bold text-gray-900 text-sm group-hover:text-sky-700 transition-colors">Free SEO Audit</p>
+                <p className="text-xs text-gray-500 mt-0.5">20+ checks — score your site in 30 seconds</p>
+              </div>
+            </Link>
+            <Link
+              href="/recommendation"
+              className="group flex items-start gap-4 rounded-2xl p-5 border border-violet-100 bg-violet-50 hover:bg-violet-100 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center text-xl shrink-0">💡</div>
+              <div>
+                <p className="font-bold text-gray-900 text-sm group-hover:text-violet-700 transition-colors">Website Recommendation</p>
+                <p className="text-xs text-gray-500 mt-0.5">Get a personalised redesign plan in 30 seconds</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Newsletter CTA */}
       <section
         className="section-pad relative overflow-hidden"

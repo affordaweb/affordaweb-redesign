@@ -34,6 +34,8 @@ const portfolioItems = [
     tags: ['Website Design', 'SEO', 'Lead Generation'],
     description: 'A virtual assistant services firm needed a homepage that communicated expertise without looking like everyone else\'s VA site. The result is clean, modern, and built to convert.',
     url: 'https://www.webvaexperts.com',
+    serviceHref: '/services/design',
+    serviceLabel: 'Website Design',
     accent: '#5636D1',
     accentLight: 'rgba(86,54,209,0.10)',
     accentBorder: 'rgba(86,54,209,0.22)',
@@ -49,6 +51,8 @@ const portfolioItems = [
     tags: ['Web Development', 'Community', 'Mobile-First'],
     description: 'Multi-role community platform built to serve advocacy, resources, and connection. One site, several audiences — all of it navigable.',
     url: 'https://www.empowerqueerhub.com',
+    serviceHref: '/services/redesign',
+    serviceLabel: 'Website Redesign',
     accent: '#E2498A',
     accentLight: 'rgba(226,73,138,0.10)',
     accentBorder: 'rgba(226,73,138,0.22)',
@@ -64,6 +68,8 @@ const portfolioItems = [
     tags: ['Premium Design', 'SEO', 'Lead Capture'],
     description: 'A wealth advisory firm required a site that signaled trust before anyone read a word. High-value design, purpose-built for a financial audience.',
     url: 'https://argentumprivatewealth.com',
+    serviceHref: '/services/design',
+    serviceLabel: 'Website Design',
     accent: '#06B6D4',
     accentLight: 'rgba(6,182,212,0.10)',
     accentBorder: 'rgba(6,182,212,0.22)',
@@ -208,7 +214,7 @@ export default function PortfolioPage() {
                     ))}
                   </div>
 
-                  <div className="pt-5" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+                  <div className="pt-5 flex flex-wrap items-center gap-3" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
                     <a
                       href={item.url}
                       target="_blank"
@@ -225,6 +231,13 @@ export default function PortfolioPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
+                    <Link
+                      href={item.serviceHref}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all duration-200 hover:opacity-70"
+                      style={{ color: item.accent }}
+                    >
+                      {item.serviceLabel} →
+                    </Link>
                   </div>
                 </div>
               </article>
