@@ -45,11 +45,20 @@ function isInMaderaCounty(geo: any): boolean {
 }
 
 export function middleware(request: NextRequest) {
-  const geo = (request as any).geo
   const path = request.nextUrl.pathname
 
   // 🔥 Safe guard: never break site if geo is missing
   try {
+    // Prefer Cloudflare headers (when CF sits in front of Vercel)
+    // then fall back to Vercel's native geo
+    const cfCity    = request.headers.get('cf-ipcity')
+    const cfCountry = request.headers.get('cf-ipcountry')
+    const nativeGeo = (request as any).geo
+
+    const geo = (cfCity || cfCountry)
+      ? { city: cfCity ?? '', region: cfCountry === 'US' ? (request.headers.get('cf-region-code') ?? nativeGeo?.region ?? '') : cfCountry ?? '' }
+      : nativeGeo
+
     const city = normalize(geo?.city)
     const region = normalize(geo?.region)
     const blocked = isInMaderaCounty(geo)

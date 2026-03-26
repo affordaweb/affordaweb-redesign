@@ -297,16 +297,25 @@ export default function ServicesPage() {
                         <p key={j} className="text-gray-500 leading-relaxed mb-4 text-[15px]">{para.trim()}</p>
                       ))
                   }
-                  <Link
-                    href="/contact"
-                    className="mt-5 inline-flex items-center gap-2 font-bold rounded-full px-7 py-3.5 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg text-white"
-                    style={{ background: `linear-gradient(135deg, ${c.accent}, ${c.accent}cc)`, boxShadow: `0 4px 20px ${c.glow}` }}
-                  >
-                    Get Started
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 font-bold rounded-full px-7 py-3.5 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg text-white"
+                      style={{ background: `linear-gradient(135deg, ${c.accent}, ${c.accent}cc)`, boxShadow: `0 4px 20px ${c.glow}` }}
+                    >
+                      Get Started
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                    <Link
+                      href={`/services/${service.id}`}
+                      className="inline-flex items-center gap-2 font-semibold rounded-full px-6 py-3.5 text-sm transition-all duration-300 hover:-translate-y-0.5"
+                      style={{ background: c.light, color: c.accent, border: `1px solid ${c.border}` }}
+                    >
+                      Learn More →
+                    </Link>
+                  </div>
                 </div>
 
                 {/* Features card */}
