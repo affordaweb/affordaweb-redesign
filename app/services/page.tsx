@@ -81,7 +81,7 @@ We give your site a complete visual and functional makeover. Modern, mobile-frie
 Right move if your site works but no longer represents what you actually offer.`,
     paragraphs: [
       <>An outdated site costs you business. Not dramatically, just quietly. Visitors land, see something that looks like it was built years ago, and leave. A redesign fixes that without losing the content and rankings you have already built.</>,
-      <>We give your site a complete visual and functional makeover. <a href="https://developers.google.com/search/mobile-sites" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Mobile-first design</a> that meets Google's standards. Improved performance. Sharper conversion focus. Your existing content stays put.</>,
+      <>We give your site a complete visual and functional makeover. <a href="https://developers.google.com/search/mobile-sites" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Mobile-first design</a> that meets Google&apos;s standards. Improved performance. Sharper conversion focus. Your existing content stays put.</>,
       <>Right move if your site works but no longer represents what you actually offer.</>,
     ],
     features: [
