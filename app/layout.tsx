@@ -179,6 +179,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   publisher: {
                     '@id': 'https://www.affordawebsolutions.com/#organization',
                   },
+                  potentialAction: {
+                    '@type': 'SearchAction',
+                    target: {
+                      '@type': 'EntryPoint',
+                      urlTemplate: 'https://www.affordawebsolutions.com/blog?q={search_term_string}',
+                    },
+                    'query-input': 'required name=search_term_string',
+                  },
+                },
+                {
+                  '@type': 'ItemList',
+                  name: 'AffordaWeb Solutions — Key Pages',
+                  itemListElement: [
+                    {
+                      '@type': 'ListItem',
+                      position: 1,
+                      name: 'Web Design Services',
+                      url: 'https://www.affordawebsolutions.com/services',
+                      description: 'Affordable website design, redesign, SEO, and hosting services for small businesses.',
+                    },
+                    {
+                      '@type': 'ListItem',
+                      position: 2,
+                      name: 'Website Design Pricing',
+                      url: 'https://www.affordawebsolutions.com/pricing',
+                      description: 'Plans starting at $69/mo — custom design, hosting, SSL, and unlimited updates included.',
+                    },
+                    {
+                      '@type': 'ListItem',
+                      position: 3,
+                      name: 'Web Design Blog',
+                      url: 'https://www.affordawebsolutions.com/blog',
+                      description: 'Expert web design tips, SEO guides, and digital marketing advice for small businesses.',
+                    },
+                    {
+                      '@type': 'ListItem',
+                      position: 4,
+                      name: 'Portfolio',
+                      url: 'https://www.affordawebsolutions.com/portfolio',
+                      description: 'See our web design work for small businesses across various industries.',
+                    },
+                    {
+                      '@type': 'ListItem',
+                      position: 5,
+                      name: 'About AffordaWeb Solutions',
+                      url: 'https://www.affordawebsolutions.com/about',
+                      description: 'Learn about our Filipino web design team delivering professional websites for small businesses worldwide.',
+                    },
+                    {
+                      '@type': 'ListItem',
+                      position: 6,
+                      name: 'Contact Us',
+                      url: 'https://www.affordawebsolutions.com/contact',
+                      description: 'Get in touch with AffordaWeb Solutions. We respond within 24 hours.',
+                    },
+                  ],
                 },
               ],
             }),

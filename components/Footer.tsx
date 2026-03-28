@@ -4,6 +4,8 @@ import Image from 'next/image'
 const quickLinks = [
   { label: 'Home',                       href: '/' },
   { label: 'About Us',                   href: '/about' },
+  { label: 'Pricing',                    href: '/pricing' },
+  { label: 'Blog',                       href: '/blog' },
   { label: 'Portfolio',                  href: '/portfolio' },
   { label: 'Web Design in New Jersey',   href: '/new-jersey' },
   { label: 'Contact Us',                 href: '/contact' },

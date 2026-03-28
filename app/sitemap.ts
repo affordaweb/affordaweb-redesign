@@ -64,6 +64,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/fresno`,
+      lastModified: new Date('2026-03-27'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
     // Blog posts
     {
       url: `${baseUrl}/blog/why-small-businesses-need-professional-website`,
