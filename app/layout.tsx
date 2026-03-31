@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -256,6 +257,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
