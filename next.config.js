@@ -13,6 +13,16 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Non-www → www (fixes duplicate canonical issue — Google was indexing
+      // affordawebsolutions.com/* as separate pages from www.affordawebsolutions.com/*)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'affordawebsolutions.com' }],
+        destination: 'https://www.affordawebsolutions.com/:path*',
+        permanent: true,
+      },
+      { source: '/affordable-web-design-company/', destination: '/affordable-web-design-company', permanent: true },
+      { source: '/affordable-web-design-for-small-businesses/', destination: '/affordable-web-design-for-small-businesses', permanent: true },
       // Old WordPress pages that Google has indexed as 404
       { source: '/thank-you/', destination: '/contact', permanent: true },
       { source: '/thank-you', destination: '/contact', permanent: true },

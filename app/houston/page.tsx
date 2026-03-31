@@ -3,59 +3,59 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design in New Jersey | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design in Houston, TX | AffordaWeb Solutions' },
   description:
-    'Affordable website design for NJ small businesses from $69/mo. Hosting, SEO & SSL included. Serving Monmouth, Middlesex, Ocean, Morris & Bergen counties.',
-  alternates: { canonical: 'https://www.affordawebsolutions.com/new-jersey' },
+    'Affordable website design for Houston small businesses from $69/mo. Hosting, SEO & SSL included. Serving Harris, Fort Bend, Montgomery & Galveston counties.',
+  alternates: { canonical: 'https://www.affordawebsolutions.com/houston' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
+    title: 'Affordable Web Design in Houston, TX | AffordaWeb Solutions',
     description:
-      'Professional website design for NJ small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',
-    url: 'https://www.affordawebsolutions.com/new-jersey',
-    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design New Jersey' }],
+      'Professional website design for Houston small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',
+    url: 'https://www.affordawebsolutions.com/houston',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Houston TX' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
-    description: 'Website design for NJ small businesses starting at $69/month.',
+    title: 'Affordable Web Design in Houston, TX | AffordaWeb Solutions',
+    description: 'Affordable website design for Houston small businesses. Custom design, hosting, SEO & SSL included from $69/mo.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
-const njCities = [
-  'Sea Bright', 'Sea Girt', 'Brielle', 'Manasquan', 'Rumson', 'Holmdel',
-  'Shrewsbury', 'Howell', 'Middletown', 'Eatontown', 'Asbury Park',
-  'Long Branch', 'Red Bank', 'Freehold', 'Toms River', 'Brick',
-  'Metuchen', 'Sayreville', 'South Amboy', 'Edison', 'Jersey City',
-  'Hackensack', 'Atlantic Highlands', 'Point Pleasant', 'Bay Head',
-  'Millstone', 'Morganville', 'Manalapan', 'Marlboro', 'Lincroft',
+const houstonCities = [
+  'Houston', 'Pearland', 'Sugar Land', 'The Woodlands', 'Katy',
+  'Pasadena', 'League City', 'Friendswood', 'Missouri City', 'Baytown',
+  'Clear Lake', 'Conroe', 'Spring', 'Humble', 'Cypress',
+  'Tomball', 'Kingwood', 'Stafford', 'Missouri City', 'Galveston',
+  'Texas City', 'La Marque', 'Clute', 'Lake Jackson', 'Angleton',
+  'Manvel', 'Alvin', 'Deer Park', 'La Porte', 'Seabrook',
 ]
 
 const counties = [
-  { name: 'Monmouth County', desc: 'Coastal towns and growing suburbs along the Jersey Shore.' },
-  { name: 'Middlesex County', desc: 'High-density business corridor from Metuchen to Edison.' },
-  { name: 'Ocean County', desc: 'Toms River, Brick, and the Point Pleasant area.' },
-  { name: 'Morris County', desc: 'Established small businesses and professional services.' },
-  { name: 'Bergen County', desc: 'Northern NJ businesses serving the tri-state metro area.' },
+  { name: 'Harris County', desc: 'The heart of Greater Houston — downtown, Midtown, Heights, Memorial, and Galleria.' },
+  { name: 'Fort Bend County', desc: 'Sugar Land, Missouri City, and rapidly growing southwest suburbs.' },
+  { name: 'Montgomery County', desc: 'The Woodlands, Conroe, and north Houston\'s expanding business corridor.' },
+  { name: 'Galveston County', desc: 'League City, Friendswood, Clear Lake, and the Gulf Coast communities.' },
+  { name: 'Brazoria County', desc: 'Pearland, Alvin, Angleton, and the southeast Houston commuter belt.' },
 ]
 
 const services = [
   {
     title: 'Custom Website Design',
-    desc: 'Mobile-first, SEO-ready websites built around your NJ business goals. Launched in 10–15 business days.',
+    desc: 'Mobile-first, SEO-ready websites built around your Houston business goals. Launched in 10–15 business days.',
     href: '/services/design',
     accent: '#5636D1',
   },
   {
     title: 'Local SEO Optimization',
-    desc: 'Rank for "web design NJ" and location-specific searches. Built-in schema markup and Google-ready structure.',
+    desc: 'Rank for "web design Houston" and location-specific searches. Built-in schema markup and Google-ready structure.',
     href: '/services/seo',
     accent: '#E2498A',
   },
   {
     title: 'Website Hosting & SSL',
-    desc: 'Managed NJ-friendly hosting with guaranteed uptime, free SSL, and 1GB professional email.',
+    desc: 'Managed Houston-friendly hosting with guaranteed uptime, free SSL, and 1GB professional email.',
     href: '/services/hosting',
     accent: '#06B6D4',
   },
@@ -69,19 +69,19 @@ const services = [
 
 const faqs = [
   {
-    q: 'Do you work with businesses physically located in New Jersey?',
-    a: 'Yes. We serve New Jersey businesses across Monmouth, Middlesex, Ocean, Morris, Bergen, and all other NJ counties. All work is done remotely — we handle everything online, from kickoff to launch.',
+    q: 'Do you work with businesses physically located in Houston, TX?',
+    a: 'Yes. We serve Houston businesses across Harris, Fort Bend, Montgomery, Galveston, and Brazoria counties. All work is done remotely — we handle everything online, from kickoff to launch.',
   },
   {
-    q: 'How much does a website cost for a New Jersey small business?',
+    q: 'How much does a website cost for a Houston small business?',
     a: 'Our plans start at $69/month with no setup fee. That includes custom design, hosting, SSL, and basic maintenance. Standard ($99/mo) and Premium ($149/mo) plans add SEO, unlimited updates, and e-commerce.',
   },
   {
-    q: 'Will my website rank for NJ-specific searches?',
-    a: 'Yes. Every site we build includes local SEO structure: location-specific meta tags, schema markup, and Google-optimized content. Standard and Premium plans include full SEO setup targeting your area.',
+    q: 'Will my website rank for Houston-specific searches?',
+    a: 'Yes. Every site we build includes local SEO structure: location-specific meta tags, schema markup, and Google-optimized content targeting Houston and surrounding areas. Standard and Premium plans include full local SEO setup.',
   },
   {
-    q: 'How quickly can my NJ business get online?',
+    q: 'How quickly can my Houston business get online?',
     a: 'Most sites are designed and launched within 10–15 business days after you submit your content and preferences. We handle design, development, hosting setup, and launch — you just review and approve.',
   },
 ]
@@ -91,7 +91,7 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.affordawebsolutions.com' },
-    { '@type': 'ListItem', position: 2, name: 'New Jersey Web Design', item: 'https://www.affordawebsolutions.com/new-jersey' },
+    { '@type': 'ListItem', position: 2, name: 'Houston Web Design', item: 'https://www.affordawebsolutions.com/houston' },
   ],
 }
 
@@ -100,14 +100,20 @@ const localBusinessSchema = {
   '@type': 'ProfessionalService',
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
-  description: 'Affordable website design for New Jersey small businesses starting at $69/month.',
-  areaServed: { '@type': 'State', name: 'New Jersey' },
+  description: 'Affordable website design for Houston small businesses starting at $69/month.',
+  areaServed: [
+    { '@type': 'City', name: 'Houston', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    { '@type': 'City', name: 'Sugar Land', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    { '@type': 'City', name: 'The Woodlands', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    { '@type': 'City', name: 'Katy', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    { '@type': 'City', name: 'Pearland', containedInPlace: { '@type': 'State', name: 'Texas' } },
+  ],
   serviceType: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
   priceRange: '$69–$149/month',
   email: 'hello@affordawebsolutions.com',
 }
 
-export default function NewJerseyPage() {
+export default function HoustonPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -117,15 +123,15 @@ export default function NewJerseyPage() {
       <section className="relative overflow-hidden pt-[200px] pb-[100px] text-center" style={{ background: '#0F0F1A' }}>
         <InnerHeroBg page="services" />
         <div className="container-tight relative z-10">
-          <p className="section-label-white">New Jersey</p>
+          <p className="section-label-white">Houston</p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6" style={{ letterSpacing: '-0.025em' }}>
-            Affordable Web Design<br className="hidden sm:block" /> for New Jersey Small Businesses
+            Affordable Web Design<br className="hidden sm:block" /> for Houston Small Businesses
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Professional websites for NJ businesses starting at <strong className="text-white">$69/month</strong> — custom design, local SEO, hosting, SSL, and ongoing maintenance bundled into one plan. No setup fees.
+            Professional websites for Houston businesses starting at <strong className="text-white">$69/month</strong> — custom design, local SEO, hosting, SSL, and ongoing maintenance bundled into one plan. No setup fees.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {['Monmouth County', 'Middlesex County', 'Ocean County', 'Morris County', 'Bergen County'].map(label => (
+            {['Harris County', 'Fort Bend County', 'Montgomery County', 'Galveston County', 'Brazoria County'].map(label => (
               <div
                 key={label}
                 className="flex items-center gap-2 rounded-full px-4 py-2"
@@ -138,7 +144,7 @@ export default function NewJerseyPage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-white">
-              Get a Free NJ Quote
+              Get a Free Houston Quote
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -149,15 +155,15 @@ export default function NewJerseyPage() {
       </section>
 
       {/* Services */}
-      <section className="section-pad bg-white" aria-labelledby="nj-services-heading">
+      <section className="section-pad bg-white" aria-labelledby="houston-services-heading">
         <div className="container-tight">
           <div className="text-center mb-14">
-            <p className="section-label">What We Offer NJ Businesses</p>
-            <h2 id="nj-services-heading" className="section-title">
-              Everything Your New Jersey Business Needs Online
+            <p className="section-label">What We Offer Houston Businesses</p>
+            <h2 id="houston-services-heading" className="section-title">
+              Everything Your Houston Business Needs Online
             </h2>
             <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-              From custom website design to local SEO and managed hosting — all bundled into one affordable monthly plan built for NJ small businesses.
+              From custom website design to local SEO and managed hosting — all bundled into one affordable monthly plan built for Houston small businesses.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -189,10 +195,10 @@ export default function NewJerseyPage() {
               Service Area
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
-              Serving All of New Jersey
+              Serving All of Houston
             </h2>
             <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              We work remotely with NJ businesses across every county. If you&rsquo;re in New Jersey, we can build your website.
+              We work remotely with Houston businesses across every county. If you&rsquo;re in Greater Houston, we can build your website.
             </p>
           </div>
 
@@ -221,7 +227,7 @@ export default function NewJerseyPage() {
               Cities & Towns We Serve
             </p>
             <div className="flex flex-wrap justify-center gap-2">
-              {njCities.map(city => (
+              {houstonCities.map(city => (
                 <span
                   key={city}
                   className="text-sm px-3 py-1 rounded-full"
@@ -235,20 +241,20 @@ export default function NewJerseyPage() {
         </div>
       </section>
 
-      {/* Why AffordaWeb for NJ */}
-      <section className="section-pad bg-white" aria-labelledby="nj-why-heading">
+      {/* Why AffordaWeb for Houston */}
+      <section className="section-pad bg-white" aria-labelledby="houston-why-heading">
         <div className="container-tight">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="section-label">Why Choose Us</p>
-              <h2 id="nj-why-heading" className="section-title mb-6">
-                The Affordable Option for NJ Small Businesses
+              <h2 id="houston-why-heading" className="section-title mb-6">
+                The Affordable Option for Houston Small Businesses
               </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
-                Most New Jersey web design agencies charge $3,000–$10,000 upfront. AffordaWeb delivers the same professional quality at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$69/month</Link> — with no large upfront cost and no long-term contract.
+                Most Houston web design agencies charge $3,000–$10,000 upfront. AffordaWeb delivers the same professional quality at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$69/month</Link> — with no large upfront cost and no long-term contract.
               </p>
               <p className="text-gray-500 leading-relaxed mb-6">
-                Every site includes local SEO setup so your business can rank for searches like &ldquo;affordable web design NJ&rdquo; or &ldquo;[your service] near me.&rdquo; We build the structure Google rewards, from day one.
+                Every site includes local SEO setup so your business can rank for searches like &ldquo;affordable web design Houston&rdquo; or &ldquo;[your service] near me.&rdquo; We build the structure Google rewards, from day one.
               </p>
               <div className="space-y-3 mb-8">
                 {[
@@ -301,7 +307,7 @@ export default function NewJerseyPage() {
               Questions
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
-              NJ Web Design FAQ
+              Houston Web Design FAQ
             </h2>
           </div>
           <div className="space-y-3">
@@ -339,10 +345,10 @@ export default function NewJerseyPage() {
         <div className="container-tight relative z-10 text-center">
           <p className="section-label-white">Ready to Get Online?</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6" style={{ letterSpacing: '-0.025em' }}>
-            Let&rsquo;s Build Your New Jersey Business Website
+            Let&rsquo;s Build Your Houston Business Website
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Tell us about your NJ business and we&rsquo;ll have your professional website live in 10–15 days. No upfront cost, no contracts.
+            Tell us about your Houston business and we&rsquo;ll have your professional website live in 10–15 days. No upfront cost, no contracts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-white px-9 py-4">Get a Free Quote</Link>

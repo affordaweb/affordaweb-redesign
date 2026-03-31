@@ -5,7 +5,7 @@ import Image from 'next/image'
 import HeroBackground from '@/components/HeroBackground'
 
 export const metadata: Metadata = {
-  title: 'Affordable Website Design for Small Businesses',
+  title: 'Website Design for Small Businesses',
   description:
     'Affordable website design starting at $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
   alternates: { canonical: 'https://www.affordawebsolutions.com' },

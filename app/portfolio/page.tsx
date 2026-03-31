@@ -4,7 +4,7 @@ import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Website Design Portfolio | Small Business Sites We Built',
+  title: 'Small Business Web Design Portfolio',
   description:
     'Browse our portfolio of affordable website design projects for small businesses — service companies, freelancers, e-commerce stores, and local businesses.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/portfolio' },

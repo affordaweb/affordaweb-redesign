@@ -3,7 +3,20 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms of Service | AffordaWeb Solutions',
   description: 'Terms of service for AffordaWeb Solutions website design and hosting plans.',
-  robots: { index: false },
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://www.affordawebsolutions.com/terms' },
+  openGraph: {
+    type: 'website',
+    title: 'Terms of Service | AffordaWeb Solutions',
+    description: 'Terms of service for AffordaWeb Solutions website design and hosting plans.',
+    url: 'https://www.affordawebsolutions.com/terms',
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service | AffordaWeb Solutions',
+    description: 'Terms of service for AffordaWeb Solutions website design and hosting plans.',
+  },
 }
 
 export default function TermsPage() {

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: '%s | AffordaWeb Solutions',
   },
   description:
-    'Professional, affordable website design starting at $69/mo — fully managed with hosting, SSL, and unlimited updates included. Serving small businesses nationwide.',
+    'Affordable website design starting at $69/mo — fully managed with hosting, SSL, and unlimited updates included. Serving small businesses nationwide.',
   keywords: [
     'affordable website design',
     'affordable web design services',
@@ -58,6 +58,14 @@ export const metadata: Metadata = {
     'seo services new jersey',
     'website redesign services',
     'affordable web design philippines',
+    'affordable web design company',
+    'cheap web design company',
+    'affordable web design agency',
+    'small business web design company',
+    'affordable web design near me',
+    'affordable website design company',
+    'web design company for small business',
+    'affordable web development services',
   ],
   authors: [{ name: 'AffordaWeb Solutions' }],
   creator: 'AffordaWeb Solutions',
@@ -125,6 +133,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://images.pexels.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="alternate" type="application/rss+xml" title="AffordaWeb Solutions Blog" href="https://www.affordawebsolutions.com/feed.xml" />
         <Script id="gtm" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

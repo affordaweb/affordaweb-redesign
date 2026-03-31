@@ -5,7 +5,7 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
-  title: 'Web Design Blog | Tips for Small Businesses',
+  title: 'Web Design Blog for Small Businesses',
   description:
     'Expert web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/blog' },

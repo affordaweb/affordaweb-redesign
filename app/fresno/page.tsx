@@ -3,9 +3,9 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Affordable Web Design in Fresno, CA | AffordaWeb Solutions',
+  title: { absolute: 'Affordable Web Design in Fresno, CA | AffordaWeb Solutions' },
   description:
-    'Affordable website design for Fresno small businesses. Custom design, hosting, SEO & SSL included from $69/mo. Serving Fresno, Clovis, Madera, and the entire Central Valley.',
+    'Affordable website design for Fresno small businesses from $69/mo. Hosting, SEO & SSL included. Serving Fresno, Clovis, Madera, and the Central Valley.',
   keywords: [
     'web design Fresno',
     'website design Fresno CA',

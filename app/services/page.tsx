@@ -3,7 +3,7 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Web Design & SEO Services for Small Businesses',
+  title: 'Affordable Web Design & SEO Services',
   description:
     'Affordable web design services for small businesses: custom design, SEO, hosting, maintenance, and e-commerce. Everything bundled from $69/month.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/services' },
