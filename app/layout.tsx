@@ -111,9 +111,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
       { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-96x96.png', type: 'image/png', sizes: '96x96' },
     ],
-    apple: '/apple-touch-icon.png',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
     shortcut: '/favicon.ico',
   },
 }
@@ -161,7 +165,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   email: 'hello@affordawebsolutions.com',
                   description:
                     'Professional, affordable website design and hosting for small businesses starting at $69/month.',
-                  sameAs: [],
+                  sameAs: [
+                    'https://www.facebook.com/affordawebsolutions',
+                    'https://twitter.com/affordaweb',
+                    'https://www.linkedin.com/company/affordaweb-solutions',
+                    'https://www.instagram.com/affordaweb',
+                  ],
                   contactPoint: {
                     '@type': 'ContactPoint',
                     contactType: 'customer support',
