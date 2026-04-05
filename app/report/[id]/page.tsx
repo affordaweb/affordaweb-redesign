@@ -101,7 +101,7 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
 
   return (
     <div
-      className="min-h-screen pb-24"
+      className="min-h-screen pb-24 overflow-x-hidden"
       style={{ background: 'linear-gradient(160deg, #f8f7ff 0%, #eef2ff 50%, #fdf4ff 100%)' }}
     >
       <div className="container-tight pt-28">

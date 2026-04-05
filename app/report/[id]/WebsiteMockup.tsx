@@ -12,7 +12,7 @@ export default function WebsiteMockup({ config, website }: Props) {
   const brandName = rawName.charAt(0).toUpperCase() + rawName.slice(1)
 
   return (
-    <div id="mockup-section">
+    <div id="mockup-section" style={{ width: '100%', maxWidth: '100%', overflowX: 'hidden', minWidth: 0 }}>
       {/* Keyframe animations */}
       <style>{`
         @keyframes mockup-float {
@@ -79,12 +79,13 @@ export default function WebsiteMockup({ config, website }: Props) {
           width: '100%',
           borderRadius: 12,
           overflow: 'hidden',
+          boxSizing: 'border-box',
           boxShadow: '0 24px 60px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.06)',
         }}
       >
         {/* Scrollable wrapper for mobile */}
-        <div style={{ overflowX: 'hidden', display: 'flex', justifyContent: 'center' }}>
-          <div style={{ width: '100%', maxWidth: '100%' }}>
+        <div style={{ overflowX: 'hidden', display: 'flex', justifyContent: 'center', width: '100%', minWidth: 0 }}>
+          <div style={{ width: '100%', maxWidth: '100%', minWidth: 0 }}>
 
             {/* ── Browser Chrome ── */}
             <div
