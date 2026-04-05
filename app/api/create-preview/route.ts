@@ -51,11 +51,20 @@ export async function POST(req: NextRequest) {
     // Store report (TTL: 30 days)
     await kvSet(`report:${report_id}`, report, 60 * 60 * 24 * 30)
 
-    // Notify admin and send user confirmation
-    await Promise.all([
+    // Fire-and-forget email notifications. Report creation should succeed
+    // even if the email service experiences a temporary failure.
+    void Promise.allSettled([
       sendAdminReportEmail(report, admin_token),
       sendUserConfirmationEmail(report),
-    ])
+    ]).then((results) => {
+      results.forEach((result, index) => {
+        if (result.status === 'rejected') {
+          console.warn(`[create-preview] email task ${index} failed`, result.reason)
+        } else if (!result.value) {
+          console.warn(`[create-preview] email task ${index} returned false`)
+        }
+      })
+    })
 
     return NextResponse.json({ report_id })
   } catch (err) {
