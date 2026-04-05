@@ -17,6 +17,15 @@ const nextConfig = {
       // affordawebsolutions.com/* as separate pages from www.affordawebsolutions.com/*)
       {
         source: '/:path*',
+        has: [
+          { type: 'host', value: 'www.affordawebsolutions.com' },
+          { type: 'header', key: 'x-forwarded-proto', value: 'http' },
+        ],
+        destination: 'https://www.affordawebsolutions.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
         has: [{ type: 'host', value: 'affordawebsolutions.com' }],
         destination: 'https://www.affordawebsolutions.com/:path*',
         permanent: true,
