@@ -107,6 +107,9 @@ export default function RecommendationClient() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, turnstileToken }),
+      })
+      const data = await res.json()
+      if (!res.ok) { setError(data.error ?? 'Something went wrong. Please try again.'); setLoading(false); return }
       // GA4 conversion event
       if (typeof window !== 'undefined' && (window as any).gtag) {
         ;(window as any).gtag('event', 'recommendation_submit', {

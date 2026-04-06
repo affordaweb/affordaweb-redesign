@@ -125,6 +125,8 @@ export default function SeoForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, turnstileToken }),
+      })
+      const data = await res.json()
 
       if (!res.ok) {
         setError(data.error ?? "Something went wrong. Please try again.")
