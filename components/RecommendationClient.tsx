@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Script from 'next/script'
 
 const BUSINESS_TYPES = [
   'E-Commerce / Online Store',
@@ -65,6 +66,9 @@ export default function RecommendationClient() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const widgetRef = useRef<HTMLDivElement>(null)
+  const widgetRendered = useRef(false)
   const [form, setForm] = useState({
     website: '',
     name: '',
@@ -74,6 +78,18 @@ export default function RecommendationClient() {
   })
 
   const set = (field: string, value: string) => setForm((f) => ({ ...f, [field]: value }))
+
+  function initTurnstile() {
+    if (widgetRef.current && !widgetRendered.current) {
+      widgetRendered.current = true
+      ;(window as any).turnstile?.render(widgetRef.current, {
+        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '',
+        callback: (token: string) => setTurnstileToken(token),
+        'expired-callback': () => setTurnstileToken(''),
+        'error-callback': () => setTurnstileToken(''),
+      })
+    }
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -90,10 +106,7 @@ export default function RecommendationClient() {
       const res = await fetch('/api/create-preview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-      const data = await res.json()
-      if (!res.ok) { setError(data.error ?? 'Something went wrong. Please try again.'); setLoading(false); return }
+        body: JSON.stringify({ ...form, turnstileToken }),
       // GA4 conversion event
       if (typeof window !== 'undefined' && (window as any).gtag) {
         ;(window as any).gtag('event', 'recommendation_submit', {
@@ -326,9 +339,14 @@ export default function RecommendationClient() {
                 </div>
 
                 {/* Submit */}
+                <div ref={widgetRef} className="flex justify-center" />
+                <Script
+                  src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+                  onLoad={initTurnstile}
+                />
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={loading || !turnstileToken}
                   className="w-full py-4 rounded-2xl font-bold text-sm transition-all duration-300 mt-2"
                   style={{
                     background: loading ? '#9ca3af' : 'linear-gradient(135deg, #5636D1 0%, #E2498A 100%)',

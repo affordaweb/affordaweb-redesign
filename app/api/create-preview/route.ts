@@ -3,10 +3,32 @@ import { kvSet, kvGet, kvIncr } from '@/lib/kv-store'
 import { generatePreviewContent, generateMockupConfig, ReportData } from '@/lib/report-content'
 import { sendAdminReportEmail, sendUserConfirmationEmail } from '@/lib/email'
 
+async function verifyTurnstile(token: string): Promise<boolean> {
+  if (!process.env.TURNSTILE_SECRET_KEY) return true;
+  try {
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret: process.env.TURNSTILE_SECRET_KEY, response: token }),
+    });
+    const data = await res.json() as { success: boolean };
+    return data.success === true;
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { website, name, email, business_type, goal } = body
+    const { turnstileToken, ...rest } = body
+    if (turnstileToken !== undefined) {
+      const ok = await verifyTurnstile(turnstileToken as string)
+      if (!ok) {
+        return NextResponse.json({ error: 'Turnstile verification failed.' }, { status: 400 })
+      }
+    }
+    const { website, name, email, business_type, goal } = rest
 
     if (!website || !name || !email || !business_type || !goal) {
       return NextResponse.json({ error: 'All fields are required.' }, { status: 400 })
