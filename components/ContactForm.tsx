@@ -1,11 +1,27 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, useRef, FormEvent } from 'react'
 import Link from 'next/link'
+import Script from 'next/script'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const widgetRef = useRef<HTMLDivElement>(null)
+  const widgetRendered = useRef(false)
+
+  function initTurnstile() {
+    if (widgetRef.current && !widgetRendered.current) {
+      widgetRendered.current = true
+      ;(window as any).turnstile?.render(widgetRef.current, {
+        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '',
+        callback: (token: string) => setTurnstileToken(token),
+        'expired-callback': () => setTurnstileToken(''),
+        'error-callback': () => setTurnstileToken(''),
+      })
+    }
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -28,6 +44,7 @@ export default function ContactForm() {
           clientWebsite: formData.get('clientWebsite'),
           service: formData.get('service'),
           budget: formData.get('budget'),
+          turnstileToken,
         }),
       })
 
@@ -155,9 +172,15 @@ export default function ContactForm() {
         />
       </div>
 
+      <div ref={widgetRef} className="flex justify-center" />
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        onLoad={initTurnstile}
+      />
+
       <button
         type="submit"
-        disabled={status === 'submitting'}
+        disabled={status === 'submitting' || !turnstileToken}
         className="btn-primary w-full justify-center py-4 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === 'submitting' ? 'Sending…' : 'Send My Quote Request'}
