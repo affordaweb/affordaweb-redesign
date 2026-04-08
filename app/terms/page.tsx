@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Terms of Service | AffordaWeb Solutions',
     description: 'Terms of service for AffordaWeb Solutions website design and hosting subscriptions. Review billing, cancellation, and client responsibilities.',
+  },
+}
 
 export default function TermsPage() {
   return (
