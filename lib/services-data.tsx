@@ -25,7 +25,7 @@ export const services: ServiceData[] = [
     tag: 'Core Service',
     title: 'Website Design',
     headline: 'Custom Website Design for Small Businesses',
-    metaTitle: 'Custom Website Design for Small Businesses | AffordaWeb Solutions',
+    metaTitle: 'Custom Website Design for Small Businesses',
     metaDescription:
       'Get a custom, responsive website designed for your small business starting at $69/month. SEO-optimized, fast loading, and built to convert visitors into customers.',
     description: [
@@ -59,7 +59,7 @@ export const services: ServiceData[] = [
     tag: 'Popular',
     title: 'Website Redesign',
     headline: 'Transform Your Outdated Website',
-    metaTitle: 'Website Redesign Services for Small Businesses | AffordaWeb Solutions',
+    metaTitle: 'Website Redesign for Small Businesses',
     metaDescription:
       'Give your outdated website a complete visual and functional makeover. Preserve your existing content and SEO rankings while modernizing your online presence.',
     description: [
@@ -91,7 +91,7 @@ export const services: ServiceData[] = [
     tag: 'Grow Traffic',
     title: 'SEO Optimization',
     headline: 'Rank Higher. Get Found. Grow Faster.',
-    metaTitle: 'SEO Optimization Services for Small Businesses | AffordaWeb Solutions',
+    metaTitle: 'SEO Services for Small Businesses',
     metaDescription:
       'Improve your Google rankings with proven SEO strategies. Keyword research, clean site structure, Google Analytics integration, and long-term organic traffic growth.',
     description: [
@@ -124,7 +124,7 @@ export const services: ServiceData[] = [
     tag: 'Stay Current',
     title: 'Website Maintenance',
     headline: 'We Handle Everything. You Run Your Business.',
-    metaTitle: 'Website Maintenance Services | AffordaWeb Solutions',
+    metaTitle: 'Website Maintenance Services',
     metaDescription:
       'Keep your website secure, fast, and up to date. Regular security updates, backups, performance monitoring, and unlimited content changes — all included in your plan.',
     description: [
@@ -153,7 +153,7 @@ export const services: ServiceData[] = [
     tag: 'Included',
     title: 'Shared Web Hosting',
     headline: 'Reliable Hosting Included with Every Plan',
-    metaTitle: 'Web Hosting for Small Businesses | AffordaWeb Solutions',
+    metaTitle: 'Web Hosting for Small Businesses',
     metaDescription:
       'High-performance web hosting with SSL certificate bundled into every AffordaWeb plan. One provider, one monthly bill, no extra vendors to manage.',
     description: [

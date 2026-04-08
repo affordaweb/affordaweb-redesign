@@ -172,7 +172,7 @@ Links from other reputable websites signal trust to Google. Get listed in indust
 
 ## 10. Track and Improve
 
-Set up [Google Analytics](https://marketingplatform.google.com/about/analytics/) and [Google Search Console](https://search.google.com/search-console). Monitor which pages rank, what keywords drive traffic, and where visitors drop off — then make improvements. [Semrush's blog](https://semrush.com/blog) and [Neil Patel's SEO resources](https://neilpatel.com/blog) are also worth bookmarking for ongoing learning.
+Set up [Google Analytics](https://marketingplatform.google.com/about/analytics/) and [Google Search Console](https://search.google.com/search-console). Monitor which pages rank, what keywords drive traffic, and where visitors drop off — then make improvements. [Semrush's blog](https://semrush.com/blog) and [Neil Patel's SEO resources](https://neilpatel.com/blog/) are also worth bookmarking for ongoing learning.
 
 ---
 
@@ -682,7 +682,7 @@ Blog posts targeting local keywords build authority and attract local searchers:
 - **[Google Search Console](https://search.google.com/search-console)** — See what keywords bring traffic
 - **[Google Analytics](https://marketingplatform.google.com/about/analytics/)** — Track local visitor behavior
 - **[Whitespark Local Citation Finder](https://whitespark.ca)** — Audit citations
-- **[BrightLocal](https://brightlocal.com)** — Comprehensive local SEO tracking
+- **[BrightLocal](https://www.brightlocal.com/)** — Comprehensive local SEO tracking
 
 For in-depth local SEO strategy, [Moz's local SEO learning center](https://moz.com/learn/seo/local) is the most comprehensive free resource available.
 
@@ -1066,8 +1066,15 @@ export async function generateMetadata({
   const post = posts[slug]
   if (!post) return { title: 'Post Not Found' }
 
+  // Short title overrides for posts whose titles exceed 60 chars even without brand
+  const seoTitleOverrides: Record<string, string> = {
+    'website-maintenance-requirements': 'Website Maintenance Requirements for Small Businesses',
+    'web-design-competitor-comparison': 'AffordaWeb vs Wix, Squarespace & GoDaddy Compared',
+  }
+  const seoTitle = seoTitleOverrides[slug] ?? post.title
+
   return {
-    title: { absolute: `${post.title} | AffordaWeb Solutions` },
+    title: { absolute: seoTitle },
     description: post.excerpt,
     alternates: { canonical: `https://www.affordawebsolutions.com/blog/${slug}` },
     openGraph: {

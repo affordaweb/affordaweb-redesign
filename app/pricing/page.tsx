@@ -123,7 +123,7 @@ const faqs = [
   {
     q: 'Can I cancel my plan at any time?',
     a: 'Yes. All our plans are month-to-month with no long-term contracts. You can cancel at any time.',
-    display: <>Yes. All our plans are month-to-month with <a href="https://ftc.gov/business-guidance/small-businesses" target="_blank" rel="noopener noreferrer" className="font-medium" style={{ color: '#06B6D4' }}>no long-term contracts</a>. You can cancel at any time.</>,
+    display: <>Yes. All our plans are month-to-month with <a href="https://www.ftc.gov/business-guidance/small-businesses" target="_blank" rel="noopener noreferrer" className="font-medium" style={{ color: '#06B6D4' }}>no long-term contracts</a>. You can cancel at any time.</>,
   },
   {
     q: 'Is the domain name included in the price?',

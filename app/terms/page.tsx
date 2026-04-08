@@ -2,22 +2,20 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Terms of Service | AffordaWeb Solutions',
-  description: 'Terms of service for AffordaWeb Solutions website design and hosting plans.',
+  description: 'Terms of service for AffordaWeb Solutions website design and hosting subscriptions. Learn about our billing policy, cancellation terms, intellectual property rights, and client responsibilities.',
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://www.affordawebsolutions.com/terms' },
   openGraph: {
     type: 'website',
     title: 'Terms of Service | AffordaWeb Solutions',
-    description: 'Terms of service for AffordaWeb Solutions website design and hosting plans.',
+    description: 'Terms of service for AffordaWeb Solutions website design and hosting subscriptions. Learn about our billing policy, cancellation terms, intellectual property rights, and client responsibilities.',
     url: 'https://www.affordawebsolutions.com/terms',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Terms of Service | AffordaWeb Solutions',
-    description: 'Terms of service for AffordaWeb Solutions website design and hosting plans.',
-  },
-}
+    description: 'Terms of service for AffordaWeb Solutions website design and hosting subscriptions. Review billing, cancellation, and client responsibilities.',
 
 export default function TermsPage() {
   return (

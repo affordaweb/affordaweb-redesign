@@ -10,6 +10,10 @@ const quickLinks = [
   { label: 'Affordable Web Design Company',     href: '/affordable-web-design-company' },
   { label: 'Web Design for Small Businesses',   href: '/affordable-web-design-for-small-businesses' },
   { label: 'Web Design in New Jersey',          href: '/new-jersey' },
+  { label: 'Web Design in Philadelphia',        href: '/philadelphia' },
+  { label: 'Web Design in Houston',             href: '/houston' },
+  { label: 'Web Design in Los Angeles',         href: '/los-angeles' },
+  { label: 'Web Design in Fresno',              href: '/fresno' },
   { label: 'Contact Us',                        href: '/contact' },
 ]
 

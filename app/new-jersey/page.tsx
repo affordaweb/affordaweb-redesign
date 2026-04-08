@@ -98,11 +98,12 @@ const breadcrumbSchema = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
+  '@id': 'https://www.affordawebsolutions.com/#business',
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
   description: 'Affordable website design for New Jersey small businesses starting at $69/month.',
   areaServed: { '@type': 'State', name: 'New Jersey' },
-  serviceType: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
+  knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
   priceRange: '$69–$149/month',
   email: 'hello@affordawebsolutions.com',
 }

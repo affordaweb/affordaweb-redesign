@@ -98,6 +98,7 @@ const breadcrumbSchema = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
+  '@id': 'https://www.affordawebsolutions.com/#business',
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
   description: 'Affordable website design for Houston small businesses starting at $69/month.',
@@ -108,7 +109,7 @@ const localBusinessSchema = {
     { '@type': 'City', name: 'Katy', containedInPlace: { '@type': 'State', name: 'Texas' } },
     { '@type': 'City', name: 'Pearland', containedInPlace: { '@type': 'State', name: 'Texas' } },
   ],
-  serviceType: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
+  knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
   priceRange: '$69–$149/month',
   email: 'hello@affordawebsolutions.com',
 }
