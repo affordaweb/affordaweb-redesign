@@ -156,6 +156,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   '@id': 'https://www.affordawebsolutions.com/#organization',
                   name: 'AffordaWeb Solutions',
                   url: 'https://www.affordawebsolutions.com',
+                  slogan: 'Affordable website design for small businesses starting at $69/month.',
+                  foundingDate: '2021',
+                  description:
+                    'AffordaWeb Solutions is a professional web design company that builds and manages websites for small businesses. Plans start at $69/month and include custom design, managed hosting, SSL, business email, and ongoing maintenance — no setup fees, no contracts.',
                   logo: {
                     '@type': 'ImageObject',
                     url: 'https://www.affordawebsolutions.com/logo.webp',
@@ -163,8 +167,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     height: 245,
                   },
                   email: 'hello@affordawebsolutions.com',
-                  description:
-                    'Professional, affordable website design and hosting for small businesses starting at $69/month.',
+                  areaServed: {
+                    '@type': 'Country',
+                    name: 'United States',
+                  },
+                  knowsAbout: [
+                    'website design for small businesses',
+                    'affordable web design',
+                    'website hosting',
+                    'SSL certificates',
+                    'website maintenance',
+                    'on-page SEO',
+                    'local SEO',
+                    'e-commerce website design',
+                    'website redesign',
+                    'web hosting for small businesses',
+                  ],
                   sameAs: [
                     'https://www.facebook.com/affordawebsolutions',
                     'https://twitter.com/affordaweb',
