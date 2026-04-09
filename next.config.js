@@ -32,6 +32,7 @@ const nextConfig = {
       },
       { source: '/affordable-web-design-company/', destination: '/affordable-web-design-company', permanent: true },
       { source: '/affordable-web-design-for-small-businesses/', destination: '/affordable-web-design-for-small-businesses', permanent: true },
+      { source: '/affordable-web-design-services-in-manila/', destination: '/affordable-web-design-services-in-manila', permanent: true },
       // Old WordPress pages that Google has indexed as 404
       { source: '/thank-you/', destination: '/contact', permanent: true },
       { source: '/thank-you', destination: '/contact', permanent: true },
@@ -58,8 +59,6 @@ const nextConfig = {
       { source: '/affordable-web-design-services-in-dubai', destination: '/services', permanent: true },
       { source: '/affordable-web-design-services-in-new-york/', destination: '/services', permanent: true },
       { source: '/affordable-web-design-services-in-new-york', destination: '/services', permanent: true },
-      { source: '/affordable-web-design-services-in-manila/', destination: '/services', permanent: true },
-      { source: '/affordable-web-design-services-in-manila', destination: '/services', permanent: true },
       // Old standalone landing pages → relevant pages
       { source: '/budget-website-design/', destination: '/pricing', permanent: true },
       { source: '/budget-website-design', destination: '/pricing', permanent: true },
