@@ -1268,7 +1268,8 @@ export default async function BlogPostPage({
       {/* Article */}
       <article className="section-pad bg-white">
         <div className="container-tight">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 items-start">
+            <div>
 
             {/* Featured image */}
             <div className="rounded-3xl overflow-hidden mb-12 relative" style={{ aspectRatio: '16/9' }}>
@@ -1320,6 +1321,35 @@ export default async function BlogPostPage({
                 Back to Blog
               </Link>
             </div>
+            </div>
+
+            {/* Service area links */}
+            <aside className="lg:sticky lg:top-28">
+              <div className="rounded-2xl p-6 bg-gradient-hero border border-white/[0.08]">
+                <h3 className="text-primary-300 text-xs font-bold tracking-widest uppercase mb-5">Service Areas</h3>
+                <ul className="space-y-3">
+                  {[
+                    { label: 'Affordable Web Design Company', href: '/affordable-web-design-company' },
+                    { label: 'Web Design for Small Businesses', href: '/affordable-web-design-for-small-businesses' },
+                    { label: 'Web Design in New Jersey', href: '/new-jersey' },
+                    { label: 'Web Design in Philadelphia', href: '/philadelphia' },
+                    { label: 'Web Design in Houston', href: '/houston' },
+                    { label: 'Web Design in Los Angeles', href: '/los-angeles' },
+                    { label: 'Web Design in Fresno', href: '/fresno' },
+                  ].map(({ label, href }) => (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
+                      >
+                        <span className="text-primary-400">→</span>
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
           </div>
 
           {/* Related posts */}
