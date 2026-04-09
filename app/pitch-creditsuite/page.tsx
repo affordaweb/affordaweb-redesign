@@ -503,10 +503,10 @@ export default function PitchCreditSuite() {
       </section>
 
       <section className="sec sec-cream" id="offer">
-        <div className="wrap">
+        <div className="wrap" style={{ textAlign: 'center' }}>
           <div className="label">The Offer</div>
           <h2 className="h2">Everything You Need. <em>One Flat Price.</em></h2>
-          <p className="intro">No setup fee, no per-page billing, no retainer minimums. One rate. Everything included.</p>
+          <p className="intro" style={{ margin: '0 auto 52px' }}>No setup fee, no per-page billing, no retainer minimums. One rate. Everything included.</p>
           <div className="offer-wrap">
             <div className="offer-card">
               <div className="offer-inner">
