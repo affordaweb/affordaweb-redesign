@@ -100,9 +100,11 @@ export default function PitchCreditSuite() {
     .hero h1 em { font-style: normal; color: #d97706; }
     .hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: #475569; max-width: 600px; margin: 0 auto 40px; }
     .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-gold { background: linear-gradient(135deg, #f59e0b, #f97316); color: #fff; font-weight: 800; font-size: 15px; padding: 14px 32px; border-radius: 10px; display: inline-block; transition: transform .2s, box-shadow .2s; box-shadow: 0 4px 20px rgba(245,158,11,.3); }
+    .btn-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; animation: pulse-dot 2s ease-in-out infinite; background: rgba(255,255,255,.9); box-shadow: 0 0 6px rgba(255,255,255,.6); }
+    .btn-outline .btn-dot { background: #22c55e; box-shadow: 0 0 6px #86efac; }
+    .btn-gold { background: linear-gradient(135deg, #f59e0b, #f97316); color: #fff; font-weight: 800; font-size: 15px; padding: 14px 32px; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px; transition: transform .2s, box-shadow .2s; box-shadow: 0 4px 20px rgba(245,158,11,.3); }
     .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,158,11,.45); }
-    .btn-outline { border: 1.5px solid #cbd5e1; background: #ffffff; color: #1e293b; font-weight: 600; font-size: 15px; padding: 13px 30px; border-radius: 10px; display: inline-block; transition: border-color .2s, box-shadow .2s; }
+    .btn-outline { border: 1.5px solid #cbd5e1; background: #ffffff; color: #1e293b; font-weight: 600; font-size: 15px; padding: 13px 30px; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px; transition: border-color .2s, box-shadow .2s; }
     .btn-outline:hover { border-color: #94a3b8; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
     .hero-stats { margin-top: 52px; display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; background: rgba(255,255,255,.7); border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px 0; backdrop-filter: blur(8px); }
     .hero-stat { padding: 0 32px; border-right: 1px solid #e2e8f0; text-align: center; }
@@ -214,7 +216,7 @@ export default function PitchCreditSuite() {
     .offer-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: left; margin-bottom: 40px; }
     .offer-list li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569; }
     .offer-list li::before { content: '✓'; color: #16a34a; font-weight: 900; font-size: 13px; flex-shrink: 0; }
-    .offer-btn { background: linear-gradient(135deg, #f59e0b, #f97316); color: #ffffff; font-weight: 900; font-size: 17px; padding: 18px 48px; border-radius: 12px; display: inline-block; transition: transform .2s, box-shadow .2s; box-shadow: 0 4px 20px rgba(245,158,11,.35); }
+    .offer-btn { background: linear-gradient(135deg, #f59e0b, #f97316); color: #ffffff; font-weight: 900; font-size: 17px; padding: 18px 48px; border-radius: 12px; display: inline-flex; align-items: center; gap: 12px; transition: transform .2s, box-shadow .2s; box-shadow: 0 4px 20px rgba(245,158,11,.35); }
     .offer-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(245,158,11,.5); }
     .offer-footer-bar { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 22px; }
     .offer-footer-item { font-size: 13px; color: #64748b; display: flex; align-items: center; gap: 6px; }
@@ -364,8 +366,8 @@ export default function PitchCreditSuite() {
           <h1>We Don&apos;t Just Build Pages.<br /><em>We Build Machines That Convert.</em></h1>
           <p className="hero-sub">AffordaWeb Solutions delivers pixel-perfect, high-performance web design — including the long-form landing pages that move people the way your Fundability page does.</p>
           <div className="hero-btns">
-            <a href="#portfolio" className="btn-gold">See Our Work</a>
-            <a href="#offer" className="btn-outline">View the $99/mo Offer</a>
+            <a href="#portfolio" className="btn-gold"><span className="btn-dot" />See Our Work</a>
+            <a href="#offer" className="btn-outline"><span className="btn-dot" />View the $99/mo Offer</a>
           </div>
           <div className="hero-stats">
             <div className="hero-stat"><div className="hero-stat-val">100<span>+</span></div><div className="hero-stat-lbl">Sites Launched</div></div>
@@ -518,7 +520,7 @@ export default function PitchCreditSuite() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-                <a href="#contact" className="offer-btn">Let&apos;s Talk — It&apos;s Free to Start</a>
+                <a href="#contact" className="offer-btn"><span className="btn-dot" />Let&apos;s Talk — It&apos;s Free to Start</a>
                 <div className="offer-footer-bar">
                   {['No Setup Fee','No Contracts','Cancel Anytime','24hr Response'].map((item) => (
                     <div className="offer-footer-item" key={item}>{item}</div>
@@ -572,7 +574,7 @@ export default function PitchCreditSuite() {
           <h2>Ready to See What We Can Do<br />for <em>CreditSuite?</em></h2>
           <p>Send me a message and I&apos;ll build a sample page in your site&apos;s exact style — at no charge. Zero obligation. Just proof.</p>
           <a href="mailto:hello@affordawebsolutions.com?subject=CreditSuite%20Web%20Design%20Inquiry" className="btn-gold" style={{ fontSize: '17px', padding: '18px 44px' }}>
-            Email Us — hello@affordawebsolutions.com
+            <span className="btn-dot" />Email Us — hello@affordawebsolutions.com
           </a>
           <div className="final-links">
             <a href="https://affordawebsolutions.com" target="_blank" rel="noopener noreferrer">affordawebsolutions.com</a>
