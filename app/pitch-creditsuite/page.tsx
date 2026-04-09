@@ -394,14 +394,14 @@ export default function PitchCreditSuite() {
       <section className="sec sec-cream">
         <div className="wrap">
           <div className="letter-wrap">
-            <div className="letter-from">From the desk of Jonathan Macatangay — Founder, AffordaWeb Solutions</div>
+            <div className="letter-from">From the AffordaWeb Solutions team — <a href="https://www.upwork.com/agencies/1394499845794119680/" target="_blank" rel="noopener noreferrer" style={{color:'#d97706',textDecoration:'underline'}}>Top Rated Filipino Web Designers &amp; VAs on Upwork</a></div>
             <div className="letter-body">
               <p>To the CreditSuite team,</p>
-              <p>I saw your posting for a WordPress designer, and I want to be upfront with you: <strong>I&apos;m not going to pitch you WordPress.</strong></p>
-              <p>Because after 15 years of building websites, I know what your Fundability page actually needs — blazing speed, flawless mobile rendering, zero plugin conflicts, and a design that loads before your visitor finishes reading the headline. WordPress can&apos;t reliably give you that at scale.</p>
-              <p>What I&apos;m proposing is a <strong>modern Next.js + Tailwind build</strong> — your existing design, recreated pixel-for-pixel, on a stack that scores 90+ on PageSpeed, never breaks from a plugin update, and gives you everything you asked for and more — all at <strong>$99 a month, no setup fee, no contracts.</strong></p>
+              <p>We saw your posting for a WordPress designer, and we want to be upfront with you: <strong>we&apos;re not going to pitch you WordPress.</strong></p>
+              <p>We are a group of top-rated Filipino web designers and virtual assistants on Upwork — and after building 100+ websites, we know what your Fundability page actually needs: blazing speed, flawless mobile rendering, zero plugin conflicts, and a design that loads before your visitor finishes reading the headline. WordPress can&apos;t reliably give you that at scale.</p>
+              <p>What we&apos;re proposing is a <strong>modern Next.js + Tailwind build</strong> — your existing design, recreated pixel-for-pixel, on a stack that scores 90+ on PageSpeed, never breaks from a plugin update, and gives you everything you asked for and more — all at <strong>$99 a month, no setup fee, no contracts.</strong></p>
             </div>
-            <div className="letter-sig">— Jonathan</div>
+            <div className="letter-sig">— The AffordaWeb Solutions Team</div>
           </div>
         </div>
       </section>
@@ -589,7 +589,7 @@ export default function PitchCreditSuite() {
       <section className="final-cta" id="contact">
         <div className="final-cta-inner wrap">
           <h2>Ready to See What We Can Do<br />for <em>CreditSuite?</em></h2>
-          <p>Send me a message and I&apos;ll build a sample page in your site&apos;s exact style — at no charge. Zero obligation. Just proof.</p>
+          <p>Send us a message and we&apos;ll build a sample page in your site&apos;s exact style — at no charge. Zero obligation. Just proof.</p>
           <a href="mailto:hello@affordawebsolutions.com?subject=CreditSuite%20Web%20Design%20Inquiry" className="btn-gold" style={{ fontSize: '17px', padding: '18px 44px' }}>
             <span className="btn-dot" />Email Us — hello@affordawebsolutions.com
           </a>
