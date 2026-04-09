@@ -205,8 +205,21 @@ export default function PitchCreditSuite() {
     .proc-card p { font-size: 13px; color: #64748b; line-height: 1.6; flex: 1; }
 
     /* OFFER */
-    .offer-wrap { max-width: 760px; margin: 0 auto; }
-    .offer-card { background: linear-gradient(135deg, #fffbf0 0%, #fff8e6 50%, #fffbf0 100%); border: 2px solid #fde68a; border-radius: 24px; padding: 56px 52px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 40px rgba(245,158,11,.12); }
+    /* OFFER — two-col layout */
+    .offer-layout { display: grid; grid-template-columns: 1fr 420px; gap: 56px; align-items: start; }
+    .offer-left .label { text-align: left; }
+    .offer-left .h2 { text-align: left; }
+    .offer-left .intro { margin-bottom: 36px; text-align: left; }
+    .offer-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin-top: 0; }
+    .offer-features li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #1e293b; font-weight: 500; }
+    .offer-features li::before { content: '✓'; color: #16a34a; font-weight: 900; font-size: 13px; flex-shrink: 0; background: #dcfce7; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 11px; }
+    .offer-right { position: sticky; top: 24px; }
+    @media (max-width: 900px) {
+      .offer-layout { grid-template-columns: 1fr; gap: 40px; }
+      .offer-right { position: static; }
+      .offer-features { grid-template-columns: 1fr; }
+    }
+    .offer-card { background: linear-gradient(135deg, #fffbf0 0%, #fff8e6 50%, #fffbf0 100%); border: 2px solid #fde68a; border-radius: 24px; padding: 44px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 40px rgba(245,158,11,.12); }
     .offer-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,158,11,.08), transparent 60%); }
     .offer-inner { position: relative; z-index: 1; }
     .offer-label { display: inline-block; background: linear-gradient(90deg, #f59e0b, #f97316); color: #ffffff; font-weight: 800; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; padding: 5px 16px; border-radius: 100px; margin-bottom: 24px; }
@@ -505,26 +518,30 @@ export default function PitchCreditSuite() {
       </section>
 
       <section className="sec sec-cream" id="offer">
-        <div className="wrap" style={{ textAlign: 'center' }}>
-          <div className="label">The Offer</div>
-          <h2 className="h2">Everything You Need. <em>One Flat Price.</em></h2>
-          <p className="intro" style={{ margin: '0 auto 52px' }}>No setup fee, no per-page billing, no retainer minimums. One rate. Everything included.</p>
-          <div className="offer-wrap">
-            <div className="offer-card">
-              <div className="offer-inner">
-                <div className="offer-label">All-In Plan · Long-Term Partnership</div>
-                <div className="offer-price"><sup>$</sup>99</div>
-                <div className="offer-period">per month · no setup fee · no contracts</div>
-                <ul className="offer-list">
-                  {['Page updates and new pages','Long-form landing pages','Full site recreate anytime','Unlimited design revisions','Google Analytics 4 setup','Google Search Console','Google Tag Manager','90+ PageSpeed guarantee','Core Web Vitals optimized','AI-assisted fast delivery','Next.js and Tailwind CSS','Monthly maintenance'].map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <a href="#contact" className="offer-btn"><span className="btn-dot" />Let&apos;s Talk — It&apos;s Free to Start</a>
-                <div className="offer-footer-bar">
-                  {['No Setup Fee','No Contracts','Cancel Anytime','24hr Response'].map((item) => (
-                    <div className="offer-footer-item" key={item}>{item}</div>
-                  ))}
+        <div className="wrap">
+          <div className="offer-layout">
+            <div className="offer-left">
+              <div className="label">The Offer</div>
+              <h2 className="h2">Everything You Need. <em>One Flat Price.</em></h2>
+              <p className="intro">No setup fee, no per-page billing, no retainer minimums. One rate. Everything included.</p>
+              <ul className="offer-features">
+                {['Page updates and new pages','Long-form landing pages','Full site recreate anytime','Unlimited design revisions','Google Analytics 4 setup','Google Search Console','Google Tag Manager','90+ PageSpeed guarantee','Core Web Vitals optimized','AI-assisted fast delivery','Next.js and Tailwind CSS','Monthly maintenance'].map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="offer-right">
+              <div className="offer-card">
+                <div className="offer-inner">
+                  <div className="offer-label">All-In Plan · Long-Term Partnership</div>
+                  <div className="offer-price"><sup>$</sup>99</div>
+                  <div className="offer-period">per month · no setup fee · no contracts</div>
+                  <a href="#contact" className="offer-btn"><span className="btn-dot" />Let&apos;s Talk — It&apos;s Free to Start</a>
+                  <div className="offer-footer-bar">
+                    {['No Setup Fee','No Contracts','Cancel Anytime','24hr Response'].map((item) => (
+                      <div className="offer-footer-item" key={item}>{item}</div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
