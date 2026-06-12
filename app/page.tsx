@@ -775,7 +775,7 @@ export default function HomePage() {
                 Every Business Deserves a <span className="gradient-text">Professional Website</span>
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                Founded by Jonathan Macatangay, AffordaWeb Solutions was built on one belief: small businesses should not be priced out of professional web design. We bundle design, hosting, maintenance, and SEO into one simple monthly plan starting at $69.
+                Managed by a group of Top Rated freelancers on Upwork, AffordaWeb Solutions was built on one belief: small businesses should not be priced out of professional web design. We bundle design, hosting, maintenance, and SEO into one simple monthly plan starting at $69.
               </p>
               <ul className="space-y-4 mb-8">
                 {([
@@ -1053,7 +1053,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {([
               { name: 'Sarah M.', role: 'Freelance Consultant', quote: 'AffordaWeb delivered a professional website in under two weeks. The flat monthly pricing with no hidden fees was exactly what my small business needed to get online without breaking the bank.' },
-              { name: 'James R.', role: 'Small Business Owner', quote: 'Jonathan and the team understood our vision right away. Our new site looks incredible, ranks on Google locally, and we have gotten more leads in the first month than the entire previous year.' },
+              { name: 'James R.', role: 'Small Business Owner', quote: 'The AffordaWeb team understood our vision right away. Our new site looks incredible, ranks on Google locally, and we have gotten more leads in the first month than the entire previous year.' },
               { name: 'Emily C.', role: 'Online Store Owner', quote: 'I was quoted $8,000 by another agency. AffordaWeb gave me a better-looking site for $99/month with ongoing support included. I wish I had found them sooner.' },
             ] as { name: string; role: string; quote: string }[]).map(({ name, role, quote }) => (
               <div key={name} className="card p-8 flex flex-col gap-5">
