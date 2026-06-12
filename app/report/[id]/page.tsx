@@ -5,6 +5,7 @@ import { kvGet } from '@/lib/kv-store'
 import { ReportData } from '@/lib/report-content'
 import WebsiteMockup from './WebsiteMockup'
 import GetStartedForm from './GetStartedForm'
+import ReportSubscribeButton from './ReportSubscribeButton'
 
 export const metadata: Metadata = {
   title: 'Your Website Redesign Report | AffordaWeb Solutions',
@@ -100,7 +101,7 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
 
   return (
     <div
-      className="min-h-screen pb-24"
+      className="min-h-screen pb-24 overflow-x-hidden"
       style={{ background: 'linear-gradient(160deg, #f8f7ff 0%, #eef2ff 50%, #fdf4ff 100%)' }}
     >
       <div className="container-tight pt-28">
@@ -132,9 +133,9 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
           </div>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-[1fr_400px] gap-8 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-[0.7fr_0.3fr] gap-12 items-start">
 
-        {/* ── Left: Report cards ── */}
+        {/* ── Left: Report cards (70%) ── */}
         <div className="space-y-5">
 
           {/* CARD 1 — Website Overview */}
@@ -360,10 +361,53 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
             </div>
           </PastelCard>
 
-        </div>
-        {/* ── End left column ── */}
+          {/* Card 8 — Premium Report Subscribe */}
+          <div
+            className="rounded-3xl p-8 overflow-hidden relative"
+            style={{
+              background: 'linear-gradient(135deg, #5636D1 0%, #E2498A 100%)',
+              boxShadow: '0 20px 60px rgba(86,54,209,0.2)',
+            }}
+          >
+            {/* Decorative elements */}
+            <div style={{ position: 'absolute', top: -40, right: -40, width: 200, height: 200, borderRadius: '50%', background: 'rgba(255,255,255,0.08)', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', bottom: -60, left: -60, width: 250, height: 250, borderRadius: '50%', background: 'rgba(255,255,255,0.06)', pointerEvents: 'none' }} />
+            
+            <div className="relative z-10">
+              <div className="flex items-start gap-2 mb-3">
+                <span style={{ fontSize: 24 }}>📧</span>
+                <span
+                  className="text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full"
+                  style={{ background: 'rgba(255,255,255,0.2)', color: '#fff' }}
+                >
+                  Exclusive
+                </span>
+              </div>
+              
+              <h3 className="text-xl sm:text-2xl font-black mb-2" style={{ color: '#fff', letterSpacing: '-0.02em' }}>
+                Get Your Full Report
+              </h3>
+              
+              <p className="text-sm mb-6" style={{ color: 'rgba(255,255,255,0.88)', lineHeight: 1.6 }}>
+                Subscribe to receive your complete website analysis report via email — including a high-resolution screenshot of your personalized mockup design.
+              </p>
+              
+              <div className="space-y-2.5 mb-6">
+                {['📥 Full report emailed instantly', '🖼️ Website mockup screenshot', '✅ No spam ever', '🔒 Your email stays private'].map((item) => (
+                  <div key={item} className="flex items-center gap-2" style={{ fontSize: 13, color: '#fff', fontWeight: 500 }}>
+                    {item}
+                  </div>
+                ))}
+              </div>
+              
+              <ReportSubscribeButton reportId={id} email={email} />
+            </div>
+          </div>
 
-        {/* ── Right: Sticky Get Started Form ── */}
+        </div>
+        {/* ── End left column (70%) ── */}
+
+        {/* ── Right: Sticky Get Started Form (30%) ── */}
         <div className="xl:sticky xl:top-28">
           <GetStartedForm reportId={id} name={name} email={email} website={website} />
         </div>

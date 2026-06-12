@@ -1,53 +1,35 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
-import { njTowns } from '@/lib/nj-towns-data'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design in New Jersey from $69/mo | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design in New Jersey | AffordaWeb Solutions' },
   description:
-    'Affordable website design for NJ small businesses starting at $69/month with no setup fees. Custom design, local SEO, hosting & SSL included. Serving Cherry Hill, Newark, Paterson, Trenton, Toms River & all NJ counties.',
-  keywords: [
-    'affordable web design nj',
-    'web design New Jersey',
-    'website design NJ',
-    'affordable web design New Jersey',
-    'NJ web design company',
-    'small business website NJ',
-    'cheap web design New Jersey',
-    'web designer New Jersey',
-    'local SEO New Jersey',
-    'New Jersey website development',
-  ],
+    'Affordable website design for NJ small businesses from $69/mo. Hosting, SEO & SSL included. Serving Monmouth, Middlesex, Ocean, Morris & Bergen counties.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/new-jersey' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design in New Jersey from $69/mo | AffordaWeb Solutions',
+    title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
     description:
-      'Professional website design for NJ small businesses starting at $69/month. Custom design, local SEO, hosting, SSL, and maintenance included — no setup fees.',
+      'Professional website design for NJ small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',
     url: 'https://www.affordawebsolutions.com/new-jersey',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design New Jersey' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design in New Jersey from $69/mo | AffordaWeb Solutions',
-    description: 'Website design for NJ small businesses starting at $69/month — custom design, SEO, hosting, and SSL included.',
+    title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
+    description: 'Website design for NJ small businesses starting at $69/month.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
 
 const njCities = [
-  'Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Toms River',
-  'Trenton', 'Clifton', 'Passaic', 'Union City', 'East Orange',
-  'Bayonne', 'Vineland', 'New Brunswick', 'Hoboken', 'Perth Amboy',
-  'Plainfield', 'West New York', 'Hackensack', 'Sayreville', 'Linden',
-  'Cherry Hill', 'Atlantic City', 'Camden', 'Edison', 'Woodbridge',
-  'Sea Bright', 'Sea Girt', 'Brielle', 'Manasquan', 'Rumson',
-  'Holmdel', 'Shrewsbury', 'Howell', 'Middletown', 'Eatontown',
-  'Asbury Park', 'Long Branch', 'Red Bank', 'Freehold', 'Brick',
-  'Metuchen', 'South Amboy', 'Atlantic Highlands', 'Point Pleasant',
-  'Bay Head', 'Millstone', 'Morganville', 'Manalapan', 'Marlboro',
-  'Lincroft', 'Morristown', 'Princeton',
+  'Sea Bright', 'Sea Girt', 'Brielle', 'Manasquan', 'Rumson', 'Holmdel',
+  'Shrewsbury', 'Howell', 'Middletown', 'Eatontown', 'Asbury Park',
+  'Long Branch', 'Red Bank', 'Freehold', 'Toms River', 'Brick',
+  'Metuchen', 'Sayreville', 'South Amboy', 'Edison', 'Jersey City',
+  'Hackensack', 'Atlantic Highlands', 'Point Pleasant', 'Bay Head',
+  'Millstone', 'Morganville', 'Manalapan', 'Marlboro', 'Lincroft',
 ]
 
 const counties = [
@@ -116,28 +98,12 @@ const breadcrumbSchema = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
+  '@id': 'https://www.affordawebsolutions.com/#business',
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
   description: 'Affordable website design for New Jersey small businesses starting at $69/month.',
-  areaServed: [
-    { '@type': 'State', name: 'New Jersey' },
-    { '@type': 'City', name: 'Cherry Hill', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'City', name: 'Newark', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'City', name: 'Paterson', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'City', name: 'Trenton', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'City', name: 'Toms River', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'City', name: 'Elizabeth', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'City', name: 'Clifton', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'City', name: 'Hoboken', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'City', name: 'Atlantic City', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'City', name: 'Princeton', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'County', name: 'Monmouth County', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'County', name: 'Middlesex County', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'County', name: 'Ocean County', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'County', name: 'Morris County', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-    { '@type': 'County', name: 'Bergen County', containedInPlace: { '@type': 'State', name: 'New Jersey' } },
-  ],
-  serviceType: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
+  areaServed: { '@type': 'State', name: 'New Jersey' },
+  knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
   priceRange: '$69–$149/month',
   email: 'hello@affordawebsolutions.com',
 }
@@ -266,34 +232,6 @@ export default function NewJerseyPage() {
                 </span>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Town Pages */}
-      <section className="section-pad bg-white" aria-labelledby="nj-towns-heading">
-        <div className="container-tight">
-          <div className="text-center mb-12">
-            <p className="section-label">NJ Cities & Towns</p>
-            <h2 id="nj-towns-heading" className="section-title">
-              Affordable Web Design for New Jersey Cities & Towns
-            </h2>
-            <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
-              Click your town to see affordable web design plans tailored to your New Jersey community.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            {njTowns.map(({ name, slug, desc }) => (
-              <Link
-                key={slug}
-                href={`/new-jersey/${slug}`}
-                className="group rounded-xl p-4 text-center transition-all duration-200 hover:-translate-y-0.5"
-                style={{ background: '#FAFBFF', border: '1px solid rgba(86,54,209,0.08)' }}
-              >
-                <h3 className="font-semibold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">{name}</h3>
-                <p className="text-xs text-gray-400 mt-1 leading-tight">{desc}</p>
-              </Link>
-            ))}
           </div>
         </div>
       </section>

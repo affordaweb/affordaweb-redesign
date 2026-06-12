@@ -19,12 +19,34 @@ async function checkRateLimit(ip: string): Promise<boolean> {
   }
 }
 
+async function verifyTurnstile(token: string): Promise<boolean> {
+  if (!process.env.TURNSTILE_SECRET_KEY) return true;
+  try {
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret: process.env.TURNSTILE_SECRET_KEY, response: token }),
+    });
+    const data = await res.json() as { success: boolean };
+    return data.success === true;
+  } catch {
+    return false;
+  }
+}
+
 // ── POST /api/create-seo-report ───────────────────────────────────────────────
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { url, name, email, businessType, primaryGoal } = body
+    const { turnstileToken, ...rest } = body
+    if (turnstileToken !== undefined) {
+      const ok = await verifyTurnstile(turnstileToken as string)
+      if (!ok) {
+        return NextResponse.json({ error: 'Turnstile verification failed.' }, { status: 400 })
+      }
+    }
+    const { url, name, email, businessType, primaryGoal } = rest
 
     if (!url || !name || !email) {
       return NextResponse.json(

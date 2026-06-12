@@ -1,11 +1,27 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, useRef, FormEvent } from 'react'
 import Link from 'next/link'
+import Script from 'next/script'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const widgetRef = useRef<HTMLDivElement>(null)
+  const widgetRendered = useRef(false)
+
+  function initTurnstile() {
+    if (widgetRef.current && !widgetRendered.current) {
+      widgetRendered.current = true
+      ;(window as any).turnstile?.render(widgetRef.current, {
+        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '',
+        callback: (token: string) => setTurnstileToken(token),
+        'expired-callback': () => setTurnstileToken(''),
+        'error-callback': () => setTurnstileToken(''),
+      })
+    }
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -28,6 +44,7 @@ export default function ContactForm() {
           clientWebsite: formData.get('clientWebsite'),
           service: formData.get('service'),
           budget: formData.get('budget'),
+          turnstileToken,
         }),
       })
 
@@ -61,8 +78,8 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-        <p className="text-gray-500 text-sm">Thank you for reaching out. We&apos;ll get back to you within 24 hours.</p>
+        <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
+        <p className="text-gray-300 text-sm">Thank you for reaching out. We&apos;ll get back to you within 24 hours.</p>
       </div>
     )
   }
@@ -78,40 +95,40 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+          <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
             Full Name <span className="text-pink-500">*</span>
           </label>
           <input
             type="text" id="name" name="name" required
             placeholder="John Smith"
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-900 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
             Email Address <span className="text-pink-500">*</span>
           </label>
           <input
             type="email" id="email" name="email" required
             placeholder="john@example.com"
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-900 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="website" className="block text-sm font-semibold text-gray-900 mb-2">
-          Current Website <span className="text-gray-400 font-normal">(optional)</span>
+        <label htmlFor="website" className="block text-sm font-semibold text-white mb-2">
+          Current Website <span className="text-gray-300 font-normal">(optional)</span>
         </label>
         <input
           type="url" id="website" name="clientWebsite"
           placeholder="https://example.com"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-900 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
         />
       </div>
 
       <div>
-        <label htmlFor="service" className="block text-sm font-semibold text-gray-900 mb-2">
+        <label htmlFor="service" className="block text-sm font-semibold text-white mb-2">
           Service Interested In <span className="text-pink-500">*</span>
         </label>
         <select
@@ -129,7 +146,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="budget" className="block text-sm font-semibold text-gray-900 mb-2">
+        <label htmlFor="budget" className="block text-sm font-semibold text-white mb-2">
           Monthly Budget <span className="text-pink-500">*</span>
         </label>
         <select
@@ -145,19 +162,25 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
+        <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">
           Tell Us About Your Project <span className="text-pink-500">*</span>
         </label>
         <textarea
           id="message" name="message" required rows={5}
           placeholder="Tell us about your business, what you're looking for, and any goals you have for your website…"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-900 text-sm placeholder:text-gray-300 resize-none focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-300 resize-none focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
         />
       </div>
 
+      <div ref={widgetRef} className="flex justify-center" />
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        onLoad={initTurnstile}
+      />
+
       <button
         type="submit"
-        disabled={status === 'submitting'}
+        disabled={status === 'submitting' || !turnstileToken}
         className="btn-primary w-full justify-center py-4 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === 'submitting' ? 'Sending…' : 'Send My Quote Request'}
@@ -172,9 +195,9 @@ export default function ContactForm() {
         <p className="text-center text-sm text-red-500">{errorMsg || 'Something went wrong. Please try again.'}</p>
       )}
 
-      <p className="text-center text-xs text-gray-400 pt-2">
+      <p className="text-center text-xs text-gray-300 pt-2">
         No spam. No commitment. By submitting you agree to our{' '}
-        <Link href="/privacy" className="text-primary-600 hover:underline">Privacy Policy</Link>.
+        <Link href="/privacy" className="text-primary-400 hover:underline">Privacy Policy</Link>.
       </p>
     </form>
   )

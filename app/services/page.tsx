@@ -207,6 +207,45 @@ const breadcrumbSchema = {
   ],
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What services are included in AffordaWeb plans?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Every AffordaWeb plan includes custom website design, managed hosting, SSL certificate, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates, full SEO optimization, and Google Analytics setup.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does web design cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Our plans start at $69/month for the Basic plan, $99/month for Standard, and $149/month for Premium. There are no setup fees, no hidden costs, and no long-term contracts.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take to build a website?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most websites are designed and launched within 10-15 business days after we receive your content and feedback. E-commerce projects may take a few days longer depending on complexity.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you provide SEO services?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes! Every site we build includes on-page SEO optimization. Standard and Premium plans include full SEO setup with keyword research, meta optimization, schema markup, and Google Analytics integration.'
+      }
+    },
+  ],
+}
+
 export default function ServicesPage() {
   return (
     <>
@@ -214,6 +253,10 @@ export default function ServicesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* Hero — Dark navy */}

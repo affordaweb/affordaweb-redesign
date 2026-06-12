@@ -5,33 +5,32 @@ import Image from 'next/image'
 import HeroBackground from '@/components/HeroBackground'
 
 export const metadata: Metadata = {
-  title: 'Affordable Website Design for Small Businesses from $69/mo',
+  title: { absolute: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions' },
   description:
-    'Get a professional small business website from $69/month — custom design, hosting, SSL, local SEO & unlimited updates included. No setup fees, no contracts. Launch in 10–15 days.',
+    'Professional small business website design with managed hosting, SSL, local SEO, and unlimited content updates for $69/month. Build a site that ranks on Google and converts visitors into customers.',
   keywords: [
     'affordable website design',
     'small business website design',
-    'cheap website design',
-    'affordable web design company',
-    'website design for small businesses',
+    'website hosting and SSL',
+    'local SEO',
+    'monthly website design',
+    'web design subscription',
     'professional website design',
-    'budget website design',
-    'best affordable web design',
-    'small business web design near me',
-    'affordable web design services',
+    'google ranking',
+    'affordable web design',
+    'website redesign services',
   ],
   alternates: { canonical: 'https://www.affordawebsolutions.com' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Website Design for Small Businesses from $69/mo | AffordaWeb Solutions',
-    description: 'Professional website design from $69/month. Custom design, hosting, SSL, local SEO, and unlimited updates — no setup fees, no contracts.',
+    siteName: 'AffordaWeb Solutions',
+    title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
     url: 'https://www.affordawebsolutions.com',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Website Design for Small Businesses from $69/mo | AffordaWeb Solutions',
-    description: 'Professional website design from $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
+    title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -159,17 +158,9 @@ const schemaData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': ['LocalBusiness', 'ProfessionalService'],
+      // Extends the Organization/LocalBusiness defined in the root layout — adds ProfessionalService type and offer catalog
       '@id': 'https://www.affordawebsolutions.com/#business',
-      name: 'AffordaWeb Solutions',
-      description: 'Affordable website design for small businesses — custom design, managed hosting, SSL, SEO, and unlimited updates in one monthly plan starting at $69/month.',
-      url: 'https://www.affordawebsolutions.com',
-      email: 'hello@affordawebsolutions.com',
-      priceRange: '$69–$149/month',
-      areaServed: 'United States',
-      openingHours: 'Mo-Fr 09:00-17:00',
-      currenciesAccepted: 'USD',
-      paymentAccepted: 'Credit Card',
+      '@type': ['LocalBusiness', 'ProfessionalService'],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Website Design Services',
@@ -198,7 +189,7 @@ const schemaData = {
       '@type': 'WebPage',
       '@id': 'https://www.affordawebsolutions.com/#webpage',
       url: 'https://www.affordawebsolutions.com',
-      name: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
+      name: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
       description: 'Affordable website design for small businesses starting at $69/month. Custom design, managed hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
       isPartOf: { '@id': 'https://www.affordawebsolutions.com/#business' },
       breadcrumb: {

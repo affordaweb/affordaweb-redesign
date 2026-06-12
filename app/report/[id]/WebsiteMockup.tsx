@@ -12,7 +12,17 @@ export default function WebsiteMockup({ config, website }: Props) {
   const brandName = rawName.charAt(0).toUpperCase() + rawName.slice(1)
 
   return (
-    <div>
+    <div
+      id="mockup-section"
+      style={{
+        width: '100%',
+        maxWidth: '980px',
+        margin: '0 auto',
+        overflowX: 'hidden',
+        minWidth: 0,
+        boxSizing: 'border-box',
+      }}
+    >
       {/* Keyframe animations */}
       <style>{`
         @keyframes mockup-float {
@@ -77,37 +87,47 @@ export default function WebsiteMockup({ config, website }: Props) {
       <div
         style={{
           width: '100%',
-          borderRadius: 16,
+          borderRadius: 12,
           overflow: 'hidden',
-          boxShadow: '0 32px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06)',
+          boxSizing: 'border-box',
+          boxShadow: '0 24px 60px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.06)',
         }}
       >
         {/* Scrollable wrapper for mobile */}
-        <div style={{ overflowX: 'auto' }}>
-          <div style={{ minWidth: 840 }}>
+        <div
+          style={{
+            overflowX: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%',
+            minWidth: 0,
+          }}
+        >
+          <div style={{ width: '100%', maxWidth: '980px', minWidth: 0, padding: '0 16px', boxSizing: 'border-box' }}>
 
             {/* ── Browser Chrome ── */}
             <div
               style={{
                 background: '#1A1D27',
-                padding: '11px 18px',
+                padding: '8px 14px',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 14,
+                gap: 12,
               }}
             >
-              <div style={{ display: 'flex', gap: 7, flexShrink: 0 }}>
+              <div style={{ display: 'flex', gap: 5, flexShrink: 0 }}>
                 {['#FF5F57', '#FEBC2E', '#28C840'].map((c) => (
-                  <div key={c} style={{ width: 13, height: 13, borderRadius: '50%', background: c }} />
+                  <div key={c} style={{ width: 11, height: 11, borderRadius: '50%', background: c }} />
                 ))}
               </div>
               <div
                 style={{
                   flex: 1,
                   background: '#2D3142',
-                  borderRadius: 7,
-                  padding: '5px 16px',
-                  fontSize: 12,
+                  borderRadius: 5,
+                  padding: '4px 12px',
+                  fontSize: 11,
                   color: '#9CA3AF',
                   textAlign: 'center',
                   letterSpacing: '0.01em',
@@ -115,25 +135,27 @@ export default function WebsiteMockup({ config, website }: Props) {
               >
                 🔒 {domain}
               </div>
-              <div style={{ width: 60, flexShrink: 0 }} />
+              <div style={{ width: 50, flexShrink: 0 }} />
             </div>
 
             {/* ── Navigation ── */}
             <div
               style={{
                 background: '#fff',
-                padding: '16px 48px',
+                padding: '12px 24px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 borderBottom: '1px solid #F3F4F6',
                 boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
+                gap: 12,
+                flexWrap: 'wrap',
               }}
             >
-              <div style={{ fontWeight: 900, fontSize: 22, color: palette.primary, letterSpacing: '-0.025em' }}>
+              <div style={{ fontWeight: 900, fontSize: 18, color: palette.primary, letterSpacing: '-0.025em' }}>
                 {brandName}
               </div>
-              <div style={{ display: 'flex', gap: 32, fontSize: 13, color: '#6B7280', fontWeight: 500 }}>
+              <div style={{ display: 'flex', gap: 20, fontSize: 12, color: '#6B7280', fontWeight: 500 }}>
                 {['Home', 'About', 'Services', 'Contact'].map((link) => (
                   <span key={link}>{link}</span>
                 ))}
@@ -143,9 +165,9 @@ export default function WebsiteMockup({ config, website }: Props) {
                 style={{
                   background: palette.primary,
                   color: '#fff',
-                  padding: '10px 22px',
+                  padding: '8px 18px',
                   borderRadius: 999,
-                  fontSize: 13,
+                  fontSize: 12,
                   fontWeight: 700,
                   flexShrink: 0,
                   animation: 'mockup-glow 2.4s ease-in-out infinite',
@@ -159,7 +181,7 @@ export default function WebsiteMockup({ config, website }: Props) {
             <div
               style={{
                 background: palette.heroGradient,
-                padding: '80px 48px 88px',
+                padding: '48px 24px 56px',
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
@@ -195,12 +217,12 @@ export default function WebsiteMockup({ config, website }: Props) {
               <h1
                 style={{
                   color: '#fff',
-                  fontSize: 44,
+                  fontSize: 32,
                   fontWeight: 900,
                   letterSpacing: '-0.035em',
                   lineHeight: 1.1,
-                  maxWidth: 700,
-                  margin: '0 auto 20px',
+                  maxWidth: 600,
+                  margin: '0 auto 16px',
                 }}
               >
                 {hero.headline}
@@ -209,10 +231,10 @@ export default function WebsiteMockup({ config, website }: Props) {
               <p
                 style={{
                   color: 'rgba(255,255,255,0.82)',
-                  fontSize: 17,
-                  maxWidth: 520,
-                  margin: '0 auto 40px',
-                  lineHeight: 1.7,
+                  fontSize: 14,
+                  maxWidth: 450,
+                  margin: '0 auto 28px',
+                  lineHeight: 1.6,
                   fontWeight: 400,
                 }}
               >
@@ -301,16 +323,16 @@ export default function WebsiteMockup({ config, website }: Props) {
             </div>
 
             {/* ── Services ── */}
-            <div style={{ background: '#fff', padding: '64px 48px' }}>
-              <div style={{ textAlign: 'center', marginBottom: 40 }}>
+            <div style={{ background: '#fff', padding: '40px 24px' }}>
+              <div style={{ textAlign: 'center', marginBottom: 28 }}>
                 <p
                   style={{
                     color: palette.primary,
-                    fontSize: 11,
+                    fontSize: 10,
                     fontWeight: 800,
                     textTransform: 'uppercase',
                     letterSpacing: '0.12em',
-                    marginBottom: 10,
+                    marginBottom: 8,
                   }}
                 >
                   What We Offer
@@ -318,7 +340,7 @@ export default function WebsiteMockup({ config, website }: Props) {
                 <h2
                   style={{
                     color: palette.text,
-                    fontSize: 32,
+                    fontSize: 24,
                     fontWeight: 900,
                     letterSpacing: '-0.03em',
                     margin: 0,
@@ -328,23 +350,23 @@ export default function WebsiteMockup({ config, website }: Props) {
                   Everything You Need to Succeed
                 </h2>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 16 }}>
                 {services.map((s, i) => (
                   <div
                     key={i}
                     style={{
                       background: palette.cardBg,
-                      borderRadius: 18,
-                      padding: '30px 24px',
+                      borderRadius: 14,
+                      padding: '18px 16px',
                       border: `1px solid ${palette.primary}18`,
                       boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
                     }}
                   >
-                    <div style={{ fontSize: 34, marginBottom: 16 }}>{s.icon}</div>
-                    <h3 style={{ color: palette.text, fontSize: 15, fontWeight: 800, margin: '0 0 10px', letterSpacing: '-0.01em' }}>
+                    <div style={{ fontSize: 28, marginBottom: 12 }}>{s.icon}</div>
+                    <h3 style={{ color: palette.text, fontSize: 13, fontWeight: 800, margin: '0 0 8px', letterSpacing: '-0.01em' }}>
                       {s.title}
                     </h3>
-                    <p style={{ color: palette.muted, fontSize: 13, lineHeight: 1.65, margin: 0 }}>
+                    <p style={{ color: palette.muted, fontSize: 12, lineHeight: 1.5, margin: 0 }}>
                       {s.desc}
                     </p>
                   </div>
@@ -353,29 +375,29 @@ export default function WebsiteMockup({ config, website }: Props) {
             </div>
 
             {/* ── Testimonial ── */}
-            <div style={{ background: palette.bg, padding: '64px 48px', textAlign: 'center' }}>
-              <div style={{ color: '#F59E0B', fontSize: 24, letterSpacing: 3, marginBottom: 24 }}>
+            <div style={{ background: palette.bg, padding: '40px 24px', textAlign: 'center' }}>
+              <div style={{ color: '#F59E0B', fontSize: 20, letterSpacing: 2, marginBottom: 18 }}>
                 ★★★★★
               </div>
               <blockquote
                 style={{
                   color: palette.text,
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: 600,
                   fontStyle: 'italic',
-                  maxWidth: 600,
-                  margin: '0 auto 32px',
-                  lineHeight: 1.65,
+                  maxWidth: 520,
+                  margin: '0 auto 24px',
+                  lineHeight: 1.6,
                   letterSpacing: '-0.015em',
                 }}
               >
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 14, justifyContent: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center' }}>
                 <div
                   style={{
-                    width: 50,
-                    height: 50,
+                    width: 44,
+                    height: 44,
                     borderRadius: '50%',
                     background: palette.heroGradient,
                     display: 'flex',
@@ -383,7 +405,7 @@ export default function WebsiteMockup({ config, website }: Props) {
                     justifyContent: 'center',
                     color: '#fff',
                     fontWeight: 900,
-                    fontSize: 20,
+                    fontSize: 18,
                     flexShrink: 0,
                     boxShadow: `0 4px 14px ${palette.primary}44`,
                   }}
@@ -391,10 +413,10 @@ export default function WebsiteMockup({ config, website }: Props) {
                   {testimonial.name.charAt(0)}
                 </div>
                 <div style={{ textAlign: 'left' }}>
-                  <p style={{ color: palette.text, fontSize: 14, fontWeight: 800, margin: '0 0 2px', letterSpacing: '-0.01em' }}>
+                  <p style={{ color: palette.text, fontSize: 13, fontWeight: 800, margin: '0 0 2px', letterSpacing: '-0.01em' }}>
                     {testimonial.name}
                   </p>
-                  <p style={{ color: palette.muted, fontSize: 12, margin: 0 }}>
+                  <p style={{ color: palette.muted, fontSize: 11, margin: 0 }}>
                     {testimonial.role}
                   </p>
                 </div>
@@ -405,7 +427,7 @@ export default function WebsiteMockup({ config, website }: Props) {
             <div
               style={{
                 background: palette.heroGradient,
-                padding: '72px 48px',
+                padding: '48px 24px',
                 textAlign: 'center',
                 position: 'relative',
                 overflow: 'hidden',
@@ -416,11 +438,11 @@ export default function WebsiteMockup({ config, website }: Props) {
               <h2
                 style={{
                   color: '#fff',
-                  fontSize: 34,
+                  fontSize: 26,
                   fontWeight: 900,
                   letterSpacing: '-0.03em',
-                  margin: '0 auto 16px',
-                  maxWidth: 560,
+                  margin: '0 auto 12px',
+                  maxWidth: 480,
                   lineHeight: 1.15,
                 }}
               >
@@ -429,10 +451,10 @@ export default function WebsiteMockup({ config, website }: Props) {
               <p
                 style={{
                   color: 'rgba(255,255,255,0.78)',
-                  fontSize: 16,
-                  margin: '0 auto 36px',
-                  maxWidth: 440,
-                  lineHeight: 1.65,
+                  fontSize: 14,
+                  margin: '0 auto 24px',
+                  maxWidth: 400,
+                  lineHeight: 1.6,
                 }}
               >
                 {cta.subtext}
@@ -443,9 +465,9 @@ export default function WebsiteMockup({ config, website }: Props) {
                   display: 'inline-block',
                   background: '#fff',
                   color: palette.primary,
-                  padding: '16px 44px',
+                  padding: '12px 32px',
                   borderRadius: 999,
-                  fontSize: 15,
+                  fontSize: 13,
                   fontWeight: 800,
                   boxShadow: '0 8px 28px rgba(0,0,0,0.22)',
                   letterSpacing: '-0.01em',
@@ -460,19 +482,22 @@ export default function WebsiteMockup({ config, website }: Props) {
             <div
               style={{
                 background: '#0F172A',
-                padding: '24px 48px',
+                padding: '16px 24px',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
+                gap: 12,
+                flexWrap: 'wrap',
+                fontSize: 11,
               }}
             >
-              <div style={{ color: '#94A3B8', fontSize: 14, fontWeight: 700, letterSpacing: '-0.01em' }}>
+              <div style={{ color: '#94A3B8', fontWeight: 700, letterSpacing: '-0.01em' }}>
                 {brandName}
               </div>
-              <div style={{ color: '#64748B', fontSize: 12 }}>
+              <div style={{ color: '#64748B' }}>
                 © 2025 {brandName}. All rights reserved.
               </div>
-              <div style={{ display: 'flex', gap: 24, fontSize: 12, color: '#64748B' }}>
+              <div style={{ display: 'flex', gap: 16, color: '#64748B' }}>
                 {['Privacy', 'Terms', 'Contact'].map((l) => <span key={l}>{l}</span>)}
               </div>
             </div>

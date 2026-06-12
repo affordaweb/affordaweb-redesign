@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { useRouter } from "next/navigation"
+import Script from "next/script"
 import {
   Globe,
   User,
@@ -84,6 +85,9 @@ export default function SeoForm() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const widgetRef = useRef<HTMLDivElement>(null)
+  const widgetRendered = useRef(false)
   const [form, setForm] = useState({
     url: "",
     name: "",
@@ -97,6 +101,18 @@ export default function SeoForm() {
       setForm((prev) => ({ ...prev, [key]: e.target.value }))
   }
 
+  function initTurnstile() {
+    if (widgetRef.current && !widgetRendered.current) {
+      widgetRendered.current = true
+      ;(window as any).turnstile?.render(widgetRef.current, {
+        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '',
+        callback: (token: string) => setTurnstileToken(token),
+        'expired-callback': () => setTurnstileToken(''),
+        'error-callback': () => setTurnstileToken(''),
+      })
+    }
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (loading) return
@@ -108,9 +124,8 @@ export default function SeoForm() {
       const res = await fetch("/api/create-seo-report", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, turnstileToken }),
       })
-
       const data = await res.json()
 
       if (!res.ok) {
@@ -236,9 +251,14 @@ export default function SeoForm() {
         )}
 
         {/* Submit */}
+        <div ref={widgetRef} className="flex justify-center" />
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          onLoad={initTurnstile}
+        />
         <button
           type="submit"
-          disabled={loading || !form.url || !form.name || !form.email}
+          disabled={loading || !form.url || !form.name || !form.email || !turnstileToken}
           className="w-full flex items-center justify-center gap-2.5 py-4 rounded-2xl bg-gradient-primary text-white font-bold text-base shadow-btn hover:shadow-glow transition-all duration-200 hover:scale-[1.02] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none"
         >
           {loading ? (

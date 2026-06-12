@@ -121,11 +121,12 @@ const breadcrumbSchema = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
+  '@id': 'https://www.affordawebsolutions.com/#business',
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
   description:
     'Affordable web design company for small businesses. Professional websites starting at $69/month with hosting, SEO, SSL, and maintenance included.',
-  serviceType: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
+  knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
   priceRange: '$69–$149/month',
   email: 'hello@affordawebsolutions.com',
   areaServed: { '@type': 'Country', name: 'United States' },

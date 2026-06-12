@@ -172,7 +172,7 @@ Links from other reputable websites signal trust to Google. Get listed in indust
 
 ## 10. Track and Improve
 
-Set up [Google Analytics](https://marketingplatform.google.com/about/analytics/) and [Google Search Console](https://search.google.com/search-console). Monitor which pages rank, what keywords drive traffic, and where visitors drop off — then make improvements. [Semrush's blog](https://semrush.com/blog) and [Neil Patel's SEO resources](https://neilpatel.com/blog) are also worth bookmarking for ongoing learning.
+Set up [Google Analytics](https://marketingplatform.google.com/about/analytics/) and [Google Search Console](https://search.google.com/search-console). Monitor which pages rank, what keywords drive traffic, and where visitors drop off — then make improvements. [Semrush's blog](https://semrush.com/blog) and [Neil Patel's SEO resources](https://neilpatel.com/blog/) are also worth bookmarking for ongoing learning.
 
 ---
 
@@ -682,7 +682,7 @@ Blog posts targeting local keywords build authority and attract local searchers:
 - **[Google Search Console](https://search.google.com/search-console)** — See what keywords bring traffic
 - **[Google Analytics](https://marketingplatform.google.com/about/analytics/)** — Track local visitor behavior
 - **[Whitespark Local Citation Finder](https://whitespark.ca)** — Audit citations
-- **[BrightLocal](https://brightlocal.com)** — Comprehensive local SEO tracking
+- **[BrightLocal](https://www.brightlocal.com/)** — Comprehensive local SEO tracking
 
 For in-depth local SEO strategy, [Moz's local SEO learning center](https://moz.com/learn/seo/local) is the most comprehensive free resource available.
 
@@ -1066,8 +1066,15 @@ export async function generateMetadata({
   const post = posts[slug]
   if (!post) return { title: 'Post Not Found' }
 
+  // Short title overrides for posts whose titles exceed 60 chars even without brand
+  const seoTitleOverrides: Record<string, string> = {
+    'website-maintenance-requirements': 'Website Maintenance Requirements for Small Businesses',
+    'web-design-competitor-comparison': 'AffordaWeb vs Wix, Squarespace & GoDaddy Compared',
+  }
+  const seoTitle = seoTitleOverrides[slug] ?? post.title
+
   return {
-    title: { absolute: `${post.title} | AffordaWeb Solutions` },
+    title: { absolute: seoTitle },
     description: post.excerpt,
     alternates: { canonical: `https://www.affordawebsolutions.com/blog/${slug}` },
     openGraph: {
@@ -1261,7 +1268,8 @@ export default async function BlogPostPage({
       {/* Article */}
       <article className="section-pad bg-white">
         <div className="container-tight">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 items-start">
+            <div>
 
             {/* Featured image */}
             <div className="rounded-3xl overflow-hidden mb-12 relative" style={{ aspectRatio: '16/9' }}>
@@ -1313,6 +1321,35 @@ export default async function BlogPostPage({
                 Back to Blog
               </Link>
             </div>
+            </div>
+
+            {/* Service area links */}
+            <aside className="lg:sticky lg:top-28">
+              <div className="rounded-2xl p-6 bg-gradient-hero border border-white/[0.08]">
+                <h3 className="text-primary-300 text-xs font-bold tracking-widest uppercase mb-5">Service Areas</h3>
+                <ul className="space-y-3">
+                  {[
+                    { label: 'Affordable Web Design Company', href: '/affordable-web-design-company' },
+                    { label: 'Web Design for Small Businesses', href: '/affordable-web-design-for-small-businesses' },
+                    { label: 'Web Design in New Jersey', href: '/new-jersey' },
+                    { label: 'Web Design in Philadelphia', href: '/philadelphia' },
+                    { label: 'Web Design in Houston', href: '/houston' },
+                    { label: 'Web Design in Los Angeles', href: '/los-angeles' },
+                    { label: 'Web Design in Fresno', href: '/fresno' },
+                  ].map(({ label, href }) => (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
+                      >
+                        <span className="text-primary-400">→</span>
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
           </div>
 
           {/* Related posts */}

@@ -2,8 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import SiteChrome from '@/components/SiteChrome'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -111,9 +110,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
       { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-96x96.png', type: 'image/png', sizes: '96x96' },
     ],
-    apple: '/apple-touch-icon.png',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
     shortcut: '/favicon.ico',
   },
 }
@@ -152,6 +155,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   '@id': 'https://www.affordawebsolutions.com/#organization',
                   name: 'AffordaWeb Solutions',
                   url: 'https://www.affordawebsolutions.com',
+                  slogan: 'Affordable website design for small businesses starting at $69/month.',
+                  foundingDate: '2021',
+                  description:
+                    'AffordaWeb Solutions is a professional web design company that builds and manages websites for small businesses. Plans start at $69/month and include custom design, managed hosting, SSL, business email, and ongoing maintenance — no setup fees, no contracts.',
                   logo: {
                     '@type': 'ImageObject',
                     url: 'https://www.affordawebsolutions.com/logo.webp',
@@ -159,9 +166,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     height: 245,
                   },
                   email: 'hello@affordawebsolutions.com',
-                  description:
-                    'Professional, affordable website design and hosting for small businesses starting at $69/month.',
-                  sameAs: [],
+                  areaServed: {
+                    '@type': 'Country',
+                    name: 'United States',
+                  },
+                  knowsAbout: [
+                    'website design for small businesses',
+                    'affordable web design',
+                    'website hosting',
+                    'SSL certificates',
+                    'website maintenance',
+                    'on-page SEO',
+                    'local SEO',
+                    'e-commerce website design',
+                    'website redesign',
+                    'web hosting for small businesses',
+                  ],
+                  sameAs: [
+                    'https://www.facebook.com/affordawebsolutions',
+                    'https://twitter.com/affordaweb',
+                    'https://www.linkedin.com/company/affordaweb-solutions',
+                    'https://www.instagram.com/affordaweb',
+                  ],
                   contactPoint: {
                     '@type': 'ContactPoint',
                     contactType: 'customer support',
@@ -262,9 +288,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   )

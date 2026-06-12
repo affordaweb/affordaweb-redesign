@@ -3,10 +3,32 @@ import { kvSet, kvGet, kvIncr } from '@/lib/kv-store'
 import { generatePreviewContent, generateMockupConfig, ReportData } from '@/lib/report-content'
 import { sendAdminReportEmail, sendUserConfirmationEmail } from '@/lib/email'
 
+async function verifyTurnstile(token: string): Promise<boolean> {
+  if (!process.env.TURNSTILE_SECRET_KEY) return true;
+  try {
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret: process.env.TURNSTILE_SECRET_KEY, response: token }),
+    });
+    const data = await res.json() as { success: boolean };
+    return data.success === true;
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { website, name, email, business_type, goal } = body
+    const { turnstileToken, ...rest } = body
+    if (turnstileToken !== undefined) {
+      const ok = await verifyTurnstile(turnstileToken as string)
+      if (!ok) {
+        return NextResponse.json({ error: 'Turnstile verification failed.' }, { status: 400 })
+      }
+    }
+    const { website, name, email, business_type, goal } = rest
 
     if (!website || !name || !email || !business_type || !goal) {
       return NextResponse.json({ error: 'All fields are required.' }, { status: 400 })
@@ -51,11 +73,20 @@ export async function POST(req: NextRequest) {
     // Store report (TTL: 30 days)
     await kvSet(`report:${report_id}`, report, 60 * 60 * 24 * 30)
 
-    // Notify admin and send user confirmation
-    await Promise.all([
+    // Fire-and-forget email notifications. Report creation should succeed
+    // even if the email service experiences a temporary failure.
+    void Promise.allSettled([
       sendAdminReportEmail(report, admin_token),
       sendUserConfirmationEmail(report),
-    ])
+    ]).then((results) => {
+      results.forEach((result, index) => {
+        if (result.status === 'rejected') {
+          console.warn(`[create-preview] email task ${index} failed`, result.reason)
+        } else if (!result.value) {
+          console.warn(`[create-preview] email task ${index} returned false`)
+        }
+      })
+    })
 
     return NextResponse.json({ report_id })
   } catch (err) {

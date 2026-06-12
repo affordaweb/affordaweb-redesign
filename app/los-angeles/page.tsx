@@ -65,6 +65,7 @@ const breadcrumbSchema = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
+  '@id': 'https://www.affordawebsolutions.com/#business',
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
   description: 'Affordable website design for Los Angeles small businesses starting at $69/month.',
@@ -75,7 +76,7 @@ const localBusinessSchema = {
     { '@type': 'City', name: 'Santa Monica', containedInPlace: { '@type': 'State', name: 'California' } },
     { '@type': 'City', name: 'Burbank', containedInPlace: { '@type': 'State', name: 'California' } },
   ],
-  serviceType: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
+  knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
   priceRange: '$69–$149/month',
   email: 'hello@affordawebsolutions.com',
 }
