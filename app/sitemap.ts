@@ -1,7 +1,15 @@
 import { MetadataRoute } from 'next'
+import { njTowns } from '@/lib/nj-towns-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.affordawebsolutions.com'
+
+  const njTownPages = njTowns.map((t) => ({
+    url: `${baseUrl}/new-jersey/${t.slug}`,
+    lastModified: new Date('2026-06-11'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
 
   return [
     {
@@ -60,10 +68,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/new-jersey`,
-      lastModified: new Date('2026-03-23'),
+      lastModified: new Date('2026-06-11'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    ...njTownPages.map((page) => ({ ...page })),
     {
       url: `${baseUrl}/fresno`,
       lastModified: new Date('2026-03-27'),

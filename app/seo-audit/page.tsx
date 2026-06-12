@@ -14,22 +14,31 @@ import {
 import SeoForm from "@/components/SeoForm"
 
 export const metadata: Metadata = {
-  title: "Free SEO Audit | Check Your Website Score",
+  title: "Free SEO Audit Tool | Check Your Website SEO Score",
   description:
-    "Get a free instant SEO audit for your website. We check 20+ factors — meta tags, headings, page speed, SSL, Open Graph, and more. No signup required.",
+    "Run a free instant SEO audit of your website. Get your SEO score, top issues, and quick wins — 20+ checks across meta tags, speed, SSL, Open Graph, headings, and more. No signup required.",
+  keywords: [
+    "free seo audit",
+    "free website audit",
+    "seo checker",
+    "seo analysis tool",
+    "website seo score check",
+    "free seo report",
+    "seo audit tool",
+  ],
   alternates: { canonical: "https://www.affordawebsolutions.com/seo-audit" },
   openGraph: {
     type: 'website',
-    title: "Free SEO Audit Tool | Check Your Website Score in 30 Seconds",
+    title: "Free SEO Audit Tool | Check Your Website SEO Score in 30 Seconds",
     description:
-      "Instant SEO analysis — 20+ checks across 5 categories. See your score, top issues, and quick wins for free.",
+      "Instant free SEO analysis — 20+ checks across 5 categories. See your score, top issues, and quick wins. No signup required.",
     url: "https://www.affordawebsolutions.com/seo-audit",
-    images: [{ url: "https://www.affordawebsolutions.com/og-image.png", width: 1200, height: 630, alt: "Free SEO Audit Tool" }],
+    images: [{ url: "https://www.affordawebsolutions.com/og-image.png", width: 1200, height: 630, alt: "Free SEO Audit Tool - Check Your Website Score" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free SEO Audit Tool | Check Your Website Score in 30 Seconds",
-    description: "Instant SEO analysis — 20+ checks. Free, no signup required.",
+    title: "Free SEO Audit Tool | Check Your Website SEO Score in 30 Seconds",
+    description: "Instant SEO analysis — 20+ checks. Free, no signup required. Get your score in 30 seconds.",
     images: ["https://www.affordawebsolutions.com/og-image.png"],
   },
 }

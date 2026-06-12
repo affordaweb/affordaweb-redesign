@@ -5,21 +5,33 @@ import Image from 'next/image'
 import HeroBackground from '@/components/HeroBackground'
 
 export const metadata: Metadata = {
-  title: 'Website Design for Small Businesses',
+  title: 'Affordable Website Design for Small Businesses from $69/mo',
   description:
-    'Affordable website design starting at $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
+    'Get a professional small business website from $69/month — custom design, hosting, SSL, local SEO & unlimited updates included. No setup fees, no contracts. Launch in 10–15 days.',
+  keywords: [
+    'affordable website design',
+    'small business website design',
+    'cheap website design',
+    'affordable web design company',
+    'website design for small businesses',
+    'professional website design',
+    'budget website design',
+    'best affordable web design',
+    'small business web design near me',
+    'affordable web design services',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
-    description: 'Affordable website design starting at $69/month. Hosting, SSL, SEO, and unlimited updates included.',
+    title: 'Affordable Website Design for Small Businesses from $69/mo | AffordaWeb Solutions',
+    description: 'Professional website design from $69/month. Custom design, hosting, SSL, local SEO, and unlimited updates — no setup fees, no contracts.',
     url: 'https://www.affordawebsolutions.com',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Website Design for Small Businesses | AffordaWeb Solutions',
-    description: 'Affordable website design starting at $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
+    title: 'Affordable Website Design for Small Businesses from $69/mo | AffordaWeb Solutions',
+    description: 'Professional website design from $69/month. Custom design, hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
