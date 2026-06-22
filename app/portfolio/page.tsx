@@ -4,21 +4,28 @@ import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Small Business Web Design Portfolio',
+  title: 'Small Business Web Design Portfolio | Affordable Websites',
   description:
-    'Browse our portfolio of affordable website design projects for small businesses — service companies, freelancers, e-commerce stores, and local businesses.',
+    'Browse our portfolio of affordable website design projects for small businesses — service companies, freelancers, e-commerce stores, and local businesses. All built with monthly website design packages from $69/mo.',
+  keywords: [
+    'small business web design portfolio',
+    'affordable website design examples',
+    'monthly website design portfolio',
+    'affordable web design company projects',
+    'small business website samples',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/portfolio' },
   openGraph: {
     type: 'website',
-    title: 'Website Design Portfolio | Small Business Websites We Built',
-    description: 'See our work — affordable, professional website designs for small businesses.',
+    title: 'Small Business Web Design Portfolio | Affordable Websites from $69/mo',
+    description: 'Browse our affordable web design portfolio — real websites built for small businesses with monthly website design packages from $69/mo.',
     url: 'https://www.affordawebsolutions.com/portfolio',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Website Design Portfolio | Small Business Websites We Built',
-    description: 'See our work — affordable, professional website designs for small businesses.',
+    title: 'Small Business Web Design Portfolio | Affordable Websites from $69/mo',
+    description: 'Browse our affordable web design portfolio — monthly website design packages from $69/mo.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

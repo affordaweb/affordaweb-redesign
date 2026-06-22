@@ -3,22 +3,40 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design in New Jersey | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design New Jersey | $69/mo | AffordaWeb Solutions' },
   description:
-    'Affordable website design for NJ small businesses from $69/mo. Hosting, SEO & SSL included. Serving Monmouth, Middlesex, Ocean, Morris & Bergen counties.',
+    'Affordable web design in New Jersey starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL included. Serving Monmouth, Middlesex, Ocean, Morris & Bergen counties. No setup fees, no contracts.',
+  keywords: [
+    'affordable web design New Jersey',
+    'web design New Jersey',
+    'affordable web design NJ',
+    'website design New Jersey',
+    'web design NJ',
+    'small business website NJ',
+    'monthly website design NJ',
+    'affordable web design near me NJ',
+    'web design company New Jersey',
+    'website designer for small business NJ',
+    'cheap website design New Jersey',
+    'affordable website NJ',
+    'web hosting New Jersey',
+    'web hosting NJ',
+    'affordable seo New Jersey',
+    'seo services New Jersey',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/new-jersey' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
+    title: 'Affordable Web Design New Jersey | $69/mo | AffordaWeb Solutions',
     description:
-      'Professional website design for NJ small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',
+      'Affordable web design in New Jersey starting at $69/month. Monthly website design packages with hosting, SEO, SSL, and maintenance included. Serving all NJ counties.',
     url: 'https://www.affordawebsolutions.com/new-jersey',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design New Jersey' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design in New Jersey | AffordaWeb Solutions',
-    description: 'Website design for NJ small businesses starting at $69/month.',
+    title: 'Affordable Web Design New Jersey | $69/mo | AffordaWeb Solutions',
+    description: 'Affordable web design in New Jersey starting at $69/month. Monthly website design packages with hosting, SEO, SSL included.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

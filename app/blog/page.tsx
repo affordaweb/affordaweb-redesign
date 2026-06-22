@@ -5,21 +5,28 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = {
-  title: 'Web Design Blog for Small Businesses',
+  title: 'Web Design Blog for Small Businesses | Affordable Website Tips',
   description:
-    'Expert web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
+    'Expert web design tips, SEO guides, and digital marketing advice for small business owners. Learn how affordable monthly website design can help grow your business online.',
+  keywords: [
+    'web design blog small business',
+    'affordable website tips',
+    'small business seo guide',
+    'monthly website design blog',
+    'affordable web design company blog',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/blog' },
   openGraph: {
     type: 'website',
-    title: 'Web Design Blog | AffordaWeb Solutions',
-    description: 'Practical web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
+    title: 'Web Design Blog for Small Businesses | AffordaWeb Solutions',
+    description: 'Expert web design tips, SEO guides, and digital marketing advice for small business owners. Affordable monthly website design insights from $69/mo.',
     url: 'https://www.affordawebsolutions.com/blog',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Blog' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Design Blog | AffordaWeb Solutions',
-    description: 'Practical web design tips, SEO guides, and digital marketing advice for small business owners. Learn how to grow your business online with AffordaWeb Solutions.',
+    title: 'Web Design Blog for Small Businesses | AffordaWeb Solutions',
+    description: 'Expert web design tips and affordable monthly website design insights for small business owners.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

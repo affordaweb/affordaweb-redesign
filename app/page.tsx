@@ -7,30 +7,36 @@ import HeroBackground from '@/components/HeroBackground'
 export const metadata: Metadata = {
   title: { absolute: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions' },
   description:
-    'Professional small business website design with managed hosting, SSL, local SEO, and unlimited content updates for $69/month. Build a site that ranks on Google and converts visitors into customers.',
+    'Professional affordable web design for small businesses starting at $69/month with managed hosting, SSL, local SEO, and unlimited content updates included. No setup fees, no contracts. Get a custom website that ranks on Google and converts visitors into customers.',
   keywords: [
-    'affordable website design',
+    'affordable web design for small business',
     'small business website design',
+    'monthly website design packages',
+    'pay monthly website design',
+    'website design with hosting included',
     'website hosting and SSL',
-    'local SEO',
+    'local SEO for small business',
     'monthly website design',
     'web design subscription',
     'professional website design',
-    'google ranking',
     'affordable web design',
     'website redesign services',
+    'no upfront cost web design',
+    'flat rate website design',
   ],
   alternates: { canonical: 'https://www.affordawebsolutions.com' },
   openGraph: {
     type: 'website',
     siteName: 'AffordaWeb Solutions',
     title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
+    description: 'Professional affordable web design for small businesses starting at $69/month with hosting, SSL, local SEO, and unlimited content updates included. No setup fees, no contracts.',
     url: 'https://www.affordawebsolutions.com',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
+    description: 'Professional affordable web design for small businesses starting at $69/month with hosting, SSL, local SEO, and unlimited content updates included.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -103,18 +109,18 @@ function IconCheck() {
 // ── Data ──────────────────────────────────────────────────────────
 
 const services = [
-  { Icon: IconDesign,   title: 'Website Design',      desc: 'Custom, mobile-first small business website design built to convert visitors into paying customers.', href: '/services/design' },
-  { Icon: IconRedesign, title: 'Website Redesign',    desc: 'Transform your outdated site into a fast, modern, high-performing website without losing your rankings.', href: '/services/redesign' },
-  { Icon: IconSeo,      title: 'SEO Optimization',    desc: 'Local SEO built into every site so your small business ranks on Google and gets found by nearby customers.', href: '/services/seo' },
-  { Icon: IconMaint,    title: 'Website Maintenance', desc: 'Managed website maintenance — updates, backups, and security monitoring — so you can focus on running your business.', href: '/services/maintenance' },
-  { Icon: IconHosting,  title: 'Shared Hosting',      desc: 'Fast, reliable managed web hosting with a free SSL certificate included in every website design plan.', href: '/services/hosting' },
-  { Icon: IconEcom,     title: 'E-Commerce Design',   desc: 'Launch your online store with up to 30 products, secure payment processing, and a mobile-optimized checkout.', href: '/services#ecommerce' },
+  { Icon: IconDesign,   title: 'Website Design',      desc: 'Custom, mobile-first small business website design built to convert visitors into paying customers. Affordable monthly payment plans include hosting and SSL.', href: '/services/design' },
+  { Icon: IconRedesign, title: 'Website Redesign',    desc: 'Transform your outdated site into a fast, modern, high-performing website without losing your rankings. Affordable website redesign with monthly payments.', href: '/services/redesign' },
+  { Icon: IconSeo,      title: 'SEO Optimization',    desc: 'Local SEO built into every site so your small business ranks on Google and gets found by nearby customers. SEO included in Standard and Premium plans.', href: '/services/seo' },
+  { Icon: IconMaint,    title: 'Website Maintenance', desc: 'Managed website maintenance — updates, backups, and security monitoring — so you can focus on running your business. Included in all plans.', href: '/services/maintenance' },
+  { Icon: IconHosting,  title: 'Shared Hosting',      desc: 'Fast, reliable managed web hosting with a free SSL certificate included in every affordable website design package.', href: '/services/hosting' },
+  { Icon: IconEcom,     title: 'E-Commerce Design',   desc: 'Launch your online store with up to 30 products, secure payment processing, and a mobile-optimized checkout. Affordable ecommerce website design.', href: '/services#ecommerce' },
 ]
 
 const whoWeHelp = [
   { title: 'Freelancers',        tag: 'Solo professionals',     color: '#7C3AED', pastelBg: 'rgba(124,58,237,0.14)',   desc: 'A professional freelancer website starting at $69/month keeps you from losing clients to someone with a better-looking site. Your skills deserve a site that sells them.',              Icon: IconDesign,   href: '/services/design'    },
   { title: 'Startups',           tag: 'Early-stage ventures',   color: '#06B6D4', pastelBg: 'rgba(6,182,212,0.14)',    desc: 'Launch with a credible startup website from day one — without the five-figure agency bill. First impressions define early traction, and yours only happens once.',                        Icon: IconRedesign, href: '/services/design'    },
-  { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Local small business website design built to rank on Google and generate leads — not just traffic. Every site includes local SEO so customers in your area can actually find you.',     Icon: IconSeo,      href: '/services/seo'       },
+  { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Affordable small business website design built to rank on Google and generate leads — not just traffic. Every site includes local SEO so customers in your area can actually find you. Starting at $69/month with hosting included.',     Icon: IconSeo,      href: '/services/seo'       },
   { title: 'Established Brands', tag: 'Growing companies',      color: '#F59E0B', pastelBg: 'rgba(245,158,11,0.14)',  desc: 'You have outgrown your current site. Our website redesign service preserves your search rankings and existing content while delivering a modern, high-converting experience.',           Icon: IconMaint,    href: '/services/redesign'  },
   { title: 'Online Stores',      tag: 'E-commerce businesses',  color: '#F43F5E', pastelBg: 'rgba(244,63,94,0.14)',   desc: 'Affordable e-commerce website design with up to 30 products, secure payment processing, and a mobile-optimized checkout. Built for small online stores that need to sell from day one.',  Icon: IconEcom,     href: '/services#ecommerce' },
 ]
@@ -127,13 +133,18 @@ const portfolioItems = [
 
 const faqs: { q: string; a: string; display?: React.ReactNode }[] = [
   {
+    q: 'How much does a small business website cost?',
+    a: 'Our affordable web design for small business starts at $69/month with no setup fees and no long-term contracts. Unlike traditional agencies that charge $3,000 to $10,000 upfront, our monthly website design packages include everything — custom design, managed hosting, SSL certificate, business email, and ongoing maintenance. Standard plans at $99/month add unlimited content updates and full SEO optimization.',
+    display: <>Our <Link href="/pricing" className="text-primary-600 font-medium hover:underline">affordable web design for small business</Link> starts at <strong>$69/month</strong> with no setup fees and no long-term contracts. Unlike traditional agencies that charge <strong>$3,000 to $10,000 upfront</strong>, our monthly website design packages include everything — custom design, managed hosting, <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">SSL certificate</a>, business email, and ongoing maintenance. Standard plans at $99/month add unlimited content updates and full SEO optimization.</>,
+  },
+  {
     q: 'What does your affordable website design package include?',
     a: 'Every plan includes a professionally designed small business website, managed web hosting, a free SSL certificate, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates and full on-page SEO optimization — everything in one flat monthly price.',
     display: <>Every plan includes a professionally designed small business website, managed web hosting, a free <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">SSL certificate</a>, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates and full on-page SEO optimization with <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">Google Analytics</a> setup — everything in one flat monthly price.</>,
   },
   {
     q: 'Are there any setup fees or hidden costs with your website design plans?',
-    a: 'No setup fees and no hidden costs. You pay one flat monthly rate and everything listed in your plan is included. The price you see is the price you pay — no surprise invoices.',
+    a: 'No setup fees and no hidden costs. You pay one flat monthly rate and everything listed in your plan is included. The price you see is the price you pay — no surprise invoices. This is what makes us a true no upfront cost web design service.',
   },
   {
     q: 'How long does it take to design and launch a small business website?',
@@ -240,8 +251,8 @@ export default function HomePage() {
                 <span className="gradient-text">Starting at $69/mo</span>
               </h1>
 
-              <p className="text-xl leading-relaxed mb-9 max-w-lg" style={{ color: 'rgba(255,255,255,0.58)' }}>
-                Professional small business website design with hosting, SSL, and unlimited content updates in one flat monthly price. No setup fees. No contracts. Just a website that works.
+              <p               className="text-xl leading-relaxed mb-9 max-w-lg" style={{ color: 'rgba(255,255,255,0.58)' }}>
+                Affordable web design for small businesses with hosting, SSL, and unlimited content updates in one flat monthly price. No upfront costs, no long-term contracts — just a professional website that ranks on Google and converts visitors into customers.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-9">
@@ -255,7 +266,7 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-wrap gap-5 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                {['No contracts', 'Hosting included', 'SSL included', 'Cancel anytime'].map(t => (
+                {['No contracts', 'Hosting included', 'SSL included', 'No upfront cost'].map(t => (
                   <span key={t} className="flex items-center gap-1.5">
                     <span style={{ color: '#06B6D4' }}>✓</span>{t}
                   </span>
@@ -768,15 +779,15 @@ export default function HomePage() {
             <div>
               <p className="section-label">About AffordaWeb</p>
               <h2
-                id="about-heading"
-                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-5"
-                style={{ letterSpacing: '-0.02em' }}
-              >
-                Every Business Deserves a <span className="gradient-text">Professional Website</span>
-              </h2>
-              <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                Managed by a group of Top Rated freelancers on Upwork, AffordaWeb Solutions was built on one belief: small businesses should not be priced out of professional web design. We bundle design, hosting, maintenance, and SEO into one simple monthly plan starting at $69.
-              </p>
+                  id="about-heading"
+                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-5"
+                  style={{ letterSpacing: '-0.02em' }}
+                >
+                  Affordable Web Design Company for <span className="gradient-text">Small Businesses</span>
+                </h2>
+                <p className="text-gray-500 text-lg leading-relaxed mb-8">
+                  Managed by a group of Top Rated freelancers on Upwork, AffordaWeb Solutions is an affordable web design company built on one belief: small businesses should not be priced out of professional web design. We bundle custom design, managed hosting, maintenance, and SEO into one simple monthly website design package starting at $69.
+                </p>
               <ul className="space-y-4 mb-8">
                 {([
                   { title: 'Results-Driven', desc: 'Every design decision is backed by strategy and aligned with your business goals.' },
@@ -818,16 +829,16 @@ export default function HomePage() {
         <div className="container-tight relative z-10">
           <div className="text-center mb-16">
             <p className="section-label">Simple Pricing</p>
-            <h2
-              id="pricing-heading"
-              className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
-              style={{ letterSpacing: '-0.02em' }}
-            >
-              Website Design Pricing With No Surprises
-            </h2>
-            <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
-              Every website design plan includes managed hosting, SSL, ongoing maintenance, and a professionally designed website — all in one flat monthly rate.
-            </p>
+              <h2
+                  id="pricing-heading"
+                  className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+                  style={{ letterSpacing: '-0.02em' }}
+                >
+                  Monthly Website Design Packages With No Surprises
+                </h2>
+                <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
+                  Our affordable monthly website design packages include managed hosting, SSL, ongoing maintenance, and a professionally designed website — all in one flat monthly rate. No setup fees, no contracts.
+                </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-end pb-8">

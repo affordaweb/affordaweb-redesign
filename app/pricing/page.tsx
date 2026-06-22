@@ -3,21 +3,34 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Website Design Pricing from $69/mo',
+  title: 'Monthly Website Design Packages | Pricing from $69/mo',
   description:
-    'Website design pricing starting at $69/mo. All plans include hosting, SSL, and maintenance. No setup fees, no contracts, cancel anytime.',
+    'Monthly website design packages starting at $69/mo. All plans include custom design, managed hosting with SSL, and maintenance. No setup fees, no contracts, cancel anytime. Affordable pay monthly website design for small businesses.',
+  keywords: [
+    'monthly website design packages',
+    'pay monthly website design',
+    'website design pricing',
+    'website design monthly fee',
+    'affordable web design packages',
+    'monthly payment website designer',
+    'web design monthly subscription',
+    'no upfront cost web design',
+    'flat rate website design',
+    'small business web design pricing',
+    'website subscription service',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/pricing' },
   openGraph: {
     type: 'website',
-    title: 'Website Design Pricing | Plans Starting at $69/mo',
-    description: 'Website design plans from $69/mo — custom design, hosting, SSL, SEO, maintenance, and unlimited updates all included. No setup fees, no contracts.',
+    title: 'Monthly Website Design Packages | Pricing from $69/mo',
+    description: 'Monthly website design packages from $69/mo — custom design, hosting, SSL, SEO, maintenance, and unlimited updates all included. No setup fees, no contracts. Pay monthly website design.',
     url: 'https://www.affordawebsolutions.com/pricing',
-    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Pricing Plans' }],
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Monthly Website Design Pricing' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Website Design Pricing | Plans Starting at $69/mo',
-    description: 'Website design plans from $69/mo — custom design, hosting, SSL, SEO, maintenance, and unlimited updates all included. No setup fees, no contracts.',
+    title: 'Monthly Website Design Packages | Pricing from $69/mo',
+    description: 'Monthly website design packages from $69/mo — custom design, hosting, SSL, SEO, maintenance, and unlimited updates all included. No setup fees, no contracts.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

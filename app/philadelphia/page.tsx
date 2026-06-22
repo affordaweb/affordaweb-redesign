@@ -3,21 +3,35 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design Philadelphia, PA | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design Philadelphia, PA | $69/mo | AffordaWeb Solutions' },
   description:
-    'Web design for Philadelphia small businesses from $69/mo. Hosting, SEO & SSL included. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester counties.',
+    'Affordable web design in Philadelphia starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL included. Serving Philadelphia, Bucks, Montgomery, Delaware & Chester counties. No setup fees, no contracts.',
+  keywords: [
+    'affordable web design Philadelphia',
+    'web design Philadelphia',
+    'cheap website design Philadelphia',
+    'Philadelphia small business website',
+    'web designer Philadelphia affordable',
+    'monthly website design Philadelphia',
+    'Philadelphia website design pricing',
+    'affordable web designer near me Philly',
+    'Philadelphia web design company',
+    'web design no upfront cost Philadelphia',
+    'Philadelphia small business web design',
+    'Philadelphia local SEO services',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/philadelphia' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design in Philadelphia, PA | AffordaWeb Solutions',
-    description: 'Professional website design for Philadelphia small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',
+    title: 'Affordable Web Design Philadelphia, PA | $69/mo | AffordaWeb Solutions',
+    description: 'Affordable web design in Philadelphia starting at $69/month. Monthly website design packages with hosting, SEO, SSL, and maintenance included. Serving all Philly metro areas.',
     url: 'https://www.affordawebsolutions.com/philadelphia',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Philadelphia PA' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design in Philadelphia, PA | AffordaWeb Solutions',
-    description: 'Website design for Philadelphia small businesses starting at $69/month.',
+    title: 'Affordable Web Design Philadelphia, PA | $69/mo | AffordaWeb Solutions',
+    description: 'Affordable web design in Philadelphia starting at $69/month. Monthly website design packages with hosting, SEO, SSL included.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

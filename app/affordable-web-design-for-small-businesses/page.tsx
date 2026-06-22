@@ -5,7 +5,7 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 export const metadata: Metadata = {
   title: { absolute: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions' },
   description:
-    'Affordable web design for small businesses starting at $69/mo. Custom websites with hosting, SEO & SSL built in. No setup fees, no contracts — launch in 10–15 days.',
+    'Affordable web design for small businesses starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL built in. No setup fees, no contracts — launch in 10–15 days.',
   keywords: [
     'affordable web design for small business',
     'small business web design',
@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     'website design for small business',
     'affordable small business website',
     'small business web design company',
+    'monthly website design packages',
+    'pay monthly website design',
+    'website design with hosting included',
+    'no upfront cost web design',
   ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/affordable-web-design-for-small-businesses' },
   openGraph: {

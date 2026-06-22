@@ -3,22 +3,22 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design Services in Manila, Philippines | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design Services in Manila, Philippines | $69/mo' },
   description:
-    'Top-rated Filipino web designers offering affordable website design in Manila and across the Philippines from $69/mo. Custom design, local SEO, hosting & maintenance included. No setup fees.',
+    'Affordable web design services in Manila and across the Philippines from $69/mo. Top-rated Filipino web designers offering monthly website design packages with SEO, hosting, and maintenance included.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/affordable-web-design-services-in-manila' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design Services in Manila, Philippines | AffordaWeb Solutions',
+    title: 'Affordable Web Design Services in Manila, Philippines | $69/mo',
     description:
-      'Top-rated Filipino web designers. Professional websites for Philippine businesses starting at $69/month. Custom design, SEO, hosting & maintenance — no setup fees.',
+      'Affordable web design services in Manila — monthly website design packages from $69/mo. Custom design, local SEO, hosting & maintenance included. Built by top-rated Filipino web designers.',
     url: 'https://www.affordawebsolutions.com/affordable-web-design-services-in-manila',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Manila Philippines' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design Services in Manila, Philippines | AffordaWeb Solutions',
-    description: 'Top-rated Filipino web designers. Websites from $69/month — no setup fees.',
+    title: 'Affordable Web Design Services in Manila, Philippines | $69/mo',
+    description: 'Affordable web design services in Manila — monthly website design packages from $69/mo. No setup fees.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
   keywords: [
@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     'affordable website design philippines',
     'cheap web design philippines',
     'website design manila philippines',
+    'monthly website design packages',
+    'pay monthly website design',
+    'no upfront cost web design',
+    'affordable web design company',
   ],
 }
 

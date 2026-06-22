@@ -3,21 +3,34 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Affordable Web Design & SEO Services',
+  title: 'Affordable Web Design Services for Small Businesses | $69/mo',
   description:
-    'Affordable web design services for small businesses: custom design, SEO, hosting, maintenance, and e-commerce. Everything bundled from $69/month.',
+    'Affordable web design services for small businesses: custom website design, SEO optimization, managed hosting with SSL, website maintenance, and e-commerce. Everything bundled in one monthly package from $69/month. No setup fees, no contracts.',
+  keywords: [
+    'affordable web design services',
+    'web design services for small business',
+    'small business website design services',
+    'custom website design',
+    'website design with hosting included',
+    'affordable seo services',
+    'website maintenance packages',
+    'monthly website design packages',
+    'all in one website design package',
+    'affordable ecommerce website design',
+    'website redesign services',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/services' },
   openGraph: {
     type: 'website',
-    title: 'Web Design & SEO Services for Small Businesses',
-    description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
+    title: 'Affordable Web Design Services for Small Businesses | $69/mo',
+    description: 'Professional website design, SEO optimization, hosting with SSL, and maintenance services for small businesses starting at $69/month. All-in-one monthly packages.',
     url: 'https://www.affordawebsolutions.com/services',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Web Design Services' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Design & SEO Services for Small Businesses',
-    description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month.',
+    title: 'Affordable Web Design Services for Small Businesses | $69/mo',
+    description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month. All-in-one monthly packages.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

@@ -3,21 +3,35 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design in Los Angeles | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design Los Angeles, CA | $69/mo | AffordaWeb Solutions' },
   description:
-    'Affordable website design for LA small businesses from $69/mo. Hosting, SEO & SSL included. Serving LA County, Orange County, and the San Fernando Valley.',
+    'Affordable web design in Los Angeles starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL included. Serving LA County, Orange County, and the San Fernando Valley. No setup fees, no contracts.',
+  keywords: [
+    'affordable web design Los Angeles',
+    'web design Los Angeles',
+    'cheap website design LA',
+    'small business website Los Angeles',
+    'affordable web design Los Angeles CA',
+    'monthly web design Los Angeles',
+    'affordable web designer Los Angeles',
+    'web design for LA startups',
+    'affordable website designer Los Angeles',
+    'website design monthly payment LA',
+    'Los Angeles web design company',
+    'affordable web design Orange County',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/los-angeles' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design in Los Angeles | AffordaWeb Solutions',
-    description: 'Professional website design for LA small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',
+    title: 'Affordable Web Design Los Angeles, CA | $69/mo | AffordaWeb Solutions',
+    description: 'Affordable web design in Los Angeles starting at $69/month. Monthly website design packages with hosting, SEO, SSL, and maintenance included. Serving LA and Orange County.',
     url: 'https://www.affordawebsolutions.com/los-angeles',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Los Angeles CA' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design in Los Angeles | AffordaWeb Solutions',
-    description: 'Website design for Los Angeles small businesses starting at $69/month.',
+    title: 'Affordable Web Design Los Angeles, CA | $69/mo | AffordaWeb Solutions',
+    description: 'Affordable web design in Los Angeles starting at $69/month. Monthly website design packages with hosting, SEO, SSL included.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

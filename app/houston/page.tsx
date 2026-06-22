@@ -3,22 +3,36 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design in Houston, TX | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design Houston, TX | $69/mo | AffordaWeb Solutions' },
   description:
-    'Affordable website design for Houston small businesses from $69/mo. Hosting, SEO & SSL included. Serving Harris, Fort Bend, Montgomery & Galveston counties.',
+    'Affordable web design in Houston, TX starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL included. Serving Harris, Fort Bend, Montgomery & Galveston counties. No setup fees, no contracts.',
+  keywords: [
+    'affordable web design Houston',
+    'web design Houston',
+    'cheap website design Houston',
+    'small business website Houston',
+    'Houston web designer for small business',
+    'monthly website design Houston',
+    'Houston website design pricing',
+    'affordable web design Houston TX',
+    'affordable web designer near me Houston',
+    'Houston small business website',
+    'web design no upfront cost Houston',
+    'web design company Houston',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/houston' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design in Houston, TX | AffordaWeb Solutions',
+    title: 'Affordable Web Design Houston, TX | $69/mo | AffordaWeb Solutions',
     description:
-      'Professional website design for Houston small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',
+      'Affordable web design in Houston, TX starting at $69/month. Monthly website design packages with hosting, SEO, SSL, and maintenance included. Serving all Houston metro areas.',
     url: 'https://www.affordawebsolutions.com/houston',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Houston TX' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design in Houston, TX | AffordaWeb Solutions',
-    description: 'Affordable website design for Houston small businesses. Custom design, hosting, SEO & SSL included from $69/mo.',
+    title: 'Affordable Web Design Houston, TX | $69/mo | AffordaWeb Solutions',
+    description: 'Affordable web design in Houston, TX starting at $69/month. Monthly website design packages with hosting, SEO, SSL included.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

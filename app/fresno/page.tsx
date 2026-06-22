@@ -3,27 +3,33 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design in Fresno, CA | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design Fresno, CA | $69/mo | AffordaWeb Solutions' },
   description:
-    'Affordable website design for Fresno small businesses from $69/mo. Hosting, SEO & SSL included. Serving Fresno, Clovis, Madera, and the Central Valley.',
+    'Affordable web design in Fresno, CA starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL included. Serving Fresno, Clovis, Madera, and the Central Valley. No setup fees, no contracts.',
   keywords: [
+    'affordable web design Fresno',
     'web design Fresno',
     'website design Fresno CA',
-    'affordable web design Fresno',
     'Fresno web design company',
+    'affordable web design Fresno CA',
     'Fresno website designer',
     'small business website Fresno',
+    'monthly website Fresno',
     'affordable website Fresno California',
+    'cheap website design Fresno',
+    'Fresno small business website',
     'web design Clovis CA',
     'web design Central Valley',
     'Fresno SEO services',
+    'affordable web designer near me Fresno',
+    'Fresno website design pricing',
   ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/fresno' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design in Fresno, CA | AffordaWeb Solutions',
+    title: 'Affordable Web Design Fresno, CA | $69/mo | AffordaWeb Solutions',
     description:
-      'Professional website design for Fresno small businesses starting at $69/month. Hosting, SEO, SSL, and maintenance included.',
+      'Affordable web design in Fresno, CA starting at $69/month. Monthly website design packages with hosting, SEO, SSL, and maintenance included. Serving Fresno, Clovis, Madera, and the Central Valley.',
     url: 'https://www.affordawebsolutions.com/fresno',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Fresno CA' }],
   },

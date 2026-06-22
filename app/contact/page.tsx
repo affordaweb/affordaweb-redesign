@@ -4,21 +4,28 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Get a Free Website Quote | Contact Us',
+  title: 'Get a Free Website Quote | Affordable Web Design | Contact Us',
   description:
-    'Contact AffordaWeb Solutions for a free, no-obligation website design quote. We respond within 24 hours. Email us at hello@affordawebsolutions.com.',
+    'Contact AffordaWeb Solutions for a free, no-obligation website design quote. Get an affordable monthly website design package from $69/mo. We respond within 24 hours.',
+  keywords: [
+    'free website design quote',
+    'affordable web design contact',
+    'monthly website design quote',
+    'get website design pricing',
+    'affordable web design company contact',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/contact' },
   openGraph: {
     type: 'website',
-    title: 'Get a Free Website Quote | Contact Us',
-    description: 'Request a free quote for affordable website design. We respond within 24 hours.',
+    title: 'Get a Free Website Quote | Affordable Web Design | Contact Us',
+    description: 'Request a free quote for affordable monthly website design packages from $69/mo. We respond within 24 hours.',
     url: 'https://www.affordawebsolutions.com/contact',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Contact AffordaWeb Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Get a Free Website Quote | Contact Us',
-    description: 'Request a free quote for affordable website design. We respond within 24 hours.',
+    title: 'Get a Free Website Quote | Affordable Web Design | Contact Us',
+    description: 'Request a free quote for affordable monthly website design packages from $69/mo.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

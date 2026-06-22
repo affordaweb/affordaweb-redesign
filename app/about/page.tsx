@@ -4,21 +4,31 @@ import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'About | Filipino Web Design Team',
+  title: 'About | Affordable Web Design Company for Small Businesses',
   description:
-    'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
+    'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $69/month with hosting, SSL, and maintenance included.',
+  keywords: [
+    'affordable web design company',
+    'small business web design company',
+    'web design company for small business',
+    'Filipino web designers',
+    'affordable website design company',
+    'professional website design',
+    'cheap web design company',
+    'affordable web design agency',
+  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com/about' },
   openGraph: {
     type: 'website',
-    title: 'About Us | Filipino Web Design Team for Small Businesses',
-    description: 'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
+    title: 'About | Affordable Web Design Company for Small Businesses',
+    description: 'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $69/month.',
     url: 'https://www.affordawebsolutions.com/about',
-    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'About AffordaWeb Solutions' }],
+    images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'About AffordaWeb Solutions Affordable Web Design Company' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Us | Filipino Web Design Team for Small Businesses',
-    description: 'AffordaWeb Solutions is a Filipino web design team delivering affordable, professional websites for small businesses worldwide. Starting at $69/month.',
+    title: 'About | Affordable Web Design Company for Small Businesses',
+    description: 'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $69/month.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
