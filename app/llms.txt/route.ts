@@ -8,6 +8,8 @@ export function GET() {
 
 AffordaWeb Solutions is a professional web design company that builds and manages websites for small businesses throughout the United States. All plans include custom design, managed hosting, SSL security, business email, and ongoing maintenance in one flat monthly rate. No setup fees, no long-term contracts, cancel anytime.
 
+The AffordaWeb team is composed of Filipino freelancers who are Top Rated on Upwork. We have over 15 years of combined experience building websites and specialize in Next.js, Tailwind CSS, WordPress, and e-commerce platforms.
+
 ## Core Services
 
 - [Website Design for Small Businesses](https://www.affordawebsolutions.com/services/design): Custom, mobile-first website design starting at $69/month, built to convert visitors into customers.
@@ -32,8 +34,29 @@ No setup fees. No long-term contracts. Cancel anytime with 30 days notice.
 - Website design plans are month-to-month with no long-term contracts.
 - All plans include a hosted business email address (you@yourdomain.com).
 - AffordaWeb Solutions serves small businesses nationwide across the United States.
-- The web design team is based in the Philippines.
+- The web design team is based in the Philippines — Filipino freelancers, Top Rated on Upwork.
 - Affordable web design starts at $69/month — significantly less than the typical $5,000–$30,000+ agency quote.
+- Our tech stack: Next.js 15, Tailwind CSS, TypeScript, WordPress, Shopify, hosted on Vercel.
+
+## Service Areas
+
+We serve small businesses in the following locations across the United States and the Philippines:
+
+### United States
+
+**New Jersey** — Serving all 21 counties with dedicated pages for 12 towns: Cherry Hill, Newark, Paterson, Trenton, Toms River, Elizabeth, Clifton, Hoboken, New Brunswick, Atlantic City, Princeton, Morristown — and all towns in Monmouth, Middlesex, Ocean, Morris, and Bergen counties.
+
+**Fresno, California** — Serving the Fresno metro including Clovis, Madera, Sanger, Selma, Reedley, Kingsburg, Fowler, Kerman, Dinuba, Hanford, Visalia, Tulare, Porterville, Merced, Modesto and all of Fresno County, Madera County, Kings County, and Tulare County.
+
+**Houston, Texas** — Serving the Greater Houston area including Pearland, Sugar Land, The Woodlands, Katy, Pasadena, League City, Friendswood, Missouri City, Baytown, Clear Lake, Conroe, Spring, Humble, Cypress, Tomball, Kingwood, Stafford, Galveston, Texas City, Alvin, Deer Park — across Harris, Fort Bend, Montgomery, Galveston, and Brazoria counties.
+
+**Los Angeles, California** — Serving Los Angeles County (DTLA, Hollywood, Santa Monica, Pasadena), San Fernando Valley (Burbank, Glendale, Van Nuys, Sherman Oaks), South Bay (Long Beach, Torrance, Carson, Hawthorne), East LA & San Gabriel Valley, and Orange County (Anaheim, Santa Ana, Irvine, Fullerton).
+
+**Philadelphia, Pennsylvania** — Serving Philadelphia County (Center City, Old City, South Philly), Montgomery County (King of Prussia, Norristown, Abington), Bucks County (Doylestown, Newtown, Bensalem), Delaware County (Media, Chester, Haverford), and Chester County (West Chester, Phoenixville, Malvern).
+
+### Philippines
+
+**Manila & Nationwide** — Serving all Metro Manila cities (Makati, BGC, Quezon City, Pasig, Mandaluyong, San Juan, Paranaque, Las Pinas, Muntinlupa, Taguig, Caloocan, Marikina, Pasay, Valenzuela, Malabon, Navotas, Pateros) plus Central Luzon, CALABARZON, and the Visayas (Cebu, Iloilo, Bacolod).
 
 ## Frequently Asked Questions
 
@@ -52,10 +75,17 @@ Yes. All plans are month-to-month. You can cancel with 30 days notice and will r
 **Do I need my own web hosting?**
 No. Managed web hosting is included in every plan. You do not need a separate hosting account.
 
+**What technology do you use?**
+We build on Next.js 15 with Tailwind CSS and TypeScript for modern, fast, SEO-optimized websites. We also work with WordPress for content-heavy sites and Shopify for e-commerce. All sites are deployed on Vercel's global edge network.
+
 ## Contact
 
 - Website: https://www.affordawebsolutions.com
 - Email: hello@affordawebsolutions.com
+- Facebook: https://www.facebook.com/affordawebsolutions
+- Twitter: https://twitter.com/affordaweb
+- LinkedIn: https://www.linkedin.com/company/affordaweb-solutions
+- Instagram: https://www.instagram.com/affordaweb
 
 ## Blog — Articles on Web Design, SEO & Maintenance
 
