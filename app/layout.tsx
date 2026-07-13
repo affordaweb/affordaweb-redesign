@@ -4,6 +4,8 @@ import Script from 'next/script'
 import './globals.css'
 import SiteChrome from '@/components/SiteChrome'
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-DVZBNS9YE4'
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -155,14 +157,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NXB7GSP9');`}
         </Script>
         <Script id="ga4" strategy="lazyOnload"
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         />
         <Script id="ga4-init" strategy="lazyOnload">
           {`
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+gtag('config', '${GA_ID}', {
   page_path: window.location.pathname,
 });
 `}
