@@ -1046,6 +1046,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── H2. CLIENT LOGOS ──────────────────────────────────────── */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#FAFBFF' }} aria-label="Trusted by">
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.12) 50%, transparent)' }} />
+        <div className="container-tight">
+          <div className="text-center mb-10">
+            <p className="section-label">Trusted By</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900" style={{ letterSpacing: '-0.01em' }}>
+              Businesses That Rely on Us
+            </h2>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+            {([
+              { name: 'WebVAExperts', color: '#5636D1' },
+              { name: 'Empower Queer Hub', color: '#E2498A' },
+              { name: 'Argentum Wealth', color: '#06B6D4' },
+              { name: 'Pitch Creditsuite', color: '#10B981' },
+            ] as { name: string; color: string }[]).map(({ name, color }) => (
+              <div key={name} className="flex items-center gap-3 select-none">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm"
+                  style={{ background: `${color}12`, color }}
+                >
+                  {name.split(' ').map(w => w[0]).join('')}
+                </div>
+                <span className="text-gray-400 text-sm font-semibold tracking-tight">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── J. TESTIMONIALS ────────────────────────────────────────── */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#F7F5FE' }} aria-labelledby="testimonials-heading">
         <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.2) 50%, transparent)' }} />

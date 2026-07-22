@@ -165,6 +165,11 @@ const faqs = [
     a: 'Reach out via hello@affordawebsolutions.com or fill out the contact form. We will follow up to learn about your goals and recommend the right plan.',
     display: <>Reach out via hello@affordawebsolutions.com or fill out <Link href="/contact" className="font-medium" style={{ color: '#06B6D4' }}>the contact form</Link>. We will follow up to learn about your goals and recommend the right <Link href="/services" className="font-medium" style={{ color: '#06B6D4' }}>plan</Link>.</>,
   },
+  {
+    q: 'Do you have a phone number I can call?',
+    a: 'We do not offer phone support, and here is why: most agencies charge $50+ extra per month just to staff a phone line. By keeping communication email-based, we pass those savings directly to you. Our team responds within 24 hours — and most questions are answered within a few hours during business days.',
+    display: <>We do not offer phone support, and here is why: most agencies charge $50+ extra per month just to staff a phone line. By keeping communication email-based, we pass those savings directly to you. Our team responds <span className="font-medium" style={{ color: '#10B981' }}>within 24 hours</span> — and most questions are answered within a few hours during business days.</>,
+  },
 ]
 
 const faqSchema = {
@@ -458,6 +463,105 @@ export default function PricingPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Money-Back Guarantee */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#FAFBFF' }}>
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.15) 50%, transparent)' }} />
+        <div className="container-tight">
+          <div className="max-w-3xl mx-auto relative overflow-hidden rounded-3xl p-10 text-center" style={{
+            background: 'linear-gradient(135deg, #0F0F1A 0%, #1A0F2E 100%)',
+            border: '1px solid rgba(86,54,209,0.25)',
+            boxShadow: '0 0 0 1px rgba(86,54,209,0.15), 0 24px 80px rgba(86,54,209,0.15)',
+          }}>
+            <div className="absolute inset-x-0 top-0 h-0.5" style={{ background: 'linear-gradient(90deg, transparent, #5636D1, #E2498A, transparent)' }} />
+            <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full" style={{ background: 'radial-gradient(circle, rgba(86,54,209,0.15), transparent 65%)' }} />
+            <div className="relative z-10">
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ background: 'rgba(86,54,209,0.12)', border: '1px solid rgba(86,54,209,0.25)' }}>
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: '#5636D1' }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-4" style={{ background: 'rgba(86,54,209,0.12)', color: '#5636D1', border: '1px solid rgba(86,54,209,0.25)' }}>
+                Risk-Free
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
+                30-Day Satisfaction Guarantee
+              </h2>
+              <p className="text-base max-w-xl mx-auto mb-6" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                If you are not happy with your website within the first 30 days, we will refund your first month. No questions asked. There is zero risk to get started.
+              </p>
+              <div className="flex flex-wrap justify-center gap-6 text-sm">
+                {['No fine print', 'Zero risk', 'Keep your domain', 'Cancel anytime'].map(t => (
+                  <span key={t} className="flex items-center gap-1.5" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                    <svg className="w-3.5 h-3.5 text-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison: AffordaWeb vs DIY vs Traditional Agency */}
+      <section className="section-pad relative overflow-hidden" style={{ background: '#ffffff' }} aria-labelledby="compare-vs-heading">
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(226,73,138,0.15) 50%, transparent)' }} />
+        <div className="container-tight max-w-4xl">
+          <div className="text-center mb-12">
+            <p className="section-label">Why Choose Us</p>
+            <h2 id="compare-vs-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3" style={{ letterSpacing: '-0.01em' }}>
+              AffordaWeb vs. the Alternatives
+            </h2>
+            <p className="text-gray-500 text-base max-w-xl mx-auto">
+              See how we compare to DIY website builders and traditional web agencies.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-3xl" style={{ border: '1px solid rgba(0,0,0,0.08)', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
+            <table className="w-full text-sm">
+              <thead>
+                <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+                  <th className="text-left py-4 px-5 font-semibold w-2/5" style={{ color: 'rgba(0,0,0,0.4)' }}></th>
+                  <th className="text-center py-4 px-3 font-bold" style={{ color: '#5636D1' }}>AffordaWeb</th>
+                  <th className="text-center py-4 px-3 font-semibold" style={{ color: 'rgba(0,0,0,0.35)' }}>DIY Builders</th>
+                  <th className="text-center py-4 px-3 font-semibold" style={{ color: 'rgba(0,0,0,0.35)' }}>Traditional Agency</th>
+                </tr>
+              </thead>
+              <tbody>
+                {([
+                  { label: 'Upfront cost', ours: '$0', them1: '$12–$40/mo (platform)', them2: '$3,000–$15,000' },
+                  { label: 'Monthly price', ours: '$69–$149/mo', them1: '$12–$40/mo', them2: '$50–$200/mo (maintenance)' },
+                  { label: 'Custom design', ours: 'Yes', them1: 'Templates only', them2: 'Yes' },
+                  { label: 'SEO built in', ours: 'Yes', them1: 'No', them2: 'Often extra' },
+                  { label: 'SSL & hosting', ours: 'Included', them1: 'Usually extra', them2: 'Extra $20–$50/mo' },
+                  { label: 'Content updates', ours: 'Unlimited', them1: 'You do it yourself', them2: 'Extra $75–$150/hr' },
+                  { label: 'Ongoing support', ours: 'Included 24hr response', them1: 'Self-service', them2: 'Billable hours' },
+                  { label: 'Time to launch', ours: '10–15 days', them1: '1–4 weeks (your time)', them2: '4–12 weeks' },
+                  { label: 'Contract', ours: 'Month-to-month, cancel anytime', them1: 'Month-to-month', them2: 'Often 6–12 month' },
+                ] as { label: string; ours: string; them1: string; them2: string }[]).map((row, i) => (
+                  <tr key={row.label} style={{ borderBottom: i < 8 ? '1px solid rgba(0,0,0,0.04)' : 'none' }}>
+                    <td className="py-3.5 px-5 font-medium text-gray-700">{row.label}</td>
+                    <td className="py-3.5 px-3 text-center font-semibold" style={{ color: '#5636D1' }}>{row.ours}</td>
+                    <td className="py-3.5 px-3 text-center" style={{ color: 'rgba(0,0,0,0.4)' }}>{row.them1}</td>
+                    <td className="py-3.5 px-3 text-center" style={{ color: 'rgba(0,0,0,0.4)' }}>{row.them2}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link href="/contact" className="inline-flex items-center gap-2 font-bold rounded-full px-8 py-3.5 text-sm transition-all duration-300 hover:-translate-y-0.5" style={{ background: '#5636D1', color: '#fff', boxShadow: '0 4px 20px rgba(86,54,209,0.3)' }}>
+              Start Your Custom Website
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

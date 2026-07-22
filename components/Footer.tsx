@@ -187,6 +187,26 @@ export default function Footer() {
             © {new Date().getFullYear()} AffordaWeb Solutions. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
+            {/* Payment method icons */}
+            <div className="flex items-center gap-3 mr-2" aria-label="Accepted payment methods">
+              <svg className="w-8 h-auto" viewBox="0 0 36 24" fill="none" aria-label="Visa">
+                <rect width="36" height="24" rx="3" fill="#1A1F3A"/>
+                <text x="18" y="16" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold" fontFamily="sans-serif">VISA</text>
+              </svg>
+              <svg className="w-8 h-auto" viewBox="0 0 36 24" fill="none" aria-label="Mastercard">
+                <rect width="36" height="24" rx="3" fill="#1A1F3A"/>
+                <circle cx="14" cy="12" r="6" fill="#EB001B" opacity="0.8"/>
+                <circle cx="22" cy="12" r="6" fill="#F79E1B" opacity="0.8"/>
+              </svg>
+              <svg className="w-8 h-auto" viewBox="0 0 36 24" fill="none" aria-label="American Express">
+                <rect width="36" height="24" rx="3" fill="#1A1F3A"/>
+                <text x="18" y="16" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold" fontFamily="sans-serif">AMEX</text>
+              </svg>
+              <svg className="w-8 h-auto" viewBox="0 0 36 24" fill="none" aria-label="PayPal">
+                <rect width="36" height="24" rx="3" fill="#1A1F3A"/>
+                <text x="18" y="16" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold" fontFamily="sans-serif">PayPal</text>
+              </svg>
+            </div>
             {legal.map(({ label, href }) => (
               <Link
                 key={href}
