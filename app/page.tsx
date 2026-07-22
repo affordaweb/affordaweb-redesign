@@ -1061,7 +1061,6 @@ export default function HomePage() {
               { name: 'WebVAExperts', color: '#5636D1' },
               { name: 'Empower Queer Hub', color: '#E2498A' },
               { name: 'Argentum Wealth', color: '#06B6D4' },
-              { name: 'Pitch Creditsuite', color: '#10B981' },
             ] as { name: string; color: string }[]).map(({ name, color }) => (
               <div key={name} className="flex items-center gap-3 select-none">
                 <div
