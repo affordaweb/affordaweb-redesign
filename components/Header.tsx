@@ -20,17 +20,24 @@ const freeTools = [
     href: '/recommendation',
     label: 'Website Recommendation',
     desc: 'Free redesign plan in 30 seconds',
-    emoji: '🎨',
+    icon: 'palette',
     bg: 'bg-violet-100',
   },
   {
     href: '/seo-audit',
     label: 'SEO Audit',
     desc: 'Instant analysis, 20+ checks',
-    emoji: '🔍',
+    icon: 'search',
     bg: 'bg-sky-100',
   },
 ]
+
+function ToolIcon({ icon }: { icon: string }) {
+  if (icon === 'palette') {
+    return <svg className="w-5 h-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+  }
+  return <svg className="w-5 h-5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+}
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -145,15 +152,15 @@ export default function Header() {
                 {toolsOpen && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white rounded-2xl shadow-card-hover border border-gray-100 overflow-hidden z-[60]">
                     <div className="p-2">
-                      {freeTools.map(({ href, label, desc, emoji, bg }) => (
+                      {freeTools.map(({ href, label, desc, icon, bg }) => (
                         <Link
                           key={href}
                           href={href}
                           onClick={() => setToolsOpen(false)}
                           className="flex items-center gap-3 p-3 rounded-xl hover:bg-primary-50 transition-colors group"
                         >
-                          <div className={`w-10 h-10 rounded-xl ${bg} flex items-center justify-center shrink-0 text-xl`}>
-                            {emoji}
+                          <div className={`w-10 h-10 rounded-xl ${bg} flex items-center justify-center shrink-0`}>
+                            <ToolIcon icon={icon} />
                           </div>
                           <div className="min-w-0">
                             <div className="font-semibold text-sm text-gray-900 group-hover:text-primary-600 transition-colors">
@@ -233,7 +240,7 @@ export default function Header() {
                 Free Tools
               </p>
               <div className="grid grid-cols-2 gap-2">
-                {freeTools.map(({ href, label, desc, emoji, bg }) => (
+                {freeTools.map(({ href, label, desc, icon, bg }) => (
                   <Link
                     key={href}
                     href={href}
@@ -244,8 +251,8 @@ export default function Header() {
                         : 'bg-gray-50 hover:bg-primary-50 text-gray-700'
                     }`}
                   >
-                    <span className={`w-8 h-8 rounded-xl ${bg} flex items-center justify-center text-lg`}>
-                      {emoji}
+                    <span className={`w-8 h-8 rounded-xl ${bg} flex items-center justify-center`}>
+                      <ToolIcon icon={icon} />
                     </span>
                     <div>
                       <div className="font-semibold text-xs leading-tight">{label}</div>

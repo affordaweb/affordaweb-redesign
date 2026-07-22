@@ -1112,7 +1112,9 @@ export default function HomePage() {
               className="group relative bg-white rounded-3xl border border-violet-100 p-8 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.08), transparent 70%)' }} />
-              <div className="w-14 h-14 rounded-2xl bg-violet-100 flex items-center justify-center text-3xl mb-5">🎨</div>
+              <div className="w-14 h-14 rounded-2xl bg-violet-100 flex items-center justify-center mb-5">
+                <svg className="w-7 h-7 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+              </div>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-violet-100 text-violet-700 text-xs font-bold mb-3">
                 Free · Instant
               </div>
@@ -1136,7 +1138,9 @@ export default function HomePage() {
               className="group relative bg-white rounded-3xl border border-sky-100 p-8 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.08), transparent 70%)' }} />
-              <div className="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center text-3xl mb-5">🔍</div>
+              <div className="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center mb-5">
+                <svg className="w-7 h-7 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              </div>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-700 text-xs font-bold mb-3">
                 Free · 20+ Checks
               </div>

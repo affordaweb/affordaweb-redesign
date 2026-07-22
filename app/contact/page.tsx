@@ -148,6 +148,37 @@ export default function ContactPage() {
                 <p className="relative z-10 text-xs mt-1" style={{ color: 'rgba(255,255,255,0.35)' }}>Response within 24 hours</p>
               </div>
 
+              {/* Phone card */}
+              <div
+                className="relative overflow-hidden rounded-2xl p-6 transition-all duration-300"
+                style={{
+                  background: '#0F0F1A',
+                  border: '1px solid rgba(6,182,212,0.22)',
+                  boxShadow: '0 0 0 1px rgba(6,182,212,0.12)',
+                }}
+              >
+                <div className="absolute inset-x-0 top-0 h-0.5 pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #06B6D4, transparent)' }} />
+                <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.18), transparent 65%)' }} />
+                <div
+                  className="relative z-10 w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                  style={{ background: 'rgba(6,182,212,0.10)', border: '1px solid rgba(6,182,212,0.22)', color: '#06B6D4' }}
+                >
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <h3 className="relative z-10 font-bold text-white mb-1">Call Us</h3>
+                <a
+                  href="tel:+16313201629"
+                  className="relative z-10 font-medium text-sm transition-opacity hover:opacity-70"
+                  style={{ color: '#06B6D4' }}
+                >
+                  (631) 320-1629
+                </a>
+                <p className="relative z-10 text-xs mt-1" style={{ color: 'rgba(255,255,255,0.35)' }}>Mon–Fri, 9AM–6PM EST</p>
+              </div>
+
               {/* Response promise card */}
               <div
                 className="relative overflow-hidden rounded-2xl p-6"

@@ -111,7 +111,7 @@ export default function PortfolioPage() {
             className="text-4xl sm:text-5xl font-bold text-white mb-6"
             style={{ letterSpacing: '-0.025em' }}
           >
-            Work That Speaks For Itself
+            Small Business Web Design Portfolio
           </h1>
           <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Three projects. Different industries, different goals. Each one built from scratch with a clear brief and a focus on real-world results.

@@ -159,7 +159,7 @@ export default function AboutPage() {
             className="text-4xl sm:text-5xl font-bold text-white mb-6"
             style={{ letterSpacing: '-0.025em' }}
           >
-            Built for Small Businesses, By People Who Get It
+            Affordable Web Design Company for Small Businesses
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
             AffordaWeb Solutions was founded on a simple belief: every small business deserves a professional, high-performing website — regardless of budget. We make that possible.

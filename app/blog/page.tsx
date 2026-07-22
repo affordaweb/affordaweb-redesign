@@ -255,6 +255,23 @@ const breadcrumbSchema = {
   ],
 }
 
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Web Design Blog for Small Businesses',
+  description: 'Expert web design tips, SEO guides, and digital marketing advice for small business owners.',
+  url: 'https://www.affordawebsolutions.com/blog',
+  blogPost: posts.slice(0, 3).map(post => ({
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt.slice(0, 160),
+    datePublished: post.date,
+    author: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://www.affordawebsolutions.com' },
+    url: `https://www.affordawebsolutions.com/blog/${post.slug}`,
+    image: post.image,
+  })),
+}
+
 export default function BlogPage() {
   const featured = posts.find(p => p.featured)
   const rest = posts.filter(p => !p.featured)
@@ -262,6 +279,7 @@ export default function BlogPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
 
       {/* Hero */}
       <section
@@ -476,7 +494,9 @@ export default function BlogPage() {
               href="/seo-audit"
               className="group flex items-start gap-4 rounded-2xl p-5 border border-sky-100 bg-sky-50 hover:bg-sky-100 transition-colors"
             >
-              <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-xl shrink-0">🔍</div>
+              <div className="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center shrink-0">
+                <svg className="w-5 h-5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              </div>
               <div>
                 <p className="font-bold text-gray-900 text-sm group-hover:text-sky-700 transition-colors">Free SEO Audit</p>
                 <p className="text-xs text-gray-500 mt-0.5">20+ checks — score your site in 30 seconds</p>

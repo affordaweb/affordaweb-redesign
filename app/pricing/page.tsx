@@ -583,18 +583,18 @@ export default function PricingPage() {
           {/* Feature highlights */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {[
-              { icon: '💬', label: 'Real Humans' },
-              { icon: '⚡', label: '24-Hour Response' },
-              { icon: '🆓', label: 'No Commitment' },
-              { icon: '🎯', label: 'Tailored Advice' },
-              { icon: '🔒', label: 'No Spam Ever' },
-            ].map(({ icon, label }) => (
+              { label: 'Real Humans' },
+              { label: '24-Hour Response' },
+              { label: 'No Commitment' },
+              { label: 'Tailored Advice' },
+              { label: 'No Spam Ever' },
+            ].map(({ label }) => (
               <div
                 key={label}
                 className="flex items-center gap-2 rounded-full px-4 py-2.5"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}
               >
-                <span className="text-base">{icon}</span>
+                <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#06B6D4' }} />
                 <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.70)' }}>{label}</span>
               </div>
             ))}

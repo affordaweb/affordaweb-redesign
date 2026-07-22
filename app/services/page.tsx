@@ -309,7 +309,10 @@ export default function ServicesPage() {
               </svg>
             </Link>
             <Link href="/pricing" className="btn-outline-white">View Pricing</Link>
-            <Link href="/seo-audit" className="btn-outline-white">🔍 Free SEO Audit</Link>
+            <Link href="/seo-audit" className="btn-outline-white">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              Free SEO Audit
+            </Link>
           </div>
         </div>
       </section>
@@ -455,10 +458,12 @@ export default function ServicesPage() {
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <span className="text-white/30 text-sm hidden sm:block">or try a free tool:</span>
             <Link href="/recommendation" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-white/70 text-sm font-medium hover:bg-white/10 hover:text-white transition-all">
-              🎨 Free Website Recommendation
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+              Free Website Recommendation
             </Link>
             <Link href="/seo-audit" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-white/70 text-sm font-medium hover:bg-white/10 hover:text-white transition-all">
-              🔍 Free SEO Audit
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              Free SEO Audit
             </Link>
           </div>
         </div>
