@@ -224,5 +224,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    // Web Stories
+    {
+      url: `${baseUrl}/web-stories/why-small-business-needs-website`,
+      lastModified: new Date('2026-07-21'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/web-stories/signs-need-website-redesign`,
+      lastModified: new Date('2026-07-21'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/web-stories/small-business-seo-tips`,
+      lastModified: new Date('2026-07-21'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/web-stories/website-cost-myths`,
+      lastModified: new Date('2026-07-21'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/web-stories/benefits-affordable-web-design`,
+      lastModified: new Date('2026-07-21'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
   ]
 }

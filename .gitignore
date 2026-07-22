@@ -21,6 +21,8 @@
 # Service account keys
 service-account-key.json
 gemini-service-account-key.json
+# env
+.env.local*
 
 # debug
 npm-debug.log*
