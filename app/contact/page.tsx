@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
+import QRCode from 'qrcode'
 import InnerHeroBg from '@/components/InnerHeroBg'
 import ContactForm from '@/components/ContactForm'
+import { whatsappUrl } from '@/lib/whatsapp'
 
 export const metadata: Metadata = {
   title: 'Get a Free Website Quote | Affordable Web Design | Contact Us',
@@ -48,7 +51,14 @@ const breadcrumbSchema = {
   ],
 }
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const whatsappQr = await QRCode.toDataURL(whatsappUrl, {
+    errorCorrectionLevel: 'H',
+    margin: 1,
+    width: 256,
+    color: { dark: '#0F0F1A', light: '#FFFFFF' },
+  })
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -147,6 +157,28 @@ export default function ContactPage() {
                 </a>
                 <p className="relative z-10 text-xs mt-1" style={{ color: 'rgba(255,255,255,0.35)' }}>Response within 24 hours</p>
               </div>
+
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group relative flex items-center gap-4 overflow-hidden rounded-2xl p-5 transition-all duration-300 hover:-translate-y-0.5"
+                style={{ background: '#0F0F1A', border: '1px solid rgba(37,211,102,0.32)', boxShadow: '0 0 0 1px rgba(37,211,102,0.10)' }}
+              >
+                <div className="shrink-0 rounded-xl bg-white p-1.5">
+                  <Image src={whatsappQr} alt="Scan to chat with AffordaWeb on WhatsApp" width={88} height={88} unoptimized />
+                </div>
+                <div className="relative z-10">
+                  <div className="mb-2 flex items-center gap-2" style={{ color: '#25D366' }}>
+                    <svg className="h-5 w-5" aria-hidden="true" viewBox="0 0 32 32" fill="currentColor">
+                      <path d="M16.01 3C8.83 3 3 8.83 3 16.01c0 2.3.6 4.54 1.74 6.51L3 29l6.67-1.7A12.94 12.94 0 0 0 16.01 29C23.18 29 29 23.18 29 16.01 29 8.83 23.18 3 16.01 3Zm0 23.83a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-3.96 1.01 1.06-3.86-.26-.4a10.77 10.77 0 1 1 9.01 4.98Z" />
+                    </svg>
+                    <span className="text-sm font-bold">WhatsApp</span>
+                  </div>
+                  <p className="text-sm font-semibold text-white">Message us directly</p>
+                  <p className="mt-1 text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.48)' }}>Scan the code or tap to start a private chat.</p>
+                </div>
+              </a>
 
 
               {/* Response promise card */}

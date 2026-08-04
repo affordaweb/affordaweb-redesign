@@ -380,6 +380,47 @@
   100% { background-position: 32px 32px; }
 }
 
+/* ── WhatsApp contact ──────────────────────────────────────────── */
+.whatsapp-bubble {
+  position: fixed;
+  z-index: 50;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 3.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  color: #fff;
+  background: #25D366;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.38);
+  transition: transform 180ms ease, background 180ms ease;
+  animation: whatsappPulse 2.3s ease-out infinite;
+}
+
+.whatsapp-bubble:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+.whatsapp-bubble svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: none;
+}
+
+.whatsapp-bubble__label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 10px 28px rgba(37, 211, 102, 0.38), 0 0 0 0 rgba(37, 211, 102, 0.44); }
+  65% { box-shadow: 0 10px 28px rgba(37, 211, 102, 0.38), 0 0 0 14px rgba(37, 211, 102, 0); }
+}
+
 /* ── Mobile: disable expensive GPU animations ───────────────────── */
 @media (max-width: 767px) {
   .hblob {
@@ -392,6 +433,16 @@
   .hero-dots-move {
     animation: none;
   }
+
+  .whatsapp-bubble__label {
+    display: none;
+  }
+
+  .whatsapp-bubble {
+    width: 3.5rem;
+    justify-content: center;
+    padding: 0;
+  }
 }
 
 /* ── Reduced motion: respect user preference ────────────────────── */
@@ -401,6 +452,10 @@
   }
   .hero-gradient-shift,
   .hero-dots-move {
+    animation: none;
+  }
+
+  .whatsapp-bubble {
     animation: none;
   }
 }
