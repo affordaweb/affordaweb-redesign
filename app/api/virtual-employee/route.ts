@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { answerQuestion, isLeadSource, recommendPlan, type Guidance } from '@/lib/virtual-employee'
 import { recordKnowledgeGap, saveLead } from '@/lib/virtual-employee-leads'
+import { sendVirtualEmployeeLeadEmail } from '@/lib/email'
 import { kvIncr } from '@/lib/kv-store'
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -32,7 +33,11 @@ export async function POST(request: NextRequest) {
         headers: { 'Content-Type': 'application/json', 'X-Contact-Forwarding-Secret': process.env.CONTACT_FORM_FORWARDING_SECRET ?? '' },
         body: JSON.stringify({ name: lead.name, email: lead.email, message: lead.message || 'Virtual Employee lead without an additional message.', website: 'affordaweb', subject: `[Virtual Employee] ${lead.source} lead`, source: lead.source, plan: lead.plan || 'Not selected', _honeypot: '' }),
       }).catch(() => null)
-      if (!notification?.ok) return NextResponse.json({ error: 'We saved your request but could not notify the team. Please try again.' }, { status: 503 })
+      if (!notification?.ok) {
+        console.error('[virtual-employee] contact-service notification failed', notification?.status)
+        const emailed = await sendVirtualEmployeeLeadEmail(lead)
+        if (!emailed) console.error('[virtual-employee] direct notification fallback failed; lead is available in the Review Queue')
+      }
       return NextResponse.json({ success: true })
     }
   } catch { return NextResponse.json({ error: 'Unable to process this request.' }, { status: 400 }) }
