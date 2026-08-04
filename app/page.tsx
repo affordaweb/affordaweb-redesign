@@ -742,39 +742,68 @@ export default function HomePage() {
         <div className="container-tight relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-            {/* Left: Graphic placeholder */}
-            <div className="relative">
-              <div className="card p-10">
-                <div className="flex flex-col items-center gap-8">
-                  {/* Donut */}
-                  <div className="relative w-32 h-32">
-                    <svg viewBox="0 0 36 36" className="w-32 h-32 -rotate-90">
-                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="#EDE9FD" strokeWidth="3" />
-                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="#5636D1" strokeWidth="3" strokeDasharray="72 28" strokeLinecap="round" />
+            {/* Left: project momentum panel */}
+            <div className="relative lg:pr-6">
+              <div
+                className="group relative min-h-[390px] overflow-hidden rounded-[2rem] p-7 sm:p-9"
+                style={{ background: 'linear-gradient(145deg, #17112F 0%, #39208A 52%, #5636D1 100%)', boxShadow: '0 28px 70px rgba(54, 31, 132, 0.25)' }}
+              >
+                <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+                <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.42), transparent 67%)' }} />
+                <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(226,73,138,0.28), transparent 68%)' }} />
+
+                <div className="relative z-10 flex items-start justify-between gap-5">
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/50">Built with momentum</p>
+                    <h3 className="mt-2 text-xl font-bold text-white">A clearer path to launch</h3>
+                  </div>
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-cyan-300">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 19V5m0 14h16M7 15l3-3 3 2 5-6" />
                     </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-2xl font-bold text-primary-700">72%</div>
+                  </div>
+                </div>
+
+                <div className="relative z-10 mt-9 grid grid-cols-[1fr_auto] items-center gap-6">
+                  <div>
+                    <div className="text-5xl font-bold tracking-tight text-white">15<span className="text-cyan-300">+</span></div>
+                    <p className="mt-2 max-w-[150px] text-sm leading-snug text-white/60">Years of practical web design experience</p>
+                  </div>
+                  <div className="relative h-28 w-28 shrink-0">
+                    <svg viewBox="0 0 36 36" className="h-28 w-28 -rotate-90" aria-hidden="true">
+                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="2.4" />
+                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="#67E8F9" strokeWidth="2.4" strokeDasharray="77 23" strokeLinecap="round" />
+                    </svg>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                      <span className="text-lg font-bold text-white">Launch</span>
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-white/45">ready</span>
                     </div>
                   </div>
-                  {/* Bar chart */}
-                  <div className="flex items-end gap-3 h-24 w-full px-4">
-                    {[40, 65, 85, 55, 95].map((h, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 rounded-t"
-                        style={{ height: `${h}%`, background: 'linear-gradient(to top, #5636D1, #8B76E5)' }}
-                      />
+                </div>
+
+                <div className="relative z-10 mt-9 rounded-2xl border border-white/10 bg-[#100B25]/35 p-5 backdrop-blur-sm">
+                  <div className="mb-5 flex items-center justify-between">
+                    <span className="text-xs font-semibold text-white/75">Your project, moving forward</span>
+                    <span className="rounded-full bg-cyan-300/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-cyan-200">Guided process</span>
+                  </div>
+                  <div className="flex items-end gap-2.5" aria-hidden="true">
+                    {[38, 61, 48, 76, 92].map((height, index) => (
+                      <div key={height} className="flex flex-1 flex-col gap-2">
+                        <div className="relative h-20 overflow-hidden rounded-t-lg bg-white/10">
+                          <div className="absolute inset-x-0 bottom-0 rounded-t-lg" style={{ height: `${height}%`, background: index === 4 ? 'linear-gradient(180deg, #67E8F9, #06B6D4)' : 'linear-gradient(180deg, #A78BFA, #6D48DE)' }} />
+                        </div>
+                        <span className="text-center text-[9px] font-bold uppercase tracking-wider text-white/35">{['Plan', 'Design', 'Build', 'Refine', 'Launch'][index]}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
               </div>
-              {/* Badge */}
-              <div
-                className="absolute -bottom-5 -right-4 rounded-2xl px-5 py-4 text-center shadow-lg"
-                style={{ background: '#5636D1' }}
-              >
-                <div className="text-3xl font-extrabold leading-none" style={{ color: '#06B6D4' }}>15+</div>
-                <div className="text-xs mt-1 text-white/70">Years of Experience</div>
+
+              <div className="absolute -bottom-5 right-0 z-20 hidden rounded-2xl border border-white/70 bg-white px-4 py-3 shadow-xl sm:flex sm:items-center sm:gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600">
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m5 12 4 4L19 6" /></svg>
+                </span>
+                <span className="text-xs font-bold text-gray-800">Strategy-led. Human-supported.</span>
               </div>
             </div>
 

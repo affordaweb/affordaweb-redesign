@@ -388,9 +388,9 @@
   bottom: 1.25rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  min-height: 3.5rem;
-  padding: 0.75rem 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  justify-content: center;
   border-radius: 999px;
   color: #fff;
   background: #25D366;
@@ -408,12 +408,6 @@
   width: 1.75rem;
   height: 1.75rem;
   flex: none;
-}
-
-.whatsapp-bubble__label {
-  font-size: 0.875rem;
-  font-weight: 700;
-  white-space: nowrap;
 }
 
 @keyframes whatsappPulse {
@@ -434,15 +428,6 @@
     animation: none;
   }
 
-  .whatsapp-bubble__label {
-    display: none;
-  }
-
-  .whatsapp-bubble {
-    width: 3.5rem;
-    justify-content: center;
-    padding: 0;
-  }
 }
 
 /* ── Reduced motion: respect user preference ────────────────────── */
