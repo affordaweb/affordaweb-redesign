@@ -3,9 +3,9 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design Fresno, CA | $69/mo | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design Fresno, CA | $39/mo | AffordaWeb Solutions' },
   description:
-    'Affordable web design in Fresno, CA starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL included. Serving Fresno, Clovis, Madera, and the Central Valley. No setup fees, no contracts.',
+    'Affordable web design in Fresno, CA starting at $39/mo. Monthly website design packages with hosting and SSL included. Setup fees are currently waived.',
   keywords: [
     'affordable web design Fresno',
     'web design Fresno',
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.affordawebsolutions.com/fresno' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design Fresno, CA | $69/mo | AffordaWeb Solutions',
+    title: 'Affordable Web Design Fresno, CA | $39/mo | AffordaWeb Solutions',
     description:
-      'Affordable web design in Fresno, CA starting at $69/month. Monthly website design packages with hosting, SEO, SSL, and maintenance included. Serving Fresno, Clovis, Madera, and the Central Valley.',
+      'Affordable web design in Fresno, CA starting at $39/month. Monthly website design packages with hosting and SSL included. Serving Fresno, Clovis, Madera, and the Central Valley.',
     url: 'https://www.affordawebsolutions.com/fresno',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Fresno CA' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Affordable Web Design in Fresno, CA | AffordaWeb Solutions',
-    description: 'Website design for Fresno small businesses starting at $69/month.',
+    description: 'Website design for Fresno small businesses starting at $39/month.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -93,11 +93,11 @@ const faqs = [
   },
   {
     q: 'How much does a website cost for a Fresno small business?',
-    a: 'Our plans start at $69/month with no setup fee. That includes custom design, hosting, SSL, and basic maintenance. Standard ($99/mo) and Premium ($149/mo) plans add SEO, unlimited updates, and e-commerce.',
+     a: 'Starter is $39/month, Business is $69/month, and Virtual Employee is $149/month. Normal setup fees are currently waived; see the pricing page for each plan\'s inclusions.',
   },
   {
     q: 'Will my website rank for Fresno-specific searches?',
-    a: 'Yes. Every site we build includes local SEO structure: location-specific meta tags, schema markup, and Google-optimized content targeting Fresno, Clovis, and surrounding areas. Standard and Premium plans include full local SEO setup.',
+     a: 'Every site includes basic SEO setup. Business and Virtual Employee also include SEO optimization for location-specific searches.',
   },
   {
     q: 'How quickly can my Fresno business get online?',
@@ -120,14 +120,14 @@ const localBusinessSchema = {
   '@id': 'https://www.affordawebsolutions.com/#business',
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
-  description: 'Affordable website design for Fresno small businesses starting at $69/month.',
+   description: 'Affordable website design for Fresno small businesses starting at $39/month.',
   areaServed: [
     { '@type': 'City', name: 'Fresno', containedInPlace: { '@type': 'State', name: 'California' } },
     { '@type': 'City', name: 'Clovis', containedInPlace: { '@type': 'State', name: 'California' } },
     { '@type': 'County', name: 'Fresno County', containedInPlace: { '@type': 'State', name: 'California' } },
   ],
   knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
-  priceRange: '$69–$149/month',
+   priceRange: '$39–$149/month',
   email: 'hello@affordawebsolutions.com',
 }
 
@@ -146,7 +146,7 @@ export default function FresnoPage() {
             Affordable Web Design<br className="hidden sm:block" /> for Fresno Small Businesses
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Professional websites for Fresno businesses starting at <strong className="text-white">$69/month</strong> — custom design, local SEO, hosting, SSL, and ongoing maintenance bundled into one plan. No setup fees.
+             Professional websites for Fresno businesses starting at <strong className="text-white">$39/month</strong> — custom design, hosting, and SSL bundled into one plan. Normal setup fees are currently waived.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {['Central Fresno', 'North Fresno', 'Clovis', 'Madera County', 'Kings County', 'Tulare County'].map(label => (
@@ -269,7 +269,7 @@ export default function FresnoPage() {
                 The Affordable Option for Fresno Small Businesses
               </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
-                Most Fresno web design agencies charge $3,000–$10,000 upfront. AffordaWeb delivers the same professional quality at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$69/month</Link> — with no large upfront cost and no long-term contract.
+                 Most Fresno web design agencies charge $3,000–$10,000 upfront. AffordaWeb plans start at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$39/month</Link>.
               </p>
               <p className="text-gray-500 leading-relaxed mb-6">
                 Every site includes local SEO setup so your business can rank for searches like &ldquo;affordable web design Fresno&rdquo; or &ldquo;[your service] near me.&rdquo; We build the structure Google rewards, from day one.
@@ -297,8 +297,8 @@ export default function FresnoPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { stat: '$69/mo', label: 'Starting Price', accent: '#5636D1' },
-                { stat: '0', label: 'Setup Fees', accent: '#10B981' },
+                 { stat: '$39/mo', label: 'Starting Price', accent: '#5636D1' },
+                 { stat: 'Waived', label: 'Setup Fee Promotion', accent: '#10B981' },
                 { stat: '10–15', label: 'Days to Launch', accent: '#E2498A' },
                 { stat: '4.9★', label: 'Client Rating', accent: '#F59E0B' },
               ].map(({ stat, label, accent }) => (

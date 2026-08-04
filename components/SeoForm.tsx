@@ -106,6 +106,7 @@ export default function SeoForm() {
       widgetRendered.current = true
       ;(window as any).turnstile?.render(widgetRef.current, {
         sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '',
+        action: 'turnstile-spin-v2',
         callback: (token: string) => setTurnstileToken(token),
         'expired-callback': () => setTurnstileToken(''),
         'error-callback': () => setTurnstileToken(''),

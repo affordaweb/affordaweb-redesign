@@ -3,13 +3,14 @@ import { kvSet, kvGet, kvIncr } from '@/lib/kv-store'
 import { generatePreviewContent, generateMockupConfig, ReportData } from '@/lib/report-content'
 import { sendAdminReportEmail, sendUserConfirmationEmail } from '@/lib/email'
 
-async function verifyTurnstile(token: string): Promise<boolean> {
-  if (!process.env.TURNSTILE_SECRET_KEY) return true;
+async function verifyTurnstile(token: string, remoteip: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_AFFORDAWEB;
+  if (!secret) return true;
   try {
     const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ secret: process.env.TURNSTILE_SECRET_KEY, response: token }),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret, response: token, remoteip }),
     });
     const data = await res.json() as { success: boolean };
     return data.success === true;
@@ -22,8 +23,10 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     const { turnstileToken, ...rest } = body
-    if (turnstileToken !== undefined) {
-      const ok = await verifyTurnstile(turnstileToken as string)
+    if (process.env.TURNSTILE_SECRET_AFFORDAWEB) {
+      if (!turnstileToken) return NextResponse.json({ error: 'Missing verification token.' }, { status: 400 })
+      const remoteip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? req.headers.get('x-real-ip') ?? '127.0.0.1'
+      const ok = await verifyTurnstile(turnstileToken as string, remoteip)
       if (!ok) {
         return NextResponse.json({ error: 'Turnstile verification failed.' }, { status: 400 })
       }

@@ -54,6 +54,14 @@ The contact form in `components/ContactForm.tsx` uses **Web3Forms** for email de
 - **Emails to:** hello@affordawebsolutions.com
 - **CC:** va.saifcastle@gmail.com
 
+## Virtual Employee Operations
+
+- Customer concierge: `/virtual-employee`; safe live demonstration: `/virtual-employee/demo` (never saves or forwards leads).
+- The deterministic responder only uses `lib/pricing.ts` and approved static service guidance. Unsupported or contractual questions are routed to a human lead capture.
+- Configure Vercel KV (`KV_REST_API_URL` and `KV_REST_API_TOKEN`) and Resend (`RESEND_API_KEY`) for durable leads and email notifications.
+- Set a long random `VIRTUAL_EMPLOYEE_ADMIN_TOKEN` in Vercel to enable `/virtual-employee/review`. Without it, the review page and admin APIs fail closed.
+- Review Queue stores lead status and internal notes. Knowledge gaps are stored as grouped counts, not question text.
+
 ## SEO Configuration
 
 - Metadata defined per-page in each `page.tsx` file

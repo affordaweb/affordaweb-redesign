@@ -6,7 +6,7 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 export const metadata: Metadata = {
   title: 'About | Affordable Web Design Company for Small Businesses',
   description:
-    'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $69/month with hosting, SSL, and maintenance included.',
+    'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $39/month with hosting and SSL included.',
   keywords: [
     'affordable web design company',
     'small business web design company',
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'About | Affordable Web Design Company for Small Businesses',
-    description: 'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $69/month.',
+    description: 'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $39/month.',
     url: 'https://www.affordawebsolutions.com/about',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'About AffordaWeb Solutions Affordable Web Design Company' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About | Affordable Web Design Company for Small Businesses',
-    description: 'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $69/month.',
+    description: 'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $39/month.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -169,7 +169,7 @@ export default function AboutPage() {
               { stat: '50+', label: 'Businesses Served' },
               { stat: '4.9', label: 'Average Rating' },
               { stat: '10–15', label: 'Day Delivery' },
-              { stat: '$69/mo', label: 'Starting Price' },
+               { stat: '$39/mo', label: 'Starting Price' },
             ].map(({ stat, label }) => (
               <div
                 key={label}
@@ -194,7 +194,7 @@ export default function AboutPage() {
                 Built for Small Businesses That Deserve More
               </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
-                AffordaWeb Solutions was built on one simple belief. Professional, high-quality websites should not cost a fortune. Starting at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$69 a month</Link>, we deliver <Link href="/services" className="text-primary-600 font-medium hover:underline">design, hosting, SEO setup, and ongoing maintenance</Link> without asking small businesses to choose between quality and budget.
+                AffordaWeb Solutions was built on one simple belief. Professional, high-quality websites should not cost a fortune. Starting at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$39 a month</Link>, we deliver <Link href="/services" className="text-primary-600 font-medium hover:underline">design, hosting, SSL, and SEO setup</Link> without asking small businesses to choose between quality and budget.
               </p>
               <p className="text-gray-500 leading-relaxed mb-6">
                 One plan. One price. No hidden fees, no contracts, no separate providers to manage. You tell us what you need and we take it from there.
@@ -240,7 +240,7 @@ export default function AboutPage() {
                 <div className="text-xs text-gray-500 font-medium">Sites Launched</div>
               </div>
               <div className="absolute -top-5 -left-5 bg-white rounded-2xl p-5 shadow-card-hover">
-                <div className="text-2xl font-bold gradient-text">$69</div>
+                <div className="text-2xl font-bold gradient-text">$39</div>
                 <div className="text-xs text-gray-500 font-medium">Starting Monthly</div>
               </div>
             </div>

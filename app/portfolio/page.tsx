@@ -6,7 +6,7 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 export const metadata: Metadata = {
   title: 'Small Business Web Design Portfolio | Affordable Websites',
   description:
-    'Browse our portfolio of affordable website design projects for small businesses — service companies, freelancers, e-commerce stores, and local businesses. All built with monthly website design packages from $69/mo.',
+    'Browse our portfolio of affordable website design projects for small businesses — service companies, freelancers, e-commerce stores, and local businesses. Website plans start at $39/mo.',
   keywords: [
     'small business web design portfolio',
     'affordable website design examples',
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.affordawebsolutions.com/portfolio' },
   openGraph: {
     type: 'website',
-    title: 'Small Business Web Design Portfolio | Affordable Websites from $69/mo',
-    description: 'Browse our affordable web design portfolio — real websites built for small businesses with monthly website design packages from $69/mo.',
+    title: 'Small Business Web Design Portfolio | Affordable Websites from $39/mo',
+    description: 'Browse our affordable web design portfolio — real websites built for small businesses with plans from $39/mo.',
     url: 'https://www.affordawebsolutions.com/portfolio',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Small Business Web Design Portfolio | Affordable Websites from $69/mo',
-    description: 'Browse our affordable web design portfolio — monthly website design packages from $69/mo.',
+    title: 'Small Business Web Design Portfolio | Affordable Websites from $39/mo',
+    description: 'Browse our affordable web design portfolio — website plans from $39/mo.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -39,7 +39,7 @@ const portfolioItems = [
     image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&auto=format&fit=crop&q=80',
     imageAlt: 'WebVAExperts — fast, affordable website fix service',
     tags: ['Website Design', 'Performance', 'SEO'],
-    description: 'A website fix and repair service needed a site that converted frustrated site owners in seconds. Clean, confident, and built around a single clear offer — get your site fixed fast, from $69/mo.',
+    description: 'A website fix and repair service needed a site that converted frustrated site owners in seconds. Clean, confident, and built around a single clear offer.',
     url: 'https://www.webvaexperts.com',
     serviceHref: '/services/design',
     serviceLabel: 'Website Design',
@@ -288,7 +288,7 @@ export default function PortfolioPage() {
             Ready to Build Yours?
           </h2>
           <p className="text-lg max-w-xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Share your goals and we will get to work. Plans start at $69/month with no setup fees and no contracts.
+            Share your goals and we will get to work. Plans start at $39/month; normal setup fees are currently waived.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-white px-9 py-4">Get a Free Quote</Link>

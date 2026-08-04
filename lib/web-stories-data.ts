@@ -59,7 +59,7 @@ export const webStories: WebStoryData[] = [
       },
       {
         title: 'Ready to Get Started?',
-        text: 'AffordaWeb Solutions builds custom websites for small businesses starting at $69/month. No upfront fees, no contracts.',
+        text: 'AffordaWeb Solutions builds custom websites for small businesses starting at $39/month. Normal setup fees are currently waived.',
         bgColor: '#0F0F1A',
         accentColor: '#5636D1',
       },
@@ -112,7 +112,7 @@ export const webStories: WebStoryData[] = [
       },
       {
         title: 'We Can Help',
-        text: 'AffordaWeb Solutions offers complete website redesigns starting at $69/month. Modern, fast, SEO-optimized — with no upfront cost.',
+        text: 'AffordaWeb Solutions offers complete website redesigns starting at $39/month. Modern, fast, and built with a clear plan scope.',
         bgColor: '#0F0F1A',
         accentColor: '#5636D1',
       },
@@ -182,7 +182,7 @@ export const webStories: WebStoryData[] = [
       },
       {
         title: 'Myth: You Need Thousands Upfront',
-        text: 'Reality: Many agencies now offer monthly pricing with no upfront fees. At AffordaWeb, custom websites start at just $69/month.',
+        text: 'Reality: Many agencies now offer monthly pricing. At AffordaWeb, custom websites start at just $39/month and normal setup fees are currently waived.',
         bgColor: '#1A0F0F',
         accentColor: '#EF4444',
       },
@@ -206,7 +206,7 @@ export const webStories: WebStoryData[] = [
       },
       {
         title: 'The Truth About Pricing',
-        text: 'Custom website: $69–$149/month. Includes design, hosting, SSL, maintenance, and support. No contracts. Cancel anytime.',
+        text: 'Custom website plans: $39–$149/month. See the pricing page for the inclusions and approved policy details.',
         bgColor: '#0F0F1A',
         accentColor: '#5636D1',
       },
@@ -253,7 +253,7 @@ export const webStories: WebStoryData[] = [
       },
       {
         title: 'Start Today, Pay Monthly',
-        text: 'No setup fees, no long-term contracts, no hidden costs. Just a professional website that helps your business grow — for $69/month.',
+        text: 'Normal setup fees are currently waived. Get a professional website that helps your business grow from $39/month.',
         bgColor: '#0F0F1A',
         accentColor: '#5636D1',
       },

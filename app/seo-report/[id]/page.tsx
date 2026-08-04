@@ -131,8 +131,8 @@ export default async function SeoReportPage({
             <p className="text-white/70 text-sm mb-6 max-w-lg mx-auto">
               AffordaWeb Solutions builds fast, professional websites starting
               at{" "}
-              <strong className="text-white">$69/month</strong> — with
-              hosting, SSL, SEO, and unlimited updates included.
+              <strong className="text-white">$39/month</strong> — with
+              hosting and SSL included. See plan-specific inclusions on the pricing page.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link

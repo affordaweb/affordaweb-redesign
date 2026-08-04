@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
+import { pricingPlans } from '@/lib/pricing'
 
 export const metadata: Metadata = {
   title: { absolute: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions' },
   description:
-    'Affordable web design for small businesses starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL built in. No setup fees, no contracts — launch in 10–15 days.',
+    'Affordable web design for small businesses starting at $39/mo. Monthly website design packages with hosting and SSL built in. Setup fees are currently waived.',
   keywords: [
     'affordable web design for small business',
     'small business web design',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
     description:
-      'Affordable web design for small businesses starting at $69/mo. Custom websites with hosting, SEO & SSL built in. No setup fees, no contracts — launch in 10–15 days.',
+      'Affordable web design for small businesses starting at $39/mo. Custom websites with hosting and SSL built in. Setup fees are currently waived.',
     url: 'https://www.affordawebsolutions.com/affordable-web-design-for-small-businesses',
     images: [
       {
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
     description:
-      'Custom small business websites from $69/mo. Hosting, SEO & SSL included. Launch in 10–15 days.',
+      'Custom small business websites from $39/mo. Hosting and SSL included. Launch in 10–15 days.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -52,7 +53,7 @@ const painPoints = [
     problem: 'Too Expensive',
     stat: '$3,000–$10,000',
     detail: 'That\'s what traditional agencies charge upfront — before a single page is designed. For most small business owners, that\'s simply not an option.',
-    solution: 'AffordaWeb starts at $69/month with zero setup fees. Spread the cost over a year and it\'s a fraction of what an agency charges, with the same professional results.',
+    solution: 'AffordaWeb starts at $39/month, and normal setup fees are currently waived. Spread the cost over a year and it\'s a fraction of what an agency charges, with the same professional results.',
     accent: '#E2498A',
   },
   {
@@ -98,38 +99,20 @@ const included = [
   },
 ]
 
-const plans = [
-  {
-    name: 'Starter',
-    price: '$69',
-    period: '/mo',
-    features: ['Custom designed website', 'Managed cloud hosting', 'Free SSL certificate', 'Professional email (1GB)', 'Basic SEO setup', 'Monthly maintenance'],
-    accent: '#5636D1',
-    cta: 'Get Started',
-  },
-  {
-    name: 'Standard',
-    price: '$99',
-    period: '/mo',
-    features: ['Everything in Starter', 'Unlimited content updates', 'Full local SEO setup', 'Google Analytics setup', 'Social media integration', 'Priority email support'],
-    accent: '#E2498A',
-    cta: 'Most Popular',
-    highlight: true,
-  },
-  {
-    name: 'Premium',
-    price: '$149',
-    period: '/mo',
-    features: ['Everything in Standard', 'E-commerce / online store', 'Advanced SEO strategy', 'Booking / appointment system', 'Custom contact forms', 'Dedicated account manager'],
-    accent: '#06B6D4',
-    cta: 'Get Started',
-  },
-]
+const plans = pricingPlans.map((plan, index) => ({
+  name: plan.name,
+  price: `$${plan.monthlyPrice}`,
+  period: '/mo',
+  features: plan.inclusions,
+  accent: ['#5636D1', '#E2498A', '#06B6D4'][index],
+  cta: 'Get Started',
+  highlight: plan.featured,
+}))
 
 const faqs = [
   {
     q: 'How much does a small business website cost?',
-    a: 'With AffordaWeb, a professional small business website starts at $69/month with no setup fee. That includes custom design, hosting, SSL, and maintenance — everything your business needs to be online professionally. The Standard plan is $99/month and the Premium is $149/month.',
+    a: 'With AffordaWeb, a professional small business website starts at $39/month. The normal setup fee is currently waived. Starter is $39/month, Business is $69/month, and Virtual Employee is $149/month; see the pricing page for each plan\'s inclusions.',
   },
   {
     q: 'Do I need technical knowledge to work with AffordaWeb?',
@@ -137,7 +120,7 @@ const faqs = [
   },
   {
     q: 'How long does it take to build a small business website?',
-    a: 'Most websites are live within 10–15 business days after you submit your content and preferences. We move quickly because we know your time matters. Rush delivery options are available on the Standard and Premium plans.',
+    a: 'Most websites are live within 10–15 business days after you submit your content and preferences. We move quickly because we know your time matters.',
   },
   {
     q: 'What if I already have a website but need a redesign?',
@@ -145,7 +128,7 @@ const faqs = [
   },
   {
     q: 'Do small business websites need SEO?',
-    a: 'Yes — without SEO, your website is essentially invisible to potential customers searching on Google. Every AffordaWeb plan includes basic on-page SEO. Our Standard and Premium plans include full local SEO optimization, which is especially important if your business serves a specific city or region.',
+    a: 'Yes — without SEO, your website is essentially invisible to potential customers searching on Google. Every AffordaWeb plan includes basic SEO setup, while Business and Virtual Employee include SEO optimization.',
   },
 ]
 
@@ -170,9 +153,9 @@ const organizationSchema = {
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
   description:
-    'Affordable web design for small businesses starting at $69/month. Custom websites with hosting, SEO, and maintenance included.',
+     'Affordable web design for small businesses starting at $39/month. Custom websites with hosting and SSL included.',
   knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
-  priceRange: '$69–$149/month',
+   priceRange: '$39–$149/month',
   email: 'hello@affordawebsolutions.com',
   areaServed: { '@type': 'Country', name: 'United States' },
 }
@@ -192,7 +175,7 @@ export default function AffordableWebDesignSmallBusinessesPage() {
             Affordable Web Design Built<br className="hidden sm:block" /> for Small Businesses
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            You don&rsquo;t have an enterprise budget — you have a business to run. AffordaWeb gives small business owners a professionally designed website starting at <strong className="text-white">$69/month</strong>, with everything included and zero technical hassle.
+             You don&rsquo;t have an enterprise budget — you have a business to run. AffordaWeb gives small business owners a professionally designed website starting at <strong className="text-white">$39/month</strong>, with everything included and zero technical hassle.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {['Retail & Service', 'Restaurants', 'Contractors', 'Wellness', 'Consulting', 'Trades'].map(label => (
@@ -290,7 +273,7 @@ export default function AffordableWebDesignSmallBusinessesPage() {
               Pick the Plan That Fits Your Business
             </h2>
             <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-              All plans include a fully custom website, hosting, SSL, and maintenance. No setup fees. Cancel anytime.
+               All plans include a fully custom website, hosting, and SSL. Normal setup fees are currently waived.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -389,7 +372,7 @@ export default function AffordableWebDesignSmallBusinessesPage() {
             Let&rsquo;s Build Your Small Business Website Today
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Get a professionally designed website that works as hard as you do — starting at $69/month with everything included. No setup fees, no contracts, no technical headaches.
+             Get a professionally designed website that works as hard as you do — starting at $39/month. Normal setup fees are currently waived.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-white px-9 py-4">Start My Website</Link>

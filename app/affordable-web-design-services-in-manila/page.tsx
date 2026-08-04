@@ -3,22 +3,22 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design Services in Manila, Philippines | $69/mo' },
+  title: { absolute: 'Affordable Web Design Services in Manila, Philippines | $39/mo' },
   description:
-    'Affordable web design services in Manila and across the Philippines from $69/mo. Top-rated Filipino web designers offering monthly website design packages with SEO, hosting, and maintenance included.',
+    'Affordable web design services in Manila and across the Philippines from $39/mo. Top-rated Filipino web designers offering monthly website design packages with hosting and SSL included.',
   alternates: { canonical: 'https://www.affordawebsolutions.com/affordable-web-design-services-in-manila' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design Services in Manila, Philippines | $69/mo',
+    title: 'Affordable Web Design Services in Manila, Philippines | $39/mo',
     description:
-      'Affordable web design services in Manila — monthly website design packages from $69/mo. Custom design, local SEO, hosting & maintenance included. Built by top-rated Filipino web designers.',
+      'Affordable web design services in Manila — monthly website design packages from $39/mo. Custom design, hosting, and SSL included. Built by top-rated Filipino web designers.',
     url: 'https://www.affordawebsolutions.com/affordable-web-design-services-in-manila',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Manila Philippines' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design Services in Manila, Philippines | $69/mo',
-    description: 'Affordable web design services in Manila — monthly website design packages from $69/mo. No setup fees.',
+    title: 'Affordable Web Design Services in Manila, Philippines | $39/mo',
+    description: 'Affordable web design services in Manila — monthly website design packages from $39/mo. Setup fees are currently waived.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
   keywords: [
@@ -87,7 +87,7 @@ const faqs = [
   },
   {
     q: 'How much does a website cost in the Philippines?',
-    a: 'Our plans start at $69/month (approximately ₱4,000/month) with zero setup fee. That includes custom web design, managed hosting, free SSL, and basic maintenance. Premium plans at $99–$149/month add full SEO, unlimited updates, and e-commerce support.',
+    a: 'Starter is $39/month, Business is $69/month, and Virtual Employee is $149/month. Normal setup fees are currently waived; see the pricing page for exact inclusions.',
   },
   {
     q: 'Do you design websites for small businesses in Manila?',
@@ -95,7 +95,7 @@ const faqs = [
   },
   {
     q: 'Can our website rank on Google Philippines?',
-    a: 'Yes. Every site we build includes local SEO structure targeting Philippine-specific searches: location-based meta tags, structured data (schema markup), and Google Search Console setup. Standard and Premium plans include full SEO configuration.',
+    a: 'Every site includes basic SEO setup. Business and Virtual Employee also include SEO optimization for location-specific searches.',
   },
   {
     q: 'How long does it take to build a website?',
@@ -132,7 +132,7 @@ const localBusinessSchema = {
     { '@type': 'City', name: 'Davao City' },
   ],
   knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance', 'E-commerce'],
-  priceRange: '$69–$149/month',
+  priceRange: '$39–$149/month',
   email: 'hello@affordawebsolutions.com',
   sameAs: ['https://www.upwork.com/agencies/1394499845794119680/'],
 }
@@ -153,8 +153,8 @@ export default function ManilaPage() {
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
             Top-rated Filipino web designers delivering professional websites from{' '}
-            <strong className="text-white">$69/month</strong> — custom design, local SEO, hosting, SSL, and ongoing
-            maintenance. No setup fees. No contracts.
+            <strong className="text-white">$39/month</strong> — custom design, hosting, and SSL.
+            Normal setup fees are currently waived.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {['Metro Manila', 'Cebu City', 'Davao City', 'Quezon City', 'Makati', 'BGC'].map(label => (
@@ -248,8 +248,8 @@ export default function ManilaPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { stat: '$69/mo', label: 'Starting Price', accent: '#5636D1' },
-                { stat: '₱0', label: 'Setup Fee', accent: '#10B981' },
+                { stat: '$39/mo', label: 'Starting Price', accent: '#5636D1' },
+                { stat: 'Waived', label: 'Setup Fee Promotion', accent: '#10B981' },
                 { stat: '90+', label: 'PageSpeed Score', accent: '#E2498A' },
                 { stat: 'Top Rated', label: 'On Upwork', accent: '#F59E0B' },
               ].map(({ stat, label, accent }) => (
@@ -362,7 +362,7 @@ export default function ManilaPage() {
                 Better Than Hiring a Local<br /> Manila Web Design Agency
               </h2>
               <p className="leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                Manila web design agencies typically charge ₱30,000–₱120,000+ for a basic website — and that&rsquo;s just the upfront cost. AffordaWeb gives you the same professional quality from <strong className="text-white">$69/month (≈ ₱4,000)</strong> with no large one-time payment.
+                Manila web design agencies typically charge ₱30,000–₱120,000+ for a basic website — and that&rsquo;s just the upfront cost. AffordaWeb plans start at <strong className="text-white">$39/month</strong>.
               </p>
               <p className="leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.55)' }}>
                 We build on Next.js — not WordPress — which means 90+ PageSpeed scores, zero plugin headaches, and a site that stays fast and secure without paying for extra plugins or security tools.
@@ -378,8 +378,8 @@ export default function ManilaPage() {
                   </thead>
                   <tbody>
                     {[
-                      ['Starting Price', '$69/mo', '₱30,000+ upfront'],
-                      ['Setup Fee', '$0', '₱5,000–₱20,000'],
+                      ['Starting Price', '$39/mo', '₱30,000+ upfront'],
+                      ['Setup Fee', 'Currently waived', '₱5,000–₱20,000'],
                       ['PageSpeed Score', '90+', 'Varies (often 50–65)'],
                       ['Ongoing Updates', 'Included', 'Billed separately'],
                       ['Hosting & SSL', 'Included', 'Extra monthly cost'],

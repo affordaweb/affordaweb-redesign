@@ -384,7 +384,7 @@ export default function TimerLock({
           <SeoQuickWinsCard report={report} />
         </section>
 
-        {/* Full report (premium / payment locked) */}
+        {/* Full report (payment locked) */}
         <section>
           <div className="flex items-center gap-2 mb-4">
             <h2 className="text-lg font-black text-gray-900">
@@ -392,7 +392,7 @@ export default function TimerLock({
             </h2>
             {!unlocked && (
               <span className="px-2.5 py-0.5 rounded-full bg-primary-100 text-primary-700 text-xs font-bold">
-                Premium
+                Locked
               </span>
             )}
           </div>

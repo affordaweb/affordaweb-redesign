@@ -4,15 +4,15 @@ export const dynamic = 'force-static'
 
 export function GET() {
   const content = `# AffordaWeb Solutions
-> Affordable website design for small businesses starting at $69/month — includes hosting, SSL, maintenance, and unlimited updates.
+> Affordable website design for small businesses starting at $39/month — includes hosting and SSL.
 
-AffordaWeb Solutions is a professional web design company that builds and manages websites for small businesses throughout the United States. All plans include custom design, managed hosting, SSL security, business email, and ongoing maintenance in one flat monthly rate. No setup fees, no long-term contracts, cancel anytime.
+AffordaWeb Solutions is a professional web design company that builds and manages websites for small businesses throughout the United States. All plans include custom design, managed hosting, SSL security, and basic SEO setup. Normal setup fees are currently waived.
 
 The AffordaWeb team is composed of Filipino freelancers who are Top Rated on Upwork. We have over 15 years of combined experience building websites and specialize in Next.js, Tailwind CSS, WordPress, and e-commerce platforms.
 
 ## Core Services
 
-- [Website Design for Small Businesses](https://www.affordawebsolutions.com/services/design): Custom, mobile-first website design starting at $69/month, built to convert visitors into customers.
+- [Website Design for Small Businesses](https://www.affordawebsolutions.com/services/design): Custom, mobile-first website design starting at $39/month, built to convert visitors into customers.
 - [Website Redesign](https://www.affordawebsolutions.com/services/redesign): Modernize an outdated website without losing search rankings or existing content.
 - [SEO Services](https://www.affordawebsolutions.com/services/seo): On-page SEO optimization and local SEO to help small businesses rank on Google.
 - [Website Maintenance](https://www.affordawebsolutions.com/services/maintenance): Ongoing updates, backups, and security monitoring included in every plan.
@@ -20,13 +20,13 @@ The AffordaWeb team is composed of Filipino freelancers who are Top Rated on Upw
 
 ## Pricing Plans
 
-All plans include custom design, managed hosting, SSL, and a business email address.
+All plans include custom design, managed hosting, SSL, and basic SEO setup.
 
-- **Basic Plan — $69/month**: 1–5 pages, mobile-responsive design, web hosting, SSL, business email, basic maintenance, 1 monthly content update.
-- **Standard Plan — $99/month**: Up to 10 pages, unlimited content updates, on-page SEO optimization, Google Analytics setup, contact form, speed optimization, security monitoring, priority support.
-- **Premium Plan — $149/month**: Everything in Standard plus e-commerce (up to 30 products), advanced SEO setup, and 24/7 priority support.
+- **Starter — $39/month**: Up to 5 pages, mobile-responsive design, managed hosting, SSL, basic SEO setup, and one routine content update per month.
+- **Business — $69/month**: Everything in Starter plus up to 10 pages, contact form integration, Google Analytics integration, SEO optimization, and unlimited routine content updates.
+- **Virtual Employee — $149/month**: Everything in Business plus an approved-knowledge-base Virtual Employee, response review queue, knowledge-gap reporting, and ongoing knowledge-base refinement.
 
-No setup fees. No long-term contracts. Cancel anytime with 30 days notice.
+Normal setup fees are currently waived. Refer to the approved Terms of Service for cancellation and domain policies.
 
 ## Key Facts
 
@@ -35,7 +35,7 @@ No setup fees. No long-term contracts. Cancel anytime with 30 days notice.
 - All plans include a hosted business email address (you@yourdomain.com).
 - AffordaWeb Solutions serves small businesses nationwide across the United States.
 - The web design team is based in the Philippines — Filipino freelancers, Top Rated on Upwork.
-- Affordable web design starts at $69/month — significantly less than the typical $5,000–$30,000+ agency quote.
+- Affordable web design starts at $39/month — significantly less than the typical $5,000–$30,000+ agency quote.
 - Our tech stack: Next.js 15, Tailwind CSS, TypeScript, WordPress, Shopify, hosted on Vercel.
 
 ## Service Areas
@@ -61,16 +61,16 @@ We serve small businesses in the following locations across the United States an
 ## Frequently Asked Questions
 
 **What does the website design plan include?**
-Every plan includes a professionally designed small business website, managed web hosting, a free SSL certificate, a business email address, and ongoing maintenance. Standard and Premium plans also include unlimited content updates and full on-page SEO optimization.
+Every plan includes a professionally designed small business website, managed web hosting, a free SSL certificate, and basic SEO setup. Business and Virtual Employee include SEO optimization and unlimited routine content updates.
 
 **Are there setup fees?**
-No. There are no setup fees and no hidden costs. You pay one flat monthly rate and everything listed in the plan is included.
+Normal setup fees are currently waived. The pricing page lists each plan's monthly price and inclusions.
 
 **How long does it take to launch a website?**
-Most small business websites launch within 10 to 15 business days after content is received. E-commerce projects may take slightly longer.
+Most small business websites launch within 10 to 15 business days after content is received.
 
-**Can I cancel anytime?**
-Yes. All plans are month-to-month. You can cancel with 30 days notice and will receive your content and files.
+**Where can I find cancellation and domain policies?**
+Please refer to the approved Terms of Service or contact the team for help with your specific situation.
 
 **Do I need my own web hosting?**
 No. Managed web hosting is included in every plan. You do not need a separate hosting account.

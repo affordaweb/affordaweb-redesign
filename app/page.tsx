@@ -3,11 +3,14 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import HeroBackground from '@/components/HeroBackground'
+import { getPlan } from '@/lib/pricing'
+
+const starterPlan = getPlan('starter')
 
 export const metadata: Metadata = {
   title: { absolute: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions' },
   description:
-    'Professional affordable web design for small businesses starting at $69/month with managed hosting, SSL, local SEO, and unlimited content updates included. No setup fees, no contracts. Get a custom website that ranks on Google and converts visitors into customers.',
+    `Professional affordable web design for small businesses starting at $${starterPlan.monthlyPrice}/month. Choose Starter, Business, or Virtual Employee support for your goals.`,
   keywords: [
     'affordable web design for small business',
     'small business website design',
@@ -29,14 +32,14 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'AffordaWeb Solutions',
     title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
-    description: 'Professional affordable web design for small businesses starting at $69/month with hosting, SSL, local SEO, and unlimited content updates included. No setup fees, no contracts.',
+    description: `Professional affordable web design for small businesses starting at $${starterPlan.monthlyPrice}/month.`,
     url: 'https://www.affordawebsolutions.com',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
-    description: 'Professional affordable web design for small businesses starting at $69/month with hosting, SSL, local SEO, and unlimited content updates included.',
+    description: `Professional affordable web design for small businesses starting at $${starterPlan.monthlyPrice}/month.`,
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -111,16 +114,16 @@ function IconCheck() {
 const services = [
   { Icon: IconDesign,   title: 'Website Design',      desc: 'Custom, mobile-first small business website design built to convert visitors into paying customers. Affordable monthly payment plans include hosting and SSL.', href: '/services/design' },
   { Icon: IconRedesign, title: 'Website Redesign',    desc: 'Transform your outdated site into a fast, modern, high-performing website without losing your rankings. Affordable website redesign with monthly payments.', href: '/services/redesign' },
-  { Icon: IconSeo,      title: 'SEO Optimization',    desc: 'Local SEO built into every site so your small business ranks on Google and gets found by nearby customers. SEO included in Standard and Premium plans.', href: '/services/seo' },
+  { Icon: IconSeo,      title: 'SEO Optimization',    desc: 'Local SEO support for businesses that need to grow their visibility. See Business and Virtual Employee plan inclusions.', href: '/services/seo' },
   { Icon: IconMaint,    title: 'Website Maintenance', desc: 'Managed website maintenance — updates, backups, and security monitoring — so you can focus on running your business. Included in all plans.', href: '/services/maintenance' },
   { Icon: IconHosting,  title: 'Shared Hosting',      desc: 'Fast, reliable managed web hosting with a free SSL certificate included in every affordable website design package.', href: '/services/hosting' },
   { Icon: IconEcom,     title: 'E-Commerce Design',   desc: 'Launch your online store with up to 30 products, secure payment processing, and a mobile-optimized checkout. Affordable ecommerce website design.', href: '/services#ecommerce' },
 ]
 
 const whoWeHelp = [
-  { title: 'Freelancers',        tag: 'Solo professionals',     color: '#7C3AED', pastelBg: 'rgba(124,58,237,0.14)',   desc: 'A professional freelancer website starting at $69/month keeps you from losing clients to someone with a better-looking site. Your skills deserve a site that sells them.',              Icon: IconDesign,   href: '/services/design'    },
+  { title: 'Freelancers',        tag: 'Solo professionals',     color: '#7C3AED', pastelBg: 'rgba(124,58,237,0.14)',   desc: 'A professional freelancer website starting at $39/month keeps you from losing clients to someone with a better-looking site. Your skills deserve a site that sells them.',              Icon: IconDesign,   href: '/services/design'    },
   { title: 'Startups',           tag: 'Early-stage ventures',   color: '#06B6D4', pastelBg: 'rgba(6,182,212,0.14)',    desc: 'Launch with a credible startup website from day one — without the five-figure agency bill. First impressions define early traction, and yours only happens once.',                        Icon: IconRedesign, href: '/services/design'    },
-  { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Affordable small business website design built to rank on Google and generate leads — not just traffic. Every site includes local SEO so customers in your area can actually find you. Starting at $69/month with hosting included.',     Icon: IconSeo,      href: '/services/seo'       },
+  { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Affordable small business website design built to generate leads, not just traffic. Starting at $39/month with website support that grows with you.',     Icon: IconSeo,      href: '/services/seo'       },
   { title: 'Established Brands', tag: 'Growing companies',      color: '#F59E0B', pastelBg: 'rgba(245,158,11,0.14)',  desc: 'You have outgrown your current site. Our website redesign service preserves your search rankings and existing content while delivering a modern, high-converting experience.',           Icon: IconMaint,    href: '/services/redesign'  },
   { title: 'Online Stores',      tag: 'E-commerce businesses',  color: '#F43F5E', pastelBg: 'rgba(244,63,94,0.14)',   desc: 'Affordable e-commerce website design with up to 30 products, secure payment processing, and a mobile-optimized checkout. Built for small online stores that need to sell from day one.',  Icon: IconEcom,     href: '/services#ecommerce' },
 ]
@@ -134,25 +137,25 @@ const portfolioItems = [
 const faqs: { q: string; a: string; display?: React.ReactNode }[] = [
   {
     q: 'How much does a small business website cost?',
-    a: 'Our affordable web design for small business starts at $69/month with no setup fees and no long-term contracts. Unlike traditional agencies that charge $3,000 to $10,000 upfront, our monthly website design packages include everything — custom design, managed hosting, SSL certificate, business email, and ongoing maintenance. Standard plans at $99/month add unlimited content updates and full SEO optimization.',
-    display: <>Our <Link href="/pricing" className="text-primary-600 font-medium hover:underline">affordable web design for small business</Link> starts at <strong>$69/month</strong> with no setup fees and no long-term contracts. Unlike traditional agencies that charge <strong>$3,000 to $10,000 upfront</strong>, our monthly website design packages include everything — custom design, managed hosting, <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">SSL certificate</a>, business email, and ongoing maintenance. Standard plans at $99/month add unlimited content updates and full SEO optimization.</>,
+    a: 'Our affordable web design for small business starts at $39/month. The Starter, Business, and Virtual Employee plans have clear inclusions and currently waived setup fees.',
+    display: <>Our <Link href="/pricing" className="text-primary-600 font-medium hover:underline">affordable web design for small business</Link> starts at <strong>$39/month</strong>. The Starter, Business, and Virtual Employee plans have clear inclusions and currently waived setup fees.</>,
   },
   {
     q: 'What does your affordable website design package include?',
-    a: 'Every plan includes a professionally designed small business website, managed web hosting, a free SSL certificate, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates and full on-page SEO optimization — everything in one flat monthly price.',
-    display: <>Every plan includes a professionally designed small business website, managed web hosting, a free <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">SSL certificate</a>, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates and full on-page SEO optimization with <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">Google Analytics</a> setup — everything in one flat monthly price.</>,
+    a: 'Plan inclusions vary. See the pricing comparison for the exact Starter, Business, and Virtual Employee features and routine-update scope.',
+    display: <>Plan inclusions vary. See the <Link href="/pricing" className="text-primary-600 font-medium hover:underline">pricing comparison</Link> for the exact Starter, Business, and Virtual Employee features and routine-update scope.</>,
   },
   {
     q: 'Are there any setup fees or hidden costs with your website design plans?',
-    a: 'No setup fees and no hidden costs. You pay one flat monthly rate and everything listed in your plan is included. The price you see is the price you pay — no surprise invoices. This is what makes us a true no upfront cost web design service.',
+    a: 'Normal setup fees are currently waived. The pricing comparison lists the monthly price and inclusions for each plan.',
   },
   {
     q: 'How long does it take to design and launch a small business website?',
-    a: 'Most small business websites are designed and launched within 10 to 15 business days after we receive your content and feedback. E-commerce website projects may take a few days longer depending on the number of products and complexity.',
+    a: 'Most small business websites are designed and launched within 10 to 15 business days after we receive your content and feedback.',
   },
   {
     q: 'Can I cancel my website design plan at any time?',
-    a: 'Yes. All our website design plans are month-to-month with no long-term contracts. You can cancel at any time with 30 days notice. We will export your content and files so you are never left stranded.',
+    a: 'Please refer to the approved Terms of Service or contact our team for help with your specific situation.',
   },
   {
     q: 'Do I need to write my own website content?',
@@ -176,7 +179,7 @@ const schemaData = {
         '@type': 'OfferCatalog',
         name: 'Website Design Services',
         itemListElement: [
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Small Business Website Design', description: 'Custom, mobile-first website design for small businesses starting at $69/month.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Small Business Website Design', description: 'Custom, mobile-first website design for small businesses starting at $39/month.' } },
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Redesign', description: 'Modernize your existing website without losing search rankings.' } },
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO Optimization', description: 'Local SEO built into every website to help small businesses rank on Google.' } },
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Managed Web Hosting', description: 'Fast, reliable managed hosting with SSL included in every plan.' } },
@@ -201,7 +204,7 @@ const schemaData = {
       '@id': 'https://www.affordawebsolutions.com/#webpage',
       url: 'https://www.affordawebsolutions.com',
       name: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
-      description: 'Affordable website design for small businesses starting at $69/month. Custom design, managed hosting, SSL, SEO, and unlimited updates — no setup fees, no contracts.',
+      description: 'Affordable website design for small businesses starting at $39/month. See Starter, Business, and Virtual Employee plan inclusions.',
       isPartOf: { '@id': 'https://www.affordawebsolutions.com/#business' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
@@ -248,11 +251,11 @@ export default function HomePage() {
                 style={{ letterSpacing: '-0.025em', fontSize: '45px' }}
               >
                 Affordable Website Design for Small Businesses.{' '}
-                <span className="gradient-text">Starting at $69/mo</span>
+                <span className="gradient-text">Starting at ${starterPlan.monthlyPrice}/mo</span>
               </h1>
 
               <p               className="text-xl leading-relaxed mb-9 max-w-lg" style={{ color: 'rgba(255,255,255,0.58)' }}>
-                Affordable web design for small businesses with hosting, SSL, and unlimited content updates in one flat monthly price. No upfront costs, no long-term contracts — just a professional website that ranks on Google and converts visitors into customers.
+                Affordable web design for small businesses with a clear choice of Starter, Business, or Virtual Employee support. See each plan for its included website updates and scope.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-9">
@@ -347,7 +350,7 @@ export default function HomePage() {
 
               {/* Floating chips */}
               <div className="absolute -left-10 top-16 bg-white rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
-                <div className="text-2xl font-bold leading-none" style={{ color: '#5636D1' }}>$69</div>
+                  <div className="text-2xl font-bold leading-none" style={{ color: '#5636D1' }}>${starterPlan.monthlyPrice}</div>
                 <div className="text-xs text-gray-400 font-medium mt-0.5">Per month</div>
               </div>
               <div className="absolute -right-8 bottom-16 bg-white rounded-xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.18)]">
@@ -411,7 +414,7 @@ export default function HomePage() {
         >
           {[0, 1].map((pass) =>
             ([
-              { number: '$69/mo', label: 'Starting Price',   sublabel: 'No hidden fees',    bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#7C3AED', iconPath: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 6v1m0 4v1m-4-8H6m12 0h-2m2 8H6m0 0a9 9 0 110-18 9 9 0 010 18z' },
+              { number: '$39/mo', label: 'Starting Price',   sublabel: 'Clear plan pricing',    bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#7C3AED', iconPath: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 6v1m0 4v1m-4-8H6m12 0h-2m2 8H6m0 0a9 9 0 110-18 0 9 9 0 010 18z' },
               { number: '24 hrs', label: 'Response Time',    sublabel: 'Mon to Fri',         bg: '#ECFEFF', border: '#67E8F9', iconBg: '#0EA5E9', iconPath: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
               { number: '$0',     label: 'Setup Fees',       sublabel: 'Get started free',   bg: '#ECFDF5', border: '#6EE7B7', iconBg: '#059669', iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
               { number: '99.9%', label: 'Uptime Guarantee', sublabel: 'Always online',       bg: '#FFF1F2', border: '#FDA4AF', iconBg: '#E11D48', iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
@@ -705,7 +708,7 @@ export default function HomePage() {
                 </span>
                 <h3 className="font-bold text-white text-xl mb-3 mt-2">Ready to Get Started?</h3>
                 <p className="text-sm leading-relaxed mb-7" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                  No contracts, no setup fees, no technical headaches. A professional website from $69/month, live within days.
+                  A professional website from $39/month, with a clear plan scope and no technical headaches.
                 </p>
               </div>
 
@@ -786,7 +789,7 @@ export default function HomePage() {
                   Affordable Web Design Company for <span className="gradient-text">Small Businesses</span>
                 </h2>
                 <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                  Managed by a group of Top Rated freelancers on Upwork, AffordaWeb Solutions is an affordable web design company built on one belief: small businesses should not be priced out of professional web design. We bundle custom design, managed hosting, maintenance, and SEO into one simple monthly website design package starting at $69.
+                  Managed by a group of Top Rated freelancers on Upwork, AffordaWeb Solutions is an affordable web design company built on one belief: small businesses should not be priced out of professional web design. We offer custom design, managed hosting, and SEO setup in website plans starting at $39.
                 </p>
               <ul className="space-y-4 mb-8">
                 {([
@@ -837,27 +840,27 @@ export default function HomePage() {
                   Monthly Website Design Packages With No Surprises
                 </h2>
                 <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
-                  Our affordable monthly website design packages include managed hosting, SSL, ongoing maintenance, and a professionally designed website — all in one flat monthly rate. No setup fees, no contracts.
+                  Our affordable monthly website design packages include managed hosting, SSL, and a professionally designed website. Normal setup fees are currently waived.
                 </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-end pb-8">
 
-            {/* Basic */}
+            {/* Starter */}
             <div
               className="group bg-white rounded-3xl p-5 sm:p-8 flex flex-col border border-gray-100 hover:-translate-y-1 transition-all duration-300"
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.06)', borderTop: '3px solid #94A3B8' }}
             >
               <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-gray-100 text-gray-500">Basic</span>
+                <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-gray-100 text-gray-500">Starter</span>
               </div>
               <div className="mb-1">
-                <span className="text-6xl font-extrabold text-gray-900 tracking-tight">$69</span>
+                <span className="text-6xl font-extrabold text-gray-900 tracking-tight">$39</span>
                 <span className="text-gray-400 text-base ml-1">/mo</span>
               </div>
               <p className="text-sm text-gray-400 mt-1 mb-7">Perfect for getting online fast</p>
               <ul className="space-y-3 mb-8 flex-grow">
-                {['1–5 page website', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', '1 content update/month', 'Basic security maintenance'].map(f => (
+                {['Up to 5 pages', 'Custom website design', 'Mobile-responsive layout', 'Managed hosting + SSL', 'Basic SEO setup', '1 routine content update/month'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
                     <span className="rounded-full flex items-center justify-center text-primary-600 shrink-0 mt-0.5" style={{ width: '18px', height: '18px', minWidth: '18px', background: '#F0EDFD' }}>
                       <IconCheck />
@@ -869,7 +872,7 @@ export default function HomePage() {
               <Link href="/contact" className="btn-secondary w-full justify-center">Get Started</Link>
             </div>
 
-            {/* Standard — Featured */}
+            {/* Business — Featured */}
             <div
               className="relative rounded-3xl p-5 sm:p-8 flex flex-col md:-my-8 overflow-hidden"
               style={{
@@ -885,19 +888,19 @@ export default function HomePage() {
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 1px)', backgroundSize: '20px 20px', opacity: 0.12 }} />
 
               <div className="relative z-10 flex items-center justify-between mb-6">
-                <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style={{ background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.85)' }}>Standard</span>
+                <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style={{ background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.85)' }}>Business</span>
                 <span className="text-xs font-bold px-3 py-1.5 rounded-full inline-flex items-center gap-1" style={{ background: '#ffffff', color: '#5636D1' }}>
                   <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                   Most Popular
                 </span>
               </div>
               <div className="relative z-10 mb-1">
-                <span className="text-6xl font-extrabold text-white tracking-tight">$99</span>
+                <span className="text-6xl font-extrabold text-white tracking-tight">$69</span>
                 <span className="text-white/50 text-base ml-1">/mo</span>
               </div>
               <p className="text-sm relative z-10 mt-1 mb-7" style={{ color: 'rgba(255,255,255,0.6)' }}>Best for growing businesses</p>
               <ul className="space-y-3 mb-8 flex-grow relative z-10">
-                {['Up to 10 pages', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', 'Unlimited content updates', 'Full SEO optimization', 'Google Analytics setup', 'Booking / inquiry forms'].map(f => (
+                {['Everything in Starter', 'Up to 10 pages', 'Contact form integration', 'Google Analytics integration', 'SEO optimization', 'Unlimited routine content updates'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-white">
                     <span className="rounded-full flex items-center justify-center text-white shrink-0 mt-0.5" style={{ width: '18px', height: '18px', minWidth: '18px', background: 'rgba(255,255,255,0.2)' }}>
                       <IconCheck />
@@ -918,22 +921,21 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Premium */}
+            {/* Virtual Employee */}
             <div
               className="group bg-white rounded-3xl p-5 sm:p-8 flex flex-col border border-gray-100 hover:-translate-y-1 transition-all duration-300"
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.06)', borderTop: '3px solid #06B6D4' }}
             >
               <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style={{ background: 'rgba(6,182,212,0.08)', color: '#0EA5E9' }}>Premium</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" style={{ background: 'rgba(6,182,212,0.1)', color: '#0EA5E9' }}>E-Commerce</span>
+                <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style={{ background: 'rgba(6,182,212,0.08)', color: '#0EA5E9' }}>Virtual Employee</span>
               </div>
               <div className="mb-1">
                 <span className="text-6xl font-extrabold text-gray-900 tracking-tight">$149</span>
                 <span className="text-gray-400 text-base ml-1">/mo</span>
               </div>
-              <p className="text-sm text-gray-400 mt-1 mb-7">For e-commerce &amp; full-scale brands</p>
+              <p className="text-sm text-gray-400 mt-1 mb-7">For businesses that need governed visitor support</p>
               <ul className="space-y-3 mb-8 flex-grow">
-                {['Unlimited pages', 'Custom mobile-responsive design', 'Hosting + SSL included', '1 business email', 'Unlimited content updates', 'Full SEO optimization', 'E-commerce (up to 30 products)', '24/7 priority support'].map(f => (
+                {['Everything in Business', 'Virtual Employee with approved knowledge base', 'Response review queue', 'Knowledge-gap reporting', 'Ongoing knowledge-base refinement', 'Human oversight'].map(f => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-600">
                     <span className="rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ width: '18px', height: '18px', minWidth: '18px', background: 'rgba(6,182,212,0.1)', color: '#06B6D4' }}>
                       <IconCheck />
@@ -949,7 +951,7 @@ export default function HomePage() {
           {/* Trust strip */}
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-6">
             {[
-              { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', text: 'No setup fees' },
+              { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', text: 'Setup fees currently waived' },
               { icon: 'M6 18L18 6M6 6l12 12', text: 'Cancel anytime' },
               { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', text: 'Month-to-month' },
               { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', text: 'Response within 24 hrs' },
@@ -1095,7 +1097,7 @@ export default function HomePage() {
             {([
               { name: 'Sarah M.', role: 'Freelance Consultant', quote: 'AffordaWeb delivered a professional website in under two weeks. The flat monthly pricing with no hidden fees was exactly what my small business needed to get online without breaking the bank.' },
               { name: 'James R.', role: 'Small Business Owner', quote: 'The AffordaWeb team understood our vision right away. Our new site looks incredible, ranks on Google locally, and we have gotten more leads in the first month than the entire previous year.' },
-              { name: 'Emily C.', role: 'Online Store Owner', quote: 'I was quoted $8,000 by another agency. AffordaWeb gave me a better-looking site for $99/month with ongoing support included. I wish I had found them sooner.' },
+              { name: 'Emily C.', role: 'Online Store Owner', quote: 'I was quoted $8,000 by another agency. AffordaWeb gave me a better-looking site with ongoing support. I wish I had found them sooner.' },
             ] as { name: string; role: string; quote: string }[]).map(({ name, role, quote }) => (
               <div key={name} className="card p-8 flex flex-col gap-5">
                 <div className="flex gap-1">

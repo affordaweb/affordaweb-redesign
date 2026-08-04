@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, FormEvent } from 'react'
+import { useEffect, useState, useRef, FormEvent } from 'react'
 import Link from 'next/link'
 import Script from 'next/script'
 
@@ -10,13 +10,22 @@ export default function ContactForm() {
   const [turnstileToken, setTurnstileToken] = useState('')
   const widgetRef = useRef<HTMLDivElement>(null)
   const widgetRendered = useRef(false)
+  const [selectedPlan, setSelectedPlan] = useState('')
+
+  useEffect(() => {
+    const plan = new URLSearchParams(window.location.search).get('plan')
+    if (plan === 'starter' || plan === 'business' || plan === 'virtual-employee') {
+      setSelectedPlan(plan)
+    }
+  }, [])
 
   function initTurnstile() {
     if (widgetRef.current && !widgetRendered.current) {
       widgetRendered.current = true
       ;(window as any).turnstile?.render(widgetRef.current, {
-        sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '',
-        callback: (token: string) => setTurnstileToken(token),
+          sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '',
+          action: 'turnstile-spin-v2',
+          callback: (token: string) => setTurnstileToken(token),
         'expired-callback': () => setTurnstileToken(''),
         'error-callback': () => setTurnstileToken(''),
       })
@@ -151,12 +160,14 @@ export default function ContactForm() {
         </label>
         <select
           id="budget" name="budget" required
+          value={selectedPlan}
+          onChange={(event) => setSelectedPlan(event.target.value)}
           className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-900 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-all"
         >
           <option value="">Select budget range…</option>
-          <option value="basic">Basic — $69/month</option>
-          <option value="standard">Standard — $99/month</option>
-          <option value="premium">Premium — $149/month</option>
+          <option value="starter">Starter — $39/month</option>
+          <option value="business">Business — $69/month</option>
+          <option value="virtual-employee">Virtual Employee — $149/month</option>
           <option value="unsure">Not Sure Yet</option>
         </select>
       </div>

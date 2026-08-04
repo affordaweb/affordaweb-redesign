@@ -31,6 +31,17 @@ async function sendEmail(to: string, subject: string, html: string): Promise<boo
   }
 }
 
+function escapeHtml(value: string) {
+  return value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]!))
+}
+
+export async function sendVirtualEmployeeLeadEmail(lead: { name: string; email: string; source: string; plan?: string; message?: string }): Promise<boolean> {
+  const rows = [
+    ['Name', lead.name], ['Email', lead.email], ['Source', lead.source], ['Plan', lead.plan || 'Not selected'], ['Message', lead.message || 'None provided'],
+  ].map(([label, value]) => `<tr><td style="padding:6px;color:#6b7280;font-weight:700;">${escapeHtml(label)}</td><td style="padding:6px;color:#111827;">${escapeHtml(value)}</td></tr>`).join('')
+  return sendEmail(ADMIN_EMAIL, `[Virtual Employee] ${lead.source} lead from ${lead.name}`, `<div style="font-family:Arial,sans-serif"><h1>New Virtual Employee lead</h1><table>${rows}</table></div>`)
+}
+
 export async function sendAdminReportEmail(report: ReportData, adminToken: string): Promise<boolean> {
   const confirmUrl = `${BASE_URL}/api/confirm-payment?id=${report.report_id}&token=${adminToken}`
 
@@ -500,7 +511,7 @@ export async function sendSeoUserReport(report: SeoReport, reportUrl: string): P
       </div>
     </div>
     <div style="background:#f9fafb;border-top:1px solid #e5e7eb;padding:20px 40px;text-align:center;">
-      <p style="margin:0;font-size:12px;color:#9ca3af;">AffordaWeb Solutions · hello@affordawebsolutions.com · Website Design from $69/month</p>
+      <p style="margin:0;font-size:12px;color:#9ca3af;">AffordaWeb Solutions · hello@affordawebsolutions.com · Website Design from $39/month</p>
     </div>
   </div>
 </body></html>`

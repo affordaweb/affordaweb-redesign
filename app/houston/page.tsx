@@ -3,9 +3,9 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design Houston, TX | $69/mo | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design Houston, TX | $39/mo | AffordaWeb Solutions' },
   description:
-    'Affordable web design in Houston, TX starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL included. Serving Harris, Fort Bend, Montgomery & Galveston counties. No setup fees, no contracts.',
+    'Affordable web design in Houston, TX starting at $39/mo. Monthly website design packages with hosting and SSL included. Setup fees are currently waived.',
   keywords: [
     'affordable web design Houston',
     'web design Houston',
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.affordawebsolutions.com/houston' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design Houston, TX | $69/mo | AffordaWeb Solutions',
+    title: 'Affordable Web Design Houston, TX | $39/mo | AffordaWeb Solutions',
     description:
-      'Affordable web design in Houston, TX starting at $69/month. Monthly website design packages with hosting, SEO, SSL, and maintenance included. Serving all Houston metro areas.',
+      'Affordable web design in Houston, TX starting at $39/month. Monthly website design packages with hosting and SSL included. Serving all Houston metro areas.',
     url: 'https://www.affordawebsolutions.com/houston',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Houston TX' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design Houston, TX | $69/mo | AffordaWeb Solutions',
-    description: 'Affordable web design in Houston, TX starting at $69/month. Monthly website design packages with hosting, SEO, SSL included.',
+    title: 'Affordable Web Design Houston, TX | $39/mo | AffordaWeb Solutions',
+    description: 'Affordable web design in Houston, TX starting at $39/month. Monthly website design packages with hosting and SSL included.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -88,11 +88,11 @@ const faqs = [
   },
   {
     q: 'How much does a website cost for a Houston small business?',
-    a: 'Our plans start at $69/month with no setup fee. That includes custom design, hosting, SSL, and basic maintenance. Standard ($99/mo) and Premium ($149/mo) plans add SEO, unlimited updates, and e-commerce.',
+    a: 'Starter is $39/month, Business is $69/month, and Virtual Employee is $149/month. Normal setup fees are currently waived; see the pricing page for each plan\'s inclusions.',
   },
   {
     q: 'Will my website rank for Houston-specific searches?',
-    a: 'Yes. Every site we build includes local SEO structure: location-specific meta tags, schema markup, and Google-optimized content targeting Houston and surrounding areas. Standard and Premium plans include full local SEO setup.',
+    a: 'Every site includes basic SEO setup. Business and Virtual Employee also include SEO optimization for location-specific searches.',
   },
   {
     q: 'How quickly can my Houston business get online?',
@@ -115,7 +115,7 @@ const localBusinessSchema = {
   '@id': 'https://www.affordawebsolutions.com/#business',
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
-  description: 'Affordable website design for Houston small businesses starting at $69/month.',
+  description: 'Affordable website design for Houston small businesses starting at $39/month.',
   areaServed: [
     { '@type': 'City', name: 'Houston', containedInPlace: { '@type': 'State', name: 'Texas' } },
     { '@type': 'City', name: 'Sugar Land', containedInPlace: { '@type': 'State', name: 'Texas' } },
@@ -124,7 +124,7 @@ const localBusinessSchema = {
     { '@type': 'City', name: 'Pearland', containedInPlace: { '@type': 'State', name: 'Texas' } },
   ],
   knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
-  priceRange: '$69–$149/month',
+  priceRange: '$39–$149/month',
   email: 'hello@affordawebsolutions.com',
 }
 
@@ -143,7 +143,7 @@ export default function HoustonPage() {
             Affordable Web Design<br className="hidden sm:block" /> for Houston Small Businesses
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Professional websites for Houston businesses starting at <strong className="text-white">$69/month</strong> — custom design, local SEO, hosting, SSL, and ongoing maintenance bundled into one plan. No setup fees.
+            Professional websites for Houston businesses starting at <strong className="text-white">$39/month</strong> — custom design, hosting, and SSL bundled into one plan. Normal setup fees are currently waived.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {['Harris County', 'Fort Bend County', 'Montgomery County', 'Galveston County', 'Brazoria County'].map(label => (
@@ -266,7 +266,7 @@ export default function HoustonPage() {
                 The Affordable Option for Houston Small Businesses
               </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
-                Most Houston web design agencies charge $3,000–$10,000 upfront. AffordaWeb delivers the same professional quality at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$69/month</Link> — with no large upfront cost and no long-term contract.
+                Most Houston web design agencies charge $3,000–$10,000 upfront. AffordaWeb plans start at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$39/month</Link>.
               </p>
               <p className="text-gray-500 leading-relaxed mb-6">
                 Every site includes local SEO setup so your business can rank for searches like &ldquo;affordable web design Houston&rdquo; or &ldquo;[your service] near me.&rdquo; We build the structure Google rewards, from day one.
@@ -294,8 +294,8 @@ export default function HoustonPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { stat: '$69/mo', label: 'Starting Price', accent: '#5636D1' },
-                { stat: '0', label: 'Setup Fees', accent: '#10B981' },
+                { stat: '$39/mo', label: 'Starting Price', accent: '#5636D1' },
+                { stat: 'Waived', label: 'Setup Fee Promotion', accent: '#10B981' },
                 { stat: '10–15', label: 'Days to Launch', accent: '#E2498A' },
                 { stat: '4.9★', label: 'Client Rating', accent: '#F59E0B' },
               ].map(({ stat, label, accent }) => (

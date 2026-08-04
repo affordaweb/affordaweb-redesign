@@ -6,7 +6,7 @@ import ContactForm from '@/components/ContactForm'
 export const metadata: Metadata = {
   title: 'Get a Free Website Quote | Affordable Web Design | Contact Us',
   description:
-    'Contact AffordaWeb Solutions for a free, no-obligation website design quote. Get an affordable monthly website design package from $69/mo. We respond within 24 hours.',
+    'Contact AffordaWeb Solutions for a free, no-obligation website design quote. Plans start at $39/mo.',
   keywords: [
     'free website design quote',
     'affordable web design contact',
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'Get a Free Website Quote | Affordable Web Design | Contact Us',
-    description: 'Request a free quote for affordable monthly website design packages from $69/mo. We respond within 24 hours.',
+    description: 'Request a free quote for affordable monthly website design packages from $39/mo.',
     url: 'https://www.affordawebsolutions.com/contact',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Contact AffordaWeb Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Get a Free Website Quote | Affordable Web Design | Contact Us',
-    description: 'Request a free quote for affordable monthly website design packages from $69/mo.',
+    description: 'Request a free quote for affordable monthly website design packages from $39/mo.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -261,9 +261,9 @@ export default function ContactPage() {
           {/* Plan preview tiles */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
             {[
-              { name: 'Basic', price: '$69', desc: '1–5 pages, hosting, SSL', border: 'rgba(148,163,184,0.25)', badge: null },
-              { name: 'Standard', price: '$99', desc: 'Up to 10 pages + SEO', border: 'rgba(6,182,212,0.35)', badge: 'Most Popular' },
-              { name: 'Premium', price: '$149', desc: 'E-commerce + 24/7 support', border: 'rgba(86,54,209,0.3)', badge: null },
+               { name: 'Starter', price: '$39', desc: 'Up to 5 pages + routine updates', border: 'rgba(148,163,184,0.25)', badge: null },
+               { name: 'Business', price: '$69', desc: 'Up to 10 pages + SEO', border: 'rgba(6,182,212,0.35)', badge: 'Most Popular' },
+               { name: 'Virtual Employee', price: '$149', desc: 'Approved knowledge base + review queue', border: 'rgba(86,54,209,0.3)', badge: null },
             ].map(({ name, price, desc, border, badge }) => (
               <Link
                 key={name}

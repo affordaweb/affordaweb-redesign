@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'Web Design Blog for Small Businesses | AffordaWeb Solutions',
-    description: 'Expert web design tips, SEO guides, and digital marketing advice for small business owners. Affordable monthly website design insights from $69/mo.',
+    description: 'Expert web design tips, SEO guides, and digital marketing advice for small business owners. Affordable monthly website design insights from $39/mo.',
     url: 'https://www.affordawebsolutions.com/blog',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Blog' }],
   },

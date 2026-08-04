@@ -236,8 +236,8 @@ const faqs = [
   },
   {
     q: "What do I do after getting my report?",
-    a: "The report provides a prioritized action plan. You can implement fixes yourself or contact AffordaWeb Solutions — we offer professional website design and SEO services starting at $69/month.",
-    display: <>The report provides a prioritized action plan. You can implement fixes yourself or contact AffordaWeb Solutions — we offer <Link href="/services" className="font-medium" style={{ color: '#5636D1' }}>professional website design and SEO services</Link> starting at <Link href="/pricing" className="font-medium" style={{ color: '#10B981' }}>$69/month</Link>.</>,
+    a: "The report provides a prioritized action plan. You can implement fixes yourself or contact AffordaWeb Solutions — website plans start at $39/month.",
+    display: <>The report provides a prioritized action plan. You can implement fixes yourself or contact AffordaWeb Solutions — website plans start at <Link href="/pricing" className="font-medium" style={{ color: '#10B981' }}>$39/month</Link>.</>,
   },
 ]
 
@@ -327,8 +327,7 @@ function ConversionStrip() {
         </h2>
         <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
           AffordaWeb Solutions builds fast, professional websites starting at{" "}
-          <strong className="text-white">$69/month</strong> — fully managed with hosting,
-          SSL, SEO, and unlimited updates included.
+          <strong className="text-white">$39/month</strong> — with hosting and SSL included.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

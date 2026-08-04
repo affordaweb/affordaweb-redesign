@@ -48,13 +48,13 @@ export async function generateMetadata({
 const services = [
   {
     title: 'Custom Website Design',
-    desc: 'Mobile-first, SEO-ready websites built around your local business goals. Launched in 10–15 business days.',
+    desc: 'Mobile-first websites built around your local business goals. Launched in 10–15 business days.',
     href: '/services/design',
     accent: '#5636D1',
   },
   {
     title: 'Local SEO Optimization',
-    desc: 'Rank for local searches. Built-in schema markup and Google-ready structure targeting your area.',
+    desc: 'Foundational local SEO setup, including schema markup and a search-friendly site structure.',
     href: '/services/seo',
     accent: '#E2498A',
   },
@@ -74,7 +74,7 @@ const services = [
 
 const benefits = [
   'No $3,000+ upfront agency fee',
-  'Local SEO built into every plan',
+  'Basic SEO setup included',
   'Live in 10–15 business days',
   'One monthly bill — design, hosting, SSL, maintenance',
   'Cancel anytime, no long-term contracts',
@@ -109,7 +109,7 @@ export default async function NjTownPage({
     description: t.metaDesc,
     areaServed: { '@type': 'City', name: t.name, containedInPlace: { '@type': 'State', name: 'New Jersey' } },
     serviceType: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
-    priceRange: '$69–$149/month',
+    priceRange: '$39–$149/month',
     email: 'hello@affordawebsolutions.com',
   }
 
@@ -189,10 +189,10 @@ export default async function NjTownPage({
                 Affordable Web Design for {t.name} Small Businesses
               </h2>
               <p className="text-gray-500 leading-relaxed mb-4">
-                Most web design agencies in New Jersey charge $3,000–$10,000 upfront. AffordaWeb delivers the same professional quality at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$69/month</Link> — with no large upfront cost and no long-term contract.
+                Most web design agencies in New Jersey charge $3,000–$10,000 upfront. AffordaWeb plans start at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$39/month</Link>.
               </p>
               <p className="text-gray-500 leading-relaxed mb-6">
-                Every site includes local SEO setup so your {t.name} business can rank for searches like &ldquo;affordable web design {t.name} NJ&rdquo; or &ldquo;{t.name} website designer.&rdquo; We build the structure Google rewards, from day one.
+                Every site includes basic SEO setup. Plan-specific SEO inclusions are listed on the pricing page.
               </p>
               <div className="space-y-3 mb-8">
                 {benefits.map((item) => (
@@ -211,8 +211,8 @@ export default async function NjTownPage({
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { stat: '$69/mo', label: 'Starting Price', accent: '#5636D1' },
-                { stat: '0', label: 'Setup Fees', accent: '#10B981' },
+                { stat: '$39/mo', label: 'Starting Price', accent: '#5636D1' },
+                { stat: 'Waived', label: 'Setup Fee Promotion', accent: '#10B981' },
                 { stat: '10–15', label: 'Days to Launch', accent: '#E2498A' },
                 { stat: '4.9★', label: 'Client Rating', accent: '#F59E0B' },
               ].map(({ stat, label, accent }) => (
@@ -280,11 +280,11 @@ export default async function NjTownPage({
               },
               {
                 q: `How much does a website cost for a ${t.name} small business?`,
-                a: 'Our plans start at $69/month with no setup fee. That includes custom design, hosting, SSL, and basic maintenance. Standard ($99/mo) and Premium ($149/mo) plans add SEO, unlimited updates, and e-commerce.',
+                a: 'Starter is $39/month, Business is $69/month, and Virtual Employee is $149/month. Normal setup fees are currently waived; see the pricing page for each plan\'s inclusions.',
               },
               {
                 q: `Will my ${t.name} website rank on Google?`,
-                a: `Yes. Every site we build includes local SEO structure: location-specific meta tags, schema markup, and Google-optimized content targeting ${t.name} and the surrounding New Jersey area.`,
+                a: `Every site includes basic SEO setup, such as relevant page structure and metadata. Search rankings depend on many factors and are not guaranteed.`,
               },
               {
                 q: `How quickly can my ${t.name} business get online?`,
@@ -327,7 +327,7 @@ export default async function NjTownPage({
             Let&rsquo;s Build Your {t.name} Business Website
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Tell us about your {t.name} business and we&rsquo;ll have your professional website live in 10–15 days. No upfront cost, no contracts.
+            Tell us about your {t.name} business and we&rsquo;ll have your professional website live in 10–15 days. Normal setup fees are currently waived, with no long-term contracts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-white px-9 py-4">Get a Free Quote</Link>

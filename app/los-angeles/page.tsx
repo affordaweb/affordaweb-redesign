@@ -3,9 +3,9 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design Los Angeles, CA | $69/mo | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design Los Angeles, CA | $39/mo | AffordaWeb Solutions' },
   description:
-    'Affordable web design in Los Angeles starting at $69/mo. Monthly website design packages with hosting, SEO, and SSL included. Serving LA County, Orange County, and the San Fernando Valley. No setup fees, no contracts.',
+    'Affordable web design in Los Angeles starting at $39/mo. Monthly website design packages with hosting and SSL included. Setup fees are currently waived.',
   keywords: [
     'affordable web design Los Angeles',
     'web design Los Angeles',
@@ -23,15 +23,15 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.affordawebsolutions.com/los-angeles' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design Los Angeles, CA | $69/mo | AffordaWeb Solutions',
-    description: 'Affordable web design in Los Angeles starting at $69/month. Monthly website design packages with hosting, SEO, SSL, and maintenance included. Serving LA and Orange County.',
+    title: 'Affordable Web Design Los Angeles, CA | $39/mo | AffordaWeb Solutions',
+    description: 'Affordable web design in Los Angeles starting at $39/month. Monthly website design packages with hosting and SSL included. Serving LA and Orange County.',
     url: 'https://www.affordawebsolutions.com/los-angeles',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'Affordable Web Design Los Angeles CA' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design Los Angeles, CA | $69/mo | AffordaWeb Solutions',
-    description: 'Affordable web design in Los Angeles starting at $69/month. Monthly website design packages with hosting, SEO, SSL included.',
+    title: 'Affordable Web Design Los Angeles, CA | $39/mo | AffordaWeb Solutions',
+    description: 'Affordable web design in Los Angeles starting at $39/month. Monthly website design packages with hosting and SSL included.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -62,8 +62,8 @@ const services = [
 
 const faqs = [
   { q: 'Do you work with businesses physically located in Los Angeles?', a: 'Yes. We serve LA businesses across Los Angeles County, Orange County, the Inland Empire, and Ventura County. All work is done remotely — we handle everything online, from kickoff to launch.' },
-  { q: 'How much does a website cost for a Los Angeles small business?', a: 'Our plans start at $69/month with no setup fee. That includes custom design, hosting, SSL, and basic maintenance. Standard ($99/mo) and Premium ($149/mo) plans add SEO, unlimited updates, and e-commerce.' },
-  { q: 'Will my website rank for LA-specific searches?', a: 'Yes. Every site we build includes local SEO structure: location-specific meta tags, schema markup, and Google-optimized content targeting Los Angeles and surrounding areas. Standard and Premium plans include full local SEO setup.' },
+  { q: 'How much does a website cost for a Los Angeles small business?', a: 'Starter is $39/month, Business is $69/month, and Virtual Employee is $149/month. Normal setup fees are currently waived; see the pricing page for each plan\'s inclusions.' },
+  { q: 'Will my website rank for LA-specific searches?', a: 'Every site includes basic SEO setup. Business and Virtual Employee also include SEO optimization for location-specific searches.' },
   { q: 'How quickly can my LA business get online?', a: 'Most sites are designed and launched within 10–15 business days after you submit your content and preferences. We handle design, development, hosting setup, and launch — you just review and approve.' },
 ]
 
@@ -82,7 +82,7 @@ const localBusinessSchema = {
   '@id': 'https://www.affordawebsolutions.com/#business',
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
-  description: 'Affordable website design for Los Angeles small businesses starting at $69/month.',
+  description: 'Affordable website design for Los Angeles small businesses starting at $39/month.',
   areaServed: [
     { '@type': 'City', name: 'Los Angeles', containedInPlace: { '@type': 'State', name: 'California' } },
     { '@type': 'City', name: 'Long Beach', containedInPlace: { '@type': 'State', name: 'California' } },
@@ -91,7 +91,7 @@ const localBusinessSchema = {
     { '@type': 'City', name: 'Burbank', containedInPlace: { '@type': 'State', name: 'California' } },
   ],
   knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
-  priceRange: '$69–$149/month',
+  priceRange: '$39–$149/month',
   email: 'hello@affordawebsolutions.com',
 }
 
@@ -109,7 +109,7 @@ export default function LosAngelesPage() {
             Affordable Web Design<br className="hidden sm:block" /> for Los Angeles Small Businesses
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Professional websites for LA businesses starting at <strong className="text-white">$69/month</strong> — custom design, local SEO, hosting, SSL, and ongoing maintenance bundled into one plan. No setup fees.
+            Professional websites for LA businesses starting at <strong className="text-white">$39/month</strong> — custom design, hosting, and SSL bundled into one plan. Normal setup fees are currently waived.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {['LA County', 'San Fernando Valley', 'South Bay', 'Orange County', 'Inland Empire'].map(label => (
@@ -187,7 +187,7 @@ export default function LosAngelesPage() {
             <div>
               <p className="section-label">Why Choose Us</p>
               <h2 id="la-why-heading" className="section-title mb-6">The Affordable Option for LA Small Businesses</h2>
-              <p className="text-gray-500 leading-relaxed mb-4">Most Los Angeles web design agencies charge $3,000–$10,000 upfront. AffordaWeb delivers the same professional quality at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$69/month</Link> — with no large upfront cost and no long-term contract.</p>
+              <p className="text-gray-500 leading-relaxed mb-4">Most Los Angeles web design agencies charge $3,000–$10,000 upfront. AffordaWeb plans start at <Link href="/pricing" className="text-primary-600 font-medium hover:underline">$39/month</Link>.</p>
               <p className="text-gray-500 leading-relaxed mb-6">Every site includes local SEO setup so your business can rank for searches like &ldquo;affordable web design Los Angeles&rdquo; or &ldquo;[your service] near me.&rdquo; We build the structure Google rewards, from day one.</p>
               <div className="space-y-3 mb-8">
                 {['No $3,000+ upfront agency fee','Local SEO built into every plan','Live in 10–15 business days','One monthly bill — design, hosting, SSL, maintenance','Cancel anytime, no long-term contracts'].map(item => (
@@ -203,7 +203,7 @@ export default function LosAngelesPage() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {[{ stat: '$69/mo', label: 'Starting Price', accent: '#5636D1' },{ stat: '0', label: 'Setup Fees', accent: '#10B981' },{ stat: '10–15', label: 'Days to Launch', accent: '#E2498A' },{ stat: '4.9★', label: 'Client Rating', accent: '#F59E0B' }].map(({ stat, label, accent }) => (
+              {[{ stat: '$39/mo', label: 'Starting Price', accent: '#5636D1' },{ stat: 'Waived', label: 'Setup Fee Promotion', accent: '#10B981' },{ stat: '10–15', label: 'Days to Launch', accent: '#E2498A' },{ stat: '4.9★', label: 'Client Rating', accent: '#F59E0B' }].map(({ stat, label, accent }) => (
                 <div key={label} className="rounded-2xl p-6 text-center" style={{ background: '#FAFBFF', border: `1px solid ${accent}22` }}>
                   <div className="text-2xl font-bold mb-1" style={{ color: accent }}>{stat}</div>
                   <div className="text-xs text-gray-500 font-medium">{label}</div>

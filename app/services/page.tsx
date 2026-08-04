@@ -3,9 +3,9 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Affordable Web Design Services for Small Businesses | $69/mo',
+  title: 'Affordable Web Design Services for Small Businesses | $39/mo',
   description:
-    'Affordable web design services for small businesses: custom website design, SEO optimization, managed hosting with SSL, website maintenance, and e-commerce. Everything bundled in one monthly package from $69/month. No setup fees, no contracts.',
+    'Affordable web design services for small businesses from $39/month. Explore Starter, Business, and Virtual Employee plan inclusions and scope.',
   keywords: [
     'affordable web design services',
     'web design services for small business',
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.affordawebsolutions.com/services' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design Services for Small Businesses | $69/mo',
-    description: 'Professional website design, SEO optimization, hosting with SSL, and maintenance services for small businesses starting at $69/month. All-in-one monthly packages.',
+    title: 'Affordable Web Design Services for Small Businesses | $39/mo',
+    description: 'Professional website design and ongoing support for small businesses starting at $39/month.',
     url: 'https://www.affordawebsolutions.com/services',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Web Design Services' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design Services for Small Businesses | $69/mo',
-    description: 'Professional website design, SEO, and maintenance services for small businesses starting at $69/month. All-in-one monthly packages.',
+    title: 'Affordable Web Design Services for Small Businesses | $39/mo',
+    description: 'Professional website design and ongoing support for small businesses starting at $39/month.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -57,13 +57,13 @@ const services = [
     tag: 'Core Service',
     title: 'Website Design',
     headline: 'Custom Website Design for Small Businesses',
-    description: `Most web agencies charge thousands upfront before they know anything about your business. We built this differently. For $69 a month, you get a custom site that is responsive on every device, with clean SEO structure built in from the start.
+    description: `Most web agencies charge thousands upfront before they know anything about your business. We built this differently. Plans start at $39 a month for a custom site that is responsive on every device, with clean SEO structure built in from the start.
 
 You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert.
 
 Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.`,
     paragraphs: [
-      <>Most web agencies charge thousands upfront before they know anything about your business. We built this differently. For <Link href="/pricing" className="font-medium text-primary-500 hover:underline">$69 a month</Link>, you get a custom site that is responsive on every device, with clean SEO structure built in from the start.</>,
+      <>Most web agencies charge thousands upfront before they know anything about your business. We built this differently. Plans start at <Link href="/pricing" className="font-medium text-primary-500 hover:underline">$39 a month</Link> for a custom site that is responsive on every device, with clean SEO structure built in from the start.</>,
       <>You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Every site includes a free <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">SSL certificate</a> — HTTPS enabled from day one.</>,
       <>Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.</>,
     ],
@@ -117,12 +117,12 @@ Right move if your site works but no longer represents what you actually offer.`
     headline: 'Rank Higher. Get Found. Grow Faster.',
     description: `Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper meta setup, and the structural decisions that search engines pay attention to.
 
-Standard and Premium plans include SEO as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.
+Business and Virtual Employee plans include SEO optimization as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.
 
 If your site has been live for years but traffic has barely moved, this is the thing you have not tried yet.`,
     paragraphs: [
       <>Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">meta tag</a> setup, and the structural decisions that search engines pay attention to.</>,
-      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Standard and Premium plans</Link> include SEO as a standard feature, not an upsell. Proven keyword strategies, content structure, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Analytics</a> integration, and a long-term organic growth focus.</>,
+      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Business and Virtual Employee plans</Link> include SEO optimization as a standard feature, not an upsell. Proven keyword strategies, content structure, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Analytics</a> integration, and a long-term organic growth focus.</>,
       <>If your site has been live for years but traffic has barely moved, start with our <Link href="/seo-audit" className="font-medium text-primary-500 hover:underline">free SEO audit tool</Link> — it shows you exactly where you stand. You can also check your baseline in <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Search Console</a> for free.</>,
     ],
     features: [
@@ -146,15 +146,15 @@ If your site has been live for years but traffic has barely moved, this is the t
     headline: 'We Handle Everything. You Run Your Business.',
     description: `Plugins go out of date. Security vulnerabilities do not announce themselves. Most business owners learn something broke because a customer mentioned it.
 
-Every AffordaWeb plan includes maintenance. Regular plugin and security updates, backups, and performance monitoring. Standard and Premium clients get unlimited content updates, typically turned around within 24 hours.
+Every AffordaWeb plan includes maintenance. Routine content updates vary by plan: Starter includes one per month, while Business and Virtual Employee include unlimited routine content updates.
 
 You run your business. We keep the site running.`,
     features: [
       'Regular plugin and security updates',
       'Backups and performance monitoring',
       'Ongoing uptime and technical checks',
-      'Unlimited content updates (Standard and Premium)',
-      'Response within 24 hours',
+      'Routine content updates by plan',
+      'Business and Virtual Employee: unlimited routine updates',
     ],
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -229,7 +229,7 @@ const faqSchema = {
       name: 'What services are included in AffordaWeb plans?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Every AffordaWeb plan includes custom website design, managed hosting, SSL certificate, business email, and ongoing maintenance. Standard and Premium plans also include unlimited content updates, full SEO optimization, and Google Analytics setup.'
+        text: 'Plan inclusions vary. See the pricing comparison for exact Starter, Business, and Virtual Employee features and routine-update scope.'
       }
     },
     {
@@ -237,7 +237,7 @@ const faqSchema = {
       name: 'How much does web design cost?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Our plans start at $69/month for the Basic plan, $99/month for Standard, and $149/month for Premium. There are no setup fees, no hidden costs, and no long-term contracts.'
+        text: 'Our plans are Starter at $39/month, Business at $69/month, and Virtual Employee at $149/month. Setup fees are currently waived.'
       }
     },
     {
@@ -253,7 +253,7 @@ const faqSchema = {
       name: 'Do you provide SEO services?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes! Every site we build includes on-page SEO optimization. Standard and Premium plans include full SEO setup with keyword research, meta optimization, schema markup, and Google Analytics integration.'
+        text: 'Business and Virtual Employee plans include SEO optimization. See the pricing comparison for current inclusions.'
       }
     },
   ],

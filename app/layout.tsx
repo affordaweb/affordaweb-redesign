@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: '%s | AffordaWeb Solutions',
   },
   description:
-    'Affordable web design for small businesses starting at $69/mo — fully managed with hosting, SSL, and unlimited updates included. No setup fees, no contracts. Professional website design with monthly payment options.',
+    'Affordable web design for small businesses starting at $39/mo. Choose Starter, Business, or Virtual Employee plans with managed website support.',
   keywords: [
     'affordable website design',
     'affordable web design for small business',
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     siteName: 'AffordaWeb Solutions',
     title: 'AffordaWeb Solutions | Affordable Website Design & Hosting',
     description:
-      'Professional, affordable website design starting at $69/mo — fully managed with hosting, SSL, and unlimited updates included.',
+      'Professional, affordable website design starting at $39/mo with Starter, Business, and Virtual Employee plans.',
     images: [
       {
         url: '/og-image.png',
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AffordaWeb Solutions | Affordable Website Design & Hosting',
     description:
-      'Professional, affordable website design starting at $69/mo with hosting included.',
+      'Professional, affordable website design starting at $39/mo.',
     images: ['/og-image.png'],
   },
   alternates: {
@@ -180,10 +180,10 @@ gtag('config', '${GA_ID}', {
                   '@id': 'https://www.affordawebsolutions.com/#organization',
                   name: 'AffordaWeb Solutions',
                   url: 'https://www.affordawebsolutions.com',
-                  slogan: 'Affordable website design for small businesses starting at $69/month.',
+                  slogan: 'Affordable website design for small businesses starting at $39/month.',
                   foundingDate: '2021',
                   description:
-                    'AffordaWeb Solutions is a professional web design company that builds and manages websites for small businesses. Plans start at $69/month and include custom design, managed hosting, SSL, business email, and ongoing maintenance — no setup fees, no contracts.',
+                    'AffordaWeb Solutions builds and manages websites for small businesses. Plans start at $39/month, with Starter, Business, and Virtual Employee options.',
                   logo: {
                     '@type': 'ImageObject',
                     url: 'https://www.affordawebsolutions.com/logo.webp',
@@ -227,7 +227,7 @@ gtag('config', '${GA_ID}', {
                   url: 'https://www.affordawebsolutions.com',
                   description:
                     'Affordable website design services for small businesses with hosting, SSL, and maintenance included.',
-                  priceRange: '$69 - $149/month',
+                  priceRange: '$39 - $149/month',
                   email: 'hello@affordawebsolutions.com',
                   openingHours: 'Mo-Fr 09:00-17:00',
                   currenciesAccepted: 'USD',
@@ -266,7 +266,7 @@ gtag('config', '${GA_ID}', {
                       position: 2,
                       name: 'Website Design Pricing',
                       url: 'https://www.affordawebsolutions.com/pricing',
-                      description: 'Plans starting at $69/mo — custom design, hosting, SSL, and unlimited updates included.',
+                      description: 'Starter, Business, and Virtual Employee plans from $39/mo.',
                     },
                     {
                       '@type': 'ListItem',

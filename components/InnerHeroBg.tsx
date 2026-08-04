@@ -60,14 +60,14 @@ function PricingBg() {
     <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       {/* Three stacked pricing tier shapes — right */}
       <g transform="translate(63%, 10%)" opacity="0.11">
-        {/* Basic */}
+        {/* Starter */}
         <rect x="30" y="160" width="300" height="180" rx="16" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5"/>
         <rect x="30" y="160" width="300" height="48" rx="16" fill="rgba(255,255,255,0.04)"/>
         <rect x="50" y="178" width="80" height="10" rx="4" fill="rgba(255,255,255,0.12)"/>
         <rect x="50" y="222" width="180" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
         <rect x="50" y="236" width="160" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
         <rect x="50" y="250" width="170" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
-        {/* Standard — featured */}
+        {/* Business — featured */}
         <rect x="0" y="60" width="360" height="200" rx="16" fill="rgba(86,54,209,0.12)" stroke="rgba(86,54,209,0.4)" strokeWidth="1.5"/>
         <rect x="0" y="60" width="360" height="52" rx="16" fill="rgba(86,54,209,0.18)"/>
         <rect x="20" y="80" width="100" height="12" rx="4" fill="rgba(255,255,255,0.15)"/>
@@ -76,7 +76,7 @@ function PricingBg() {
         <rect x="20" y="148" width="180" height="7" rx="3" fill="rgba(255,255,255,0.1)"/>
         <rect x="20" y="164" width="220" height="7" rx="3" fill="rgba(255,255,255,0.1)"/>
         <rect x="20" y="214" width="320" height="30" rx="15" fill="rgba(86,54,209,0.3)" stroke="rgba(86,54,209,0.5)" strokeWidth="1"/>
-        {/* Premium */}
+        {/* Virtual Employee */}
         <rect x="30" y="0" width="300" height="170" rx="16" fill="none" stroke="rgba(226,73,138,0.25)" strokeWidth="1.5"/>
         <rect x="30" y="0" width="300" height="46" rx="16" fill="rgba(226,73,138,0.06)"/>
         <rect x="50" y="16" width="90" height="10" rx="4" fill="rgba(226,73,138,0.2)"/>

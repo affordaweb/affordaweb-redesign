@@ -3,9 +3,9 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design Company | Small Business Websites $69/mo' },
+  title: { absolute: 'Affordable Web Design Company | Small Business Websites $39/mo' },
   description:
-    'Affordable web design company for small businesses. Professional custom websites from $69/month with hosting, SSL, and SEO included. No setup fees, no contracts. Pay monthly website design.',
+    'Affordable web design company for small businesses. Professional custom websites from $39/month with hosting and SSL included. Setup fees are currently waived.',
   keywords: [
     'affordable web design company',
     'affordable web design',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Affordable Web Design Company | AffordaWeb Solutions',
     description:
-      'AffordaWeb Solutions is an affordable web design company for small businesses. Professional websites from $69/mo — custom design, hosting, SEO & SSL included.',
+      'AffordaWeb Solutions is an affordable web design company for small businesses. Professional websites from $39/mo — custom design, hosting, and SSL included.',
     url: 'https://www.affordawebsolutions.com/affordable-web-design-company',
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Affordable Web Design Company | AffordaWeb Solutions',
     description:
-      'Professional websites from $69/mo — custom design, hosting, SEO & SSL included. No setup fees.',
+      'Professional websites from $39/mo — custom design, hosting, and SSL included. Setup fees are currently waived.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }
@@ -88,15 +88,15 @@ const industries = [
 const faqs = [
   {
     q: 'What makes AffordaWeb an affordable web design company?',
-    a: 'AffordaWeb operates with a subscription model that eliminates the massive upfront cost traditional agencies charge. Instead of paying $3,000–$10,000 before a single page is built, you pay $69/month and get a fully custom, professionally designed website with hosting, SSL, SEO, and maintenance all included. No hidden fees, no contracts.',
+    a: 'AffordaWeb operates with a subscription model that eliminates the massive upfront cost traditional agencies charge. Instead of paying $3,000–$10,000 before a single page is built, plans start at $39/month for a custom, professionally designed website with hosting and SSL included.',
   },
   {
     q: 'How much does an affordable website design cost?',
-    a: 'Our Starter plan is $69/month with zero setup fees. The Standard plan is $99/month and includes full local SEO and unlimited content updates. The Premium plan is $149/month and adds e-commerce, priority support, and advanced features. All plans include custom design, hosting, SSL, and maintenance.',
+    a: 'Starter is $39/month, Business is $69/month, and Virtual Employee is $149/month. Normal setup fees are currently waived. The catalog lists the exact inclusions for each plan.',
   },
   {
     q: "What's included in your affordable web design services?",
-    a: 'Every plan includes a custom-designed website (not a template), managed cloud hosting, SSL certificate, professional email, basic SEO setup, and monthly maintenance. Standard and Premium plans add unlimited content updates, full local SEO, Google Analytics integration, and more.',
+    a: 'Every plan includes a custom-designed website, managed hosting, SSL, and basic SEO setup. Business and Virtual Employee add SEO optimization, Google Analytics integration, and unlimited routine content updates.',
   },
   {
     q: 'How is AffordaWeb different from other affordable web design companies?',
@@ -129,9 +129,9 @@ const organizationSchema = {
   name: 'AffordaWeb Solutions',
   url: 'https://www.affordawebsolutions.com',
   description:
-    'Affordable web design company for small businesses. Professional websites starting at $69/month with hosting, SEO, SSL, and maintenance included.',
+     'Affordable web design company for small businesses. Professional websites starting at $39/month with hosting and SSL included.',
   knowsAbout: ['Website Design', 'SEO Optimization', 'Web Hosting', 'Website Maintenance'],
-  priceRange: '$69–$149/month',
+   priceRange: '$39–$149/month',
   email: 'hello@affordawebsolutions.com',
   areaServed: { '@type': 'Country', name: 'United States' },
 }
@@ -151,7 +151,7 @@ export default function AffordableWebDesignCompanyPage() {
             The Affordable Web Design Company<br className="hidden sm:block" /> for Small Businesses
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Professional websites starting at <strong className="text-white">$69/month</strong> — custom design, managed hosting, SEO, and SSL all included. No setup fees. No long-term contracts. Live in 10–15 days.
+             Professional websites starting at <strong className="text-white">$39/month</strong> — custom design, managed hosting, and SSL included. Normal setup fees are currently waived. Live in 10–15 days.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {['Affordable Pricing', 'Custom Design', 'No Setup Fees', 'SEO Included', 'Cancel Anytime'].map(label => (
@@ -250,8 +250,8 @@ export default function AffordableWebDesignCompanyPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { stat: '$69/mo', label: 'Starting Price', accent: '#5636D1' },
-                { stat: '$0', label: 'Setup Fees', accent: '#10B981' },
+                 { stat: '$39/mo', label: 'Starting Price', accent: '#5636D1' },
+                 { stat: 'Waived', label: 'Setup Fee Promotion', accent: '#10B981' },
                 { stat: '10–15', label: 'Days to Launch', accent: '#E2498A' },
                 { stat: '4.9★', label: 'Client Rating', accent: '#F59E0B' },
               ].map(({ stat, label, accent }) => (

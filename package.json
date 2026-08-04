@@ -10,7 +10,8 @@
     "export": "next build",
     "analyze": "node scripts/google-services.js analyze all",
     "analyze:site": "node scripts/google-services.js analyze",
-    "index": "node scripts/google-services.js index"
+    "index": "node scripts/google-services.js index",
+    "test": "tsx --test tests/**/*.test.ts"
   },
   "dependencies": {
     "axios": "^1.13.6",
@@ -38,6 +39,7 @@
     "eslint-config-next": "15.5.12",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6",
+    "tsx": "^4.23.5",
     "typescript": "^5.5.3"
   }
 }

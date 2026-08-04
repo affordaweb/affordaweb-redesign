@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import { getPlan } from '@/lib/pricing'
+
+const starterPlan = getPlan('starter')
 
 export interface ServiceData {
   id: string
@@ -25,16 +28,16 @@ export const services: ServiceData[] = [
     tag: 'Core Service',
     title: 'Website Design',
     headline: 'Custom Website Design for Small Businesses',
-    metaTitle: 'Affordable Custom Website Design for Small Businesses | $69/mo',
+    metaTitle: 'Affordable Custom Website Design for Small Businesses | $39/mo',
     metaDescription:
-      'Affordable custom website design for small businesses starting at $69/month. Get a responsive, SEO-optimized website with managed hosting and SSL included. No setup fees, no contracts. Pay monthly website design.',
+      `Affordable custom website design for small businesses starting at $${starterPlan.monthlyPrice}/month. Choose the Starter or Business plan for the website support that fits your needs.`,
     description: [
-      'Most web agencies charge thousands upfront before they know anything about your business. We built this differently. For $69 a month, you get a custom site that is responsive on every device, with clean SEO structure built in from the start.',
+      `Most web agencies charge thousands upfront before they know anything about your business. We built this differently. Starting at $${starterPlan.monthlyPrice} a month, you get a custom site that is responsive on every device.`,
       'You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert.',
       'Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.',
     ],
     paragraphs: [
-      <>Most web agencies charge thousands upfront before they know anything about your business. We built this differently. For <Link href="/pricing" className="font-medium text-primary-500 hover:underline">$69 a month</Link>, you get a custom site that is responsive on every device, with clean SEO structure built in from the start.</>,
+      <>Most web agencies charge thousands upfront before they know anything about your business. We built this differently. Starting at <Link href="/pricing" className="font-medium text-primary-500 hover:underline">${starterPlan.monthlyPrice} a month</Link>, you get a custom site that is responsive on every device.</>,
       <>You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert. Every plan includes a free <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">SSL certificate</a>.</>,
       <>Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.</>,
     ],
@@ -59,9 +62,9 @@ export const services: ServiceData[] = [
     tag: 'Popular',
     title: 'Website Redesign',
     headline: 'Transform Your Outdated Website',
-    metaTitle: 'Affordable Website Redesign for Small Businesses | $69/mo',
+    metaTitle: 'Affordable Website Redesign for Small Businesses | $39/mo',
     metaDescription:
-      'Affordable website redesign for small businesses starting at $69/month. Transform your outdated site into a modern, mobile-friendly website without losing SEO rankings. Monthly payment options available.',
+      `Affordable website redesign for small businesses starting at $${starterPlan.monthlyPrice}/month. Transform your outdated site into a modern, mobile-friendly website.`,
     description: [
       'An outdated site costs you business. Not dramatically, just quietly. Visitors land, see something that looks like it was built years ago, and leave. A redesign fixes that without losing the content and rankings you have already built.',
       'We give your site a complete visual and functional makeover. Modern, mobile-friendly layout. Improved performance. Sharper conversion focus. Your existing content stays put.',
@@ -93,15 +96,15 @@ export const services: ServiceData[] = [
     headline: 'Rank Higher. Get Found. Grow Faster.',
     metaTitle: 'Affordable SEO Services for Small Businesses | Local SEO',
     metaDescription:
-      'Affordable SEO services for small businesses. Improve your Google rankings with proven local SEO strategies, keyword research, and clean site structure. Included in Standard and Premium website plans.',
+      'Affordable SEO services for small businesses. Improve your Google rankings with proven local SEO strategies, keyword research, and clean site structure. See the Business and Virtual Employee plans for current inclusions.',
     description: [
       'Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper meta setup, and the structural decisions that search engines pay attention to.',
-      'Standard and Premium plans include SEO as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.',
+      'Business and Virtual Employee plans include SEO optimization as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.',
       'If your site has been live for years but traffic has barely moved, this is the thing you have not tried yet.',
     ],
     paragraphs: [
       <>Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">meta tag</a> setup, and the structural decisions that search engines pay attention to.</>,
-      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Standard and Premium plans</Link> include SEO as a standard feature, not an upsell. Proven keyword strategies, content structure, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Analytics</a> integration, and a long-term organic growth focus.</>,
+      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Business and Virtual Employee plans</Link> include SEO optimization as a standard feature, not an upsell. Proven keyword strategies, content structure, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Analytics</a> integration, and a long-term organic growth focus.</>,
       <>If your site has been live for years but traffic has barely moved, start with our <Link href="/seo-audit" className="font-medium text-primary-500 hover:underline">free SEO audit tool</Link> — it shows you exactly where you stand.</>,
     ],
     features: [
@@ -126,17 +129,17 @@ export const services: ServiceData[] = [
     headline: 'We Handle Everything. You Run Your Business.',
     metaTitle: 'Affordable Website Maintenance for Small Businesses',
     metaDescription:
-      'Affordable website maintenance for small businesses. Regular security updates, backups, performance monitoring, and unlimited content changes — all included in your monthly plan starting at $69/mo.',
+      'Affordable website maintenance for small businesses. Regular security updates, backups, and performance monitoring are available within the monthly plan scope, starting at $39/mo.',
     description: [
       'Plugins go out of date. Security vulnerabilities do not announce themselves. Most business owners learn something broke because a customer mentioned it.',
-      'Every AffordaWeb plan includes maintenance. Regular plugin and security updates, backups, and performance monitoring. Standard and Premium clients get unlimited content updates, typically turned around within 24 hours.',
+      'Every AffordaWeb plan includes ongoing website support. Business and Virtual Employee clients receive unlimited routine content updates; see pricing for the definition and scope.',
       'You run your business. We keep the site running.',
     ],
     features: [
       'Regular plugin and security updates',
       'Backups and performance monitoring',
       'Ongoing uptime and technical checks',
-      'Unlimited content updates (Standard and Premium)',
+      'Unlimited routine content updates (Business and Virtual Employee)',
       'Response within 24 hours',
     ],
     color: { accent: '#F59E0B', light: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.2)', glow: 'rgba(245,158,11,0.10)' },
@@ -155,7 +158,7 @@ export const services: ServiceData[] = [
     headline: 'Reliable Hosting Included with Every Plan',
     metaTitle: 'Affordable Web Hosting for Small Businesses with SSL',
     metaDescription:
-      'Affordable managed web hosting for small businesses with free SSL certificate included. Bundled into every website design plan from $69/month. One provider, one monthly bill, no extra vendors.',
+      'Affordable managed web hosting for small businesses with SSL certificate included. Bundled into every website design plan from $39/month. One provider, one monthly bill, no extra vendors.',
     description: [
       'Hosting should not be one more vendor to manage. Every AffordaWeb plan bundles it in. High-performance, reliable hosting with an SSL certificate included on every account.',
       'You also get 1GB of professional email connected to your domain. One provider, one monthly bill, one contact for anything technical.',

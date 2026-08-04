@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'AffordaWeb Solutions',
     short_name: 'AffordaWeb',
-    description: 'Affordable website design for small businesses starting at $69/month.',
+    description: 'Affordable website design for small businesses starting at $39/month.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0F0F1A',

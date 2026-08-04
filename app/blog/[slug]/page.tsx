@@ -50,7 +50,7 @@ Most of your local competitors already have websites. If yours is better — fas
 
 Many small business owners avoid getting a website because they assume it will be expensive or technically complicated. That's no longer the case.
 
-At AffordaWeb Solutions, our website design services start at just **$69/month** — which includes hosting, [SSL security](https://letsencrypt.org), maintenance, and ongoing support. There's no large upfront cost, no long-term contract, and no technical headaches.
+At AffordaWeb Solutions, website plans start at **$39/month** and include hosting and [SSL security](https://letsencrypt.org). Normal setup fees are currently waived; see the pricing page for plan-specific inclusions.
 
 ## The Bottom Line
 
@@ -103,7 +103,7 @@ When your Wix site breaks, you're on your own. When an AffordaWeb site needs an 
 
 | | DIY Builder | AffordaWeb Solutions |
 |---|---|---|
-| Monthly cost | $20–$49/mo | From $69/mo |
+| Monthly cost | $20–$49/mo | From $39/mo |
 | Setup time | 20–40 hours of your time | 10–15 business days |
 | Custom design | Limited | Fully custom |
 | SEO optimization | Basic | Built-in |
@@ -140,7 +140,7 @@ Use free tools like Google Keyword Planner or Ubersuggest to find terms with rea
 
 ## 2. Optimize Your Title Tags
 
-Every page should have a unique title tag (under 60 characters) that includes your target keyword. Example: "Affordable Website Design | AffordaWeb Solutions | From $69/mo"
+Every page should have a unique title tag (under 60 characters) that includes your target keyword. Example: "Affordable Website Design | AffordaWeb Solutions | From $39/mo"
 
 ## 3. Write Compelling Meta Descriptions
 
@@ -211,9 +211,9 @@ A good website design subscription — like those offered by AffordaWeb Solution
 
 Most subscription plans tier by complexity:
 
-- **Basic ($69/mo)** — 1–5 page website, 1 update/month, essential features
-- **Standard ($99/mo)** — Up to 10 pages, unlimited updates, SEO, priority support
-- **Premium ($149/mo)** — Everything in Standard plus e-commerce, advanced SEO
+- **Starter ($39/mo)** — Up to 5 pages, hosting, SSL, basic SEO setup, and one routine content update per month
+- **Business ($69/mo)** — Up to 10 pages, SEO optimization, Google Analytics, and unlimited routine content updates
+- **Virtual Employee ($149/mo)** — Everything in Business plus an approved-knowledge-base Virtual Employee and review workflow
 
 ## Is There a Contract?
 
@@ -301,7 +301,7 @@ A Content Delivery Network serves your site from servers closest to each visitor
 
 Every website we build is speed-optimized by default. We use modern Next.js technology, optimized image delivery, efficient code, and quality hosting — so your site is fast from day one.
 
-[See our website design plans](/pricing) and get a fast, professional website starting at $69/month.
+[See our website design plans](/pricing) and get a fast, professional website starting at $39/month.
     `.trim(),
   },
   'how-to-choose-web-design-company-small-business': {
@@ -434,7 +434,7 @@ Your services change. Your prices change. Your team changes. A maintained websit
 
 ## How Much Does Website Maintenance Cost?
 
-Hiring a developer for ad-hoc maintenance typically runs $75–$150/hour. With AffordaWeb Solutions, maintenance is included in every plan — starting at $69/month — alongside hosting, SSL, and design. [See our pricing](/pricing).
+Hiring a developer for ad-hoc maintenance typically runs $75–$150/hour. With AffordaWeb Solutions, plans start at $39/month with hosting and SSL included. [See our pricing](/pricing).
 
 ## The Bottom Line
 
@@ -538,7 +538,7 @@ DIY platforms are the cheapest option upfront, but they come with hidden costs:
 - **Template limitations** — Your site looks like thousands of others
 - **SEO restrictions** — Limited control over technical SEO settings
 - **No support** — When something breaks, you're on your own
-- **Ongoing fees** — Premium plans, app subscriptions, and payment fees add up
+- **Ongoing fees** — Paid apps, subscriptions, and payment fees add up
 
 DIY builders work for testing ideas. They rarely work for serious small business growth.
 
@@ -563,7 +563,7 @@ Agencies offer full teams, project management, and high-end results — at premi
 
 ## Option 4: Website Design Subscription
 
-**Cost: $69–$149/month (no setup fee)**
+**Cost: $39–$149/month (normal setup fees are currently waived)**
 
 A subscription model — like AffordaWeb Solutions — gives you the benefits of a professional agency without the large upfront cost:
 
@@ -596,7 +596,7 @@ For most small businesses, the sweet spot is a professionally designed, fully ma
 - Ongoing SEO and updates
 - A team you can contact when you need something
 
-[View AffordaWeb's pricing plans](/pricing) — starting at $69/month with everything included. Or [contact us](/contact) to ask any questions before you commit.
+[View AffordaWeb's pricing plans](/pricing) — starting at $39/month. Or [contact us](/contact) to ask any questions before you commit.
     `.trim(),
   },
   'local-seo-guide-small-businesses': {
@@ -688,7 +688,7 @@ For in-depth local SEO strategy, [Moz's local SEO learning center](https://moz.c
 
 ---
 
-Local SEO takes time but delivers lasting results. At AffordaWeb Solutions, our Standard and Premium plans include on-page local SEO optimization for your city and service area. [Contact us to learn more](/contact).
+Local SEO takes time but delivers lasting results. At AffordaWeb Solutions, Business and Virtual Employee include SEO optimization for your city and service area. [Contact us to learn more](/contact).
     `.trim(),
   },
   'who-updates-a-website-after-the-web-designer-finishes': {
@@ -856,10 +856,10 @@ Every AffordaWeb plan includes comprehensive website maintenance — not as an u
 
 - **Monthly software and plugin updates** — handled by our team
 - **Continuous security monitoring** — firewall active at all times
-- **Automated off-site backups** — weekly as standard, daily on Premium
+- **Automated off-site backups** — weekly or daily, depending on your needs
 - **Uptime monitoring** — 24/7 alerts
 - **SSL management** — renewed automatically, never expires on our watch
-- **Content updates** — included on Standard and Premium plans (24-hour turnaround)
+- **Content updates** — Starter includes one routine update per month; Business and Virtual Employee include unlimited routine updates
 
 For small businesses, this means one monthly bill covers everything your site needs to stay healthy, secure, and performing. You never have to think about any of it.
 
@@ -1046,7 +1046,7 @@ AffordaWeb Solutions operates differently from DIY platforms. Instead of handing
 
 The right platform isn't always the cheapest one — it's the one that actually serves your business goals. If your website is meant to attract customers and build credibility, it needs to be treated as a professional tool, not a DIY project.
 
-[Explore AffordaWeb plans starting at $69/month](/pricing) or [get a free quote today](/contact).
+[Explore AffordaWeb plans starting at $39/month](/pricing) or [get a free quote today](/contact).
     `.trim(),
   },
 }
@@ -1298,7 +1298,7 @@ export default async function BlogPostPage({
                   Get Your Professional Website Today
                 </h3>
                 <p className="text-white/60 text-sm mb-6 max-w-md mx-auto">
-                  Affordable website design starting at $69/month. Hosting, SSL, and maintenance included.
+                  Affordable website design starting at $39/month. Hosting and SSL included.
                 </p>
                 <Link href="/contact" className="btn-primary inline-flex">
                   Get a Free Quote

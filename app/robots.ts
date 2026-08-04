@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/'],
+        disallow: ['/api/', '/_next/', '/virtual-employee/review/', '/virtual-employee/demo/'],
       },
       // Explicitly allow AI crawlers that check robots.txt
       { userAgent: 'GPTBot', allow: '/' },
