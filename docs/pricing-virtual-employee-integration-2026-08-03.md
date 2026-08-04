@@ -40,7 +40,7 @@
 
 - Hosting and application runtime: Vercel.
 - Lead/review queue storage: Vercel KV or Upstash REST.
-- Notification delivery: existing Resend configuration.
+- Notification delivery: existing AffordaWeb contact-form service and its Resend configuration.
 - Analytics: existing GA4 configuration.
 - AI API cost: $0. The Virtual Employee uses deterministic matching only.
 
@@ -54,7 +54,7 @@
 ## Manual Vercel Setup Required
 
 - `KV_REST_API_URL` and `KV_REST_API_TOKEN` for durable Review Queue records, knowledge gaps, and rate limiting.
-- `RESEND_API_KEY` and `ADMIN_EMAIL` for inquiry notifications.
+- `ADMIN_EMAIL` for existing report notifications and `CONTACT_FORM_FORWARDING_SECRET` shared with the contact-form Vercel project for Virtual Employee notifications.
 - A long random `VIRTUAL_EMPLOYEE_ADMIN_TOKEN` for the private Review Queue login.
 - Existing `NEXT_PUBLIC_BASE_URL`, Turnstile, and GA4 variables must remain configured.
 - Confirm cancellation, domain ownership, payment, and refund wording before publishing any transactional checkout flow.

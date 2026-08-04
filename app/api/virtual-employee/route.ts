@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { answerQuestion, isLeadSource, recommendPlan, type Guidance } from '@/lib/virtual-employee'
 import { recordKnowledgeGap, saveLead } from '@/lib/virtual-employee-leads'
-import { sendVirtualEmployeeLeadEmail } from '@/lib/email'
 import { kvIncr } from '@/lib/kv-store'
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const contactEndpoint = 'https://contact-form-lake-theta.vercel.app/api/contact'
 function clientKey(request: NextRequest) { return request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown' }
 async function limited(request: NextRequest) { return (await kvIncr(`ve:rate:${clientKey(request)}`, 60)) > 20 }
 
@@ -27,7 +27,12 @@ export async function POST(request: NextRequest) {
       if (typeof name !== 'string' || name.trim().length < 2 || name.length > 100 || typeof email !== 'string' || !emailPattern.test(email) || !isLeadSource(source) || (plan !== undefined && typeof plan !== 'string') || (message !== undefined && (typeof message !== 'string' || message.length > 500))) return NextResponse.json({ error: 'Please provide a valid name, email, and source.' }, { status: 400 })
       if (demo === true) return NextResponse.json({ success: true, demo: true })
       const lead = await saveLead({ name: name.trim(), email: email.trim().toLowerCase(), source, plan: typeof plan === 'string' ? plan.slice(0, 50) : undefined, message: typeof message === 'string' ? message.trim() : undefined })
-      void sendVirtualEmployeeLeadEmail(lead).catch((error) => console.error('[virtual-employee] lead email failed', error))
+      const notification = await fetch(contactEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Contact-Forwarding-Secret': process.env.CONTACT_FORM_FORWARDING_SECRET ?? '' },
+        body: JSON.stringify({ name: lead.name, email: lead.email, message: lead.message || 'Virtual Employee lead without an additional message.', website: 'affordaweb', subject: `[Virtual Employee] ${lead.source} lead`, source: lead.source, plan: lead.plan || 'Not selected', _honeypot: '' }),
+      }).catch(() => null)
+      if (!notification?.ok) return NextResponse.json({ error: 'We saved your request but could not notify the team. Please try again.' }, { status: 503 })
       return NextResponse.json({ success: true })
     }
   } catch { return NextResponse.json({ error: 'Unable to process this request.' }, { status: 400 }) }
