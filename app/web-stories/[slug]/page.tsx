@@ -49,10 +49,11 @@ export default async function WebStoryPage({
 
   const storySchema = {
     '@context': 'https://schema.org',
-    '@type': 'WebStory',
+    '@type': 'Article',
     '@id': storyUrl,
-    name: story.name,
+    headline: story.name,
     description: story.description,
+    url: storyUrl,
     publisher: {
       '@type': 'Organization',
       name: 'AffordaWeb Solutions',
@@ -73,21 +74,15 @@ export default async function WebStoryPage({
     },
     datePublished: story.datePublished,
     dateModified: story.dateModified,
-    story: {
+    author: {
+      '@type': 'Organization',
+      name: 'AffordaWeb Solutions',
+      url: baseUrl,
+    },
+    mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${storyUrl}#story`,
+      '@id': storyUrl,
       url: storyUrl,
-      mainEntity: story.slides.map((slide, i) => ({
-        '@type': 'WebPageElement',
-        position: i + 1,
-        name: slide.title,
-        description: slide.text,
-        image: {
-          '@type': 'ImageObject',
-          url: story.posterImage,
-        },
-        contentUrl: `${storyUrl}#slide${i + 1}`,
-      })),
     },
   }
 

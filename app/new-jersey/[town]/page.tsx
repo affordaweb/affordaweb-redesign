@@ -19,6 +19,9 @@ export async function generateMetadata({
   return {
     title: { absolute: t.metaTitle },
     description: t.metaDesc,
+    // These pages are location templates, not staffed local offices. Keep them
+    // available to visitors without presenting them as separate local results.
+    robots: { index: false, follow: true },
     keywords: [
       `web design ${t.name} NJ`,
       `website design ${t.name} New Jersey`,
@@ -101,7 +104,7 @@ export default async function NjTownPage({
     ],
   }
 
-  const localBusinessSchema = {
+  const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'AffordaWeb Solutions',
@@ -116,7 +119,7 @@ export default async function NjTownPage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       {/* Hero */}
       <section className="relative overflow-hidden pt-[200px] pb-[100px] text-center" style={{ background: '#0F0F1A' }}>

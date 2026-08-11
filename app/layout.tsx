@@ -221,7 +221,7 @@ gtag('config', '${GA_ID}', {
                   },
                 },
                 {
-                  '@type': 'LocalBusiness',
+                  '@type': 'ProfessionalService',
                   '@id': 'https://www.affordawebsolutions.com/#business',
                   name: 'AffordaWeb Solutions',
                   url: 'https://www.affordawebsolutions.com',
@@ -240,14 +240,6 @@ gtag('config', '${GA_ID}', {
                   name: 'AffordaWeb Solutions',
                   publisher: {
                     '@id': 'https://www.affordawebsolutions.com/#organization',
-                  },
-                  potentialAction: {
-                    '@type': 'SearchAction',
-                    target: {
-                      '@type': 'EntryPoint',
-                      urlTemplate: 'https://www.affordawebsolutions.com/blog?q={search_term_string}',
-                    },
-                    'query-input': 'required name=search_term_string',
                   },
                 },
                 {
