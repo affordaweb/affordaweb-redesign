@@ -1,4 +1,6 @@
 import { MetadataRoute } from 'next'
+import { njTowns } from '@/lib/nj-towns-data'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.affordawebsolutions.com'
 
@@ -117,6 +119,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    ...njTowns.map((town) => ({
+      url: `${baseUrl}/new-jersey/${town.slug}`,
+      lastModified: new Date('2026-06-11'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     {
       url: `${baseUrl}/fresno`,
       lastModified: new Date('2026-03-27'),

@@ -11,22 +11,6 @@ export const metadata: Metadata = {
   title: { absolute: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions' },
   description:
     `Professional affordable web design for small businesses starting at $${starterPlan.monthlyPrice}/month. Choose Starter, Business, or Virtual Employee support for your goals.`,
-  keywords: [
-    'affordable web design for small business',
-    'small business website design',
-    'monthly website design packages',
-    'pay monthly website design',
-    'website design with hosting included',
-    'website hosting and SSL',
-    'local SEO for small business',
-    'monthly website design',
-    'web design subscription',
-    'professional website design',
-    'affordable web design',
-    'website redesign services',
-    'no upfront cost web design',
-    'flat rate website design',
-  ],
   alternates: { canonical: 'https://www.affordawebsolutions.com' },
   openGraph: {
     type: 'website',
