@@ -17,15 +17,6 @@ export const metadata: Metadata = {
   title: "Free SEO Audit Tool | Check Your Website SEO Score",
   description:
     "Run a free instant SEO audit of your website. Get your SEO score, top issues, and quick wins — 20+ checks across meta tags, speed, SSL, Open Graph, headings, and more. No signup required.",
-  keywords: [
-    "free seo audit",
-    "free website audit",
-    "seo checker",
-    "seo analysis tool",
-    "website seo score check",
-    "free seo report",
-    "seo audit tool",
-  ],
   alternates: { canonical: "https://www.affordawebsolutions.com/seo-audit" },
   openGraph: {
     type: 'website',
@@ -241,6 +232,30 @@ const faqs = [
   },
 ]
 
+const seoAuditSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebApplication',
+      name: 'AffordaWeb Free SEO Audit Tool',
+      url: 'https://www.affordawebsolutions.com/seo-audit',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'All',
+      description: 'A free website SEO audit tool that checks more than 20 technical and on-page SEO factors.',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://www.affordawebsolutions.com' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+}
+
 const faqColors = [
   { accent: '#5636D1', light: 'rgba(86,54,209,0.08)',  border: 'rgba(86,54,209,0.18)'  },
   { accent: '#E2498A', light: 'rgba(226,73,138,0.08)', border: 'rgba(226,73,138,0.18)' },
@@ -360,6 +375,7 @@ function ConversionStrip() {
 export default function SeoAuditPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seoAuditSchema) }} />
       <Hero />
       <HowItWorks />
       <WhatWeCheck />
