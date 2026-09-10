@@ -89,12 +89,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date('2025-03-01'),
-      changeFrequency: 'yearly',
-      priority: 0.2,
-    },
-    {
       url: `${baseUrl}/terms`,
       lastModified: new Date('2025-03-01'),
       changeFrequency: 'yearly',
@@ -139,12 +133,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/philadelphia`,
       lastModified: new Date('2026-03-29'),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/affordable-web-design-company`,
-      lastModified: new Date('2026-03-30'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },

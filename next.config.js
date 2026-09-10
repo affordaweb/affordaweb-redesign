@@ -30,6 +30,8 @@ const nextConfig = {
       { source: '/affordable-web-design-company/', destination: '/affordable-web-design-company', permanent: true },
       { source: '/affordable-web-design-for-small-businesses/', destination: '/affordable-web-design-for-small-businesses', permanent: true },
       { source: '/affordable-web-design-services-in-manila/', destination: '/affordable-web-design-services-in-manila', permanent: true },
+      // Consolidate overlapping commercial landing pages into the indexable small-business page.
+      { source: '/affordable-web-design-company', destination: '/affordable-web-design-for-small-businesses', permanent: true },
       // Old WordPress pages that Google has indexed as 404
       { source: '/thank-you/', destination: '/contact', permanent: true },
       { source: '/thank-you', destination: '/contact', permanent: true },
