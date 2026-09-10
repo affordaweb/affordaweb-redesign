@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const posts = [
   {
     slug: 'why-small-businesses-need-professional-website',
-    title: 'Why Every Small Business Needs a Professional Website in 2025',
+    title: 'Why Every Small Business Needs a Professional Website',
     excerpt:
       'Still on the fence about investing in a professional website? Discover the real cost of not having one — and how an affordable website can transform your business.',
     category: 'Business Growth',
@@ -154,7 +154,7 @@ const posts = [
   },
   {
     slug: 'mobile-website-design-guide',
-    title: 'Mobile Website Design: Why It Is Your #1 Priority in 2025',
+    title: 'Mobile Website Design: Why It Matters for Small Businesses',
     excerpt:
       'Over 60% of web traffic comes from mobile devices. If your website is not optimized for phones, you are losing customers every single day. Here is what mobile-first design actually means.',
     category: 'Web Design',
@@ -169,7 +169,7 @@ const posts = [
   },
   {
     slug: 'how-much-does-a-website-cost',
-    title: 'How Much Does a Website Cost? A Small Business Guide for 2025',
+    title: 'How Much Does a Website Cost? A Small Business Guide',
     excerpt:
       "Agency quotes, DIY builders, and subscription services all charge very different amounts. Here's an honest breakdown of website costs so you can make the right call for your business.",
     category: 'Pricing',

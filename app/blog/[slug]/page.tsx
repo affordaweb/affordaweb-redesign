@@ -1329,7 +1329,7 @@ export default async function BlogPostPage({
                 <h3 className="text-primary-300 text-xs font-bold tracking-widest uppercase mb-5">Service Areas</h3>
                 <ul className="space-y-3">
                   {[
-                    { label: 'Affordable Web Design Company', href: '/affordable-web-design-company' },
+                    { label: 'Affordable Web Design for Small Businesses', href: '/affordable-web-design-for-small-businesses' },
                     { label: 'Web Design for Small Businesses', href: '/affordable-web-design-for-small-businesses' },
                     { label: 'Web Design in New Jersey', href: '/new-jersey' },
                     { label: 'Web Design in Philadelphia', href: '/philadelphia' },
