@@ -199,6 +199,15 @@ export default function NewJerseyPage() {
         </div>
       </section>
 
+      <section className="section-pad bg-[#FAFBFF]" aria-labelledby="nj-strategy-heading">
+        <div className="container-tight max-w-4xl">
+          <p className="section-label">Built for New Jersey</p>
+          <h2 id="nj-strategy-heading" className="section-title mb-5">A Practical Website Strategy for NJ Businesses</h2>
+          <p className="text-gray-500 leading-relaxed mb-4">New Jersey businesses may serve one town, several nearby communities, or customers across an entire county. Your website should reflect that real service area with focused pages, clear contact paths, and useful information for people comparing providers locally.</p>
+          <p className="text-gray-500 leading-relaxed">We help NJ small businesses turn those needs into a manageable website plan. That can include service and location page structure, local SEO basics, conversion-focused design, and ongoing maintenance so the site stays accurate as your business changes. Every recommendation is based on the business and market rather than a generic list of town names.</p>
+        </div>
+      </section>
+
       {/* Counties + Cities */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#0F0F1A' }}>
         <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #5636D1 40%, transparent)' }} />

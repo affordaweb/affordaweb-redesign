@@ -181,6 +181,15 @@ export default function LosAngelesPage() {
         </div>
       </section>
 
+      <section className="section-pad bg-[#FAFBFF]" aria-labelledby="la-strategy-heading">
+        <div className="container-tight max-w-4xl">
+          <p className="section-label">Built for Los Angeles</p>
+          <h2 id="la-strategy-heading" className="section-title mb-5">A Clearer Online Presence for a Competitive LA Market</h2>
+          <p className="text-gray-500 leading-relaxed mb-4">Los Angeles customers often discover businesses through a quick mobile search and decide within seconds whether a website feels relevant. Your pages need to communicate the service, the areas you cover, and the reason to contact you without burying that information beneath generic agency language.</p>
+          <p className="text-gray-500 leading-relaxed">AffordaWeb can organize a site around the way your business actually operates, whether you serve a focused neighborhood, several parts of the city, or clients throughout the region. We pair concise service explanations with local SEO fundamentals, fast mobile layouts, and calls to action that make inquiries easier to complete.</p>
+        </div>
+      </section>
+
       <section className="section-pad bg-white" aria-labelledby="la-why-heading">
         <div className="container-tight">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

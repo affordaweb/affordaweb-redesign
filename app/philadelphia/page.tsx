@@ -181,6 +181,15 @@ export default function PhiladelphiaPage() {
         </div>
       </section>
 
+      <section className="section-pad bg-[#FAFBFF]" aria-labelledby="phila-strategy-heading">
+        <div className="container-tight max-w-4xl">
+          <p className="section-label">Built for Philadelphia</p>
+          <h2 id="phila-strategy-heading" className="section-title mb-5">A Website That Builds Trust Across Philadelphia</h2>
+          <p className="text-gray-500 leading-relaxed mb-4">Philadelphia businesses can serve very different audiences from one neighborhood to the next. A useful website connects the details of your offer to the questions local customers have about availability, service areas, pricing, and how to get in touch.</p>
+          <p className="text-gray-500 leading-relaxed">We create straightforward page structures for contractors, restaurants, healthcare and professional services, and other small businesses in the city and nearby communities. The result is an easier path from a local search to a qualified inquiry, supported by readable content and technical SEO that does not rely on exaggerated promises.</p>
+        </div>
+      </section>
+
       <section className="section-pad bg-white" aria-labelledby="phila-why-heading">
         <div className="container-tight">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

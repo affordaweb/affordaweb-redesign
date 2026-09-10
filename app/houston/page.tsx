@@ -256,6 +256,15 @@ export default function HoustonPage() {
         </div>
       </section>
 
+      <section className="section-pad bg-[#FAFBFF]" aria-labelledby="houston-strategy-heading">
+        <div className="container-tight max-w-4xl">
+          <p className="section-label">Built for Greater Houston</p>
+          <h2 id="houston-strategy-heading" className="section-title mb-5">Digital Foundations for Houston Service Businesses</h2>
+          <p className="text-gray-500 leading-relaxed mb-4">Houston businesses compete across a large, spread-out market where a customer may compare several providers before making a call. A strong website needs clear service pages, useful coverage information, and a friction-free way to take the next step from a phone.</p>
+          <p className="text-gray-500 leading-relaxed">We build practical sites for contractors, professional services, restaurants, and other local businesses that need to explain their value quickly. The content structure can support neighborhood and service-area relevance without stuffing pages with repetitive city names or making claims your business cannot substantiate.</p>
+        </div>
+      </section>
+
       {/* Why AffordaWeb for Houston */}
       <section className="section-pad bg-white" aria-labelledby="houston-why-heading">
         <div className="container-tight">

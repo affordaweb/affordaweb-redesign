@@ -259,6 +259,15 @@ export default function FresnoPage() {
         </div>
       </section>
 
+      <section className="section-pad bg-[#FAFBFF]" aria-labelledby="fresno-strategy-heading">
+        <div className="container-tight max-w-4xl">
+          <p className="section-label">Built for the Central Valley</p>
+          <h2 id="fresno-strategy-heading" className="section-title mb-5">A Website That Helps Fresno Customers Choose You</h2>
+          <p className="text-gray-500 leading-relaxed mb-4">Fresno businesses often serve a wide area, from established neighborhoods to nearby Central Valley communities. Your website should make that service area clear while helping visitors quickly understand what you do, where you work, and how to request an estimate.</p>
+          <p className="text-gray-500 leading-relaxed">We structure pages around the questions local customers ask before contacting a business, with prominent calls to action, mobile-friendly service details, and location signals that support local search. That approach works for home services, agriculture-related businesses, professional services, and other small companies competing across the region.</p>
+        </div>
+      </section>
+
       {/* Why AffordaWeb for Fresno */}
       <section className="section-pad bg-white" aria-labelledby="fresno-why-heading">
         <div className="container-tight">

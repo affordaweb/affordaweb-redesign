@@ -228,6 +228,34 @@ export default async function ServicePage({
         </div>
       </section>
 
+      {s.id === 'maintenance' && (
+        <section className="section-pad bg-white" aria-labelledby="maintenance-guides-heading">
+          <div className="container-tight max-w-4xl">
+            <p className="section-label">Maintenance Guides</p>
+            <h2 id="maintenance-guides-heading" className="section-title mb-5">Keep Your Website Reliable After Launch</h2>
+            <p className="text-gray-500 leading-relaxed mb-6">Maintenance is more than fixing a broken link after a customer finds it. These guides explain the practical checks that help a small-business website stay accurate, secure, and useful over time.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link href="/blog/website-maintenance-requirements" className="rounded-2xl border border-gray-200 p-5 font-semibold text-gray-900 hover:border-primary-300 hover:text-primary-600 transition-colors">Website Maintenance Requirements for Small Businesses <span aria-hidden="true">→</span></Link>
+              <Link href="/blog/who-updates-a-website-after-the-web-designer-finishes" className="rounded-2xl border border-gray-200 p-5 font-semibold text-gray-900 hover:border-primary-300 hover:text-primary-600 transition-colors">Who Updates a Website After Launch? <span aria-hidden="true">→</span></Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {s.id === 'seo' && (
+        <section className="section-pad bg-white" aria-labelledby="seo-guides-heading">
+          <div className="container-tight max-w-4xl">
+            <p className="section-label">SEO Guides</p>
+            <h2 id="seo-guides-heading" className="section-title mb-5">Build a Search Strategy You Can Maintain</h2>
+            <p className="text-gray-500 leading-relaxed mb-6">SEO works best when the site structure, page content, and ongoing updates support one another. These guides cover practical search improvements for small businesses and local service providers.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link href="/blog/local-seo-guide-small-businesses" className="rounded-2xl border border-gray-200 p-5 font-semibold text-gray-900 hover:border-primary-300 hover:text-primary-600 transition-colors">Local SEO Guide for Small Businesses <span aria-hidden="true">→</span></Link>
+              <Link href="/blog/seo-tips-small-business-website" className="rounded-2xl border border-gray-200 p-5 font-semibold text-gray-900 hover:border-primary-300 hover:text-primary-600 transition-colors">SEO Tips for a Small-Business Website <span aria-hidden="true">→</span></Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Other Services ── */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#FAFBFF' }}>
         <div className="absolute inset-x-0 top-0 h-px pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, rgba(86,54,209,0.3) 40%, transparent)' }} />
