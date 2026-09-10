@@ -60,14 +60,6 @@ const posts = [
     url: `${baseUrl}/blog/how-to-choose-web-design-company-small-business`,
   },
   {
-    slug: 'website-maintenance-why-it-matters',
-    title: 'Website Maintenance: Why It Matters More Than You Think',
-    excerpt: "Most small business owners launch a website and forget about it. That's a costly mistake. Here's what website maintenance actually covers and why skipping it can hurt your business.",
-    category: 'Maintenance',
-    date: '2025-06-10',
-    url: `${baseUrl}/blog/website-maintenance-why-it-matters`,
-  },
-  {
     slug: 'mobile-website-design-guide',
     title: 'Mobile Website Design: Why It Is Your #1 Priority in 2025',
     excerpt: 'Over 60% of web traffic comes from mobile devices. If your website is not optimized for phones, you are losing customers every single day. Here is what mobile-first design actually means.',

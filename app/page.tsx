@@ -8,22 +8,22 @@ import { getPlan } from '@/lib/pricing'
 const starterPlan = getPlan('starter')
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Website Design, Hosting & Support | AffordaWeb Solutions' },
   description:
-    `Professional affordable web design for small businesses starting at $${starterPlan.monthlyPrice}/month. Choose Starter, Business, or Virtual Employee support for your goals.`,
+    `Professional website design, managed hosting, and ongoing support for small businesses starting at $${starterPlan.monthlyPrice}/month.`,
   alternates: { canonical: 'https://www.affordawebsolutions.com' },
   openGraph: {
     type: 'website',
     siteName: 'AffordaWeb Solutions',
-    title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
-    description: `Professional affordable web design for small businesses starting at $${starterPlan.monthlyPrice}/month.`,
+    title: 'Affordable Website Design, Hosting & Support | AffordaWeb Solutions',
+    description: `Professional website design, managed hosting, and ongoing support for small businesses starting at $${starterPlan.monthlyPrice}/month.`,
     url: 'https://www.affordawebsolutions.com',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions — Affordable Website Design for Small Businesses' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
-    description: `Professional affordable web design for small businesses starting at $${starterPlan.monthlyPrice}/month.`,
+    title: 'Affordable Website Design, Hosting & Support | AffordaWeb Solutions',
+    description: `Professional website design, managed hosting, and ongoing support for small businesses starting at $${starterPlan.monthlyPrice}/month.`,
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
 }

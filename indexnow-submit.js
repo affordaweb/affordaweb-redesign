@@ -32,7 +32,6 @@ const urls = [
   `${BASE}/blog/website-design-subscription-model-explained`,
   `${BASE}/blog/website-speed-matters-small-business`,
   `${BASE}/blog/how-to-choose-web-design-company-small-business`,
-  `${BASE}/blog/website-maintenance-why-it-matters`,
   `${BASE}/blog/mobile-website-design-guide`,
   `${BASE}/blog/how-much-does-a-website-cost`,
   `${BASE}/blog/who-updates-a-website-after-the-web-designer-finishes`,

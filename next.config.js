@@ -42,6 +42,8 @@ const nextConfig = {
       { source: '/contact/', destination: '/contact', permanent: true },
       { source: '/pricing/', destination: '/pricing', permanent: true },
       { source: '/blog/', destination: '/blog', permanent: true },
+      { source: '/blog/website-maintenance-why-it-matters/', destination: '/blog/website-maintenance-requirements', permanent: true },
+      { source: '/blog/website-maintenance-why-it-matters', destination: '/blog/website-maintenance-requirements', permanent: true },
       // Old WordPress sub-service pages → /services
       { source: '/services/website-maintenance/', destination: '/services', permanent: true },
       { source: '/services/website-maintenance', destination: '/services', permanent: true },

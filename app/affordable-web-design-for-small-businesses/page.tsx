@@ -4,7 +4,7 @@ import InnerHeroBg from '@/components/InnerHeroBg'
 import { pricingPlans } from '@/lib/pricing'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Small Business Website Design Plans | AffordaWeb Solutions' },
   description:
     'Affordable web design for small businesses starting at $39/mo. Monthly website design packages with hosting and SSL built in. Setup fees are currently waived.',
   keywords: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.affordawebsolutions.com/affordable-web-design-for-small-businesses' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
+    title: 'Affordable Small Business Website Design Plans | AffordaWeb Solutions',
     description:
       'Affordable web design for small businesses starting at $39/mo. Custom websites with hosting and SSL built in. Setup fees are currently waived.',
     url: 'https://www.affordawebsolutions.com/affordable-web-design-for-small-businesses',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design for Small Businesses | AffordaWeb Solutions',
+    title: 'Affordable Small Business Website Design Plans | AffordaWeb Solutions',
     description:
       'Custom small business websites from $39/mo. Hosting and SSL included. Launch in 10–15 days.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
@@ -172,7 +172,7 @@ export default function AffordableWebDesignSmallBusinessesPage() {
         <div className="container-tight relative z-10">
           <p className="section-label-white">Built for Small Businesses</p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6" style={{ letterSpacing: '-0.025em' }}>
-            Affordable Web Design Built<br className="hidden sm:block" /> for Small Businesses
+            Affordable Small Business Website Design<br className="hidden sm:block" /> Without the Agency Price Tag
           </h1>
           <p className="text-lg max-w-2xl mx-auto mb-8" style={{ color: 'rgba(255,255,255,0.55)' }}>
              You don&rsquo;t have an enterprise budget — you have a business to run. AffordaWeb gives small business owners a professionally designed website starting at <strong className="text-white">$39/month</strong>, with everything included and zero technical hassle.

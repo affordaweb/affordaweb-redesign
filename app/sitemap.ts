@@ -186,12 +186,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/blog/website-maintenance-why-it-matters`,
-      lastModified: new Date('2026-07-21'),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/blog/mobile-website-design-guide`,
       lastModified: new Date('2026-07-21'),
       changeFrequency: 'monthly',

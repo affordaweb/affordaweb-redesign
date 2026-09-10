@@ -138,21 +138,6 @@ const posts = [
     accentBorder: 'rgba(226,73,138,0.22)',
   },
   {
-    slug: 'website-maintenance-why-it-matters',
-    title: 'Website Maintenance: Why It Matters More Than You Think',
-    excerpt:
-      'Most small business owners launch a website and forget about it. That is a costly mistake. Here is what website maintenance actually covers and why skipping it can hurt your business.',
-    category: 'Maintenance',
-    date: 'June 10, 2025',
-    readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&auto=format&fit=crop&q=80',
-    imageAlt: 'Developer maintaining website code on laptop — website maintenance guide',
-    featured: false,
-    accent: '#F59E0B',
-    accentLight: 'rgba(245,158,11,0.10)',
-    accentBorder: 'rgba(245,158,11,0.22)',
-  },
-  {
     slug: 'mobile-website-design-guide',
     title: 'Mobile Website Design: Why It Matters for Small Businesses',
     excerpt:
