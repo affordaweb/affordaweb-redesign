@@ -231,14 +231,14 @@ export default function HomePage() {
 
               <h1
                 id="hero-heading"
-                className="font-bold text-white leading-[1.12] mb-6"
-                style={{ letterSpacing: '-0.025em', fontSize: '45px' }}
+                className="font-bold text-white text-[2.55rem] sm:text-5xl lg:text-[3.35rem] leading-[1.08] mb-6 text-balance"
+                style={{ letterSpacing: '-0.035em' }}
               >
                 Affordable Website Design for Small Businesses.{' '}
                 <span className="gradient-text">Starting at ${starterPlan.monthlyPrice}/mo</span>
               </h1>
 
-              <p               className="text-xl leading-relaxed mb-9 max-w-lg" style={{ color: 'rgba(255,255,255,0.58)' }}>
+              <p className="text-lg sm:text-xl leading-relaxed mb-9 max-w-lg" style={{ color: 'rgba(255,255,255,0.64)' }}>
                 Affordable web design for small businesses with a clear choice of Starter, Business, or Virtual Employee support. See each plan for its included website updates and scope.
               </p>
 

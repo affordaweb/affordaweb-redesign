@@ -129,11 +129,17 @@ export const services: ServiceData[] = [
     headline: 'We Handle Everything. You Run Your Business.',
     metaTitle: 'Affordable Website Maintenance for Small Businesses',
     metaDescription:
-      'Affordable website maintenance for small businesses. Regular security updates, backups, and performance monitoring are available within the monthly plan scope, starting at $39/mo.',
+      'Affordable website maintenance for small businesses from $39/month. Get security updates, backups, performance monitoring, hosting, and SSL in one plan.',
     description: [
-      'Plugins go out of date. Security vulnerabilities do not announce themselves. Most business owners learn something broke because a customer mentioned it.',
+      'Affordable web maintenance should prevent problems, not just repair them after customers notice. Plugins go out of date, links break, and security vulnerabilities do not announce themselves.',
       'Every AffordaWeb plan includes ongoing website support. Business and Virtual Employee clients receive unlimited routine content updates; see pricing for the definition and scope.',
       'You run your business. We keep the site running.',
+    ],
+    paragraphs: [
+      <>Affordable web maintenance should prevent problems, not just repair them after customers notice. Plugins go out of date, links break, and security vulnerabilities do not announce themselves.</>,
+      <>Every AffordaWeb plan includes ongoing website support alongside <Link href="/services/hosting" className="font-medium text-primary-500 hover:underline">managed hosting and SSL</Link>. We handle regular updates, backups, uptime checks, and performance monitoring within your plan scope.</>,
+      <>Business and Virtual Employee clients receive unlimited routine content updates. Review the current <Link href="/pricing" className="font-medium text-primary-500 hover:underline">website maintenance pricing and plan inclusions</Link> to choose the right level of support.</>,
+      <>You run your business. We keep the site running. For a practical overview, read our <Link href="/blog/website-maintenance-why-it-matters" className="font-medium text-primary-500 hover:underline">small business website maintenance guide</Link>.</>,
     ],
     features: [
       'Regular plugin and security updates',

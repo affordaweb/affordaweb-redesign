@@ -49,6 +49,9 @@ export default function Header() {
   const isToolsActive =
     pathname.startsWith('/recommendation') || pathname.startsWith('/seo-audit')
 
+  const isActivePath = (href: string) =>
+    href === '/' ? pathname === href : pathname === href || pathname.startsWith(`${href}/`)
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -74,14 +77,14 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl transition-all duration-300 ${
           scrolled
-            ? 'shadow-[0_1px_20px_rgba(0,0,0,0.07)] border-b border-gray-100'
-            : 'border-b border-gray-100'
+            ? 'shadow-[0_10px_35px_rgba(15,15,26,0.08)] border-b border-white/70'
+            : 'border-b border-gray-200/70'
         }`}
       >
         <div className="container-tight">
-          <div className="flex items-center justify-between h-[76px]">
+          <div className={`flex items-center justify-between transition-[height] duration-300 ${scrolled ? 'h-[68px]' : 'h-[78px]'}`}>
 
             {/* Logo */}
             <Link href="/" aria-label="AffordaWeb Solutions — Home" className="flex items-center shrink-0">
@@ -93,27 +96,27 @@ export default function Header() {
                 priority
                 quality={60}
                 sizes="200px"
-                className="h-11 w-auto object-contain"
+                className={`w-auto object-contain transition-[height] duration-300 ${scrolled ? 'h-9' : 'h-10'}`}
               />
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="Main navigation">
+            <nav className="hidden xl:flex items-center gap-0.5 rounded-full border border-gray-200/80 bg-gray-50/80 p-1" role="navigation" aria-label="Main navigation">
               {navLinks.map(({ href, label }) => {
-                const isActive = pathname === href
+                const isActive = isActivePath(href)
                 return (
                   <Link
                     key={href}
                     href={href}
-                    className={`relative px-4 py-2.5 text-base font-medium rounded-lg transition-all duration-200 ${
+                    className={`relative px-3.5 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
                       isActive
-                        ? 'text-primary-600 font-semibold'
-                        : 'text-gray-600 hover:text-gray-900'
+                        ? 'bg-white text-primary-700 font-semibold shadow-sm'
+                        : 'text-gray-600 hover:bg-white/80 hover:text-gray-900'
                     }`}
                   >
                     {label}
                     {isActive && (
-                      <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary-500 rounded-full" />
+                      <span className="absolute -bottom-[5px] left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-primary-500" />
                     )}
                   </Link>
                 )
@@ -123,17 +126,17 @@ export default function Header() {
               <div ref={toolsRef} className="relative">
                 <button
                   onClick={() => setToolsOpen((o) => !o)}
-                  className={`relative flex items-center gap-1.5 px-4 py-2.5 text-base font-medium rounded-lg transition-all duration-200 ${
+                  className={`relative flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
                     isToolsActive || toolsOpen
-                      ? 'text-primary-600 font-semibold'
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'bg-white text-primary-700 font-semibold shadow-sm'
+                      : 'text-gray-600 hover:bg-white/80 hover:text-gray-900'
                   }`}
                   aria-expanded={toolsOpen}
                   aria-haspopup="true"
                 >
                   <span className="flex items-center gap-1.5">
                     Free Tools
-                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold tracking-wide">
+                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[9px] font-bold tracking-wide">
                       FREE
                     </span>
                   </span>
@@ -144,13 +147,13 @@ export default function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
                   {isToolsActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary-500 rounded-full" />
+                    <span className="absolute -bottom-[5px] left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-primary-500" />
                   )}
                 </button>
 
                 {/* Dropdown panel */}
                 {toolsOpen && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white rounded-2xl shadow-card-hover border border-gray-100 overflow-hidden z-[60]">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-white/95 backdrop-blur-xl rounded-2xl shadow-card-hover border border-gray-200/80 overflow-hidden z-[60]">
                     <div className="p-2">
                       {freeTools.map(({ href, label, desc, icon, bg }) => (
                         <Link
@@ -182,8 +185,8 @@ export default function Header() {
             </nav>
 
             {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-3">
-              <Link href="/contact" className="btn-cyan text-base px-6 py-3">
+            <div className="hidden xl:flex items-center gap-3">
+              <Link href="/contact" className="btn-cyan px-5 py-2.5">
                 Get a Quote
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -193,8 +196,8 @@ export default function Header() {
 
             {/* Mobile toggle */}
             <button
-              className="lg:hidden w-11 h-11 flex flex-col items-center justify-center
-                         gap-[5px] rounded-xl hover:bg-gray-50 transition-colors"
+              className="xl:hidden w-11 h-11 flex flex-col items-center justify-center
+                         gap-[5px] rounded-xl border border-gray-200 bg-white/80 hover:bg-gray-50 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
@@ -214,12 +217,12 @@ export default function Header() {
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
-        className={`fixed inset-0 z-40 lg:hidden overflow-hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-40 xl:hidden overflow-hidden transition-all duration-300 ${
           menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
-        <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
-        <div className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white flex flex-col transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="absolute inset-0 bg-gray-950/45 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
+        <div className={`absolute top-0 right-0 h-full w-[22rem] max-w-[90vw] bg-white flex flex-col shadow-[-24px_0_70px_rgba(15,15,26,0.18)] transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex items-center justify-between p-5 border-b border-gray-100">
             <Image src="/logo.webp" alt="AffordaWeb Solutions" width={175} height={50} sizes="175px" quality={60} className="h-10 w-auto object-contain" />
             <button
@@ -246,7 +249,7 @@ export default function Header() {
                     href={href}
                     onClick={() => setMenuOpen(false)}
                     className={`flex flex-col items-start gap-1 px-3 py-3 rounded-xl text-sm transition-all min-h-[44px] ${
-                      pathname === href
+                      isActivePath(href)
                         ? 'bg-primary-50 text-primary-600'
                         : 'bg-gray-50 hover:bg-primary-50 text-gray-700'
                     }`}
@@ -270,7 +273,7 @@ export default function Header() {
                     href={href}
                     onClick={() => setMenuOpen(false)}
                     className={`flex items-center px-4 py-3.5 rounded-xl text-sm font-medium transition-all min-h-[44px] ${
-                      pathname === href
+                      isActivePath(href)
                         ? 'text-primary-600 bg-primary-50 font-semibold'
                         : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                     }`}

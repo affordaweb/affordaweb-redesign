@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="max-w-3xl mx-auto text-center">
             <p className="section-label-white mb-5">Get Started Today</p>
             <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 whitespace-nowrap"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance"
               style={{ letterSpacing: '-0.03em', lineHeight: 1.1 }}
             >
               <span className="text-white block">Your Professional Website,</span>
@@ -70,7 +70,7 @@ export default function Footer() {
               ].map(({ icon, label, color }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-3 rounded-2xl px-4 py-3.5"
+                  className="flex items-center gap-3 rounded-2xl px-4 py-3.5 transition-colors duration-200 hover:bg-white/[0.07]"
                   style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
                 >
                   <span className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${color}22` }}>
@@ -95,7 +95,7 @@ export default function Footer() {
       {/* Main footer — dark background */}
       <div style={{ background: '#0F0F1A' }} className="border-t border-white/5">
         <div className="container-tight py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
 
             {/* Brand */}
             <div className="lg:col-span-2">
@@ -182,11 +182,11 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div style={{ background: '#07070F' }} className="border-t border-white/5">
-        <div className="container-tight py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="container-tight py-5 flex flex-col lg:flex-row items-center justify-between gap-4">
           <p className="text-white/25 text-xs">
             © {new Date().getFullYear()} AffordaWeb Solutions. All rights reserved.
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5">
             {/* Payment method icons */}
             <div className="flex items-center gap-3 mr-2" aria-label="Accepted payment methods">
               <svg className="w-8 h-auto" viewBox="0 0 36 24" fill="none" aria-label="Visa">

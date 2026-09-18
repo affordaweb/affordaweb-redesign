@@ -18,7 +18,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   return (
     <>
       <Header />
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow overflow-x-clip">{children}</main>
       <Footer />
       <WhatsAppContact />
     </>

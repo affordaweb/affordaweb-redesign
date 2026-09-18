@@ -14,13 +14,13 @@ import {
 import SeoForm from "@/components/SeoForm"
 
 export const metadata: Metadata = {
-  title: "Free SEO Audit Tool | Check Your Website SEO Score",
+  title: "Free SEO Report & Website Audit Tool | Instant SEO Score",
   description:
-    "Run a free instant SEO audit of your website. Get your SEO score, top issues, and quick wins — 20+ checks across meta tags, speed, SSL, Open Graph, headings, and more. No signup required.",
+    "Get a free SEO report preview for your website in 30 seconds. Check your SEO score, top issues, and quick wins across 20+ technical and on-page factors.",
   alternates: { canonical: "https://www.affordawebsolutions.com/seo-audit" },
   openGraph: {
     type: 'website',
-    title: "Free SEO Audit Tool | Check Your Website SEO Score in 30 Seconds",
+    title: "Free SEO Report & Website Audit Tool",
     description:
       "Instant free SEO analysis — 20+ checks across 5 categories. See your score, top issues, and quick wins. No signup required.",
     url: "https://www.affordawebsolutions.com/seo-audit",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free SEO Audit Tool | Check Your Website SEO Score in 30 Seconds",
+    title: "Free SEO Report & Website Audit Tool",
     description: "Instant SEO analysis — 20+ checks. Free, no signup required. Get your score in 30 seconds.",
     images: ["https://www.affordawebsolutions.com/og-image.png"],
   },
@@ -54,20 +54,20 @@ function Hero() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-semibold text-primary-200 mb-8">
           <Search className="w-4 h-4 text-primary-300" />
-          Free SEO Analysis Tool
+          Free Online SEO Report
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight mb-6">
-          Get a Free{" "}
+          Get Your Free{" "}
           <span className="bg-gradient-to-r from-primary-300 to-violet-300 bg-clip-text text-transparent">
-            SEO Analysis
+            SEO Audit Report
           </span>
-          <br className="hidden sm:block" /> of Your Website
+          <br className="hidden sm:block" /> in 30 Seconds
         </h1>
 
         <p className="text-lg sm:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
-          We check 20+ SEO factors — meta tags, content structure, technical health,
-          Open Graph, and more. Get your score in under 30 seconds.
+          Enter your website to check 20+ technical and on-page SEO factors. Your free
+          report preview includes an SEO score, priority issues, and practical quick wins.
         </p>
 
         {/* Trust badges */}
@@ -154,6 +154,53 @@ function HowItWorks() {
   )
 }
 
+const reportSections = [
+  {
+    title: "SEO Score",
+    desc: "See an overall score out of 100 based on the technical and on-page checks we can verify from your live website.",
+  },
+  {
+    title: "Priority Issues",
+    desc: "Find the problems most likely to affect crawling, search snippets, usability, and your ability to rank in organic search.",
+  },
+  {
+    title: "Actionable Recommendations",
+    desc: "Turn each finding into a clear next step instead of sorting through raw data or unexplained warnings.",
+  },
+]
+
+function ReportDetails() {
+  return (
+    <section className="py-20 bg-[#FAFBFF]" aria-labelledby="report-details-heading">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <p className="text-sm font-bold tracking-widest uppercase text-primary-600 mb-3">Your Results</p>
+          <h2 id="report-details-heading" className="text-3xl sm:text-4xl font-black text-gray-900">
+            What Your Free SEO Report Includes
+          </h2>
+          <p className="text-gray-500 mt-4 leading-relaxed">
+            This online SEO audit analyzes the public version of one website and organizes the findings by priority. The free preview gives you the essentials immediately; the full report adds every check, detailed explanations, and a step-by-step action plan.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-5">
+          {reportSections.map(({ title, desc }, index) => (
+            <div key={title} className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary-50 text-primary-600 font-black text-sm mb-4">
+                {index + 1}
+              </span>
+              <h3 className="font-black text-gray-900 text-lg mb-2">{title}</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+        <p className="max-w-3xl mx-auto text-center text-sm text-gray-500 mt-8 leading-relaxed">
+          Use the report as a baseline before a redesign, after publishing a new site, or when organic traffic stalls. Because the checker reads your live page, you can rerun the audit after making changes to confirm that detectable issues were resolved.
+        </p>
+      </div>
+    </section>
+  )
+}
+
 // ── What We Check ─────────────────────────────────────────────────────────────
 
 const checks = [
@@ -214,6 +261,10 @@ const faqs = [
     a: "The free preview shows your overall SEO score (out of 100), your top 5 issues, and 5 quick wins you can implement immediately. The full report unlocks all 20+ checks across 5 categories with detailed explanations.",
   },
   {
+    q: "What is an SEO audit report?",
+    a: "An SEO audit report evaluates technical and on-page factors that can affect how search engines crawl, understand, and present a website. It turns those checks into a score, a list of issues, and recommended next steps.",
+  },
+  {
     q: "How does the full report get delivered?",
     a: "Once your payment is confirmed by our team, we send the full SEO report directly to the email address you provided. You'll also be able to view it online via a secure link.",
   },
@@ -242,6 +293,7 @@ const seoAuditSchema = {
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'All',
       description: 'A free website SEO audit tool that checks more than 20 technical and on-page SEO factors.',
+      featureList: ['SEO score', 'Priority SEO issues', 'Technical SEO checks', 'On-page SEO checks', 'Actionable recommendations'],
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://www.affordawebsolutions.com' },
     },
@@ -378,6 +430,7 @@ export default function SeoAuditPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seoAuditSchema) }} />
       <Hero />
       <HowItWorks />
+      <ReportDetails />
       <WhatWeCheck />
       <FAQ />
       <ConversionStrip />
