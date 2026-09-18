@@ -335,7 +335,7 @@ export default function PitchCreditSuite() {
   ]
 
   const portfolio = [
-    { bg: 'port-thumb-bg-1', domain: 'WebVAExperts.com', tagline: 'Fix My Website — Fast. Affordable. Done Right.', score: 'PageSpeed 94', cat: 'Web Design + Development', title: 'Web VA Experts', desc: 'A website maintenance and fix service needed a high-trust conversion platform. We built a dark-themed site with tiered pricing, trust signals, and a frictionless sign-up flow.', tags: ['Next.js', 'Tailwind CSS', 'Dark Theme', 'Mobile-First'], url: 'https://webvaexperts.com' },
+    { bg: 'port-thumb-bg-1', domain: 'AscendDevelopment.org', tagline: 'ESG & SDG services for sustainable growth.', score: 'Next.js Build', cat: 'Professional Services Platform', title: 'Ascend Development Solutions', desc: 'A Philippine development firm needed one platform for consulting, customized trainings, organizational reporting, advocacy, resources, and community participation.', tags: ['Next.js', 'Tailwind CSS', 'ESG & SDG', 'Mobile-First'], url: 'https://ascenddevelopment.org' },
     { bg: 'port-thumb-bg-2', domain: 'AffordaWebSolutions.com', tagline: 'Affordable Website Design for Small Businesses', score: 'PageSpeed 96', cat: 'Brand + Full Website', title: 'AffordaWeb Solutions', desc: 'Our own flagship site — SEO audit tool, recommendation engine, full service pages, and pricing. Built in Next.js with a perfect Lighthouse score.', tags: ['Next.js', 'Tailwind CSS', 'SEO Tools', 'Full Funnel'], url: 'https://affordawebsolutions.com' },
     { bg: 'port-thumb-bg-3', domain: 'EmpowerQueerHub.com', tagline: 'LGBTQIA+ Support, Events and Inclusive Resources', score: 'PageSpeed 91', cat: 'Community Platform', title: 'Empower Queer Hub', desc: 'A community resource platform — podcast hub, event listings, resource directory, and advocacy content. Built to scale under real traffic.', tags: ['Next.js', 'Multi-section', 'Community', 'Accessible'], url: 'https://empowerqueerhub.com' },
   ]
@@ -595,7 +595,7 @@ export default function PitchCreditSuite() {
           </a>
           <div className="final-links">
             <a href="https://affordawebsolutions.com" target="_blank" rel="noopener noreferrer">affordawebsolutions.com</a>
-            <a href="https://webvaexperts.com" target="_blank" rel="noopener noreferrer">webvaexperts.com</a>
+            <a href="https://ascenddevelopment.org" target="_blank" rel="noopener noreferrer">ascenddevelopment.org</a>
             <a href="https://empowerqueerhub.com" target="_blank" rel="noopener noreferrer">empowerqueerhub.com</a>
           </div>
         </div>

@@ -113,7 +113,7 @@ const whoWeHelp = [
 ]
 
 const portfolioItems = [
-  { category: 'Website Design',   title: 'Web VA Experts Hub',       desc: 'A virtual assistant network needed a clean, modern online presence that matched its professionalism. We delivered focused service pages with a clear call to action.',    PortfolioIcon: IconDesign,   color: '#5636D1', bg: 'linear-gradient(135deg, #EDE9FD 0%, #DDD6FE 100%)' },
+  { category: 'Professional Services', title: 'Ascend Development Solutions', desc: 'A Philippine development firm needed a clear digital platform for ESG- and SDG-aligned consulting, customized training, organizational reporting, and community action.', PortfolioIcon: IconDesign, color: '#5636D1', bg: 'linear-gradient(135deg, #EDE9FD 0%, #DDD6FE 100%)' },
   { category: 'Web Development',  title: 'Empower Queer Hub',        desc: 'A community resource site serving multiple roles at once. We built a flexible, mobile-first site with a structure that holds up under real traffic and real use.',         PortfolioIcon: IconRedesign, color: '#E2498A', bg: 'linear-gradient(135deg, #FDE8F2 0%, #FBCFE8 100%)' },
   { category: 'Web Design',       title: 'Argentum Private Wealth',  desc: 'A financial advisory firm required a site built to the standard of its clients. We delivered a high-value, tailor-made presence that conveys trust on first load.',        PortfolioIcon: IconSeo,      color: '#0891B2', bg: 'linear-gradient(135deg, #E0F7FA 0%, #BAE6FD 100%)' },
 ]
@@ -1073,7 +1073,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
             {([
-              { name: 'WebVAExperts', color: '#5636D1' },
+              { name: 'Ascend Development Solutions', color: '#5636D1' },
               { name: 'Empower Queer Hub', color: '#E2498A' },
               { name: 'Argentum Wealth', color: '#06B6D4' },
             ] as { name: string; color: string }[]).map(({ name, color }) => (
