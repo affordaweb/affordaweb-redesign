@@ -46,12 +46,12 @@ const nextConfig = {
       { source: '/blog/website-maintenance-why-it-matters/', destination: '/blog/website-maintenance-requirements', permanent: true },
       { source: '/blog/website-maintenance-why-it-matters', destination: '/blog/website-maintenance-requirements', permanent: true },
       // Old WordPress sub-service pages → /services
-      { source: '/services/website-maintenance/', destination: '/services', permanent: true },
-      { source: '/services/website-maintenance', destination: '/services', permanent: true },
-      { source: '/services/seo-optimization/', destination: '/services', permanent: true },
-      { source: '/services/seo-optimization', destination: '/services', permanent: true },
-      { source: '/services/website-redesign-services/', destination: '/services', permanent: true },
-      { source: '/services/website-redesign-services', destination: '/services', permanent: true },
+      { source: '/services/website-maintenance/', destination: '/services/maintenance', permanent: true },
+      { source: '/services/website-maintenance', destination: '/services/maintenance', permanent: true },
+      { source: '/services/seo-optimization/', destination: '/services/seo', permanent: true },
+      { source: '/services/seo-optimization', destination: '/services/seo', permanent: true },
+      { source: '/services/website-redesign-services/', destination: '/services/redesign', permanent: true },
+      { source: '/services/website-redesign-services', destination: '/services/redesign', permanent: true },
       // Old WordPress location/landing pages → /services
       { source: '/service_area/website-design-with-hosting-and-seo-in-new-jersey/', destination: '/new-jersey', permanent: true },
       { source: '/service_area/website-design-with-hosting-and-seo-in-new-jersey', destination: '/new-jersey', permanent: true },

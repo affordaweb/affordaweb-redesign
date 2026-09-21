@@ -818,6 +818,12 @@ For small businesses, a neglected website is more than just an aesthetic problem
 
 Here's a complete breakdown of what website maintenance actually involves and why each piece matters.
 
+## What Is Website Maintenance?
+
+Website maintenance is the recurring work that keeps a website secure, accurate, fast, and functional after launch. It covers technical tasks such as software updates, backups, security and uptime monitoring, as well as practical work such as fixing broken links and updating content.
+
+The exact schedule depends on the site. A busy online store may need daily attention, while a small informational website may need a monthly maintenance cycle plus continuous uptime and security monitoring.
+
 ## Core Website Maintenance Requirements
 
 ### 1. Software and Plugin Updates
@@ -866,6 +872,30 @@ Outdated contact information, discontinued services, expired promotions, old sta
 
 Your SSL certificate is what creates the padlock icon in the browser and the "https" in your URL. An expired SSL certificate triggers browser warnings that will drive visitors away instantly. It needs to be renewed before expiration — which requires monitoring.
 
+## Website Maintenance Checklist
+
+- **Daily** — monitor uptime, security alerts, and critical forms
+- **Weekly** — verify backups and review suspicious activity
+- **Monthly** — test updates, forms, key pages, and broken links
+- **Quarterly** — review page speed, analytics, search performance, and calls to action
+- **Yearly** — renew the domain and review hosting, SSL, legal pages, and the full site structure
+
+## Website Maintenance vs. Web Hosting
+
+Web hosting stores and delivers your website. Website maintenance keeps its software, content, security, and performance in good condition. They are different services, although one provider can manage both. Our [web design and web hosting guide](/blog/web-design-vs-web-hosting) explains how the pieces fit together.
+
+## How Much Does Website Maintenance Cost?
+
+Cost depends on the website's size, platform, update frequency, and required response time. Common options include hourly support, a monthly maintenance plan, or maintenance bundled with design and hosting. A predictable plan is usually easier to budget than emergency repairs after downtime or a security breach.
+
+AffordaWeb plans start at $39/month with hosting, SSL, and ongoing support included. Compare the current [website maintenance pricing and plan inclusions](/pricing) or review our [affordable website maintenance service](/services/maintenance).
+
+## Can You Maintain a Website Yourself?
+
+Yes, if someone on your team can consistently test updates, monitor security, manage off-site backups, and troubleshoot failures. Managed maintenance is a better fit when downtime costs leads, the site uses several integrations, or nobody internally owns the schedule.
+
+When comparing providers, ask what is included, how often backups run, where they are stored, how quickly support responds, and whether content changes are covered.
+
 ## What Happens When You Skip Maintenance
 
 The consequences of neglect compound over time:
@@ -893,7 +923,7 @@ For small businesses, this means one monthly bill covers everything your site ne
     `.trim(),
   },
   'web-design-vs-web-hosting': {
-    title: "Web Design and Web Hosting: What's the Difference?",
+    title: "Web Design vs. Web Hosting: What's the Difference?",
     excerpt:
       "Confused about the difference between web design and web hosting? Here's a plain-English breakdown of what each means and why you need both for a successful small business website.",
     category: 'Web Design',
@@ -906,11 +936,11 @@ For small businesses, this means one monthly bill covers everything your site ne
 
 When small business owners start exploring what it takes to get a website online, two terms come up constantly: web design and web hosting. They're often lumped together or confused with each other — but they refer to completely different things, and understanding the distinction will save you time, money, and frustration.
 
-Here's the plain-English breakdown.
+Here's the short answer: **web design creates the website visitors use, while web hosting stores the site and delivers it online.** You need both to run a website, and they can come from the same provider or from separate companies.
 
 ## What Is Web Design?
 
-Web design is the process of creating how your website looks, feels, and functions.
+[Web design](/services/design) is the process of creating how your website looks, feels, and functions.
 
 It covers:
 
@@ -924,7 +954,7 @@ A well-designed website builds instant credibility, guides visitors toward takin
 
 ## What Is Web Hosting?
 
-Web hosting is where your website lives. When someone types your web address into a browser, hosting is what delivers your website files to their screen.
+[Web hosting](/services/hosting) is where your website lives. When someone types your web address into a browser, hosting is what delivers your website files to their screen.
 
 Think of it this way: if your website is a store, web design is the interior — the shelves, the signage, the layout. Web hosting is the physical building the store is in.
 

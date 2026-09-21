@@ -13,11 +13,11 @@ const freeTools = [
 ]
 
 const services = [
-  { label: 'Website Design Services',   href: '/services#design' },
-  { label: 'Website Redesign Services', href: '/services#redesign' },
-  { label: 'Website Maintenance',       href: '/services#maintenance' },
-  { label: 'SEO Optimization',         href: '/services#seo' },
-  { label: 'Shared Hosting Services',  href: '/services#hosting' },
+  { label: 'Website Design Services',   href: '/services/design' },
+  { label: 'Website Redesign Services', href: '/services/redesign' },
+  { label: 'Website Maintenance',       href: '/services/maintenance' },
+  { label: 'SEO Optimization',          href: '/services/seo' },
+  { label: 'Shared Hosting Services',   href: '/services/hosting' },
 ]
 
 
@@ -171,7 +171,7 @@ export default function Footer() {
               </ul>
               <div className="mt-5 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                 <p className="text-xs text-white/40 leading-relaxed">
-                  100% free — no credit card, no signup required.
+                  Free previews with no account or credit card required.
                 </p>
               </div>
             </div>

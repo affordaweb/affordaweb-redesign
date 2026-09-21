@@ -30,13 +30,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/services/seo`,
-      lastModified: new Date('2026-09-09'),
+      lastModified: new Date('2026-09-21'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/services/maintenance`,
-      lastModified: new Date('2026-09-09'),
+      lastModified: new Date('2026-09-21'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
@@ -102,13 +102,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/seo-audit`,
-      lastModified: new Date('2026-07-21'),
+      lastModified: new Date('2026-09-21'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/new-jersey`,
-       lastModified: new Date('2026-09-09'),
+      lastModified: new Date('2026-09-21'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
@@ -205,13 +205,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/website-maintenance-requirements`,
-      lastModified: new Date('2026-03-15'),
+      lastModified: new Date('2026-09-21'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/blog/web-design-vs-web-hosting`,
-      lastModified: new Date('2026-03-20'),
+      lastModified: new Date('2026-09-21'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },

@@ -206,7 +206,7 @@ const serviceSchema = {
       name: s.title,
       description: s.description.split('\n')[0],
       provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://www.affordawebsolutions.com' },
-      url: `https://www.affordawebsolutions.com/services#${s.id}`,
+      url: `https://www.affordawebsolutions.com/services/${s.id}`,
     },
   })),
 }

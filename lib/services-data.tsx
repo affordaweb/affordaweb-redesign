@@ -139,7 +139,7 @@ export const services: ServiceData[] = [
       <>Affordable web maintenance should prevent problems, not just repair them after customers notice. Plugins go out of date, links break, and security vulnerabilities do not announce themselves.</>,
       <>Every AffordaWeb plan includes ongoing website support alongside <Link href="/services/hosting" className="font-medium text-primary-500 hover:underline">managed hosting and SSL</Link>. We handle regular updates, backups, uptime checks, and performance monitoring within your plan scope.</>,
       <>Business and Virtual Employee clients receive unlimited routine content updates. Review the current <Link href="/pricing" className="font-medium text-primary-500 hover:underline">website maintenance pricing and plan inclusions</Link> to choose the right level of support.</>,
-      <>You run your business. We keep the site running. For a practical overview, read our <Link href="/blog/website-maintenance-why-it-matters" className="font-medium text-primary-500 hover:underline">small business website maintenance guide</Link>.</>,
+      <>You run your business. We keep the site running. For a practical overview, read our <Link href="/blog/website-maintenance-requirements" className="font-medium text-primary-500 hover:underline">small business website maintenance guide</Link>.</>,
     ],
     features: [
       'Regular plugin and security updates',

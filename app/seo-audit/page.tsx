@@ -14,22 +14,22 @@ import {
 import SeoForm from "@/components/SeoForm"
 
 export const metadata: Metadata = {
-  title: "Free SEO Report & Website Audit Tool | Instant SEO Score",
+  title: { absolute: "Free SEO Audit & Report - Instant Website Check" },
   description:
-    "Get a free SEO report preview for your website in 30 seconds. Check your SEO score, top issues, and quick wins across 20+ technical and on-page factors.",
+    "Run a free website SEO audit in 30 seconds. Get an instant SEO score, priority issues, and quick wins. The detailed full report is available separately.",
   alternates: { canonical: "https://www.affordawebsolutions.com/seo-audit" },
   openGraph: {
     type: 'website',
-    title: "Free SEO Report & Website Audit Tool",
+    title: "Free SEO Audit & Report - Instant Website Check",
     description:
-      "Instant free SEO analysis — 20+ checks across 5 categories. See your score, top issues, and quick wins. No signup required.",
+      "Get a free SEO score, priority issues, and quick wins from 20+ checks. A detailed full report is available separately.",
     url: "https://www.affordawebsolutions.com/seo-audit",
     images: [{ url: "https://www.affordawebsolutions.com/og-image.png", width: 1200, height: 630, alt: "Free SEO Audit Tool - Check Your Website Score" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free SEO Report & Website Audit Tool",
-    description: "Instant SEO analysis — 20+ checks. Free, no signup required. Get your score in 30 seconds.",
+    title: "Free SEO Audit & Report - Instant Website Check",
+    description: "Get a free SEO score, priority issues, and quick wins from 20+ checks in 30 seconds.",
     images: ["https://www.affordawebsolutions.com/og-image.png"],
   },
 }
@@ -292,7 +292,7 @@ const seoAuditSchema = {
       url: 'https://www.affordawebsolutions.com/seo-audit',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'All',
-      description: 'A free website SEO audit tool that checks more than 20 technical and on-page SEO factors.',
+      description: 'A website SEO audit tool with a free score, priority issues, and quick wins from more than 20 technical and on-page checks. A detailed full report is available separately.',
       featureList: ['SEO score', 'Priority SEO issues', 'Technical SEO checks', 'On-page SEO checks', 'Actionable recommendations'],
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://www.affordawebsolutions.com' },
