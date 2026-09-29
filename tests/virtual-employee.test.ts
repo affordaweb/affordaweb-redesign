@@ -22,6 +22,31 @@ test('unsupported and contractual questions are declined safely', () => {
   assert.equal(answerQuestion('What is your cancellation policy?').topic, 'terms')
 })
 
+test('answers common website questions from approved site content', () => {
+  const timeline = answerQuestion('How long does a website take to launch?')
+  assert.equal(timeline.topic, 'timeline')
+  assert.match(timeline.text, /10 to 15 business days/)
+
+  const hosting = answerQuestion('Do I need separate hosting and SSL?')
+  assert.equal(hosting.topic, 'hosting')
+  assert.match(hosting.text, /one 1 GB professional email account/)
+
+  const updates = answerQuestion('What counts as a routine content update?')
+  assert.equal(updates.topic, 'maintenance')
+  assert.match(updates.text, /do not include new page design/)
+})
+
+test('provides specific plan details and routes custom work to the team', () => {
+  const starter = answerQuestion('What is included in the Starter plan?')
+  assert.equal(starter.kind, 'answer')
+  assert.match(starter.text, /Up to 5 website pages/)
+  assert.equal(starter.href, '/pricing')
+
+  const ecommerce = answerQuestion('Can you build an online store?')
+  assert.equal(ecommerce.topic, 'ecommerce')
+  assert.equal(ecommerce.href, '/contact')
+})
+
 test('admin sessions require a configured secret and expire', () => {
   const previous = process.env.VIRTUAL_EMPLOYEE_ADMIN_TOKEN
   process.env.VIRTUAL_EMPLOYEE_ADMIN_TOKEN = 'test-secret-token'

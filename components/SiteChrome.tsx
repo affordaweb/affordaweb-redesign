@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WhatsAppContact from '@/components/WhatsAppContact'
+import VirtualEmployeeChat from '@/components/VirtualEmployeeChat'
 
 const EXCLUDED_PATHS = ['/pitch-creditsuite', '/web-stories']
 
@@ -20,7 +20,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
       <Header />
       <main className="flex-grow overflow-x-clip">{children}</main>
       <Footer />
-      <WhatsAppContact />
+      <VirtualEmployeeChat />
     </>
   )
 }
