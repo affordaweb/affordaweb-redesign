@@ -17,9 +17,11 @@ test('guidance only selects catalog plans from explicit options', () => {
   assert.equal(recommendPlan({ pages: 'more-than-10', updates: 'one', seo: false, virtualEmployee: false }).plan, null)
 })
 
-test('unsupported and contractual questions are declined safely', () => {
+test('unsupported guarantees are declined and published policies are quoted safely', () => {
   assert.equal(answerQuestion('Can you guarantee rankings?').kind, 'unsupported')
   assert.equal(answerQuestion('What is your cancellation policy?').topic, 'terms')
+  assert.match(answerQuestion('What is your cancellation policy?').text, /30 days written notice/)
+  assert.equal(answerQuestion('Who owns my website content?').href, '/terms')
 })
 
 test('answers common website questions from approved site content', () => {
@@ -45,6 +47,15 @@ test('provides specific plan details and routes custom work to the team', () => 
   const ecommerce = answerQuestion('Can you build an online store?')
   assert.equal(ecommerce.topic, 'ecommerce')
   assert.equal(ecommerce.href, '/contact')
+})
+
+test('covers published company, scope, tools, and regional information', () => {
+  assert.equal(answerQuestion('Who is AffordaWeb?').topic, 'company')
+  assert.equal(answerQuestion('Do you include a contact form?').topic, 'contact-form')
+  assert.equal(answerQuestion('Can you write my content and build an integration?').topic, 'custom-scope')
+  assert.equal(answerQuestion('Do you serve Houston?').href, '/houston')
+  assert.equal(answerQuestion('Tell me about the free website recommendation tool').href, '/recommendation')
+  assert.equal(answerQuestion('Where can I read website guides?').href, '/blog')
 })
 
 test('admin sessions require a configured secret and expire', () => {
