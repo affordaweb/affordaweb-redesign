@@ -8,6 +8,11 @@ test('matches published pricing questions without inventing prices', () => {
   assert.equal(answer.kind, 'answer')
   assert.match(answer.text, /Starter: \$39\/mo/)
   assert.match(answer.text, /Setup fees are currently waived/)
+
+  const plural = answerQuestion('What are your prices?')
+  assert.equal(plural.kind, 'answer')
+  assert.equal(plural.topic, 'pricing')
+  assert.match(plural.text, /Business: \$69\/mo/)
 })
 
 test('guidance only selects catalog plans from explicit options', () => {
