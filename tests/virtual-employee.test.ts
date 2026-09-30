@@ -63,6 +63,14 @@ test('covers published company, scope, tools, and regional information', () => {
   assert.equal(answerQuestion('Where can I read website guides?').href, '/blog')
 })
 
+test('does not infer unpublished facts or ambiguous service areas', () => {
+  assert.equal(answerQuestion('What is your phone number?').kind, 'unsupported')
+  assert.equal(answerQuestion('Who is your CEO?').kind, 'unsupported')
+  assert.equal(answerQuestion('How much is the Premium plan?').kind, 'unsupported')
+  assert.equal(answerQuestion('I need help in Montgomery County, Pennsylvania.').href, '/philadelphia')
+  assert.equal(answerQuestion('I need help in Orange County, Florida.').kind, 'unsupported')
+})
+
 test('admin sessions require a configured secret and expire', () => {
   const previous = process.env.VIRTUAL_EMPLOYEE_ADMIN_TOKEN
   process.env.VIRTUAL_EMPLOYEE_ADMIN_TOKEN = 'test-secret-token'
