@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | AffordaWeb Solutions',
+  title: 'Terms of Service',
   description: 'Terms of service for AffordaWeb Solutions website design and hosting subscriptions. Learn about our billing policy, cancellation terms, intellectual property rights, and client responsibilities.',
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://www.affordawebsolutions.com/terms' },

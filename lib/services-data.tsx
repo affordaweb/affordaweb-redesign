@@ -13,6 +13,7 @@ export interface ServiceData {
   description: string[]
   paragraphs?: React.ReactNode[]
   features: string[]
+  faqs: { question: string; answer: string }[]
   color: {
     accent: string
     light: string
@@ -28,26 +29,31 @@ export const services: ServiceData[] = [
     tag: 'Core Service',
     title: 'Website Design',
     headline: 'Custom Website Design for Small Businesses',
-    metaTitle: 'Affordable Custom Website Design for Small Businesses | $39/mo',
+    metaTitle: 'Custom Website Design for Small Businesses',
     metaDescription:
       `Affordable custom website design for small businesses starting at $${starterPlan.monthlyPrice}/month. Choose the Starter or Business plan for the website support that fits your needs.`,
     description: [
       `Most web agencies charge thousands upfront before they know anything about your business. We built this differently. Starting at $${starterPlan.monthlyPrice} a month, you get a custom site that is responsive on every device.`,
-      'You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert.',
-      'Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.',
+      'You share your goals, preferred style, services, and target customers. We turn that information into a professional website with clear navigation, useful calls to action, and a layout that works across phones, tablets, and desktops.',
+      'This service is designed for freelancers, local service providers, startups, and small businesses that need a credible website without managing separate designers, hosts, and maintenance providers.',
     ],
     paragraphs: [
       <>Most web agencies charge thousands upfront before they know anything about your business. We built this differently. Starting at <Link href="/pricing" className="font-medium text-primary-500 hover:underline">${starterPlan.monthlyPrice} a month</Link>, you get a custom site that is responsive on every device.</>,
-      <>You share your goals, preferred style, and the features you need. We design and launch a professional website with your branding, your colors, and your voice. Clean code, fast loading, built to convert. Every plan includes a free <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">SSL certificate</a>.</>,
-      <>Works for freelancers, local service providers, startups, and small businesses that have outgrown a free template.</>,
+      <>You share your goals, preferred style, services, and target customers. We turn that information into a professional website with clear navigation, useful calls to action, and a layout that works across phones, tablets, and desktops. Every plan includes an <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">SSL certificate</a>.</>,
+      <>This service is designed for freelancers, local service providers, startups, and small businesses that need a credible website without managing separate designers, hosts, and maintenance providers. Compare the exact page limits and support included in each <Link href="/pricing" className="font-medium text-primary-500 hover:underline">website design plan</Link>.</>,
     ],
     features: [
       'Fully responsive design for all devices',
       'Custom layout, color palette, and branding',
-      'SEO-optimized structure and clean code',
-      'Fast loading speed and smooth navigation',
-      'Built to convert visitors into customers',
+      'Search-friendly page structure and metadata',
+      'Performance-focused build and clear navigation',
+      'Conversion-focused calls to action',
       'SSL certificate included on every plan',
+    ],
+    faqs: [
+      { question: 'What is included in a small business website design?', answer: 'Every plan includes a responsive custom website, managed hosting, SSL, maintenance, and business email. Page limits, SEO support, analytics, and routine content updates vary by plan, so review the pricing comparison for the exact scope.' },
+      { question: 'How long does a small business website take to build?', answer: 'Most standard websites launch within 10 to 15 business days after we receive the required business information, content, images, and feedback. More complex features or delayed approvals can extend the timeline.' },
+      { question: 'Will I need to manage the website myself?', answer: 'No. AffordaWeb manages hosting, SSL, and technical maintenance. Content-update allowances depend on your selected plan.' },
     ],
     color: { accent: '#5636D1', light: 'rgba(86,54,209,0.08)', border: 'rgba(86,54,209,0.2)', glow: 'rgba(86,54,209,0.12)' },
     icon: (
@@ -61,25 +67,31 @@ export const services: ServiceData[] = [
     id: 'redesign',
     tag: 'Popular',
     title: 'Website Redesign',
-    headline: 'Transform Your Outdated Website',
-    metaTitle: 'Affordable Website Redesign for Small Businesses | $39/mo',
+    headline: 'Website Redesign for a Faster, Clearer Customer Experience',
+    metaTitle: 'Website Redesign Services for Small Businesses',
     metaDescription:
       `Affordable website redesign for small businesses starting at $${starterPlan.monthlyPrice}/month. Transform your outdated site into a modern, mobile-friendly website.`,
     description: [
-      'An outdated site costs you business. Not dramatically, just quietly. Visitors land, see something that looks like it was built years ago, and leave. A redesign fixes that without losing the content and rankings you have already built.',
-      'We give your site a complete visual and functional makeover. Modern, mobile-friendly layout. Improved performance. Sharper conversion focus. Your existing content stays put.',
-      'Right move if your site works but no longer represents what you actually offer.',
+      'An outdated website can make it harder for visitors to understand your services, trust your business, or contact you. A redesign improves the experience while carefully reviewing the content and URLs that already contribute to your search visibility.',
+      'We modernize the layout, simplify navigation, improve mobile usability, and sharpen calls to action. Before launch, we map important existing pages and identify redirects needed to reduce avoidable SEO disruption.',
+      'This is a practical fit when your website still works but no longer reflects your services, brand, or customers.',
     ],
     paragraphs: [
-      <>An outdated site costs you business. Not dramatically, just quietly. Visitors land, see something that looks like it was built years ago, and leave. A redesign fixes that without losing the content and rankings you have already built.</>,
-      <><a href="https://developers.google.com/search/mobile-sites" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Mobile-first design</a> is now a ranking factor — Google penalizes sites that are not optimized for mobile. We give your site a complete visual and functional makeover. Modern, responsive layout. Improved performance. Sharper conversion focus. Your existing content stays put.</>,
-      <>Right move if your site works but no longer represents what you actually offer.</>,
+      <>An outdated website can make it harder for visitors to understand your services, trust your business, or contact you. A redesign improves the experience while carefully reviewing the content and URLs that already contribute to your search visibility.</>,
+      <>We apply <a href="https://developers.google.com/search/mobile-sites" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">mobile-first design</a>, simplify navigation, improve page presentation, and sharpen calls to action. Before launch, we map important existing pages and identify redirects needed to reduce avoidable SEO disruption.</>,
+      <>This is a practical fit when your website still works but no longer reflects your services, brand, or customers. We will review your current site before recommending what to retain, rewrite, or remove.</>,
     ],
     features: [
       'Complete visual and functional makeover',
-      'Preserves existing content and SEO',
+      'Review of valuable content, URLs, and metadata',
       'Modern, mobile-friendly layouts',
-      'Improved performance and conversion focus',
+      'Redirect planning for changed URLs',
+      'Performance and conversion improvements',
+    ],
+    faqs: [
+      { question: 'Can a website redesign affect SEO rankings?', answer: 'Yes. Rankings can change when URLs, content, internal links, or technical signals change. We review important pages and plan redirects to reduce unnecessary disruption, but no provider can guarantee unchanged rankings.' },
+      { question: 'Can you redesign my website without replacing all the content?', answer: 'Yes. We can retain useful copy and media, then reorganize or refine them where needed. The initial review determines what should stay, what needs updating, and what no longer supports your goals.' },
+      { question: 'How do I know if my website needs a redesign?', answer: 'Common signs include poor mobile usability, confusing navigation, slow pages, outdated branding, inaccurate service information, or visitors reaching the site without taking the next step.' },
     ],
     color: { accent: '#E2498A', light: 'rgba(226,73,138,0.08)', border: 'rgba(226,73,138,0.2)', glow: 'rgba(226,73,138,0.10)' },
     icon: (
@@ -93,26 +105,31 @@ export const services: ServiceData[] = [
     id: 'seo',
     tag: 'Grow Traffic',
     title: 'SEO Optimization',
-    headline: 'Rank Higher. Get Found. Grow Faster.',
-    metaTitle: 'Affordable SEO Services for Small Businesses | Local SEO',
+    headline: 'SEO Services That Build a Stronger Search Foundation',
+    metaTitle: 'Small Business SEO and On-Page Optimization',
     metaDescription:
-      'Affordable SEO services for small businesses. Improve your Google rankings with proven local SEO strategies, keyword research, and clean site structure. See the Business and Virtual Employee plans for current inclusions.',
+      'Small business SEO services covering search intent, on-page content, metadata, internal links, and clean site structure. See current Business and Virtual Employee plan inclusions.',
     description: [
-      'Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper meta setup, and the structural decisions that search engines pay attention to.',
-      'Business and Virtual Employee plans include SEO optimization as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.',
-      'If your site has been live for years but traffic has barely moved, this is the thing you have not tried yet.',
+      'Search visibility starts with making each page useful and understandable. We align page topics with search intent, improve headings and metadata, strengthen internal links, and check that search engines can crawl the right pages.',
+      'Business and Virtual Employee plans include SEO optimization. The work can include keyword research, on-page recommendations, content structure, and analytics setup according to the selected plan and website needs.',
+      'SEO is an ongoing process, not a ranking guarantee. We establish a measurable baseline and prioritize improvements that help qualified visitors discover and use your website.',
     ],
     paragraphs: [
-      <>Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">meta tag</a> setup, and the structural decisions that search engines pay attention to.</>,
-      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Business and Virtual Employee plans</Link> include SEO optimization as a standard feature, not an upsell. Proven keyword strategies, content structure, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Analytics</a> integration, and a long-term organic growth focus.</>,
-      <>If your site has been live for years but traffic has barely moved, start with our <Link href="/seo-audit" className="font-medium text-primary-500 hover:underline">free SEO audit tool</Link> — it shows you exactly where you stand.</>,
+      <>Search visibility starts with making each page useful and understandable. We align page topics with search intent, improve headings and <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">search snippets</a>, strengthen internal links, and check that search engines can crawl the right pages.</>,
+      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Business and Virtual Employee plans</Link> include SEO optimization. The work can include keyword research, on-page recommendations, content structure, and <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Analytics</a> setup according to the selected plan and website needs.</>,
+      <>SEO is an ongoing process, not a ranking guarantee. Start with our <Link href="/seo-audit" className="font-medium text-primary-500 hover:underline">free SEO audit tool</Link> to identify technical and on-page issues, then use Google Search Console data to measure search visibility over time.</>,
     ],
     features: [
-      'Higher rankings on major search engines',
-      'Proven keyword and content strategies',
-      'Long-term organic growth focus',
-      'Clean site structure and meta optimization',
-      'Google Analytics integration',
+      'Search-intent and keyword research',
+      'Page titles, descriptions, and heading review',
+      'On-page content and internal-link improvements',
+      'Crawlability and indexation checks',
+      'Analytics and performance measurement setup',
+    ],
+    faqs: [
+      { question: 'What is included in small business SEO?', answer: 'The exact scope depends on the plan and website. Typical work includes keyword and search-intent research, metadata, headings, page copy, internal links, crawlability checks, and analytics setup.' },
+      { question: 'How long does SEO take to show results?', answer: 'SEO timelines vary by market, competition, website history, and the work completed. Technical fixes may be processed relatively quickly, while meaningful growth in impressions, rankings, and qualified traffic often takes months.' },
+      { question: 'Do you guarantee first-page Google rankings?', answer: 'No. Search engines control rankings, and responsible SEO providers cannot guarantee a specific position. We focus on measurable improvements, clear reporting, and search practices that support sustainable visibility.' },
     ],
     color: { accent: '#06B6D4', light: 'rgba(6,182,212,0.08)', border: 'rgba(6,182,212,0.2)', glow: 'rgba(6,182,212,0.10)' },
     icon: (
@@ -126,7 +143,7 @@ export const services: ServiceData[] = [
     id: 'maintenance',
     tag: 'Stay Current',
     title: 'Website Maintenance',
-    headline: 'We Handle Everything. You Run Your Business.',
+    headline: 'Ongoing Website Maintenance for Small Businesses',
     metaTitle: 'Affordable Website Maintenance for Small Businesses',
     metaDescription:
       'Affordable website maintenance for small businesses from $39/month. Get security updates, backups, performance monitoring, hosting, and SSL in one plan.',
@@ -148,6 +165,11 @@ export const services: ServiceData[] = [
       'Unlimited routine content updates (Business and Virtual Employee)',
       'Response within 24 hours',
     ],
+    faqs: [
+      { question: 'What does website maintenance include?', answer: 'Maintenance includes technical updates, backups, uptime checks, security monitoring, and performance checks. Routine content-update allowances vary by plan.' },
+      { question: 'How often should a business website be maintained?', answer: 'Technical monitoring should be ongoing, while software, content, forms, and links should be reviewed regularly. The right schedule depends on the platform and how frequently the business changes.' },
+      { question: 'Are website content changes included?', answer: 'Yes, within plan scope. Starter includes one routine content update per month, while Business and Virtual Employee include unlimited routine content updates as defined in the current pricing terms.' },
+    ],
     color: { accent: '#F59E0B', light: 'rgba(245,158,11,0.08)', border: 'rgba(245,158,11,0.2)', glow: 'rgba(245,158,11,0.10)' },
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -160,26 +182,31 @@ export const services: ServiceData[] = [
   {
     id: 'hosting',
     tag: 'Included',
-    title: 'Shared Web Hosting',
-    headline: 'Reliable Hosting Included with Every Plan',
-    metaTitle: 'Affordable Web Hosting for Small Businesses with SSL',
+    title: 'Managed Web Hosting',
+    headline: 'Managed Web Hosting Included with Every Website Plan',
+    metaTitle: 'Managed Web Hosting for Small Businesses',
     metaDescription:
       'Affordable managed web hosting for small businesses with SSL certificate included. Bundled into every website design plan from $39/month. One provider, one monthly bill, no extra vendors.',
     description: [
-      'Hosting should not be one more vendor to manage. Every AffordaWeb plan bundles it in. High-performance, reliable hosting with an SSL certificate included on every account.',
+      'Hosting should not be one more vendor to manage. Every AffordaWeb website plan bundles managed hosting with an SSL certificate, so your site and its technical support stay with one provider.',
       'You also get 1GB of professional email connected to your domain. One provider, one monthly bill, one contact for anything technical.',
       'Bundled because separating it out just adds friction.',
     ],
     paragraphs: [
-      <>Hosting should not be one more vendor to manage. Every AffordaWeb plan bundles it in. High-performance, reliable hosting with a free <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">SSL certificate</a> included on every account.</>,
-      <>You also get 1GB of professional email connected to your domain. One provider, one monthly bill, one contact for anything technical. We monitor performance with <a href="https://pagespeed.web.dev" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google PageSpeed Insights</a> to keep your site fast.</>,
+      <>Hosting should not be one more vendor to manage. Every AffordaWeb website plan bundles managed hosting with a <a href="https://letsencrypt.org" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">SSL certificate</a>, so your site and its technical support stay with one provider.</>,
+      <>You also get 1GB of professional email connected to your domain. One provider, one monthly bill, and one contact for technical questions. We use performance checks such as <a href="https://pagespeed.web.dev" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google PageSpeed Insights</a> to identify opportunities to improve the visitor experience.</>,
       <>Bundled because separating it out just adds friction.</>,
     ],
     features: [
-      'High-performance, reliable hosting',
+      'Managed hosting for your AffordaWeb website',
       'SSL certificate included',
-      '24/7 monitoring and guaranteed uptime',
+      'Automated uptime and technical monitoring',
       '1GB free professional email (1 user)',
+    ],
+    faqs: [
+      { question: 'Is web hosting included with website design?', answer: 'Yes. Managed hosting and SSL are included in every AffordaWeb website plan, so you do not need to purchase a separate hosting account for the site we build.' },
+      { question: 'Can you host a website built by another provider?', answer: 'Our hosting is designed for websites built and managed through an AffordaWeb plan. Contact us with your current platform and requirements so we can confirm whether migration is suitable.' },
+      { question: 'Does hosting include business email?', answer: 'Current website plans include 1GB of professional email for one user. Review the pricing page or contact us if you need additional mailboxes or storage.' },
     ],
     color: { accent: '#10B981', light: 'rgba(16,185,129,0.08)', border: 'rgba(16,185,129,0.2)', glow: 'rgba(16,185,129,0.10)' },
     icon: (

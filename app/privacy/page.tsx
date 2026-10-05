@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | AffordaWeb Solutions',
+  title: 'Privacy Policy',
   description: 'Privacy policy for AffordaWeb Solutions — how we collect, use, and protect your personal information.',
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://www.affordawebsolutions.com/privacy' },

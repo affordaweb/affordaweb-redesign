@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Project Brief | AffordaWeb Solutions',
+  title: 'Project Brief',
   description: 'Fill out your project brief so we can design the perfect website for your business.',
   robots: { index: false, follow: false },
 }

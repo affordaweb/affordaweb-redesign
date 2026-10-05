@@ -4,7 +4,7 @@ import Image from 'next/image'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'About | Affordable Web Design Company for Small Businesses',
+  title: 'About Our Small Business Web Design Team',
   description:
     'AffordaWeb Solutions is an affordable web design company delivering professional, custom websites for small businesses. Filipino web design team. Plans start at $39/month with hosting and SSL included.',
   keywords: [
@@ -166,8 +166,8 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              { stat: '50+', label: 'Businesses Served' },
-              { stat: '4.9', label: 'Average Rating' },
+              { stat: '3', label: 'Flexible Plans' },
+              { stat: 'SSL', label: 'Included' },
               { stat: '10–15', label: 'Day Delivery' },
                { stat: '$39/mo', label: 'Starting Price' },
             ].map(({ stat, label }) => (
@@ -236,8 +236,8 @@ export default function AboutPage() {
               </div>
               {/* Floating stats */}
               <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl p-5 shadow-card-hover">
-                <div className="text-2xl font-bold gradient-text">100+</div>
-                <div className="text-xs text-gray-500 font-medium">Sites Launched</div>
+                <div className="text-2xl font-bold gradient-text">10–15</div>
+                <div className="text-xs text-gray-500 font-medium">Business Day Delivery</div>
               </div>
               <div className="absolute -top-5 -left-5 bg-white rounded-2xl p-5 shadow-card-hover">
                 <div className="text-2xl font-bold gradient-text">$39</div>

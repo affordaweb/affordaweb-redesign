@@ -3,7 +3,7 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design Fresno, CA | $39/mo | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design in Fresno, CA | AffordaWeb' },
   description:
     'Affordable web design in Fresno, CA starting at $39/mo. Monthly website design packages with hosting and SSL included. Setup fees are currently waived.',
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.affordawebsolutions.com/fresno' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design Fresno, CA | $39/mo | AffordaWeb Solutions',
+    title: 'Affordable Web Design in Fresno, CA | AffordaWeb',
     description:
       'Affordable web design in Fresno, CA starting at $39/month. Monthly website design packages with hosting and SSL included. Serving Fresno, Clovis, Madera, and the Central Valley.',
     url: 'https://www.affordawebsolutions.com/fresno',

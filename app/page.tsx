@@ -97,7 +97,7 @@ function IconCheck() {
 
 const services = [
   { Icon: IconDesign,   title: 'Website Design',      desc: 'Custom, mobile-first small business website design built to convert visitors into paying customers. Affordable monthly payment plans include hosting and SSL.', href: '/services/design' },
-  { Icon: IconRedesign, title: 'Website Redesign',    desc: 'Transform your outdated site into a fast, modern, high-performing website without losing your rankings. Affordable website redesign with monthly payments.', href: '/services/redesign' },
+  { Icon: IconRedesign, title: 'Website Redesign',    desc: 'Transform an outdated site into a modern, mobile-friendly experience with careful content, URL, and redirect planning.', href: '/services/redesign' },
   { Icon: IconSeo,      title: 'SEO Optimization',    desc: 'Local SEO support for businesses that need to grow their visibility. See Business and Virtual Employee plan inclusions.', href: '/services/seo' },
   { Icon: IconMaint,    title: 'Website Maintenance', desc: 'Managed website maintenance — updates, backups, and security monitoring — so you can focus on running your business. Included in all plans.', href: '/services/maintenance' },
   { Icon: IconHosting,  title: 'Shared Hosting',      desc: 'Fast, reliable managed web hosting with a free SSL certificate included in every affordable website design package.', href: '/services/hosting' },
@@ -108,7 +108,7 @@ const whoWeHelp = [
   { title: 'Freelancers',        tag: 'Solo professionals',     color: '#7C3AED', pastelBg: 'rgba(124,58,237,0.14)',   desc: 'A professional freelancer website starting at $39/month keeps you from losing clients to someone with a better-looking site. Your skills deserve a site that sells them.',              Icon: IconDesign,   href: '/services/design'    },
   { title: 'Startups',           tag: 'Early-stage ventures',   color: '#06B6D4', pastelBg: 'rgba(6,182,212,0.14)',    desc: 'Launch with a credible startup website from day one — without the five-figure agency bill. First impressions define early traction, and yours only happens once.',                        Icon: IconRedesign, href: '/services/design'    },
   { title: 'Small Businesses',   tag: 'Local service providers',color: '#10B981', pastelBg: 'rgba(16,185,129,0.14)',  desc: 'Affordable small business website design built to generate leads, not just traffic. Starting at $39/month with website support that grows with you.',     Icon: IconSeo,      href: '/services/seo'       },
-  { title: 'Established Brands', tag: 'Growing companies',      color: '#F59E0B', pastelBg: 'rgba(245,158,11,0.14)',  desc: 'You have outgrown your current site. Our website redesign service preserves your search rankings and existing content while delivering a modern, high-converting experience.',           Icon: IconMaint,    href: '/services/redesign'  },
+  { title: 'Established Brands', tag: 'Growing companies',      color: '#F59E0B', pastelBg: 'rgba(245,158,11,0.14)',  desc: 'You have outgrown your current site. Our website redesign service reviews valuable content and URLs while delivering a modern, conversion-focused experience.',                         Icon: IconMaint,    href: '/services/redesign'  },
   { title: 'Online Stores',      tag: 'E-commerce businesses',  color: '#F43F5E', pastelBg: 'rgba(244,63,94,0.14)',   desc: 'Affordable e-commerce website design with up to 30 products, secure payment processing, and a mobile-optimized checkout. Built for small online stores that need to sell from day one.',  Icon: IconEcom,     href: '/services#ecommerce' },
 ]
 
@@ -158,14 +158,14 @@ const schemaData = {
     {
       // Extends the Organization/LocalBusiness defined in the root layout — adds ProfessionalService type and offer catalog
       '@id': 'https://www.affordawebsolutions.com/#business',
-      '@type': ['LocalBusiness', 'ProfessionalService'],
+      '@type': 'ProfessionalService',
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Website Design Services',
         itemListElement: [
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Small Business Website Design', description: 'Custom, mobile-first website design for small businesses starting at $39/month.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Redesign', description: 'Modernize your existing website without losing search rankings.' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO Optimization', description: 'Local SEO built into every website to help small businesses rank on Google.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Redesign', description: 'Modernize an existing website with careful content, URL, and redirect planning.' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO Optimization', description: 'On-page and local SEO support for small businesses.' } },
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Managed Web Hosting', description: 'Fast, reliable managed hosting with SSL included in every plan.' } },
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Maintenance', description: 'Ongoing website updates, security monitoring, and backups.' } },
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'E-Commerce Website Design', description: 'Online store design with up to 30 products and secure payment processing.' } },
@@ -364,9 +364,9 @@ export default function HomePage() {
             {([
               { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 6v1m0 4v1m-4-8H6m12 0h-2m2 8H6', text: 'No Setup Fees' },
               { icon: 'M6 18L18 6M6 6l12 12', text: 'No Contracts' },
-              { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', text: '99.9% Uptime' },
+              { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', text: 'Managed Hosting' },
               { icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z', text: 'SSL Included' },
-              { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', text: '24hr Support' },
+              { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', text: 'Ongoing Support' },
               { icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', text: 'Free Business Email' },
             ] as { icon: string; text: string }[]).map(({ icon, text }) => (
               <div key={text} className="flex items-center gap-2 text-sm font-medium text-gray-600">
@@ -401,9 +401,9 @@ export default function HomePage() {
               { number: '$39/mo', label: 'Starting Price',   sublabel: 'Clear plan pricing',    bg: '#F5F3FF', border: '#C4B5FD', iconBg: '#7C3AED', iconPath: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 6v1m0 4v1m-4-8H6m12 0h-2m2 8H6m0 0a9 9 0 110-18 0 9 9 0 010 18z' },
               { number: '24 hrs', label: 'Response Time',    sublabel: 'Mon to Fri',         bg: '#ECFEFF', border: '#67E8F9', iconBg: '#0EA5E9', iconPath: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
               { number: '$0',     label: 'Setup Fees',       sublabel: 'Get started free',   bg: '#ECFDF5', border: '#6EE7B7', iconBg: '#059669', iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
-              { number: '99.9%', label: 'Uptime Guarantee', sublabel: 'Always online',       bg: '#FFF1F2', border: '#FDA4AF', iconBg: '#E11D48', iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
-              { number: '100+',  label: 'Sites Launched',   sublabel: 'Happy clients',       bg: '#FFFBEB', border: '#FCD34D', iconBg: '#D97706', iconPath: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' },
-              { number: '15 yrs', label: 'In Business',      sublabel: 'Est. 2010',           bg: '#FAF5FF', border: '#D8B4FE', iconBg: '#9333EA', iconPath: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
+              { number: 'SSL',   label: 'Included',          sublabel: 'Every website plan', bg: '#FFF1F2', border: '#FDA4AF', iconBg: '#E11D48', iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+              { number: '3',     label: 'Service Plans',     sublabel: 'Choose your support', bg: '#FFFBEB', border: '#FCD34D', iconBg: '#D97706', iconPath: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' },
+              { number: '10–15', label: 'Business Days',     sublabel: 'Typical launch time', bg: '#FAF5FF', border: '#D8B4FE', iconBg: '#9333EA', iconPath: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
             ] as { number: string; label: string; sublabel: string; bg: string; border: string; iconBg: string; iconPath: string }[]).map((item, i) => (
               <div key={`${pass}-${i}`} className="px-3 shrink-0">
                 <div
@@ -1104,7 +1104,7 @@ export default function HomePage() {
             >
               What Our Clients Say
             </h2>
-            <p className="text-gray-400 text-lg">50+ small businesses served with a 4.9-star average rating.</p>
+            <p className="text-gray-400 text-lg">Feedback from small business owners who chose a simpler way to build and manage their websites.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {([

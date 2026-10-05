@@ -65,12 +65,24 @@ export default async function ServicePage({
     description: s.description[0],
     provider: { '@type': 'Organization', name: 'AffordaWeb Solutions', url: 'https://www.affordawebsolutions.com' },
     url: `https://www.affordawebsolutions.com/services/${s.id}`,
+    areaServed: 'United States',
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: s.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
   }
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── Hero ── */}
       <section
@@ -255,6 +267,23 @@ export default async function ServicePage({
           </div>
         </section>
       )}
+
+      <section className="section-pad bg-white" aria-labelledby="service-faq-heading">
+        <div className="container-tight max-w-4xl">
+          <p className="section-label">Common Questions</p>
+          <h2 id="service-faq-heading" className="section-title mb-8">{s.title} FAQs</h2>
+          <div className="space-y-4">
+            {s.faqs.map((faq) => (
+              <details key={faq.question} className="group rounded-2xl border border-gray-200 bg-white p-5 open:border-primary-200 open:shadow-sm">
+                <summary className="cursor-pointer list-none pr-8 font-semibold text-gray-900 marker:content-none">
+                  {faq.question}
+                </summary>
+                <p className="mt-3 leading-relaxed text-gray-500">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── Other Services ── */}
       <section className="section-pad relative overflow-hidden" style={{ background: '#FAFBFF' }}>

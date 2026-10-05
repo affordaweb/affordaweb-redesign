@@ -3,7 +3,7 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: 'Affordable Web Design Services for Small Businesses | $39/mo',
+  title: 'Web Design Services for Small Businesses',
   description:
     'Affordable web design services for small businesses from $39/month. Explore Starter, Business, and Virtual Employee plan inclusions and scope.',
   keywords: [
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.affordawebsolutions.com/services' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design Services for Small Businesses | $39/mo',
+    title: 'Web Design Services for Small Businesses | AffordaWeb Solutions',
     description: 'Professional website design and ongoing support for small businesses starting at $39/month.',
     url: 'https://www.affordawebsolutions.com/services',
     images: [{ url: 'https://www.affordawebsolutions.com/og-image.png', width: 1200, height: 630, alt: 'AffordaWeb Solutions Web Design Services' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design Services for Small Businesses | $39/mo',
+    title: 'Web Design Services for Small Businesses | AffordaWeb Solutions',
     description: 'Professional website design and ongoing support for small businesses starting at $39/month.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
@@ -99,7 +99,7 @@ Right move if your site works but no longer represents what you actually offer.`
     ],
     features: [
       'Complete visual and functional makeover',
-      'Preserves existing content and SEO',
+      'Reviews existing content, URLs, and metadata',
       'Modern, mobile-friendly layouts',
       'Improved performance and conversion focus',
     ],
@@ -114,20 +114,20 @@ Right move if your site works but no longer represents what you actually offer.`
     id: 'seo',
     tag: 'Grow Traffic',
     title: 'SEO Optimization',
-    headline: 'Rank Higher. Get Found. Grow Faster.',
-    description: `Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper meta setup, and the structural decisions that search engines pay attention to.
+    headline: 'Build a Stronger Search Foundation',
+    description: `Search visibility starts with useful content and a site that search engines can understand. Every site we build starts with clean structure, descriptive metadata, and clear internal links.
 
-Business and Virtual Employee plans include SEO optimization as a standard feature, not an upsell. Proven keyword strategies, content structure, Google Analytics integration, and a long-term organic growth focus.
+Business and Virtual Employee plans include SEO optimization. Depending on the site and plan, this can cover keyword research, on-page recommendations, content structure, and Google Analytics integration.
 
-If your site has been live for years but traffic has barely moved, this is the thing you have not tried yet.`,
+SEO is an ongoing process rather than a ranking guarantee. We establish a baseline, prioritize useful improvements, and measure changes over time.`,
     paragraphs: [
-      <>Google does not reward the prettiest site. It rewards the most structured one. Every site we build starts with clean code, proper <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">meta tag</a> setup, and the structural decisions that search engines pay attention to.</>,
-      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Business and Virtual Employee plans</Link> include SEO optimization as a standard feature, not an upsell. Proven keyword strategies, content structure, <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Analytics</a> integration, and a long-term organic growth focus.</>,
-      <>If your site has been live for years but traffic has barely moved, start with our <Link href="/seo-audit" className="font-medium text-primary-500 hover:underline">free SEO audit tool</Link> — it shows you exactly where you stand. You can also check your baseline in <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Search Console</a> for free.</>,
+      <>Search visibility starts with useful content and a site that search engines can understand. Every site we build starts with clean structure, descriptive <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">search snippets</a>, and clear internal links.</>,
+      <><Link href="/pricing" className="font-medium text-primary-500 hover:underline">Business and Virtual Employee plans</Link> include SEO optimization. Depending on the site and plan, this can cover keyword research, on-page recommendations, content structure, and <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Analytics</a> integration.</>,
+      <>SEO is an ongoing process rather than a ranking guarantee. Start with our <Link href="/seo-audit" className="font-medium text-primary-500 hover:underline">free SEO audit tool</Link>, then use <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-500 hover:underline">Google Search Console</a> to measure search visibility over time.</>,
     ],
     features: [
-      'Higher rankings on major search engines',
-      'Proven keyword and content strategies',
+      'Search-intent and keyword research',
+      'On-page content recommendations',
       'Long-term organic growth focus',
       'Clean site structure and meta optimization',
       'Google Analytics integration',
@@ -182,7 +182,7 @@ Bundled because separating it out just adds friction.`,
     features: [
       'High-performance, reliable hosting',
       'SSL certificate included',
-      '24/7 monitoring and guaranteed uptime',
+      'Automated uptime and technical monitoring',
       '1GB free professional email (1 user)',
     ],
     icon: (

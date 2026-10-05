@@ -111,10 +111,7 @@ export default function Footer() {
               <p className="text-white/40 text-sm leading-relaxed mb-5">
                 Professional website design and hosting for small businesses — affordable, fast, and fully managed.
               </p>
-              <div className="flex items-center gap-2 mb-5">
-                <span className="text-amber-400 text-base tracking-tight">★★★★★</span>
-                <span className="text-white/35 text-xs font-medium">Trusted by 50+ clients</span>
-              </div>
+              <p className="mb-5 text-xs font-medium text-white/35">Custom design, managed hosting, SSL, and ongoing support.</p>
               <a
                 href="mailto:hello@affordawebsolutions.com"
                 className="inline-flex items-center gap-2 text-sm font-medium transition-colors mb-3"

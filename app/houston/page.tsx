@@ -3,7 +3,7 @@ import Link from 'next/link'
 import InnerHeroBg from '@/components/InnerHeroBg'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Affordable Web Design Houston, TX | $39/mo | AffordaWeb Solutions' },
+  title: { absolute: 'Affordable Web Design in Houston, TX | AffordaWeb' },
   description:
     'Affordable web design in Houston, TX starting at $39/mo. Monthly website design packages with hosting and SSL included. Setup fees are currently waived.',
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.affordawebsolutions.com/houston' },
   openGraph: {
     type: 'website',
-    title: 'Affordable Web Design Houston, TX | $39/mo | AffordaWeb Solutions',
+    title: 'Affordable Web Design in Houston, TX | AffordaWeb',
     description:
       'Affordable web design in Houston, TX starting at $39/month. Monthly website design packages with hosting and SSL included. Serving all Houston metro areas.',
     url: 'https://www.affordawebsolutions.com/houston',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Affordable Web Design Houston, TX | $39/mo | AffordaWeb Solutions',
+    title: 'Affordable Web Design in Houston, TX | AffordaWeb',
     description: 'Affordable web design in Houston, TX starting at $39/month. Monthly website design packages with hosting and SSL included.',
     images: ['https://www.affordawebsolutions.com/og-image.png'],
   },
